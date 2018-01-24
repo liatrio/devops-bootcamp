@@ -1,5 +1,5 @@
 <center>
-  ![](docs/img/liatrio.png)
+  ![](img/liatrio.png)
   <h1>
     Liatrio's DevOps Bootcamp
   </h1>
@@ -28,14 +28,7 @@ Welcome! You must be here because you're interested in DevOps. Don't worry, we'l
 ## Contributing
 This bootcamp was adapted from an intern training program, and some mistakes may have slipped through the cracks. If you see any errors, outdated methods, or citation errors please submit a Pull Request.
 
-To develop with a live preview, install [docsify](https://docsify.js.org/#/quickstart).
-```
-npm i docsify-cli -g
-# While in the directory of a local fork of this repository on your machine...
-docsify serve ./docs
-# Edit files and a live preview will be shown in your browser
-```
-
 <center>
-  ![](docs/img/class.png)  
+  ![](img/class.png)  
+  [Let's get started!](1/1.0-overview.md)
 </center>
