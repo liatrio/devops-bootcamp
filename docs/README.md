@@ -5,7 +5,14 @@
   </h1>
 </center>
 
-Welcome! You must be here because you're interested in DevOps. Don't worry, we'll explain that right away! Let's introduce some goals and expectations first, though.
+## Introduction
+Welcome! You must be here because you're interested in DevOps. Don't worry, we'll explain that right away! First, let's briefly go over some details.
+
+## Target Audience
+This DevOps Bootcamp is used as an introduction to DevOps for Liatrio's interns. Therefore, there are deliverables at the end of each section that help guide the interns' training. However, anyone can go through the DevOps Bootcamp. Feel free to ignore the deliverables, etc.
+
+## Disclaimer
+This bootcamp alone will by no means make anyone an expert on DevOps; that's where real in-the-field experience engineering and shadowing come in. However, this bootcamp is a great start for anyone entering the world of DevOps!
 
 ## Learning Goals
  1. DevOps Philosophies and Culture

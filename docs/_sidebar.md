@@ -3,6 +3,7 @@
 - [Liatrio's DevOps Bootcamp](/)
 - [1.0 - Introduction to DevOps](1/1.0-overview.md)
   - [1.1 - DevOps Defined](1/1.1-devops-defined.md)
+  - [1.2 - Liatrio and DevOps](1/1.2-liatrio-and-devops.md)
 - [2.0 - Ops Primer](2/2.0-overview.md)
 - [3.0 - Development](3/3.0-overview.md)
 - [4.0 - Maven and NPM](4/4.0-overview.md)
