@@ -1,9 +1,5 @@
-<center>
-  ![](docs/img/liatrio.png)
-  <h1>
-    Liatrio's DevOps Bootcamp
-  </h1>
-</center>
+![liatrio](docs/img/liatrio.png)
+# Liatrio's DevOps Bootcamp
 
 Welcome! You must be here because you're interested in DevOps. Don't worry, we'll explain that right away! Let's introduce some goals and expectations first, though.
 
@@ -35,7 +31,3 @@ npm i docsify-cli -g
 docsify serve ./docs
 # Edit files and a live preview will be shown in your browser
 ```
-
-<center>
-  ![](docs/img/class.png)  
-</center>
