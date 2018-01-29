@@ -12,7 +12,7 @@ Welcome! You must be here because you're interested in DevOps. Don't worry, we'l
 This DevOps Bootcamp is used as an introduction to DevOps for Liatrio's interns. Therefore, there are deliverables at the end of each section that help guide the interns' training. However, anyone can go through the DevOps Bootcamp. Feel free to ignore the deliverables, etc. This bootcamp also assumes the bootcamper is using a Mac for the deliverables.
 
 ## Disclaimer
-This bootcamp alone will by no means make anyone an expert on DevOps; that's where real, in-the-field experience engineering and shadowing come in. However, this bootcamp is a great start for anyone entering the world of DevOps! Also, many of the exercises proposed in this bootcamp have no solution listed. This is because it is up to the bootcamper to come up with the solution without reading a guide. So, if you're wondering where a solution to an exercise is - there is likely none; that's up to you!
+This bootcamp alone will by no means make anyone an expert on DevOps; that's where real, in-the-field experience engineering and shadowing come in. However, this bootcamp is a great start for anyone entering the world of DevOps! It is recommended that anyone going through this bootcamp have a mentor to fill in the gaps of information and answer questions, as well. Also, many of the exercises proposed in this bootcamp have no solution listed. This is because it is up to the bootcamper to come up with the solution without reading a guide. So, if you're wondering where a solution to an exercise is - there is likely none; that's up to you! There may be solutions posted in the future.
 
 ## Learning Goals
  1. DevOps Philosophies and Culture
