@@ -8,6 +8,8 @@
 ## Introduction
 Welcome! You must be here because you're interested in DevOps. Don't worry, we'll explain that right away! First, let's briefly go over some details.
 
+"1.0" can be referred to as "Chapter One," while "1.2" can be referred to as "Chapter One, Section Two."
+
 ## Target Audience
 This DevOps Bootcamp is used as an introduction to DevOps for Liatrio's interns. Therefore, there are deliverables at the end of each section that help guide the interns' training. However, anyone can go through the DevOps Bootcamp. Feel free to ignore the deliverables, etc. This bootcamp also assumes the bootcamper is using a Mac for the deliverables.
 
