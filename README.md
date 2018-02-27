@@ -31,3 +31,8 @@ npm i docsify-cli -g
 docsify serve ./docs
 # Edit files and a live preview will be shown in your browser
 ```
+
+## Coming Soon
+ - Search bar that searches the repository
+ - Edit on GitHub link on each page
+
