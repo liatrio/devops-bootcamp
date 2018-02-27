@@ -22,7 +22,7 @@
   - [4.4 - Maven Integration](4/4.4-maven-integration.md)
   - [4.5 - Maven Plugins](4/4.5-maven-plugins.md)
   - [4.6 - Releases](4/4.6-releases.md)
-  - [4.7 - NPM](4/4.7-npm.md)
+  - [4.7 - Npm](4/4.7-npm.md)
 - [5.0 - System Administration](5/5.0-overview.md)
 - [6.0 - Cloud Computing Exercises](6/6.0-overview.md)
 - [7.0 - Containerization](7/7.0-overview.md)
