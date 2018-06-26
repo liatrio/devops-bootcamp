@@ -11,11 +11,18 @@
 </head>
 <body>
   <div id="app">Loading...</div>
+  <script src="//unpkg.com/docsify-edit-on-github@1.0.1/index.js"></script> 
   <script>
     window.$docsify = {
       name: '',
       repo: '',
-      loadSidebar: true
+      loadSidebar: true,
+
+      plugins: [
+        EditOnGithubPlugin.create(
+            'https://github.com/liatrio/devops-bootcamp/tree/master/docs/'
+         )
+      ]
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
