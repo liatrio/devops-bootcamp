@@ -1,5 +1,7 @@
 <center>
-  ![](../img/liatrio.png)
+
+![Liatrio](img/liatrio.png)
+
   <h1>
     Liatrio's DevOps Bootcamp
   </h1>
@@ -38,6 +40,9 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 This bootcamp was adapted from an intern training program, and some mistakes may have slipped through the cracks. If you see any errors, outdated methods, or citation errors please submit a Pull Request.
 
 <center>
-  ![](../img/class.png)  
+
+  ![](img/class.png)
+
   [Let's get started!](1/1.0-overview.md)
+
 </center>
