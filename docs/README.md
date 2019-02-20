@@ -1,6 +1,6 @@
 <center>
 
-![Liatrio](img/liatrio.png)
+![Liatrio](img/Liatrio-icon.png)
 
   <h1>
     Liatrio's DevOps Bootcamp
