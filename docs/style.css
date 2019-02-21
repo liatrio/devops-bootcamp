@@ -1,0 +1,20 @@
+.grid2, .grid3, .grid3 {
+  width: 100%;
+}
+
+.col {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.grid2 .col {
+  width: 50%;
+}
+
+.grid3 .col {
+  width: 33.33%;
+}
+
+.grid4 .col {
+  width: 25%;
+}
