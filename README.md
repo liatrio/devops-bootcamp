@@ -19,10 +19,12 @@ Welcome! You must be here because you're interested in DevOps. Don't worry, we'l
  5. Be transparent in your progress.
  6. Have fun!
 
-> "It's better to overcommunicate than to undercommunicate."
+> "It's better to over communicate than to under communicate."
 
 ## Contributing
 This bootcamp was adapted from an intern training program, and some mistakes may have slipped through the cracks. If you see any errors, outdated methods, or citation errors please submit a Pull Request.
+
+Check out the [Style Guide](STYLE.md).
 
 To develop with a live preview, install [docsify](https://docsify.js.org/#/quickstart).
 ```
