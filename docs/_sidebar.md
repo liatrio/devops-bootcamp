@@ -1,6 +1,6 @@
 <!-- docs/_sidebar.md -->
 
-- [Liatrio's DevOps Bootcamp](/welcome)
+- [Liatrio's DevOps Bootcamp](/)
 - [1.0 - Introduction to DevOps](1/1.0-overview.md)
   - [1.1 - DevOps Defined](1/1.1-devops-defined.md)
   - [1.2 - Liatrio and DevOps](1/1.2-liatrio-and-devops.md)
