@@ -43,8 +43,8 @@
 - [6.0 - Cloud Computing](6/6.0-overview.md)
   - [6.1 - Cloud Intro](6/6.1-cloud.md)
   - [6.2 - AWS](6/6.2-aws.md)
-  - [6.3 - S3](6/6.3-s3.md)
-  - [6.4 - CloudFront & Route 53](6/6.4-cloudfront.md)
+  - [6.3 - S3 & CloudFront](6/6.3-s3-cloudfront.md)
+  - [6.4 - EC2](6/6.4-ec2.md)
   - [6.5 - Auto Scaling](6/6.5-auto-scaling.md)
   - [6.6 - AWS with Packer](6/6.6-aws-packer.md)
 - [7.0 - Automation & Orchestration](7/7.0-overview.md)
@@ -54,4 +54,3 @@
   - [7.4 - Ansible](7/7.4-ansible.md)
   - [7.5 - Docker Swarm](7/7.5-docker-swarm.md)
   - [7.6 - Kubernetes](7/7.6-kubernetes.md)
-
