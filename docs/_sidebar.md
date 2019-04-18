@@ -47,6 +47,7 @@
   - [6.4 - EC2](6/6.4-ec2.md)
   - [6.5 - Auto Scaling](6/6.5-auto-scaling.md)
   - [6.6 - AWS with Packer](6/6.6-aws-packer.md)
+  - [6.7 - ECS](6/6.7-ecs.md)
 - [7.0 - Automation & Orchestration](7/7.0-overview.md)
   - [7.1 - Configuration Managers](7/7.1-configuration-managers.md)
   - [7.2 - Chef](7/7.2-chef.md)
