@@ -23,9 +23,15 @@
         EditOnGithubPlugin.create(
             'https://github.com/liatrio/devops-bootcamp/tree/master/docs/'
          )
-      ]
+      ],
+      pagination: {
+        previousText: 'Previous Page',
+        nextText: 'Next Page',
+        crossChapter: true
+      }
     }
   </script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 
