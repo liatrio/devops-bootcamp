@@ -1,6 +1,6 @@
 <center>
 
-![Liatrio](img/Liatrio-icon.png)
+![Liatrio](img/Liatrio-Icon.png)
 
   <h1>
     Liatrio's DevOps Bootcamp
@@ -42,7 +42,7 @@ This bootcamp was adapted from an apprentices training program, and some mistake
 
 <center>
 
-  ![](img/class.png)
+  ![](img/class.svg ':size=125px')
 
   [Let's get started!](1/1.0-overview.md)
 
