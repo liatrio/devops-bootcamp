@@ -56,5 +56,4 @@
   - [7.2 - Chef](7/7.2-chef.md)
   - [7.3 - Terraform](7/7.3-terraform)
   - [7.4 - Ansible](7/7.4-ansible.md)
-  - [7.5 - Docker Swarm](7/7.5-docker-swarm.md)
-  - [7.6 - Kubernetes](7/7.6-kubernetes.md)
+  - [7.5 - Kubernetes](7/7.5-kubernetes.md)
