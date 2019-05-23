@@ -19,7 +19,7 @@
   - [2.8 - Packer Images](2/2.8-packer.md)
 - [3.0 - Development Practices](3/3.0-overview.md)
   - [3.1 - Version Control](3/3.1-version-control.md)
-  - [3.2 - Commit Reversals](3/3.2-commit-reversals.md)
+  - [3.2 - Git](3/3.2-git.md)
   - [3.3 - Pipelines and Strategy](3/3.3-pipelines-and-strategy.md)
   - [3.4 - Jira](3/3.4-jira.md)
   - [3.5 - Hello DevOps](3/3.5-hello-devops.md)
