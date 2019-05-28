@@ -24,7 +24,7 @@
   - [3.4 - Jira](3/3.4-jira.md)
   - [3.5 - Hello DevOps](3/3.5-hello-devops.md)
 - [4.0 - Release Management](4/4.0-overview.md)
-  - [4.1 - The Maven Way](4/4.1-the-maven-way.md)
+  - [4.1 - Maven](4/4.1-maven.md)
   - [4.2 - Versioning](4/4.2-versioning.md)
   - [4.3 - Maven Integration](4/4.3-maven-integration.md)
   - [4.4 - Maven Plugins](4/4.4-maven-plugins.md)
