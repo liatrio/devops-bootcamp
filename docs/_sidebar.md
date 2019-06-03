@@ -5,7 +5,7 @@
   - [1.1 - DevOps Defined](1/1.1-devops-defined.md)
   - [1.2 - Liatrio and DevOps](1/1.2-liatrio-and-devops.md)
   - [1.3 - Unix Basics](1/1.3-unix-basics.md)
-  - [1.4 - Vim](1/1.4-Vim.md)
+  - [1.4 - Vim](1/1.4-vim.md)
   - [1.5 - Installations](1/1.4-installations.md)
   - [1.6 - Passwords and Keys](1/1.5-passwords-and-keys.md)
   - [1.7 - External Resources](1/1.6-external-resources.md)
