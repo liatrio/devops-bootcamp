@@ -7,7 +7,7 @@
   </h1>
 </center>
 
-## Introduction
+## Introduction {docsify-ignore-all}
 Welcome! You must be here because you're interested in DevOps. Don't worry, we'll explain that right away! First, let's briefly go over some details.
 
 "1.0" can be referred to as "Chapter One," while "1.2" can be referred to as "Chapter One, Section Two."
@@ -19,11 +19,11 @@ This DevOps Bootcamp is used as an introduction to DevOps for Liatrio's apprenti
 This bootcamp alone will by no means make anyone an expert on DevOps; that's where real, in-the-field experience engineering and shadowing come in. However, this bootcamp is a great start for anyone entering the world of DevOps! It is recommended that anyone going through this bootcamp have a mentor to fill in the gaps of information and answer questions, as well. Also, many of the exercises proposed in this bootcamp have no solution listed. This is because it is up to the bootcamper to come up with the solution without reading a guide. So, if you're wondering where a solution to an exercise is - there is likely none; that's up to you! There may be solutions posted in the future.
 
 ## Learning Goals
- 1. Introduction to DevOps 
+ 1. Introduction to DevOps
  2. Virtual Machines and Containers
  3. Development Practices
  4. Release Management
- 5. System Administration 
+ 5. System Administration
  6. Cloud Computing
  7. Automation and Orchestration
 
