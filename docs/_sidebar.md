@@ -39,7 +39,7 @@
   - [5.5 - Bitbucket](5/5.5-bitbucket.md)
   - [5.6 - Users](5/5.6-users.md)
   - [5.7 - Jira](5/5.7-jira.md)
-  - [5.8 - Sonarqube](5/5.8-sonarqube.md)
+  - [5.8 - SonarQube](5/5.8-sonarqube.md)
   - [5.9 - Artifactory](5/5.9-artifactory.md)
   - [5.10 - Docker Registry](5/5.10-docker-registry.md)
 - [6.0 - Cloud Computing](6/6.0-overview.md)
