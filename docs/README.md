@@ -40,6 +40,8 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 ## Contributing
 This bootcamp was adapted from an apprentices training program, and some mistakes may have slipped through the cracks. If you see any errors, outdated methods, or citation errors please submit a Pull Request.
 
+[contributors](contributors.md)
+
 <center>
 
   ![](img/class.svg ':size=125px')
