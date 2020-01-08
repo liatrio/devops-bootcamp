@@ -9,6 +9,7 @@
 - [JonRudy](https://github.com/JonRudy)
 - [kdeardorff2](https://github.com/kdeardorff2)
 - [RJ Souza](https://github.com/Empyreus)
+- [Jacob Brolliar](https://github.com/MrDr-Professor)
 - [DanHunt27](https://github.com/DanHunt27)
 
 [back](/)
