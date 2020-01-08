@@ -9,5 +9,6 @@
 - [JonRudy](https://github.com/JonRudy)
 - [kdeardorff2](https://github.com/kdeardorff2)
 - [RJ Souza](https://github.com/Empyreus)
+- [DanHunt27](https://github.com/DanHunt27)
 
 [back](/)
