@@ -28,7 +28,7 @@
   - [4.1 - Maven](4/4.1-maven.md)
   - [4.2 - Versioning](4/4.2-versioning.md)
   - [4.3 - Maven Integration](4/4.3-maven-integration.md)
-  - [4.4 - Jenkins File](4/4.4-jenkinsfile.md)
+  - [4.4 - Declarative Pipelines](4/4.4-declarative-pipelines.md) 
   - [4.5 - Maven Plugins](4/4.5-maven-plugins.md)
   - [4.6 - Releases](4/4.6-releases.md)
   - [4.7 - Npm](4/4.7-npm.md)
