@@ -2,24 +2,31 @@
 
 At Liatrio, we're always sharing fun or informative learning resources we come across. Below is a list of blogs, podcasts, videos, and books we found useful.
 
-Blogs, Podcasts, and Videos
+## Blogs
+ - [Liatrio](https://www.liatrio.com/blog)
+ - [IT Revolution](https://itrevolution.com/devops-blog/)
+ - [Weave Works](https://www.weave.works/blog/)
+ - [GitHub](https://github.blog/)
+ - [AWS DevOps](https://aws.amazon.com/blogs/devops/)
+ - [Microsoft's Open Source](https://cloudblogs.microsoft.com/opensource/)
+ - [Microsoft's Azure DevOps](https://devblogs.microsoft.com/devops/)
+ - [Hashi](https://www.hashicorp.com/blog/)
+ - [Medium](https://medium.com/tag/devops)
+ - [Julia Evans](https://jvns.ca/)
+
+## Podcasts
+ - [PodCTL](https://blog.openshift.com/tag/podctl/)
+ - [Kubernetes Podcast from Google](https://kubernetespodcast.com/)
+ - [DevOps Cafe](http://devopscafe.org)
+
+## Videos
  - [Spotify Engineering Culture - Part 1](https://www.youtube.com/watch?v=4GK1NDTWbkY)
     - In Spotify's Engineering Culture Part 1, you are introduced to some of the key reasons why Spotify is as successful as it is. Over at Spotify they run on loose agile principles, and form squads that are loosely coupled but tightly aligned. This idea allows employees more freedom to work on things they are passionate about and leads to more self motivation to produce the best product possible. At Spotify they push new features and updates out in small frequent releases to get feedback quicker and make changes as needed to fit customers needs. One of their main ideas to release products is known as a release train, this allows new features to be released while also pushing unfinished releases to ensure there is no conflicts between the multiple updates but then hide those features that aren't finished through a toggle option.
  - [Spotify Engineering Culture - Part 2](https://www.youtube.com/watch?v=X3rGdmoTjDc)
     - In Spotify's Engineering Culture Part 2, we learn about Spotifys culture of trying to fail the fastest. The idea behind this is the quicker you fail the quicker you can learn and improve. This idea also allows continuous improvement, something they strive for by always updating their products and analyzing the customers views on these updates. Once the feature is then analyzed, Spotify can then quickly go in and tweak the new feature to fit the users needs and provide the best product to the customer and dump those that did not work.
- - [Revisiting the Iterative Incremental Mona Lisa](http://itsadeliverything.com/revisiting-the-iterative-incremental-mona-lisa)
- - [How we ended up with microservices.](http://philcalcado.com/2015/09/08/how_we_ended_up_with_microservices.html)
- - [DevOps Cafe Episode 62 - Mary and Tom Poppendieck](http://devopscafe.org/show/2015/8/16/devops-cafe-episode-62-mary-and-tom-poppendieck.html)
- - [DevOps Cafe Episode 65 - John interviews Damon](http://devopscafe.org/show/2015/12/15/devops-cafe-episode-65-john-interviews-damon.html)
- - [Software Factory by Nicolas Mas](https://speakerdeck.com/michaelisvy/software-factory-by-nicolas-mas)
- - [Move Fast and Fix Things](https://githubengineering.com/move-fast/)
- - [8 Ways to Keep Your Continuous Integration and Deployment (CI/CD) Pipeline Working for You](https://www.excella.com/insights/8-ways-to-keep-your-continuous-integration-and-deployment-cicd-pipeline-working-for-you?utm_content=22423877&utm_medium=social&utm_source=twitter)
- - [Jenkins Training: Continuous Integration with Maven, Jenkins and Nexus](http://www.webagesolutions.com/courses/WA2321-jenkins-training-continuous-integration-with-maven-jenkins-and-nexus)
  - [YOW! Nights March 2016 Martin Fowler - Infrastructure As Code](https://www.youtube.com/watch?v=ueAef9tNUck)
- - [PodCTL](https://blog.openshift.com/tag/podctl/)
- - [Kubernetes Podcast from Google](https://kubernetespodcast.com/)
 
-Books
+## Books
  - [The Phoenix Project](https://itrevolution.com/book/the-phoenix-project/)
  - [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html)
  - [The Goal](http://www.amazon.com/The-Goal-Process-Ongoing-Improvement/dp/0884271951?ie=UTF8&camp=1789&creative=9325&creativeASIN=0884271951&linkCode=as2&tag=itrevpre-20)
@@ -27,6 +34,7 @@ Books
  - Lean Enterprise
  - [Accelerate](https://itrevolution.com/book/accelerate/)
  - [The Unicorn Project](https://itrevolution.com/book/the-unicorn-project/)
+ - [Phippy and Friends](https://www.cncf.io/phippy/)
 
 <center>
 
