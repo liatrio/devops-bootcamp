@@ -11,5 +11,6 @@
 - [RJ Souza](https://github.com/Empyreus)
 - [Jacob Brolliar](https://github.com/MrDr-Professor)
 - [DanHunt27](https://github.com/DanHunt27)
+- [Ryan McGuire](https://github.com/ramcguire)
 
 [back](/)
