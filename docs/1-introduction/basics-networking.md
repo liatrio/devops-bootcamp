@@ -92,3 +92,17 @@ within a private range will ensure no conflicts with existing servers.
 | 10.0.0.0/8     | 10.0.0.0 - 10.255.255.255     | 16,777,216          |
 | 172.16.0.0/12  | 172.16.0.0 - 172.31.255.255   | 1,048,576           |
 | 192.168.0.0/16 | 192.168.0.0 - 192.168.255.255 | 65,536              |
+
+# Exercise
+
+Examine the network your computer is on and try to answer the following questions:
+- What subnet is your computer on?
+- How many IP address are available on the subnet?
+- What is your computers IP address on the subnet?
+- How did your computer get assigned that IP address?
+- What is your computers public Internet IP address? (hint: google `what is my ip`)
+- How does the private subnet IP address of your computer and the public Internet IP address relate to each other? How does traffic get routed from the Internet to your computer?
+
+# Deliverable
+
+Discuss the role networking plays in software delivery and difficulties enterprise organization may experience with networking.

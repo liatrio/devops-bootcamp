@@ -1,3 +1,10 @@
+:root {
+  --base-font-size: 14px;
+  --theme-color   : #25ae1e;
+  --selection-color      : #c3e788;
+  --sidebar-width: 22rem;
+}
+
 .grid2, .grid3, .grid3 {
   width: 100%;
 }
