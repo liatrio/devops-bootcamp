@@ -12,7 +12,7 @@
     - [1.3.5 - Networking Basics](1-introduction/basics-networking.md)
   - [1.4 - External Resources](1-introduction/external-resources.md)
 - [2.0 - Virtual Machines and Containers](2-virtual-machines-containers/overview.md)
-  - [2.2 - Golden Images](2-virtual-machines-containers/golden-images.md)
+  - [2.1 - Golden Images](2-virtual-machines-containers/golden-images.md)
   - [2.3 - Local Deployment](2-virtual-machines-containers/local-deployment.md)
   - [2.4 - Remote Deployment](2-virtual-machines-containers/remote-deployment.md)
   - [2.5 - Vagrant](2-virtual-machines-containers/vagrant.md)
