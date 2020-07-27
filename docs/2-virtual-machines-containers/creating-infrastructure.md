@@ -1,3 +1,21 @@
+# Jenkins 
+
+<center>
+
+  ![](img2/jenkins.png ':size=125px')
+
+</center>
+  Jenkins is a build automation server that manages and controls software delivery processes throughout the entire lifecycle. It orchestrates tasks including build, test, package, staging, deployment, static code analysis.
+
+  - A leading open source continuous integration tool
+  - Builds, tests, and deploys software continuously and monitors the execution and status of jobs
+  - Trigger jobs manually, on a schedule, or on a code commit
+  - Uses Java and Tomcat to do its work
+
+Jenkins is at the heart of the pipeline, providing capabilities to achieve Continuous Integration and Continuous Delivery, Continuous Feedback.
+  
+
+
 # Local Deployment
 
  1. Using a clone of your Golden Image from the previous section, [install Jenkins](https://wiki.jenkins.io/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions).
