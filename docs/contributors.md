@@ -12,5 +12,5 @@
 - [Jacob Brolliar](https://github.com/MrDr-Professor)
 - [DanHunt27](https://github.com/DanHunt27)
 - [PaulH](https://github.com/PaulDHenson)
-
+- [Brad Fischer](https://github.com/BFisch14)
 [back](/)
