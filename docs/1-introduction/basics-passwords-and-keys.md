@@ -45,6 +45,8 @@ Public key authentication involves generating a pair of cryptographic keys: one 
 ### SSH
 SSH makes use of public key authentication to allow passwordless and non-interactive access to remote hosts. To use public key authentication with SSH you must generate a pair of SSH keys, copy the public key to a SSH server and add it to an `authorized_keys` file.
 
+> **Note:** `.ssh/` needs a permission level of 0700, and `.ssh/authorized_keys` needs a permission level of 0600 to authenticate properly. Permissions can be changed using the `chmod` command.
+
 ```
 # Generate SSH keys. Use the default file and empty passphrase for the keys.
 ssh-keygen
@@ -66,7 +68,7 @@ SSH will automatically try to authenticate with the .ssh/id_rsa key so you shoul
 > **Note:** The security of public key authentication depends on the private key remaining secret. It should never be shared and the file permission should only readable by the owner.
 
 #### Tips and Tricks
-You may need to log into different hosts with different user names and keys. You can specify these as SSH arguments `ssh <USER>@<HOST_NAME> -i PUBLIC_KEY_FILE` but it can be this inconvenient. You can use the SSH config file to set defaults for different hosts so you don't need to type out the same arguments over and over.
+You may need to log into different hosts with different user names and keys. You can specify these as SSH arguments `ssh <USER>@<HOST_NAME> -i PRIVATE_KEY_FILE` but it can be this inconvenient. You can use the SSH config file to set defaults for different hosts so you don't need to type out the same arguments over and over.
 
 
 ```
