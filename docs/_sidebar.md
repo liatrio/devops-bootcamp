@@ -4,6 +4,7 @@
 - [1 - Introduction to DevOps](1-introduction/overview.md)
   - [1.1 - DevOps Defined](1-introduction/devops-defined.md)
   - [1.2 - Liatrio and DevOps](1-introduction/liatrio-and-devops.md)
+    - [1.2.1 Dojo](1-introduction/dojo.md)
   - [1.3 - The Basics](1-introduction/basics.md)
     - [1.3.1 - Unix Basics](1-introduction/basics-unix.md)
     - [1.3.2 - Vim](1-introduction/basics-vim.md)
