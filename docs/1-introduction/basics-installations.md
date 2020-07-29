@@ -10,7 +10,7 @@ If you are new to the terminal, feel free to run `vimtutor` and complete the exe
 ## Package Managers
  Linux distros use different package managers to search, install and maintain software.
 
- - REHL based distros, such as CentOS, use `yum`.
+ - RHEL based distros, such as CentOS, use `yum`.
  - Debian based distros, such as Ubuntu use `apt`.
  - Arch uses `pacman`.
  - Alpine uses `apk`.
