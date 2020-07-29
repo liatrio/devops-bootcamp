@@ -10,21 +10,19 @@ So far the tools we have looked at for building and running images are great for
 
 </center>
 
-#### Exercise 1: VMs the Easy Way
+#### Exercise 1: VMs the easy way
 
 1. [Install Vagrant](https://www.vagrantup.com/intro/getting-started/install).
 
-2. Create a new folder and make it your current directory.
+2. Create a new folder inside of it run `vagrant init centos/7`
 
-3. Run `vagrant init centos/7`
+3. Run `vagrant up`
 
-4. Run `vagrant up`
+    **Congratulations!!!** You have a new VM up and running!
 
-5. Run `vagrant ssh`
+4. Run `vagrant ssh` to access the new VM.
 
-  ... welcome to your new VM :)
-
-6. Exit out of the VM and run `vagrant destroy` to clean up.
+5. Exit out of the VM and run `vagrant destroy` to clean up.
 
 ## Vagrant
 
