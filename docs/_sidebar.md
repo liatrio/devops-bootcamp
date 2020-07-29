@@ -1,6 +1,7 @@
 <!-- docs/_sidebar.md -->
 
 - [Introduction](/)
+* **Chapter 1**
 - [1 - Introduction to DevOps](1-introduction/overview.md)
   - [1.1 - DevOps Defined](1-introduction/devops-defined.md)
   - [1.2 - Liatrio and DevOps](1-introduction/liatrio-and-devops.md)
@@ -12,18 +13,21 @@
     - [1.3.4 - Passwords and Keys](1-introduction/basics-passwords-and-keys.md)
     - [1.3.5 - Networking Basics](1-introduction/basics-networking.md)
   - [1.4 - External Resources](1-introduction/external-resources.md)
+* **Chapter 2**
 - [2.0 - Virtual Machines and Containers](2-virtual-machines-containers/overview.md)
   - [2.1 - Golden Images](2-virtual-machines-containers/golden-images.md)
   - [2.2 - Local Development](2-virtual-machines-containers/local-development.md)
   - [2.3 - Creating Infrastructure](2-virtual-machines-containers/creating-infrastructure.md)
   - [2.4 - Containers](2-virtual-machines-containers/containers.md)
   - [2.5 - Container Management](2-virtual-machines-containers/container-management.md)
+* **Chapter 3**
 - [3.0 - Development Practices](3/3.0-overview.md)
   - [3.1 - Version Control](3/3.1-version-control.md)
   - [3.2 - Git](3/3.2-git.md)
   - [3.3 - Pipelines and Strategy](3/3.3-pipelines-and-strategy.md)
   - [3.4 - Jira](3/3.4-jira.md)
   - [3.5 - Hello DevOps](3/3.5-hello-devops.md)
+* **Chapter 4**
 - [4.0 - Release Management](4/4.0-overview.md)
   - [4.1 - Maven](4/4.1-maven.md)
   - [4.2 - Versioning](4/4.2-versioning.md)
@@ -31,6 +35,7 @@
   - [4.4 - Maven Plugins](4/4.4-maven-plugins.md)
   - [4.5 - Releases](4/4.5-releases.md)
   - [4.6 - Npm](4/4.6-npm.md)
+* **Chapter 5**
 - [5.0 - System Administration](5/5.0-overview.md)
   - [5.1 - DevOps Tools](5/5.1-devops-tools.md)
   - [5.2 - Jenkins](5/5.2-jenkins.md)
@@ -42,6 +47,7 @@
   - [5.8 - SonarQube](5/5.8-sonarqube.md)
   - [5.9 - Artifactory](5/5.9-artifactory.md)
   - [5.10 - Docker Registry](5/5.10-docker-registry.md)
+* **Chapter 6**
 - [6.0 - Cloud Computing](6/6.0-overview.md)
   - [6.1 - Cloud Intro](6/6.1-cloud.md)
   - [6.2 - AWS](6/6.2-aws.md)
@@ -51,6 +57,7 @@
   - [6.6 - AWS with Packer](6/6.6-aws-packer.md)
   - [6.7 - ECS](6/6.7-ecs.md)
   - [6.8 - EKS](6/6.8-eks.md)
+* **Chapter 7**
 - [7.0 - Automation & Orchestration](7/7.0-overview.md)
   - [7.1 - Configuration Managers](7/7.1-configuration-managers.md)
   - [7.2 - Chef](7/7.2-chef.md)
