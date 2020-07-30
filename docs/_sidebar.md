@@ -18,10 +18,6 @@
 - [2.1 - Golden Images](2-virtual-machines-containers/golden-images.md)
 - [2.2 - Local Development](2-virtual-machines-containers/local-development.md)
 - [2.3 - Creating Infrastructure](2-virtual-machines-containers/creating-infrastructure.md)
-    * [Jenkins](2-virtual-machines-containers/jenkins.md)
-    * [Delivery Pipeline](2-virtual-machines-containers/delivery-pipeline.md)
-    * [Exercise](2-virtual-machines-containers/exercise-1.md)
-    * [Deliverables](2-virtual-machines-containers/deliverable-1.md)
 - [2.4 - Containers](2-virtual-machines-containers/containers.md)
 - [2.5 - Container Management](2-virtual-machines-containers/container-management.md)
 * **Chapter 3**

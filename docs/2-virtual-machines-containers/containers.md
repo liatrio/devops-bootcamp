@@ -2,17 +2,48 @@
 
 >&ldquo;Containers and virtual machines have similar resource isolation and allocation benefits, but function differently because containers virtualize the operating system instead of hardware. Containers are more portable and efficient.&rdquo;
 
-Read more from [Docker: What is a Container](https://www.docker.com/resources/what-container) to get a better understanding of containers and how they compare to virtual hosts.
-
 <center>
 
 ![](img2/containers.svg ':size=125px')
 
 </center>
 
+Containers allow you to easily package an application's code, configurations, and dependencies into easy to use building blocks. Containers can help ensure that applications deploy quickly, reliably, and consistently regardless of deployment environment. This enables the following benefits:
+
+- **Developer Productivity.** Containers enable engineers to run newly developed applications and services in the same infrastructure that their applications will run on in production. This creates a faster feedback loop for engineers about application changes.
+
+- **Environmental Consistency & Versioning.** Container images are a point in time capture of an application's code, configuration, and dependencies. These images are able to be versioned per build, and each artifact is considered immutable. Deployments are represented as code, tagged, and versioned for auditability and clarity.
+
+- **Operational Efficiency.** Being able to build, test, ship, and run the exact same container idempotently through all stages of the Software Delivery Life Cycle makes delivering a high quality, reliable application considerably easier. Continuous Integration servers can run the same container artifact through multiple stages, including integration tests, static code scanning, load testing, and functional testing, all to make sure the artifact passes known quality gates.
+
+- **Resource Density.** Containers maximize the hardware by allowing multiple processes to run on a single piece of hardware, or a logical cluster of hardware. Efficiency is a result of the isolation and allocation techniques that managed container services use. This allows for better projected utilization costs, as well as capacity planning for existing and future scaling for traffic needs, and experimentation without costly environment spin-up.
+
+## Containers vs Virtual Machines
+
+<center>
+
+![](img2/delivery-containers-evolution.png)
+
+</center>
+
+The picture above represents the progression that has happened over the last 15 years in the industry for deploying applications. In the beginning, apps were deployed to their own physical hosts, each with their own operating system.
+
+Then, Virtual Machines (VMs) were introduced; that allowed for slightly higher process density per physical host, and some logical grouping of applications to be done.
+
+In the third progression, containers are introduced into the flow. Containers are a smaller form of a VM that only contains the application code and it's necessary dependencies to run. This progression of technology has led to greater flexibility and scalability.
+
+## Containers in Production
+Some people have the mistaken idea that containers is only for development and testing, but there are thousands of companies running in production with containers on Kubernetes and OpenShift. The image is meant to be immutable, meaning it will be identical no matter where it is deployed, whether it is in development or production hardware. Every iteration of a container will deploy the same way on top of the orchestrator.
+
+Read more from [Docker: What is a Container](https://www.docker.com/resources/what-container) to get a better understanding of containers and how they compare to virtual hosts.
+
+
 ## Docker
 
-Docker is a platform to create, run and manage containers and container resources (images, networks and data volumes). It consists of a server, a REST API and a CLI client to interact with the API.
+>&ldquo;Docker is a platform to create, run and manage containers and container resources (images, networks and data volumes). It consists of a server, a REST API and a CLI client to interact with the API.&rdquo;
+
+Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package. Immutable Docker images are created from a defined `Dockerfile`.
+
 
 Install [Docker](https://docs.docker.com/install)
 
@@ -22,8 +53,7 @@ Install [Docker](https://docs.docker.com/install)
 
 </center>
 
-> ### Note
-Docker Desktop on OSX limits the amount of resources containers can use by default. If you experience performance issues with resource intensive containers make sure to increase the resources available. `Docker Desktop icon` -> `Preferences` -> `Advanced`
+?>Docker Desktop on OSX limits the amount of resources containers can use by default. If you experience performance issues with resource intensive containers make sure to increase the resources available. `Docker Desktop icon` -> `Preferences` -> `Advanced`
 
 ### Images and Containers
 >&ldquo;An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.&rdquo; - [Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)
