@@ -17,7 +17,7 @@
 - [2.0 - Virtual Machines and Containers](2-virtual-machines-containers/overview.md)
 - [2.1 - Golden Images](2-virtual-machines-containers/golden-images.md)
 - [2.2 - Local Development](2-virtual-machines-containers/local-development.md)
-- [2.3 - Creating Infrastructure](2-virtual-machines-containers/creating-infrastructure.md)
+- [2.3 - Managing Infrastructure](2-virtual-machines-containers/managing-infrastructure.md)
 - [2.4 - Containers](2-virtual-machines-containers/containers.md)
 - [2.5 - Container Management](2-virtual-machines-containers/container-management.md)
 * **Chapter 3**
