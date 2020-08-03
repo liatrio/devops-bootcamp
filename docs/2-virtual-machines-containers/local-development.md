@@ -60,7 +60,7 @@ In this exercise you will use the Vagrant Post-Processor to build a Vagrant Box 
     - install dependencies needed for VirtualBox Guest Additions
     - install Guest Additions
 
-3. Add a [Vagrant post-processor](https://www.packer.io/docs/templates/post-processors) to your Packer build template. 
+3. Add a [Vagrant post-processor](https://www.packer.io/docs/templates/post-processors) to your Packer build template. Configure it to output both a VirtualBox image and a Vagrant box.
 
 
 # Deliverable
