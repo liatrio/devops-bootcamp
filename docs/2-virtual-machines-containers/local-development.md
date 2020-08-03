@@ -48,9 +48,20 @@ You may have noticed some similarities between Packer and Vagrant. They both mak
 
 In this exercise you will use the Vagrant Post-Processor to build a Vagrant Box using the Packer template you created in the previous section.
 
-![](../img/under_construction.png ':size=200px') 
+1. Modify your [kickstart file](https://docs.centos.org/en-US/centos/install-guide/Kickstart2/) to automate the install of CentOS and meet Vagrant's requirements.
 
-!> This exercise needs steps to be added.
+    - allow `vagrant` user to have password-less sudo
+    - `UseDNS no` (optional)
+    - update the CentOS packages and kernel
+
+2. Use Packer provisioners to finish setting up the system.
+
+    - install Vagrant [insecure key pair](https://github.com/hashicorp/vagrant/tree/master/keys) for `vagrant` user
+    - install dependencies needed for VirtualBox Guest Additions
+    - install Guest Additions
+
+3. Add a [Vagrant post-processor](https://www.packer.io/docs/templates/post-processors) to your Packer build template. Configure it to output both a VirtualBox image and a Vagrant box.
+
 
 # Deliverable
 
