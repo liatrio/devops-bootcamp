@@ -42,10 +42,7 @@ Read more from [Docker: What is a Container](https://www.docker.com/resources/wh
 
 >&ldquo;Docker is a platform to create, run and manage containers and container resources (images, networks and data volumes). It consists of a server, a REST API and a CLI client to interact with the API.&rdquo;
 
-Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package. Immutable Docker images are created from a defined `Dockerfile`.
-
-
-Install [Docker](https://docs.docker.com/install)
+Docker is often used synonymously with containers but is actually a platform for using containers. Similar to how Java has development and runtime environments created by different organizations, there are many [other platforms for containers](https://jfrog.com/knowledge-base/6-alternatives-to-docker-all-in-one-solutions-and-standalone-container-tools/) however Docker is by far the the most widely adopted container platform.
 
 <center>
 
@@ -53,7 +50,61 @@ Install [Docker](https://docs.docker.com/install)
 
 </center>
 
+## Images and Containers
+>&ldquo;An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.&rdquo; - [Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)
+
+>&ldquo;A container is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with state, or a user process).&rdquo; - [Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)
+
+Images are the building blocks of Docker. They define what is in a container. They can be used by other images to extended extend their functionality. Images can also be shared across hosts.
+
+# Running Containers
+
+Install [Docker](https://docs.docker.com/install) and run the [hello world container](https://hub.docker.com/_/hello-world) `docker run hello-world`
+
+This deceptively simple command actually does a lot which is explained by the output of the container.
+
+If the Docker image hello-world does not exist in the local image repository it downloads it from Docker Hub and adds it to the local repository. You can use `docker image ls` to list the locally installed images. You will see the hello-world image in this list. You can download or update an image directly with `docker pull <IMAGE NAME>`.
+
+Once the hello-world image is available it creates and runs a container from the image. Images define the default command that is run when the container is started. When the command exits the container stops. You can list running and stopped containers with `docker container ls -a`.
+
+Note that it has automatically generated a name for the container since we did not specify one. What happens to the images and containers if you run `docker run hello-world` again?
+
+### Cleaning Up
+
+Remove the stopped hello world containers with `docker rm CONTAINER_ID|NAME`.
+
+Remove the hello world image with `docker image rm IMAGE_ID|NAME`.
+
 ?>Docker Desktop on OSX limits the amount of resources containers can use by default. If you experience performance issues with resource intensive containers make sure to increase the resources available. `Docker Desktop icon` -> `Preferences` -> `Advanced`
+
+# Building Images
+
+Docker images are built by defining a set of steps to create the image in a [Dockerfile](https://docs.docker.com/engine/reference/builder/). Each step begins with a single word instruction, which are uppercase by convention, followed by arguments all on the same line. The image is then built by running `docker build PATH_TO_DOCKERFILE`.
+
+## Base Images
+A base image is the image that is used to create all of your container images. It is referenced using the `FROM` instruction in a Dockerfile. A proper implementation of base images improves maintainability of your images. Your base image can be an [official Docker image](https://docs.docker.com/docker-hub/official_images/), such as Centos, or you can modify an official Docker image to suit your needs, or you can create your own base image from [scratch](https://hub.docker.com/_/scratch). When building images, there are a few things to consider in regards to the base image from which to build from.
+
+### Use official images
+Where possible, use [official images](https://hub.docker.com/search?q=&type=image&image_filter=official) from [Docker Hub](https://hub.docker.com/) rather than installing tools manually. For example, the following Dockerfile is installing Java.
+
+    ## Don't do this
+    FROM centos:centos6 
+    RUN yum install java-1.7.0-openjdk-devel -y
+
+    ## Better
+    FROM openjdk 
+
+### Tag specific base image versions 
+If you omit the tag on the `FROM` line, you will end up with the latest tag. This can result in inconsistencies in the image that is built as the latest tag can change between times when the image is built. Therefore, be sure to always include a tag to pin to a specific upstream image.
+
+    ## Don't do this
+    FROM openjdk
+
+    ## Better
+    FROM openjdk:7
+
+### Use specialized images
+Container images, especially base images, should be specialized for a specific purpose and not contain any unnecessary packages or tools. Even small tools that you might normally consider essential or innocuous such as text editors, debugging tools or network diagnostic tools should be avoided. Adding unnecessary tools not only increases the size of the image it increases the attack surface of container which could introduce a security vulnerability.
 
 ## Layers
 A Docker image consists of read-only layers each of which represents a Dockerfile instruction. The layers are stacked and each one is a delta of the changes from the previous layer. Care must be taken when designing a Dockerfile to optimize both the time it takes to build the image as well as the size of the image that is created.
@@ -74,7 +125,7 @@ Downloading dependencies for an application can be an expensive operation. You c
     COPY build.gradle gradle.properties settings.gradle
     RUN gradle build
 
-# Multi-stage builds
+## Multi-stage builds
 One of the most challenging things about building images is keeping the image size down. Each instruction in the Dockerfile adds a layer to the image, and you need to remember to clean up any artifacts you don’t need before moving on to the next layer. With multi-stage builds, you use multiple `FROM` statements in your Dockerfile. Each `FROM` instruction can use a different base, and each of them begins a new stage of the build. You can selectively copy artifacts from one stage to another, leaving behind everything you don’t want in the final image.
 
 ### Build from source
@@ -98,70 +149,22 @@ The concern with running the build within your Dockerfile is the additional spac
     FROM ubuntu as runner
     COPY --from=builder /app/dist/web-app-1.0.1.BUILD.war app/webapps/web-app.war
 
-# Base Images
-A base image is the image that is used to create all of your container images. A proper implementation of base images improve maintainability of your images. Your base image can be an [official Docker image](https://docs.docker.com/docker-hub/official_images/), such as Centos, or you can modify an official Docker image to suit your needs, or you can create your own base image from [scratch](https://hub.docker.com/_/scratch). When building images, there are a few things to consider in regards to the base image from which to build from.
-
-## Use official images
-Where possible, use [official images](https://hub.docker.com/search?q=&type=image&image_filter=official) from [Docker Hub](https://hub.docker.com/) rather than installing tools manually. For example, the following Dockerfile is installing Java.
-
-    ## Don't do this
-    FROM centos:centos6 
-    RUN yum install java-1.7.0-openjdk-devel -y
-
-    ## Better
-    FROM openjdk 
-
-### Dockerhub
-
-[Dockerhub](https://hub.docker.com/) is an online docker image registry where users can upload their ready-built images, or pull down images uploaded by the docker community. Similarly to atlas for Vagrant boxes, dockerhub is driven by its users. If there isn't an image available with the features you want, you can make one and upload it yourself.
-
-## Use specific tags
-If you omit the tag on the `FROM` line, you will end up with the latest tag. This can result in inconsistencies in the image that is built as the latest tag can change between times when the image is built. Therefore, be sure to always include a tag to pin to a specific upstream image.
-
-    FROM openjdk:7
-
 ## Processes
-The final step in the `Dockerfile` is the run the application using a process command. The recommendation is to separate areas of concern by using one process per container.
-
-?>Limit the amount of processes running within the container.
+The final step in the `Dockerfile` is to run the application using a process command. The recommendation is to separate areas of concern by using **one process per container**.
 
 - **Simplicity** - Running multiple process within a container requires additional scripting within the container to coordinate the startup of each process.
 - **Reliability** - When all process for a container exit, the container orchestrator can automatically restart the container. If there is more than one process, and it exits, it is up to you to manage the restart of the process within the container rather than allowing the orchestrator to restart it.
 - **Scalability** - If one process requires additional capacity and triggers an auto scaling event, then all process within the container are also scaled.
+
 The recommendation is the exec form of the `ENTRYPOINT` instruction to run the one process:
 
     ENTRYPOINT ["java", "-jar", "/app.jar"]
 
-# Images and Containers
->&ldquo;An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.&rdquo; - [Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)
+## Dockerhub
 
->&ldquo;A container is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with state, or a user process).&rdquo; - [Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)
+[Dockerhub](https://hub.docker.com/) is an online docker image registry where users can upload their ready-built images, or pull down images uploaded by the docker community. Similarly to atlas for Vagrant boxes, dockerhub is driven by its users. If there isn't an image available with the features you want, you can make one and upload it yourself.
 
-Images are the base building blocks in Docker. They define what is in a containers. They can be used by other images to extended extend their functionality. Images can also be shared across hosts.
-
-### Running Containers
-
-Run the hello world container `docker run hello-world`
-
-This deceptively simple command actually does a lot which is explained by the output of the container.
-
-If the Docker image hello-world does not exist in the local image repository it downloads it from Docker Hub and adds it to the local repository. You can use `docker images` to list the locally installed images. You will see the hello-world image in this list. You can download or update an image without running a container with `docker pull <IMAGE NAME>`.
-
-Once the hello-world image is available it creates and runs a container based on the image. Images define the default command that is run when the container is started. When the command exists the container stops. You can list running and stopped containers with `docker ps -a`.
-
-Note that it has automatically generated a name for the container since we did not specify one. What happens to the images and containers if you run `docker run hello-world` again?
-
-
-
-### Building Custom Images
-
-A Dockerfile is a simple text file which defines how the image is built. The Dockerfile specifies a base image that is the starting point for the resulting image and a series of commands which create layers that are applied to the base image. After all of the layers are applied, the image is saved to your machine's local image registry.
-
-See [Docker: Define a container with Dockerfile](https://docs.docker.com/get-started/part2/#define-a-container-with-dockerfile) for an example Dockerfile.
-
-To build an image run `docker build -t IMAGE_NAME .` in the same directory as the Dockerfile.
-
-### Best Practices
+# Best Practices
 
 The following best practices are part of a philosophy for containers which make them scale horizontally easier, be more reusable and deploy quicker.
 
@@ -170,17 +173,39 @@ The following best practices are part of a philosophy for containers which make 
 
 See [Docker: Dockerfile Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) for more best practices regarding performance and optimization.
 
-### Cleaning Up
-
-You can remove stopped containers with `docker rm CONTAINER_ID|NAME`.
-
-You can remove images which do not have any containers with `docker image rm IMAGE_ID|NAME`.
-
 # Exercise
 
-Create a Jenkins and Nexus container from custom images similar to the virtual machines you created using VirtialBox and configure them to deploy spring-petclinic from Jenkins to Nexus.
+Create a Jenkins and Artifactory Docker image similar to the virtual machines you created using VirtialBox.
+
+1. Create a `Dockerfile` in a new folder
+
+2. Add the `FROM` instruction to use [Alpine Linux](https://hub.docker.com/_/alpine) as the base image.
+
+3. Install Jenkins and any necessary dependencies.
+
+?> You will use the `RUN` instruction for most of these steps but you should also familiarize yourself with other Dockerfile instructions.
+
+4. `EXPOSE` the Jenkins web UI port.
+
+5. Add a non privileged user.
+
+6. Add an `ENTRYPOINT` instruction to run Jenkins as the non privileged user.
+
+7. Build the image and run the container. Verify you can access the Jenkins web UI.
+
+?> You will need to play with some of the `docker run` arguments so you can access the UI locally.
+
+Repeat the steps for Artifactory.
 
 # Deliverable
+
+Understand the basic concepts of containers.
+
+Be familiar with the Dockerfile instructions used to build an image.
+
+Understand the best practices for Docker images and containers.
+
+Discuss the differences between running `vagrant init ubuntu/bionic64 && vagrant up && vagrant ssh` and `docker run -it ubuntu:bionic bash`
 
 Discuss the advantages / disadvantages of using containers vs. virtual machines.
 
