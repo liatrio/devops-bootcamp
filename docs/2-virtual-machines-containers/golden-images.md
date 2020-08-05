@@ -40,7 +40,7 @@ Golden images can be a critical part of a very important strategy for managing s
 
 ## Automation
 
-You should now be familiar with the process for creating a Golden Image with VirtualBox. Imagine that security updates needed to be kept up to day in the Golden Image. You could repeat the steps from the first exercise to manually create a new image but doing so every time a security patch is released could be time consuming and error prone. 
+You should now be familiar with the process for creating a Golden Image with VirtualBox. Imagine that security updates needed to be kept up to date in the Golden Image. You could repeat the steps from the first exercise to manually create a new image but doing so every time a security patch is released could be time consuming and error prone.
 
 This kind of repetitive work is often referred to as toil. Reducing toil from various roles in software delivery (developers, operations, SRE, etc) through automation is an important part of DevOps transformations.
 
