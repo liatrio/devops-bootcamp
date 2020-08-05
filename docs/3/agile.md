@@ -6,7 +6,7 @@ The Agile mindset is focused on collaboration and the ability to adapt to change
 
 >Users don't know what they want until they see working software. - Humphrey's Law
 
-# Software delivery lifecycle
+## Software delivery lifecycle
 Traditionally, software development would endure long release cycles under a siloed process. In iterative delivery, these phases are reduced to smaller cycles with increased feedback loops.
 
 SDLC tools are used to manage this work from a large portfolio level down to the team and individual level using tickets and boards with powerful integrations across the toolchain.
@@ -14,7 +14,7 @@ SDLC tools are used to manage this work from a large portfolio level down to the
 ## Agile frameworks
 Within Agile, there are many different frameworks, each approaching work, team composition, and cadence differently. The most popuar are Kanban and Scrum, each approaching work and cadence separately with a similar goal of swarming, iterating, and collaborating.
 
-# Scrum
+## Scrum
 Scrum is an agile framework for developing, delivering, and sustaining complex products. It is designed for teams of ten or fewer members (two pizza teams), who break their work into goals that can be completed within timeboxed iterations, called sprints, no longer than one month and most commonly two weeks. The scrum team track progress in time-boxed daily scrum meetings or stand-ups. At the end of the sprint, the team holds sprint review, to demonstrate the work done, and sprint retrospective to continuously improve. (source1, source2)
 
 Scrum emphasizes collaboration around breaking goals into timeboxed intervals. Important metrics are sprint burndown, release burnup, and velocity.
@@ -25,10 +25,10 @@ Scrum emphasizes collaboration around breaking goals into timeboxed intervals. I
 - Does not support continuous deployment as release would not occur mid-sprint
 - Encourages continuous improvement through reviews and retrospectives after each sprint
 
-# Sprint Cadence
+## Sprint Cadence
 Scrum breaks work into timeboxed sprints. Generally sprints are one or two weeks, and should not be longer than two weeks. Shorter sprints provide more feedback which amplifies the team's learnings and guides better iterative delivery. Each sprint should have a 1-2 sentence goal describing a quick and easy statement for stakeholders to read and understand what the team is working on.
 
-# Team Composition
+## Team Composition
 Product teams work in a way where the delivery team agrees to deliver on a promise. Together, they have the responsibility to fullfil that promise, but how they organize in a way to execute on that promise is up to them.
 
 ![](img3/agile-scrum.svg)
@@ -58,7 +58,7 @@ The product owner should not only understand the customer, but also have a visio
 ## Scrum master: holding it all together
 Some teams may have a **scrum master** who is responsible for gluing everything together and ensuring that scrum is being done well. In practical terms, that means they help the product owner define value, the development team deliver the value, and the scrum team to get to get better.
 
-# Ceremonies
+## Ceremonies
 Establishing a base for team's ceremonies help create a rythym and cadence. Utilizing agile practices of the scrum framework, teams typically would have the follow the core ceremonies to ensure teams are aligned, focusing on high prioritized items, and support continuous learning efforts.
 
 ![](img3/agile-ceremonies.png)
@@ -91,7 +91,7 @@ Each day, the scrum team gathers to discuss the day's work. Although it can easi
 ## Sprint review
 As teams close out their sprint, they should dedicate an hour to conduct a demo and retrospective. This allows teams to showcase their work to one another and to stakeholders. Retros enable teams to consider what worked well and what did not work well, providing opportunities for ongoing learning and improvment.
 
-# Kanban
+## Kanban
 Kanban is a popular framework that focuses on consistent flow of work. Teams are able to leverage just-in-time principles by matching the amount of work in progress (WIP) to the team's capacity. This gives teams more flexible planning options, faster output, clearer focus, and transparency throughout the development cycle. It requires real-time communication of capacity and full transparency of work. Work items are represented visually on a kanban board, allowing team members to see the state of every piece of work at any time. (source)
 
 Rather than a presecriptive set of a team's cadence, kanban promotes constant flow and manages work by consider work-in-progress limits. Important measures on a team is throughput, lead time, and cycle time.
@@ -115,7 +115,7 @@ In agile development, work in progress (WIP) limits set the maximum amount of wo
 
 4. Protect a sustainable engineering culture. Work in progress limits do not mean developers need to rush through work to avoid work overload in a particular status. They are meant to support solid agile engineering practices that protect the quality of the product and health of the code base.
 
-# Workflow
+## Workflow
 Agile is focused on iterative delivery. This impacts how a team break downs their work and manages their work through the software development lifeycle. SDLC tools help manage this work.
 
 ![](img3/agile-kanban.png)
@@ -137,7 +137,7 @@ In agile, stories from the basis of work items. Epics are a larger theme around 
 >Using WIP limits can help your team reduce multitasking and focus on finishing the work that matters most.<br><i>- Dominica DeGrandis</i>
 
 
-# Stories
+## Stories
 A user story is a promise to have a future conversation; it is not meant to document every aspect of the work, as you might in a series of traditional requirements statements. (source)
 
 In initial phases, user stories can be captured in various mediums, from documents to project management software to index cards. Ultimately, stories should be captured, tracked, and prioritized in the issue-tracking software.
@@ -173,7 +173,7 @@ Acceptance Criteria is a set of defined requirements that must be met in order t
 ## INVEST
 The acronym INVEST helps to remember a widely accepted set of criteria, or checklist, to assess the quality of a user story. If the story fails to meet one of these criteria, the team may want to reword or refine it further.[(source)](https://www.agilealliance.org/glossary/invest/)
 
-# Sizing
+## Sizing
 ![](img3/agile-points.jpg)
 
 When it comes to determining how much work can a team bring in during a sprint, teams need to have a common base understanding of the time, difficulty, or complexity of the story. Proper sizing enables the team to increase flow, minimize rework, and stablize velocity. **It is easier to determine the relative complexity of a task rather than figuring out how much time it requires.** 
@@ -189,7 +189,7 @@ Story pointing is an exercise that is completely relative to a team. Rather than
 
 ?>Stories points should continue getting smaller and able to be completed in a day. Pointing becomes a simpler task as teams mature and more knowledgeable about story splitting.
 
-# Fibonacci technique
+## Fibonacci technique
 ![](img3/agile-fib.png)
 People estimate stories with smaller points more accurately than stories with higher points. As the numbers increase, the difference between two succeeding numbers increases exponentially and leads to less accurate estimates. This is intentional, as most stories are often more complex than we realize. [(source)](https://en.wikipedia.org/wiki/Fibonacci_scale_(agile))
 
