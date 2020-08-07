@@ -6,7 +6,7 @@ So far the tools we have looked at for building and running images are great for
 
 <center>
 
-  ![](img2/config.svg ':size=125px')
+  ![](img2/developer.svg ':size=125px')
 
 </center>
 

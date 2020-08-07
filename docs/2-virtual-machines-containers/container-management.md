@@ -42,7 +42,7 @@ Kubernetes is declarative by design. When you want to change something in the cl
 
 <center>
 
-![](img2/delivery-k8s-design.png)
+![](img2/scenes-from-kubernetes-page1.svg ':size=600px')
 
 </center>
 
