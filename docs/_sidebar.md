@@ -22,11 +22,12 @@
 - [2.5 - Container Management](2-virtual-machines-containers/container-management.md)
 * **Chapter 3**
 - [3.0 - Development Practices](3/overview.md)
-- [3.1 - Version Control](3/version-control.md)
-- [3.2 - Git](3/git.md)
-- [3.3 - Pipelines and Strategy](3/pipelines-and-strategy.md)
-- [3.4 - Jira](3/jira.md)
-- [3.5 - Hello DevOps](3/hello-devops.md)
+- [3.1 - Agile](3/agile.md)
+- [3.2 - Version Control](3/version-control.md)
+- [3.3 - Git](3/git.md)
+- [3.4 - Pipelines and Strategy](3/3.3-pipelines-and-strategy.md)
+- [3.5 - Jira](3/jira.md)
+- [3.6 - Hello DevOps](3/hello-devops.md)
 * **Chapter 4**
 - [4.0 - Release Management](4/overview.md)
 - [4.1 - Maven](4/maven.md)
