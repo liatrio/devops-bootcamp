@@ -38,7 +38,7 @@ At Liatrio, we're always sharing fun or informative learning resources we come a
 
 <center>
 
-  ![](img1/books.svg ':size=125px')
+  ![](img1/playbook.svg ':size=125px')
 
 </center>
 
