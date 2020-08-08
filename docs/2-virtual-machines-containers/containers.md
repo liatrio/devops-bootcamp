@@ -22,7 +22,7 @@ Containers allow you to easily package an application's code, configurations, an
 
 <center>
 
-![](img2/delivery-containers-evolution.png)
+![](img2/delivery-containers-evolution.svg)
 
 </center>
 
