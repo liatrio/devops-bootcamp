@@ -59,7 +59,7 @@ Follow this [documentation](https://www.atlassian.com/software/jira/guides/getti
 
 <center>
 
-  ![](img3/speaker.svg ':size=125px')
+  ![](img3/ticket.svg ':size=125px')
 
 </center>
 
