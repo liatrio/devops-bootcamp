@@ -1,4 +1,4 @@
-# 3.0 Development Practices
+# 3.0 Software Development Practices
 
 ## Chapter Goals
  1. Learn what the life of a developer is like.
