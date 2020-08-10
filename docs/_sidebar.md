@@ -20,6 +20,9 @@
 - [2.3 - Managing Infrastructure](2-virtual-machines-containers/managing-infrastructure.md)
 - [2.4 - Containers](2-virtual-machines-containers/containers.md)
 - [2.5 - Container Management](2-virtual-machines-containers/container-management.md)
+  - [2.5.1 - Docker Compose](2-virtual-machines-containers/container-management_docker-compose.md)
+  - [2.5.2 - Kubernetes](2-virtual-machines-containers/container-management_kubernetes.md)
+  - [2.5.3 - Deliverables](2-virtual-machines-containers/container-management_deliverables.md)
 * **Chapter 3**
 - [3.0 - Development Practices](3/overview.md)
 - [3.1 - Agile](3/agile.md)
