@@ -7,7 +7,7 @@ In this section you will be taking what you've learned about virtual machines to
 
 <center>
 
-  ![](img2/jenkins.png ':size=125px')
+  ![](img2/jenkins.svg ':size=125px')
 
 </center>
 
@@ -20,7 +20,12 @@ In this section you will be taking what you've learned about virtual machines to
   Artifactory is a versioned artifact repository. It is used to store multiple versions of different packages and supports different repository types (Maven, npm, docker, etc). It is scalable and integrates with lots of other software delivery tools.
 
 ## Delivery Pipeline
-  ![](img2/delivery-pipeline-stages-1.png)
+
+<center>
+
+  ![](img2/delivery-pipeline-stages.svg)
+
+</center>
 
   Automated delivery pipelines accelerate software delivery and enable faster, safer deployments.
   An entire integrated toolchain is necessary to leverage the capabilities of an automated pipeline, orchestrated by a build server. Newly committed code that is pushed to the git server will send a Webhooks to the build servers to trigger tasks. General stages of a delivery pipeline include:

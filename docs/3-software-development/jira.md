@@ -4,7 +4,7 @@ Jira is an agile project management tool focused on providing visibility to your
 
 <center>
 
-  ![](img3/jira.png)
+  ![](img3/jira.svg)
 
 </center>
 
