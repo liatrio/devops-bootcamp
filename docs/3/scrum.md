@@ -9,10 +9,10 @@ Scrum emphasizes collaboration around breaking goals into timeboxed intervals. I
 - Does not support continuous deployment as release would not occur mid-sprint
 - Encourages continuous improvement through reviews and retrospectives after each sprint
 
-## Sprint Cadence
+# Sprint Cadence
 Scrum breaks work into timeboxed sprints. Generally sprints are one or two weeks, and should not be longer than two weeks. Shorter sprints provide more feedback which amplifies the team's learnings and guides better iterative delivery. Each sprint should have a 1-2 sentence goal describing a quick and easy statement for stakeholders to read and understand what the team is working on.
 
-## Team Composition
+# Team Composition
 Product teams work in a way where the delivery team agrees to deliver on a promise. Together, they have the responsibility to fullfil that promise, but how they organize in a way to execute on that promise is up to them.
 
 ![](img3/agile-scrum.svg)
@@ -42,7 +42,7 @@ The product owner should not only understand the customer, but also have a visio
 ### Scrum master: holding it all together
 Some teams may have a **scrum master** who is responsible for gluing everything together and ensuring that scrum is being done well. In practical terms, that means they help the product owner define value, the development team deliver the value, and the scrum team to get to get better.
 
-## Ceremonies
+# Ceremonies
 Establishing a base for team's ceremonies help create a rythym and cadence. Utilizing agile practices of the scrum framework, teams typically would have the follow the core ceremonies to ensure teams are aligned, focusing on high prioritized items, and support continuous learning efforts.
 
 ![](img3/agile-ceremonies.png)
