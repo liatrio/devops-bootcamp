@@ -1,3 +1,28 @@
+# Git
+
+Git is one of the most popular version control softwares available, and the one used at
+Liatrio. Git can be used with only local repositories, but it can also be
+used alongside remote git repositories, such as ones hosted by GitHub,
+Bitbucket, and GitLab. Git is fully distributed, and every repository,
+including local repositories contain full history and tracking abilities.
+
+### Common Git Commands
+
+| Command        | Description                                                                                                    |
+|----------------|----------------------------------------------------------------------------------------------------------------|
+|   `git init`   | Initializes a new local git repository                                                                         |
+|   `git clone`  | Creates a local git repository copied from a remote                                                            |
+|    `git add`   | Stages new local changes to be committed                                                                       |
+|  `git commit`  | Commits staged changes into git history                                                                        |
+|   `git push`   | Pushes local commits to a remote repository                                                                    |
+|   `git pull`   | Pulls new commits from a remote repository and merges them with a local copy                                   |
+|  `git branch`  | Provides information about different development branches                                                      |
+| `git checkout` | Changes the state of HEAD to a different branch or commit                                                      |
+|  `git status`  | Displays current information about the state of your git repository                                            |
+|    `git log`   | Displays git's commit history                                                                                  |
+|   `git reset`  | Resets git history to the state of a previous commit, permanently changing history                             |
+|  `git rebase`  | Appends a git branch onto another branch or commit, permanently changing history |
+
 # Merge Conflicts
 
 1. Clone your new repository to your local machine.
@@ -21,26 +46,6 @@ those lines should be deleted.
 
 When you're done resolving the conflict in which ever way you prefer, commit
 the updated file, and push them to GitHub.
-
-# Pull Requests
-
-1. In your repository make a new branch and switch to it with
-`git checkout -b my_new_branch`.
-2. Make some changes to files on this branch.
-3. Push your changes to the remote branch with `git push origin my_new_branch`.
-
-Now you're ready to submit a pull request. A pull request, or PR, is a request
-for others to pull in your work into their own repository. Pull requests aren't
-a built in feature of git, rather they are a functionality of GitHub.
-
-If you navigate to your repository on GitHub, and your pull request tab, you
-can create a new pull request. Choose to compare your new branch with a base
-of master. Once you submit the pull request you'll have the option to request
-reviews from your peers and have an area for discussions about the branch.
-
-Once the pull request is acceptable, it can be merged into master. In some
-cases different options can be made to restrict merging, such as requiring
-peer review, or unit testing.
 
 # Commit Reversals
 
