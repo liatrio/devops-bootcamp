@@ -99,23 +99,6 @@ Jira refers to tickets as *issues.* Although there are various ticket types out 
    - Commit message format: <ticket> <commit message>
    - Example: THEIA-107 updated /theia directory path for easier buildability
 
-## Two Main Frameworks of Agile 
-
-### Scrum 
-
-When to use **[Scrum](3/agile_scrum.md)**?
- - Product teams
- - Need to measure rate of progress by using fixed time-boxes
- - Track big release milestones & goals
-
-### Kanban
-
-When to use **[Kanban](3/agile_kanban.md)**?
- - Service teams
- - Tend to work as it comes up (continuous irregular inflow of work)
- - Planning is unimportant or irrelevant
- - Matured & self disciplined teams
-
-# Deliverable
+## Deliverable
 
 Discuss and understand how to create & maintain effective tickets and the Scrum & Kanban framework. 
