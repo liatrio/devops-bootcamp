@@ -38,7 +38,7 @@
   - [3.3.2 - GitHub](3/version-control_github.md)
   - [3.3.3 - Deliverables](3/version-control_deliverables.md)
 - [3.4 - Pair Programming](3/pair-programming.md)
-- [3.5 - Testing](3/testing.md)
+- [3.5 - Unit Testing](3/unit-testing.md)
 - [3.6 - Hello DevOps](3/hello-devops.md)
 * **Chapter 4**
 - [4.0 - Release Management](4/overview.md)
