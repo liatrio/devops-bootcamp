@@ -25,3 +25,12 @@
 .grid4 .col {
   width: 25%;
 }
+
+.img-left {
+  float: left;
+  margin: 5px 25px 10px 0
+}
+.img-right {
+  display: inline-block;
+  margin: 20px 0px 10px 25px
+}

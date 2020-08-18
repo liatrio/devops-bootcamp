@@ -1,13 +1,122 @@
+# Git
+
+Git is by far the most widely used version control system available. It manages source code and tracks changes in your repository. As a distributed version control system, Git allows engineers to work together to minimize friction, maximize flow, and provide simpler collaboration and version history.
+
+- changes are tracked as commits and contain messages, author, and timestamp
+- utilizes branches to allow for parallel development
+- ability to rewind to a previous point in time when necessary
+- maintains version history
+- secure and resistant to corruption
+
+All history and related **commmit** metadata is contained within a hidden `.git` folder.
+
+?>**What is a commit?** The `git commit` command captures a snapshot of the project's changes. Committed snapshots can be thought of as “safe” versions of a project.
+
+
+### What does Git track?
+
+By default, Git will track everything in your working directory, including all files of all filetypes, folders and subfolders.
+
+- application code (source, test)
+- infrasture code (Configuration management, Dockerfiles)
+- configuration (pipeline scripts, environment properties)
+- metadata (READMEs, manifests)
+
+?> Everything that requires your application to run should be stored, tracked, and versioned in Git
+
+Although Git can watch everything in your working directory, not everything on your local machine should be stored in Git.
+- built artifacts and test results
+- binaries
+- local system properties from IDE
+- secrets, passwords, and other security-sensitive data
+
+?>Add a list of files or folders in `.gitignore` to instruct Git to not track changes.
+
+### Common Git Commands
+
+| Command        | Description                                                                                                    |
+|----------------|----------------------------------------------------------------------------------------------------------------|
+|   `git init`   | Initializes a new local Git repository                                                                         |
+|   `git clone`  | Creates a local Git repository copied from a remote                                                            |
+|    `git add`   | Stages local changes to be committed                                                                       |
+|  `git commit`  | Commits staged changes into Git history                                                                        |
+|  `git fetch`   | Synchronizes information about a remote repository    |
+|   `git push`   | Pushes local commits to a remote repository                                                                    |
+|   `git pull`   | Pulls commits from a remote repository and merges them with a local copy                                   |
+|  `git branch`  | Provides information about different branches                                                      |
+| `git checkout` | Changes the state of HEAD to a different branch or commit                                                      |
+|  `git status`  | Displays current information about the state of your Git repository                                            |
+|    `git log`   | Displays Git's commit history                                                                                  |
+|   `git reset`  | Resets Git history to the state of a previous commit, permanently changing history                             |
+|  `git rebase`  | Appends a Git branch onto another branch or commit, permanently changing history |
+
+# The Basics
+
+### Creating repositories
+
+To create a new repository run `git init REPOSITORY_NAME`. This will create a folder with your repository name and initialize it as an empty repository. If you want to make a local copy of an existing repository you can use `git clone REPOSITORY_LOCATION`. This will create a folder with the repository name and copy the current state of the repository into it.
+
+?> If you use `git init` with an existing folder it will initialize the repository in that folder but you will still need to add and commit any existing files you want in the repository.
+
+?> When you clone a repository it keeps track of where you cloned it from by creating a *remote* reference called `origin`.
+
+### Changing Files in Git
+
+There are three states of changed files within Git. Newly created files will be labeled as *untracked*, whereas changed files that Git has been already tracking will be either in an *unstaged* or *staged* state.
+
+1. Untracked - new file is not watched by Git
+2. Unstaged - file is modified but not added to staging
+3. Staged - file is modified, in staging, and ready to be committed
+
+At any point in time, use `git status` to see the state of changed files within Git. It will tell you which files are in which state and provide helpful color-coded guides, while provided instructions on what you can do next.
+
+<img src="img/git-changes.png" class="img-shadow" alt="Git Changes">
+
+The staging area is a temporary location in Git that allows you to continue making changes to the working directory. To add untracked files or unstaged changes to staging use `git add FILENAME`. When engineers are ready to attach their changes to version control, they will make a meaningful commit from the staging area using `git commit`, resulting in a clear, distinct moment in time reflecting a unique version. Remember that files must be added to the staging area before committing them.
+
+<img src="img/git-staging.png" class="img-shadow" alt="Git Staging">
+
+?> When adding files to staging you can specify a directory to add all new or changes files in that directory. Always use `git status` after adding a folder to avoid accidentally add hidden or unwanted files.
+
+?> Each commit requires a message which should concisely describe what is being changed. To avoid Git opening a text editor to add a message to the commit use the message argument in the command `git commit -m "COMMIT MESSAGE"`. 
+
+### Exercise 1: The Basics
+
+In this exercise you will get some practice with some Git basics by creating, cloning and adding changes to a local repository.
+
+1. Create a new repository with `git init my_repo`.
+
+2. Create a new file, add it to staging and commit it. Use `git status` to confirm the state of the file for each change. Use `git log` to see your commit.
+
+3. Run `git clone my_repo my_repo_clone` to make a copy of your repo. In `my_repo_clone` verify your changes are there and that `git log` matches your original repo.
+
+4. In `my_repo` commit another change. Return to `my_repo_clone` and run `git status`. Now run `git fetch` and `git status` again and compare the difference. Run `git pull` and verify you change is there.
+
+**Extra Credit:** Can you make a change in `my_repo_clone` and then *pull* that into `my_repo`? **Hint:** In `my_repo_clone` run `git remote -v`. What is this command telling you?
+
+# Branches
+
+![](../img/under_construction.png)
+
+### Developer Workflow & Git Lifecycle
+
+A typical developer workflow is centered around using Git. Using TBE principles, engineers create a branch tied to the work item, commit changes locally, and submit a pull request on the remote Git server.
+
+<p style="text-align:center">
+<img src="img/git-lifecycle.png" alt="Git Lifecycle" width="600px"/>
+</p>
+
 # Merge Conflicts
 
-1. Clone your new repository to your local machine.
-2. Add a file to the repository, and push your changes.
-3. Clone the repository again in a different location.
-4. In both locations edit the file in different ways and commit your changes.
-5. Push your changes from the first repository, and then pull in the second
-repository.
+Its important to try to avoid merge conflicts by merging often, keeping branches short lived and communicating with teammates but no matter how careful you are conflicts **WILL** happen. Luckily Git also helps you resolve these conflicts.
 
-We'll now created a problem, git doesn't know which version of the file is the
+### Exercise 2: Merge Conflicts
+
+1. In `my_repo` edit a file your created earlier and commit the change.
+2. In `my_repo_clone` edit the same file and commit the change.
+3. Run `git pull` to pull the change from `my_repo` into `my_repo_clone`
+
+We'll now created a problem, Git doesn't know which version of the file is the
 correct version to keep, generating a merge conflict. When viewing the file,
 you'll see both versions of the conflicting section surrounded by `<<<` and
 `>>>`. The two versions are separated in the center by `===`.
@@ -19,43 +128,27 @@ changes. In any case, the `<<<`, `>>>`, and `===` are simply markers to denote
 the end of each section of changes. Generally when resolving a merge conflict
 those lines should be deleted.
 
-When you're done resolving the conflict in which ever way you prefer, commit
-the updated file, and push them to GitHub.
-
-# Pull Requests
-
-1. In your repository make a new branch and switch to it with
-`git checkout -b my_new_branch`.
-2. Make some changes to files on this branch.
-3. Push your changes to the remote branch with `git push origin my_new_branch`.
-
-Now you're ready to submit a pull request. A pull request, or PR, is a request
-for others to pull in your work into their own repository. Pull requests aren't
-a built in feature of git, rather they are a functionality of GitHub.
-
-If you navigate to your repository on GitHub, and your pull request tab, you
-can create a new pull request. Choose to compare your new branch with a base
-of master. Once you submit the pull request you'll have the option to request
-reviews from your peers and have an area for discussions about the branch.
-
-Once the pull request is acceptable, it can be merged into master. In some
-cases different options can be made to restrict merging, such as requiring
-peer review, or unit testing.
-
 # Commit Reversals
 
-1. Add another file to your git repository, commit, and push it.
+NEVER, EVER, EVER, COMMIT A SECRET SUCH AS A PASSWORD, KEY TO TOKEN TO A GIT REPOSITORY!!! It doesn't matter if the repository is private or you don't think anyone will every look at it. DON'T DO IT!!! Even with that stern ALL CAPS warning, at some point in your carrier you will probably accidentally commit a secret to code. It's embarrassing but don't feel too bad, everyone has done it. 
+
+First off don't try to hide it. Be transparent and communicate with anyone that might be affected by what happened. Second, if possible, revoke whatever secret was exposed. This might be simple or very difficult or completely impossible. This is where being transparent about what happened is important because if you start revoking tokens or changing passwords chances are someone else is going to need to know. Third, remove the the secret from the repository and from Git history. Even if the secret is revoked this is still a good idea and will help repair your wounded image by demonstrating to your teammates that you do know how to use Git and that you do care about security and can be trusted with sensitive data.
+
+### Exercise 3: Removing secrets
+
+1. Add another file to your `my_repo_clone` repository. 
 2. Add some "sensitive content" to the file, such as a line "SENSITIVE INFO".
-3. Commit and push your file.
-4. Remove the sensitive data, and commit and push the changes.
+3. Commit and push your file. For this exercise we are pretending that `my_repo` is shared and could be accessed by someone else.
+4. Commit and push another change.
+5. Remove the sensitive data, and commit and push the changes.
 
 We have a problem here. Even though we removed the sensitive data from the
-file, git's history still has a record of those changes. We'll have to
-overwrite the git history, while also working to preserve the commits that
+file, Git's history still has a record of those changes. We'll have to
+overwrite the Git history, while also working to preserve the commits that
 didn't include any private data.
 
-## Option 1: git reset
-Using a git reset, we can get rid of any commits after a specific point. As long as we don't use reset --hard the files themselves will not be changed, only the git history will be impacted. This is a good option if the trouble commit is near or at the current head of our git repository. To undo a commit with reset:
+## Option 1: Git reset
+Using a Git reset, we can get rid of any commits after a specific point. As long as we don't use reset --hard the files themselves will not be changed, only the Git history will be impacted. This is a good option if the trouble commit is near or at the current head of our Git repository. To undo a commit with reset:
 
 1. Use `git log` to find the hash of the commit just before the credentials
 were added.
@@ -69,8 +162,8 @@ This is a simple and fairly easy approach, however it has the side effect of
 combining all commits after the error into one. The actual changes will be
 preserved, but each individual commit message will be lost.
 
-## Option 2: git rebase
-Using a git rebase, we can remove only a single commit, which is useful for a commit that is not near the head, or for keeping important commit messages. To rebase:
+## Option 2: Git rebase
+Using a Git rebase, we can remove only a single commit, which is useful for a commit that is not near the head, or for keeping important commit messages. To rebase:
 1. Get the hash value of the commit containing credentials.
 2. Start an interactive rebase on that commit `git rebase -i 1a2b3c4^` where
 1a2b3c4 are the first 7 characters of your hash and the last character is a '^'.
@@ -83,14 +176,17 @@ by removing the credentials wherever necessary.
 
 This is a more involved approach, but allows all commits and history to be preserved.
 
-These approaches both change git history, which will require a force push to propagate to the remote repository. Make sure you can force push, or ask an administrator to do it for you if necessary. Rewriting git history is a destructive process, and should only be carried out when necessary for security.
+These approaches both change Git history, which will require a force push to propagate to the remote repository. Make sure you can force push, or ask an administrator to do it for you if necessary. Rewriting Git history is a destructive process, and should only be carried out when necessary for security.
+
+# Git Alternatives
+
+While Git has become the de facto standard there are other version control systems you might encounter. Subversion (SVN) was very commonly used before Git came along and is sometimes used with older projects that have not been migrated to a newer VCS. An important distinction between Git and Subversion is that Subversion relies on a central repository while Git is distributed. Mercurial is a more modern alternative to Git which has similar features is well supported but not nearly as popular as Git.
 
 # Deliverable
 
+Be familiar with using git on the command line.
+
 Discuss what merge conflicts are and strategies to avoid them.
 
-Discuss the benefits and downsides of using pull requests to merge code within
-a project.
-
-Discuss the problems that can be caused by overwriting git history, and
+Discuss the problems that can be caused by overwriting Git history, and
 ways to mitigate the problems caused by it.
