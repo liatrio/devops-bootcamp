@@ -34,6 +34,16 @@ Acceptance Criteria is a set of defined requirements that must be met in order t
 ## INVEST
 The acronym INVEST helps to remember a widely accepted set of criteria, or checklist, to assess the quality of a user story. If the story fails to meet one of these criteria, the team may want to reword or refine it further.[(source)](https://www.agilealliance.org/glossary/invest/)
 
+| Characteristic | Guideline |
+| -- | -- |
+| **I**ndependent | Can it be delivered independently? |
+| **N**egotiable | Is it descriptive enough to support team debate and conversation? |
+| **V**aluable | Will it delivery customer or business value? |
+| **E**stimable | Is it clear or realistic enough that the team can provide an estimate? |
+| **S**mall | Can the team take the story to its definition of done by the end of the sprint? |
+| **T**estable | Does it clearly indicate when "good enough" has been reached? |
+
+
 ## Vertical slicing
 Traditionally, requirements were broken down to fit within an individual layer of an application's stack. To produce working software in agile interative development, teams should vertically slice stories in order to demonstrate progress across all the components in the project. This refers to a cross-sectional slice through the layers that form the structure of the software code base. (source)[https://en.wikipedia.org/wiki/Vertical_slice]
 
