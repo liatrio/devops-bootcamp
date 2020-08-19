@@ -96,7 +96,21 @@ In this exercise you will get some practice with some Git basics by creating, cl
 
 # Branches
 
-![](../img/under_construction.png)
+Branching allows you to diverge from the main line of development and continue to do work without messing with the main line. This work can then be merged back into the main line when it is ready.
+
+### Exercise 2: Branching & Merging
+
+1. In `my_repo`, create a new branch with `git branch BRANCH_NAME`. Run `git branch` to verify your new branch was created.
+
+2. Switch to your new branch using `git checkout BRANCH_NAME`.
+
+?>Alternatively, you can combine step 1. and step 2. by doing `git checkout -b BRANCH_NAME` to create and switch to the branch in one step.
+
+3. Create a new file or make changes to an existing file. Add and commit the changes. 
+
+4. `git checkout master` to switch back to the main branch. Verify that the changes from the new branch are not in the main branch. 
+
+5. Merge your changes using `git merge BRANCH_NAME`. Check that the changes made on the new branch are now on the main branch. Optionally, you can remove the new branch by using `git branch -d BRANCH_NAME`. 
 
 ### Developer Workflow & Git Lifecycle
 
@@ -110,7 +124,7 @@ A typical developer workflow is centered around using Git. Using TBE principles,
 
 Its important to try to avoid merge conflicts by merging often, keeping branches short lived and communicating with teammates but no matter how careful you are conflicts **WILL** happen. Luckily Git also helps you resolve these conflicts.
 
-### Exercise 2: Merge Conflicts
+### Exercise 3: Merge Conflicts
 
 1. In `my_repo` edit a file your created earlier and commit the change.
 2. In `my_repo_clone` edit the same file and commit the change.
@@ -132,9 +146,9 @@ those lines should be deleted.
 
 NEVER, EVER, EVER, COMMIT A SECRET SUCH AS A PASSWORD, KEY TO TOKEN TO A GIT REPOSITORY!!! It doesn't matter if the repository is private or you don't think anyone will every look at it. DON'T DO IT!!! Even with that stern ALL CAPS warning, at some point in your carrier you will probably accidentally commit a secret to code. It's embarrassing but don't feel too bad, everyone has done it. 
 
-First off don't try to hide it. Be transparent and communicate with anyone that might be affected by what happened. Second, if possible, revoke whatever secret was exposed. This might be simple or very difficult or completely impossible. This is where being transparent about what happened is important because if you start revoking tokens or changing passwords chances are someone else is going to need to know. Third, remove the the secret from the repository and from Git history. Even if the secret is revoked this is still a good idea and will help repair your wounded image by demonstrating to your teammates that you do know how to use Git and that you do care about security and can be trusted with sensitive data.
+First off don't try to hide it. Be transparent and communicate with anyone that might be affected by what happened. Second, if possible, revoke whatever secret was exposed. This might be simple or very difficult or completely impossible. This is where being transparent about what happened is important because if you start revoking tokens or changing passwords chances are someone else is going to need to know. Third, remove the secret from the repository and from Git history. Even if the secret is revoked this is still a good idea and will help repair your wounded image by demonstrating to your teammates that you do know how to use Git and that you do care about security and can be trusted with sensitive data.
 
-### Exercise 3: Removing secrets
+### Exercise 4: Removing secrets
 
 1. Add another file to your `my_repo_clone` repository. 
 2. Add some "sensitive content" to the file, such as a line "SENSITIVE INFO".

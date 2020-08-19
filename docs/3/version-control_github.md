@@ -61,7 +61,7 @@ GitHub is one of the most well known platforms for hosting and managing Git repo
 
 Be familiar with GitHub's features.
 
-Find addition examples to source repository solutions similar to GitHub and discuss the pros and cons of each.
+Find additional examples to source repository solutions similar to GitHub and discuss the pros and cons of each.
 
 Discuss the benefits and downsides of using pull requests to merge code within
 a project.
