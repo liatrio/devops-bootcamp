@@ -22,6 +22,8 @@ This exercise will build on the earlier container section by creating a Docker C
     
     - Creates volumes to persist application data on your local filesystem.
 
+?>Docker Compose [networking](https://docs.docker.com/compose/networking/) helps running services communicate by allowing each container to query other containers using the service name as the hostname.
+
 2. Run `docker-compose up` to create your environment and ensure you can access the application UIs.
 
 3. Configure a Jenkins job to build Spring Pet Clinic and deploy the artifact to Artifactory.
