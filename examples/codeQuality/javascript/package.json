@@ -1,0 +1,18 @@
+{
+  "name": "simple",
+  "version": "1.0.0",
+  "description": "A simple test",
+  "main": "simple.js",
+  "scripts": {
+    "test": "mocha ./simpleTest.js",
+    "coverage": "nyc --reporter=text npm run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nyc": "^15.1.0"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
+  }
+}
