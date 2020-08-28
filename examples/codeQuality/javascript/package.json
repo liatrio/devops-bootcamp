@@ -9,9 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nyc": "^15.1.0"
   },
   "dependencies": {
-    "chai": "^4.2.0"
   }
 }
