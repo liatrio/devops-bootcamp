@@ -4,7 +4,7 @@
 ## Exercise:
 You will be using Mocha and Istanbul to test the code coverage in the provided code. 
 
-[document](../../examples/codeQuality/javascript/simple.js ':include :type=code javascript')
+[document](https://raw.githubusercontent.com/PaulDHenson/devops-bootcamp/master/examples/codeQuality/javascript/simple.js ':include :type=code javascript')
 
 Please perform the following:
 

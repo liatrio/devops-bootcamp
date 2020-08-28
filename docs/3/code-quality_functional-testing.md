@@ -13,17 +13,19 @@ An example of a use-case for Selenium would be testing a web application’s log
 
 We will use Selenium and Python to run a couple functional tests on the bootcamp website. 
 
-Install a Selenium webdriver of your choice
-Firefox - brew install geckodriver
-Chrome - brew cask install chromedriver
-Safari - built in
-Install the Selenium Python bindings https://pypi.org/project/selenium/
+1. Install a Selenium webdriver of your choice
+    * Firefox - brew install geckodriver
+    * Chrome - brew cask install chromedriver
+    * Safari - built in
+2. Install the Selenium Python bindings https://pypi.org/project/selenium/
 
-Read through https://selenium-python.readthedocs.io/getting-started.html to get a brief introduction on how to use Selenium.
+    Read through https://selenium-python.readthedocs.io/getting-started.html to get a brief introduction on how to use Selenium.
 
-Use the starter code provided to test
-The link in the bottom right corner of the homepage takes you to this link https://devops-bootcamp.liatr.io/#/1-introduction/overview
-The sidebar toggle button properly hides the sidebar
+3. Use the starter code provided to test
+    * The link in the bottom right corner of the homepage takes you to this link https://devops-bootcamp.liatr.io/#/1-introduction/overview
+    * The sidebar toggle button properly hides the sidebar
+
+[document](https://raw.githubusercontent.com/PaulDHenson/devops-bootcamp/master/examples/codeQuality/selenium-frame.py ':include :type=code python')
 
 While these are fairly trivial functional tests, they serve to show in general how they differ from unit tests.
 
