@@ -4,8 +4,7 @@
   "description": "A simple test",
   "main": "simple.js",
   "scripts": {
-    "test": "mocha ./simpleTest.js",
-    "coverage": "nyc --reporter=text npm run test"
+    "test": "mocha ./simpleTest.js"
   },
   "author": "",
   "license": "ISC",
