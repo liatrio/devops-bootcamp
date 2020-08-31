@@ -15,13 +15,13 @@ The following code contains the unit tests that will be testing the javascript f
 
 Please perform the following:
 
-    * Install Node
-    * Install Mocha
-    * Install Chai
-    * Install Istanbul
+* Install Node
+* Install Mocha
+* Install Chai
+* Install Istanbul
     
 
-    Note: When installing Chai and Istanbul with the npm command, use the -D tag to install as a developer dependency.
+?>Note: When installing Chai and Istanbul with the npm command, use the -D tag to install as a developer dependency.
 
 The provided javascript package.json file will have everything you need in order to pass the mocha tests; however, you will need to add to the file in order to get Istanbul to check your coverage.
 
