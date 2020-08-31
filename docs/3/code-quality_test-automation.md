@@ -5,6 +5,9 @@ Automated Testing is a crucial step to ensure code quality because developed tes
 1. Locate the Jenkins Dockerfile created in the container section of the bootcamp.
 2. Edit this Dockerfile to add a Go installation to the image.
 3. Create a Freestyle Project that will point to your completed Go Unit Testing exercise from your fork of the Bootcamp.
+
+?>Note: After pointing to your forked repo in Jenkins, you will need to get the path to the Go exercises in build step 
+
 4. Add a build step for testing your exercise.
 5. Add a build step to build the exercise.
 6. Build the Jenkins job and confirm the job has run the tests and the build was successful.
