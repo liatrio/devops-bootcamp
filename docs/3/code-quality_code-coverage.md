@@ -14,7 +14,6 @@ The following code contains the unit tests that will be testing the javascript f
 [testCode](https://raw.githubusercontent.com/PaulDHenson/devops-bootcamp/master/examples/codeQuality/javascript/simpleTest.js ':include :type=code javascript') 
 
 Please perform the following:
-
 * Install Node
 * Install Mocha
 * Install Chai
@@ -29,11 +28,13 @@ The provided javascript package.json file will have everything you need in order
 
 Inside your package.json file under the “scripts” section, add a section called “coverage” and use the following command “nyc --reporter=text npm run test”
     
-    Note: Make sure that your “test” section is running the following command “mocha ./simpleTest.js"
+Make sure that your “test” section is running the following command
+
+`mocha ./simpleTest.js`
 
 Run your code with the following command:
     
-    npm run coverage
+`npm run coverage`
 
 ## Exercise 2:
 Now that you have Istanbul running and you can check your code coverage. Add another unit test to the simpleTest.js file so that you achieve 100% coverage.
