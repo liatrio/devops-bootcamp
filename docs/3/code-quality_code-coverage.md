@@ -26,7 +26,9 @@ The provided javascript package.json file will have everything you need in order
 
 [package](https://raw.githubusercontent.com/PaulDHenson/devops-bootcamp/master/examples/codeQuality/javascript/package.json ':include :type=code json')
 
-Inside your package.json file under the “scripts” section, add a section called “coverage” and use the following command “nyc --reporter=text npm run test”
+Inside your package.json file under the “scripts” section, add a section called “coverage” and use the following command 
+
+`nyc --reporter=text npm run test`
     
 Make sure that your “test” section is running the following command
 
