@@ -25,6 +25,8 @@ We will use Selenium and Python to run a couple functional tests on the bootcamp
     * The link in the bottom right corner of the homepage takes you to [the bootcamp introduction](https://devops-bootcamp.liatr.io/#/1-introduction/overview)
     * The sidebar toggle button properly hides the sidebar
 
+?> Note: the starter code has Firefox selected as the driver. Make sure to either change it or install geckodriver. 
+
 [document](https://raw.githubusercontent.com/PaulDHenson/devops-bootcamp/master/examples/codeQuality/selenium-frame.py ':include :type=code python')
 
 While these are fairly trivial functional tests, they serve to show in general how they differ from unit tests.
