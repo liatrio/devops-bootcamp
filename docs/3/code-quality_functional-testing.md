@@ -29,5 +29,7 @@ We will use Selenium and Python to run a couple functional tests on the bootcamp
 
 While these are fairly trivial functional tests, they serve to show in general how they differ from unit tests.
 
+# Deliverables
 
-
+* Discuss in your own words what the difference between functional testing and unit testing is
+* Discuss why functional testing should be done, even if our unit tests covers all the code
