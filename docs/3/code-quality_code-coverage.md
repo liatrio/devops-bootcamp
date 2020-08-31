@@ -15,10 +15,21 @@ The following code contains the unit tests that will be testing the javascript f
 
 Please perform the following:
 * Install Node
+        
+        brew install node
 * Install Mocha
+        
+        npm install mocha
 * Install Chai
+
+        npm install chai
 * Install nyc
     
+        npm install nyc
+
+After installing those dependencies take a moment to examine your package.json file. Note that chai and nyc are currently in the section called "dependencies". This may not be ideal for a production environment, because if you set up a docker file or some other container to work with this file you may end up downloading a bunch of dependencies you don't neccessarily need.
+
+Try redoing the previous steps, but install the files as a developer dependency. Once you have done that take a look at your package.json file.
 
 ?>Note: When installing Chai and Istanbul with the npm command, use the -D tag to install as a developer dependency.
 
