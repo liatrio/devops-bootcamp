@@ -40,10 +40,10 @@
 - [3.4 - Pair Programming](3/pair-programming.md)
 - [3.5 - Code Quality](3/code-quality.md)
   - [3.5.1 - Unit Testing](3/code-quality_unit-testing.md)
-  - [3.5.2 - Function Testing](3/code-quality_functional-testing.md)
+  - [3.5.2 - Functional Testing](3/code-quality_functional-testing.md)
   - [3.5.3 - Code Styling](3/code-quality_code-styling.md)
-  - [3.5.4 - Test Automation](3/code-quality_test-automation.md)
-  - [3.5.5 - Code Coverage](3/code-quality_code-coverage.md)
+  - [3.5.4 - Code Coverage](3/code-quality_code-coverage.md)
+  - [3.5.5 - Test Automation](3/code-quality_test-automation.md)
 - [3.6 - Hello DevOps](3/hello-devops.md)
 * **Chapter 4**
 - [4.0 - Release Management](4/overview.md)
