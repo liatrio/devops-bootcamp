@@ -1,5 +1,5 @@
 # Code Coverage:
-Code coverage is the percentage of code which is covered by automated tests. Code coverage measurement simply determines which statements in a body of code have been executed through a test run, and which statements have not. There are many ways to check code coverage and they all vary depending on the language you are using. For the Go language coverage testing is built in so you can use the `go test -cover` command. In many other languages you will have to use a third party tool like [Coveralls](www.coveralls.io), [Codecov](www.codecov.io), or [Istanbul](www.istanbul.js.org).
+Code coverage is the percentage of code which is covered by automated tests. Code coverage measurement simply determines which statements in a body of code have been executed through a test run, and which statements have not. There are many ways to check code coverage and they all vary depending on the language you are using. For the Go language coverage testing is built in so you can use the `go test -cover` command. In many other languages you will have to use a third party tool like [Coveralls](http://www.coveralls.io), [Codecov](http://www.codecov.io), or [Istanbul](http://www.istanbul.js.org).
 
 ## Exercise 1:
 You will be using Mocha and Istanbul to test the code coverage in the provided code. You can find the code in the bootcamp repository inside the examples folder. 
@@ -17,7 +17,7 @@ Please perform the following:
 * Install Node
 * Install Mocha
 * Install Chai
-* Install Istanbul
+* Install nyc
     
 
 ?>Note: When installing Chai and Istanbul with the npm command, use the -D tag to install as a developer dependency.
