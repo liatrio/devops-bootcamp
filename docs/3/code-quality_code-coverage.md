@@ -31,10 +31,14 @@ Inside your package.json file under the “scripts” section, add a section cal
     
     Note: Make sure that your “test” section is running the following command “mocha ./simpleTest.js"
 
+Run your code with the following command:
+    
+    npm run coverage
+
 ## Exercise 2:
 Now that you have Istanbul running and you can check your code coverage. Add another unit test to the simpleTest.js file so that you achieve 100% coverage.
 
 ## Discussion
-    * How does code coverage help developers?
-    * What are some scenarios that make it harder to achieve 100% coverage?
-    * Do you think it's required to have 100% coverage for it to be effective?
+* How does code coverage help developers?
+* What are some scenarios that make it harder to achieve 100% coverage?
+* Do you think it's required to have 100% coverage for it to be effective?
