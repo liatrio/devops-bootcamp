@@ -23,7 +23,7 @@ Please perform the following:
 * Install Chai
 
         npm install chai
-* Install nyc
+* Install nyc (this is the new version of Istanbul)
     
         npm install nyc
 
