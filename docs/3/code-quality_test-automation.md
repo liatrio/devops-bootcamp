@@ -12,8 +12,7 @@ Automated Testing is a crucial step to ensure code quality because developed tes
 ## Multi-Stage Dockerfiles
 When having a containerized application, it is a good idea to have a multi-stage Dockerfile to reduce the size and space taken up by the resulting image. In a multi-stage Dockerfile you can implement testing into its own stage. With this strategy, all of the dependencies needed for testing are left in that stage and the runtime stage will only be populated with the necessary build artifacts.
 
-# Deliverable
+# Deliverables
 
-Discuss the positives of having your testing built into an automation tool such as Jenkins
-
-Discuss the benefits of having a testing stage in a Dockerfile
+* Discuss the positives of having your testing built into an automation tool such as Jenkins
+* Discuss the benefits of having a testing stage in a Dockerfile
