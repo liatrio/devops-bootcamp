@@ -44,6 +44,7 @@
   - [3.5.3 - Code Styling](3/code-quality_code-styling.md)
   - [3.5.4 - Code Coverage](3/code-quality_code-coverage.md)
   - [3.5.5 - Test Automation](3/code-quality_test-automation.md)
+  - [3.5.6 - SonarQube](3/sonarqube.md)
 - [3.6 - Hello DevOps](3/hello-devops.md)
 * **Chapter 4**
 - [4.0 - Release Management](4/overview.md)

@@ -32,7 +32,7 @@ This section will give you experience with:
 ## Configure Jenkins job to run SonarQube scanner
 1. Go to Jenkins Global Tool Configuration and enter the path to where you installed the scanner.
 ![](img5/jenkins-sonarqube_scanner.png)
-2. Go to Jenkins Configure System and configure you SonarQube server.
+2. Go to Jenkins Configure System and configure your SonarQube server.
 ![](img5/jenkins-sonarqube_server.png)
 3. Modify the Go Unit Testing Freestyle Project to have the SonarQube scanner configured in the Pre-step of the job.
 ![](img5/jenkins-sonarqube_prestep.png)
