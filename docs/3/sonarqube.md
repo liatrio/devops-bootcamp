@@ -34,8 +34,8 @@ This section will give you experience with:
 ![](img3/jenkins-sonarqube_scanner.png)
 2. Go to Jenkins Configure System and configure your SonarQube server.
 ![](img3/jenkins-sonarqube_server.png)
-3. Modify the Go Unit Testing Freestyle Project to have the SonarQube scanner configured in the Pre-step of the job.
-![](img3/jenkins-sonarqube_prestep.png)
+3. Modify the Go Unit Testing Freestyle Project to have the SonarQube scanner configured as the first build Step.
+![](img3/sonarqube_first_build.png)
 4. You may need to change the Analysis properties to match the structure of the project. Note: you can also set the properties in a sonar-project.properties file in the root of the project.
 5. Build your project and look at the results in SonarQube.
 
