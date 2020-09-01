@@ -34,16 +34,11 @@ This section will give you experience with:
 ![](img5/jenkins-sonarqube_scanner.png)
 2. Go to Jenkins Configure System and configure you SonarQube server.
 ![](img5/jenkins-sonarqube_server.png)
-3. Create a Spring PetClinic Maven project and in the configure the SonarQube scanner to run as a Pre Step.
+3. Modify the Go Unit Testing Freestyle Project to have the SonarQube scanner configured in the Pre-step of the job.
 ![](img5/jenkins-sonarqube_prestep.png)
 4. You may need to change the Analysis properties to match the structure of the project. Note: you can also set the properties in a sonar-project.properties file in the root of the project.
 5. Build your project and look at the results in SonarQube.
 
-## Introduce SonarQube as a new phase of the pipeline
-- Install the sonar plugin on Jenkins to visualize the metrics
-  - https://wiki.jenkins-ci.org/display/JENKINS/SonarQube+plugin
-- Install the sonar build breaker plugin or sonar quality gate status plugin so that you can break a build when it falls below the specific levels
-- Adjust those levels and see things go to warning, failure, etc. 
 
 # Deliverable
 
