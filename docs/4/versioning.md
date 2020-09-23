@@ -1,55 +1,23 @@
 # Versioning
 
-Read about Semantic Versioning at [semver.org](http://semver.org/).
+A version is more than just something marketing departments use to hype up a new release of a product. A version represents a specific snapshot of the codebase which can be used to track features, identify changes that introduce bugs and for meaningful feedback to make its way back to developers. Meaningful versions allow software to be tested in different environment before being deployed to production and for a release to be rolled back if there are problems.
 
-## Exercise
+## Semantic Versioning
 
- 1. Create a new application using the archetype.
-```
-mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
-```
- 2. Add Jetty to `pom.xml`.
-```
-<build>
-        <plugins>
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>6.1.10</version>
-                <configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <connectors>
-                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-                            <port>8080</port>
-                            <maxIdleTime>60000</maxIdleTime>
-                        </connector>
-                    </connectors>
-                </configuration>
-            </plugin>
-        </plugins>
-</build>
-```
- 3. Run Jetty.
-```
-mvn jetty:run
-```
- 4. Investigate the Maven Internal (local) repo. What does it contain? What is its purpose?
- 5. What changes occur in the project directory and the local repo when running `mvn package` and when running `mvn install`?
- 6. Modify dependencies/versions using the POM by opening `pom.xml` and changing the versions of dependencies to get different versions to be used in the project. Locate them in the Maven repo.
- 7. Change spring-petclinic's group ID, artifact ID and version.
- 8. Alter one of spring-petclinic's open-source dependencies, such as jodatime-hibernate.
-   - Change the jodatime dependency in spring-petclinic to use `9.2.1-SNAPSHOT`.
-   - After building, the build should fail. Why?
- 9. Clone jodatime and create a new version of the plugin.
-   - Change the version to be the missing version from before.
-   - Build the "new" version which is stored in the local Maven repo.
- 10. Run spring-petclinic build and verify it was successful.
+Versions can also be used as a shorthand to convey information about the scope of changes in a release. Read about Semantic Versioning at [semver.org](http://semver.org/). Most software projects have dependencies on libraries written outside of that project. Being able easily differentiate bug and security fixes from new features or breaking changes makes managing those upstream dependencies much easier. Similarly many software platforms rely on an ecosystem of different software projects in which must track how changes in one project affect the others.
 
+## Exercise 
 
+1. Create a Dockerfile to build a simple image which outputs some text when run.
+2. Build your image and make sure to use a semantic version as a tag for the image name. See the [docker CLI reference](https://docs.docker.com/engine/reference/commandline/build/#tag-an-image--t) for information on image tags.
+3. Run your new image using the image tag.
+4. Update your image to change the output text.
+5. Build a new image using a new semantic version tag.
+6. Run your new image. Now run your old image. 
 
+?> What happens when you build an image without a tag?
+?> If you did not tag your images what would you have to do to run the old image?
 
+## Deliverables
 
-
-# Deliverable
-
-Discuss with your group example scenarios and what type of new version they would need and when a new major version is necessary.
+Find some open source projects and look at how they use versions. Discus as a group how effective the projects you find are at using version.
