@@ -4,7 +4,7 @@
 
 <center>
 
-  ![](img5/sonarqube.svg ':size=400px')
+  ![](img3/sonarqube.svg ':size=400px')
 
 </center>
 
@@ -20,7 +20,7 @@ This section will give you experience with:
 2. Install SonarQube [Installation Instructions](https://docs.sonarqube.org/latest/setup/install-server/).
 3. Log into SonarQube [http://localhost:9000](http://localhost:9000). The default username and password is `admin` and `admin`.
 4. Go to to Administration -> Security -> Users and click on the Update Tokens button.
-![](img5/sonarqube-security_users.png)
+![](img3/sonarqube-security_users.png)
 5. Generate a new token and make sure to save it.
 
 ## Add SonarQube scanner to Jenkins
@@ -31,19 +31,14 @@ This section will give you experience with:
 
 ## Configure Jenkins job to run SonarQube scanner
 1. Go to Jenkins Global Tool Configuration and enter the path to where you installed the scanner.
-![](img5/jenkins-sonarqube_scanner.png)
-2. Go to Jenkins Configure System and configure you SonarQube server.
-![](img5/jenkins-sonarqube_server.png)
-3. Create a Spring PetClinic Maven project and in the configure the SonarQube scanner to run as a Pre Step.
-![](img5/jenkins-sonarqube_prestep.png)
+![](img3/jenkins-sonarqube_scanner.png)
+2. Go to Jenkins Configure System and configure your SonarQube server.
+![](img3/jenkins-sonarqube_server.png)
+3. Modify the Go Unit Testing Freestyle Project to have the SonarQube scanner configured as the first build step.
+![](img3/sonarqube_first_build.png)
 4. You may need to change the Analysis properties to match the structure of the project. Note: you can also set the properties in a sonar-project.properties file in the root of the project.
 5. Build your project and look at the results in SonarQube.
 
-## Introduce SonarQube as a new phase of the pipeline
-- Install the sonar plugin on Jenkins to visualize the metrics
-  - https://wiki.jenkins-ci.org/display/JENKINS/SonarQube+plugin
-- Install the sonar build breaker plugin or sonar quality gate status plugin so that you can break a build when it falls below the specific levels
-- Adjust those levels and see things go to warning, failure, etc. 
 
 # Deliverable
 
