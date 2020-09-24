@@ -4,7 +4,7 @@ Plugins are a great way of enhancing tool function without much effort. The buil
 
 ?> Use the set up from the previous section to do this section.
 
- 1. Download the latest version of spring-petclinic from your Nexus repository.
+ 1. Download the latest version of spring-petclinic from your Artifactory repository.
  2. Open up the WAR file.
  3. Find the joda-time hibernate library inside the WAR file.
  4. What version are you getting? Check with your lead to ensure this is the correct version.
@@ -26,9 +26,9 @@ It's important to see how components work together in real environments.
  - As a developer of spring-petclinic, you may not necessarily have joda-time and junit building on your computer, but you will have a dependency on them.
  - Imagine your virtual machine is actually a server within your company and not on your local machine.
 
-Configure Maven on your laptop to use Nexus as the repository that grabs dependencies.
- 1. Setup your Nexus as an additional repository to (the default) Maven Central.
- 2. Setup your Nexus as the _only_ repository the computer will use and have Nexus _proxy_ everything.
+Configure Maven on your laptop to use Artifactory as the repository that grabs dependencies.
+ 1. Setup your Artifactory as an additional repository to (the default) Maven Central.
+ 2. Setup your Artifactory as the _only_ repository the computer will use and have Artifactory _proxy_ everything.
  3. Try changing the GroupID of your clones to mimic proprietary software. You can use `com.devops-bootcamp.samples`.
 
 

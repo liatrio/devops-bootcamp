@@ -1,4 +1,4 @@
-# Releases
+# Maven Releases
 
 Let's bring this all together and think about the process of releasing software.
 

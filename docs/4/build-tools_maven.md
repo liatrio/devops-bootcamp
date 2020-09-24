@@ -81,6 +81,43 @@ general Maven requires that no two builds share all of the following.
 Read [guide to naming conventions](https://maven.apache.org/guides/mini/guide-naming-conventions.html)
 to learn common strategies for naming Maven projects.
 
+## Exercise
+
+In this exercise you will create a skeleton web application using Maven, add a plugin to help with local development, update the version number and create a release.
+
+ 1. Create a new application using the archetype.
+```
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
+```
+ 2. Add Jetty to `pom.xml`.
+```
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.10</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8080</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                </configuration>
+            </plugin>
+        </plugins>
+</build>
+```
+ 3. Run Jetty.
+```
+mvn jetty:run
+```
+ 4. Investigate the Maven Internal (local) repo. What does it contain? What is its purpose?
+ 5. What changes occur in the project directory and the local repo when running `mvn package` and when running `mvn install`?
+ 6. Update the project version in the pom.xml and run `mvn package` and `mvn install` again. What has been updated in the local repo?
+
 # Deliverable
 
 Discuss the significance of the POM, dependencies and where they are sourced, and versions from a Maven perspective with your group.
