@@ -1,3 +1,10 @@
+:root {
+  --base-font-size: 14px;
+  --theme-color   : #25ae1e;
+  --selection-color      : #c3e788;
+  --sidebar-width: 22rem;
+}
+
 .grid2, .grid3, .grid3 {
   width: 100%;
 }
@@ -17,4 +24,13 @@
 
 .grid4 .col {
   width: 25%;
+}
+
+.img-left {
+  float: left;
+  margin: 5px 25px 10px 0
+}
+.img-right {
+  display: inline-block;
+  margin: 20px 0px 10px 25px
 }
