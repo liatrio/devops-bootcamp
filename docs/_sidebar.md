@@ -50,10 +50,9 @@
 - [4.1 - Versioning](4/versioning.md)
 - [4.2 - Build Tools](4/build-tools.md)
   - [4.2.1 - Maven](4/build-tools_maven.md)
-  - [4.2.2 - Maven Versioning](4/build-tools_maven-versioning.md)
-  - [4.2.2 - Maven Integration](4/build-tools_maven-integration.md)
-  - [4.2.3 - Maven Plugins](4/build-tools_maven-plugins.md)
-  - [4.2.4 - Releases](4/build-tools_releases.md)
+  - [4.2.3 - Maven Integration](4/build-tools_maven-integration.md)
+  - [4.2.4 - Maven Plugins](4/build-tools_maven-plugins.md)
+  - [4.2.5 - Releases](4/build-tools_releases.md)
 - [4.3 - Npm](4/npm.md)
 * **Chapter 5**
 - [5.0 - System Administration](5/5.0-overview.md)
