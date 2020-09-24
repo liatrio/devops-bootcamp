@@ -54,6 +54,7 @@
   - [4.2.3 - Maven Plugins](4/build-tools_maven-plugins.md)
   - [4.2.4 - Releases](4/build-tools_maven-releases.md)
   - [4.2.5 - Npm](4/build-tools_npm.md)
+- [4.3 - Declarative Pipelines](4/declarative-pipelines.md)
 * **Chapter 5**
 - [5.0 - System Administration](5/5.0-overview.md)
 - [5.1 - DevOps Tools](5/5.1-devops-tools.md)
