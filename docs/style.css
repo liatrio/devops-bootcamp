@@ -1,8 +1,23 @@
 :root {
   --base-font-size: 14px;
-  --theme-color   : #25ae1e;
+  --theme-color   : #24AE1D;
   --selection-color      : #c3e788;
   --sidebar-width: 22rem;
+  --sidebar-background: #F8F8F8;
+  --pagination-color: #262626;
+}
+
+.pagination-item, .pagination-item-title, .pagination-item-label {
+    opacity: .8 !important;
+    transition: all .2s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.pagination-item:hover {
+    opacity: 1 !important;
 }
 
 .grid2, .grid3, .grid3 {
