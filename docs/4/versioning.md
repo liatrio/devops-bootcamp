@@ -20,4 +20,4 @@ Versions can also be used as a shorthand to convey information about the scope o
 
 ## Deliverables
 
-Find some open source projects and look at how they use versions. Discus as a group how effective the projects you find are at using version.
+Find some open source projects and look at how they use versions. Discuss as a group how effective the projects you find are at using version.
