@@ -34,7 +34,7 @@ Jira refers to tickets as *issues.* Although there are various ticket types out 
 | **Story** | Small amount of work, driven by the Product Owner | 1 day |
 | **Subtask** | Small amount of work (often created in-sprint) that lives under a story or task | <1 day |
 
-![](img3/ticket-format.png)
+![](img3/ticket-format.svg)
 
 
 # Epic Recommended Fields
@@ -78,7 +78,8 @@ Jira refers to tickets as *issues.* Although there are various ticket types out 
 
 ## Creating Effective Jira Tickets
 
-![](img3/grammar.jpg)
+![](img3/grammar.webp ':size=300px')
+
 ### Styling
  - Every part of a ticket should be visually appealing to ensure readability
  - Use syntax, grammar, capitalization, punctuation to your advantage

@@ -2,7 +2,7 @@
 
 <center>
 
-  ![](img1/quote.svg ':size=125px')
+  ![](img1/Case-Studies_Icon.svg ':size=125px')
 
 </center>
 
