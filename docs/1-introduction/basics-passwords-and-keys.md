@@ -4,7 +4,7 @@ As you use more tools, services, networks and hosts you will need ways to secure
 
 <center>
 
-![](img1/lock_door.svg ':size=125px')
+![](img1/fingerprint.svg ':size=125px')
 
 </center>
 
