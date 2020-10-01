@@ -116,9 +116,11 @@ Branching allows you to diverge from the main line of development and continue t
 
 A typical developer workflow is centered around using Git. Using TBE principles, engineers create a branch tied to the work item, commit changes locally, and submit a pull request on the remote Git server.
 
-<p style="text-align:center">
-<img src="img/git-lifecycle.png" alt="Git Lifecycle" width="600px"/>
-</p>
+<center>
+
+  ![](img3/git-lifecycle.svg ':size=600px')
+
+</center>
 
 # Merge Conflicts
 
