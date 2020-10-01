@@ -68,7 +68,7 @@ The official package repositories for major distros receive a lot of scrutiny an
 
 <center>
 
-  ![](img1/install.svg ':size=125px')
+  ![](img1/security.svg ':size=125px')
 
 </center>
 
