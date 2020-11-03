@@ -58,10 +58,12 @@ pipeline {
 
 ## Exercise
 
-1. Using your Jenkins and Nexus instances from 4.3, implement a Jenkinsfile to automate your pipeline. 
-    - For the three projects spring-petclinic, joda-time hibernate, and junit your projects should build, test, and deploy each to Nexus.
-2. Setup each Pipeline to build and test every branch, but only deploy from the master branch
+1. Using your Jenkins and Artifactory instances from the previous section, implement a Jenkinsfile to automate your pipeline. 
+    - For the three projects spring-petclinic, joda-time hibernate, and junit your projects should build, test, and deploy each to Artifactory.
+    - When deploying to Artifactory, do not use plugins and instead use shell commands and the [Artifactory API](https://www.jfrog.com/confluence/display/JFROG/Artifactory+REST+API).
+2. Setup each Pipeline to build and test every branch, but only deploy from the master branch. 
+
 
 # Deliverable
 
-Describe why a declarative pipeline is used with Jenkins and Nexus.
+Describe why a declarative pipeline is used with Jenkins and Artifactory.
