@@ -63,6 +63,10 @@ pipeline {
     - When deploying to Artifactory, do not use plugins and instead use shell commands and the [Artifactory API](https://www.jfrog.com/confluence/display/JFROG/Artifactory+REST+API).
 2. Setup each Pipeline to build and test every branch, but only deploy from the master branch. 
 
+## Multi-Branch Pipeline
+There is a Multi-Branch Pipeline job type in Jenkins that is very similar to the singular Pipeline job, but rather than only monitoring master it will monitor all branches. It will also allow you to test everytime you push onto a branch. It won't automatically only deploy from the master branch.
+
+
 
 # Deliverable
 

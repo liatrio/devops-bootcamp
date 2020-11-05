@@ -54,6 +54,7 @@
   - [4.3.1 - Maven](4/build-tools_maven.md)
   - [4.3.2 - Maven Integration](4/build-tools_maven-integration.md)
   - [4.2.3 - Npm](4/build-tools_npm.md)
+  - [4.2.4 - Go Releaser](4/build-tools_go-releaser.md)
 
 * **Chapter 5**
 - [5.0 - System Administration](5/5.0-overview.md)
