@@ -14,3 +14,6 @@
 4. Now using your Jenkins instance from previous sections, write a Jenkinsfile that will use Go Releaser to deploy the Go binaries to the GitHub release of your chosen tag.
 
 ?> You may run into problems when making a release with Jenkins after creating one locally because Go Releaser creates folders that will give a Git dirty state. In the Jenkinsfile, run commands to delete those folders ahead of time.
+
+## Delieverable 
+Discuss the differences between Maven releases and Go Releaser. Discuss any problems you had getting this exercise done. 
