@@ -49,14 +49,14 @@
 * **Chapter 4**
 - [4.0 - Release Management](4/overview.md)
 - [4.1 - Versioning](4/versioning.md)
-- [4.2 - Build Tools](4/build-tools.md)
-  - [4.2.1 - Maven](4/build-tools_maven.md)
-  - [4.2.2 - Maven Integration](4/build-tools_maven-integration.md)
-  - [4.2.3 - Maven Plugins](4/build-tools_maven-plugins.md)
-  - [4.2.4 - Releases](4/build-tools_maven-releases.md)
-  - [4.2.5 - Npm](4/build-tools_npm.md)
-- [4.3 - Declarative Pipelines](4/declarative-pipelines.md)
-  - [4.3.5 - Dockerhub](4/dockerhub-releases.md)
+- [4.2 - Declarative Pipelines](4/declarative-pipelines.md)
+- [4.3 - Build Tools](4/build-tools.md)
+  - [4.3.1 - Maven](4/build-tools_maven.md)
+  - [4.3.2 - Maven Integration](4/build-tools_maven-integration.md)
+  - [4.2.3 - Npm](4/build-tools_npm.md)
+  - [4.2.4 - Go Releaser](4/build-tools_go-releaser.md)
+  - [4.2.5 - Dockerhub](4/dockerhub-releases.md)
+
 * **Chapter 5**
 - [5.0 - System Administration](5/5.0-overview.md)
 - [5.1 - DevOps Tools](5/5.1-devops-tools.md)
