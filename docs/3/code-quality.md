@@ -1,1 +1,7 @@
 # Code Quality
+
+Before a software development team can release an update there should be confidence that the changes do not introduce bugs or breaking changes, can be understood and updated by other developers and generally meets a level of quality as not create more cost of ownership to the project than necessary. Pair programming and code reviews help with this but are also time consuming and can often fail to identify unintended consequences of changes.
+
+In order to release updates more frequently teams should test the quality of their code in a way that is automatable, repeatable and observable. In this section we will look at several techniques to test code quality in this way.
+
+![](./img3/unit-test-excuses.png ':class=img-shadow-center')

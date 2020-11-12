@@ -49,3 +49,18 @@
   display: inline-block;
   margin: 20px 0px 10px 25px
 }
+
+.img-center {
+  margin: 0 auto;
+  display: block;
+}
+
+.img-shadow {
+  box-shadow: 2px 2px 8px;
+}
+
+.img-shadow-center {
+  box-shadow: 2px 2px 8px;
+  margin: 0 auto;
+  display: block;
+}
