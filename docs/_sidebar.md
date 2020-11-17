@@ -48,12 +48,16 @@
 - [3.6 - Hello DevOps](3/hello-devops.md)
 * **Chapter 4**
 - [4.0 - Release Management](4/overview.md)
-- [4.1 - Maven](4/maven.md)
-- [4.2 - Versioning](4/versioning.md)
-- [4.3 - Maven Integration](4/maven-integration.md)
-- [4.4 - Maven Plugins](4/maven-plugins.md)
-- [4.5 - Releases](4/releases.md)
-- [4.6 - Npm](4/npm.md)
+- [4.1 - Versioning](4/versioning.md)
+- [4.2 - Declarative Pipelines](4/declarative-pipelines.md)
+- [4.3 - Build Tools](4/build-tools.md)
+  - [4.3.1 - Maven](4/build-tools_maven.md)
+  - [4.3.2 - Maven Integration](4/build-tools_maven-integration.md)
+  - [4.3.3 - Make](4/build-tools_make.md)
+  - [4.3.4 - Npm](4/build-tools_npm.md)
+  - [4.3.5 - Go Releaser](4/build-tools_go-releaser.md)
+  - [4.3.6 - DockerHub](4/dockerhub-releases)
+
 * **Chapter 5**
 - [5.0 - System Administration](5/5.0-overview.md)
 - [5.1 - DevOps Tools](5/5.1-devops-tools.md)
