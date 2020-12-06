@@ -1,10 +1,20 @@
 :root {
   --base-font-size: 14px;
+  --base-font-family: 'Open Sans', sans-serif;
+
+  --code-font-family: 'Inconsolata', monospace;
+  --code-font-size: 14px;
+  --code-font-weight: 500;
+
   --theme-color   : #24AE1D;
   --selection-color      : #c3e788;
   --sidebar-width: 22rem;
   --sidebar-background: #F8F8F8;
   --pagination-color: #262626;
+}
+
+.drop-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .pagination-item, .pagination-item-title, .pagination-item-label {
