@@ -22,7 +22,7 @@ Apart from quality gates, PRs provide an opportunitiy to perform honest, robust,
 
 During PRs, developers will work together to ensure that the code meets the business value promised by the work item. Common discussions will revolve around scope creep, optimizing implementation, and alignment on team's code norms.
 
-<img src="img/git-peer-review.png" alt="Pull Requests" width="600px">
+![Pull Requests](../img/git-peer-review.png ':size=600px :class=drop-shadow')
 
 Additionally, this process will help share knowledge of the application across the entire team, as opposed to a select circle of lead developers. This helps reduce tribal knowledge and can serve as an onboarding newer or junior members to the team.
 
