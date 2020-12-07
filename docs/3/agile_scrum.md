@@ -43,9 +43,9 @@ The product owner should not only understand the customer, but also have a visio
 Some teams may have a **scrum master** who is responsible for gluing everything together and ensuring that scrum is being done well. In practical terms, that means they help the product owner define value, the development team deliver the value, and the scrum team to get to get better.
 
 # Ceremonies
-Establishing a base for team's ceremonies help create a rythym and cadence. Utilizing agile practices of the scrum framework, teams typically would have the follow the core ceremonies to ensure teams are aligned, focusing on high prioritized items, and support continuous learning efforts.
+Establishing a base for team's ceremonies help create a rhythm and cadence. Utilizing agile practices of the scrum framework, teams typically would have the follow the core ceremonies to ensure teams are aligned, focusing on high prioritized items, and support continuous learning efforts.
 
-![](img3/agile-ceremonies.png)
+![](img3/agile-ceremonies.webp)
 
 | Ceremony | Purpose | Duration | Audience |
 | -- | -- | -- | -- |

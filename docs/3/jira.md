@@ -13,7 +13,7 @@ Jira is a ticketing system that allows teams to manage and share the status of w
 - **Kanban Boards.** Single pane of glass for current work in progress.
 - **Ticket Status.** Provide real-time conversation and associated commits and build history with each ticket, along with ongoing comments and status updates.
 
-![](img3/jira-board.png)
+![](img3/jira-board.png ':class=drop-shadow')
 
 As you can see above, there are 4 stages that a ticket, or a task, can be in:
 - To Do

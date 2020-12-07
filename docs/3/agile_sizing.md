@@ -15,7 +15,7 @@ Story pointing is an exercise that is completely relative to a team. Rather than
 ?>Stories points should continue getting smaller and able to be completed in a day. Pointing becomes a simpler task as teams mature and more knowledgeable about story splitting.
 
 ## Fibonacci technique
-![](img3/agile-fib.png)
+![](img3/agile-fib.svg)
 People estimate stories with smaller points more accurately than stories with higher points. As the numbers increase, the difference between two succeeding numbers increases exponentially and leads to less accurate estimates. This is intentional, as most stories are often more complex than we realize. [(source)](https://en.wikipedia.org/wiki/Fibonacci_scale_(agile))
 
 As team's adopt relative sizing, they must come to a common understanding of what a base unit of work is- a 1 point story. Activities like [agile poker](https://scrumpoker.online/) allow teams to collaborate, giving each team member to voice their opinion on how stories should be pointed and establishing the team's baseline of relative sizing.

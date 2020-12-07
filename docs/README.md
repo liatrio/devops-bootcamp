@@ -1,13 +1,12 @@
 <center>
 
-![Liatrio](img/Liatrio-Icon.png)
+  ![Liatrio](img/favicon.svg ':size=125')
+  # Liatrio's DevOps Bootcamp
 
-  <h1>
-    Liatrio's DevOps Bootcamp
-  </h1>
 </center>
 
-## Introduction {docsify-ignore-all}
+## Introduction
+
 Welcome! You must be here because you're interested in DevOps. Don't worry, we'll explain that right away! First, let's briefly go over some details.
 
 "1.0" can be referred to as "Chapter One," while "1.2" can be referred to as "Chapter One, Section Two."
@@ -40,7 +39,7 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 ## Contributing
 This bootcamp was adapted from an apprentices training program, and some mistakes may have slipped through the cracks. If you see any errors, outdated methods, or citation errors please submit a Pull Request.
 
-[contributors](contributors.md)
+[Contributors](contributors.md)
 
 <center>
 
