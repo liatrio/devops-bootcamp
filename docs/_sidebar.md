@@ -57,7 +57,6 @@
   - [4.3.4 - Npm](4/build-tools_npm.md)
   - [4.3.5 - Go Releaser](4/build-tools_go-releaser.md)
   - [4.3.6 - DockerHub](4/dockerhub-releases)
-
 * **Chapter 5**
 - [5.0 - System Administration](5/5.0-overview.md)
 - [5.1 - DevOps Tools](5/5.1-devops-tools.md)
