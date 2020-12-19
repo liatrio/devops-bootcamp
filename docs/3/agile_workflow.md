@@ -1,7 +1,7 @@
 # Workflow
 Agile is focused on iterative delivery. This impacts how a team break downs their work and manages their work through the software development lifeycle. SDLC tools help manage this work.
 
-![](img3/agile-kanban.svg)
+![A kanban board with columns for to do, doing, and done](img3/agile-kanban.svg)
 
 ## Work breakdown
 In agile, stories from the basis of work items. Epics are a larger theme around a collection of stories, or they can be seen as a longer-lived goal. Subtasks can be broken out during sprint planning as a team or in-sprint engineers.
@@ -17,4 +17,6 @@ In agile, stories from the basis of work items. Epics are a larger theme around 
 
 **Kanban Board.** Teams use kanban boards to track their work in progress (WIP), using columns *To Do, In Progress, and Done*. During standup, teams may "walk the board" and review the status or blockers of each item on the board.
 
->Using WIP limits can help your team reduce multitasking and focus on finishing the work that matters most.<br><i>- Dominica DeGrandis</i>
+> Using WIP limits can help your team reduce multitasking and focus on finishing the work that matters most.
+>
+> _- Dominica DeGrandis_

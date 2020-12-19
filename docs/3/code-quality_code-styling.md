@@ -20,7 +20,7 @@ To learn more about the difference between formatters and linters, read [this](h
 ## Golang gofmt
 Gofmt is a standard code formatting tool for the Go language. Using tools like these can create a consistency and predictability for your source code. This means a codebase that has gone through the gofmt will be easier to read and easier to maintain. Running `gofmt -d .` will print the differences between the code in the current directory and what the gofmt standard would look like. Running `gofmt -w .` will write the changes proposed by gofmt into your code.
 
-![Gofmt example](img3/gofmt.png?raw=true)
+![Gofmt example](img3/gofmt.webp ':class=img-shadow-center')
 
 `gofmt -d .` example that shows that gofmt prefers a different type of indent than the one currently used.
 
