@@ -9,11 +9,7 @@ This chapter covers these networking basics, providing the foundational
 knowledge that will be useful within this Bootcamp, and the DevOps industry
 as a whole.
 
-<center>
-
-  ![](img2/computer_network.svg ':size=125.px')
-
-</center>
+![](img1/computer_network.svg ':size=150x150 :class=icon')
 
 ## IP Addresses
 

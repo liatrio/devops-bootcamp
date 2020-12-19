@@ -15,11 +15,7 @@ Sometimes the answer is staggering, and we try to change that.
 ## Boots on the Ground
 Currently, Liatrio is a boots-on-the-ground DevOps Consulting group, meaning that our teams are actually on-site working face-to-face with clients to help them streamline their production. We work with a multitude of clients, and each one has their own specific issues. This is why it is so important to be working personally with them; our employees identify issues that hinder development and help produce a solution. Our goal is to uplift them as a team both technologically and culturally to revitalize the development and IT teams.
 
-<center>
-
-  ![](img1/consulting.svg ':size=125px')
-
-</center>
+![](img1/consulting.svg ':size=150x150 :class=icon')
 
 ## The Rise of DevOps
 Building software has changed greatly in the last couple decades. ~15-20 years ago, we had small teams of people who would work together on software which would then be built by a Tech Lead. The issue was that many issues could arise and things like merge conflicts or version conflicts became troubling. Since then, many tools have been created changing the way we do things as well as how we visualize the pipeline. DevOps affects all levels of software development from the individual developer to the production server(s). Many processes/tasks are now automated allowing more builds to flow through the pipeline.

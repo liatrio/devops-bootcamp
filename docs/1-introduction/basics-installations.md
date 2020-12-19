@@ -66,11 +66,7 @@ brew upgrade
 ## Security
 The official package repositories for major distros receive a lot of scrutiny and can generally be trusted to not contain malicious or dangerous software. Unofficial repositories often have less oversight and should be considered less secure. It is not uncommon for production environments to be restricted to packages from enterprise distro repositories or internal package repositories which have gone through additional vetting. It is best practice to always consider how trustworthy the source of a software package is before installing it in any environment and to be extra cautious when introducing software to critical systems.
 
-<center>
-
-  ![](img1/security.svg ':size=125px')
-
-</center>
+![](img1/security.svg ':size=150x150 :class=icon')
 
 # Deliverable
 
