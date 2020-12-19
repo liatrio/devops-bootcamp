@@ -45,11 +45,7 @@ This section is designed to give you an introduction into how Maven interacts wi
  5. Clone joda-time-hibernate and verify the [buildnumber-maven-plugin](http://www.mojohaus.org/buildnumber-maven-plugin/usage.html) is included so two values are added to the Maven metadata file.
    - SCM Revision Number and Build Timestamp  
 
-<center>
-
-  ![](img4/river.svg ':size=125px')
-
-</center>
+![](img4/river.svg ':size=100x100 :class=icon')
 
 ## Tips
 

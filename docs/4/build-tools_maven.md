@@ -2,11 +2,7 @@
 
 This section is designed to give you an introduction to Maven with a focus on the Maven approach of software building, package handling, and more.
 
-<center>
-
-  ![](img4/compile.svg ':size=125px')
-
-</center>
+![](img4/compile.svg ':size=100x100 :class=icon')
 
 ## Introduction
 
@@ -90,13 +86,15 @@ In this exercise you will create a skeleton web application using Maven, add a p
 mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
 ```
  2. Add [Jetty](https://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html) to `pom.xml`.
-```
-<build>
-    <groupId>org.eclipse.jetty</groupId>
-    <artifactId>jetty-maven-plugin</artifactId>
-    <version>9.4.31.v20200723</version>
-</build>
-```
+
+  ```
+  <build>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-maven-plugin</artifactId>
+      <version>9.4.31.v20200723</version>
+  </build>
+  ```
+
  3. Run Jetty.
 ```
 mvn jetty:run
