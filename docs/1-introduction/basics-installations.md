@@ -19,7 +19,7 @@ If you are new to the terminal, feel free to run `vimtutor` and complete the exe
 ## Finding Packages
 If you know you need a package, but you aren't sure what the name is exactly, you can search for  the package. If you wanted to look for a package titled ‘openjdk’, for example, you might use one of the following three commands.
 
-```
+```bash
 apt-cache search openjdk
 yum search openjdk
 brew search openjdk

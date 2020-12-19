@@ -87,7 +87,7 @@ mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp
 ```
  2. Add [Jetty](https://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html) to `pom.xml`.
 
-  ```
+  ```xml
   <build>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-maven-plugin</artifactId>

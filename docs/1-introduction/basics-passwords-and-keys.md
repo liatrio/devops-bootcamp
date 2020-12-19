@@ -39,7 +39,7 @@ SSH makes use of public key authentication to allow passwordless and non-interac
 
 ?> **Note:** `.ssh/` needs a permission level of 0700, and `.ssh/authorized_keys` needs a permission level of 0600 to authenticate properly. Permissions can be changed using the `chmod` command.
 
-```
+```bash
 # Generate SSH keys. Use the default file and empty passphrase for the keys.
 ssh-keygen
 

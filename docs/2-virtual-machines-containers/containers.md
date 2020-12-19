@@ -75,21 +75,25 @@ A base image is the image that is used to create all of your container images. I
 ### Use official images
 Where possible, use [official images](https://hub.docker.com/search?q=&type=image&image_filter=official) from [Docker Hub](https://hub.docker.com/) rather than installing tools manually. For example, the following Dockerfile is installing Java.
 
-    ## Don't do this
-    FROM centos:centos6 
-    RUN yum install java-1.7.0-openjdk-devel -y
+```docker
+## Don't do this
+FROM centos:centos6
+RUN yum install java-1.7.0-openjdk-devel -y
 
-    ## Better
-    FROM openjdk 
+## Better
+FROM openjdk
+```
 
 ### Tag specific base image versions 
 If you omit the tag on the `FROM` line, you will end up with the latest tag. This can result in inconsistencies in the image that is built as the latest tag can change between times when the image is built. Therefore, be sure to always include a tag to pin to a specific upstream image.
 
-    ## Don't do this
-    FROM openjdk
+```docker
+## Don't do this
+FROM openjdk
 
-    ## Better
-    FROM openjdk:7
+## Better
+FROM openjdk:7
+```
 
 ### Use specialized images
 Container images, especially base images, should be specialized for a specific purpose and not contain any unnecessary packages or tools. Even small tools that you might normally consider essential or innocuous such as text editors, debugging tools or network diagnostic tools should be avoided. Adding unnecessary tools not only increases the size of the image it increases the attack surface of container which could introduce a security vulnerability.
@@ -102,16 +106,20 @@ A Docker image consists of read-only layers each of which represents a Dockerfil
 ### Order of instructions
 Docker will cache layers from previous builds to decrease the time required to build images. However, once Docker detects that a layer needs to be rebuilt, then all layers after it must also be rebuilt. Consider the following Dockerfile.
 
-    FROM ubuntu
-    RUN apt-get update
-    RUN apt-get install -y openjdk-8-jdk
-    COPY . /app
+```docker
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y openjdk-8-jdk
+COPY . /app
+```
 
 ### Dependency layer
 Downloading dependencies for an application can be an expensive operation. You can leverage Docker layer caching to avoid this in image build time by having a separate layer that resolves the dependencies for the application. In the following example, we have a layer to `RUN gradle build` before we add the source code to the image. This results in a layer with all our application dependencies downloaded.
 
-    COPY build.gradle gradle.properties settings.gradle
-    RUN gradle build
+```docker
+COPY build.gradle gradle.properties settings.gradle
+RUN gradle build
+```
 
 ## Multi-stage builds
 One of the most challenging things about building images is keeping the image size down. Each instruction in the Dockerfile adds a layer to the image, and you need to remember to clean up any artifacts you don’t need before moving on to the next layer. With multi-stage builds, you use multiple `FROM` statements in your Dockerfile. Each `FROM` instruction can use a different base, and each of them begins a new stage of the build. You can selectively copy artifacts from one stage to another, leaving behind everything you don’t want in the final image.
@@ -119,23 +127,27 @@ One of the most challenging things about building images is keeping the image si
 ### Build from source
 In order to ensure repeatability of image builds, you should put as much of the build process as possible inside the Dockerfile. For example, if you run Gradle to build a jar from your workspace and then have the Dockerfile copy in the jar file, you run the risk of other developers not having the same tools on their workspace. In order to mitigate that, install and run Gradle from within the Dockerfile:
 
-    COPY build.gradle gradle.properties settings.gradle
-    RUN gradle build
-    COPY . /app
-    RUN gradle clean build release
+```docker
+COPY build.gradle gradle.properties settings.gradle
+RUN gradle build
+COPY . /app
+RUN gradle clean build release
+```
 
 ### Separate build stage
 The concern with running the build within your Dockerfile is the additional space consumed by the image for all the build tools. This can be addressed through the use of a separate stage for the build.
 
-    ## Builder stage
-    FROM openjdk:7 as builder
-    COPY build.gradle gradle.properties settings.gradle
-    RUN gradle clean build release
-    COPY . /app
+```docker
+## Builder stage
+FROM openjdk:7 as builder
+COPY build.gradle gradle.properties settings.gradle
+RUN gradle clean build release
+COPY . /app
 
-    ## Runner stage
-    FROM ubuntu as runner
-    COPY --from=builder /app/dist/web-app-1.0.1.BUILD.war app/webapps/web-app.war
+## Runner stage
+FROM ubuntu as runner
+COPY --from=builder /app/dist/web-app-1.0.1.BUILD.war app/webapps/web-app.war
+```
 
 ## Processes
 The final step in the `Dockerfile` is to run the application using a process command. The recommendation is to separate areas of concern by using **one process per container**.
@@ -146,7 +158,9 @@ The final step in the `Dockerfile` is to run the application using a process com
 
 The recommendation is the exec form of the `ENTRYPOINT` instruction to run the one process:
 
-    ENTRYPOINT ["java", "-jar", "/app.jar"]
+```docker
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+```
 
 ## Dockerhub
 

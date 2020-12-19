@@ -8,7 +8,7 @@ or 'install' are defined by the user in a `Makefile`
 
 Let's walk through an example of a simple Makefile to explore how they look.
 
-```
+```makefile
 # The build target executable
 TARGET = my-go-project
 
