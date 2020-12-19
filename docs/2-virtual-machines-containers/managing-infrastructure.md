@@ -5,11 +5,7 @@ In this section you will be taking what you've learned about virtual machines to
 ## Jenkins 
   Jenkins is a build automation server that manages and controls software delivery processes throughout the entire lifecycle. It orchestrates tasks including build, test, package, staging, deployment, static code analysis.
 
-<center>
-
-  ![](img2/jenkins.svg ':size=125px')
-
-</center>
+![](img2/jenkins.svg ':size=226x312 :class=icon')
 
   - A leading open source continuous integration tool
   - Builds, tests, and deploys software continuously and monitors the execution and status of jobs
@@ -21,11 +17,7 @@ In this section you will be taking what you've learned about virtual machines to
 
 ## Delivery Pipeline
 
-<center>
-
-  ![](img2/delivery-pipeline-stages.svg)
-
-</center>
+![A Jenkins pipeline showing passing build, test, and deploy stages](img2/delivery-pipeline-stages.svg ':class=img-center')
 
   Automated delivery pipelines accelerate software delivery and enable faster, safer deployments.
   An entire integrated toolchain is necessary to leverage the capabilities of an automated pipeline, orchestrated by a build server. Newly committed code that is pushed to the git server will send a Webhooks to the build servers to trigger tasks. General stages of a delivery pipeline include:
@@ -54,12 +46,7 @@ Working as a group configure your Jenkins server to deploy to someone elses Arti
 
 ?> If you are working on different networks you man need to use a tool like [Ngrok](https://ngrok.com/) to bridge communication between your servers over the Internet. 
 
-<center>
-
-  ![](img2/network.svg ':size=125px')
-
-
-</center>
+  ![](img2/network.svg ':size=100x100 :class=icon')
 
 # Deliverables
 
