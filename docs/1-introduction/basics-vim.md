@@ -87,9 +87,7 @@ Normal mode.
 3. Save and exit Vim
 4. Verify that your changes were saved
 
-> Note:
-> To learn more about Vim, use the command `vimtutor` in your terminal to
-> run through a tutorial that explores more advanced commands.
+?> To learn more about Vim, use the command `vimtutor` in your terminal to run through a tutorial that explores more advanced commands.
 
 # Deliverables
 - Discuss the benefits of using Vim in your workflow

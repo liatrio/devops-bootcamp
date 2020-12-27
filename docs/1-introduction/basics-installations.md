@@ -4,9 +4,6 @@ Linux packages are compressed file archives that contain all of the necessary co
 
 A DevOps Engineer & Consultant should be very familiar with the quickest ways to obtain software and which situations certain installation methods are suited for.
 
-## Optional Practice
-If you are new to the terminal, feel free to run `vimtutor` and complete the exercise. 
-
 ## Package Managers
  Linux distros use different package managers to search, install and maintain software.
 

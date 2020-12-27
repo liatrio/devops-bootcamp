@@ -85,7 +85,7 @@ portion of the address.
 Finally, there are a few IP ranges that are reserved as private addresses.
 This means that no public server will ever be granted one of these IPs.
 When setting up private or internal networking, using IP addresses
-within a private range will ensure no conflicts with existing servers.
+within a private range will ensure no conflicts with public servers.
 
 | CIDR Block     | Address Range                 | Number of Addresses |
 |----------------|-------------------------------|---------------------|
