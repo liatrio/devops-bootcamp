@@ -14,7 +14,7 @@ So far the tools we have looked at for building and running images are great for
 
 1. [Install Vagrant](https://www.vagrantup.com/intro/getting-started/install).
 
-2. Create a new folder inside of it run `vagrant init centos/7`
+2. Create a new directory and inside of it run `vagrant init centos/7`
 
 3. Run `vagrant up`
 
@@ -26,13 +26,17 @@ So far the tools we have looked at for building and running images are great for
 
 ## Vagrant
 
-> Vagrant is a tool for building and managing virtual machine environments in a single workflow -- [Introduction to Vagrant](https://www.vagrantup.com/intro/index)
+> Vagrant is a tool for building and managing virtual machine environments in a single workflow.
+>
+> _- [Introduction to Vagrant](https://www.vagrantup.com/intro/index)_
 
-Being able to to create a CentOS 7 VM in two commands is pretty cool but what if you want to customize your VM and share it with others. Imagine your working with a team of developers and you want the entire team to be able use a VM with the same libraries and tools installed.
+Being able to to create a CentOS 7 VM in two commands is pretty cool but what if you want to customize your VM and share it with others. Imagine you're working with a team of developers and you want the entire team to be able use a VM with the same libraries and tools installed.
 
 #### Exercise 2: Creating a Base Box
 
-In this exercise we will create a Vagrant Base Box using our VirtualBox Golden Image. Vagrant uses VirtualBox (or other providers) to run images. In order for Vagrant to be able to do this the image needs to be configured for Vagrant. Read [Creating a Base Box](https://www.vagrantup.com/docs/boxes/base) and [Creating a (VirtualBox) Base Box](https://www.vagrantup.com/docs/providers/virtualbox/boxes.html).
+In this exercise we will create a Vagrant Base Box using our VirtualBox Golden Image. Vagrant uses VirtualBox (or other providers) to run images. In order for Vagrant to be able to do this the image needs to be configured for Vagrant.
+
+Read [Creating a Base Box](https://www.vagrantup.com/docs/boxes/base) and [Creating a (VirtualBox) Base Box](https://www.vagrantup.com/docs/providers/virtualbox/boxes.html).
 
 1. Clone your VirtualBox Golden Image and update it to meet the requires for a Vagrant VirtualBox Base Box.
 
@@ -48,7 +52,7 @@ You may have noticed some similarities between Packer and Vagrant. They both mak
 
 In this exercise you will use the Vagrant Post-Processor to build a Vagrant Box using the Packer template you created in the previous section.
 
-1. Modify your [kickstart file](https://docs.centos.org/en-US/centos/install-guide/Kickstart2/) to automate the install of CentOS and meet Vagrant's requirements.
+1. Modify your [kickstart file](https://docs.centos.org/en-US/centos/install-guide/Kickstart2/) to automate the installation of CentOS and meet Vagrant's requirements.
 
     - allow `vagrant` user to have password-less sudo
     - `UseDNS no` (optional)

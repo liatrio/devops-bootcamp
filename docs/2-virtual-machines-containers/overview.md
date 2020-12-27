@@ -6,7 +6,6 @@
  3. Learn how to use Vagrant proficiently to manage virtual machines.
  4. Gain a perspective of how containerization is modernizing software development, packaging and deployment.
  5. Learn the basics of using Docker to create and run containers.
- 6. Understand Packer basics.  
 
 <center>
 

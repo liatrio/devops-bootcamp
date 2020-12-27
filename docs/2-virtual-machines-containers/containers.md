@@ -1,7 +1,8 @@
 # Containers
 
 >&ldquo;Containers and virtual machines have similar resource isolation and allocation benefits, but function differently because containers virtualize the operating system instead of hardware. Containers are more portable and efficient.&rdquo;
-
+>
+> _- [What is a Container?](https://www.docker.com/resources/what-container)_
 <center>
 
 ![](img2/containers.svg ':size=125px')
@@ -33,7 +34,7 @@ Then, Virtual Machines (VMs) were introduced; that allowed for slightly higher p
 In the third progression, containers are introduced into the flow. Containers are a smaller form of a VM that only contains the application code and it's necessary dependencies to run. This progression of technology has led to greater flexibility and scalability.
 
 ## Containers in Production
-Some people have the mistaken idea that containers is only for development and testing, but there are thousands of companies running in production with containers on Kubernetes and OpenShift. The image is meant to be immutable, meaning it will be identical no matter where it is deployed, whether it is in development or production hardware. Every iteration of a container will deploy the same way on top of the orchestrator.
+Some people have the mistaken idea that containers is only for development and testing, but there are thousands of companies running in production with containers on Kubernetes and OpenShift. A container image is meant to be immutable, meaning it will be identical no matter where it is deployed, whether it is in development or production hardware. Every iteration of a container will deploy the same way on top of the orchestrator.
 
 Read more from [Docker: What is a Container](https://www.docker.com/resources/what-container) to get a better understanding of containers and how they compare to virtual hosts.
 
@@ -51,9 +52,13 @@ Docker is often used synonymously with containers but is actually a platform for
 </center>
 
 ## Images and Containers
->&ldquo;An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.&rdquo; - [Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)
+> &ldquo;An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.&rdquo;
+>
+> _- [Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)_
 
->&ldquo;A container is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with state, or a user process).&rdquo; - [Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)
+> &ldquo;A container is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with state, or a user process).&rdquo;
+>
+> _- [Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)_
 
 Images are the building blocks of Docker. They define what is in a container. They can be used by other images to extended extend their functionality. Images can also be shared across hosts.
 
@@ -82,7 +87,7 @@ Remove the hello world image with `docker image rm IMAGE_ID|NAME`.
 Docker images are built by defining a set of steps to create the image in a [Dockerfile](https://docs.docker.com/engine/reference/builder/). Each step begins with a single word instruction, which are uppercase by convention, followed by arguments all on the same line. The image is then built by running `docker build PATH_TO_DOCKERFILE`.
 
 ## Base Images
-A base image is the image that is used to create all of your container images. It is referenced using the `FROM` instruction in a Dockerfile. A proper implementation of base images improves maintainability of your images. Your base image can be an [official Docker image](https://docs.docker.com/docker-hub/official_images/), such as Centos, or you can modify an official Docker image to suit your needs, or you can create your own base image from [scratch](https://hub.docker.com/_/scratch). When building images, there are a few things to consider in regards to the base image from which to build from.
+A base image is the starting point from which any new image is created. It is referenced using the `FROM` instruction in a Dockerfile. A proper implementation of base images improves maintainability of your images. Your base image can be an [official Docker image](https://docs.docker.com/docker-hub/official_images/), such as Centos, or you can modify an official Docker image to suit your needs, or you can create your own base image from [scratch](https://hub.docker.com/_/scratch). When building images, there are a few things to consider in regards to the base image from which to build from.
 
 ### Use official images
 Where possible, use [official images](https://hub.docker.com/search?q=&type=image&image_filter=official) from [Docker Hub](https://hub.docker.com/) rather than installing tools manually. For example, the following Dockerfile is installing Java.
@@ -104,12 +109,12 @@ If you omit the tag on the `FROM` line, you will end up with the latest tag. Thi
     FROM openjdk:7
 
 ### Use specialized images
-Container images, especially base images, should be specialized for a specific purpose and not contain any unnecessary packages or tools. Even small tools that you might normally consider essential or innocuous such as text editors, debugging tools or network diagnostic tools should be avoided. Adding unnecessary tools not only increases the size of the image it increases the attack surface of container which could introduce a security vulnerability.
+Container images, especially base images, should be specialized for a specific purpose and not contain any unnecessary packages or tools. Even small tools that you might normally consider essential or innocuous such as text editors, debugging tools or network diagnostic tools should be avoided. Adding unnecessary tools not only increases the size of the image, it increases the attack surface of container which could introduce a security vulnerability.
 
 ## Layers
 A Docker image consists of read-only layers each of which represents a Dockerfile instruction. The layers are stacked and each one is a delta of the changes from the previous layer. Care must be taken when designing a Dockerfile to optimize both the time it takes to build the image as well as the size of the image that is created.
 
-?>Layers reduce the time it takes to build the image through efficient use of image layers.
+?>Layers reduce the time it takes to build the image through efficient use of caching.
 
 ### Order of instructions
 Docker will cache layers from previous builds to decrease the time required to build images. However, once Docker detects that a layer needs to be rebuilt, then all layers after it must also be rebuilt. Consider the following Dockerfile.
@@ -153,20 +158,20 @@ The concern with running the build within your Dockerfile is the additional spac
 The final step in the `Dockerfile` is to run the application using a process command. The recommendation is to separate areas of concern by using **one process per container**.
 
 - **Simplicity** - Running multiple process within a container requires additional scripting within the container to coordinate the startup of each process.
-- **Reliability** - When all process for a container exit, the container orchestrator can automatically restart the container. If there is more than one process, and it exits, it is up to you to manage the restart of the process within the container rather than allowing the orchestrator to restart it.
+- **Reliability** - When the foreground process for a container exits, the container orchestrator can automatically restart the container. If there is more than one process, and it exits, it is up to you to manage the restart of the process within the container rather than allowing the orchestrator to restart it.
 - **Scalability** - If one process requires additional capacity and triggers an auto scaling event, then all process within the container are also scaled.
 
 The recommendation is the exec form of the `ENTRYPOINT` instruction to run the one process:
 
     ENTRYPOINT ["java", "-jar", "/app.jar"]
 
-## Dockerhub
+## Docker Hub
 
-[Dockerhub](https://hub.docker.com/) is an online docker image registry where users can upload their ready-built images, or pull down images uploaded by the docker community. Similarly to atlas for Vagrant boxes, dockerhub is driven by its users. If there isn't an image available with the features you want, you can make one and upload it yourself.
+[Docker Hub](https://hub.docker.com/) is an online Docker image registry where users can upload their ready-built images, or pull down images uploaded by the Docker community. Similarly to atlas for Vagrant boxes, Docker Hub is driven by its users. If there isn't an image available with the features you want, you can make one and upload it yourself.
 
 # Best Practices
 
-The following best practices are part of a philosophy for containers which make them scale horizontally easier, be more reusable and deploy quicker.
+The following best practices are part of a philosophy for containers which make them scalable, reusable, and quickly deployable.
 
  - Ephemeral Containers: A container should, as much as possible, be able to be stopped and destroyed, then rebuilt and replaced with an absolute minimum set up and configuration.
  - Decouple Applications: A container should have only one concern.
@@ -175,7 +180,7 @@ See [Docker: Dockerfile Best Practices](https://docs.docker.com/develop/develop-
 
 # Exercise
 
-Create a Jenkins and Artifactory Docker image similar to the virtual machines you created using VirtialBox.
+Create a Jenkins and Artifactory Docker image similar to the virtual machines you created using VirtualBox.
 
 1. Create a `Dockerfile` in a new folder
 
@@ -209,4 +214,4 @@ Discuss the differences between running `vagrant init ubuntu/bionic64 && vagrant
 
 Discuss the advantages / disadvantages of using containers vs. virtual machines.
 
-Discuss some possible challenges of using Containers in an enterprise production environment.
+Discuss some possible challenges of using containers in an enterprise production environment.

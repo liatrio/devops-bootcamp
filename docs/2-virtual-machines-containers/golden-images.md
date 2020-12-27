@@ -18,7 +18,7 @@ For this exercise you will create a Golden Image by manually installing and conf
  
 3. Log into the new virtual machine from your local machine using SSH (not VirtualBox Manager).
 
-  ?> To connect to the SSH port of the virtual machine you may need to change the network configuration in VirtualBox. VirtualBox and can create several different [types of networks](https://www.virtualbox.org/manual/ch06.html) for the virtual machine which will affect how you connect to it. Experiment with a few different network types and compare the pros and cons.
+  ?> To connect to the SSH port of the virtual machine you may need to change the network configuration in VirtualBox. VirtualBox can create several different [types of networks](https://www.virtualbox.org/manual/ch06.html) for the virtual machine which will affect how you connect to it. Experiment with a few different network types and compare the pros and cons.
 
 5. Update CentOS to have the latest packages, and install `java-1.8.0-openjdk-devel`.
 
@@ -44,7 +44,9 @@ You should now be familiar with the process for creating a Golden Image with Vir
 
 This kind of repetitive work is often referred to as toil. Reducing toil from various roles in software delivery (developers, operations, SRE, etc) through automation is an important part of DevOps transformations.
 
-> **Toil** is the kind of work tied to running a production service that tends to be manual, repetitive, automatable, tactical, devoid of enduring value, and that scales linearly as a service grows. -- [Site Reliability Engineering: Eliminating Toil](https://landing.google.com/sre/sre-book/chapters/eliminating-toil/)
+> **Toil** is the kind of work tied to running a production service that tends to be manual, repetitive, automatable, tactical, devoid of enduring value, and that scales linearly as a service grows.
+>
+> _- [Site Reliability Engineering: Eliminating Toil](https://landing.google.com/sre/sre-book/chapters/eliminating-toil/)_
 
 <center>
 
@@ -52,7 +54,9 @@ This kind of repetitive work is often referred to as toil. Reducing toil from va
 
 </center>
 
-> **Packer** is an open source tool for creating identical machine images for multiple platforms from a single source configuration. -- [Read more](https://www.packer.io/intro)
+> **Packer** is an open source tool for creating identical machine images for multiple platforms from a single source configuration.
+>
+> _- [Introduction to Packer](https://www.packer.io/intro)_
 
 Since Packer defines everything needed to create an image in configuration files it can be run without manual intervention and is ideal for automation. It also makes it more convenient to maintain and update images over time. Packer has a variety of other features and use cases.
 
@@ -75,7 +79,7 @@ In this exercise you will use Packer to create a Golden Image with the same conf
 
 2. Create a Packer template file to build the minimal CentOS image using the ISO you downloaded.
   
-  ?> Read the Packer [Getting Started: Build an Image](https://learn.hashicorp.com/packer/getting-started/build-image) for general information on creating a Packer template.
+  ?> Read [Getting Started: Build an Image](https://learn.hashicorp.com/packer/getting-started/build-image) for general information on creating a Packer template.
 
   ?> Your Packer template will need to include a [VirtualBox Iso builder](https://www.packer.io/docs/builders/virtualbox/iso) to install CentoOS 7.
 
@@ -95,7 +99,7 @@ In this exercise you will use Packer to create a Golden Image with the same conf
     ],
   ```
 
-5. Add provisioners to you Packer template to install updates, install `java-1.8.0-openjdk-devel` and add your SSH public key to authorized keys.
+5. Add provisioners to your Packer template to install updates, install `java-1.8.0-openjdk-devel` and add your SSH public key to authorized keys.
   
   ?> Read the Packer [Getting Started: Provision](https://learn.hashicorp.com/packer/getting-started/provision) guide for more information.
 

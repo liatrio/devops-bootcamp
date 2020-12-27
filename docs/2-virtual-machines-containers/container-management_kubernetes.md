@@ -7,9 +7,11 @@
 
 # Kubernetes
 
-There are many different solutions for managing containers but Kubernetes has become one of the most popular and widely used platforms. It is part of a large ecosystem of tools and projects organized by the [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) which drives a lot of the development and support for containerized applications. So what is Kubernetes?
+There are many different solutions for managing containers but Kubernetes has become one of the most popular and widely used platforms. It is part of a large ecosystem of tools and projects organized by the [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) which drives development and support for containerized applications. So what is Kubernetes?
 
-> Kubernetes is a portable, extensible open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. Read more at [kubernetes.io: What is Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/).
+> Kubernetes is a portable, extensible open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.
+>
+> _- [What is Kubernetes?](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)_
 
 If you are still having a difficult time understanding what Kubernetes is that is OK. Kubernetes is complicated and we are not going to try to explain all of it in this section. All that you really need to know right now is that you can use it to run Docker containers.
 
@@ -109,6 +111,6 @@ After completing this exercise you should be familiar with Kubernetes Deployment
 
   ?> For Jenkins to communicate with Artifactory it should use the Artifactory Service you created but it still needs to know the network address to use. Kubernetes manages its own internal DNS service to make this easy. Read more about [DNS for Services and Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) to figure out what the Service network name is. 
 
-!> Note that we did not create any kind of persistent storage for your Pods so if they are restarted you will loose your Jenkins jobs and any artifacts stored in Artifactory. Creating persistent volumes in Kubernetes is a more advanced topic we will leave for later.
+!> Note that we did not create any kind of persistent storage for your Pods so if they are restarted you will lose your Jenkins jobs and any artifacts stored in Artifactory. Creating persistent volumes in Kubernetes is a more advanced topic we will leave for later.
 
 !> Running a Kubernetes cluster on your laptop can use a lot of memory and CPU time. If you installed Minikube locally you should make sure to run `minikube stop` and select *Docker Desktop* -> *Kubernetes* -> *Disable local cluster* to stop the clusters to save your battery life.
