@@ -21,7 +21,7 @@ As you can see above, there are 4 stages that a ticket, or a task, can be in:
 - To Demo(Review)
 - Done
 
-As a team member moves the task from stage to stage, he or she can alter settings to notify their team, or comment on events that have taken place pertaining to his or her ticket. It is crucial to constantly be updating and commenting on your tickets; the transparency to your teammates will keep everything running more smoothly.
+As a team member moves the task from stage to stage, they can alter settings to notify their team, or comment on events that have taken place pertaining to their ticket. It is crucial to constantly be updating and commenting on your tickets; the transparency to your teammates will keep everything running more smoothly.
 
 
 ### Breakdown of Ticket Types
@@ -81,10 +81,10 @@ Jira refers to tickets as *issues.* Although there are various ticket types out 
 ![](img3/grammar.webp ':size=300px')
 
 ### Styling
- - Every part of a ticket should be visually appealing to ensure readability
+ - Tickets should be structured to maximize readability
  - Use syntax, grammar, capitalization, punctuation to your advantage
  - Make things as simple and direct as possible
- - Use proper formatting and make use of special insert options 
+ - Use proper formatting and make use of special insert options
    - "Info" can be used for warnings such as version dependencies
    - User mentions (@name) should be used when possible
  - Use screenshots effectively

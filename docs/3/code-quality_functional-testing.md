@@ -33,5 +33,5 @@ While these are fairly trivial functional tests, they serve to show in general h
 
 # Deliverables
 
-* Discuss in your own words what the difference between functional testing and unit testing is
-* Discuss why functional testing should be done, even if our unit tests covers all the code
+* Discuss the differences between functional testing and unit testing.
+* Discuss if it's valuable to write functional tests for a project with full unit test coverage.

@@ -10,14 +10,10 @@ The goal of this section is to build your own application and gain perspective o
 
 This product can be anything you choose. However, there are some requirements.
 
-</center>
 
 <div class="grid2"><div class="col">
-<center>
 
 **Engineers**
-
-</center>
 
  - It must be deployed to a production environment
  - Use project management software to track issues
@@ -30,11 +26,8 @@ This product can be anything you choose. However, there are some requirements.
 
 
 </div><div class="col">
-<center>
 
 **Consultants**
-
-</center>
 
  - Read and execute the [Scrum Guide](https://www.scrumguides.org/scrum-guide.html) (schedule & facilitate all sprint meetings)
  - Understand and assign the role of Scrum Master and Product Owner
@@ -42,7 +35,6 @@ This product can be anything you choose. However, there are some requirements.
  - Ensure that the development team is using tickets to track progress using the board you created in the previous section
 
 </div></div>
-
 
 ## Previous Projects
 

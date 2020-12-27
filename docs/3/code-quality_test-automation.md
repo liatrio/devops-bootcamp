@@ -1,5 +1,5 @@
 # Automated Testing
-Automated Testing is a crucial step to ensure code quality because developed tests are guaranteed to run once new source code is committed. Jenkins is a tool that can help us leverage our tests in a build step. With the Testing stage in Jenkins, code quality can be ensured by automatically running the tests that have been written. If tests fail, the build can be marked as unstable and deployment will not occur.
+Automated testing is a crucial step to ensure code quality because developed tests are guaranteed to run once new source code is committed. Jenkins is a tool that can help us leverage our tests in a build step. With a testing stage in Jenkins, code quality can be ensured by automatically running the tests that have been written. If tests fail, the build can be marked as unstable and deployment will not occur.
 
 ## Exercise
 1. Locate the Jenkins Dockerfile created in the container section of the bootcamp.

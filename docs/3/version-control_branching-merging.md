@@ -10,7 +10,9 @@ Before we get into the specifics of how version control works lets examine two o
 
 **Merging** is the practice of reconciling changes between version controlled files from one branch to another branch. General merges can be performed effortlessly. Merging should happen as frequently as possible to provide maximum flow, faster feedback, and minimize conflicts.
 
-> **What if there was no branching?** Everybody would be editing the live code, half-baked changes would bork the system, people would be stepping all over each other. And so we give individuals the illusion of frozen time, that they are the only ones changing the system and those changes can wait until they are fully baked before risking the system. But this is an illusion and eventually the price for it comes due. Who pays? When? How much? That's what these patterns are discussing: alternatives for paying the piper.<br><i>- Kent Beck, from [Martin Fowler's Patterns for Managing Source Code Branches](https://martinfowler.com/articles/branching-patterns.html)</i>
+> **What if there was no branching?** Everybody would be editing the live code, half-baked changes would bork the system, people would be stepping all over each other. And so we give individuals the illusion of frozen time, that they are the only ones changing the system and those changes can wait until they are fully baked before risking the system. But this is an illusion and eventually the price for it comes due. Who pays? When? How much? That's what these patterns are discussing: alternatives for paying the piper.
+>
+> _- Kent Beck, from [Martin Fowler's Patterns for Managing Source Code Branches](https://martinfowler.com/articles/branching-patterns.html)_
 
 ## Branching Strategies
 

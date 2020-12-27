@@ -6,7 +6,7 @@ For the most part GitHub repositories work just like normal Git repositories. Yo
 
 # Pull Requests
 
-A pull request (PR) is a process to reviewed and approved changes from one branch before they are merged into another. A pull request can be created from one branch to another (usually a main branch) in the same repository or from a forked repository (see below) to its source. 
+A pull request (PR) is a process to review and approve changes from one branch before they are merged into another. A pull request can be created from one branch to another (usually a main branch) in the same repository or from a forked repository (see below) to its source. 
 
 After a pull request is created in GitHub it can be reviewed by viewing a side by side comparison of code being added and removed. It allows for people to comment on and requests changes to specific sections of code. People can be requested to review changes or rules can be setup to require reviews from specific people or a minimum number of reviews before a pull request is approved. Once a pull request is approved it can be merged and closed.
 
@@ -18,7 +18,7 @@ After a pull request is created in GitHub it can be reviewed by viewing a side b
 <img src="img/git-pr.png" alt="Peer Reviews"/>
 </p>
 
-Apart from quality gates, PRs provide an opportunitiy to perform honest, robust, and friendly code reviews. It is a sacred space often utilized only by the developers, as it narrows the audience to low-level code reviews.
+Apart from quality gates, PRs provide an opportunity to perform honest, robust, and friendly code reviews. It is a sacred space often utilized only by the developers, as it narrows the audience to low-level code reviews.
 
 During PRs, developers will work together to ensure that the code meets the business value promised by the work item. Common discussions will revolve around scope creep, optimizing implementation, and alignment on team's code norms.
 
@@ -35,7 +35,7 @@ Good peer reviews during pull requests help create strong and high performing te
 
 # Forks
 
-Forking a GitHub repository copies it to either your person repositories or the repositories of an organization you have the proper access to. It is essentially the same as cloning a repository and then pushing it up to a new GitHub repository except that forking links the copied repository to it's source which allows you to make pull requests back to original repository.
+Forking a GitHub repository copies it to either your personal repositories or the repositories of an organization you have the proper access to. It is essentially the same as cloning a repository and then pushing it up to a new GitHub repository except that forking links the copied repository to it's source which allows you to make pull requests back to original repository.
 
 A common use case is for individuals to contribute to open source projects by forking the project, committing changes to their fork and then creating a pull request to merge their changes into the official project. 
 
@@ -51,7 +51,7 @@ This exercise is an opportunity to explore GitHub's features. There are a lot of
 
 !> When making a pull request on a forked repository be sure to select your own repository as the base repository and not the official repository unless you are actually requesting them to merge your changes into their project. The is a common but embarrassing mistake and an annoyance for large project maintainers.
 
-4. Experiment with adding comments and making additional changes to the PR. If you are working in a group request someone else review your PR and requests changes on someone elses PR.
+4. Experiment with adding comments and making additional changes to the PR. If you are working in a group request someone else review your PR and requests changes on someone else's PR.
 
 # GitHub Alternatives
 

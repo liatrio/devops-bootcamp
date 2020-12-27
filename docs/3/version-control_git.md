@@ -30,7 +30,7 @@ Although Git can watch everything in your working directory, not everything on y
 - local system properties from IDE
 - secrets, passwords, and other security-sensitive data
 
-?>Add a list of files or folders in `.gitignore` to instruct Git to not track changes.
+?> Add a list of files or folders in `.gitignore` to instruct Git to not track changes.
 
 ### Common Git Commands
 
@@ -104,7 +104,7 @@ Branching allows you to diverge from the main line of development and continue t
 
 2. Switch to your new branch using `git checkout BRANCH_NAME`.
 
-?>Alternatively, you can combine step 1. and step 2. by doing `git checkout -b BRANCH_NAME` to create and switch to the branch in one step.
+?> Alternatively, you can combine step 1. and step 2. by doing `git checkout -b BRANCH_NAME` to create and switch to the branch in one step.
 
 3. Create a new file or make changes to an existing file. Add and commit the changes. 
 
@@ -124,7 +124,7 @@ A typical developer workflow is centered around using Git. Using TBE principles,
 
 # Merge Conflicts
 
-Its important to try to avoid merge conflicts by merging often, keeping branches short lived and communicating with teammates but no matter how careful you are conflicts **WILL** happen. Luckily Git also helps you resolve these conflicts.
+It's important to try to avoid merge conflicts by merging often, keeping branches short lived and communicating with teammates but no matter how careful you are conflicts **WILL** happen. Luckily Git also helps you resolve these conflicts.
 
 ### Exercise 3: Merge Conflicts
 
