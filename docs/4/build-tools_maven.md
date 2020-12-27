@@ -26,7 +26,7 @@ Starting out, you should read the following articles:
 Read about [The Maven Way](https://www.cloudbees.com/blog/maven-way%E2%84%A2) over at cloudbees.com.
 >"Ant is simply a toolbox whereas Maven is about the application of patterns in order to achieve an infrastructure which displays the characteristics of visibility, reusability, maintainability, and comprehensibility."
 >
-> \- [Philosophy of Maven, maven.apache.org](https://maven.apache.org/background/philosophy-of-maven.html)
+> \- [Philosophy of Maven](https://maven.apache.org/background/philosophy-of-maven.html)
 
 The primary key to The Maven Way is convention over configuration. This means
 that sticking to the standard way of setting up a project will be easy with
