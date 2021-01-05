@@ -6,9 +6,5 @@
  3. Familiarize yourself with tools needed to successfully complete DevOps Bootcamp.
  4. Explore some other resources learning about DevOps.
 
-<center>
 
-  ![](img1/goals.svg ':size=125px')
-
-</center>
-
+![](img1/goals.svg ':size=100x100 :class=icon')

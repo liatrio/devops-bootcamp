@@ -9,8 +9,5 @@
  6. Know what a pipeline may consist of.
  7. Put some of the concepts you've learned so far to the test with a project of your own.
 
-<center>
 
-  ![](img3/goals.svg ':size=125px')
-
-</center>
+![](img3/goals.svg ':size=100x100 :class=icon')

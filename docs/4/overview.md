@@ -9,8 +9,4 @@ So far we have learned about how DevOps affects managing software environments u
  4. Know the differences between Releases and Snapshots.
  5. Learn the basics of NPM and how it relates to Maven.
 
-<center>
-
-  ![](img4/goals.svg ':size=125px')
-
-</center>
+![](img4/goals.svg ':size=100x100 :class=icon')

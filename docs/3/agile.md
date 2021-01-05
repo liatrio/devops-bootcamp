@@ -2,7 +2,7 @@
 # Agile
 The Agile mindset is focused on collaboration and the ability to adapt to change quickly while focusing on delivering value to the customer. Agile utilizes an iterative approach that allows teams to respond to changing priorities and customer needs by working in small incriments.
 
-![](img3/devops-iterative.svg)
+![Three Agile sprints each containing intermediate steps of design, build, test, review, and launch](img3/devops-iterative.svg ':size=580x160 :class=img-center')
 
 >Users don't know what they want until they see working software. - Humphrey's Law
 

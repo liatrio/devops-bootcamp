@@ -1,10 +1,6 @@
 # Version Control
 
-<center>
-
-  ![](img3/git.svg ':size=125px')
-
-</center>
+![](img3/git.svg ':size=100x100 :class=icon')
 
 A Version Control System (also referred to as Source Code Management) is the foundation for Continuous Integration. It allows teams to iterate quicker and release more frequently by being able to work on code changes in isolation and then merge in their changes in a way that does not interfere with other work. As teams make smaller changes more frequently the ability to track changes, ensure they meet quality standards and do not conflict becomes critical. However just using a VCS does not guarantee a team will perform better. It is important that teams also develop a source code management strategy that makes integrating changes to their codebase easier, faster and less error prone.
 

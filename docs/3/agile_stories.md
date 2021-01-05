@@ -45,14 +45,14 @@ The acronym INVEST helps to remember a widely accepted set of criteria, or check
 
 
 ## Vertical slicing
-Traditionally, requirements were broken down to fit within an individual layer of an application's stack. To produce working software in agile interative development, teams should vertically slice stories in order to demonstrate progress across all the components in the project. This refers to a cross-sectional slice through the layers that form the structure of the software code base. (source)[https://en.wikipedia.org/wiki/Vertical_slice]
+Traditionally, requirements were broken down to fit within an individual layer of an application's stack. To produce working software in agile interative development, teams should vertically slice stories in order to demonstrate progress across all the components in the project. This refers to a cross-sectional slice through the layers that form the structure of the software code base. [source](https://en.wikipedia.org/wiki/Vertical_slice)
 
-![](img3/agile-vertical-slicing.svg ':size=450px')
+![Four horizontal bars labeled UI, Application, Domain, and DB, with one vertical bar crossing all four components](img3/agile-vertical-slicing.svg ':size=450px')
 
 ## Story splitting
 As stories are initial discussed, often it is either too big or there are missing details. Splitting stories is a technique to break the work down by stories using its acceptance criteria. The result of story splitting is that each smaller story contains a more granular level of detail.
 
-![](img3/agile-story-splitting.svg)
+![One ticket being split into three smaller related tickets](img3/agile-story-splitting.svg)
 
 ## Best Practices
 - Split stories that are too big

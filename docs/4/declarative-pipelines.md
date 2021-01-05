@@ -3,7 +3,7 @@
 A Declarative Pipeline is a method for automating the process of setting up a pipeline in jenkins. To do this we will be using a Jenkinsfile. Jenkinsfiles contain the definition of a Jenkins Pipeline in steps and is checked into source control to be used by jenkins. 
 
 ### Example Jenkinsfile
-```
+```groovy
 pipeline {
     agent any
 
