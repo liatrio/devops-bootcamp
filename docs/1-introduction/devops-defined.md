@@ -43,7 +43,7 @@ Read [The Three Ways: The Principles Underpinning DevOps](http://itrevolution.co
 
  4. **Sharing**: Effective teamwork ignores organizational boundaries.
 
-Read [What Devops Means to Me](https://www.chef.io/blog/2010/07/16/what-devops-means-to-me/)
+Read [What Devops Means to Me](https://blog.chef.io/what-devops-means-to-me)
 
 ## ICE
 
