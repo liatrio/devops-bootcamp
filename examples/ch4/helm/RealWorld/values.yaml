@@ -1,0 +1,52 @@
+# Default values for RealWorld.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+global:
+  image:
+    pullPolicy: IfNotPresent
+
+frontend: {}
+
+backend:
+  image:
+    # repository: DOCKERHUB_USERNAME/realworld_backend
+    repository: paulhenson/helmref_express
+    # Overrides the image tag whose default is the chart appVersion.
+    # tag: ""
+    tag: firsttry
+  podAnnotations: {}
+  service:
+    port: 80
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
