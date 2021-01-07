@@ -32,21 +32,25 @@ spec:
           imagePullPolicy: {{ .Values.global.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 3000
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
+              path: /api/tags/
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /api/tags/
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: MONGODB_URI
-              value: {{ include "mongodb.fullname" . }}
+              value: mongodb://root:hello@{{ .Release.Name }}-mongodb
+            - name: NODE_ENV
+              value: dev
+            - name: SECRET
+              value: shhhhhh
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
