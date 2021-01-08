@@ -23,7 +23,7 @@ Now navigate into the directory `cd liatrio_console_tutorial`
 Tip: If you're typing out a long file or directory name, you can press the `<tab>` key to attempt to auto-complete it. If what you've typed is enough to identify the file, it will be filled in automatically. If you haven't typed enough to identify a single file, you can press `<tab>` twice to be shown a list of possibilities.
 
 Commands:
-```
+```bash
 pwd
 cd ~
 pwd
@@ -44,7 +44,7 @@ If you're ever curious about what options are available for a command, you can r
 Another useful command allows you to search a part of your system for files if you don't know where they're located. Run `find ~/ -name my_file`. `find` may have some directories that it can't access, but in the end it should be able to find your file.
 
 Commands:
-```
+```bash
 touch my_file
 ls
 touch .my_hidden_file
@@ -64,7 +64,7 @@ Now we can test if we succeeded, by running `cat my_file`.
 Let's say we want to add something to our file, try running `echo "File redirection is cool" > my_file`. If you `cat my_file` you'll see it didn't work. We overwrote our first message, instead of adding it to the end. If we want to add to the end of file, we instead should use the `>> filename` redirection. So let's try `echo "Second try" >> my_file`. Now you can `cat my_file` and see that it worked.
 
 Commands:
-```
+```bash
 cat my_file
 echo "Hello World"
 echo "Hello World" > my_file
@@ -79,10 +79,10 @@ cat my_file
 
 For this next section let's talk about the `grep` command. `grep` can search a file for a pattern. This can be useful if know something is in a file, but the file is too large to search by hand. Try running `grep Second my_file`. Here 'Second' is the pattern we're searching for. Notice that `grep` prints out the whole line in the response giving some context for what was found.
 
-Imagine that we'd like to search not just files, but also the output of other commands. As an example `touch find_me`. Imagine we want to find this file in a directory.  One way we can use `grep` to accomplish this is to `ls > temp_file` and then `grep find_me temp_file`. However, wanting to use the output of one command as the input for another is a fairly command situation. Instead of using a file as an in between, we can use the `|`, called a 'pipe'. A pipe is perfect for this situation and it does exactly what we need, passing the output of the first command, as input for the second. Run `ls | grep find_me`. Notice that the output is exactly the same, but this time we didn't require an extra file.
+Imagine that we'd like to search not just files, but also the output of other commands. As an example `touch find_me`. Imagine we want to find this file in a directory.  One way we can use `grep` to accomplish this is to `ls > temp_file` and then `grep find_me temp_file`. However, wanting to use the output of one command as the input for another is a fairly common situation. Instead of using a file as an in between, we can use the `|`, called a 'pipe'. A pipe is perfect for this situation and it does exactly what we need, passing the output of the first command, as input for the second. Run `ls | grep find_me`. Notice that the output is exactly the same, but this time we didn't require an extra file.
 
 Commands:
-```
+```bash
 grep Second my_file
 touch find_me
 ls > temp_file
@@ -98,14 +98,14 @@ The directory that our current working directory is inside of is called its 'par
 
 If we want to move a file from our parent directory to another directory, we can use the move, or `mv` command. `mv` expects two filenames to follow it, the current position of the file you want to move, and the location you want to move it to. To move `my_file` to the current directory the command we want is `mv ../my_file ./my_file`.
 
-If you run `ls ../` you will see that the file isn't in the parent directory anymore, because it was moved. If you want the copy the file, so that it exists in both places, you can use the copy, or `cp` command, which is used in the same way as `mv`. try running `cp ../temp_file ./another_temp_file`. Noe, that here we gave our copy a different name. Because they're in different directories we could've used the same name, however two files in the same directory can't have the same name. If we want to rename the file we just copied, we can use the same `mv` command as before. The only difference is that the start and end directories are the same, for example `mv ./another_temp_file ./temp_file`.
+If you run `ls ../` you will see that the file isn't in the parent directory anymore, because it was moved. If you want the copy the file, so that it exists in both places, you can use the copy, or `cp` command, which is used in the same way as `mv`. try running `cp ../temp_file ./another_temp_file`. Now, that here we gave our copy a different name. Because they're in different directories we could've used the same name, however two files in the same directory can't have the same name. If we want to rename the file we just copied, we can use the same `mv` command as before. The only difference is that the start and end directories are the same, for example `mv ./another_temp_file ./temp_file`.
 
 Finally let's try removing files. The `rm` simply removes a file you specify, such as `rm temp_file`. Notice that you didn't have to use `./temp_file`, you could've, but using a filename without providing the directory will generally assume the current working directory.
 
 If we want to remove a directory with `rm` we can do so, but everything inside the directory will also need to be removed. This can be specified with a simple option, like the one we used with `ls`. First run `cd ~` to move back to your home directory. Now run `rm -r liatrio_console_tutorial`. This removes the directory and everything inside it, so be sure you know what you're doing when you `rm -r`. Once this command completes you'll have cleaned up all the files we created and completed the Liatrio Console Tutorial.
 
 Commands:
-```
+```bash
 mkdir test_directory
 cd test_directory
 mv ../my_file ./my_file

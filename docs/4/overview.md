@@ -8,8 +8,4 @@ So far we have learned about how DevOps affects managing software environments u
  3. Learn how tools like Maven, NPM, Make and GoReleaser affect software delivery.
  4. Learn how containers affect software delivery.
 
-<center>
-
-  ![](img4/goals.svg ':size=125px')
-
-</center>
+![](img4/goals.svg ':size=100x100 :class=icon')
