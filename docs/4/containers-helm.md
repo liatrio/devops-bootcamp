@@ -1,5 +1,6 @@
 # Helm
-![Helm](docs/img/helm-icon-color.png)
+
+![](img4/helm-icon.svg ':size=125px')
 
 Helm is a package manager for Kubernetes. Helm's packaging format are called charts, which is a collection of files that describe related Kubernetes resources. Helm Charts are used to help install, manage, and upgrade the most complex Kubernetes applications. 
 
@@ -21,7 +22,7 @@ We can manually create the files that Helm will use to make a chart. The require
 
 5. Run `helm install configmap . ` to apply the Helm chart to the Kubernetes cluster. 
 
-6. Run `kubectl get configmap game-demo -o yaml` to see the yaml that is applied from the Helm install step.
+6. Run `kubectl get configmap NAME -o yaml` to see the yaml that is applied from the Helm install step.
 
 7. Run `helm template . ` to show the entire output that Helm is creating for you.
 

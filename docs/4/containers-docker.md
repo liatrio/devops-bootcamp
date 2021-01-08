@@ -4,12 +4,16 @@ Another important use of creating releases is when releasing container images to
 
 ## Exercise
 
-1. If you haven't already, create a [Dockerhub](https://hub.docker.com/) account, and create your first two repositories, name them realworld_backend and realworld_frontend.
+1. If you haven't already, create a [Dockerhub](https://hub.docker.com/) account, and create your first two repositories, name them `realworld_backend` and `realworld_frontend`.
 2. Using two different `Dockerfiles` build two container images, one frontend [(React/Redux)](https://github.com/gothinkster/react-redux-realworld-example-app) and one backend [(Node/Express)](https://github.com/gothinkster/node-express-realworld-example-app) from the [Real World Repository](https://github.com/gothinkster/react-redux-realworld-example-app). Make sure to [tag](https://docs.docker.com/engine/reference/commandline/tag/) the image using semantic versioning.
-  - Hint: You can tag a Docker image in the same step as the build.
+
+?> You can tag a Docker image in the same step as the build.
+
 3. Push both images to your Dockerhub repository.
 4. Create a `Docker Compose` to be able to connect the frontend and the backend.
+
 ?> The Docker Compose will need to configure the MongoDB instance for the backend
+
 5. Create a `Jenkinsfile` pipeline to automatically build and push your Docker images to your repository.
   - It is challenging to run Docker inside of Docker, so using a golden image will likely be easier.
   - You might need to use the `docker login` command in the Jenkinsfile so you can push to your Dockerhub repository.
