@@ -1,14 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "realworld.fullname" . }}
+  name: backend
   labels:
-    {{- include "realworld.labels" . | nindent 4 }}
+    app.kubernetes.io/instance: realworld 
+    app.kubernetes.io/name: realworld
 spec:
   replicas: 1
   selector:
     matchLabels:
-      {{- include "realworld.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/instance: realworld 
+      app.kubernetes.io/name: realworld
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -16,7 +18,8 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "realworld.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/instance: realworld 
+        app.kubernetes.io/name: realworld
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -46,9 +49,9 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: MONGODB_URI
-              value: mongodb://root:hello@{{ .Release.Name }}-mongodb
+              value: mongodb://USERNAME:ROOT_PASSWORD@SERVICE_NAME
             - name: NODE_ENV
-              value: dev
+              value: production
             - name: SECRET
               value: shhhhhh
       {{- with .Values.nodeSelector }}
