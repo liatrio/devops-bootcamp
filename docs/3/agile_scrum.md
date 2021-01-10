@@ -15,8 +15,6 @@ Scrum breaks work into timeboxed sprints. Generally sprints are one or two weeks
 # Team Composition
 Product teams work in a way where the delivery team agrees to deliver on a promise. Together, they have the responsibility to fulfill that promise, but how they organize in a way to execute on that promise is up to them.
 
-![](img3/agile-scrum.svg)
-
 Traditionally, agile scrum teams organize are made up of the product owner and the development team. However, teams should be oriented in such a way that the team members can self-organize to accomplish the task. Additionally, teams should be cross-functional to help support one another and learn from one another to complete work items.
 
 > Nothing is more effective than a cross-functional team with a well-defined backlog.
@@ -45,7 +43,7 @@ The product owner should not only understand the customer, but also have a visio
 Some teams may have a **scrum master** who is responsible for gluing everything together and ensuring that scrum is being done well. In practical terms, that means they help the product owner define value, the development team deliver the value, and the scrum team to improve over time.
 
 # Ceremonies
-Establishing a base for team's ceremonies help create a rhythm and cadence. Utilizing agile practices of the scrum framework, teams typically have the following core ceremonies to ensure teams are aligned, focused on high priority items, and to support continuous learning efforts.
+Establishing a base for team's ceremonies help create a rhythm and cadence. Utilizing agile practices of the scrum framework, teams typically have the following core ceremonies to ensure teams are aligned and focused on high priority items, and to support continuous learning efforts.
 
 ![A calendar showing one team's Scrum meeting frequency: standup is daily, refinement twice a week, and planning and retrospective are once every two weeks](img3/agile-ceremonies.webp)
 

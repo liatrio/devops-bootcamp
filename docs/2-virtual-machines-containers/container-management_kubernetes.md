@@ -1,8 +1,8 @@
 # Kubernetes
 
-There are many different solutions for managing containers but Kubernetes has become one of the most popular and widely used platforms. It is part of a large ecosystem of tools and projects organized by the [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) which drives development and support for containerized applications. So what is Kubernetes?
-
 ![](img2/kubernetes.svg ':size=723x702 :class=icon')
+
+There are many different solutions for managing containers but Kubernetes has become one of the most popular and widely used platforms. It is part of a large ecosystem of tools and projects organized by the [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) which drives development and support for containerized applications. So what is Kubernetes?
 
 > Kubernetes is a portable, extensible open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.
 >
