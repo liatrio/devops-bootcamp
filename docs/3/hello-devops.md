@@ -58,11 +58,7 @@ This is meant to be a learning experience, but don't let that stop you from havi
 
 Follow this [documentation](https://www.atlassian.com/software/jira/guides/getting-started/basics) to set up your board and ensure you choose a Scrum template in step 2.
 
-<center>
-
-  ![](img3/ticket.svg ':size=125px')
-
-</center>
+![](img3/ticket.svg ':size=100x100 :class=icon')
 
 # Deliverable
 

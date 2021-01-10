@@ -1,7 +1,7 @@
 # Workflow
 Agile is focused on iterative delivery. This impacts how a team break downs and manages their work through the software development lifeycle. SDLC tools help manage this work.
 
-![](img3/agile-kanban.svg)
+![A kanban board with columns for to do, doing, and done](img3/agile-kanban.svg)
 
 ## Work breakdown
 In agile, stories form the basis of work items. Epics are a larger theme around a collection of stories, or they can be seen as a longer-lived goal. Subtasks can be broken out during sprint planning as a team or in-sprint by engineers.

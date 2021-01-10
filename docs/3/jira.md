@@ -13,7 +13,7 @@ Jira is a ticketing system that allows teams to manage and share the status of w
 - **Kanban Boards.** Single pane of glass for current work in progress.
 - **Ticket Status.** Provide real-time conversation and associated commits and build history with each ticket, along with ongoing comments and status updates.
 
-![](img3/jira-board.png ':class=drop-shadow')
+![A Jira kanban board with two tickets, one planned, and one in progress](img3/jira-board.webp ':size=2248x660 :class=img-shadow-center')
 
 As you can see above, there are 4 stages that a ticket, or a task, can be in:
 - To Do
@@ -34,7 +34,7 @@ Jira refers to tickets as *issues.* Although there are various ticket types out 
 | **Story** | Small amount of work, driven by the Product Owner | 1 day |
 | **Subtask** | Small amount of work (often created in-sprint) that lives under a story or task | <1 day |
 
-![](img3/ticket-format.svg)
+![A large initiative being broken down into epics, which are then broken down to stories, which are then broken down to subtasks](img3/ticket-format.svg ':size=2495x1254 :class=img-center')
 
 
 # Epic Recommended Fields
@@ -78,7 +78,7 @@ Jira refers to tickets as *issues.* Although there are various ticket types out 
 
 ## Creating Effective Jira Tickets
 
-![](img3/grammar.webp ':size=300px')
+![](img3/grammar.webp ':size=300x341')
 
 ### Styling
  - Tickets should be structured to maximize readability

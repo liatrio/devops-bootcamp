@@ -1,10 +1,6 @@
 # DevOps Defined
 
-<center>
-
-  ![](img1/Case-Studies_Icon.svg ':size=125px')
-
-</center>
+![](img1/Case-Studies_Icon.svg ':size=150x150 :class=icon')
 
 Let's see what the experts have to say. Be sure to follow the links to get more context from the sources.
 
@@ -56,7 +52,7 @@ Read [The Three Ways: The Principles Underpinning DevOps](http://itrevolution.co
 
  4. **Sharing**: Effective teamwork ignores organizational boundaries.
 
-Read [What Devops Means to Me](https://www.chef.io/blog/2010/07/16/what-devops-means-to-me/)
+Read [What Devops Means to Me](https://blog.chef.io/what-devops-means-to-me)
 
 ## ICE
 

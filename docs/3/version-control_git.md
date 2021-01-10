@@ -70,11 +70,11 @@ There are three states of changed files within Git. Newly created files will be 
 
 At any point in time, use `git status` to see the state of changed files within Git. It will tell you which files are in which state and provide helpful color-coded guides, while provided instructions on what you can do next.
 
-<img src="img/git-changes.png" class="img-shadow" alt="Git Changes">
+![Git Changes](../img/git-changes.webp ':class=img-shadow')
 
 The staging area is a temporary location in Git that allows you to continue making changes to the working directory. To add untracked files or unstaged changes to staging use `git add FILENAME`. When engineers are ready to attach their changes to version control, they will make a meaningful commit from the staging area using `git commit`, resulting in a clear, distinct moment in time reflecting a unique version. Remember that files must be added to the staging area before committing them.
 
-<img src="img/git-staging.png" class="img-shadow" alt="Git Staging">
+![Git Staging](../img/git-staging.webp ':class=img-shadow')
 
 ?> When adding files to staging you can specify a directory to add all new or changes files in that directory. Always use `git status` after adding a folder to avoid accidentally add hidden or unwanted files.
 
@@ -116,11 +116,7 @@ Branching allows you to diverge from the main line of development and continue t
 
 A typical developer workflow is centered around using Git. Using TBE principles, engineers create a branch tied to the work item, commit changes locally, and submit a pull request on the remote Git server.
 
-<center>
-
-  ![](img3/git-lifecycle.svg ':size=600px')
-
-</center>
+![The cycle of pulling, changing, committing, and pushing that is used with Git](img3/git-lifecycle.svg ':size=600px :class=img-center')
 
 # Merge Conflicts
 

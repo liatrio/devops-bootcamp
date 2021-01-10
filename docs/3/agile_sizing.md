@@ -1,5 +1,6 @@
 ## Sizing
-![](img3/agile-points.jpg)
+
+![](img3/agile-points.svg ':size=380 :class=img-center')
 
 When it comes to determining how much work a team can bring in during a sprint, teams need to have a common base understanding of the time, difficulty, or complexity of a story. Proper sizing enables the team to increase flow, minimize rework, and stabilize velocity. **It is easier to determine the relative complexity of a task rather than figuring out how much time it requires.**
 
@@ -15,8 +16,15 @@ Story pointing is an exercise that is completely relative to a team. Rather than
 ?> Stories points should continue getting smaller and should be able to be completed in a day. Pointing becomes a simpler task as teams mature and more knowledgeable about story splitting.
 
 ## Fibonacci technique
+<<<<<<< HEAD
 ![](img3/agile-fib.svg)
 People estimate stories with smaller points more accurately than stories with higher points. As the numbers increase, the difference between two succeeding numbers increases exponentially and leads to less accurate estimates. This is intentional, as most stories are often more complex than we realize.
+=======
+
+![A Fibonacci spiral split into segments with each segment labeled by a number in the Fibonacci sequence. 1, 1, 2, 3, 5, 8, 13](img3/agile-fib.svg)
+
+People estimate stories with smaller points more accurately than stories with higher points. As the numbers increase, the difference between two succeeding numbers increases exponentially and leads to less accurate estimates. This is intentional, as most stories are often more complex than we realize. [(source)](https://en.wikipedia.org/wiki/Fibonacci_scale_(agile))
+>>>>>>> a5433a6d9b3126d211af27dc041f14c290818704
 
 _- [Wikipedia: Fibonacci Scale](https://en.wikipedia.org/wiki/Fibonacci_scale_(agile))_
 

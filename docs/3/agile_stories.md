@@ -50,12 +50,12 @@ Traditionally, requirements were broken down to fit within an individual layer o
 
 _- [Wikipedia: Vertical Slice](https://en.wikipedia.org/wiki/Vertical_slice)_
 
-![](img3/agile-vertical-slicing.svg ':size=450px')
+![Four horizontal bars labeled UI, Application, Domain, and DB, with one vertical bar crossing all four components](img3/agile-vertical-slicing.svg ':size=450px')
 
 ## Story splitting
 As a story is initially discussed, often it is either too big or there are missing details. Splitting stories is a technique to break the work down by stories using its acceptance criteria. The result of story splitting is that each smaller story contains a more granular level of detail.
 
-![](img3/agile-story-splitting.svg)
+![One ticket being split into three smaller related tickets](img3/agile-story-splitting.svg)
 
 ## Best Practices
 - Split stories that are too big
