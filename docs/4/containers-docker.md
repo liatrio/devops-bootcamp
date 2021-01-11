@@ -5,16 +5,22 @@ Another important use of creating releases is when releasing container images to
 ## Exercise
 
 1. If you haven't already, create a [Dockerhub](https://hub.docker.com/) account, and create your first two repositories, name them `realworld_backend` and `realworld_frontend`.
-2. Using two different `Dockerfiles` build two container images, one frontend [(React/Redux)](https://github.com/gothinkster/react-redux-realworld-example-app) and one backend [(Node/Express)](https://github.com/gothinkster/node-express-realworld-example-app) from the [Real World Repository](https://github.com/gothinkster/react-redux-realworld-example-app). Make sure to [tag](https://docs.docker.com/engine/reference/commandline/tag/) the image using semantic versioning.
+
+2. Clone two repositories, one frontend [(React/Redux)](https://github.com/gothinkster/react-redux-realworld-example-app) and one backend [(Node/Express)](https://github.com/gothinkster/node-express-realworld-example-app) from the [Real World Repository](https://github.com/gothinkster/react-redux-realworld-example-app). 
+
+3. In the current frontend example app there is an `agent.js` that uses an API_ROOT constant which is used to connect to the backend service. By default it is set to the conduit production ready API but we need to change this to be able to connect to where your backend service is running locally.
+
+4. Using two different `Dockerfiles` build two container images. Make sure to [tag](https://docs.docker.com/engine/reference/commandline/tag/) the images using semantic versioning.
 
 ?> You can tag a Docker image in the same step as the build.
 
-3. Push both images to your Dockerhub repository.
-4. Create a `Docker Compose` to be able to connect the frontend and the backend.
+5. Push both images to your Dockerhub repository.
 
-?> The Docker Compose will need to configure the MongoDB instance for the backend
+6. Create a `Docker Compose` to be able to connect the frontend and the backend. The Docker Compose will need to configure the MongoDB instance as a service. Both the backend service and the MongoDB service will have environment variables which will connect the two together. 
 
-5. Create a `Jenkinsfile` pipeline to automatically build and push your Docker images to your repository.
+?> The Mongo service environment variables will establish the login information. The Express service environment variables will use the login information and service name to form a connection string called MONGODB_URI. There also needs to be an environment variable that sets the backend type to production.
+
+7. Create a `Jenkinsfile` pipeline to automatically build and push your Docker images to your repository.
   - It is challenging to run Docker inside of Docker, so using a golden image will likely be easier.
   - You might need to use the `docker login` command in the Jenkinsfile so you can push to your Dockerhub repository.
   - Do not use the Docker Pipeline plugin.
@@ -27,4 +33,4 @@ One thing to note is that Dockerhub provides GitHub integration, where Dockerhub
 
 # Deliverable
 
-Discuss the benefits of using a container registry, and how image releases work.
+- Discuss the benefits of using a container registry, and how image releases work.
