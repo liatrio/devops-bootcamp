@@ -1,6 +1,8 @@
 # Dockerhub
 
-Another important use of creating releases is when releasing container images to Dockerhub. [Dockerhub](https://hub.docker.com/) is the default container registry for Docker. In short, this means that Dockerhub provides repositories to create, manage, and find container images. 
+Similar to more traditional software artifacts, containerized application images are usually deployed to a centralized repository when they are released. From the repository they can be deployed into runtime environments or consumed as dependencies for other applications. 
+
+[Dockerhub](https://hub.docker.com/) is the defacto default container registry for Docker. In short, this means that Dockerhub provides repositories to create, manage, and find container images. 
 
 ## Exercise
 
@@ -34,3 +36,5 @@ One thing to note is that Dockerhub provides GitHub integration, where Dockerhub
 # Deliverable
 
 - Discuss the benefits of using a container registry, and how image releases work.
+
+- Discuss use cases for public vs private container repositories.

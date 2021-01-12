@@ -2,78 +2,105 @@
 
 ![](img4/helm-icon.svg ':size=125px')
 
-Helm is a package manager for Kubernetes. Helm's packaging format are called charts, which is a collection of files that describe related Kubernetes resources. Helm Charts are used to help install, manage, and upgrade the most complex Kubernetes applications. 
+Helm is a package manager for Kubernetes. Helm packages are called charts, which are collections of files that describe Kubernetes resources. Helm Charts are used to manage installing, and upgrading complex Kubernetes applications. 
 
-We can manually create the files that Helm will use to make a chart. The required files that Helm will work with are `values.yaml` and `Chart.yaml`. The chart.yaml will dictate the general description of the chart and the values.yaml is the place where you can define the values that are used in the templates. Generally the Helm chart will contain a `/templates` folder filled with Kubernetes resource definitions, Helm will iterate through these definition files and apply them to the Kubernetes cluster.
+Helm charts are composed of Kubernetes resource templates and metadata used to render the templates and create the resource in a Kubernetes cluster. We can create Helm charts by writing resource templates and metadata as YAML files. The required files that Helm will work with are `values.yaml` and `Chart.yaml`. The chart.yaml define the general description of the chart and the values.yaml define the values that are used in the templates. The Helm chart contains a `/templates` folder with Kubernetes resource definitions. Helm will iterate through these definition files and apply them to the Kubernetes cluster. 
+
+Review the [chart template developers guide](https://helm.sh/docs/chart_template_guide/#the-chart-template-developers-guide) for more information on creating Helm charts.
 
 ## Exercise 1
 
-1. Install Helm.
+In this exercise we will get started by installing Helm and creating, installing and updating a basic chart with a ConfigMap Kubernetes resource.
 
-2. Create a templates folder that will hold the Kubernetes resource templates. Create a `configmap.yaml` in that folder which will be processed by Helm to create a ConfigMap Kubernetes resource.
+1. [Install Helm](https://helm.sh/docs/intro/install/).
 
-?> Good idea to find the documentation on creating a ConfigMap resource
+2. Create a new Helm chart following this [chart file structure](https://helm.sh/docs/topics/charts/) and add the required fields to the `Chart.yaml`.
 
-3. Create a `values.yaml` and a `chart.yaml`
+?> Do not use `helm create` for this exercise.
 
-4. Fill out these two files with the necessary amount of parameters needed for a basic Helm chart.
+3.  Add a `configmap.yaml` file to the template folder and define a ConfigMap Kubernetes resource with some data.
 
-?> [Helm Getting Started Documentation](https://helm.sh/docs/chart_template_guide/getting_started/) is a good place to start looking at to fill out those files. Do not start off with using `helm create` because that provides more than is necessary.
+?> Review the [Kubernetes ConfigMaps docs](https://kubernetes.io/docs/concepts/configuration/configmap/) to find a description and example of ConfigMap resources
 
-5. Run `helm install configmap .` to apply the Helm chart to the Kubernetes cluster. To view the state of the Helm chart you just installed run `helm list`.
+4. Run `helm lint .` to check the syntax of your helm chart.
 
-?> to view helm charts that are in a failed state you can run `helm list -a` 
+5. Run `helm install configmap .` to instal the Helm chart and create the configmap resource to the Kubernetes cluster. 
 
-6. Run `kubectl get configmap NAME -o yaml` to see the yaml that is applied from the Helm install step.
+?> To view the state of the Helm chart you just installed you can run `helm list -a` 
+
+6. Run `kubectl get configmap NAME -o yaml` to see the yaml that is applied from the Helm install step. Also use `kubectl describe` to view the configmap and compare the results.
 
 7. Run `helm template .` to show the entire output that Helm is creating for you.
 
-8. Go to `configmap.yaml` and append something to the end of your configmap's name. Run `helm upgrade NAME .` to apply the changes, you can run `kubectl get configmap` to see that helm updated these changes.
+8. Add a key with a string value to `values.yaml`. Update `configmap.yaml` to use that value as a value in the ConfigMap data.
+
+?> Review the [Values Files](https://helm.sh/docs/chart_template_guide/values_files/) section of the Chart Template Guide for additional information.
+
+9. Run `helm upgrade NAME .` to apply the changes.
+
+10. Use `helm` and `kubectl` to verify your changes.
 
 ## Exercise 2
 
-1. If you don't already have a fork of the bootcamp, do that now. This exercise will build off of a Helm chart found in the `examples/ch4/helm/RealWorld` folder.
+In this exercise we will take an existing Helm chart which deploys the [RealWorld demo application](https://github.com/gothinkster/realworld) backend and add a chart dependency to also install MongoDB for the backend to use.
 
-2. Modify the values.yaml to pull the Backend image that you pushed to Dockerhub from the previous exercise. 
+1. If you haven't already, clone the DevOps Bootcamp git repo on your local machine. This exercise will build off of the Helm chart in the `examples/ch4/helm/RealWorld` folder.
 
-3. Install the Helm Chart and use kubectl or k9s to check the status of the Pod created by Helm.
+2. Modify the `values.yaml` to pull the RealWorld backend image that you pushed to Dockerhub from the previous section. 
 
-4. This pod will run into errors because the backend is reliant on MongoDB, Docker Compose set up MongoDB as a service. We need to do the same in Helm now.
+?> How is the backend image value set in `values.yaml` used in the charts templates?
 
-5. Set MongoDB as a dependency for the Backend Helm Chart. The official Bitnami MongoDB Helm Chart is found [here.](https://bitnami.com/stack/mongodb/helm) Make sure to run `helm dependencies update` to download the mongoDB helm chart.
+3. Install the Helm Chart and use `kubectl` to verify the Pod created by the Helm chart is using your RealWorld backend image and check the status of the Pod. 
 
-?> The MongoDB from Bitnami will likely be setup differently than how you set it up in Docker Compose from the previous section. Make sure to read through the [documentation](https://github.com/bitnami/charts/tree/master/bitnami/mongodb) to figure out how to pass in parameters to MongoDB.
+?> You can use `kubectl logs` to view the pod logs. You should errors generated by the backend service because it cannot connect to on a MongoDB server. 
 
-6. The `deployment-backend.yaml` will need to be modified to include the correct MANGODB_URI.
+?> After a few failed attempts to run the container the Pods status will change to _Crash Loop Backoff_ and it will wait for an increased amount of time before trying to run the container again.
 
-?> This is needed to be changed because the Express Backend service is going to use this environment variable to connect to MongoDB. The new string will need to point to the Kubernetes Service Name as well as the Root username and password. 
+4. Add the official [MongoDB Helm Chart]((https://bitnami.com/stack/mongodb/helm)) as a dependency for our RealWorld Helm Chart.
 
-7. Install the Helm Chart again once the deployment is up to date to handle the mongoDB dependency. You can use `kubectl logs` command to check the status of deployments. Once your pods are running, you can move onto Exercise 3.
+?> Review the Helm chart documentation [Chart Dependencies](https://helm.sh/docs/topics/charts/#chart-dependencies/) and [Dependency command](https://helm.sh/docs/helm/helm_dependency/) sections for more information
 
+?> Make sure to run `helm dependencies update` to download the mongoDB helm chart
+
+5. Add configuration for the MongoDB subchart to the `values.yaml` file. 
+
+?> Make sure to review the [MongoDB Helm Chart documentation](https://github.com/bitnami/charts/tree/master/bitnami/mongodb) to configure the correct MongoDB authentication parameters.
+
+6. Update the container environment variables defined in `deployment-backend.yaml` to configure the RealWorld backend application to connect to the MongoDB service.
+
+?> The MONGODB_URI environment variable will need to point to the MongoDB Kubernetes service name and include the username and password you configured with the MongoDB subchart parameters. 
+
+7. Run `helm dependencies update` to download the dependencies.
+
+8. Apply the Helm chart changes with `helm upgrade` to install the MongoDB dependency. Use `helm` and `kubectl` commands to check the status of the Helm chart and application.
 
 ## Exercise 3
 
-1. Change the API_ROOT constant located in the `agent.js` file for the frontend project to reference localhost. 
+In this exercise we will add a Kubernetes deployment and service to our Helm chart to deploy the RealWorld demo frontend application.
 
-?> Kubernetes has it's own internal networking so we need to reference the localhost instead of your network's IP.
+1. Change the API_ROOT constant located in the `agent.js` file for the frontend project to reference `localhost`. 
+
+?> In real networked environment it wouldn't make and sense to configure the application this way but it is necessary to demonstrate the application frontend communicating with the backend on our local environment.
 
 2. Rebuild the Docker image and then push the new image to Dockerhub. 
 
-3. Create `deployment-frontend.yaml` and `service-frontend.yaml` based on the `deployment-backend.yaml` and the `service-backend.yaml` created previously.
+3. Add `deployment-frontend.yaml` and `service-frontend.yaml` files to the templates folder and create a frontend deployment and service based on the existing backend deployment and service. Add values to `values.yaml` to configure your front deployment and service.
 
-?> Some of the settings will be different for the frontend
+4. Run `helm upgrade NAME . ` to apply the Helm chart changes and add the new frontend resources to Kubernetes.
 
-4. Run `helm install NAME . ` to apply the Helm Chart to Kubernetes with the new configuration for the frontend.
+5. Port forward the frontend and backend service ports to your local machine.
 
-?> Take note of what is output when you run helm install here
+?> The notes output when you ran `helm install` should have some useful hints :)
 
-5. Once you see the frontend in a local browser, you can continue to the next exercise.
+5. Open the frontend application in a web browser and verify it is communicating with the backend service.
 
 ## Exercise 4
 
+In this exercise we will create another Helm chart using the [Helm Create](https://helm.sh/docs/helm/helm_create/) command and configure it to deploy a Jenkins instance.
+
 1. Create a new helm chart with `helm create`. Once you have created a helm chart, it will contain a templates folder, a charts folder, a values.yaml, and a chart.yaml. 
 
-2. Modify the values.yaml file to reference the Docker image from the Kubernetes section. 
+2. Modify the values.yaml file to reference the Jenkins Docker image you created in chapter 2. 
 
 3. Change the container port to the port needed for our jenkins instance and also make sure that the app version is matching the tag of your instance as well.
 
@@ -81,7 +108,7 @@ We can manually create the files that Helm will use to make a chart. The require
 
 ?> Helm install has a --dry-run option which will output the potential configuration without deploying. Run this to see if your configuration is how you want it.
 
-5. Use kubectl or k9s to look at the current pods which should contain the configured jenkins pod.
+5. Use kubectl to look at the current pods which should contain the configured jenkins pod.
 
 
 # Deliverables
