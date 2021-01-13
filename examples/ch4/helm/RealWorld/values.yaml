@@ -1,0 +1,22 @@
+# Default values for RealWorld.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+global:
+  image:
+    pullPolicy: IfNotPresent
+
+frontend: {}
+
+backend:
+  image:
+    repository: DOCKERHUB_USERNAME/realworld_backend
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: ""
+  service:
+    port: 3000
+    
+mongodb:
+
