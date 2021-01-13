@@ -18,7 +18,7 @@ In this exercise we will get started by installing Helm and creating, installing
 
 ?> Do not use `helm create` for this exercise.
 
-3.  Add a `configmap.yaml` file to the template folder and define a ConfigMap Kubernetes resource with some data.
+3.  Add a `configmap.yaml` file to the templates folder and define a ConfigMap Kubernetes resource with some data.
 
 ?> Review the [Kubernetes ConfigMaps docs](https://kubernetes.io/docs/concepts/configuration/configmap/) to find a description and example of ConfigMap resources
 
@@ -92,7 +92,7 @@ In this exercise we will add a Kubernetes deployment and service to our Helm cha
 
 ?> The notes output when you ran `helm install` should have some useful hints :)
 
-5. Open the frontend application in a web browser and verify it is communicating with the backend service.
+6. Open the frontend application in a web browser and verify it is communicating with the backend service.
 
 ## Exercise 4
 

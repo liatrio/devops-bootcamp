@@ -1,9 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "realworld.fullname" . }}
+  name: backend
   labels:
-    {{- include "realworld.labels" . | nindent 4 }}
+    app.kubernetes.io/instance: realworld 
+    app.kubernetes.io/name: realworld
 spec:
   type: ClusterIP
   ports:
@@ -12,4 +13,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "realworld.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/instance: realworld 
+    app.kubernetes.io/name: realworld
