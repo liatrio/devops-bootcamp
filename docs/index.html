@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Liatrio's DevOps Bootcamp</title>
@@ -8,6 +9,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <!-- Theme: Simple -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <!-- Theme: Simple Dark -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
 
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
   <link rel="alternate icon" href="/img/favicon.ico">
@@ -15,9 +18,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata" rel="stylesheet">
-
+  
+  <link href="/fontawesome/css/all.min.css" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div id="app">Loading...</div>
   <script src="//unpkg.com/docsify-edit-on-github@1.0.1/index.js"></script>
@@ -31,8 +37,8 @@
       search: 'auto', // default
       plugins: [
         EditOnGithubPlugin.create(
-            'https://github.com/liatrio/devops-bootcamp/tree/master/docs/'
-         )
+          'https://github.com/liatrio/devops-bootcamp/tree/master/docs/'
+        )
       ],
       pagination: {
         previousText: 'Previous Page',
@@ -41,7 +47,22 @@
       },
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
-      }
+      },
+      plugins: [
+        function(hook) {
+          hook.ready(function(html, next) {
+            const darkMode = localStorage.getItem("dark_mode") == "true"
+            const darkModeSwitch = document.querySelector("#dark_mode_switch");
+            darkModeSwitch.checked = darkMode;
+            document.styleSheets[1].disabled = !darkMode;
+            darkModeSwitch.addEventListener('change', (event) => {
+              document.styleSheets[1].disabled = !darkModeSwitch.checked;
+              localStorage.setItem("dark_mode", darkModeSwitch.checked ? "true" : "false")
+            })
+            next(html);
+          })
+        }
+      ]
     }
   </script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
@@ -59,14 +80,13 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-hcl.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
 
-
   <script>
-    document.addEventListener("keydown",function(e){
-      if(document.activeElement.nodeName === "INPUT") {
+    document.addEventListener("keydown", function (e) {
+      if (document.activeElement.nodeName === "INPUT") {
         return;
       }
-      var key = e.which||e.keyCode;
-      switch(key){
+      var key = e.which || e.keyCode;
+      switch (key) {
         // Left Arrow
         case 37:
           document.getElementsByClassName('pagination-item--previous')[0].firstElementChild.click();
@@ -80,4 +100,5 @@
   </script>
 
 </body>
+
 </html>

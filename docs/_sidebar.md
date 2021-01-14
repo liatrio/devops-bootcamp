@@ -1,5 +1,11 @@
 <!-- docs/_sidebar.md -->
 
+<div id="dark_mode"
+  ><i class="fas fa-sun"></i
+  ><input type="checkbox" id="dark_mode_switch" name="mode"
+  ><label for="dark_mode_switch">Toggle</label
+  ><i class="fas fa-moon"></i></div>
+
 - [Introduction](/)
 * **Chapter 1**
 - [1 - Introduction to DevOps](1-introduction/overview.md)
@@ -86,3 +92,4 @@
 - [7.3 - Terraform](7/7.3-terraform)
 - [7.4 - Ansible](7/7.4-ansible.md)
 - [7.5 - Kubernetes](7/7.5-kubernetes.md)
+
