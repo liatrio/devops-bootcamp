@@ -50,7 +50,7 @@
       },
       plugins: [
         function(hook) {
-          hook.ready(function(html, next) {
+          hook.doneEach(function(html, next) {
             const darkMode = localStorage.getItem("dark_mode") == "true"
             const darkModeSwitch = document.querySelector("#dark_mode_switch");
             darkModeSwitch.checked = darkMode;
