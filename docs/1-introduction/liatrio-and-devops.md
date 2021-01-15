@@ -20,7 +20,7 @@ Liatrio is a boots-on-the-ground DevOps Consulting group, meaning that our teams
 
 ## The Rise of DevOps
 
-Building software has changed greatly in the last couple decades. ~15-20 years ago, we had small teams of people who would work together on software which would then be built by a Tech Lead. Problems would come up when code had to be merged together and released at the end of development. Since then, many tools have been created changing the way code can be managed and built as well as how we visualize the process. DevOps affects all levels of software development from the individual developer to the production server(s). Many processes/tasks are now automated allowing more builds to flow through the pipeline.
+DevOps has revolutionized software development within the last couple decades. At the turn of the century, it was common that development teams would work on independent pieces of a project, which would ultimately have to be merged and compiled by a tech lead at the end of a project. This lead to an enormous problem. If code didn't merged together and function as expected, a team might not know until very late in the development process, or even until after deploying. Since that time, developers have created processes and tools to help build, test, and manage code throughout the life of a project. Those tools and processes help for the foundation of what we know today as DevOps.
 
 ## The Goal
 The goal is to take the pain out of software delivery and deployment.

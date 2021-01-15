@@ -38,7 +38,7 @@ In order to build and operate the kinds of complex, distributed systems required
 
  2. **Amplifying Feedback Loops**: Cut the time between action and reaction, failure and success.
 
- 3. **Culture of Continuous Experimentation and Learning**: Recognizing failure is important data about how and where to improve.
+ 3. **Culture of Continuous Experimentation and Learning**: Recognize that failure is important data about how and where to improve.
 
 Read [The Three Ways: The Principles Underpinning DevOps](http://itrevolution.com/the-three-ways-principles-underpinning-devops/)
 
