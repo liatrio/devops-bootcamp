@@ -2,7 +2,8 @@
 
 As you use more tools, services, networks and hosts you will need ways to securely access them. It is important to understand how different authentication schemes work, what their pros and cons are and adopt best practices for managing them.
 
-![](img1/fingerprint.svg ':size=150x150 :class=icon')
+![](img1/fingerprint_light.svg ':size=150x150 :class=light-mode-icon')
+![](img1/fingerprint_dark.svg ':size=150x150 :class=dark-mode-icon')
 
 ## Passwords
 
