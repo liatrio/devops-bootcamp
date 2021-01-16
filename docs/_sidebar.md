@@ -62,8 +62,9 @@
   - [4.3.3 - Make](4/build-tools_make.md)
   - [4.3.4 - Npm](4/build-tools_npm.md)
   - [4.3.5 - Go Releaser](4/build-tools_go-releaser.md)
-  - [4.3.6 - DockerHub](4/dockerhub-releases)
-
+- [4.4 - Containers](4/containers.md)
+  - [4.4.1 - Docker](4/containers-docker.md)
+  - [4.4.2 - Helm](4/containers-helm.md)
 * **Chapter 5**
 - [5.0 - System Administration](5/5.0-overview.md)
 - [5.1 - DevOps Tools](5/5.1-devops-tools.md)
