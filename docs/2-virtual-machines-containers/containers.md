@@ -2,7 +2,8 @@
 
 >&ldquo;Containers and virtual machines have similar resource isolation and allocation benefits, but function differently because containers virtualize the operating system instead of hardware. Containers are more portable and efficient.&rdquo;
 
-![](img2/containers.svg ':size=150x150 :class=icon')
+![](img2/containers_light.svg ':size=150x150 :class=light-mode-icon')
+![](img2/containers_dark.svg ':size=150x150 :class=dark-mode-icon')
 
 Containers allow you to easily package an application's code, configurations, and dependencies into easy to use building blocks. Containers can help ensure that applications deploy quickly, reliably, and consistently regardless of deployment environment. This enables the following benefits:
 
@@ -36,7 +37,8 @@ Read more from [Docker: What is a Container](https://www.docker.com/resources/wh
 
 Docker is often used synonymously with containers but is actually a platform for using containers. Similar to how Java has development and runtime environments created by different organizations, there are many [other platforms for containers](https://jfrog.com/knowledge-base/6-alternatives-to-docker-all-in-one-solutions-and-standalone-container-tools/) however Docker is by far the most widely adopted container platform.
 
-![](img2/cloud_docker.svg ':size=100x100 :class=icon')
+![](img2/cloud_docker_light.svg ':size=100x100 :class=light-mode-icon')
+![](img2/cloud_docker_dark.svg ':size=100x100 :class=dark-mode-icon')
 
 ## Images and Containers
 >&ldquo;An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.&rdquo; - [Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)

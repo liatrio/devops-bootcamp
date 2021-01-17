@@ -2,7 +2,8 @@
 
 **Golden Images** (also called base images or image templates) are machine images with pre-configured operating systems. They typically include specialized configurations, security patches and common libraries and tools. Once a Golden Image is created it can be used to easily and reliably create identical environments on different hardware or virtual machines. 
 
-![](img2/linux.svg ':size=100x100 :class=icon')
+![](img2/linux_light.svg ':size=100x100 :class=light-mode-icon')
+![](img2/linux_dark.svg ':size=100x100 :class=dark-mode-icon')
 
 #### Exercise 1: Manual Build
 
@@ -42,7 +43,8 @@ This kind of repetitive work is often referred to as toil. Reducing toil from va
 
 > **Toil** is the kind of work tied to running a production service that tends to be manual, repetitive, automatable, tactical, devoid of enduring value, and that scales linearly as a service grows. -- [Site Reliability Engineering: Eliminating Toil](https://landing.google.com/sre/sre-book/chapters/eliminating-toil/)
 
-![](img2/packer.svg ':size=350x350 :class=icon')
+![](img2/packer_light.svg ':size=1034x807 :class=light-mode-icon')
+![](img2/packer_dark.svg ':size=1034x807 :class=dark-mode-icon')
 
 > **Packer** is an open source tool for creating identical machine images for multiple platforms from a single source configuration. -- [Read more](https://www.packer.io/intro)
 

@@ -46,7 +46,8 @@ Working as a group configure your Jenkins server to deploy to someone elses Arti
 
 ?> If you are working on different networks you man need to use a tool like [Ngrok](https://ngrok.com/) to bridge communication between your servers over the Internet. 
 
-  ![](img2/network.svg ':size=100x100 :class=icon')
+![](img2/devices_light.svg ':size=100x100 :class=light-mode-icon')
+![](img2/devices_dark.svg ':size=100x100 :class=dark-mode-icon')
 
 # Deliverables
 
