@@ -7,4 +7,5 @@
  4. Explore some other resources learning about DevOps.
 
 
-![](img1/goals.svg ':size=100x100 :class=icon')
+![](../img/goals_light.svg ':size=100x100 :class=light-mode-icon')
+![](../img/goals_dark.svg ':size=100x100 :class=dark-mode-icon')

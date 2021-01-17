@@ -33,7 +33,8 @@ https://www.lastpass.com
 ## Public Key authentication
 Public key authentication involves generating a pair of cryptographic keys: one private and one public. The public key is distributed to hosts that provide the authentication and the client signs the authentication request with the private key in a way that can be verified by the public key without revealing what the private key is.
 
-![](img1/SSH.svg ':size=100x100 :class=icon')
+![](img1/ssh_light.svg ':size=100x100 :class=light-mode-icon')
+![](img1/ssh_dark.svg ':size=100x100 :class=dark-mode-icon')
 
 ### SSH
 SSH makes use of public key authentication to allow passwordless and non-interactive access to remote hosts. To use public key authentication with SSH you must generate a pair of SSH keys, copy the public key to a SSH server and add it to an `authorized_keys` file.
