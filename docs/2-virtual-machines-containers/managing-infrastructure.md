@@ -17,7 +17,8 @@ In this section you will be taking what you've learned about virtual machines to
 
 ## Delivery Pipeline
 
-![A Jenkins pipeline showing passing build, test, and deploy stages](img2/delivery-pipeline-stages.svg ':class=img-center')
+![A Jenkins pipeline showing passing build, test, and deploy stages](img2/delivery-pipeline-stages_light.svg ':class=light-mode-img-center')
+![A Jenkins pipeline showing passing build, test, and deploy stages](img2/delivery-pipeline-stages_dark.svg ':class=dark-mode-img-center')
 
   Automated delivery pipelines accelerate software delivery and enable faster, safer deployments.
   An entire integrated toolchain is necessary to leverage the capabilities of an automated pipeline, orchestrated by a build server. Newly committed code that is pushed to the git server will send a Webhooks to the build servers to trigger tasks. General stages of a delivery pipeline include:

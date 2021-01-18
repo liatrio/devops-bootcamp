@@ -17,7 +17,8 @@ Containers allow you to easily package an application's code, configurations, an
 
 ## Containers vs Virtual Machines
 
-![A diagram showing progression from traditional server deployments to virtual machines to container-based deployments](img2/delivery-containers-evolution.svg ':class=img-center')
+![A diagram showing progression from traditional server deployments to virtual machines to container-based deployments](img2/delivery-containers-evolution_light.svg ':class=light-mode-img-center')
+![A diagram showing progression from traditional server deployments to virtual machines to container-based deployments](img2/delivery-containers-evolution_dark.svg ':class=dark-mode-img-center')
 
 The picture above represents the progression that has happened over the last 15 years in the industry for deploying applications. In the beginning, apps were deployed to their own physical hosts, each with their own operating system.
 
