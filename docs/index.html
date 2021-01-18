@@ -54,8 +54,10 @@
             const darkModeSwitch = document.querySelector("#dark_mode_switch");
             darkModeSwitch.checked = darkMode;
             document.styleSheets[1].disabled = !darkMode;
+            document.styleSheets[0].disabled = darkMode;
             darkModeSwitch.addEventListener('change', (event) => {
               document.styleSheets[1].disabled = !darkModeSwitch.checked;
+              document.styleSheets[0].disabled = darkModeSwitch.checked;
               localStorage.setItem("dark_mode", darkModeSwitch.checked ? "true" : "false")
             })
             next(html);
