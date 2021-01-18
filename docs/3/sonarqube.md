@@ -2,7 +2,8 @@
 
 [SonarQube](https://www.sonarqube.org/) is an open source source code analysis platform. It can be integrated with a variety of continuous integration tools to automate code quality tests. With minimal configuration it includes a suite of test to detect bugs, code smells and security vulnerabilities.
 
-![](img3/sonarqube.svg ':size=400px :class=img-center')
+![](img3/sonarqube_light.svg ':size=400px :class=light-mode-img-center')
+![](img3/sonarqube_dark.svg ':size=400px :class=dark-mode-img-center')
 
 ## Goals
 This section will give you experience with:
