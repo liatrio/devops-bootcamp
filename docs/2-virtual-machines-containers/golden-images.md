@@ -43,8 +43,8 @@ This kind of repetitive work is often referred to as toil. Reducing toil from va
 
 > **Toil** is the kind of work tied to running a production service that tends to be manual, repetitive, automatable, tactical, devoid of enduring value, and that scales linearly as a service grows. -- [Site Reliability Engineering: Eliminating Toil](https://landing.google.com/sre/sre-book/chapters/eliminating-toil/)
 
-![](img2/packer_light.svg ':size=1034x807 :class=light-mode-icon')
-![](img2/packer_dark.svg ':size=1034x807 :class=dark-mode-icon')
+![](img2/packer_light.svg ':size=350x350 :class=light-mode-icon')
+![](img2/packer_dark.svg ':size=350x350 :class=dark-mode-icon')
 
 > **Packer** is an open source tool for creating identical machine images for multiple platforms from a single source configuration. -- [Read more](https://www.packer.io/intro)
 
