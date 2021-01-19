@@ -47,23 +47,24 @@
   width: 25%;
 }
 
-.img-left {
+[class*="img-left"] {
   float: left;
   margin: 5px 25px 10px 0;
 }
-.img-right {
+
+[class*="img-right"] {
   display: inline-block;
   margin: 20px 0px 10px 25px;
 }
 
-.icon {
+[class*="icon"] {
   margin: 20px auto;
   display: block;
   width: 25%;
   height: auto;
 }
 
-.img-center {
+[class*="img-center"] {
   margin: 40px auto;
   display: block;
   height: auto;

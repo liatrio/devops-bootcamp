@@ -1,6 +1,7 @@
 # Helm
 
-![](img4/helm-icon.svg ':size=125px')
+![](img4/helm-icon_light.svg ':size=304x351 :class=light-mode-icon')
+![](img4/helm-icon_dark.svg ':size=304x351 :class=dark-mode-icon')
 
 Helm is a package manager for Kubernetes. Helm packages are called charts, which are collections of files that describe Kubernetes resources. Helm Charts are used to manage installing, and upgrading complex Kubernetes applications. 
 

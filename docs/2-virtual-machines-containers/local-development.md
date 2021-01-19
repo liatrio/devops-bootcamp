@@ -4,7 +4,8 @@ An important use case for virtual machines is keeping parity between development
 
 So far the tools we have looked at for building and running images are great for automation and managing complicated infrastructure. But for developers that want to be able to easily create, use and share environments they are not very convenient. If only we could create and start a virtual machine with just two commands...
 
-![](img2/developer.svg ':size=150x150 :class=icon')
+![](img2/developer_light.svg ':size=150x150 :class=light-mode-icon')
+![](img2/developer_dark.svg ':size=150x150 :class=dark-mode-icon')
 
 #### Exercise 1: VMs the easy way
 
