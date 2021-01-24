@@ -29,7 +29,7 @@ Then, Virtual Machines (VMs) were introduced; that allowed for slightly higher p
 In the third progression, containers are introduced into the flow. Containers are a smaller form of a VM that only contains the application code and it's necessary dependencies to run. This progression of technology has led to greater flexibility and scalability.
 
 ## Containers in Production
-Some people have the mistaken idea that containers is only for development and testing, but there are thousands of companies running in production with containers on Kubernetes and OpenShift. A container image is meant to be immutable, meaning it will be identical no matter where it is deployed, whether it is in development or production hardware. Every iteration of a container will deploy the same way on top of the orchestrator.
+Some people have the mistaken idea that containers are only for development and testing, but there are thousands of companies running in production with containers on Kubernetes and OpenShift. A container image is meant to be immutable, meaning it will be identical no matter where it is deployed, whether it is in development or production hardware. Every iteration of a container will deploy the same way on top of the orchestrator.
 
 Read more from [Docker: What is a Container](https://www.docker.com/resources/what-container) to get a better understanding of containers and how they compare to virtual hosts.
 

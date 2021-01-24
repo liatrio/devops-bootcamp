@@ -21,9 +21,9 @@ Liatrio is a boots-on-the-ground DevOps Consulting group, meaning that our teams
 
 ## The Rise of DevOps
 
-DevOps has revolutionized software development within the last couple decades. At the turn of the century, it was common that development teams would work on independent pieces of a project, which would ultimately have to be merged and compiled by a tech lead at the end of a project. This lead to an enormous problem. If code didn't merged together and function as expected, a team might not know until very late in the development process, or even until after deploying. Since that time, developers have created processes and tools to help build, test, and manage code throughout the life of a project. Those tools and processes help form the foundation of what we know today as DevOps.
+DevOps has revolutionized software development within the last couple decades. At the turn of the century, it was common that development teams would work on independent pieces of a project, which would ultimately have to be merged and compiled by a tech lead at the end of a project. This lead to an enormous problem. If code didn't merge together and function as expected, a team might not know until very late in the development process, or even until after deploying. Since that time, developers have created processes and tools to help build, test, and manage code throughout the life of a project. Those tools and processes help form the foundation of what we know today as DevOps.
 
-## The Goal
+## The Goals
 DevOps practices aim to take the pain out of software delivery and deployment.
 
 1) Developers learn about code issues as soon as possible. Fast feedback loops allow the developer fix code issues without switching to another task or forgetting how the code functions. Addressing issues as quickly as possible also maintains the code's integrity and ensures that it's always in a working state. Feedback isn't just about a program's functionality though. Good feedback loops should also let developers hear from users and help guarantee that features are actually useful to customers.
