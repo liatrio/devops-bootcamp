@@ -17,12 +17,14 @@ If you are still having a difficult time understanding what Kubernetes is that i
 
 A Kubernetes **cluster** is a set of node machines for running containerized applications. The Kubernetes Master is a collection of three processes that run on a single node in your cluster, which is designated as the master node. Those processes are: kube-apiserver, kube-controller-manager and kube-scheduler.
 
-![](img2/delivery-k8s-cluster.svg ':class=img-center')
+![](img2/delivery-k8s-cluster_light.svg ':class=light-mode-img-center')
+![](img2/delivery-k8s-cluster_dark.svg ':class=dark-mode-img-center')
 
 ### Node
 The **nodes** in a cluster are the machines (VMs, physical servers, etc) that run the applications and workflows. The Kubernetes master controls each node.
 
-![](img2/delivery-k8s-node.svg ':class=img-center')
+![](img2/delivery-k8s-node_light.svg ':class=light-mode-img-center')
+![](img2/delivery-k8s-node_dark.svg ':class=dark-mode-img-center')
 
 # Design
 Kubernetes is declarative by design. When you want to change something in the cluster, you simply create/update/delete the resources from etcd via the API server. Various controllers then respond to this change by converging the system to comply with the newly declared state. To best understand, check out this drawing from [Julia Evans](https://jvns.ca/blog/2017/06/04/learning-about-kubernetes/):
@@ -34,12 +36,14 @@ Kubernetes is declarative by design. When you want to change something in the cl
 ## Pods
 A **Pod** is the basic execution unit of a Kubernetes application – the smallest and simplest unit in the Kubernetes object model that you create or deploy to run containers.
 
-![](img2/delivery-k8s-pods.svg ':class=img-center')
+![](img2/delivery-k8s-pods_light.svg ':class=light-mode-img-center')
+![](img2/delivery-k8s-pods_dark.svg ':class=dark-mode-img-center')
 
 ## Services
 A **Service** is an abstraction which defines a logical set of Pods and a policy by which to access them. As pods are created, scaled and destroyed over an application's lifetime the node they are running on and their IP addresses will change. A Service provides a consistent way to communicate with a set of pods regardless of how many pods there are or where they are running.
 
-![](img2/delivery-k8s-service.svg ':class=img-center')
+![](img2/delivery-k8s-service_light.svg ':class=light-mode-img-center')
+![](img2/delivery-k8s-service_dark.svg ':class=dark-mode-img-center')
 
 ## Deployments
 

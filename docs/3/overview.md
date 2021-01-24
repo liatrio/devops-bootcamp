@@ -10,4 +10,5 @@
  7. Put some of the concepts you've learned so far to the test with a project of your own.
 
 
-![](img3/goals.svg ':size=100x100 :class=icon')
+![](../img/goals_light.svg ':size=100x100 :class=light-mode-icon')
+![](../img/goals_dark.svg ':size=100x100 :class=dark-mode-icon')

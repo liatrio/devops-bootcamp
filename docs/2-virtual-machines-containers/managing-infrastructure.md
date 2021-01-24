@@ -17,7 +17,8 @@ In this section you will be taking what you've learned about virtual machines to
 
 ## Delivery Pipeline
 
-![A Jenkins pipeline showing passing build, test, and deploy stages](img2/delivery-pipeline-stages.svg ':class=img-center')
+![A Jenkins pipeline showing passing build, test, and deploy stages](img2/delivery-pipeline-stages_light.svg ':class=light-mode-img-center')
+![A Jenkins pipeline showing passing build, test, and deploy stages](img2/delivery-pipeline-stages_dark.svg ':class=dark-mode-img-center')
 
   Automated delivery pipelines accelerate software delivery and enable faster, safer deployments.
   An entire integrated toolchain is necessary to leverage the capabilities of an automated pipeline, orchestrated by a build server. Newly committed code that is pushed to the git server will trigger a webhook and cause the build servers to run certain tasks. General stages of a delivery pipeline include:
@@ -48,7 +49,8 @@ Working as a group configure your Jenkins server to deploy to someone else's Art
 
 ?> If you are working on different networks you man need to use a tool like [Ngrok](https://ngrok.com/) to bridge communication between your servers over the internet.
 
-  ![](img2/network.svg ':size=100x100 :class=icon')
+![](img2/devices_light.svg ':size=100x100 :class=light-mode-icon')
+![](img2/devices_dark.svg ':size=100x100 :class=dark-mode-icon')
 
 # Deliverables
 

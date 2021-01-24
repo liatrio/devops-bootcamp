@@ -41,4 +41,5 @@ This bootcamp was adapted from an apprentice training program, and some mistakes
 
 [Contributors](contributors.md)
 
-![](img/class.svg ':size=100x100 :class=icon')
+![](img/class_light.svg ':size=100x100 :class=light-mode-icon')
+![](img/class_dark.svg ':size=100x100 :class=dark-mode-icon')

@@ -2,7 +2,8 @@
 
 This section is designed to give you an introduction to Maven with a focus on the Maven approach of software building, package handling, and more.
 
-![](img4/compile.svg ':size=100x100 :class=icon')
+![](img4/compile_light.svg ':size=100x100 :class=light-mode-icon')
+![](img4/compile_dark.svg ':size=100x100 :class=dark-mode-icon')
 
 ## Introduction
 

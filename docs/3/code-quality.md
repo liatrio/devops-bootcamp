@@ -4,4 +4,4 @@ Before a software development team can release an update there should be confide
 
 In order to release updates more frequently teams should test the quality of their code in a way that is automatable, repeatable and observable. In this section we will look at several techniques to test code quality in this way.
 
-![](./img3/unit-test-excuses.webp ':class=img-shadow-center')
+![](./img3/unit-test-excuses.webp ':size=381x500 :class=img-shadow-center')

@@ -8,4 +8,5 @@
  5. Learn the basics of using Docker to create and run containers.
  6. Understand Packer basics.
 
-![](img2/goals.svg ':size=100x100 :class=icon')
+![](../img/goals_light.svg ':size=100x100 :class=light-mode-icon')
+![](../img/goals_dark.svg ':size=100x100 :class=dark-mode-icon')

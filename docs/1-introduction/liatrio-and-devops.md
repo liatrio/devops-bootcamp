@@ -16,7 +16,8 @@ Sometimes the answer is staggering, and we try to change that.
 
 Liatrio is a boots-on-the-ground DevOps Consulting group, meaning that our teams are actually on-site working face-to-face with clients to help them streamline their production. We work with a multitude of clients, and each one has their own specific issues. This is why it is so important to be working personally with them; our employees identify issues that hinder development and help produce a solution. We help to uplift clients both technologically and culturally to revitalize development and IT teams.
 
-![](img1/consulting.svg ':size=150x150 :class=icon')
+![](img1/consulting_light.svg ':size=150x150 :class=light-mode-icon')
+![](img1/consulting_dark.svg ':size=150x150 :class=dark-mode-icon')
 
 ## The Rise of DevOps
 

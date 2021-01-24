@@ -1,6 +1,7 @@
 # DevOps Defined
 
-![](img1/Case-Studies_Icon.svg ':size=150x150 :class=icon')
+![](img1/case_studies_icon_light.svg ':size=150x150 :class=light-mode-icon')
+![](img1/case_studies_icon_dark.svg ':size=150x150 :class=dark-mode-icon')
 
 Let's see what the experts have to say. Be sure to follow the links to get more context from the sources.
 

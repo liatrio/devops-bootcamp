@@ -2,9 +2,8 @@
 
 Before we get into the specifics of how version control works lets examine two of the most import concepts, branching and merging.
 
-<p style="text-align:center">
-<img src="img/git-branches.svg" alt="Branches" width="600px">
-</p>
+![](img3/git-branches_light.svg ':size=600px :class=light-mode-img-center')
+![](img3/git-branches_dark.svg ':size=600px :class=dark-mode-img-center')
 
 **Branching** allows engineers to work in isolation without disrupting the primary codebase. As multiple engineers work in parallel, each will make changes in their own branch independent of one another. Eventually they will want to integrate their code into the mainline. Branches should be short-lived and tied to work items.
 
@@ -36,13 +35,15 @@ Now lets take a look at Liatio's point of view and branching.
 - makes the history of changes understandable and rolling back changes easier
 
 ---
-<img src="img/git-icon-branch.svg" class="img-left" alt="Branch" height="80px" />
+![](img3/git-icon-branch_light.svg ':size=80px :class=light-mode-img-left')
+![](img3/git-icon-branch_dark.svg ':size=80px :class=dark-mode-img-left')
 
 **When to create a branch?** <br>
 A branch should be created only if required. This is most applicable when delivery teams have a history of creating long-lived release branches, whose changes often do not get merged into master.
 
 ---
-<img src="img/git-icon-merge.svg" class="img-left" alt="Branch" height="80px" />
+![](img3/git-icon-merge_light.svg ':size=80px :class=light-mode-img-left')
+![](img3/git-icon-merge_dark.svg ':size=80px :class=dark-mode-img-left')
 
 **When to merge changes?** <br>
 Merging should happen as frequently as possible. As teams improve on creating smaller stories and engineers develop a clear way of working around pull requests, developers can merge code multiple times per day.

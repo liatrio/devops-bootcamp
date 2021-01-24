@@ -36,7 +36,8 @@ At Liatrio, we're always sharing fun or informative learning resources we come a
  - [The Unicorn Project](https://itrevolution.com/book/the-unicorn-project/)
  - [Phippy and Friends](https://www.cncf.io/phippy/)
 
-![](img1/playbook.svg ':size=150x150 :class=icon')
+![](img1/playbook_light.svg ':size=150x150 :class=light-mode-icon')
+![](img1/playbook_dark.svg ':size=150x150 :class=dark-mode-icon')
 
 # Deliverable
 
