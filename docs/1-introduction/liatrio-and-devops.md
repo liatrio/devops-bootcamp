@@ -21,18 +21,18 @@ Liatrio is a boots-on-the-ground DevOps Consulting group, meaning that our teams
 
 ## The Rise of DevOps
 
-DevOps has revolutionized software development within the last couple decades. At the turn of the century, it was common that development teams would work on independent pieces of a project, which would ultimately have to be merged and compiled by a tech lead at the end of a project. This lead to an enormous problem. If code didn't merged together and function as expected, a team might not know until very late in the development process, or even until after deploying. Since that time, developers have created processes and tools to help build, test, and manage code throughout the life of a project. Those tools and processes help for the foundation of what we know today as DevOps.
+DevOps has revolutionized software development within the last couple decades. At the turn of the century, it was common that development teams would work on independent pieces of a project, which would ultimately have to be merged and compiled by a tech lead at the end of a project. This lead to an enormous problem. If code didn't merged together and function as expected, a team might not know until very late in the development process, or even until after deploying. Since that time, developers have created processes and tools to help build, test, and manage code throughout the life of a project. Those tools and processes help form the foundation of what we know today as DevOps.
 
 ## The Goal
-The goal is to take the pain out of software delivery and deployment.
+DevOps practices aim to take the pain out of software delivery and deployment.
 
-1) The developer gets quick feedback. Fast feedback loops allow the developer to work on their code while their mind is in the right place. Addressing these issues as quickly as possible keeps the integrity of the code base. The developer should be testing their code and verifying that their code is what the product needs.
+1) Developers learn about code issues as soon as possible. Fast feedback loops allow the developer fix code issues without switching to another task or forgetting how the code functions. Addressing issues as quickly as possible also maintains the code's integrity and ensures that it's always in a working state. Feedback isn't just about a program's functionality though. Good feedback loops should also let developers hear from users and help guarantee that features are actually useful to customers.
 
-2) The automation of source code management (SCM) and build servers keep code moving through the pipeline and return feedback to developers. The build server has a very important job despite being seemingly simple.
+2) Automation of source code management (SCM) and build servers. SCM tools keeps everyone on the same page about the state of a code base, while build servers validate the functionality and quality of code.
 
-3) Every build created could potentially go to production. While not every change necessarily needs to be released immediately, it's valuable to have enough automation and validation that any changes _could_ go to production if desired.
+3) Every build could potentially go to production. While not every change necessarily needs to be released immediately, it's valuable to have enough automation and validation that any changes _could_ go to production if desired.
 
-4) One of the biggest goals of DevOps is to build a culture similar to startups: Agile mindset. Close Team. Open Communication. Responsibility. Accountability.
+4) A culture similar to that of startups. An agile mindset. Close-knit teams. Open and transparent communication. Individual responsibility and accountability.
 
 # Deliverable
 
