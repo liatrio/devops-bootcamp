@@ -2,7 +2,7 @@
 
 # Learning The Command Line
 
-The command line is a simple text interface for interacting with your computer. At first, using a command line interface can be intimidating, but as you get more comfortable with it, you'll find that it becomes a powerful tool. This guide is aimed at beginners with the command line, to learn some basic uses.
+The command line is a simple text interface for interacting with your computer. At first, using a command line interface can be intimidating, but as you get more comfortable with it, you'll find that it becomes a powerful tool. This guide is aimed at command line beginners, but can serve as a basic refresher for more experienced users.
 
 ## Command Line Navigation
 
@@ -20,7 +20,7 @@ Now that you've navigated to your home directory, you can make a new directory w
 
 Now navigate into the directory `cd liatrio_console_tutorial`
 
-Tip: If you're typing out a long file or directory name, you can press the `<tab>` key to attempt to auto-complete it. If what you've typed is enough to identify the file, it will be filled in automatically. If you haven't typed enough to identify a single file, you can press `<tab>` twice to be shown a list of possibilities.
+?> In many terminals, if you're typing out a long file or directory name, you can press the `<tab>` key to attempt to auto-complete it. If what you've typed is enough to identify the file, it will be filled in automatically. If you haven't typed enough to identify a single file, you can press `<tab>` twice to be shown a list of possibilities.
 
 Commands:
 ```bash
@@ -37,9 +37,9 @@ Next let's try making a file. The `touch` command updates the history of a file,
 
 If we want to see that the file was created, you can use the `ls` command to list the files in a directory. Just type `ls`, you should see the file you just created.
 
-Let's make another file `touch .my_hidden_file`. Try running `ls` again. This time your new file shouldn't show up. This is because the filename starts with `.`, denoting a hidden file. Hidden files aren't displayed by `ls` by default, however many commands like `ls` accept optional flags to slightly modify their behavior. To list all files, including hidden ones you can use the `-a` flag, which is used like `ls -a`. This time, your hidden file should display, along with some others that we'll discuss later.
+Let's make another file `touch .my_hidden_file`. Try running `ls` again. This time your new file shouldn't show up. This is because the filename starts with `.`, denoting a hidden file. Hidden files aren't displayed by `ls` by default. However many commands, including `ls`, accept optional flags to slightly modify their behavior. To list all files, including hidden ones you can use the `-a` flag, which is used like `ls -a`. This time, your hidden file should display, along with some others that we'll discuss later.
 
-If you're ever curious about what options are available for a command, you can read the command's manual. If you want to read the manual for `ls`, you can type `man ls`. Here you can read information about what a command does, and what options can be used with it. You can scroll on the page with the arrow keys, and when you are done reading, you can exit by pressing `q`.
+If you're ever curious about what options are available for a command, you can read the command's manual. If you want to read the manual for `ls`, you can type `man ls`. Here you can read information about what a command does, and what options can be used with it. You can scroll on the page with the arrow keys, and when you are done reading, you can quit by pressing `q`.
 
 Another useful command allows you to search a part of your system for files if you don't know where they're located. Run `find ~/ -name my_file`. `find` may have some directories that it can't access, but in the end it should be able to find your file.
 
@@ -77,7 +77,7 @@ cat my_file
 
 ## Searching Files
 
-For this next section let's talk about the `grep` command. `grep` can search a file for a pattern. This can be useful if know something is in a file, but the file is too large to search by hand. Try running `grep Second my_file`. Here 'Second' is the pattern we're searching for. Notice that `grep` prints out the whole line in the response giving some context for what was found.
+For this next section let's talk about the `grep` command. `grep` can search a file for a pattern. This can be useful if know a line or phrase is in a file, but the file is too large to search by hand. Try running `grep Second my_file`. Here 'Second' is the pattern we're searching for. Notice that `grep` prints out the whole line in the response giving some context for what was found.
 
 Imagine that we'd like to search not just files, but also the output of other commands. As an example `touch find_me`. Imagine we want to find this file in a directory.  One way we can use `grep` to accomplish this is to `ls > temp_file` and then `grep find_me temp_file`. However, wanting to use the output of one command as the input for another is a fairly common situation. Instead of using a file as an in between, we can use the `|`, called a 'pipe'. A pipe is perfect for this situation and it does exactly what we need, passing the output of the first command, as input for the second. Run `ls | grep find_me`. Notice that the output is exactly the same, but this time we didn't require an extra file.
 
@@ -98,7 +98,7 @@ The directory that our current working directory is inside of is called its 'par
 
 If we want to move a file from our parent directory to another directory, we can use the move, or `mv` command. `mv` expects two filenames to follow it, the current position of the file you want to move, and the location you want to move it to. To move `my_file` to the current directory the command we want is `mv ../my_file ./my_file`.
 
-If you run `ls ../` you will see that the file isn't in the parent directory anymore, because it was moved. If you want the copy the file, so that it exists in both places, you can use the copy, or `cp` command, which is used in the same way as `mv`. try running `cp ../temp_file ./another_temp_file`. Now, that here we gave our copy a different name. Because they're in different directories we could've used the same name, however two files in the same directory can't have the same name. If we want to rename the file we just copied, we can use the same `mv` command as before. The only difference is that the start and end directories are the same, for example `mv ./another_temp_file ./temp_file`.
+If you run `ls ../` you will see that the file isn't in the parent directory anymore, because it was moved. If you want the copy the file, so that it exists in both places, you can use the copy, or `cp` command, which is used in the same way as `mv`. try running `cp ../temp_file ./another_temp_file`. Note, that here we gave our copy a different name. Because they're in different directories we could've used the same name, however two files in the same directory can't have the same name. If we want to rename the file we just copied, we can use the same `mv` command as before. The only difference is that the start and end directories are the same, for example `mv ./another_temp_file ./temp_file`.
 
 Finally let's try removing files. The `rm` simply removes a file you specify, such as `rm temp_file`. Notice that you didn't have to use `./temp_file`, you could've, but using a filename without providing the directory will generally assume the current working directory.
 
@@ -119,20 +119,20 @@ rm -r liatrio_console_tutorial
 
 # Useful Unix / Linux Commands
 
-| Command    | Example                   | Description                                                 |
-|------------|---------------------------|-------------------------------------------------------------|
-| `pwd`      | `pwd`                     | Print the name of the working directory                     |
-| `cd`       | `cd path/to/directory/`   | Changes current working directory to given path             |
-| `mkdir`    | `mkdir new_directory/`    | Creates a new directory with the given name                 |
-| `touch`    | `touch new_file`          | Creates a new file / Updates timestamps of an existing file |
-| `ls`       | `ls`                      | Prints the contents of the current directory                |
-| `find`     | `find . -name "myfile"`   | Prints the location of a resource                           |
-| `cat`      | `cat my_file`             | Prints the contents of a specified file                     |
-| `echo`     | `echo 'Hello' `           | Prints the given arguments to the console                   |
-| `which`    | `which java`              | Prints the path to the specified executable                 |
-| `man`      | `man pwd`                 | Displays the manual pages for the specified arguments       |
-| `rm`       | `rm my_file`              | Permanently deletes a resource                              |
-| `cp`       | `cp my_file my_new_file`  | Copies the contents of an argument into a second argument   |
-| `chmod`    | `chmod +x my_script.sh`   | Sets the permissions of files or directories                |
-| `chown`    | `chown user:user my_file` | Change user or group ownership of a given argument          |
-| `ctrl + r` | -----------------------   | Search through command line history                         |
+| Command    | Example                    | Description                                                 |
+|------------|----------------------------|-------------------------------------------------------------|
+| `pwd`      | `pwd`                      | Print the name of the working directory                     |
+| `cd`       | `cd path/to/directory/`    | Changes current working directory to given path             |
+| `mkdir`    | `mkdir new_directory/`     | Creates a new directory with the given name                 |
+| `touch`    | `touch new_file`           | Creates a new file / Updates timestamps of an existing file |
+| `ls`       | `ls`                       | Prints the contents of the current directory                |
+| `find`     | `find . -name "myfile"`    | Prints the location of a resource                           |
+| `cat`      | `cat my_file`              | Prints the contents of a specified file                     |
+| `echo`     | `echo 'Hello' `            | Prints the given arguments to the console                   |
+| `which`    | `which java`               | Prints the path to the specified executable                 |
+| `man`      | `man pwd`                  | Displays the manual pages for the specified arguments       |
+| `rm`       | `rm my_file`               | Permanently deletes a resource                              |
+| `cp`       | `cp my_file my_new_file`   | Copies the contents of an argument into a second argument   |
+| `chmod`    | `chmod +x my_script.sh`    | Sets the permissions of files or directories                |
+| `chown`    | `chown user:group my_file` | Change user or group ownership of a given argument          |
+| `ctrl + r` | **N/A**                    | Search through command line history                         |

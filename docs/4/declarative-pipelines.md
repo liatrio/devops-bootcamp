@@ -1,6 +1,6 @@
 # Declarative Pipelines
 
-A Declarative Pipeline is a method for automating the process of setting up a pipeline in jenkins. To do this we will be using a Jenkinsfile. Jenkinsfiles contain the definition of a Jenkins Pipeline in steps and is checked into source control to be used by jenkins. 
+A Declarative Pipeline is a method for automating the process of setting up a pipeline in Jenkins. To do this we will be using a Jenkinsfile. Jenkinsfiles contain the definition of a Jenkins Pipeline in steps and is checked into source control to be used by Jenkins.
 
 ### Example Jenkinsfile
 ```groovy
@@ -54,7 +54,7 @@ pipeline {
 ``` steps ```
 - Performs some steps related to the 'Deploy' stage.
 
-> Note: Stage name can be anything, and there can be any number of stages. Link to Jenkins Documentation on Pipelines: https://jenkins.io/doc/book/pipeline/
+?> Stage names can be anything, and there can be any number of stages. For further details on Jenkins pipelines, consult the [official documentation](https://jenkins.io/doc/book/pipeline/).
 
 ## Exercise
 
@@ -64,7 +64,7 @@ pipeline {
 2. Setup each Pipeline to build and test every branch, but only deploy from the master branch. 
 
 ## Multi-Branch Pipeline
-There is a Multi-Branch Pipeline job type in Jenkins that is very similar to the singular Pipeline job, but rather than only monitoring master it will monitor all branches. It will also allow you to test everytime you push onto a branch. It won't automatically only deploy from the master branch.
+There is a Multi-Branch Pipeline job type in Jenkins that is very similar to the singular Pipeline job, but rather than only monitoring one branch it will monitor all branches. It will also allow you to test everytime you push onto a branch. It won't automatically only deploy from the main branch.
 
 
 

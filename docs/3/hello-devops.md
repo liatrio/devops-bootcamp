@@ -6,6 +6,8 @@ If you have been going through the bootcamp with others, now is the time to work
 
 The goal of this section is to build your own application and gain perspective of what developers in large enterprise experience.
 
+<center>
+
 ## Requirements
 
 This product can be anything you choose. However, there are some requirements.
@@ -30,19 +32,18 @@ This product can be anything you choose. However, there are some requirements.
 
 
 </div><div class="col">
+
 <center>
 
 **Consultants**
 
 </center>
-
  - Read and execute the [Scrum Guide](https://www.scrumguides.org/scrum-guide.html) (schedule & facilitate all sprint meetings)
  - Understand and assign the role of Scrum Master and Product Owner
  - Determine a communication strategy
  - Ensure that the development team is using tickets to track progress using the board you created in the previous section
 
 </div></div>
-
 
 ## Previous Projects
 

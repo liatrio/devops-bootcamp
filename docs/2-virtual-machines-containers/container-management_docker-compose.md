@@ -6,7 +6,7 @@
 
 - Managing local development environments or sharing among a team of developers.
 
-- Share a demo of a containerized application.
+- Sharing a demo of a containerized application.
 
 Read the Docker Compose [getting started](https://docs.docker.com/compose/gettingstarted/) guide to familiarize yourself with writing a Docker Compose file and the basic commands.
 

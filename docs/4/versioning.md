@@ -16,6 +16,7 @@ Versions can also be used as a shorthand to convey information about the scope o
 6. Run your new image. Now run your old image. 
 
 ?> What happens when you build an image without a tag?
+
 ?> If you did not tag your images what would you have to do to run the old image?
 
 ## Deliverables

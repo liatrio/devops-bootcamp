@@ -15,5 +15,5 @@
 
 ?> You may run into problems when making a release with Jenkins after creating one locally because Go Releaser creates folders that will give a Git dirty state. In the Jenkinsfile, run commands to delete those folders ahead of time.
 
-## Delieverable 
+## Deliverable
 Discuss the differences between Maven releases and Go Releaser. Discuss any problems you had getting this exercise done. 

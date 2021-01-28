@@ -10,7 +10,7 @@ As you use more tools, services, networks and hosts you will need ways to secure
 Passwords are the simplest and most common type of authentication. Passwords can be convenient when they are easy to remember but they are also less secure if they are too simple. There are a plethora of techniques for breaking weak passwords so it is always important to follow best practices for keeping your passwords secure.
 
 Best practices:
-- Use longer passwords to make them more secure: usually a minimum of 8 characters.
+- Use longer passwords or passphrases to make them more secure. Try to use a minimum of 8 characters, but more is always better.
 - Use a combination of numbers, upper and lower case letter and symbols to make passwords more complicated.
 - Do not use dictionary words or character substitutions.
 - Do not use the same passwords for different accounts.
