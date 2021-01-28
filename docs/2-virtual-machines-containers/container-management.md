@@ -2,7 +2,7 @@
 
 From the previous section you should be familiar with using Docker to build containers and run them locally. As environments grow and become more complicated running containers individually and configuring them using command line arguments becomes too difficult to manage. In production environments scaling, monitoring and security also become essential elements to managing containerized applications.
 
-Aside from managing the containers themselves there are some resources they depend on which much also be managed.
+Aside from managing the containers themselves there are some resources they depend on which must also be managed.
 
 - **Volumes**: A container is created with a layered file system which can add, delete and modify files, from the image it was created with, without actually changing the image. When the container is deleted any logs, configuration or data which was written to the filesystem will be lost. Volumes provide a way to mount external storage to a directory in the container's filesystem which is persisted after the container is deleted and can be mounted again in another container.
 
@@ -16,5 +16,5 @@ In this section we will be looking at two different container management solutio
 
 1. **Docker Compose** is an application which can manage building and running multiple Docker containers using a simple interface.
 
-2. **Kubernetes** is a robust framework which manages complicated container environments in a uniform way regardless of wether it is running on a single machine or a cluster of VMs in a cloud provider.
+2. **Kubernetes** is a robust framework which manages complicated container environments in a uniform way regardless of whether it is running on a single machine or a cluster of VMs in a cloud provider.
 
