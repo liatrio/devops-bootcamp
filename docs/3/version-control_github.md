@@ -1,12 +1,12 @@
 # GitHub
 
-For a lot of people when you say Git they think of GitHub which is not surprising since GitHub has created a huge community of individuals and organization around the use of Git. GitHub lets you host, share and manage Git repositories with an easy to use HTML interface. GitHub also offers some other project management features such as issue tracking, documentation, releases and CI/CD pipelines.
+For a lot of people when you say Git they think of GitHub which is not surprising since GitHub has created a huge community of individuals and organizations around the use of Git. GitHub lets you host, share and manage Git repositories with an easy to use HTML interface. GitHub also offers some other project management features such as issue tracking, documentation, releases and CI/CD pipelines.
 
 For the most part GitHub repositories work just like normal Git repositories. You can clone them, create and merge branches, commit changes and push them back up to GitHub. GitHub also adds a few features which are not included in Git which are worth taking note of.
 
 # Pull Requests
 
-A pull request (PR) is a process to review and approve changes from one branch before they are merged into another. A pull request can be created from one branch to another (usually a main branch) in the same repository or from a forked repository (see below) to its source. 
+A pull request (PR) is a process to reviewed and approved changes from one branch before they are merged into another. A pull request can be created from one branch to another (usually a main branch) in the same repository or from a forked repository (see below) to its source. 
 
 After a pull request is created in GitHub it can be reviewed by viewing a side by side comparison of code being added and removed. It allows for people to comment on and requests changes to specific sections of code. People can be requested to review changes or rules can be setup to require reviews from specific people or a minimum number of reviews before a pull request is approved. Once a pull request is approved it can be merged and closed.
 
@@ -16,13 +16,13 @@ After a pull request is created in GitHub it can be reviewed by viewing a side b
 
 ![Peer Previews](../img/git-pr.webp ':class=img-center')
 
-Apart from quality gates, PRs provide an opportunity to perform honest, robust, and friendly code reviews. It is a sacred space often utilized only by the developers, as it narrows the audience to low-level code reviews.
+Apart from quality gates, PRs provide an opportunitiy to perform honest, robust, and friendly code reviews. It is a sacred space often utilized only by the developers, as it narrows the audience to low-level code reviews.
 
 During PRs, developers will work together to ensure that the code meets the business value promised by the work item. Common discussions will revolve around scope creep, optimizing implementation, and alignment on team's code norms.
 
 ![Pull Requests](../img/git-peer-review.webp ':class=img-shadow-center')
 
-Additionally, this process will help share knowledge of the application across the entire team, as opposed to a select circle of lead developers. This helps reduce tribal knowledge and can serve as an onboarding newer or junior members to the team.
+Additionally, this process will help share knowledge of the application across the entire team, as opposed to a select circle of lead developers. This helps reduce tribal knowledge and can serve in the onboarding of newer or junior members to the team.
 
 Good peer reviews during pull requests help create strong and high performing teams that:
 - check each other's work to protect the quality of the product
@@ -33,7 +33,7 @@ Good peer reviews during pull requests help create strong and high performing te
 
 # Forks
 
-Forking a GitHub repository copies it to either your personal repositories or the repositories of an organization you have the proper access to. It is essentially the same as cloning a repository and then pushing it up to a new GitHub repository except that forking links the copied repository to it's source which allows you to make pull requests back to original repository.
+Forking a GitHub repository copies it to either your person repositories or the repositories of an organization you have the proper access to. It is essentially the same as cloning a repository and then pushing it up to a new GitHub repository except that forking links the copied repository to its source which allows you to make pull requests back to the original repository.
 
 A common use case is for individuals to contribute to open source projects by forking the project, committing changes to their fork and then creating a pull request to merge their changes into the official project. 
 
@@ -49,11 +49,11 @@ This exercise is an opportunity to explore GitHub's features. There are a lot of
 
 !> When making a pull request on a forked repository be sure to select your own repository as the base repository and not the official repository unless you are actually requesting them to merge your changes into their project. The is a common but embarrassing mistake and an annoyance for large project maintainers.
 
-4. Experiment with adding comments and making additional changes to the PR. If you are working in a group request someone else review your PR and requests changes on someone else's PR.
+4. Experiment with adding comments and making additional changes to the PR. If you are working in a group request someone else review your PR and request changes on someone elses PR.
 
 # GitHub Alternatives
 
-GitHub is one of the most well known platforms for hosting and managing Git repositories but it is not the only one. Atlassian has a product called [Bitbucket](https://bitbucket.org/product) which is available as a service or a self hosted product. [GitLab](https://about.gitlab.com/stages-devops-lifecycle/) is a CI/CD platform which includes Git repository hosting and many other feature similar to GitHub.
+GitHub is one of the most well known platforms for hosting and managing Git repositories but it is not the only one. Atlassian has a product called [Bitbucket](https://bitbucket.org/product) which is available as a service or a self hosted product. [GitLab](https://about.gitlab.com/stages-devops-lifecycle/) is a CI/CD platform which includes Git repository hosting and many other features similar to GitHub.
 
 # Deliverable
 

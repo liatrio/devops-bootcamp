@@ -8,7 +8,7 @@ Git is by far the most widely used version control system available. It manages 
 - maintains version history
 - secure and resistant to corruption
 
-All history and related **commmit** metadata is contained within a hidden `.git` folder.
+All history and related **commit** metadata is contained within a hidden `.git` folder.
 
 ?>**What is a commit?** The `git commit` command captures a snapshot of the project's changes. Committed snapshots can be thought of as “safe” versions of a project.
 
@@ -18,7 +18,7 @@ All history and related **commmit** metadata is contained within a hidden `.git`
 By default, Git will track everything in your working directory, including all files of all filetypes, folders and subfolders.
 
 - application code (source, test)
-- infrasture code (Configuration management, Dockerfiles)
+- Infrastructure code (Configuration management, Dockerfiles)
 - configuration (pipeline scripts, environment properties)
 - metadata (READMEs, manifests)
 
@@ -30,7 +30,7 @@ Although Git can watch everything in your working directory, not everything on y
 - local system properties from IDE
 - secrets, passwords, and other security-sensitive data
 
-?> Add a list of files or folders in `.gitignore` to instruct Git to not track changes.
+?>Add a list of files or folders in `.gitignore` to instruct Git to not track changes.
 
 ### Common Git Commands
 
@@ -68,7 +68,7 @@ There are three states of changed files within Git. Newly created files will be 
 2. Unstaged - file is modified but not added to staging
 3. Staged - file is modified, in staging, and ready to be committed
 
-At any point in time, use `git status` to see the state of changed files within Git. It will tell you which files are in which state and provide helpful color-coded guides, while provided instructions on what you can do next.
+At any point in time, use `git status` to see the state of changed files within Git. It will tell you which files are in which state and provide helpful color-coded guides, while providing instructions on what you can do next.
 
 ![Git Changes](../img/git-changes.webp ':class=img-shadow')
 
@@ -90,7 +90,7 @@ In this exercise you will get some practice with some Git basics by creating, cl
 
 3. Run `git clone my_repo my_repo_clone` to make a copy of your repo. In `my_repo_clone` verify your changes are there and that `git log` matches your original repo.
 
-4. In `my_repo` commit another change. Return to `my_repo_clone` and run `git status`. Now run `git fetch` and `git status` again and compare the difference. Run `git pull` and verify you change is there.
+4. In `my_repo` commit another change. Return to `my_repo_clone` and run `git status`. Now run `git fetch` and `git status` again and compare the difference. Run `git pull` and verify your change is there.
 
 **Extra Credit:** Can you make a change in `my_repo_clone` and then *pull* that into `my_repo`? **Hint:** In `my_repo_clone` run `git remote -v`. What is this command telling you?
 
@@ -104,7 +104,7 @@ Branching allows you to diverge from the main line of development and continue t
 
 2. Switch to your new branch using `git checkout BRANCH_NAME`.
 
-?> Alternatively, you can combine step 1. and step 2. by doing `git checkout -b BRANCH_NAME` to create and switch to the branch in one step.
+?>Alternatively, you can combine step 1. and step 2. by doing `git checkout -b BRANCH_NAME` to create and switch to the branch in one step.
 
 3. Create a new file or make changes to an existing file. Add and commit the changes. 
 
@@ -120,15 +120,15 @@ A typical developer workflow is centered around using Git. Using TBE principles,
 
 # Merge Conflicts
 
-It's important to try to avoid merge conflicts by merging often, keeping branches short lived and communicating with teammates but no matter how careful you are conflicts **WILL** happen. Luckily Git also helps you resolve these conflicts.
+Its important to try to avoid merge conflicts by merging often, keeping branches short lived and communicating with teammates but no matter how careful you are conflicts **WILL** happen. Luckily Git also helps you resolve these conflicts.
 
 ### Exercise 3: Merge Conflicts
 
-1. In `my_repo` edit a file your created earlier and commit the change.
+1. In `my_repo` edit a file you created earlier and commit the change.
 2. In `my_repo_clone` edit the same file and commit the change.
 3. Run `git pull` to pull the change from `my_repo` into `my_repo_clone`
 
-We'll now created a problem, Git doesn't know which version of the file is the
+We now created a problem, Git doesn't know which version of the file is the
 correct version to keep, generating a merge conflict. When viewing the file,
 you'll see both versions of the conflicting section surrounded by `<<<` and
 `>>>`. The two versions are separated in the center by `===`.
