@@ -16,6 +16,12 @@ Visual Studio Live Share enables you to collaboratively edit and debug with othe
 
 Visual Studio Extension Pack This extension pack includes everything you need to start collaboratively editing and debugging in real time, including integrated audio and text chat.
 
+?>Testing to see if this works
+> Testing
+>
+> Testing
+>
+> Testing
 # Deliverable
 
 Try out pair programming with someone to program an application that prints "Hello World" using a language of your choice. 
