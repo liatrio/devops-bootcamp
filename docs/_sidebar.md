@@ -98,7 +98,6 @@
 - [8.4 - Azure with Packer](8/8.4-az-packer.md)
 - [8.5 - ACI](8/8.5-aci.md)
 - [8.6 - AKS](8/8.6-aks.md)
-- [8.7 - Functions](8/8.7-functions.md)
 * **Chapter 9**
 - [9.0 - Automation & Orchestration](9/9.0-overview.md)
 - [9.1 - Configuration Managers](9/9.1-configuration-managers.md)
