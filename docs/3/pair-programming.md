@@ -36,6 +36,6 @@ Not only does VSCode allow participants to share projects in real-time, they are
 
 
 # Deliverable
-
+ 
 Try out pair programming with someone to program an application that prints "Hello World" using a language of your choice. 
 
