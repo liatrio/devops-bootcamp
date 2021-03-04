@@ -20,14 +20,6 @@ Visual Studio Live Share enables you to collaboratively edit and debug with othe
 
 Visual Studio Extension Pack This extension pack includes everything you need to start collaboratively editing and debugging in real time, including integrated audio and text chat.
 
-<<<<<<< HEAD
-?>Testing to see if this works
-> Testing
->
-> Testing
->
-> Testing
-=======
 ## Why VSCode for Pair Programming?  
 
 VSCode allows users to collaboratively work on the same code at the same time,  allowing for instant feedback. VSCode also works really well for a wide variety of languages. The most important distinction between VSCode and other editors, is that it is free to use. It also comes pre-packaged with a lot of useful features; intellisense, extension marketplace, version control, GitHub integration, and many    [more](https://code.visualstudio.com/docs/editor/whyvscode).
@@ -43,7 +35,6 @@ Not only does VSCode allow participants to share projects in real-time, they are
 !>JetBrain's IntelliJ IDEA service is a yearly subscription. 
 
 
->>>>>>> fafe37ba5168914644331a66719551f933f8aa74
 # Deliverable
 
 Try out pair programming with someone to program an application that prints "Hello World" using a language of your choice. 
