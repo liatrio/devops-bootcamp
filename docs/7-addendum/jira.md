@@ -2,8 +2,8 @@
 
 At this point you should already have experience using Jira. Jira is available as a cloud service and a self managed server. In this section you will gain experience with the self managed server version of Jira by installing, managing and integrating it with other tools.
 
-![](img6/jira_light.svg ':size=400px :class=light-mode-img-center')
-![](img6/jira_dark.svg ':size=400px :class=dark-mode-img-center')
+![](img7/jira_light.svg ':size=400px :class=light-mode-img-center')
+![](img7/jira_dark.svg ':size=400px :class=dark-mode-img-center')
 
 ## Install Jira
 
@@ -13,15 +13,15 @@ At this point you should already have experience using Jira. Jira is available a
 3. Execute the Jira installer and follow the [instructions](https://confluence.atlassian.com/display/ALLDOC/Latest+JIRA+installation+documentation).
 4. Open the Jira web interface [http://localhost:8080](http://localhost:8080) and choose "Set it up for me".
 
-![](img6/jira1.webp ':class=img-shadow-center')
+![](img7/jira1.webp ':class=img-shadow-center')
 
 5. Configure the evaluation license. This might be cached if you have recently configured a trial Bitbucket.
 
-![](img6/jira2.webp ':class=img-shadow-center')
+![](img7/jira2.webp ':class=img-shadow-center')
 
 6. Create an administrator account and wait for setup to complete.
 
-![](img6/jira3.webp ':class=img-shadow-center')
+![](img7/jira3.webp ':class=img-shadow-center')
 
 7. Once the server setup is complete create a new *Kanban software development* project.
 
