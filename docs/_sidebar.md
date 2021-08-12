@@ -8,6 +8,7 @@
 
 - [Introduction](/)
 * **Chapter 1**
+- [0.1 - My new chapter](new chapter.md)
 - [1.0 - Introduction to DevOps](1-introduction/1.0-overview.md)
 - [1.1 - DevOps Defined](1-introduction/1.1-devops-defined.md)
 - [1.2 - Liatrio and DevOps](1-introduction/1.2-liatrio-and-devops.md)
