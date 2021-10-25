@@ -1,4 +1,5 @@
-![liatrio](docs/img/Liatrio-icon.png)
+
+![Liatrio Logomark](docs/img/favicon.svg ':size=150x150 :class=logo')
 # Liatrio's DevOps Bootcamp
 
 Welcome! You must be here because you're interested in DevOps. Don't worry, we'll explain that right away! Let's introduce some goals and expectations first, though.
