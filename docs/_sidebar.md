@@ -92,6 +92,14 @@
 - [6.3 - Terraform](6-automation-and-orchestration/6.3-terraform)
 - [6.4 - Ansible](6-automation-and-orchestration/6.4-ansible.md)
 - [6.5 - Kubernetes](6-automation-and-orchestration/6.5-kubernetes.md)
+* **Chapter 7**
+- [7.0 - Kubectl Reference](6-automation-and-orchestration/6.0-overview.md)
+- [7.1 - Volumes](6-automation-and-orchestration/6.1-configuration-managers.md)
+- [7.2 - Probes](6-automation-and-orchestration/6.2-chef.md)
+- [7.3 - RBAC](6-automation-and-orchestration/6.3-terraform)
+- [7.4 - HPAs](6-automation-and-orchestration/6.4-ansible.md)
+- [7.5 - Webhooks](6-automation-and-orchestration/6.5-kubernetes.md)
+- [7.5 - CRD Project](6-automation-and-orchestration/6.5-kubernetes.md)
 * **Addendum**
 - [Addendum](7-addendum/addendum-overview.md)
   - [Ephemeral Jenkins](7-addendum/ephemeral-jenkins.md)
