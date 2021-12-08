@@ -99,7 +99,7 @@
 - [7.3 - RBAC](7-kubernetes-container-orchestration/7.3-rbac.md)
 - [7.4 - HPAs](7-kubernetes-container-orchestration/7.4-hpas.md)
 - [7.5 - Webhooks](7-kubernetes-container-orchestration/7.5-webhooks.md)
-- [7.5 - CRD Project](7-kubernetes-container-orchestration/7.6-crd-project.md)
+- [7.6 - CRD Project](7-kubernetes-container-orchestration/7.6-crd-project.md)
 * **Addendum**
 - [Addendum](7-addendum/addendum-overview.md)
   - [Ephemeral Jenkins](7-addendum/ephemeral-jenkins.md)
