@@ -94,6 +94,11 @@
 - [6.5 - Kubernetes](6-automation-and-orchestration/6.5-kubernetes.md)
 * **Chapter 7**
 - [7.0 - Kubectl Reference](7-kubernetes-container-orchestration/7.0-kubectl-ref.md)
+  - [7.0.1 - Getting Started](7-kubernetes-container-orchestration/7.0.1-getting-started.md)
+  - [7.0.2 - App Management](7-kubernetes-container-orchestration/7.0.2-app-management.md)
+  - [7.0.3 - Working with Apps](7-kubernetes-container-orchestration/7.0.3-working-with-apps.md)
+  - [7.0.4 - Cluster Management](7-kubernetes-container-orchestration/7.0.4-cluster-management.md)
+  - [7.0.5 - Kubectl Settings and Usage](7-kubernetes-container-orchestration/7.0.5-kubectl-settings-and-usage.md)
 - [7.1 - Volumes](7-kubernetes-container-orchestration/7.1-volumes.md)
 - [7.2 - Probes](7-kubernetes-container-orchestration/7.2-probes.md)
 - [7.3 - RBAC](7-kubernetes-container-orchestration/7.3-rbac.md)
