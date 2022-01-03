@@ -31,7 +31,7 @@ Mutating and validating webhooks are used in conjunction to enforce policy. The 
 This project is for setting up a basic Kubernetes validating Admission
 Controller using python.
 
-1. Fork the webhooks [repository](https://github.com/ssmathistad/bootcamp-webhooks).
+1. Fork the webhooks [repository](https://github.com/liatrio/bootcamp-webhooks).
 
 2. Deploy a KIND cluster with Admission Controller enabled
 
