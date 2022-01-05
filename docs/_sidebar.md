@@ -91,7 +91,6 @@
 - [6.2 - Chef](6-automation-and-orchestration/6.2-chef.md)
 - [6.3 - Terraform](6-automation-and-orchestration/6.3-terraform)
 - [6.4 - Ansible](6-automation-and-orchestration/6.4-ansible.md)
-- [6.5 - Kubernetes](6-automation-and-orchestration/6.5-kubernetes.md)
 * **Chapter 7**
 - [7.0 - Kubectl Reference](7-kubernetes-container-orchestration/7.0-kubectl-ref.md)
   - [7.0.1 - Getting Started](7-kubernetes-container-orchestration/7.0.1-getting-started.md)
