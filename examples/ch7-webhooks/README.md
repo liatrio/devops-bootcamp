@@ -22,7 +22,7 @@ How does this pod actually get created? This pod is created when the pod definit
 
 ![](img7/api-lifecycle.svg ':class=img-center')
 
-Looking at the picture above, we see that Kubernetes gives us a chance to interact with a resource before it is persisted and provisioned. We can achieve this by using validating and mutating webhooks. A mutating webhook allows us to make changes to a resource before it is persisted in etcd. For example, if we pushed up a pod without resource defaults, our mutating webhook would catch this and inject a resource block (requests and limits for memory and cpu) into our pod. A validating webhook does not let us edit resources. Instead it gives us the ability to enforce policy over a cluster. For instance, we could have a requirement in our validating webhook requiring all namespaced pods have the label `foo:bar` in their metadata, and if they don't we reject the resource. 
+Kubernetes gives us a chance to interact with a resource before it is persisted and provisioned. We can achieve this by using validating and mutating webhooks. A mutating webhook allows us to make changes to a resource before it is persisted in etcd. For example, if we pushed up a pod without resource defaults, our mutating webhook would catch this and inject a resource block (requests and limits for memory and cpu) into our pod. A validating webhook does not let us edit resources. Instead it gives us the ability to enforce policy over a cluster. For instance, we could have a requirement in our validating webhook requiring all namespaced pods have the label `foo:bar` in their metadata, and if they don't we reject the resource. 
 
 Mutating and validating webhooks are used in conjunction to enforce policy. The mutating webhook happens first so we can inject any missing fields that the validating webhook requires before actually getting to the validating webhook step. These are both custom webhook configurations. As cluster admin we would write our policy code in whatever language we prefer (Golang and Python are the most widely used).  
 
@@ -31,7 +31,7 @@ Mutating and validating webhooks are used in conjunction to enforce policy. The 
 This project is for setting up a basic Kubernetes validating Admission
 Controller using python.
 
-1. Fork the bootcamp [repository](https://github.com/liatrio/devops-bootcamp.git) if you haven't already and navigate to the `examples/ch7-webhooks` folder for this exercise's files.
+1. Fork the webhooks [repository](https://github.com/liatrio/bootcamp-webhooks).
 
 2. Deploy a KIND cluster with Admission Controller enabled
 
@@ -115,8 +115,3 @@ Tests 2, 4, and 5 should pass.
 8. Test your validating webhook
 Tests 1, 2, 4, 5, and 7 should pass.
     <br>```kubectl apply -f test-pods```
-
-### Deliverables
-- Why do webhooks require a TLS certificate?
-    - How does cert-manager facilitate this?
-- Can a mutating webhook also function as a validating webhook? Vice versa? Why or why not?
