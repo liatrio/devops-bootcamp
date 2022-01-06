@@ -93,7 +93,7 @@
 - [6.4 - Ansible](6-automation-and-orchestration/6.4-ansible.md)
 * **Chapter 7**
 - [7.0 - Kubernetes Overview](7-kubernetes-container-orchestration/7.0-overview.md)
-- [7.1 - Kubectl Reference](7-kubernetes-container-orchestration/7.1-kubectl-ref.md)
+- [7.1 - Kubectl Reference](7-kubernetes-container-orchestration/7.1.0-kubectl-ref.md)
   - [7.1.1 - Getting Started](7-kubernetes-container-orchestration/7.1.1-getting-started.md)
   - [7.1.2 - App Management](7-kubernetes-container-orchestration/7.1.2-app-management.md)
   - [7.1.3 - Working with Apps](7-kubernetes-container-orchestration/7.1.3-working-with-apps.md)
