@@ -6,7 +6,6 @@
 </center>
 
 ## Introduction
-
 Welcome! You must be here because you're interested in DevOps. Don't worry, we'll get to that in a moment! First, let's briefly go over some details.
 
 "1.0" can be referred to as "Chapter One," while "1.2" can be referred to as "Chapter One, Section Two."
