@@ -19,11 +19,11 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 ## Learning Goals
  1. Introduction to DevOps
  2. Virtual Machines and Containers
- 3. Development Practices
- 4. Release Management
- 5. System Administration
- 6. Cloud Computing
- 7. Automation and Orchestration
+ 3. Cloud Computing
+ 4. Development Practices
+ 5. Release Management
+ 6. Automation and Orchestration
+ 7. Kubernetes
 
 ## Expectations
  1. Share what you learn. Knowledge is best retained when you can teach it back yourself.
