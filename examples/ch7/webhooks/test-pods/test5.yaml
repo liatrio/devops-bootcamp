@@ -1,15 +1,21 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test5-busybox-img-default-ns
-  namespace: default
-  labels:
+  name: test5-two-busybox-containers
+  namespace: busybox
+  labels: 
     app: busybox
 spec:
   restartPolicy: OnFailure
   containers:
-    - name: test5
+    - name: test7a
       image: busybox:latest
+      imagePullPolicy: Always
+      command:
+      - sleep
+      - "6000"
+    - name: test7b
+      image: busybox:1.24.0
       imagePullPolicy: Always
       command:
       - sleep
