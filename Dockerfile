@@ -18,3 +18,4 @@ entrypoint [ "docsify", "serve", "--port", "3000" ]
 
 ## Container entry point default arguments
 cmd [ "." ]
+
