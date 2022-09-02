@@ -1,5 +1,8 @@
 <!-- docs/_sidebar.md -->
 
+
+foo 
+
 <div id="dark_mode"
   ><i class="fas fa-sun"></i
   ><input type="checkbox" id="dark_mode_switch" name="mode"
@@ -40,8 +43,9 @@
   - [3.2.2 - EC2](3-cloud-computing/3.2.2-ec2.md)
   - [3.2.3 - Auto Scaling](3-cloud-computing/3.2.3-auto-scaling.md)
   - [3.2.4 - AWS with Packer](3-cloud-computing/3.2.4-aws-packer.md)
-  - [3.2.5 - ECS](3-cloud-computing/3.2.5-ecs.md)
-  - [3.2.6 - EKS](3-cloud-computing/3.2.6-eks.md)
+  - [3.2.5 - Lambda](3-cloud-computing/3.2.5-lambda.md)
+  - [3.2.6 - ECS](3-cloud-computing/3.2.6-ecs.md)
+  - [3.2.7 - EKS](3-cloud-computing/3.2.7-eks.md)
 - [3.3 - Cloud Computing on Azure](3-cloud-computing/3.3-overview.md)
   - [3.3.1 - Storage Accounts](3-cloud-computing/3.3.1-storage-accounts.md)
   - [3.3.2 - Virtual Machines](3-cloud-computing/3.3.2-virtual-machines.md)
