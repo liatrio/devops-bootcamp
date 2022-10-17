@@ -86,11 +86,12 @@
   - [5.4.1 - Docker](5-release-management/5.4.1-docker.md)
   - [5.4.2 - Helm](5-release-management/5.4.2-helm.md)
 * **Chapter 6**
-- [6.0 - Automation & Orchestration](6-automation-and-orchestration/6.0-overview.md)
-- [6.1 - Configuration Managers](6-automation-and-orchestration/6.1-configuration-managers.md)
-- [6.2 - Chef](6-automation-and-orchestration/6.2-chef.md)
-- [6.3 - Terraform](6-automation-and-orchestration/6.3-terraform)
-- [6.4 - Ansible](6-automation-and-orchestration/6.4-ansible.md)
+- [6.0 - Infrastructure & Configuration](6-infrastructure-configuration-management/6.0-overview.md)
+- [6.1 - Terraform](6-infrastructure-configuration-management/6.1-terraform)
+  - [6.1.1 - Terraform Getting Started](6-infrastructure-configuration-management/6.1.1-terraform-getting-started.md)
+  - [6.1.2 - Terraform State & Backends](6-infrastructure-configuration-management/6.1.2-terraform-backends.md)
+- [6.2 - Ansible](6-infrastructure-configuration-management/6.2-ansible.md)
+- [6.3 - Chef](6-infrastructure-configuration-management/6.3-chef.md)
 * **Chapter 7**
 - [7.0 - Kubernetes Overview](7-kubernetes-container-orchestration/7.0-overview.md)
 - [7.1 - Kubectl Reference](7-kubernetes-container-orchestration/7.1-kubectl-ref.md)
