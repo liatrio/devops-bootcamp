@@ -8,6 +8,20 @@ import(
 	"encoding/base32"
 )
 
+
+type engineer struct{
+	name string
+	id string
+	email string
+}
+
+func newPerson (name string) *engineer {
+	p := engineer {name: name}
+	p.id := "123"
+	p.email = "asdasd@gmail.com"
+	return &p
+}
+
 func main() {
 	protocol := "http://"
 	url := protocol + "www.google.com"
@@ -18,24 +32,16 @@ func main() {
 	}
 	fmt.Println(response)
 
-	// random number generator	
-	//rand.Seed(time.Now().UnixNano())
-	//min := 10
-	//max := 30
-
-
-	//fmt.Println(rand.Intn(max - min + 1) + min)
-
 	randId := getRandId(15)
-	fmt.Println("Random ID: ", randId)
-
+//	fmt.Println("Random ID: ", randId)
+	fmt.Println(engineer{"bob",randId ,"hello@gmail.com"})
 }
 
 func getRandId(length int) string {
-    randomBytes := make([]byte, 32)
-    _, err := rand.Read(randomBytes)
-    if err != nil {
-        panic(err)
-    }
-    return base32.StdEncoding.EncodeToString(randomBytes)[:length]
+	randomBytes := make([]byte, 32)
+	_, err := rand.Read(randomBytes)
+	if err != nil {
+		panic(err)
+	}
+	return base32.StdEncoding.EncodeToString(randomBytes)[:length]
 }
