@@ -61,6 +61,11 @@ func getRandId(length int) string {
 	return base32.StdEncoding.EncodeToString(randomBytes)[:length]
 }
 
+func verifyEmail(email string) bool {
+	result, _ := regexp.MatchString("^([a-z]|[0-9])+@[a-z]+\\.[a-z]+(\\.[a-z]+)*$", email)
+	return result
+}
+
 func main() {
 	protocol := "http://"
 	url := protocol + "www.google.com"
