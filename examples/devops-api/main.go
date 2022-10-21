@@ -9,11 +9,44 @@ import(
 )
 
 
+
 type engineer struct{
 	name string
 	id string
 	email string
 }
+
+type dev struct{
+	name string
+	id string
+	engineers []string
+}
+
+type ops struct{
+	name string
+	id string
+	engineers []string
+}
+
+type devops struct{
+	id string
+	dev []string
+	ops []string
+}
+//Global maps to access our resources by id key
+engineers := make(map[string] engineer)
+devs := make(map[string] devs)
+ops := make(map[string] ops)
+devops := make(map[string] devops)
+
+func newDev (name string, email string) dev{
+	devGroup := dev {name: name}
+	devGroup.id = "TODO"
+	devGroup.email = email
+	devGroup.engineers = make([]engineer,1)
+	return devGroup
+}
+
 
 func newPerson (name string) *engineer {
 	p := engineer {name: name}
