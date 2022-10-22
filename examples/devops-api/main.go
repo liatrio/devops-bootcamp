@@ -9,6 +9,15 @@ import (
 	"regexp"
 )
 
+func getRandId(length int) string {
+	randomBytes := make([]byte, 32)
+	_, err := rand.Read(randomBytes)
+	if err != nil {
+		panic(err)
+	}
+	return base32.StdEncoding.EncodeToString(randomBytes)[:length]
+}
+
 type engineer struct {
 	name  string
 	id    string
@@ -39,27 +48,16 @@ var developers = make(map[string]dev)
 var operations = make(map[string]ops)
 var developer_operations = make(map[string]devops)
 
-func newDev(name string, email string) dev {
-	devGroup := dev{name: name}
-	devGroup.id = "TODO"
+func newDev(name string) dev {
+	devGroup := dev{name: name, id: "TODO"}
 	devGroup.engineers = make([]string, 1)
 	return devGroup
 }
 
-func newPerson(name string) *engineer {
-	p := engineer{name: name}
-	p.id = "123"
+func newPerson(name string) engineer {
+	p := engineer{name: name, id: getRandId(5)}
 	p.email = "asdasd@gmail.com"
-	return &p
-}
-
-func getRandId(length int) string {
-	randomBytes := make([]byte, 32)
-	_, err := rand.Read(randomBytes)
-	if err != nil {
-		panic(err)
-	}
-	return base32.StdEncoding.EncodeToString(randomBytes)[:length]
+	return p
 }
 
 func verifyEmail(email string) bool {
