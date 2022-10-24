@@ -49,7 +49,7 @@ var operations = make(map[string]ops)
 var developer_operations = make(map[string]devops)
 
 func newDev(name string) dev {
-	for key, value := range developers {
+	for _, value := range developers {
 		if name == value.name {
 			//Throw warning
 		}
@@ -60,7 +60,7 @@ func newDev(name string) dev {
 }
 
 func newOp(name string) dev {
-	for key, value := range operations {
+	for _, value := range operations {
 		if name == value.name {
 			//Throw warning
 		}
@@ -71,7 +71,7 @@ func newOp(name string) dev {
 }
 
 func newPerson(name string) engineer {
-	for key, value := range engineers {
+	for _, value := range engineers {
 		if name == value.name {
 			//Throw warning
 		}
