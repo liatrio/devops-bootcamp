@@ -27,19 +27,19 @@ type engineer struct {
 type dev struct {
 	name      string
 	id        string
-	engineers []string
+	engineers map[string]engineer
 }
 
 type ops struct {
 	name      string
 	id        string
-	engineers []string
+	engineers map[string]engineer
 }
 
 type devops struct {
 	id  string
-	dev []string
-	ops []string
+	dev map[string]dev
+	ops map[string]ops
 }
 
 // Global maps to access our resources by id key
@@ -49,15 +49,56 @@ var operations = make(map[string]ops)
 var developer_operations = make(map[string]devops)
 
 func newDev(name string) dev {
+	for key, value := range developers {
+		if name == value.name {
+			//Throw warning
+		}
+	}
 	devGroup := dev{name: name, id: "TODO"}
-	devGroup.engineers = make([]string, 1)
+	devGroup.engineers = make(map[string]engineer)
 	return devGroup
 }
 
+func newOp(name string) dev {
+	for key, value := range operations {
+		if name == value.name {
+			//Throw warning
+		}
+	}
+	opGroup := dev{name: name, id: "TODO"}
+	opGroup.engineers = make(map[string]engineer)
+	return opGroup
+}
+
 func newPerson(name string) engineer {
+	for key, value := range engineers {
+		if name == value.name {
+			//Throw warning
+		}
+	}
 	p := engineer{name: name, id: getRandId(5)}
 	p.email = "asdasd@gmail.com"
 	return p
+}
+
+func addEngineerTo_Op(op_id string, engineer_id string) bool {
+
+	engineer_val, exists := engineers[engineer_id]
+	if exists {
+		//Throw error, no engineer
+	}
+	dev_val, exists := developers[op_id]
+	if !exists {
+		//Throw error, no operations team
+	}
+	_, exists = dev_val.engineers[engineer_id]
+	if exists {
+		//Throw error, engineer already exists in operations team
+	}
+	dev_val.engineers[engineer_id] = engineer_val
+
+	return false
+
 }
 
 func verifyEmail(email string) bool {
