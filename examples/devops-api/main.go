@@ -3,6 +3,7 @@ package main
 import (
 	"crypto/rand"
 	"encoding/base32"
+	"errors"
 	"fmt"
 	"net/http"
 	"os"
@@ -48,56 +49,67 @@ var developers = make(map[string]dev)
 var operations = make(map[string]ops)
 var developer_operations = make(map[string]devops)
 
-func newDev(name string) dev {
+func newDevOps() (devops, error) {
+	devOpsGroup := devops{id: "TODO"}
+	devOpsGroup.ops = make(map[string]ops)
+	devOpsGroup.dev = make(map[string]dev)
+	developer_operations[devOpsGroup.id] = devOpsGroup
+	return devOpsGroup, nil
+}
+
+func newDev(name string) (dev, error) {
 	for _, value := range developers {
 		if name == value.name {
-			//Throw warning
+			return dev{}, errors.New(" Dev group already exists ")
 		}
 	}
 	devGroup := dev{name: name, id: "TODO"}
 	devGroup.engineers = make(map[string]engineer)
-	return devGroup
+	developers[devGroup.id] = devGroup
+	return devGroup, nil
 }
 
-func newOp(name string) dev {
+func newOp(name string) (ops, error) {
 	for _, value := range operations {
 		if name == value.name {
-			//Throw warning
+			return ops{}, errors.New(" Operations group already exists ")
 		}
 	}
-	opGroup := dev{name: name, id: "TODO"}
+	opGroup := ops{name: name, id: "TODO"}
 	opGroup.engineers = make(map[string]engineer)
-	return opGroup
+	operations[opGroup.id] = opGroup
+	return opGroup, nil
 }
 
-func newPerson(name string) engineer {
+func newPerson(name string, email string) (engineer, error) {
 	for _, value := range engineers {
 		if name == value.name {
-			//Throw warning
+			return engineer{}, errors.New(" Engineer already exists ")
 		}
 	}
 	p := engineer{name: name, id: getRandId(5)}
-	p.email = "asdasd@gmail.com"
-	return p
+	p.email = email
+	engineers[p.id] = p
+	return p, nil
 }
 
-func addEngineerTo_Op(op_id string, engineer_id string) bool {
+func addEngineerTo_Op(op_id string, engineer_id string) (bool, error) {
 
 	engineer_val, exists := engineers[engineer_id]
-	if exists {
-		//Throw error, no engineer
+	if !exists {
+		return false, errors.New(" Engineer doesn't exist ")
 	}
 	dev_val, exists := developers[op_id]
 	if !exists {
-		//Throw error, no operations team
+		return false, errors.New(" Operations group doesn't exist ")
 	}
 	_, exists = dev_val.engineers[engineer_id]
 	if exists {
-		//Throw error, engineer already exists in operations team
+		return false, errors.New(" Engineer already exists inside specified Operations group ")
 	}
 	dev_val.engineers[engineer_id] = engineer_val
 
-	return false
+	return true, nil
 
 }
 
