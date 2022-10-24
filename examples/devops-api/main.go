@@ -5,6 +5,7 @@ import (
 	"encoding/base32"
 	"errors"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 	"regexp"
@@ -118,17 +119,24 @@ func verifyEmail(email string) bool {
 	return result
 }
 
-func main() {
-	protocol := "http://"
-	url := protocol + "www.google.com"
-	response, err := http.Get(url)
-	if err != nil { //if theres an error in GET request
-		fmt.Printf("error in GET request: %s\nErrors: %s\n", url, err)
-		os.Exit(1)
-	}
-	fmt.Println(response)
+//functions for http handlers
 
+func getRoot(write http.ResponseWriter, read *http.Request) {
+	fmt.Printf("got / request\n")
+	io.WriteString(write, "This is the root response! Do we want each resource to be reported in a seperate response?\n")
+}
+
+func main() {
 	randId := getRandId(15)
 	//	fmt.Println("Random ID: ", randId)
 	fmt.Println(engineer{"bob", randId, "hello@gmail.com"})
+
+	http.HandleFunc("/", getRoot)
+	error := http.ListenAndServe(":8000", nil)
+	if errors.Is(error, http.ErrServerClosed) {
+		fmt.Printf("server closed\n")
+	} else if error != nil {
+		fmt.Printf("error starting server: %s\n", error)
+		os.Exit(1)
+	}
 }
