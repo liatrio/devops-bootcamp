@@ -6,6 +6,7 @@ import (
 	//"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"io"
 	"net/http"
 	"os"
 	"regexp"
@@ -19,7 +20,6 @@ func getRandId(length int) string {
 	}
 	return base32.StdEncoding.EncodeToString(randomBytes)[:length]
 }
-
 
 type engineer struct {
 	Name  string `json:"name"`
@@ -146,8 +146,10 @@ func main() {
 	router.Run("localhost:8080")
 
 	fmt.Println(response)
+	// functions for http handlers
+}
 
-	randId := getRandId(15)
-	//	fmt.Println("Random ID: ", randId)
-	fmt.Println(engineer{"bob", randId, "hello@gmail.com"})
+func getRoot(write http.ResponseWriter, read *http.Request) {
+	fmt.Printf("got / request\n")
+	io.WriteString(write, "This is the root response! Do we want each resource to be reported in a seperate response?\n")
 }
