@@ -136,15 +136,8 @@ func postEngineer(c *gin.Context) {
 	}
 
 	curEngineer, err = newEngineer(jsonData.Name, jsonData.Email)
-	exengineers = append(exengineers, curEngineer)
-	c.IndentedJSON(http.StatusOK, exengineers)
-}
-
-var exengineers = []engineer{
-
-	{Name: "Bobs Burgers", Id: getRandId(5), Email: "bob@gmail.com"},
-	{Name: "Alice Joice", Id: getRandId(5), Email: "alice@gmail.com"},
-	{Name: "Benjamin Serrato", Id: getRandId(5), Email: "benny@gmail.com"},
+	engineers[curEngineer.Id] = curEngineer
+	c.IndentedJSON(http.StatusOK, engineers)
 }
 
 func main() {
