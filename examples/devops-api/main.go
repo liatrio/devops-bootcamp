@@ -4,7 +4,6 @@ import (
 	"crypto/rand"
 	"encoding/base32"
 	"errors"
-
 	//"fmt"
 	"github.com/gin-gonic/gin"
 	//"io"
@@ -22,9 +21,9 @@ func getRandId(length int) string {
 }
 
 type engineer struct {
-	Name  string `json:"name"`
+	Name  string `json:"name" binding:"required"`
 	Id    string `json:"id"`
-	Email string `json:"email"`
+	Email string `json:"email" binding:"required"`
 }
 
 type dev struct {
@@ -453,7 +452,7 @@ func postEngineer(c *gin.Context) {
 
 	curEngineer, err = newEngineer(jsonData.Name, jsonData.Email)
 	engineers[curEngineer.Id] = curEngineer
-	c.IndentedJSON(http.StatusOK, engineers)
+	c.IndentedJSON(http.StatusCreated, engineers)
 }
 
 func main() {
