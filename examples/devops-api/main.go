@@ -4,6 +4,7 @@ import (
 	"crypto/rand"
 	"encoding/base32"
 	"errors"
+
 	//"fmt"
 	"github.com/gin-gonic/gin"
 	//"io"
@@ -121,7 +122,7 @@ func verifyEmail(email string) bool {
 
 // server GET handlers
 func getEngineer(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, exengineers)
+	c.IndentedJSON(http.StatusOK, engineers)
 }
 
 // server POST handlers
