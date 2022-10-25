@@ -91,7 +91,7 @@ func newEngineer(name string, email string) (engineer, error) {
 	}
 	p := engineer{Name: name, Id: getRandId(5)}
 	p.Email = email
-	//engineers[p.id] = p
+	engineers[p.Id] = p
 	return p, nil
 }
 
@@ -327,6 +327,63 @@ func deleteEngineer(engineer_id string) (bool, error) {
 		}
 	}
 	delete(engineers, engineer_id)
+	return true, nil
+}
+
+// *****************************//
+// functions to update resources//
+func updateEngineer(engineer_id string, name string, email string) (bool, error) {
+	_, exists := engineers[engineer_id]
+	if !exists {
+		return false, errors.New(" Engineer doesn't exist ")
+	}
+	//For updating the values for developers inside global developer_operations map
+	for _, value := range developer_operations {
+		for _, value1 := range value.dev {
+			for key, engineer_val := range value1.engineers {
+				if key == engineer_id {
+					engineer_val.Email = email
+					engineer_val.Name = name
+					//For updating the values inside global developer map
+					dev_map_val, exists := developers[value1.id]
+					if exists {
+						dev_map_engineer_val, exists := dev_map_val.engineers[engineer_id]
+						if exists {
+							dev_map_engineer_val.Email = email
+							dev_map_engineer_val.Name = name
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//For updating the values for operations inside global developer_operations map
+	for _, value := range developer_operations {
+		for _, ops_val := range value.ops {
+			for key, engineer_val := range ops_val.engineers {
+				if key == engineer_id {
+					engineer_val.Email = email
+					engineer_val.Name = name
+					//For updating the values inside global operations map
+					ops_map_val, exists := operations[ops_val.id]
+					if exists {
+						ops_map_engineer_val, exists := ops_map_val.engineers[engineer_id]
+						if exists {
+							ops_map_engineer_val.Email = email
+							ops_map_engineer_val.Name = name
+						}
+					}
+				}
+			}
+		}
+	}
+	//For updating global engineers map
+	engineer_val, exists := engineers[engineer_id]
+	if exists {
+		engineer_val.Email = email
+		engineer_val.Name = name
+	}
 	return true, nil
 }
 
