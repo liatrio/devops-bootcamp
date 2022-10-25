@@ -333,19 +333,23 @@ func deleteEngineer(engineer_id string) (bool, error) {
 // *****************************//
 // functions to update resources//
 func updateEngineer(engineer_id string, name string, email string) (bool, error) {
-	_, exists := engineers[engineer_id]
-	if !exists {
+	//For updating global engineers map
+	engineer_val, exists := engineers[engineer_id]
+	if exists {
+		engineer_val.Email = email
+		engineer_val.Name = name
+	} else {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
 	//For updating the values for developers inside global developer_operations map
-	for _, value := range developer_operations {
-		for _, value1 := range value.dev {
-			for key, engineer_val := range value1.engineers {
+	for _, devops_val := range developer_operations {
+		for _, dev_val := range devops_val.dev {
+			for key, engineer_val := range dev_val.engineers {
 				if key == engineer_id {
 					engineer_val.Email = email
 					engineer_val.Name = name
 					//For updating the values inside global developer map
-					dev_map_val, exists := developers[value1.id]
+					dev_map_val, exists := developers[dev_val.id]
 					if exists {
 						dev_map_engineer_val, exists := dev_map_val.engineers[engineer_id]
 						if exists {
@@ -359,8 +363,8 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 	}
 
 	//For updating the values for operations inside global developer_operations map
-	for _, value := range developer_operations {
-		for _, ops_val := range value.ops {
+	for _, devops_val := range developer_operations {
+		for _, ops_val := range devops_val.ops {
 			for key, engineer_val := range ops_val.engineers {
 				if key == engineer_id {
 					engineer_val.Email = email
@@ -378,12 +382,49 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 			}
 		}
 	}
-	//For updating global engineers map
-	engineer_val, exists := engineers[engineer_id]
+	return true, nil
+}
+
+func updateDev(dev_id string, name string) (bool, error) {
+	//For global dev map
+	dev_map_val, exists := developers[dev_id]
 	if exists {
-		engineer_val.Email = email
-		engineer_val.Name = name
+		dev_map_val.name = name
+	} else {
+		return false, errors.New(" Doesn't exist in the developers group")
 	}
+	//For updating the values for developers inside global developer_operations map
+	for _, devops_val := range developer_operations {
+		for key, dev_val := range devops_val.dev {
+			if key == dev_id {
+				dev_val.name = name
+			}
+		}
+	}
+	return true, nil
+}
+
+func updateOps(ops_id string, name string) (bool, error) {
+	//For global dev map
+	op_map_val, exists := operations[ops_id]
+	if exists {
+		op_map_val.name = name
+	} else {
+		return false, errors.New(" Doesn't exist in the operations group")
+	}
+	//For updating the values for developers inside global developer_operations map
+	for _, devops_val := range developer_operations {
+		for key, ops_val := range devops_val.ops {
+			if key == ops_id {
+				ops_val.name = name
+			}
+		}
+	}
+	return true, nil
+}
+
+func updateDevOps(devops_id string) (bool, error) {
+	//TODO
 	return true, nil
 }
 
