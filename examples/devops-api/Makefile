@@ -3,8 +3,11 @@
 run: main.go build
 	go run main.go
 
-build: main.go fmt test
+build: main.go tidy fmt test
 	go build
+
+tidy: main.go
+	go mod tidy
 
 fmt: main.go
 	go fmt
