@@ -302,8 +302,31 @@ func deleteOp(op_id string) (bool, error) {
 }
 
 func deleteEngineer(engineer_id string) (bool, error) {
-
-	//engineers[p.id] = p
+	_, exists := engineers[engineer_id]
+	if !exists {
+		return false, errors.New(" Engineer doesn't exist ")
+	}
+	for _, value := range developer_operations {
+		for _, value1 := range value.dev {
+			for key, _ := range value1.engineers {
+				if key == engineer_id {
+					delete(value1.engineers, engineer_id)
+					delete(developers[value1.id].engineers, engineer_id)
+				}
+			}
+		}
+	}
+	for _, value := range developer_operations {
+		for _, value1 := range value.ops {
+			for key, _ := range value1.engineers {
+				if key == engineer_id {
+					delete(value1.engineers, engineer_id)
+					delete(operations[value1.id].engineers, engineer_id)
+				}
+			}
+		}
+	}
+	delete(engineers, engineer_id)
 	return true, nil
 }
 
