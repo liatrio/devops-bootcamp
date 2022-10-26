@@ -16,8 +16,9 @@ type emailTest struct {
 	expected bool
 }
 
-//test POST request for new engineer
+// test POST request for new engineer
 type postEngineerTest struct {
+	description  string
 	testEngineer engineer
 	expected     int
 }
@@ -31,15 +32,17 @@ var verifyEmailTests = []emailTest{
 
 var verifyPostEngineer = []postEngineerTest{
 	//Created with client side id TODO: fix where id cannot be created via client side
-	postEngineerTest{engineer{Name: "Bobs Burgers", Id: getRandId(5), Email: "bob@gmail.com"}, http.StatusCreated},
+	postEngineerTest{"contains client side Id field", engineer{Name: "Bobs Burgers", Id: getRandId(5), Email: "bob@gmail.com"}, http.StatusCreated},
 	//no name
-	postEngineerTest{engineer{Email: "bob@gmail.com"}, http.StatusBadRequest},
-	//no email 
-	postEngineerTest{engineer{Name: "Bobs Burgers"}, http.StatusBadRequest},
+	postEngineerTest{"No client side Name field", engineer{Email: "bob@gmail.com"}, http.StatusBadRequest},
+	//no email
+	postEngineerTest{"no client side Email field", engineer{Name: "Bobs Burgers"}, http.StatusBadRequest},
 	//no id (This should pass since id will be set on the server side)
-	postEngineerTest{engineer{Name: "Steven Mendez", Email: "Min3craftSt3v3@gmail.com"}, http.StatusCreated},
+	postEngineerTest{"different engineer", engineer{Name: "Steven Mendez", Email: "Min3craftSt3v3@gmail.com"}, http.StatusCreated},
 	//duplicate engineer (fail)
-	postEngineerTest{engineer{Name: "Bobs Burgers", Email: "bob@gmail.com"}, http.StatusBadRequest},
+	postEngineerTest{"duplicate engineer", engineer{Name: "Bobs Burgers", Email: "bob@gmail.com"}, http.StatusBadRequest},
+	//empty fields (fail)
+	postEngineerTest{"client side JSON object with empty fields", engineer{Name: "", Id: "", Email: ""}, http.StatusBadRequest},
 }
 
 func TestVerifyEmail(t *testing.T) {
@@ -77,7 +80,7 @@ func TestPostEngineer(t *testing.T) {
 		MockJsonPost(c, test.testEngineer)
 		postEngineer(c)
 		if test.expected != w.Code {
-			t.Errorf("Expected: Status Code %d, Received: Status Code %d", test.expected, w.Code)
+			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
 }

@@ -453,9 +453,9 @@ func postEngineer(c *gin.Context) {
 	curEngineer, err = newEngineer(jsonData.Name, jsonData.Email)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err)
+		return
 	}
-	engineers[curEngineer.Id] = curEngineer
-	c.IndentedJSON(http.StatusCreated, engineers)
+	c.IndentedJSON(http.StatusCreated, engineers[curEngineer.Id])
 }
 
 func main() {
