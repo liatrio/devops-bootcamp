@@ -3,11 +3,12 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/gin-gonic/gin"
 	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/gin-gonic/gin"
 )
 
 // test email validation
@@ -24,6 +25,13 @@ type postEngineerTest struct {
 	expected     int
 }
 
+// test POST request for new engineer
+type putEngineerTest struct {
+	description  string
+	testEngineer engineer
+	expected     int
+}
+
 var verifyEmailTests = []emailTest{
 	emailTest{"simple valid email format", "bob@bob.com", true},
 	emailTest{"valid email with extended domain name", "b0b123@clever.ask.who", true},
@@ -34,7 +42,7 @@ var verifyEmailTests = []emailTest{
 
 var verifyPostEngineer = []postEngineerTest{
 	//Created with client side id TODO: fix where id cannot be created via client side
-	postEngineerTest{"contains client side Id field", engineer{Name: "Bobs Burgers", Id: getRandId(5), Email: "bob@gmail.com"}, http.StatusCreated},
+	postEngineerTest{"contains client side Id field", engineer{Name: "Bobs Burgers", Id: "5", Email: "bob@gmail.com"}, http.StatusCreated},
 	//no name
 	postEngineerTest{"No client side Name field", engineer{Email: "bob@gmail.com"}, http.StatusBadRequest},
 	//no email
@@ -45,6 +53,12 @@ var verifyPostEngineer = []postEngineerTest{
 	postEngineerTest{"duplicate engineer", engineer{Name: "Bobs Burgers", Email: "bob@gmail.com"}, http.StatusBadRequest},
 	//empty fields (fail)
 	postEngineerTest{"client side JSON object with empty fields", engineer{Name: "", Id: "", Email: ""}, http.StatusBadRequest},
+}
+
+var verifyPutEngineer = []putEngineerTest{
+	//Created with client side id TODO: fix where id cannot be created via client side
+	putEngineerTest{"Should update name and email of id 5 engineer", engineer{Name: "Not Bob", Id: "5", Email: "notbob@gmail.com"}, http.StatusOK},
+	putEngineerTest{"No id", engineer{Name: "Not Bob", Email: "notbob@gmail.com"}, http.StatusBadRequest},
 }
 
 func TestVerifyEmail(t *testing.T) {
@@ -68,6 +82,18 @@ func MockJsonPost(c *gin.Context, content engineer) {
 	c.Request.Body = io.NopCloser(bytes.NewBuffer(jsonBytes))
 }
 
+func MockJsonPut(c *gin.Context, content engineer) {
+	c.Request.Method = "PUT"
+	c.Request.Header.Set("Content-Type", "application/json")
+
+	jsonBytes, err := json.Marshal(content)
+	if err != nil {
+		panic(err)
+	}
+
+	c.Request.Body = io.NopCloser(bytes.NewBuffer(jsonBytes))
+}
+
 func TestPostEngineer(t *testing.T) {
 	gin.SetMode(gin.ReleaseMode)
 	var w *httptest.ResponseRecorder
@@ -81,6 +107,25 @@ func TestPostEngineer(t *testing.T) {
 		}
 		MockJsonPost(c, test.testEngineer)
 		postEngineer(c)
+		if test.expected != w.Code {
+			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
+		}
+	}
+}
+
+func TestPutEngineer(t *testing.T) {
+	gin.SetMode(gin.ReleaseMode)
+	var w *httptest.ResponseRecorder
+	var c *gin.Context
+
+	for _, test := range verifyPutEngineer {
+		w = httptest.NewRecorder()
+		c, _ = gin.CreateTestContext(w)
+		c.Request = &http.Request{
+			Header: make(http.Header),
+		}
+		MockJsonPost(c, test.testEngineer)
+		putEngineer(c)
 		if test.expected != w.Code {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
