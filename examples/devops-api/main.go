@@ -337,6 +337,7 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 	if exists {
 		engineer_val.Email = email
 		engineer_val.Name = name
+		engineers[engineer_id] = engineer_val
 	} else {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
@@ -447,15 +448,35 @@ func postEngineer(c *gin.Context) {
 	err := c.BindJSON(&jsonData)
 
 	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
 	curEngineer, err = newEngineer(jsonData.Name, jsonData.Email)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, err)
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 	c.IndentedJSON(http.StatusCreated, engineers[curEngineer.Id])
+}
+
+// server PUT handler
+func putEngineer(c *gin.Context) {
+	id := c.Param("id")
+	var jsonData engineer
+	//	var result bool
+	err := c.ShouldBindJSON(&jsonData)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	_, err = updateEngineer(id, jsonData.Name, jsonData.Email)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusOK, engineers[id])
 }
 
 func main() {
@@ -465,7 +486,8 @@ func main() {
 	router.GET("/engineers", getEngineer)
 	//POST routes
 	router.POST("/engineers", postEngineer)
-
+	//PUT routes
+	router.PUT("/engineers/:id", putEngineer)
 	//runs server
-	router.Run("localhost:8080")
+	router.Run(":8080")
 }

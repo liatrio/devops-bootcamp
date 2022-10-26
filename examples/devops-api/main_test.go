@@ -12,8 +12,9 @@ import (
 
 // test email validation
 type emailTest struct {
-	email    string
-	expected bool
+	description string
+	email       string
+	expected    bool
 }
 
 // test POST request for new engineer
@@ -24,10 +25,11 @@ type postEngineerTest struct {
 }
 
 var verifyEmailTests = []emailTest{
-	emailTest{"bob@bob.com", true},
-	emailTest{"b0b123@clever.ask.who", true},
-	emailTest{"bob#@bob.com", false},
-	emailTest{"bob@bob", false},
+	emailTest{"simple valid email format", "bob@bob.com", true},
+	emailTest{"valid email with extended domain name", "b0b123@clever.ask.who", true},
+	emailTest{"special characters in username", "bob#@bob.com", false},
+	emailTest{"no specificied domain name", "bob@bob", false},
+	emailTest{"empty string for email", "", false},
 }
 
 var verifyPostEngineer = []postEngineerTest{
@@ -49,7 +51,7 @@ func TestVerifyEmail(t *testing.T) {
 	for _, test := range verifyEmailTests {
 		result := verifyEmail(test.email)
 		if result != test.expected {
-			t.Errorf("Email: %s\nExpected: %t, Received: %t", test.email, test.expected, result)
+			t.Errorf("\nTest: %s\nEmail: %s\nExpected: %t, Received: %t", test.description, test.email, test.expected, result)
 		}
 	}
 }

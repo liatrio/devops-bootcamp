@@ -20,7 +20,7 @@ docker: fmt test
 	docker build . -t devops-api:v1
 
 docker-run: docker
-	docker run -d -t devops-api:v1
+	docker run -d -p 8080:8080 -t devops-api:v1
 
 clean:
 	rm devops-api
