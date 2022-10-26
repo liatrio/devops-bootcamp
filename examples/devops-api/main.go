@@ -485,6 +485,8 @@ func main() {
 	router.POST("/engineers", postEngineer)
 	//PUT routes
 	router.PUT("/engineers/:id", putEngineer)
+	//DELETE routes
+	router.DELETE("/engineer/")
 	//runs server
 	router.Run(":8080")
 }

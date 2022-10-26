@@ -25,7 +25,6 @@ type postEngineerTest struct {
 	expected     int
 }
 
-// test POST request for new engineer
 type putEngineerTest struct {
 	description  string
 	testEngineer engineer
@@ -41,17 +40,11 @@ var verifyEmailTests = []emailTest{
 }
 
 var verifyPostEngineer = []postEngineerTest{
-	//Created with client side id TODO: fix where id cannot be created via client side
-	postEngineerTest{"contains client side Id field", engineer{Name: "Bobs Burgers", Id: "5", Email: "bob@gmail.com"}, http.StatusCreated},
-	//no name
-	postEngineerTest{"No client side Name field", engineer{Email: "bob@gmail.com"}, http.StatusBadRequest},
-	//no email
+	postEngineerTest{"contains client side Id field", engineer{Name: "Bobs Burgers", Id: getRandId(5), Email: "bob@gmail.com"}, http.StatusCreated},
+	postEngineerTest{"no client side Name field", engineer{Email: "bob@gmail.com"}, http.StatusBadRequest},
 	postEngineerTest{"no client side Email field", engineer{Name: "Bobs Burgers"}, http.StatusBadRequest},
-	//no id (This should pass since id will be set on the server side)
 	postEngineerTest{"different engineer", engineer{Name: "Steven Mendez", Email: "Min3craftSt3v3@gmail.com"}, http.StatusCreated},
-	//duplicate engineer (fail)
 	postEngineerTest{"duplicate engineer", engineer{Name: "Bobs Burgers", Email: "bob@gmail.com"}, http.StatusBadRequest},
-	//empty fields (fail)
 	postEngineerTest{"client side JSON object with empty fields", engineer{Name: "", Id: "", Email: ""}, http.StatusBadRequest},
 }
 
@@ -70,10 +63,9 @@ func TestVerifyEmail(t *testing.T) {
 	}
 }
 
-func MockJsonPost(c *gin.Context, content engineer) {
+func mockJsonPost(c *gin.Context, content engineer) {
 	c.Request.Method = "POST"
 	c.Request.Header.Set("Content-Type", "application/json")
-
 	jsonBytes, err := json.Marshal(content)
 	if err != nil {
 		panic(err)
@@ -82,9 +74,10 @@ func MockJsonPost(c *gin.Context, content engineer) {
 	c.Request.Body = io.NopCloser(bytes.NewBuffer(jsonBytes))
 }
 
-func MockJsonPut(c *gin.Context, content engineer) {
+func mockJsonPut(c *gin.Context, content engineer) {
 	c.Request.Method = "PUT"
 	c.Request.Header.Set("Content-Type", "application/json")
+	c.Params = []gin.Param{gin.Param{Key: "id", Value: content.Id}}
 
 	jsonBytes, err := json.Marshal(content)
 	if err != nil {
@@ -95,7 +88,6 @@ func MockJsonPut(c *gin.Context, content engineer) {
 }
 
 func TestPostEngineer(t *testing.T) {
-	gin.SetMode(gin.ReleaseMode)
 	var w *httptest.ResponseRecorder
 	var c *gin.Context
 
@@ -105,7 +97,7 @@ func TestPostEngineer(t *testing.T) {
 		c.Request = &http.Request{
 			Header: make(http.Header),
 		}
-		MockJsonPost(c, test.testEngineer)
+		mockJsonPost(c, test.testEngineer)
 		postEngineer(c)
 		if test.expected != w.Code {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
@@ -117,6 +109,7 @@ func TestPutEngineer(t *testing.T) {
 	gin.SetMode(gin.ReleaseMode)
 	var w *httptest.ResponseRecorder
 	var c *gin.Context
+	engineers["5"] = engineer{Name: "Bob", Id: "5", Email: "bob@gmail.com"}
 
 	for _, test := range verifyPutEngineer {
 		w = httptest.NewRecorder()
@@ -124,7 +117,7 @@ func TestPutEngineer(t *testing.T) {
 		c.Request = &http.Request{
 			Header: make(http.Header),
 		}
-		MockJsonPost(c, test.testEngineer)
+		mockJsonPut(c, test.testEngineer)
 		putEngineer(c)
 		if test.expected != w.Code {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
