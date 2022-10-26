@@ -451,6 +451,9 @@ func postEngineer(c *gin.Context) {
 	}
 
 	curEngineer, err = newEngineer(jsonData.Name, jsonData.Email)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, err)
+	}
 	engineers[curEngineer.Id] = curEngineer
 	c.IndentedJSON(http.StatusCreated, engineers)
 }
