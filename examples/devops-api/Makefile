@@ -16,8 +16,11 @@ fmt: main.go
 test: main.go
 	go test -v
 
-release: fmt test
+docker: fmt test
+	docker build . -t devops-api:v1
 
+docker-run: docker
+	docker run -d -t devops-api:v1
 
 clean:
 	rm devops-api
