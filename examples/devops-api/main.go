@@ -4,6 +4,7 @@ import (
 	"crypto/rand"
 	"encoding/base32"
 	"errors"
+
 	//"fmt"
 	"github.com/gin-gonic/gin"
 	//"io"
@@ -273,10 +274,10 @@ func deleteDev(dev_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Developer group doesn't exist ")
 	}
-	for _, value := range developer_operations {
-		for key, _ := range value.dev {
+	for devops_key, devops_val := range developer_operations {
+		for key, _ := range devops_val.dev {
 			if key == dev_id {
-				delete(value.dev, dev_id)
+				delete(developer_operations[devops_key].dev, dev_id)
 			}
 		}
 	}
@@ -289,10 +290,10 @@ func deleteOp(op_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
-	for _, value := range developer_operations {
-		for key, _ := range value.dev {
+	for devops_key, devops_val := range developer_operations {
+		for key, _ := range devops_val.ops {
 			if key == op_id {
-				delete(value.dev, op_id)
+				delete(developer_operations[devops_key].ops, op_id)
 			}
 		}
 	}
@@ -305,22 +306,22 @@ func deleteEngineer(engineer_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-	for _, value := range developer_operations {
-		for _, value1 := range value.dev {
-			for key, _ := range value1.engineers {
+	for devops_key, devops_val := range developer_operations {
+		for dev_key, dev_val := range devops_val.dev {
+			for key, _ := range dev_val.engineers {
 				if key == engineer_id {
-					delete(value1.engineers, engineer_id)
-					delete(developers[value1.id].engineers, engineer_id)
+					delete(developer_operations[devops_key].dev[dev_key].engineers, engineer_id)
+					delete(developers[dev_val.id].engineers, engineer_id)
 				}
 			}
 		}
 	}
-	for _, value := range developer_operations {
-		for _, value1 := range value.ops {
-			for key, _ := range value1.engineers {
+	for devops_key, devops_val := range developer_operations {
+		for ops_key, ops_val := range devops_val.ops {
+			for key, _ := range ops_val.engineers {
 				if key == engineer_id {
-					delete(value1.engineers, engineer_id)
-					delete(operations[value1.id].engineers, engineer_id)
+					delete(developer_operations[devops_key].ops[ops_key].engineers, engineer_id)
+					delete(operations[ops_val.id].engineers, engineer_id)
 				}
 			}
 		}
@@ -342,42 +343,32 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 		return false, errors.New(" Engineer doesn't exist ")
 	}
 	//For updating the values for developers inside global developer_operations map
-	for _, devops_val := range developer_operations {
-		for _, dev_val := range devops_val.dev {
+	for devops_key, devops_val := range developer_operations {
+		for dev_key, dev_val := range devops_val.dev {
 			for key, engineer_val := range dev_val.engineers {
 				if key == engineer_id {
 					engineer_val.Email = email
 					engineer_val.Name = name
-					//For updating the values inside global developer map
-					dev_map_val, exists := developers[dev_val.id]
-					if exists {
-						dev_map_engineer_val, exists := dev_map_val.engineers[engineer_id]
-						if exists {
-							dev_map_engineer_val.Email = email
-							dev_map_engineer_val.Name = name
-						}
-					}
+					dev_val.engineers[key] = engineer_val
+					developers[dev_key] = dev_val
+					devops_val.dev[dev_key] = dev_val
+					developer_operations[devops_key] = devops_val
 				}
 			}
 		}
 	}
 
 	//For updating the values for operations inside global developer_operations map
-	for _, devops_val := range developer_operations {
-		for _, ops_val := range devops_val.ops {
+	for devops_key, devops_val := range developer_operations {
+		for ops_key, ops_val := range devops_val.ops {
 			for key, engineer_val := range ops_val.engineers {
 				if key == engineer_id {
 					engineer_val.Email = email
 					engineer_val.Name = name
-					//For updating the values inside global operations map
-					ops_map_val, exists := operations[ops_val.id]
-					if exists {
-						ops_map_engineer_val, exists := ops_map_val.engineers[engineer_id]
-						if exists {
-							ops_map_engineer_val.Email = email
-							ops_map_engineer_val.Name = name
-						}
-					}
+					ops_val.engineers[key] = engineer_val
+					operations[ops_key] = ops_val
+					devops_val.ops[ops_key] = ops_val
+					developer_operations[devops_key] = devops_val
 				}
 			}
 		}
@@ -394,10 +385,13 @@ func updateDev(dev_id string, name string) (bool, error) {
 		return false, errors.New(" Doesn't exist in the developers group")
 	}
 	//For updating the values for developers inside global developer_operations map
-	for _, devops_val := range developer_operations {
-		for key, dev_val := range devops_val.dev {
-			if key == dev_id {
+	for devops_key, devops_val := range developer_operations {
+		for dev_key, dev_val := range devops_val.dev {
+			if dev_key == dev_id {
 				dev_val.name = name
+				developers[dev_key] = dev_val
+				devops_val.dev[dev_key] = dev_val
+				developer_operations[devops_key] = devops_val
 			}
 		}
 	}
@@ -413,10 +407,13 @@ func updateOps(ops_id string, name string) (bool, error) {
 		return false, errors.New(" Doesn't exist in the operations group")
 	}
 	//For updating the values for developers inside global developer_operations map
-	for _, devops_val := range developer_operations {
-		for key, ops_val := range devops_val.ops {
-			if key == ops_id {
+	for devops_key, devops_val := range developer_operations {
+		for ops_key, ops_val := range devops_val.ops {
+			if ops_key == ops_id {
 				ops_val.name = name
+				operations[ops_key] = ops_val
+				devops_val.ops[ops_key] = ops_val
+				developer_operations[devops_key] = devops_val
 			}
 		}
 	}
