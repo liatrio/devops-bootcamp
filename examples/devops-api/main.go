@@ -40,9 +40,9 @@ type ops struct {
 }
 
 type devops struct {
-	id  string
-	dev map[string]dev
-	ops map[string]ops
+	Id  string         `json:"id"`
+	Dev map[string]dev `json:"dev"`
+	Ops map[string]ops `json:"ops"`
 }
 
 // Global maps to access our resources by id key
@@ -52,10 +52,10 @@ var operations = make(map[string]ops)
 var developer_operations = make(map[string]devops)
 
 func newDevOps() (devops, error) {
-	devOpsGroup := devops{id: "TODO"}
-	devOpsGroup.ops = make(map[string]ops)
-	devOpsGroup.dev = make(map[string]dev)
-	developer_operations[devOpsGroup.id] = devOpsGroup
+	devOpsGroup := devops{Id: getRandId(5)}
+	devOpsGroup.Ops = make(map[string]ops)
+	devOpsGroup.Dev = make(map[string]dev)
+	developer_operations[devOpsGroup.Id] = devOpsGroup
 	return devOpsGroup, nil
 }
 
@@ -121,9 +121,9 @@ func addEngineerTo_Op(ops_id string, engineer_id string) (bool, error) {
 	}
 	operations[ops_id].Engineers[engineer_id] = engineer_val
 	for devops_key, devops_val := range developer_operations {
-		for ops_key := range devops_val.ops {
+		for ops_key := range devops_val.Ops {
 			if ops_key == ops_id {
-				developer_operations[devops_key].ops[ops_id].Engineers[engineer_id] = engineer_val
+				developer_operations[devops_key].Ops[ops_id].Engineers[engineer_id] = engineer_val
 			}
 		}
 	}
@@ -148,9 +148,9 @@ func addEngineerTo_Dev(dev_id string, engineer_id string) (bool, error) {
 	}
 	developers[dev_id].Engineers[engineer_id] = engineer_val
 	for devops_key, devops_val := range developer_operations {
-		for dev_key := range devops_val.dev {
+		for dev_key := range devops_val.Dev {
 			if dev_key == dev_id {
-				developer_operations[devops_key].dev[dev_id].Engineers[engineer_id] = engineer_val
+				developer_operations[devops_key].Dev[dev_id].Engineers[engineer_id] = engineer_val
 			}
 		}
 	}
@@ -169,11 +169,11 @@ func addDevTo_DevOps(devops_id string, dev_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Developer Oerations group doesn't exist ")
 	}
-	_, exists = devops_val.dev[dev_id]
+	_, exists = devops_val.Dev[dev_id]
 	if exists {
 		return false, errors.New(" Developer already exists inside specified Developer Operations group ")
 	}
-	developer_operations[devops_id].dev[dev_id] = dev_val
+	developer_operations[devops_id].Dev[dev_id] = dev_val
 
 	return true, nil
 
@@ -189,11 +189,11 @@ func addOpTo_DevOps(devops_id string, op_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Developer Oerations group doesn't exist ")
 	}
-	_, exists = devops_val.ops[op_id]
+	_, exists = devops_val.Ops[op_id]
 	if exists {
 		return false, errors.New(" Developer already exists inside specified Developer Operations group ")
 	}
-	developer_operations[devops_id].ops[op_id] = op_val
+	developer_operations[devops_id].Ops[op_id] = op_val
 
 	return true, nil
 
@@ -217,9 +217,9 @@ func deleteEngineerFrom_Op(ops_id string, engineer_id string) (bool, error) {
 	}
 	delete(op_val.Engineers, engineer_id)
 	for devops_key, devops_val := range developer_operations {
-		for key := range devops_val.ops {
+		for key := range devops_val.Ops {
 			if key == ops_id {
-				delete(developer_operations[devops_key].ops[ops_id].Engineers, engineer_id)
+				delete(developer_operations[devops_key].Ops[ops_id].Engineers, engineer_id)
 			}
 		}
 	}
@@ -244,9 +244,9 @@ func deleteEngineerFrom_Dev(dev_id string, engineer_id string) (bool, error) {
 	}
 	delete(dev_val.Engineers, engineer_id)
 	for devops_key, devops_val := range developer_operations {
-		for key := range devops_val.dev {
+		for key := range devops_val.Dev {
 			if key == dev_id {
-				delete(developer_operations[devops_key].dev[dev_id].Engineers, engineer_id)
+				delete(developer_operations[devops_key].Dev[dev_id].Engineers, engineer_id)
 			}
 		}
 	}
@@ -265,11 +265,11 @@ func deleteDevFrom_DevOps(devops_id string, dev_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Developer Oerations group doesn't exist ")
 	}
-	_, exists = devops_val.dev[dev_id]
+	_, exists = devops_val.Dev[dev_id]
 	if !exists {
 		return false, errors.New(" Developer doesn't exists inside specified Developer Operations group ")
 	}
-	delete(devops_val.dev, dev_id)
+	delete(devops_val.Dev, dev_id)
 
 	return true, nil
 
@@ -285,12 +285,11 @@ func deleteOpFrom_DevOps(devops_id string, ops_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Developer Oerations group doesn't exist ")
 	}
-	_, exists = devops_val.dev[ops_id]
+	_, exists = devops_val.Dev[ops_id]
 	if !exists {
 		return false, errors.New(" Developer doesn't exists inside specified Developer Operations group ")
 	}
-	delete(devops_val.ops, ops_id)
-
+	delete(devops_val.Ops, ops_id)
 	return true, nil
 
 }
@@ -312,9 +311,9 @@ func deleteDev(dev_id string) (bool, error) {
 		return false, errors.New(" Developer group doesn't exist ")
 	}
 	for devops_key, devops_val := range developer_operations {
-		for key, _ := range devops_val.dev {
+		for key, _ := range devops_val.Dev {
 			if key == dev_id {
-				delete(developer_operations[devops_key].dev, dev_id)
+				delete(developer_operations[devops_key].Dev, dev_id)
 			}
 		}
 	}
@@ -328,9 +327,9 @@ func deleteOp(ops_id string) (bool, error) {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
 	for devops_key, devops_val := range developer_operations {
-		for key, _ := range devops_val.ops {
+		for key, _ := range devops_val.Ops {
 			if key == ops_id {
-				delete(developer_operations[devops_key].ops, ops_id)
+				delete(developer_operations[devops_key].Ops, ops_id)
 			}
 		}
 	}
@@ -344,20 +343,20 @@ func deleteEngineer(engineer_id string) (bool, error) {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
 	for devops_key, devops_val := range developer_operations {
-		for dev_key, dev_val := range devops_val.dev {
+		for dev_key, dev_val := range devops_val.Dev {
 			for key, _ := range dev_val.Engineers {
 				if key == engineer_id {
-					delete(developer_operations[devops_key].dev[dev_key].Engineers, engineer_id)
+					delete(developer_operations[devops_key].Dev[dev_key].Engineers, engineer_id)
 					delete(developers[dev_val.Id].Engineers, engineer_id)
 				}
 			}
 		}
 	}
 	for devops_key, devops_val := range developer_operations {
-		for ops_key, ops_val := range devops_val.ops {
+		for ops_key, ops_val := range devops_val.Ops {
 			for key, _ := range ops_val.Engineers {
 				if key == engineer_id {
-					delete(developer_operations[devops_key].ops[ops_key].Engineers, engineer_id)
+					delete(developer_operations[devops_key].Ops[ops_key].Engineers, engineer_id)
 					delete(operations[ops_val.Id].Engineers, engineer_id)
 				}
 			}
@@ -382,13 +381,13 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 	}
 	//For updating the values for developers inside global developer_operations map
 	for devops_key, devops_val := range developer_operations {
-		for dev_key, dev_val := range devops_val.dev {
+		for dev_key, dev_val := range devops_val.Dev {
 			for key, engineer_val := range dev_val.Engineers {
 				if key == engineer_id {
 					engineer_val.Email = email
 					engineer_val.Name = name
 					developers[dev_key].Engineers[key] = engineer_val
-					developer_operations[devops_key].dev[dev_key].Engineers[key] = engineer_val
+					developer_operations[devops_key].Dev[dev_key].Engineers[key] = engineer_val
 				}
 			}
 		}
@@ -396,13 +395,13 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 
 	//For updating the values for operations inside global developer_operations map
 	for devops_key, devops_val := range developer_operations {
-		for ops_key, ops_val := range devops_val.ops {
+		for ops_key, ops_val := range devops_val.Ops {
 			for key, engineer_val := range ops_val.Engineers {
 				if key == engineer_id {
 					engineer_val.Email = email
 					engineer_val.Name = name
 					operations[ops_key].Engineers[key] = engineer_val
-					developer_operations[devops_key].ops[ops_key].Engineers[key] = engineer_val
+					developer_operations[devops_key].Ops[ops_key].Engineers[key] = engineer_val
 				}
 			}
 		}
@@ -420,10 +419,10 @@ func updateDev(dev_id string, name string) (bool, error) {
 	}
 	//For updating the values for developers inside global developer_operations map
 	for devops_key, devops_val := range developer_operations {
-		for dev_key, dev_val := range devops_val.dev {
+		for dev_key, dev_val := range devops_val.Dev {
 			if dev_key == dev_id {
 				dev_val.Name = name
-				developer_operations[devops_key].dev[dev_key] = dev_val
+				developer_operations[devops_key].Dev[dev_key] = dev_val
 				developers[dev_key] = dev_val
 			}
 		}
@@ -441,10 +440,10 @@ func updateOps(ops_id string, name string) (bool, error) {
 	}
 	//For updating the values for developers inside global developer_operations map
 	for devops_key, devops_val := range developer_operations {
-		for ops_key, ops_val := range devops_val.ops {
+		for ops_key, ops_val := range devops_val.Ops {
 			if ops_key == ops_id {
 				ops_val.Name = name
-				developer_operations[devops_key].ops[ops_key] = ops_val
+				developer_operations[devops_key].Ops[ops_key] = ops_val
 				operations[ops_key] = ops_val
 			}
 		}
@@ -476,6 +475,10 @@ func getDev(c *gin.Context) {
 
 func getOp(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, operations)
+}
+
+func getDevOps(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, developer_operations)
 }
 
 // server POST handlers
@@ -519,7 +522,7 @@ func postDev(c *gin.Context) {
 
 func postOp(c *gin.Context) {
 	var jsonData ops //object that gets dev data from POST request
-	var curOp ops    //object recieved from newDev
+	var curOp ops    //object recieved from newOp
 
 	err := c.BindJSON(&jsonData)
 
@@ -535,6 +538,15 @@ func postOp(c *gin.Context) {
 	}
 	c.IndentedJSON(http.StatusCreated, operations[curOp.Id])
 
+}
+
+func postDevOps(c *gin.Context) {
+	curDevOps, err := newDevOps()
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusCreated, developer_operations[curDevOps.Id])
 }
 
 // server PUT handler
@@ -593,6 +605,18 @@ func deleteRequestOp(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"success": "operations resource deleted"})
 }
 
+func deleteRequestDevOps(c *gin.Context) {
+	id := c.Param("id")
+	_, err := deleteDevOps(id)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"success": "operations resource deleted"})
+}
+
 func main() {
 	router := gin.Default()
 
@@ -600,16 +624,19 @@ func main() {
 	router.GET("/engineers", getEngineer)
 	router.GET("/dev", getDev)
 	router.GET("/op", getOp)
+	router.GET("/devops", getDevOps)
 	//POST routes
 	router.POST("/engineers", postEngineer)
 	router.POST("/dev", postDev)
 	router.POST("/op", postOp)
+	router.POST("/devops", postDevOps)
 	//PUT routes
 	router.PUT("/engineers/:id", putEngineer)
 	//DELETE routes
 	router.DELETE("/engineers/:id", deleteRequestEngineer)
 	router.DELETE("/dev/:id", deleteRequestDev)
 	router.DELETE("/op/:id", deleteRequestOp)
+	router.DELETE("/devops/:id", deleteRequestDevOps)
 	//runs server
 	router.Run(":8080")
 }

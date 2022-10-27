@@ -148,7 +148,7 @@ func TestNewEngineerBadName(t *testing.T) {
 
 func TestNewDev(t *testing.T) {
 	result, err := newDev("test_devs")
-	if result.Name != "test" {
+	if result.Name != "test_devs" {
 		t.Errorf("Expected name %s was not returned", result.Name)
 	}
 	if err != nil {
