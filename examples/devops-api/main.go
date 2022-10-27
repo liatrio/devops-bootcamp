@@ -476,6 +476,19 @@ func putEngineer(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, engineers[id])
 }
 
+// server DELETE handler
+func deleteRequestEngineer(c *gin.Context) {
+	id := c.Param("id")
+	_, err := deleteEngineer(id)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"success": "Engineer deleted"})
+}
+
 func main() {
 	router := gin.Default()
 
@@ -486,7 +499,7 @@ func main() {
 	//PUT routes
 	router.PUT("/engineers/:id", putEngineer)
 	//DELETE routes
-	router.DELETE("/engineer/")
+	router.DELETE("/engineers/:id", deleteRequestEngineer)
 	//runs server
 	router.Run(":8080")
 }
