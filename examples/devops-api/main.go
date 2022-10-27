@@ -349,7 +349,7 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 				if key == engineer_id {
 					engineer_val.Email = email
 					engineer_val.Name = name
-					developers[dev_key] = dev_val
+					developers[dev_key].engineers[key] = engineer_val
 					developer_operations[devops_key].dev[dev_key].engineers[key] = engineer_val
 				}
 			}
@@ -363,7 +363,7 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 				if key == engineer_id {
 					engineer_val.Email = email
 					engineer_val.Name = name
-					ops_val.engineers[key] = engineer_val
+					operations[ops_key].engineers[key] = engineer_val
 					developer_operations[devops_key].ops[ops_key].engineers[key] = engineer_val
 				}
 			}
