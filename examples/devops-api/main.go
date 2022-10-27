@@ -23,14 +23,14 @@ func getRandId(length int) string {
 
 type engineer struct {
 	Name  string `json:"name" binding:"required"`
-	Id    string `json:"id"`
+	Id    string
 	Email string `json:"email" binding:"required"`
 }
 
 type dev struct {
-	name      string
-	id        string
-	engineers map[string]engineer
+	Name      string              `json:"name"`
+	Id        string              `json:"id"`
+	Engineers map[string]engineer `json:"engineers"`
 }
 
 type ops struct {
@@ -61,13 +61,13 @@ func newDevOps() (devops, error) {
 
 func newDev(name string) (dev, error) {
 	for _, value := range developers {
-		if name == value.name {
+		if name == value.Name {
 			return dev{}, errors.New(" Dev group already exists ")
 		}
 	}
-	devGroup := dev{name: name, id: "TODO"}
-	devGroup.engineers = make(map[string]engineer)
-	developers[devGroup.id] = devGroup
+	devGroup := dev{Name: name, Id: getRandId(5)}
+	devGroup.Engineers = make(map[string]engineer)
+	developers[devGroup.Id] = devGroup
 	return devGroup, nil
 }
 
@@ -126,11 +126,11 @@ func addEngineerTo_Dev(dev_id string, engineer_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
-	_, exists = dev_val.engineers[engineer_id]
+	_, exists = dev_val.Engineers[engineer_id]
 	if exists {
 		return false, errors.New(" Engineer already exists inside specified Operations group ")
 	}
-	dev_val.engineers[engineer_id] = engineer_val
+	dev_val.Engineers[engineer_id] = engineer_val
 
 	return true, nil
 
@@ -208,11 +208,11 @@ func deleteEngineerFrom_Dev(dev_id string, engineer_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
-	_, exists = dev_val.engineers[engineer_id]
+	_, exists = dev_val.Engineers[engineer_id]
 	if !exists {
 		return false, errors.New(" Engineer doesnt exists inside specified Operations group ")
 	}
-	delete(dev_val.engineers, engineer_id)
+	delete(dev_val.Engineers, engineer_id)
 
 	return true, nil
 
@@ -308,10 +308,10 @@ func deleteEngineer(engineer_id string) (bool, error) {
 	}
 	for devops_key, devops_val := range developer_operations {
 		for dev_key, dev_val := range devops_val.dev {
-			for key, _ := range dev_val.engineers {
+			for key, _ := range dev_val.Engineers {
 				if key == engineer_id {
-					delete(developer_operations[devops_key].dev[dev_key].engineers, engineer_id)
-					delete(developers[dev_val.id].engineers, engineer_id)
+					delete(developer_operations[devops_key].dev[dev_key].Engineers, engineer_id)
+					delete(developers[dev_val.Id].Engineers, engineer_id)
 				}
 			}
 		}
@@ -345,12 +345,12 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 	//For updating the values for developers inside global developer_operations map
 	for devops_key, devops_val := range developer_operations {
 		for dev_key, dev_val := range devops_val.dev {
-			for key, engineer_val := range dev_val.engineers {
+			for key, engineer_val := range dev_val.Engineers {
 				if key == engineer_id {
 					engineer_val.Email = email
 					engineer_val.Name = name
-					developers[dev_key].engineers[key] = engineer_val
-					developer_operations[devops_key].dev[dev_key].engineers[key] = engineer_val
+					developers[dev_key].Engineers[key] = engineer_val
+					developer_operations[devops_key].dev[dev_key].Engineers[key] = engineer_val
 				}
 			}
 		}
@@ -376,7 +376,7 @@ func updateDev(dev_id string, name string) (bool, error) {
 	//For global dev map
 	dev_map_val, exists := developers[dev_id]
 	if exists {
-		dev_map_val.name = name
+		dev_map_val.Name = name
 	} else {
 		return false, errors.New(" Doesn't exist in the developers group")
 	}
@@ -384,7 +384,7 @@ func updateDev(dev_id string, name string) (bool, error) {
 	for devops_key, devops_val := range developer_operations {
 		for dev_key, dev_val := range devops_val.dev {
 			if dev_key == dev_id {
-				dev_val.name = name
+				dev_val.Name = name
 				developer_operations[devops_key].dev[dev_key] = dev_val
 				developers[dev_key] = dev_val
 			}
@@ -431,6 +431,10 @@ func getEngineer(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, engineers)
 }
 
+func getDev(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, developers)
+}
+
 // server POST handlers
 func postEngineer(c *gin.Context) {
 	var jsonData engineer    //object that gets name and email from POST request
@@ -449,6 +453,25 @@ func postEngineer(c *gin.Context) {
 		return
 	}
 	c.IndentedJSON(http.StatusCreated, engineers[curEngineer.Id])
+}
+
+func postDev(c *gin.Context) {
+	var jsonData dev //object that gets dev data from POST request
+	var curDev dev   //object recieved from newDev
+
+	err := c.BindJSON(&jsonData)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	curDev, err = newDev(jsonData.Name)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusCreated, developers[curDev.Id])
 }
 
 // server PUT handler
@@ -483,17 +506,32 @@ func deleteRequestEngineer(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"success": "Engineer deleted"})
 }
 
+func deleteRequestDev(c *gin.Context) {
+	id := c.Param("id")
+	_, err := deleteDev(id)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"success": "Engineer deleted"})
+}
+
 func main() {
 	router := gin.Default()
 
 	//GET routes
 	router.GET("/engineers", getEngineer)
+	router.GET("/dev", getDev)
 	//POST routes
 	router.POST("/engineers", postEngineer)
+	router.POST("/dev", postDev)
 	//PUT routes
 	router.PUT("/engineers/:id", putEngineer)
 	//DELETE routes
 	router.DELETE("/engineers/:id", deleteRequestEngineer)
+	router.DELETE("/dev/:id", deleteRequestDev)
 	//runs server
 	router.Run(":8080")
 }
