@@ -349,10 +349,8 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 				if key == engineer_id {
 					engineer_val.Email = email
 					engineer_val.Name = name
-					dev_val.engineers[key] = engineer_val
 					developers[dev_key] = dev_val
-					devops_val.dev[dev_key] = dev_val
-					developer_operations[devops_key] = devops_val
+					developer_operations[devops_key].dev[dev_key].engineers[key] = engineer_val
 				}
 			}
 		}
@@ -366,9 +364,7 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 					engineer_val.Email = email
 					engineer_val.Name = name
 					ops_val.engineers[key] = engineer_val
-					operations[ops_key] = ops_val
-					devops_val.ops[ops_key] = ops_val
-					developer_operations[devops_key] = devops_val
+					developer_operations[devops_key].ops[ops_key].engineers[key] = engineer_val
 				}
 			}
 		}
@@ -389,9 +385,8 @@ func updateDev(dev_id string, name string) (bool, error) {
 		for dev_key, dev_val := range devops_val.dev {
 			if dev_key == dev_id {
 				dev_val.name = name
+				developer_operations[devops_key].dev[dev_key] = dev_val
 				developers[dev_key] = dev_val
-				devops_val.dev[dev_key] = dev_val
-				developer_operations[devops_key] = devops_val
 			}
 		}
 	}
@@ -411,9 +406,8 @@ func updateOps(ops_id string, name string) (bool, error) {
 		for ops_key, ops_val := range devops_val.ops {
 			if ops_key == ops_id {
 				ops_val.name = name
+				developer_operations[devops_key].ops[ops_key] = ops_val
 				operations[ops_key] = ops_val
-				devops_val.ops[ops_key] = ops_val
-				developer_operations[devops_key] = devops_val
 			}
 		}
 	}
