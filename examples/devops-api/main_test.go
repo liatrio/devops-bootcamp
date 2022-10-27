@@ -124,3 +124,120 @@ func TestPutEngineer(t *testing.T) {
 		}
 	}
 }
+
+func TestNewEngineer(t *testing.T) {
+	result, err := newEngineer("test_engineer", "test@gmail.com")
+	if result.Email != "test@gmail.com" || result.Name != "test_engineer" {
+		t.Errorf("Expected name %s and email %s were not returned", result.Name, result.Email)
+	}
+	if err != nil {
+		t.Errorf("Expected no errors but one was returned")
+	}
+}
+
+func TestNewEngineerBadName(t *testing.T) {
+	result, err := newEngineer("", "test@gmail.com")
+	if err == nil {
+		t.Errorf("Expected name %s was not returned", result.Name)
+	}
+	if result != (engineer{}) {
+		t.Errorf("Expected empty struct but one was not returned")
+	}
+
+}
+
+func TestNewDev(t *testing.T) {
+	result, err := newDev("test_devs")
+	if result.Name != "test" {
+		t.Errorf("Expected name %s was not returned", result.Name)
+	}
+	if err != nil {
+		t.Errorf("Expected no errors but one was returned")
+	}
+}
+func TestNewDevBadName(t *testing.T) {
+	_, err := newDev("")
+	if err == nil {
+		t.Errorf("Expected name error but one was not returned")
+	}
+}
+func TestNewOp(t *testing.T) {
+	result, err := newOp("test_ops")
+	if result.Name != "test_ops" {
+		t.Errorf("Expected name %s was not returned", result.Name)
+	}
+	if err != nil {
+		t.Errorf("Expected no errors but one was returned")
+	}
+}
+func TestNewDevOps(t *testing.T) {
+	_, err := newDevOps()
+	if err != nil {
+		t.Errorf("Expected no errors but one was returned")
+	}
+	//possibly test if maps are empty/initialized
+}
+
+func TestDeleteEngineer(t *testing.T) {
+	result, _ := newEngineer("test_engineer2", "test@gmail.com")
+	delete_result, _ := deleteEngineer(result.Id)
+	if delete_result == false {
+		t.Errorf("Expected true to be returned but %t was instead'", delete_result)
+	}
+	_, delete2_error := deleteEngineer(result.Id)
+	if delete2_error == nil {
+		t.Errorf("Expected error to occur on second delete of same object but nil was returned")
+	}
+}
+
+/*
+func TestDeleteDev(t *testing.T) {
+
+}
+
+func TestDeleteOps(t *testing.T) {
+
+}
+
+func TestDeleteDevOps(t *testing.T) {
+
+}
+
+
+func TestUpdateEngineer(t *testing.T) {
+
+}
+
+func TestUpdateDev(t *testing.T) {
+
+}
+func TestUpdateOps(t *testing.T) {
+
+}
+
+func TestAddOpsTo_DevOps(t *testing.T) {
+
+}
+func TestAddDevTo_DevOps(t *testing.T) {
+
+}
+func TestAddEngineerTo_Dev(t *testing.T) {
+
+}
+func TestAddEngineerTo_Ops(t *testing.T) {
+
+}
+
+func TestDeleteOpsFrom_DevOps(t *testing.T) {
+
+}
+func TestDeleteDevFrom_DevOps(t *testing.T) {
+
+}
+func TestDeleteEngineerFrom_Dev(t *testing.T) {
+
+}
+func TestDeleteEngineerFrom_Ops(t *testing.T) {
+
+}
+*/

@@ -60,6 +60,9 @@ func newDevOps() (devops, error) {
 }
 
 func newDev(name string) (dev, error) {
+	if name == "" {
+		return dev{}, errors.New(" Name cannot be empty ")
+	}
 	for _, value := range developers {
 		if name == value.Name {
 			return dev{}, errors.New(" Dev group already exists ")
@@ -72,6 +75,9 @@ func newDev(name string) (dev, error) {
 }
 
 func newOp(name string) (ops, error) {
+	if name == "" {
+		return ops{}, errors.New(" Name cannot be empty ")
+	}
 	for _, value := range operations {
 		if name == value.Name {
 			return ops{}, errors.New(" Operations group already exists ")
@@ -84,6 +90,9 @@ func newOp(name string) (ops, error) {
 }
 
 func newEngineer(name string, email string) (engineer, error) {
+	if name == "" {
+		return engineer{}, errors.New(" Name cannot be empty ")
+	}
 	for _, value := range engineers {
 		if name == value.Name {
 			return engineer{}, errors.New(" Engineer already exists ")
@@ -96,13 +105,13 @@ func newEngineer(name string, email string) (engineer, error) {
 }
 
 // functions to add resources to other resources//
-func addEngineerTo_Op(op_id string, engineer_id string) (bool, error) {
+func addEngineerTo_Op(ops_id string, engineer_id string) (bool, error) {
 
 	engineer_val, exists := engineers[engineer_id]
 	if !exists {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-	op_val, exists := operations[op_id]
+	op_val, exists := operations[ops_id]
 	if !exists {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
@@ -110,7 +119,14 @@ func addEngineerTo_Op(op_id string, engineer_id string) (bool, error) {
 	if exists {
 		return false, errors.New(" Engineer already exists inside specified Operations group ")
 	}
-	op_val.Engineers[engineer_id] = engineer_val
+	operations[ops_id].Engineers[engineer_id] = engineer_val
+	for devops_key, devops_val := range developer_operations {
+		for ops_key := range devops_val.ops {
+			if ops_key == ops_id {
+				developer_operations[devops_key].ops[ops_id].Engineers[engineer_id] = engineer_val
+			}
+		}
+	}
 
 	return true, nil
 
@@ -130,7 +146,14 @@ func addEngineerTo_Dev(dev_id string, engineer_id string) (bool, error) {
 	if exists {
 		return false, errors.New(" Engineer already exists inside specified Operations group ")
 	}
-	dev_val.Engineers[engineer_id] = engineer_val
+	developers[dev_id].Engineers[engineer_id] = engineer_val
+	for devops_key, devops_val := range developer_operations {
+		for dev_key := range devops_val.dev {
+			if dev_key == dev_id {
+				developer_operations[devops_key].dev[dev_id].Engineers[engineer_id] = engineer_val
+			}
+		}
+	}
 
 	return true, nil
 
@@ -150,7 +173,7 @@ func addDevTo_DevOps(devops_id string, dev_id string) (bool, error) {
 	if exists {
 		return false, errors.New(" Developer already exists inside specified Developer Operations group ")
 	}
-	devops_val.dev[dev_id] = dev_val
+	developer_operations[devops_id].dev[dev_id] = dev_val
 
 	return true, nil
 
@@ -170,7 +193,7 @@ func addOpTo_DevOps(devops_id string, op_id string) (bool, error) {
 	if exists {
 		return false, errors.New(" Developer already exists inside specified Developer Operations group ")
 	}
-	devops_val.ops[op_id] = op_val
+	developer_operations[devops_id].ops[op_id] = op_val
 
 	return true, nil
 
@@ -178,13 +201,13 @@ func addOpTo_DevOps(devops_id string, op_id string) (bool, error) {
 
 // *********************************************//
 // functions to delete resources from other resources//
-func deleteEngineerFrom_Op(op_id string, engineer_id string) (bool, error) {
+func deleteEngineerFrom_Op(ops_id string, engineer_id string) (bool, error) {
 
 	_, exists := engineers[engineer_id]
 	if !exists {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-	op_val, exists := operations[op_id]
+	op_val, exists := operations[ops_id]
 	if !exists {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
@@ -193,6 +216,13 @@ func deleteEngineerFrom_Op(op_id string, engineer_id string) (bool, error) {
 		return false, errors.New(" Engineer doesn't exists inside specified Operations group ")
 	}
 	delete(op_val.Engineers, engineer_id)
+	for devops_key, devops_val := range developer_operations {
+		for key := range devops_val.ops {
+			if key == ops_id {
+				delete(developer_operations[devops_key].ops[ops_id].Engineers, engineer_id)
+			}
+		}
+	}
 
 	return true, nil
 
@@ -213,6 +243,13 @@ func deleteEngineerFrom_Dev(dev_id string, engineer_id string) (bool, error) {
 		return false, errors.New(" Engineer doesnt exists inside specified Operations group ")
 	}
 	delete(dev_val.Engineers, engineer_id)
+	for devops_key, devops_val := range developer_operations {
+		for key := range devops_val.dev {
+			if key == dev_id {
+				delete(developer_operations[devops_key].dev[dev_id].Engineers, engineer_id)
+			}
+		}
+	}
 
 	return true, nil
 
@@ -238,9 +275,9 @@ func deleteDevFrom_DevOps(devops_id string, dev_id string) (bool, error) {
 
 }
 
-func deleteOpFrom_DevOps(devops_id string, op_id string) (bool, error) {
+func deleteOpFrom_DevOps(devops_id string, ops_id string) (bool, error) {
 
-	_, exists := developers[op_id]
+	_, exists := developers[ops_id]
 	if !exists {
 		return false, errors.New(" Developer group doesn't exist ")
 	}
@@ -248,11 +285,11 @@ func deleteOpFrom_DevOps(devops_id string, op_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Developer Oerations group doesn't exist ")
 	}
-	_, exists = devops_val.dev[op_id]
+	_, exists = devops_val.dev[ops_id]
 	if !exists {
 		return false, errors.New(" Developer doesn't exists inside specified Developer Operations group ")
 	}
-	delete(devops_val.ops, op_id)
+	delete(devops_val.ops, ops_id)
 
 	return true, nil
 
@@ -285,19 +322,19 @@ func deleteDev(dev_id string) (bool, error) {
 	return true, nil
 }
 
-func deleteOp(op_id string) (bool, error) {
-	_, exists := operations[op_id]
+func deleteOp(ops_id string) (bool, error) {
+	_, exists := operations[ops_id]
 	if !exists {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
 	for devops_key, devops_val := range developer_operations {
 		for key, _ := range devops_val.ops {
-			if key == op_id {
-				delete(developer_operations[devops_key].ops, op_id)
+			if key == ops_id {
+				delete(developer_operations[devops_key].ops, ops_id)
 			}
 		}
 	}
-	delete(operations, op_id)
+	delete(operations, ops_id)
 	return true, nil
 }
 
@@ -331,6 +368,7 @@ func deleteEngineer(engineer_id string) (bool, error) {
 }
 
 // *****************************//
+
 // functions to update resources//
 func updateEngineer(engineer_id string, name string, email string) (bool, error) {
 	//For updating global engineers map
@@ -414,11 +452,12 @@ func updateOps(ops_id string, name string) (bool, error) {
 	return true, nil
 }
 
+/*
 func updateDevOps(devops_id string) (bool, error) {
 	//TODO
 	return true, nil
 }
-
+*/
 //*****************************//
 
 func verifyEmail(email string) bool {
