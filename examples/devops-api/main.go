@@ -23,7 +23,7 @@ func getRandId(length int) string {
 
 type engineer struct {
 	Name  string `json:"name" binding:"required"`
-	Id    string
+	Id    string `json:"id"`
 	Email string `json:"email" binding:"required"`
 }
 
@@ -34,9 +34,9 @@ type dev struct {
 }
 
 type ops struct {
-	name      string
-	id        string
-	engineers map[string]engineer
+	Name      string              `json:"name"`
+	Id        string              `json:"id"`
+	Engineers map[string]engineer `json:"engineers"`
 }
 
 type devops struct {
@@ -73,13 +73,13 @@ func newDev(name string) (dev, error) {
 
 func newOp(name string) (ops, error) {
 	for _, value := range operations {
-		if name == value.name {
+		if name == value.Name {
 			return ops{}, errors.New(" Operations group already exists ")
 		}
 	}
-	opGroup := ops{name: name, id: "TODO"}
-	opGroup.engineers = make(map[string]engineer)
-	operations[opGroup.id] = opGroup
+	opGroup := ops{Name: name, Id: getRandId(5)}
+	opGroup.Engineers = make(map[string]engineer)
+	operations[opGroup.Id] = opGroup
 	return opGroup, nil
 }
 
@@ -106,11 +106,11 @@ func addEngineerTo_Op(op_id string, engineer_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
-	_, exists = op_val.engineers[engineer_id]
+	_, exists = op_val.Engineers[engineer_id]
 	if exists {
 		return false, errors.New(" Engineer already exists inside specified Operations group ")
 	}
-	op_val.engineers[engineer_id] = engineer_val
+	op_val.Engineers[engineer_id] = engineer_val
 
 	return true, nil
 
@@ -188,11 +188,11 @@ func deleteEngineerFrom_Op(op_id string, engineer_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
-	_, exists = op_val.engineers[engineer_id]
+	_, exists = op_val.Engineers[engineer_id]
 	if !exists {
 		return false, errors.New(" Engineer doesn't exists inside specified Operations group ")
 	}
-	delete(op_val.engineers, engineer_id)
+	delete(op_val.Engineers, engineer_id)
 
 	return true, nil
 
@@ -318,10 +318,10 @@ func deleteEngineer(engineer_id string) (bool, error) {
 	}
 	for devops_key, devops_val := range developer_operations {
 		for ops_key, ops_val := range devops_val.ops {
-			for key, _ := range ops_val.engineers {
+			for key, _ := range ops_val.Engineers {
 				if key == engineer_id {
-					delete(developer_operations[devops_key].ops[ops_key].engineers, engineer_id)
-					delete(operations[ops_val.id].engineers, engineer_id)
+					delete(developer_operations[devops_key].ops[ops_key].Engineers, engineer_id)
+					delete(operations[ops_val.Id].Engineers, engineer_id)
 				}
 			}
 		}
@@ -359,12 +359,12 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 	//For updating the values for operations inside global developer_operations map
 	for devops_key, devops_val := range developer_operations {
 		for ops_key, ops_val := range devops_val.ops {
-			for key, engineer_val := range ops_val.engineers {
+			for key, engineer_val := range ops_val.Engineers {
 				if key == engineer_id {
 					engineer_val.Email = email
 					engineer_val.Name = name
-					operations[ops_key].engineers[key] = engineer_val
-					developer_operations[devops_key].ops[ops_key].engineers[key] = engineer_val
+					operations[ops_key].Engineers[key] = engineer_val
+					developer_operations[devops_key].ops[ops_key].Engineers[key] = engineer_val
 				}
 			}
 		}
@@ -397,7 +397,7 @@ func updateOps(ops_id string, name string) (bool, error) {
 	//For global dev map
 	op_map_val, exists := operations[ops_id]
 	if exists {
-		op_map_val.name = name
+		op_map_val.Name = name
 	} else {
 		return false, errors.New(" Doesn't exist in the operations group")
 	}
@@ -405,7 +405,7 @@ func updateOps(ops_id string, name string) (bool, error) {
 	for devops_key, devops_val := range developer_operations {
 		for ops_key, ops_val := range devops_val.ops {
 			if ops_key == ops_id {
-				ops_val.name = name
+				ops_val.Name = name
 				developer_operations[devops_key].ops[ops_key] = ops_val
 				operations[ops_key] = ops_val
 			}
@@ -433,6 +433,10 @@ func getEngineer(c *gin.Context) {
 
 func getDev(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, developers)
+}
+
+func getOp(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, operations)
 }
 
 // server POST handlers
@@ -474,6 +478,26 @@ func postDev(c *gin.Context) {
 	c.IndentedJSON(http.StatusCreated, developers[curDev.Id])
 }
 
+func postOp(c *gin.Context) {
+	var jsonData ops //object that gets dev data from POST request
+	var curOp ops    //object recieved from newDev
+
+	err := c.BindJSON(&jsonData)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	curOp, err = newOp(jsonData.Name)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusCreated, operations[curOp.Id])
+
+}
+
 // server PUT handler
 func putEngineer(c *gin.Context) {
 	id := c.Param("id")
@@ -503,7 +527,7 @@ func deleteRequestEngineer(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"success": "Engineer deleted"})
+	c.JSON(http.StatusOK, gin.H{"success": "engineer resource deleted"})
 }
 
 func deleteRequestDev(c *gin.Context) {
@@ -515,7 +539,19 @@ func deleteRequestDev(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"success": "Engineer deleted"})
+	c.JSON(http.StatusOK, gin.H{"success": "developer resource deleted"})
+}
+
+func deleteRequestOp(c *gin.Context) {
+	id := c.Param("id")
+	_, err := deleteOp(id)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"success": "operations resource deleted"})
 }
 
 func main() {
@@ -524,14 +560,17 @@ func main() {
 	//GET routes
 	router.GET("/engineers", getEngineer)
 	router.GET("/dev", getDev)
+	router.GET("/op", getOp)
 	//POST routes
 	router.POST("/engineers", postEngineer)
 	router.POST("/dev", postDev)
+	router.POST("/op", postOp)
 	//PUT routes
 	router.PUT("/engineers/:id", putEngineer)
 	//DELETE routes
 	router.DELETE("/engineers/:id", deleteRequestEngineer)
 	router.DELETE("/dev/:id", deleteRequestDev)
+	router.DELETE("/op/:id", deleteRequestOp)
 	//runs server
 	router.Run(":8080")
 }
