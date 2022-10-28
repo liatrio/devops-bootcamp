@@ -215,7 +215,7 @@ func deleteEngineerFrom_Op(ops_id string, engineer_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Engineer doesn't exists inside specified Operations group ")
 	}
-	delete(op_val.Engineers, engineer_id)
+	delete(operations[ops_id].Engineers, engineer_id)
 	for devops_key, devops_val := range developer_operations {
 		for key := range devops_val.Ops {
 			if key == ops_id {
@@ -242,7 +242,7 @@ func deleteEngineerFrom_Dev(dev_id string, engineer_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Engineer doesnt exists inside specified Operations group ")
 	}
-	delete(dev_val.Engineers, engineer_id)
+	delete(developers[dev_id].Engineers, engineer_id)
 	for devops_key, devops_val := range developer_operations {
 		for key := range devops_val.Dev {
 			if key == dev_id {
@@ -269,7 +269,7 @@ func deleteDevFrom_DevOps(devops_id string, dev_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Developer doesn't exists inside specified Developer Operations group ")
 	}
-	delete(devops_val.Dev, dev_id)
+	delete(developer_operations[devops_id].Dev, dev_id)
 
 	return true, nil
 
@@ -289,7 +289,7 @@ func deleteOpFrom_DevOps(devops_id string, ops_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Developer doesn't exists inside specified Developer Operations group ")
 	}
-	delete(devops_val.Ops, ops_id)
+	delete(developer_operations[devops_id].Ops, ops_id)
 	return true, nil
 
 }
