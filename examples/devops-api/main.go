@@ -342,26 +342,35 @@ func deleteEngineer(engineer_id string) (bool, error) {
 	if !exists {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-	for devops_key, devops_val := range developer_operations {
-		for dev_key, dev_val := range devops_val.Dev {
-			for key, _ := range dev_val.Engineers {
-				if key == engineer_id {
-					delete(developer_operations[devops_key].Dev[dev_key].Engineers, engineer_id)
-					delete(developers[dev_val.Id].Engineers, engineer_id)
+	for dev_key, dev_val := range developers {
+		for key := range dev_val.Engineers {
+			if key == engineer_id {
+				//delete(developer_operations[devops_key].Dev[dev_key].Engineers, engineer_id)
+				delete(developers[dev_val.Id].Engineers, engineer_id)
+				for devops_key, devops_val := range developer_operations {
+					_, exists := devops_val.Dev[dev_key]
+					if exists {
+						delete(developer_operations[devops_key].Dev[dev_key].Engineers, engineer_id)
+					}
 				}
 			}
 		}
 	}
-	for devops_key, devops_val := range developer_operations {
-		for ops_key, ops_val := range devops_val.Ops {
-			for key, _ := range ops_val.Engineers {
-				if key == engineer_id {
-					delete(developer_operations[devops_key].Ops[ops_key].Engineers, engineer_id)
-					delete(operations[ops_val.Id].Engineers, engineer_id)
+	for ops_key, ops_val := range operations {
+		for key := range ops_val.Engineers {
+			if key == engineer_id {
+				//delete(developer_operations[devops_key].Dev[dev_key].Engineers, engineer_id)
+				delete(operations[ops_val.Id].Engineers, engineer_id)
+				for devops_key, devops_val := range developer_operations {
+					_, exists := devops_val.Ops[ops_key]
+					if exists {
+						delete(developer_operations[devops_key].Ops[ops_key].Engineers, engineer_id)
+					}
 				}
 			}
 		}
 	}
+
 	delete(engineers, engineer_id)
 	return true, nil
 }
@@ -379,29 +388,33 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 	} else {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-	//For updating the values for developers inside global developer_operations map
-	for devops_key, devops_val := range developer_operations {
-		for dev_key, dev_val := range devops_val.Dev {
-			for key, engineer_val := range dev_val.Engineers {
-				if key == engineer_id {
-					engineer_val.Email = email
-					engineer_val.Name = name
-					developers[dev_key].Engineers[key] = engineer_val
-					developer_operations[devops_key].Dev[dev_key].Engineers[key] = engineer_val
+
+	for dev_key, dev_val := range developers {
+		for engineer_key, engineer_val := range dev_val.Engineers {
+			if engineer_key == engineer_id {
+				engineer_val.Email = email
+				engineer_val.Name = name
+				developers[dev_key].Engineers[engineer_key] = engineer_val
+				for devops_key, devops_val := range developer_operations {
+					_, exists := devops_val.Dev[dev_key]
+					if exists {
+						developer_operations[devops_key].Dev[dev_key].Engineers[engineer_key] = engineer_val
+					}
 				}
 			}
 		}
 	}
-
-	//For updating the values for operations inside global developer_operations map
-	for devops_key, devops_val := range developer_operations {
-		for ops_key, ops_val := range devops_val.Ops {
-			for key, engineer_val := range ops_val.Engineers {
-				if key == engineer_id {
-					engineer_val.Email = email
-					engineer_val.Name = name
-					operations[ops_key].Engineers[key] = engineer_val
-					developer_operations[devops_key].Ops[ops_key].Engineers[key] = engineer_val
+	for ops_key, ops_val := range operations {
+		for engineer_key, engineer_val := range ops_val.Engineers {
+			if engineer_key == engineer_id {
+				engineer_val.Email = email
+				engineer_val.Name = name
+				operations[ops_key].Engineers[engineer_key] = engineer_val
+				for devops_key, devops_val := range developer_operations {
+					_, exists := devops_val.Ops[ops_key]
+					if exists {
+						developer_operations[devops_key].Ops[ops_key].Engineers[engineer_key] = engineer_val
+					}
 				}
 			}
 		}
