@@ -98,6 +98,9 @@ func newEngineer(name string, email string) (engineer, error) {
 			return engineer{}, errors.New(" Engineer already exists ")
 		}
 	}
+	if !verifyEmail(email) {
+		return engineer{}, errors.New(" Email is invalid ")
+	}
 	p := engineer{Name: name, Id: getRandId(5)}
 	p.Email = email
 	engineers[p.Id] = p
@@ -379,6 +382,12 @@ func deleteEngineer(engineer_id string) (bool, error) {
 
 // functions to update resources//
 func updateEngineer(engineer_id string, name string, email string) (bool, error) {
+	if !verifyEmail(email) {
+		return false, errors.New(" Email is invalid ")
+	}
+	if name == "" {
+		return false, errors.New(" Name cannot be empty ")
+	}
 	//For updating global engineers map
 	engineer_val, exists := engineers[engineer_id]
 	if exists {
@@ -423,6 +432,9 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 }
 
 func updateDev(dev_id string, name string) (bool, error) {
+	if name == "" {
+		return false, errors.New(" Name cannot be empty ")
+	}
 	//For global dev map
 	dev_map_val, exists := developers[dev_id]
 	if exists {
@@ -445,6 +457,9 @@ func updateDev(dev_id string, name string) (bool, error) {
 }
 
 func updateOps(ops_id string, name string) (bool, error) {
+	if name == "" {
+		return false, errors.New(" Name cannot be empty ")
+	}
 	//For global dev map
 	op_map_val, exists := operations[ops_id]
 	if exists {
