@@ -167,7 +167,7 @@ func addDevTo_DevOps(devops_id string, dev_id string) (bool, error) {
 	}
 	devops_val, exists := developer_operations[devops_id]
 	if !exists {
-		return false, errors.New(" Developer Oerations group doesn't exist ")
+		return false, errors.New(" Developer Operations group doesn't exist ")
 	}
 	_, exists = devops_val.Dev[dev_id]
 	if exists {
@@ -183,15 +183,15 @@ func addOpTo_DevOps(devops_id string, op_id string) (bool, error) {
 
 	op_val, exists := operations[op_id]
 	if !exists {
-		return false, errors.New(" Developer group doesn't exist ")
+		return false, errors.New(" Operations group doesn't exist ")
 	}
 	devops_val, exists := developer_operations[devops_id]
 	if !exists {
-		return false, errors.New(" Developer Oerations group doesn't exist ")
+		return false, errors.New(" Developer Operations group doesn't exist ")
 	}
 	_, exists = devops_val.Ops[op_id]
 	if exists {
-		return false, errors.New(" Developer already exists inside specified Developer Operations group ")
+		return false, errors.New(" Operations group already exists inside specified Developer Operations group ")
 	}
 	developer_operations[devops_id].Ops[op_id] = op_val
 
@@ -569,6 +569,64 @@ func postDevEngineer(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, developers[id])
 }
 
+func postOpEngineer(c *gin.Context) {
+	id := c.Param("id") //op id
+	var jsonData engineer
+	err := c.ShouldBindJSON(&jsonData)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	_, err = addEngineerTo_Op(id, jsonData.Id)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusOK, operations[id])
+}
+
+func postDevOpsDev(c *gin.Context) {
+	id := c.Param("id") //devops id
+	var jsonData dev
+
+	err := c.ShouldBindJSON(&jsonData)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	_, err = addDevTo_DevOps(id, jsonData.Id)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusOK, developer_operations[id])
+
+}
+
+func postDevOpsOp(c *gin.Context) {
+	id := c.Param("id") //devops id
+	var jsonData ops
+
+	err := c.ShouldBindJSON(&jsonData)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	_, err = addOpTo_DevOps(id, jsonData.Id)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusOK, developer_operations[id])
+
+}
+
 // server PUT handler
 func putEngineer(c *gin.Context) {
 	id := c.Param("id")
@@ -682,9 +740,11 @@ func main() {
 	router.POST("/engineers", postEngineer)
 	router.POST("/dev", postDev)
 	router.POST("/dev/:id", postDevEngineer)
-	//router.POST("/op/:id", postOpEngineer)
+	router.POST("/op/:id", postOpEngineer)
 	router.POST("/op", postOp)
 	router.POST("/devops", postDevOps)
+	router.POST("/devops/dev/:id", postDevOpsDev)
+	router.POST("/devops/op/:id", postDevOpsOp)
 	//PUT routes
 	router.PUT("/engineers/:id", putEngineer)
 	router.PUT("/dev/:id", putDev)
