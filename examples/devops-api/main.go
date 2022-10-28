@@ -414,6 +414,7 @@ func updateDev(dev_id string, name string) (bool, error) {
 	dev_map_val, exists := developers[dev_id]
 	if exists {
 		dev_map_val.Name = name
+		developers[dev_id] = dev_map_val
 	} else {
 		return false, errors.New(" Doesn't exist in the developers group")
 	}
@@ -423,7 +424,7 @@ func updateDev(dev_id string, name string) (bool, error) {
 			if dev_key == dev_id {
 				dev_val.Name = name
 				developer_operations[devops_key].Dev[dev_key] = dev_val
-				developers[dev_key] = dev_val
+				//developers[dev_key] = dev_val
 			}
 		}
 	}
@@ -435,6 +436,7 @@ func updateOps(ops_id string, name string) (bool, error) {
 	op_map_val, exists := operations[ops_id]
 	if exists {
 		op_map_val.Name = name
+		operations[ops_id] = op_map_val
 	} else {
 		return false, errors.New(" Doesn't exist in the operations group")
 	}
@@ -444,7 +446,7 @@ func updateOps(ops_id string, name string) (bool, error) {
 			if ops_key == ops_id {
 				ops_val.Name = name
 				developer_operations[devops_key].Ops[ops_key] = ops_val
-				operations[ops_key] = ops_val
+				//operations[ops_key] = ops_val
 			}
 		}
 	}
@@ -553,7 +555,6 @@ func postDevOps(c *gin.Context) {
 func putEngineer(c *gin.Context) {
 	id := c.Param("id")
 	var jsonData engineer
-	//	var result bool
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -566,6 +567,40 @@ func putEngineer(c *gin.Context) {
 		return
 	}
 	c.IndentedJSON(http.StatusOK, engineers[id])
+}
+
+func putDev(c *gin.Context) {
+	id := c.Param("id")
+	var jsonData dev
+	err := c.ShouldBindJSON(&jsonData)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	_, err = updateDev(id, jsonData.Name)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusOK, developers[id])
+}
+
+func putOp(c *gin.Context) {
+	id := c.Param("id")
+	var jsonData ops
+	err := c.ShouldBindJSON(&jsonData)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	_, err = updateOps(id, jsonData.Name)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusOK, operations[id])
 }
 
 // server DELETE handler
@@ -632,6 +667,8 @@ func main() {
 	router.POST("/devops", postDevOps)
 	//PUT routes
 	router.PUT("/engineers/:id", putEngineer)
+	router.PUT("/dev/:id", putDev)
+	router.PUT("/op/:id", putOp)
 	//DELETE routes
 	router.DELETE("/engineers/:id", deleteRequestEngineer)
 	router.DELETE("/dev/:id", deleteRequestDev)
