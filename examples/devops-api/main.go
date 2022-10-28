@@ -490,7 +490,7 @@ func updateDevOps(devops_id string) (bool, error) {
 //*****************************//
 
 func verifyEmail(email string) bool {
-	result, _ := regexp.MatchString("^([a-z]|[0-9])+@[a-z]+\\.[a-z]+(\\.[a-z]+)*$", email)
+	result, _ := regexp.MatchString("^([a-zA-Z]|[0-9])+@[a-z]+\\.[a-z]+(\\.[a-z]+)*$", email)
 	return result
 }
 
@@ -753,7 +753,7 @@ func deleteRequestDevOps(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"success": "operations resource deleted"})
+	c.JSON(http.StatusOK, gin.H{"success": "developer operations resource deleted"})
 }
 
 func main() {
