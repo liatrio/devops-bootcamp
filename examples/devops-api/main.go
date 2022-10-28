@@ -22,9 +22,9 @@ func getRandId(length int) string {
 }
 
 type engineer struct {
-	Name  string `json:"name" binding:"required"`
+	Name  string `json:"name"`
 	Id    string `json:"id"`
-	Email string `json:"email" binding:"required"`
+	Email string `json:"email"`
 }
 
 type dev struct {
@@ -551,6 +551,24 @@ func postDevOps(c *gin.Context) {
 	c.IndentedJSON(http.StatusCreated, developer_operations[curDevOps.Id])
 }
 
+func postDevEngineer(c *gin.Context) {
+	id := c.Param("id") //dev id
+	var jsonData engineer
+	err := c.ShouldBindJSON(&jsonData)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	_, err = addEngineerTo_Dev(id, jsonData.Id)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusOK, developers[id])
+}
+
 // server PUT handler
 func putEngineer(c *gin.Context) {
 	id := c.Param("id")
@@ -663,6 +681,8 @@ func main() {
 	//POST routes
 	router.POST("/engineers", postEngineer)
 	router.POST("/dev", postDev)
+	router.POST("/dev/:id", postDevEngineer)
+	//router.POST("/op/:id", postOpEngineer)
 	router.POST("/op", postOp)
 	router.POST("/devops", postDevOps)
 	//PUT routes
