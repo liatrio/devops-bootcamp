@@ -32,7 +32,7 @@ type requestDevTest struct {
 
 type requestOpTest struct {
 	description string
-	testDev     ops
+	testOp      ops
 	expected    int
 }
 
@@ -62,27 +62,6 @@ var verifyPostEngineer = []requestEngineerTest{
 	requestEngineerTest{"client side JSON object with empty fields", engineer{Name: "", Id: "", Email: ""}, http.StatusBadRequest},
 }
 
-var verifyPostDev = []requestDevTest{
-	requestDevTest{"simple developer resource creation", dev{Name: "ferrets"}, http.StatusCreated},
-	requestDevTest{"no client side Name field", dev{}, http.StatusBadRequest},
-	requestDevTest{"different developer resource", dev{Name: "bengal"}, http.StatusCreated},
-	requestDevTest{"duplicate developer resource", dev{Name: "ferrets"}, http.StatusBadRequest},
-	requestDevTest{"client side JSON object with empty fields", dev{Name: ""}, http.StatusBadRequest},
-}
-
-var verifyPutDev = []requestDevTest{
-	//Created with client side id TODO: fix where id cannot be created via client side
-	requestDevTest{"should update name id 2 developer resource", dev{Name: "notferrets", Id: "2"}, http.StatusOK},
-	requestDevTest{"No id", dev{Name: "notferrets"}, http.StatusBadRequest},
-}
-
-var verifyDeleteDev = []requestDevTest{
-	requestDevTest{"should delete nothing and fail", dev{Name: "failed", Id: "40"}, http.StatusBadRequest},
-	requestDevTest{"should delete nothing and fail since no id", dev{Name: "NoId"}, http.StatusBadRequest},
-	requestDevTest{"should delete test developer resource and pass", dev{Id: "2"}, http.StatusOK},
-	requestDevTest{"duplicate this should fail", dev{Id: "2"}, http.StatusBadRequest},
-}
-
 var verifyPutEngineer = []requestEngineerTest{
 	//Created with client side id TODO: fix where id cannot be created via client side
 	requestEngineerTest{"Should update name and email of id 5 engineer", engineer{Name: "Not Bob", Id: "5", Email: "notbob@gmail.com"}, http.StatusOK},
@@ -95,6 +74,56 @@ var verifyDeleteEngineer = []requestEngineerTest{
 	requestEngineerTest{"should delete test engineer and pass", engineer{Id: "5"}, http.StatusOK},
 	requestEngineerTest{"duplicate this should fail", engineer{Id: "5"}, http.StatusBadRequest},
 }
+
+/********************************************/
+
+/******* Slices of Test Cases for Developer Resource Request *******/
+var verifyPostDev = []requestDevTest{
+	requestDevTest{"simple developer resource creation", dev{Name: "dev_ferrets"}, http.StatusCreated},
+	requestDevTest{"no client side Name field", dev{}, http.StatusBadRequest},
+	requestDevTest{"different developer resource", dev{Name: "dev_bengal"}, http.StatusCreated},
+	requestDevTest{"duplicate developer resource", dev{Name: "dev_ferrets"}, http.StatusBadRequest},
+	requestDevTest{"client side JSON object with empty fields", dev{Name: ""}, http.StatusBadRequest},
+}
+
+var verifyPutDev = []requestDevTest{
+	//Created with client side id TODO: fix where id cannot be created via client side
+	requestDevTest{"should update name id 2 developer resource", dev{Name: "notferrets", Id: "2"}, http.StatusOK},
+	requestDevTest{"No id", dev{Name: "dev_notferrets"}, http.StatusBadRequest},
+}
+
+var verifyDeleteDev = []requestDevTest{
+	requestDevTest{"should delete nothing and fail", dev{Name: "failed", Id: "40"}, http.StatusBadRequest},
+	requestDevTest{"should delete nothing and fail since no id", dev{Name: "NoId"}, http.StatusBadRequest},
+	requestDevTest{"should delete test developer resource and pass", dev{Id: "2"}, http.StatusOK},
+	requestDevTest{"duplicate this should fail", dev{Id: "2"}, http.StatusBadRequest},
+}
+
+/********************************************/
+
+/******* Slices of Test Cases for Operations Resource Request *******/
+var verifyPostOp = []requestOpTest{
+	requestOpTest{"simple operation resource creation", ops{Name: "op_ferrets"}, http.StatusCreated},
+	requestOpTest{"no client side Name field", ops{}, http.StatusBadRequest},
+	requestOpTest{"different operation resource", ops{Name: "op_bengal"}, http.StatusCreated},
+	requestOpTest{"duplicate operation resource", ops{Name: "op_ferrets"}, http.StatusBadRequest},
+	requestOpTest{"client side JSON object with empty fields", ops{Name: ""}, http.StatusBadRequest},
+}
+
+var verifyPutOp = []requestOpTest{
+	//Created with client side id TODO: fix where id cannot be created via client side
+	requestOpTest{"should update name id 2 operation resource", ops{Name: "op_notferrets", Id: "2"}, http.StatusOK},
+	requestOpTest{"No id", ops{Name: "op_notferrets"}, http.StatusBadRequest},
+}
+
+var verifyDeleteOp = []requestOpTest{
+	requestOpTest{"should delete nothing and fail", ops{Name: "failed", Id: "40"}, http.StatusBadRequest},
+	requestOpTest{"should delete nothing and fail since no id", ops{Name: "NoId"}, http.StatusBadRequest},
+	requestOpTest{"should delete test operation resource and pass", ops{Id: "2"}, http.StatusOK},
+	requestOpTest{"duplicate this should fail", ops{Id: "2"}, http.StatusBadRequest},
+}
+
+/********************************************/
 
 func TestVerifyEmail(t *testing.T) {
 	for _, test := range verifyEmailTests {
@@ -171,6 +200,46 @@ func mockJsonPutDev(c *gin.Context, content dev) {
 }
 
 func mockJsonDeleteDev(c *gin.Context, content dev) {
+	c.Request.Method = "DELETE"
+	c.Request.Header.Set("Content-Type", "application/json")
+	c.Params = []gin.Param{gin.Param{Key: "id", Value: content.Id}}
+
+	jsonBytes, err := json.Marshal(content)
+	if err != nil {
+		panic(err)
+	}
+
+	c.Request.Body = io.NopCloser(bytes.NewBuffer(jsonBytes))
+}
+
+/********************************************/
+
+/******* Op Mock Requests *******/
+func mockJsonPostOp(c *gin.Context, content ops) {
+	c.Request.Method = "POST"
+	c.Request.Header.Set("Content-Type", "application/json")
+	jsonBytes, err := json.Marshal(content)
+	if err != nil {
+		panic(err)
+	}
+
+	c.Request.Body = io.NopCloser(bytes.NewBuffer(jsonBytes))
+}
+
+func mockJsonPutOp(c *gin.Context, content ops) {
+	c.Request.Method = "PUT"
+	c.Request.Header.Set("Content-Type", "application/json")
+	c.Params = []gin.Param{gin.Param{Key: "id", Value: content.Id}}
+
+	jsonBytes, err := json.Marshal(content)
+	if err != nil {
+		panic(err)
+	}
+
+	c.Request.Body = io.NopCloser(bytes.NewBuffer(jsonBytes))
+}
+
+func mockJsonDeleteOp(c *gin.Context, content ops) {
 	c.Request.Method = "DELETE"
 	c.Request.Header.Set("Content-Type", "application/json")
 	c.Params = []gin.Param{gin.Param{Key: "id", Value: content.Id}}
@@ -295,6 +364,65 @@ func TestDeleteRequestDev(t *testing.T) {
 		}
 		mockJsonDeleteDev(c, test.testDev)
 		deleteRequestDev(c)
+		if test.expected != w.Code {
+			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
+		}
+	}
+}
+
+/********************************************/
+
+/******* Test Runs for Operation Resource Requests *******/
+func TestPostOp(t *testing.T) {
+	var w *httptest.ResponseRecorder
+	var c *gin.Context
+
+	for _, test := range verifyPostOp {
+		w = httptest.NewRecorder()
+		c, _ = gin.CreateTestContext(w)
+		c.Request = &http.Request{
+			Header: make(http.Header),
+		}
+		mockJsonPostOp(c, test.testOp)
+		postOp(c)
+		if test.expected != w.Code {
+			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
+		}
+	}
+}
+
+func TestPutOp(t *testing.T) {
+	var w *httptest.ResponseRecorder
+	var c *gin.Context
+	operations["2"] = ops{Name: "ferrets", Id: "2"}
+
+	for _, test := range verifyPutOp {
+		w = httptest.NewRecorder()
+		c, _ = gin.CreateTestContext(w)
+		c.Request = &http.Request{
+			Header: make(http.Header),
+		}
+		mockJsonPutOp(c, test.testOp)
+		putOp(c)
+		if test.expected != w.Code {
+			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
+		}
+	}
+}
+
+func TestDeleteRequestOp(t *testing.T) {
+	var w *httptest.ResponseRecorder
+	var c *gin.Context
+	operations["2"] = ops{Name: "ferrets", Id: "2"}
+
+	for _, test := range verifyDeleteOp {
+		w = httptest.NewRecorder()
+		c, _ = gin.CreateTestContext(w)
+		c.Request = &http.Request{
+			Header: make(http.Header),
+		}
+		mockJsonDeleteOp(c, test.testOp)
+		deleteRequestOp(c)
 		if test.expected != w.Code {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
