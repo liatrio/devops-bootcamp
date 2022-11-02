@@ -90,6 +90,8 @@
 - [6.1 - Terraform](6-infrastructure-configuration-management/6.1-terraform)
   - [6.1.1 - Terraform Getting Started](6-infrastructure-configuration-management/6.1.1-terraform-getting-started.md)
   - [6.1.2 - Terraform State & Backends](6-infrastructure-configuration-management/6.1.2-terraform-backends.md)
+  - [6.1.3 - Terraform Modules](6-infrastructure-configuration-management/6.1.3-terraform-modules.md)
+  - [6.1.4 - Terraform Providers](6-infrastructure-configuration-management/6.1.4-terraform-providers.md)
 - [6.2 - Ansible](6-infrastructure-configuration-management/6.2-ansible.md)
 - [6.3 - Chef](6-infrastructure-configuration-management/6.3-chef.md)
 * **Chapter 7**
