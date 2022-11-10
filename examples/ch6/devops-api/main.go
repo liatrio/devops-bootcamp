@@ -79,7 +79,13 @@ func getDev(c *gin.Context) {
 }
 
 func getOp(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, operations)
+	ops_slice := make([]ops, len(operations))
+	i := 0
+	for _, operation := range operations {
+		ops_slice[i] = operation
+		i++
+	}
+	c.IndentedJSON(http.StatusOK, ops_slice)
 }
 
 func getDevOps(c *gin.Context) {
