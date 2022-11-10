@@ -3,22 +3,10 @@ package main
 import (
 	"crypto/rand"
 	"encoding/base32"
-
-	//"fmt"
-	"github.com/gin-gonic/gin"
-	//"io"
-	"net/http"
 	"regexp"
-)
 
-func getRandId(length int) string {
-	randomBytes := make([]byte, 32)
-	_, err := rand.Read(randomBytes)
-	if err != nil {
-		panic(err)
-	}
-	return base32.StdEncoding.EncodeToString(randomBytes)[:length]
-}
+	"github.com/gin-gonic/gin"
+)
 
 type engineer struct {
 	Name  string `json:"name"`
@@ -55,47 +43,13 @@ func verifyEmail(email string) bool {
 	return result
 }
 
-// server GET handlers
-func getEngineer(c *gin.Context) {
-	engineer_slice := make([]engineer, len(engineers))
-
-	i := 0
-	for _, engineer := range engineers {
-		engineer_slice[i] = engineer
-		i++
+func getRandId(length int) string {
+	randomBytes := make([]byte, 32)
+	_, err := rand.Read(randomBytes)
+	if err != nil {
+		panic(err)
 	}
-	c.IndentedJSON(http.StatusOK, engineer_slice)
-}
-
-func getDev(c *gin.Context) {
-	dev_slice := make([]dev, len(developers))
-
-	i := 0
-	for _, developer := range developers {
-		dev_slice[i] = developer
-		i++
-	}
-	c.IndentedJSON(http.StatusOK, dev_slice)
-}
-
-func getOp(c *gin.Context) {
-	ops_slice := make([]ops, len(operations))
-	i := 0
-	for _, operation := range operations {
-		ops_slice[i] = operation
-		i++
-	}
-	c.IndentedJSON(http.StatusOK, ops_slice)
-}
-
-func getDevOps(c *gin.Context) {
-	devops_slice := make([]devops, len(developer_operations))
-	i := 0
-	for _, developer_operation := range developer_operations {
-		devops_slice[i] = developer_operation
-		i++
-	}
-	c.IndentedJSON(http.StatusOK, devops_slice)
+	return base32.StdEncoding.EncodeToString(randomBytes)[:length]
 }
 
 func main() {

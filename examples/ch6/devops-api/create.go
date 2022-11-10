@@ -2,11 +2,9 @@ package main
 
 import (
 	"errors"
-
-	//"fmt"
-	"github.com/gin-gonic/gin"
-	//"io"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func newDevOps() (devops, error) {

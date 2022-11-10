@@ -2,9 +2,9 @@ package main
 
 import (
 	"errors"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 // functions to update resources//
