@@ -11,4 +11,4 @@ run go build
 
 expose 8080
 
-entrypoint [ "go", "run", "main.go" ]
+entrypoint [ "./devops-api" ]
