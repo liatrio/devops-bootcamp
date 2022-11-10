@@ -2,7 +2,7 @@
 export GIN_MODE=release
 
 run: main.go build
-	go run main.go
+	./devops-api
 
 build: main.go tidy fmt test
 	go build
