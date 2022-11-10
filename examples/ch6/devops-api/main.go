@@ -89,7 +89,13 @@ func getOp(c *gin.Context) {
 }
 
 func getDevOps(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, developer_operations)
+	devops_slice := make([]devops, len(developer_operations))
+	i := 0
+	for _, developer_operation := range developer_operations {
+		devops_slice[i] = developer_operation
+		i++
+	}
+	c.IndentedJSON(http.StatusOK, devops_slice)
 }
 
 func main() {
@@ -103,10 +109,10 @@ func main() {
 	//POST routes
 	router.POST("/engineers", postEngineer)
 	router.POST("/dev", postDev)
-	router.POST("/dev/:id", postDevEngineer)
-	router.POST("/op/:id", postOpEngineer)
 	router.POST("/op", postOp)
 	router.POST("/devops", postDevOps)
+	router.POST("/dev/:id", postDevEngineer)
+	router.POST("/op/:id", postOpEngineer)
 	router.POST("/devops/dev/:id", postDevOpsDev)
 	router.POST("/devops/op/:id", postDevOpsOp)
 	//PUT routes
@@ -118,6 +124,7 @@ func main() {
 	router.DELETE("/dev/:id", deleteRequestDev)
 	router.DELETE("/op/:id", deleteRequestOp)
 	router.DELETE("/devops/:id", deleteRequestDevOps)
+
 	//runs server
 	router.Run(":8080")
 }
