@@ -68,7 +68,14 @@ func getEngineer(c *gin.Context) {
 }
 
 func getDev(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, developers)
+	dev_slice := make([]dev, len(developers))
+
+	i := 0
+	for _, developer := range developers {
+		dev_slice[i] = developer
+		i++
+	}
+	c.IndentedJSON(http.StatusOK, dev_slice)
 }
 
 func getOp(c *gin.Context) {
