@@ -6,15 +6,20 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// server GET handlers
-func getEngineer(c *gin.Context) {
-	engineer_slice := make([]engineer, len(engineers))
+func mapToSlice(engineer_map map[string]engineer) []engineer {
+	engineer_slice := make([]engineer, len(engineer_map))
 
 	i := 0
-	for _, engineer := range engineers {
+	for _, engineer := range engineer_map {
 		engineer_slice[i] = engineer
 		i++
 	}
+	return engineer_slice
+}
+
+// server GET handlers
+func getEngineer(c *gin.Context) {
+	engineer_slice := mapToSlice(engineers)
 	c.IndentedJSON(http.StatusOK, engineer_slice)
 }
 
