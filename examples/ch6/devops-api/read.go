@@ -21,9 +21,9 @@ type ops_engineer struct {
 }
 
 type devops_list struct {
-	Id  string `json:"id"`
-	Dev []dev  `json:"dev"`
-	Ops []ops  `json:"ops"`
+	Id  string         `json:"id"`
+	Dev []dev_engineer `json:"dev"`
+	Ops []ops_engineer `json:"ops"`
 }
 
 /********** Conversion function to switch maps to slices for GET response ********/
@@ -64,6 +64,18 @@ func opsListConversion(ops_map map[string]ops) []ops_engineer {
 	return ops_slice
 }
 
+func devopsListConversion(devops_map map[string]devops) []devops_list {
+	devops_slice := make([]devops_list, len(devops_map))
+	i := 0
+	for _, developer_operation := range devops_map {
+		devops_slice[i].Id = developer_operation.Id
+		devops_slice[i].Dev = devListConversion(developer_operation.Dev)
+		devops_slice[i].Ops = opsListConversion(developer_operation.Ops)
+		i++
+	}
+	return devops_slice
+}
+
 /******************************************************/
 
 // server GET handlers
@@ -83,11 +95,6 @@ func getOp(c *gin.Context) {
 }
 
 func getDevOps(c *gin.Context) {
-	devops_slice := make([]devops, len(developer_operations))
-	i := 0
-	for _, developer_operation := range developer_operations {
-		devops_slice[i] = developer_operation
-		i++
-	}
+	devops_slice := devopsListConversion(developer_operations)
 	c.IndentedJSON(http.StatusOK, devops_slice)
 }
