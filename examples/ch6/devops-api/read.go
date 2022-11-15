@@ -6,6 +6,27 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// struct to contain engineer as a list inside a dev resource instead of map for GET response
+type dev_engineer struct {
+	Name      string     `json:"name"`
+	Id        string     `json:"id"`
+	Engineers []engineer `json:"engineers"`
+}
+
+// struct to contain engineer as a list inside a ops resource instead of map for GET response
+type ops_engineer struct {
+	Name      string     `json:"name"`
+	Id        string     `json:"id"`
+	Engineers []engineer `json:"engineers"`
+}
+
+type devops_list struct {
+	Id  string         `json:"id"`
+	Dev []dev_engineer `json:"dev"`
+	Ops []ops_engineer `json:"ops"`
+}
+
+/********** Conversion function to switch maps to slices for GET response ********/
 func mapToSlice(engineer_map map[string]engineer) []engineer {
 	engineer_slice := make([]engineer, len(engineer_map))
 
@@ -17,39 +38,118 @@ func mapToSlice(engineer_map map[string]engineer) []engineer {
 	return engineer_slice
 }
 
-// server GET handlers
+func devToDevEngineer(developer dev) dev_engineer {
+	var developer_engineer dev_engineer
+	developer_engineer.Name = developer.Name
+	developer_engineer.Id = developer.Id
+	developer_engineer.Engineers = mapToSlice(developer.Engineers)
+
+	return developer_engineer
+}
+
+func opsToOpsEngineer(operation ops) ops_engineer {
+	var operation_engineer ops_engineer
+	operation_engineer.Name = operation.Name
+	operation_engineer.Id = operation.Id
+	operation_engineer.Engineers = mapToSlice(operation.Engineers)
+
+	return operation_engineer
+}
+
+func devListConversion(dev_map map[string]dev) []dev_engineer {
+	dev_slice := make([]dev_engineer, len(dev_map))
+
+	i := 0
+	for _, developer := range dev_map {
+		dev_slice[i] = devToDevEngineer(developer)
+		i++
+	}
+	return dev_slice
+}
+
+func opsListConversion(ops_map map[string]ops) []ops_engineer {
+	ops_slice := make([]ops_engineer, len(ops_map))
+
+	i := 0
+	for _, operation := range ops_map {
+		ops_slice[i] = opsToOpsEngineer(operation)
+		i++
+	}
+	return ops_slice
+}
+
+func devopsListConversion(devops_map map[string]devops) []devops_list {
+	devops_slice := make([]devops_list, len(devops_map))
+	i := 0
+	for _, developer_operation := range devops_map {
+		devops_slice[i].Id = developer_operation.Id
+		devops_slice[i].Dev = devListConversion(developer_operation.Dev)
+		devops_slice[i].Ops = opsListConversion(developer_operation.Ops)
+		i++
+	}
+	return devops_slice
+}
+
+/******************************************************/
+
+func getSpecificEngineer(c *gin.Context) {
+	id := c.Param("id")
+
+	engineer, exists := engineers[id]
+
+	if !exists {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Engineer resource does not exist"})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, engineer)
+}
+
+func getSpecificDev(c *gin.Context) {
+	id := c.Param("id")
+
+	dev, exists := developers[id]
+
+	if !exists {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Developer resource does not exist"})
+		return
+	}
+
+	dev_slice := devToDevEngineer(dev)
+	c.IndentedJSON(http.StatusOK, dev_slice)
+}
+
+func getSpecificOps(c *gin.Context) {
+	id := c.Param("id")
+
+	ops, exists := operations[id]
+
+	if !exists {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Operations resource does not exist"})
+		return
+	}
+
+	ops_slice := opsToOpsEngineer(ops)
+	c.IndentedJSON(http.StatusOK, ops_slice)
+
+}
+
 func getEngineer(c *gin.Context) {
 	engineer_slice := mapToSlice(engineers)
 	c.IndentedJSON(http.StatusOK, engineer_slice)
 }
 
 func getDev(c *gin.Context) {
-	dev_slice := make([]dev, len(developers))
-
-	i := 0
-	for _, developer := range developers {
-		dev_slice[i] = developer
-		i++
-	}
+	dev_slice := devListConversion(developers)
 	c.IndentedJSON(http.StatusOK, dev_slice)
 }
 
 func getOp(c *gin.Context) {
-	ops_slice := make([]ops, len(operations))
-	i := 0
-	for _, operation := range operations {
-		ops_slice[i] = operation
-		i++
-	}
+	ops_slice := opsListConversion(operations)
 	c.IndentedJSON(http.StatusOK, ops_slice)
 }
 
 func getDevOps(c *gin.Context) {
-	devops_slice := make([]devops, len(developer_operations))
-	i := 0
-	for _, developer_operation := range developer_operations {
-		devops_slice[i] = developer_operation
-		i++
-	}
+	devops_slice := devopsListConversion(developer_operations)
 	c.IndentedJSON(http.StatusOK, devops_slice)
 }
