@@ -78,7 +78,19 @@ func devopsListConversion(devops_map map[string]devops) []devops_list {
 
 /******************************************************/
 
-// server GET handlers
+func getSpecificEngineer(c *gin.Context) {
+	id := c.Param("id")
+
+	engineer, exists := engineers[id]
+
+	if !exists {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Engineer does not exist"})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, engineer)
+}
+
 func getEngineer(c *gin.Context) {
 	engineer_slice := mapToSlice(engineers)
 	c.IndentedJSON(http.StatusOK, engineer_slice)

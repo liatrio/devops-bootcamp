@@ -57,6 +57,7 @@ func main() {
 
 	//GET routes
 	router.GET("/engineers", getEngineer)
+	router.GET("/engineers/:id", getSpecificEngineer)
 	router.GET("/dev", getDev)
 	router.GET("/op", getOp)
 	router.GET("/devops", getDevOps)
