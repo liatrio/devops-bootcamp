@@ -59,7 +59,9 @@ func main() {
 	router.GET("/engineers", getEngineer)
 	router.GET("/engineers/:id", getSpecificEngineer)
 	router.GET("/dev", getDev)
+	router.GET("/dev/:id", getSpecificDev)
 	router.GET("/op", getOp)
+	router.GET("/op/:id", getSpecificOps)
 	router.GET("/devops", getDevOps)
 	//POST routes
 	router.POST("/engineers", postEngineer)

@@ -38,14 +38,30 @@ func mapToSlice(engineer_map map[string]engineer) []engineer {
 	return engineer_slice
 }
 
+func devToDevEngineer(developer dev) dev_engineer {
+	var developer_engineer dev_engineer
+	developer_engineer.Name = developer.Name
+	developer_engineer.Id = developer.Id
+	developer_engineer.Engineers = mapToSlice(developer.Engineers)
+
+	return developer_engineer
+}
+
+func opsToOpsEngineer(operation ops) ops_engineer {
+	var operation_engineer ops_engineer
+	operation_engineer.Name = operation.Name
+	operation_engineer.Id = operation.Id
+	operation_engineer.Engineers = mapToSlice(operation.Engineers)
+
+	return operation_engineer
+}
+
 func devListConversion(dev_map map[string]dev) []dev_engineer {
 	dev_slice := make([]dev_engineer, len(dev_map))
 
 	i := 0
 	for _, developer := range dev_map {
-		dev_slice[i].Name = developer.Name
-		dev_slice[i].Id = developer.Id
-		dev_slice[i].Engineers = mapToSlice(developer.Engineers)
+		dev_slice[i] = devToDevEngineer(developer)
 		i++
 	}
 	return dev_slice
@@ -56,9 +72,7 @@ func opsListConversion(ops_map map[string]ops) []ops_engineer {
 
 	i := 0
 	for _, operation := range ops_map {
-		ops_slice[i].Name = operation.Name
-		ops_slice[i].Id = operation.Id
-		ops_slice[i].Engineers = mapToSlice(operation.Engineers)
+		ops_slice[i] = opsToOpsEngineer(operation)
 		i++
 	}
 	return ops_slice
@@ -84,11 +98,40 @@ func getSpecificEngineer(c *gin.Context) {
 	engineer, exists := engineers[id]
 
 	if !exists {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Engineer does not exist"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Engineer resource does not exist"})
 		return
 	}
 
 	c.IndentedJSON(http.StatusOK, engineer)
+}
+
+func getSpecificDev(c *gin.Context) {
+	id := c.Param("id")
+
+	dev, exists := developers[id]
+
+	if !exists {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Developer resource does not exist"})
+		return
+	}
+
+	dev_slice := devToDevEngineer(dev)
+	c.IndentedJSON(http.StatusOK, dev_slice)
+}
+
+func getSpecificOps(c *gin.Context) {
+	id := c.Param("id")
+
+	ops, exists := operations[id]
+
+	if !exists {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Operations resource does not exist"})
+		return
+	}
+
+	ops_slice := opsToOpsEngineer(ops)
+	c.IndentedJSON(http.StatusOK, ops_slice)
+
 }
 
 func getEngineer(c *gin.Context) {
