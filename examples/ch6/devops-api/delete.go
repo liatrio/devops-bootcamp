@@ -7,26 +7,64 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// functions to delete resources from other resources//
-func deleteEngineerFrom_Op(ops_id string, engineer_id string) (bool, error) {
+func removeEngineerElement(engineers []engineer, engineer_id string) ([]engineer, error) {
+	for i := range engineers {
+		if engineers[i].Id == engineer_id {
+			engineers[i] = engineers[len(engineers)-1]
+			return engineers[:len(engineers)-1], nil
+		}
+	}
+	return nil, errors.New("Engineer not found and not deleted")
+}
+func removeDevElement(devs []dev, dev_id string) ([]dev, error) {
+	for i := range devs {
+		if devs[i].Id == dev_id {
+			devs[i] = devs[len(devs)-1]
+			return devs[:len(devs)-1], nil
+		}
+	}
+	return nil, errors.New("Developer not found and not deleted")
+}
+func removeOpElement(ops []ops, op_id string) ([]ops, error) {
+	for i := range ops {
+		if ops[i].Id == op_id {
+			ops[i] = ops[len(ops)-1]
+			return ops[:len(ops)-1], nil
+		}
+	}
+	return nil, errors.New("Engineer not found and not deleted")
+}
 
-	_, exists := engineers[engineer_id]
-	if !exists {
+// functions to delete resources from other resources//
+func deleteEngineerFrom_Op(op_id string, engineer_id string) (bool, error) {
+
+	_, err := findEngineer_by_Id(engineer_id)
+	if err != nil {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-	op_val, exists := operations[ops_id]
-	if !exists {
+	op_val, err := findOp_by_Id(op_id)
+	if err != nil {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
-	_, exists = op_val.Engineers[engineer_id]
-	if !exists {
+	_, err = findEngineerInOp_by_Id(op_val, engineer_id)
+	if err != nil {
 		return false, errors.New(" Engineer doesn't exists inside specified Operations group ")
 	}
-	delete(operations[ops_id].Engineers, engineer_id)
-	for devops_key, devops_val := range developer_operations {
-		for key := range devops_val.Ops {
-			if key == ops_id {
-				delete(developer_operations[devops_key].Ops[ops_id].Engineers, engineer_id)
+	for i := range operations {
+		if operations[i].Id == op_id {
+			operations[i].Engineers, err = removeEngineerElement(operations[i].Engineers, engineer_id)
+			if err != nil {
+				return false, errors.New(" Error: " + err.Error())
+			}
+		}
+	}
+	for i := range developer_operations {
+		for j := range developer_operations[i].Ops {
+			if developer_operations[i].Ops[j].Id == op_id {
+				developer_operations[i].Ops[j].Engineers, err = removeEngineerElement(developer_operations[i].Ops[j].Engineers, engineer_id)
+				if err != nil {
+					return false, errors.New(" Error: " + err.Error())
+				}
 			}
 		}
 	}
@@ -37,23 +75,33 @@ func deleteEngineerFrom_Op(ops_id string, engineer_id string) (bool, error) {
 
 func deleteEngineerFrom_Dev(dev_id string, engineer_id string) (bool, error) {
 
-	_, exists := engineers[engineer_id]
-	if !exists {
+	_, err := findEngineer_by_Id(engineer_id)
+	if err != nil {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-	dev_val, exists := developers[dev_id]
-	if !exists {
-		return false, errors.New(" Operations group doesn't exist ")
+	dev_val, err := findDev_by_Id(dev_id)
+	if err != nil {
+		return false, errors.New(" Developer group doesn't exist ")
 	}
-	_, exists = dev_val.Engineers[engineer_id]
-	if !exists {
-		return false, errors.New(" Engineer doesnt exists inside specified Operations group ")
+	_, err = findEngineerInDev_by_Id(dev_val, engineer_id)
+	if err != nil {
+		return false, errors.New(" Engineer doesn't exists inside specified Developer group ")
 	}
-	delete(developers[dev_id].Engineers, engineer_id)
-	for devops_key, devops_val := range developer_operations {
-		for key := range devops_val.Dev {
-			if key == dev_id {
-				delete(developer_operations[devops_key].Dev[dev_id].Engineers, engineer_id)
+	for i := range developers {
+		if developers[i].Id == dev_id {
+			developers[i].Engineers, err = removeEngineerElement(developers[i].Engineers, engineer_id)
+			if err != nil {
+				return false, errors.New(" Error: " + err.Error())
+			}
+		}
+	}
+	for i := range developer_operations {
+		for j := range developer_operations[i].Dev {
+			if developer_operations[i].Dev[j].Id == dev_id {
+				developer_operations[i].Dev[j].Engineers, err = removeEngineerElement(developer_operations[i].Dev[j].Engineers, engineer_id)
+				if err != nil {
+					return false, errors.New(" Error: " + err.Error())
+				}
 			}
 		}
 	}
@@ -64,39 +112,56 @@ func deleteEngineerFrom_Dev(dev_id string, engineer_id string) (bool, error) {
 
 func deleteDevFrom_DevOps(devops_id string, dev_id string) (bool, error) {
 
-	_, exists := developers[dev_id]
-	if !exists {
+	_, err := findDev_by_Id(dev_id)
+	if err != nil {
 		return false, errors.New(" Developer group doesn't exist ")
 	}
-	devops_val, exists := developer_operations[devops_id]
-	if !exists {
+	devops_val, err := findDevOps_by_Id(devops_id)
+	if err != nil {
 		return false, errors.New(" Developer Oerations group doesn't exist ")
 	}
-	_, exists = devops_val.Dev[dev_id]
-	if !exists {
+	_, err = findDevInDevOps_by_Id(devops_val, dev_id)
+	if err != nil {
 		return false, errors.New(" Developer doesn't exists inside specified Developer Operations group ")
 	}
-	delete(developer_operations[devops_id].Dev, dev_id)
+
+	for i := range developer_operations {
+		if developer_operations[i].Id == devops_id {
+			developer_operations[i].Dev, err = removeDevElement(developer_operations[i].Dev, dev_id)
+			if err != nil {
+				return false, errors.New(" Error: " + err.Error())
+			}
+		}
+	}
 
 	return true, nil
 
 }
 
-func deleteOpFrom_DevOps(devops_id string, ops_id string) (bool, error) {
+func deleteOpFrom_DevOps(devops_id string, op_id string) (bool, error) {
 
-	_, exists := developers[ops_id]
-	if !exists {
-		return false, errors.New(" Developer group doesn't exist ")
+	_, err := findOp_by_Id(op_id)
+	if err != nil {
+		return false, errors.New(" Operations group doesn't exist ")
 	}
-	devops_val, exists := developer_operations[devops_id]
-	if !exists {
+	devops_val, err := findDevOps_by_Id(devops_id)
+	if err != nil {
 		return false, errors.New(" Developer Oerations group doesn't exist ")
 	}
-	_, exists = devops_val.Dev[ops_id]
-	if !exists {
-		return false, errors.New(" Developer doesn't exists inside specified Developer Operations group ")
+	_, err = findOpInDevOps_by_Id(devops_val, op_id)
+	if err != nil {
+		return false, errors.New(" Operations group doesn't exists inside specified Developer Operations group ")
 	}
-	delete(developer_operations[devops_id].Ops, ops_id)
+
+	for i := range developer_operations {
+		if developer_operations[i].Id == devops_id {
+			developer_operations[i].Ops, err = removeOpElement(developer_operations[i].Ops, op_id)
+			if err != nil {
+				return false, errors.New(" Error: " + err.Error())
+			}
+		}
+	}
+
 	return true, nil
 
 }
@@ -104,81 +169,74 @@ func deleteOpFrom_DevOps(devops_id string, ops_id string) (bool, error) {
 // **************************************************//
 // functions to delete resources//
 func deleteDevOps(devops_id string) (bool, error) {
-	_, exists := developer_operations[devops_id]
-	if !exists {
+	_, err := findDevOps_by_Id(devops_id)
+	if err != nil {
 		return false, errors.New(" Developer Oerations group doesn't exist ")
 	}
-	delete(developer_operations, devops_id)
+	for i := range developer_operations {
+		if developer_operations[i].Id == devops_id {
+			developer_operations[i] = developer_operations[len(developer_operations)-1]
+			developer_operations = developer_operations[:len(developer_operations)-1]
+		}
+	}
 	return true, nil
 }
 
 func deleteDev(dev_id string) (bool, error) {
-	_, exists := developers[dev_id]
-	if !exists {
+	_, err := findDev_by_Id(dev_id)
+	if err != nil {
 		return false, errors.New(" Developer group doesn't exist ")
 	}
-	for devops_key, devops_val := range developer_operations {
-		for key, _ := range devops_val.Dev {
-			if key == dev_id {
-				delete(developer_operations[devops_key].Dev, dev_id)
+	for i := range developers {
+		if developers[i].Id == dev_id {
+			developers, err = removeDevElement(developers, dev_id)
+		}
+	}
+	for i := range developer_operations {
+		for j := range developer_operations[i].Dev {
+			if developer_operations[i].Dev[j].Id == dev_id {
+				developer_operations[i].Dev, err = removeDevElement(developer_operations[i].Dev, dev_id)
+				if err != nil {
+					return false, errors.New(" Error: " + err.Error())
+				}
 			}
 		}
 	}
-	delete(developers, dev_id)
 	return true, nil
 }
 
-func deleteOp(ops_id string) (bool, error) {
-	_, exists := operations[ops_id]
-	if !exists {
+func deleteOp(op_id string) (bool, error) {
+	_, err := findOp_by_Id(op_id)
+	if err != nil {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
-	for devops_key, devops_val := range developer_operations {
-		for key, _ := range devops_val.Ops {
-			if key == ops_id {
-				delete(developer_operations[devops_key].Ops, ops_id)
+	for i := range operations {
+		if operations[i].Id == op_id {
+			operations, err = removeOpElement(operations, op_id)
+			if err != nil {
+				return false, errors.New(" Error: " + err.Error())
 			}
 		}
 	}
-	delete(operations, ops_id)
+	for i := range developer_operations {
+		for j := range developer_operations[i].Ops {
+			if developer_operations[i].Ops[j].Id == op_id {
+				developer_operations[i].Ops, err = removeOpElement(developer_operations[i].Ops, op_id)
+				if err != nil {
+					return false, errors.New(" Error: " + err.Error())
+				}
+			}
+		}
+	}
 	return true, nil
 }
 
 func deleteEngineer(engineer_id string) (bool, error) {
-	_, exists := engineers[engineer_id]
-	if !exists {
+	_, err := findEngineer_by_Id(engineer_id)
+	if err != nil {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-	for dev_key, dev_val := range developers {
-		for key := range dev_val.Engineers {
-			if key == engineer_id {
-				//delete(developer_operations[devops_key].Dev[dev_key].Engineers, engineer_id)
-				delete(developers[dev_val.Id].Engineers, engineer_id)
-				for devops_key, devops_val := range developer_operations {
-					_, exists := devops_val.Dev[dev_key]
-					if exists {
-						delete(developer_operations[devops_key].Dev[dev_key].Engineers, engineer_id)
-					}
-				}
-			}
-		}
-	}
-	for ops_key, ops_val := range operations {
-		for key := range ops_val.Engineers {
-			if key == engineer_id {
-				//delete(developer_operations[devops_key].Dev[dev_key].Engineers, engineer_id)
-				delete(operations[ops_val.Id].Engineers, engineer_id)
-				for devops_key, devops_val := range developer_operations {
-					_, exists := devops_val.Ops[ops_key]
-					if exists {
-						delete(developer_operations[devops_key].Ops[ops_key].Engineers, engineer_id)
-					}
-				}
-			}
-		}
-	}
 
-	delete(engineers, engineer_id)
 	return true, nil
 }
 

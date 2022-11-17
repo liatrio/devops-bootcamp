@@ -15,28 +15,28 @@ type engineer struct {
 }
 
 type dev struct {
-	Name      string              `json:"name"`
-	Id        string              `json:"id"`
-	Engineers map[string]engineer `json:"engineers"`
+	Name      string     `json:"name"`
+	Id        string     `json:"id"`
+	Engineers []engineer `json:"engineers"`
 }
 
 type ops struct {
-	Name      string              `json:"name"`
-	Id        string              `json:"id"`
-	Engineers map[string]engineer `json:"engineers"`
+	Name      string     `json:"name"`
+	Id        string     `json:"id"`
+	Engineers []engineer `json:"engineers"`
 }
 
 type devops struct {
-	Id  string         `json:"id"`
-	Dev map[string]dev `json:"dev"`
-	Ops map[string]ops `json:"ops"`
+	Id  string `json:"id"`
+	Dev []dev  `json:"dev"`
+	Ops []ops  `json:"ops"`
 }
 
 // Global maps to access our resources by id key
-var engineers = make(map[string]engineer)
-var developers = make(map[string]dev)
-var operations = make(map[string]ops)
-var developer_operations = make(map[string]devops)
+var engineers = make([]engineer, 0)
+var developers = make([]dev, 0)
+var operations = make([]ops, 0)
+var developer_operations = make([]devops, 0)
 
 func verifyEmail(email string) bool {
 	result, _ := regexp.MatchString("^([a-zA-Z]|[0-9])+@[a-z]+\\.[a-z]+(\\.[a-z]+)*$", email)
