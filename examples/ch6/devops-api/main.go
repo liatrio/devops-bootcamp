@@ -15,28 +15,28 @@ type engineer struct {
 }
 
 type dev struct {
-	Name      string     `json:"name"`
-	Id        string     `json:"id"`
-	Engineers []engineer `json:"engineers"`
+	Name      string      `json:"name"`
+	Id        string      `json:"id"`
+	Engineers []*engineer `json:"engineers"`
 }
 
 type ops struct {
-	Name      string     `json:"name"`
-	Id        string     `json:"id"`
-	Engineers []engineer `json:"engineers"`
+	Name      string      `json:"name"`
+	Id        string      `json:"id"`
+	Engineers []*engineer `json:"engineers"`
 }
 
 type devops struct {
 	Id  string `json:"id"`
-	Dev []dev  `json:"dev"`
-	Ops []ops  `json:"ops"`
+	Dev []*dev `json:"dev"`
+	Ops []*ops `json:"ops"`
 }
 
 // Global maps to access our resources by id key
-var engineers = make([]engineer, 0)
-var developers = make([]dev, 0)
-var operations = make([]ops, 0)
-var developer_operations = make([]devops, 0)
+var engineers = make([]*engineer, 0)
+var developers = make([]*dev, 0)
+var operations = make([]*ops, 0)
+var developer_operations = make([]*devops, 0)
 
 func verifyEmail(email string) bool {
 	result, _ := regexp.MatchString("^([a-zA-Z]|[0-9])+@[a-z]+\\.[a-z]+(\\.[a-z]+)*$", email)
@@ -73,15 +73,16 @@ func main() {
 	router.POST("/devops/dev/:id", postDevOpsDev)
 	router.POST("/devops/op/:id", postDevOpsOp)
 	//PUT routes
-	router.PUT("/engineers/:id", putEngineer)
-	router.PUT("/dev/:id", putDev)
-	router.PUT("/op/:id", putOp)
-	//DELETE routes
-	router.DELETE("/engineers/:id", deleteRequestEngineer)
-	router.DELETE("/dev/:id", deleteRequestDev)
-	router.DELETE("/op/:id", deleteRequestOp)
-	router.DELETE("/devops/:id", deleteRequestDevOps)
-
+	/*
+		router.PUT("/engineers/:id", putEngineer)
+		router.PUT("/dev/:id", putDev)
+		router.PUT("/op/:id", putOp)
+		//DELETE routes
+		router.DELETE("/engineers/:id", deleteRequestEngineer)
+		router.DELETE("/dev/:id", deleteRequestDev)
+		router.DELETE("/op/:id", deleteRequestOp)
+		router.DELETE("/devops/:id", deleteRequestDevOps)
+	*/
 	//runs server
 	router.Run(":8080")
 }

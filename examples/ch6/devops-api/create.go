@@ -7,132 +7,132 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func newDevOps() (devops, error) {
+func newDevOps() (*devops, error) {
 	devOpsGroup := devops{Id: getRandId(5)}
-	devOpsGroup.Ops = make([]ops, 0)
-	devOpsGroup.Dev = make([]dev, 0)
-	developer_operations = append(developer_operations, devOpsGroup)
-	return devOpsGroup, nil
+	devOpsGroup.Ops = make([]*ops, 0)
+	devOpsGroup.Dev = make([]*dev, 0)
+	developer_operations = append(developer_operations, &devOpsGroup)
+	return &devOpsGroup, nil
 }
 
-func newDev(name string) (dev, error) {
+func newDev(name string) (*dev, error) {
 	if name == "" {
-		return dev{}, errors.New(" Name cannot be empty ")
+		return nil, errors.New(" Name cannot be empty ")
 	}
 	for _, value := range developers {
 		if name == value.Name {
-			return dev{}, errors.New(" Dev group already exists ")
+			return nil, errors.New(" Dev group already exists ")
 		}
 	}
 	devGroup := dev{Name: name, Id: getRandId(5)}
-	devGroup.Engineers = make([]engineer, 0)
-	developers = append(developers, devGroup)
-	return devGroup, nil
+	devGroup.Engineers = make([]*engineer, 0)
+	developers = append(developers, &devGroup)
+	return &devGroup, nil
 }
 
-func newOp(name string) (ops, error) {
+func newOp(name string) (*ops, error) {
 	if name == "" {
-		return ops{}, errors.New(" Name cannot be empty ")
+		return nil, errors.New(" Name cannot be empty ")
 	}
 	for _, value := range operations {
 		if name == value.Name {
-			return ops{}, errors.New(" Operations group already exists ")
+			return nil, errors.New(" Operations group already exists ")
 		}
 	}
 	opGroup := ops{Name: name, Id: getRandId(5)}
-	opGroup.Engineers = make([]engineer, 0)
-	operations = append(operations, opGroup)
-	return opGroup, nil
+	opGroup.Engineers = make([]*engineer, 0)
+	operations = append(operations, &opGroup)
+	return &opGroup, nil
 }
 
-func newEngineer(name string, email string) (engineer, error) {
+func newEngineer(name string, email string) (*engineer, error) {
 	if name == "" {
-		return engineer{}, errors.New(" Name cannot be empty ")
+		return nil, errors.New(" Name cannot be empty ")
 	}
 	for _, value := range engineers {
 		if name == value.Name {
-			return engineer{}, errors.New(" Engineer already exists ")
+			return nil, errors.New(" Engineer already exists ")
 		}
 	}
 	if !verifyEmail(email) {
-		return engineer{}, errors.New(" Email is invalid ")
+		return nil, errors.New(" Email is invalid ")
 	}
 	p := engineer{Name: name, Id: getRandId(5)}
 	p.Email = email
-	engineers = append(engineers, p)
-	return p, nil
+	engineers = append(engineers, &p)
+	return &p, nil
 }
 
-func findEngineer_by_Id(engineer_id string) (engineer, error) {
+func findEngineer_by_Id(engineer_id string) (*engineer, error) {
 	for _, newEngineer := range engineers {
 		if newEngineer.Id == engineer_id {
 			return newEngineer, nil
 		}
 	}
-	return engineer{}, errors.New(" No engineer with that ID ")
+	return nil, errors.New(" No engineer with that ID ")
 }
 
-func findOp_by_Id(op_id string) (ops, error) {
+func findOp_by_Id(op_id string) (*ops, error) {
 	for _, newOp := range operations {
 		if newOp.Id == op_id {
 			return newOp, nil
 		}
 	}
-	return ops{}, errors.New(" No ops group with that ID ")
+	return nil, errors.New(" No ops group with that ID ")
 }
 
-func findDev_by_Id(dev_id string) (dev, error) {
+func findDev_by_Id(dev_id string) (*dev, error) {
 	for _, newDev := range developers {
 		if newDev.Id == dev_id {
 			return newDev, nil
 		}
 	}
-	return dev{}, errors.New(" No dev group with that ID ")
+	return nil, errors.New(" No dev group with that ID ")
 }
 
-func findDevOps_by_Id(devops_id string) (devops, error) {
+func findDevOps_by_Id(devops_id string) (*devops, error) {
 	for _, newDevOps := range developer_operations {
 		if newDevOps.Id == devops_id {
 			return newDevOps, nil
 		}
 	}
-	return devops{}, errors.New(" No devops group with that ID ")
+	return nil, errors.New(" No devops group with that ID ")
 }
 
-func findEngineerInOp_by_Id(op ops, engineer_id string) (engineer, error) {
+func findEngineerInOp_by_Id(op *ops, engineer_id string) (*engineer, error) {
 	for _, newEngineer := range op.Engineers {
 		if newEngineer.Id == engineer_id {
 			return newEngineer, nil
 		}
 	}
-	return engineer{}, errors.New(" No engineer with that ID in this ops group")
+	return nil, errors.New(" No engineer with that ID in this ops group")
 }
 
-func findEngineerInDev_by_Id(dev dev, engineer_id string) (engineer, error) {
+func findEngineerInDev_by_Id(dev *dev, engineer_id string) (*engineer, error) {
 	for _, newEngineer := range dev.Engineers {
 		if newEngineer.Id == engineer_id {
 			return newEngineer, nil
 		}
 	}
-	return engineer{}, errors.New(" No engineer with that ID in this dev group ")
+	return nil, errors.New(" No engineer with that ID in this dev group ")
 }
 
-func findDevInDevOps_by_Id(devops devops, dev_id string) (dev, error) {
+func findDevInDevOps_by_Id(devops *devops, dev_id string) (*dev, error) {
 	for _, newDev := range devops.Dev {
 		if newDev.Id == dev_id {
 			return newDev, nil
 		}
 	}
-	return dev{}, errors.New(" No dev with that ID in this devops group")
+	return nil, errors.New(" No dev with that ID in this devops group")
 }
 
-func findOpInDevOps_by_Id(devops devops, op_id string) (ops, error) {
+func findOpInDevOps_by_Id(devops *devops, op_id string) (*ops, error) {
 	for _, newOp := range devops.Ops {
 		if newOp.Id == op_id {
 			return newOp, nil
 		}
 	}
-	return ops{}, errors.New(" No op with that ID in this devops group")
+	return nil, errors.New(" No op with that ID in this devops group")
 }
 
 // functions to add resources to other resources//
@@ -150,22 +150,16 @@ func addEngineerTo_Op(ops_id string, engineer_id string) (bool, error) {
 	if err == nil {
 		return false, errors.New(" Engineer already exists inside specified Operations group ")
 	}
-	var engineer_index int
 	for i := range operations {
 		if operations[i].Id == ops_id {
-			for j := range operations[i].Engineers {
-				if operations[i].Engineers[j].Id == engineer_id {
-					operations[i].Engineers[j] = engineer_val
-					engineer_index = j
-				}
-			}
+			operations[i].Engineers = append(operations[i].Engineers, engineer_val)
 		}
 	}
 
 	for i := range developer_operations {
 		for j := range developer_operations[i].Ops {
 			if developer_operations[i].Ops[j].Id == ops_id {
-				developer_operations[i].Ops[j].Engineers[engineer_index] = engineer_val
+				developer_operations[i].Ops[j].Engineers = append(developer_operations[i].Ops[j].Engineers, engineer_val)
 			}
 		}
 	}
@@ -257,8 +251,8 @@ func addOpTo_DevOps(devops_id string, op_id string) (bool, error) {
 
 // server POST handlers
 func postEngineer(c *gin.Context) {
-	var jsonData engineer    //object that gets name and email from POST request
-	var curEngineer engineer //object recieved from newEngineer
+	var jsonData engineer     //object that gets name and email from POST request
+	var curEngineer *engineer //object recieved from newEngineer
 
 	err := c.BindJSON(&jsonData)
 
@@ -283,7 +277,7 @@ func postEngineer(c *gin.Context) {
 
 func postDev(c *gin.Context) {
 	var jsonData dev //object that gets dev data from POST request
-	var curDev dev   //object recieved from newDev
+	var curDev *dev  //object recieved from newDev
 
 	err := c.BindJSON(&jsonData)
 
@@ -307,7 +301,7 @@ func postDev(c *gin.Context) {
 
 func postOp(c *gin.Context) {
 	var jsonData ops //object that gets dev data from POST request
-	var curOp ops    //object recieved from newOp
+	var curOp *ops   //object recieved from newOp
 
 	err := c.BindJSON(&jsonData)
 

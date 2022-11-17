@@ -236,6 +236,28 @@ func deleteEngineer(engineer_id string) (bool, error) {
 	if err != nil {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
+	for i := range developer_operations {
+		for j := range developer_operations[i].Dev {
+			for k := range developer_operations[i].Dev[j].Engineers {
+				if developer_operations[i].Dev[j].Engineers[k].Id == engineer_id {
+					developer_operations[i].Dev[j].Engineers, err = removeEngineerElement(developer_operations[i].Dev[j].Engineers, engineer_id)
+					if err != nil {
+						return false, errors.New(" Error: " + err.Error())
+					}
+				}
+			}
+		}
+		for j := range developer_operations[i].Ops {
+			for k := range developer_operations[i].Ops[j].Engineers {
+				if developer_operations[i].Ops[j].Engineers[k].Id == engineer_id {
+					developer_operations[i].Ops[j].Engineers, err = removeEngineerElement(developer_operations[i].Ops[j].Engineers, engineer_id)
+					if err != nil {
+						return false, errors.New(" Error: " + err.Error())
+					}
+				}
+			}
+		}
+	}
 
 	return true, nil
 }

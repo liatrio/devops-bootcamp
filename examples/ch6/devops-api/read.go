@@ -27,6 +27,7 @@ type devops_list struct {
 }
 
 /********** Conversion function to switch maps to slices for GET response ********/
+/*
 func mapToSlice(engineer_map map[string]engineer) []engineer {
 	engineer_slice := make([]engineer, len(engineer_map))
 
@@ -89,15 +90,15 @@ func devopsListConversion(devops_map map[string]devops) []devops_list {
 	}
 	return devops_slice
 }
-
+*/
 /******************************************************/
 
 func getSpecificEngineer(c *gin.Context) {
 	id := c.Param("id")
 
-	engineer, exists := engineers[id]
+	engineer, err := findEngineer_by_Id(id)
 
-	if !exists {
+	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Engineer resource does not exist"})
 		return
 	}
@@ -108,48 +109,48 @@ func getSpecificEngineer(c *gin.Context) {
 func getSpecificDev(c *gin.Context) {
 	id := c.Param("id")
 
-	dev, exists := developers[id]
+	dev, err := findDev_by_Id(id)
 
-	if !exists {
+	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Developer resource does not exist"})
 		return
 	}
 
-	dev_slice := devToDevEngineer(dev)
-	c.IndentedJSON(http.StatusOK, dev_slice)
+	//dev_slice := devToDevEngineer(dev)
+	c.IndentedJSON(http.StatusOK, dev)
 }
 
 func getSpecificOps(c *gin.Context) {
 	id := c.Param("id")
 
-	ops, exists := operations[id]
+	ops, err := findOp_by_Id(id)
 
-	if !exists {
+	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Operations resource does not exist"})
 		return
 	}
 
-	ops_slice := opsToOpsEngineer(ops)
-	c.IndentedJSON(http.StatusOK, ops_slice)
+	//ops_slice := opsToOpsEngineer(ops)
+	c.IndentedJSON(http.StatusOK, ops)
 
 }
 
 func getEngineer(c *gin.Context) {
-	engineer_slice := mapToSlice(engineers)
-	c.IndentedJSON(http.StatusOK, engineer_slice)
+	//engineer_slice := mapToSlice(engineers)
+	c.IndentedJSON(http.StatusOK, engineers)
 }
 
 func getDev(c *gin.Context) {
-	dev_slice := devListConversion(developers)
-	c.IndentedJSON(http.StatusOK, dev_slice)
+	//dev_slice := devListConversion(developers)
+	c.IndentedJSON(http.StatusOK, developers)
 }
 
 func getOp(c *gin.Context) {
-	ops_slice := opsListConversion(operations)
-	c.IndentedJSON(http.StatusOK, ops_slice)
+	//ops_slice := opsListConversion(operations)
+	c.IndentedJSON(http.StatusOK, operations)
 }
 
 func getDevOps(c *gin.Context) {
-	devops_slice := devopsListConversion(developer_operations)
-	c.IndentedJSON(http.StatusOK, devops_slice)
+	//devops_slice := devopsListConversion(developer_operations)
+	c.IndentedJSON(http.StatusOK, developer_operations)
 }
