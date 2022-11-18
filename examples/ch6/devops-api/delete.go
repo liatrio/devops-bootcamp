@@ -14,7 +14,7 @@ func removeEngineerElement(engineers []*engineer, engineer_id string) ([]*engine
 			return engineers[:len(engineers)-1], nil
 		}
 	}
-	return nil, errors.New("Engineer not found and not deleted")
+	return nil, errors.New("engineer not found and not deleted")
 }
 func removeDevElement(devs []*dev, dev_id string) ([]*dev, error) {
 	for i := range devs {
@@ -23,7 +23,7 @@ func removeDevElement(devs []*dev, dev_id string) ([]*dev, error) {
 			return devs[:len(devs)-1], nil
 		}
 	}
-	return nil, errors.New("Developer not found and not deleted")
+	return nil, errors.New("developer not found and not deleted")
 }
 func removeOpElement(ops []*ops, op_id string) ([]*ops, error) {
 	for i := range ops {
@@ -32,7 +32,7 @@ func removeOpElement(ops []*ops, op_id string) ([]*ops, error) {
 			return ops[:len(ops)-1], nil
 		}
 	}
-	return nil, errors.New("Engineer not found and not deleted")
+	return nil, errors.New("engineer not found and not deleted")
 }
 
 // functions to delete resources from other resources//

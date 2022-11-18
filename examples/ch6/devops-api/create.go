@@ -304,12 +304,13 @@ func postDev(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	dev, err := findDev_by_Id(curDev.Id)
+	/*dev, err := findDev_by_Id(curDev.Id)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.IndentedJSON(http.StatusCreated, dev)
+	*/
+	c.IndentedJSON(http.StatusCreated, curDev)
 }
 
 func postOp(c *gin.Context) {
