@@ -26,17 +26,16 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 	return true, nil
 }
 
-func updateDev(dev_id string, name string) (bool, error) {
-	if name == "" {
+func updateDev(newDev dev) (bool, error) {
+	if newDev.Name == "" {
 		return false, errors.New(" Name cannot be empty ")
 	}
 	//For global dev map
-	dev, err := findDev_by_Id(dev_id)
-	if err == nil {
-		dev.Name = name
-	} else {
+	dev, err := findDev_by_Id(newDev.Id)
+	if err != nil || dev == nil {
 		return false, errors.New(" Doesn't exist in the developers group")
 	}
+	dev = &newDev
 	return true, nil
 }
 
@@ -97,7 +96,7 @@ func putDev(c *gin.Context) {
 		return
 	}
 
-	_, err = updateDev(id, jsonData.Name)
+	_, err = updateDev(jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return

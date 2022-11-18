@@ -7,42 +7,71 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func newDevOps() (*devops, error) {
+func newDevOps(newDevOps devops) (*devops, error) {
 	devOpsGroup := devops{Id: getRandId(5)}
 	devOpsGroup.Ops = make([]*ops, 0)
 	devOpsGroup.Dev = make([]*dev, 0)
+	for _, newDev := range newDevOps.Dev {
+		dev, err := findDev_by_Id(newDev.Id)
+		if err != nil {
+			return nil, errors.New(" Dev group doesnt exists ")
+		}
+		devOpsGroup.Dev = append(devOpsGroup.Dev, dev)
+	}
+	for _, newOp := range newDevOps.Ops {
+		op, err := findOp_by_Id(newOp.Id)
+		if err != nil {
+			return nil, errors.New(" Ops group doesnt exists ")
+		}
+		devOpsGroup.Ops = append(devOpsGroup.Ops, op)
+	}
 	developer_operations = append(developer_operations, &devOpsGroup)
 	return &devOpsGroup, nil
 }
 
-func newDev(name string) (*dev, error) {
-	if name == "" {
+func newDev(newDev dev) (*dev, error) {
+	if newDev.Name == "" {
 		return nil, errors.New(" Name cannot be empty ")
 	}
 	for _, value := range developers {
-		if name == value.Name {
+		if newDev.Name == value.Name {
 			return nil, errors.New(" Dev group already exists ")
 		}
 	}
-	devGroup := dev{Name: name, Id: getRandId(5)}
+	devGroup := dev{Name: newDev.Name, Id: getRandId(5)}
 	devGroup.Engineers = make([]*engineer, 0)
+	for _, eng := range newDev.Engineers {
+		newEngineer, err := findEngineer_by_Id(eng.Id)
+		if err != nil {
+			return nil, errors.New(" engineer doesnt exists ")
+		}
+		devGroup.Engineers = append(devGroup.Engineers, newEngineer)
+	}
+
 	developers = append(developers, &devGroup)
 	return &devGroup, nil
 }
 
-func newOp(name string) (*ops, error) {
-	if name == "" {
+func newOp(newOp ops) (*ops, error) {
+	if newOp.Name == "" {
 		return nil, errors.New(" Name cannot be empty ")
 	}
 	for _, value := range operations {
-		if name == value.Name {
-			return nil, errors.New(" Operations group already exists ")
+		if newOp.Name == value.Name {
+			return nil, errors.New(" Ops group already exists ")
 		}
 	}
-	opGroup := ops{Name: name, Id: getRandId(5)}
-	opGroup.Engineers = make([]*engineer, 0)
-	operations = append(operations, &opGroup)
-	return &opGroup, nil
+	opsGroup := ops{Name: newOp.Name, Id: getRandId(5)}
+	opsGroup.Engineers = make([]*engineer, 0)
+	for _, eng := range newOp.Engineers {
+		_, err := addEngineerTo_Op(opsGroup.Id, eng.Id)
+		if err != nil {
+			return nil, errors.New(" Failed to add Engineer with id " + eng.Id + " to ops group, will not create ops group")
+		}
+	}
+
+	operations = append(operations, &opsGroup)
+	return &opsGroup, nil
 }
 
 func newEngineer(name string, email string) (*engineer, error) {
@@ -270,7 +299,7 @@ func postDev(c *gin.Context) {
 		return
 	}
 
-	curDev, err = newDev(jsonData.Name)
+	curDev, err = newDev(jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -294,7 +323,7 @@ func postOp(c *gin.Context) {
 		return
 	}
 
-	curOp, err = newOp(jsonData.Name)
+	curOp, err = newOp(jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -309,7 +338,13 @@ func postOp(c *gin.Context) {
 }
 
 func postDevOps(c *gin.Context) {
-	curDevOps, err := newDevOps()
+	var jsonData devops
+	err := c.BindJSON(&jsonData)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	curDevOps, err := newDevOps(jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
