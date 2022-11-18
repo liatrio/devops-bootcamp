@@ -156,14 +156,6 @@ func addEngineerTo_Op(ops_id string, engineer_id string) (bool, error) {
 		}
 	}
 
-	for i := range developer_operations {
-		for j := range developer_operations[i].Ops {
-			if developer_operations[i].Ops[j].Id == ops_id {
-				developer_operations[i].Ops[j].Engineers = append(developer_operations[i].Ops[j].Engineers, engineer_val)
-			}
-		}
-	}
-
 	return true, nil
 
 }
@@ -186,14 +178,6 @@ func addEngineerTo_Dev(dev_id string, engineer_id string) (bool, error) {
 	for i := range developers {
 		if developers[i].Id == dev_id {
 			developers[i].Engineers = append(developers[i].Engineers, engineer_val)
-		}
-	}
-
-	for i := range developer_operations {
-		for j := range developer_operations[i].Dev {
-			if developer_operations[i].Dev[j].Id == dev_id {
-				developer_operations[i].Dev[j].Engineers = append(developer_operations[i].Dev[j].Engineers, engineer_val)
-			}
 		}
 	}
 

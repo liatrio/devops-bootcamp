@@ -73,16 +73,16 @@ func main() {
 	router.POST("/devops/dev/:id", postDevOpsDev)
 	router.POST("/devops/op/:id", postDevOpsOp)
 	//PUT routes
-	/*
-		router.PUT("/engineers/:id", putEngineer)
-		router.PUT("/dev/:id", putDev)
-		router.PUT("/op/:id", putOp)
-		//DELETE routes
-		router.DELETE("/engineers/:id", deleteRequestEngineer)
-		router.DELETE("/dev/:id", deleteRequestDev)
-		router.DELETE("/op/:id", deleteRequestOp)
-		router.DELETE("/devops/:id", deleteRequestDevOps)
-	*/
+
+	router.PUT("/engineers/:id", putEngineer)
+	router.PUT("/dev/:id", putDev)
+	router.PUT("/op/:id", putOp)
+	//DELETE routes
+	router.DELETE("/engineers/:id", deleteRequestEngineer)
+	router.DELETE("/dev/:id", deleteRequestDev)
+	router.DELETE("/op/:id", deleteRequestOp)
+	router.DELETE("/devops/:id", deleteRequestDevOps)
+
 	//runs server
 	router.Run(":8080")
 }

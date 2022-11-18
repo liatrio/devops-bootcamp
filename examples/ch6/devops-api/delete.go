@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func removeEngineerElement(engineers []engineer, engineer_id string) ([]engineer, error) {
+func removeEngineerElement(engineers []*engineer, engineer_id string) ([]*engineer, error) {
 	for i := range engineers {
 		if engineers[i].Id == engineer_id {
 			engineers[i] = engineers[len(engineers)-1]
@@ -16,7 +16,7 @@ func removeEngineerElement(engineers []engineer, engineer_id string) ([]engineer
 	}
 	return nil, errors.New("Engineer not found and not deleted")
 }
-func removeDevElement(devs []dev, dev_id string) ([]dev, error) {
+func removeDevElement(devs []*dev, dev_id string) ([]*dev, error) {
 	for i := range devs {
 		if devs[i].Id == dev_id {
 			devs[i] = devs[len(devs)-1]
@@ -25,7 +25,7 @@ func removeDevElement(devs []dev, dev_id string) ([]dev, error) {
 	}
 	return nil, errors.New("Developer not found and not deleted")
 }
-func removeOpElement(ops []ops, op_id string) ([]ops, error) {
+func removeOpElement(ops []*ops, op_id string) ([]*ops, error) {
 	for i := range ops {
 		if ops[i].Id == op_id {
 			ops[i] = ops[len(ops)-1]
@@ -236,27 +236,29 @@ func deleteEngineer(engineer_id string) (bool, error) {
 	if err != nil {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-	for i := range developer_operations {
-		for j := range developer_operations[i].Dev {
-			for k := range developer_operations[i].Dev[j].Engineers {
-				if developer_operations[i].Dev[j].Engineers[k].Id == engineer_id {
-					developer_operations[i].Dev[j].Engineers, err = removeEngineerElement(developer_operations[i].Dev[j].Engineers, engineer_id)
-					if err != nil {
-						return false, errors.New(" Error: " + err.Error())
-					}
+	for i := range developers {
+		for j := range developers[i].Engineers {
+			if developers[i].Engineers[j].Id == engineer_id {
+				developers[i].Engineers, err = removeEngineerElement(developers[i].Engineers, engineer_id)
+				if err != nil {
+					return false, errors.New(" Error: " + err.Error())
 				}
 			}
 		}
-		for j := range developer_operations[i].Ops {
-			for k := range developer_operations[i].Ops[j].Engineers {
-				if developer_operations[i].Ops[j].Engineers[k].Id == engineer_id {
-					developer_operations[i].Ops[j].Engineers, err = removeEngineerElement(developer_operations[i].Ops[j].Engineers, engineer_id)
-					if err != nil {
-						return false, errors.New(" Error: " + err.Error())
-					}
+	}
+	for i := range operations {
+		for j := range operations[i].Engineers {
+			if operations[i].Engineers[j].Id == engineer_id {
+				operations[i].Engineers, err = removeEngineerElement(operations[i].Engineers, engineer_id)
+				if err != nil {
+					return false, errors.New(" Error: " + err.Error())
 				}
 			}
 		}
+	}
+	engineers, err = removeEngineerElement(engineers, engineer_id)
+	if err != nil {
+		return false, errors.New(" Error: " + err.Error())
 	}
 
 	return true, nil
