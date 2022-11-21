@@ -63,6 +63,7 @@ func main() {
 	router.GET("/op", getOp)
 	router.GET("/op/:id", getSpecificOps)
 	router.GET("/devops", getDevOps)
+	router.GET("/devops/:id", getSpecificDevOps)
 	//POST routes
 	router.POST("/engineers", postEngineer)
 	router.POST("/dev", postDev)
@@ -77,6 +78,8 @@ func main() {
 	router.PUT("/engineers/:id", putEngineer)
 	router.PUT("/dev/:id", putDev)
 	router.PUT("/op/:id", putOp)
+	router.PUT("/devops/:id", putDevOps)
+
 	//DELETE routes
 	router.DELETE("/engineers/:id", deleteRequestEngineer)
 	router.DELETE("/dev/:id", deleteRequestDev)

@@ -61,6 +61,30 @@ func updateOps(op_id string, name string) (bool, error) {
 
 	return true, nil
 }
+func updateDevOps(id string, newDevOps devops) (bool, error) {
+	//For global dev map
+	devops, err := findDevOps_by_Id(id)
+	if err != nil {
+		return false, errors.New(" Doesn't exist in the developer_operations group")
+	}
+	devops.Dev = []*dev{}
+	devops.Ops = []*ops{}
+	for _, dev := range newDevOps.Dev {
+		newDev, err := findDev_by_Id(dev.Id)
+		if err != nil {
+			return false, errors.New(" updatedevops:dev, couldnt find dev in global array")
+		}
+		devops.Dev = append(devops.Dev, newDev)
+	}
+	for _, ops := range newDevOps.Ops {
+		newOp, err := findOp_by_Id(ops.Id)
+		if err != nil {
+			return false, errors.New(" updatedevops:ops, couldnt find op in global array")
+		}
+		devops.Ops = append(devops.Ops, newOp)
+	}
+	return true, nil
+}
 
 /*
 func updateDevOps(devops_id string) (bool, error) {
@@ -139,4 +163,27 @@ func putOp(c *gin.Context) {
 	}
 
 	c.IndentedJSON(http.StatusOK, op)
+}
+
+func putDevOps(c *gin.Context) {
+	id := c.Param("id")
+	var jsonData devops
+	err := c.ShouldBindJSON(&jsonData)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	_, err = updateDevOps(id, jsonData)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	devops, err := findDevOps_by_Id(id)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, devops)
 }

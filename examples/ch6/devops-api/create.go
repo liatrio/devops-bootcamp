@@ -58,16 +58,17 @@ func newOp(newOp ops) (*ops, error) {
 	}
 	for _, value := range operations {
 		if newOp.Name == value.Name {
-			return nil, errors.New(" Ops group already exists ")
+			return nil, errors.New(" Dev group already exists ")
 		}
 	}
 	opsGroup := ops{Name: newOp.Name, Id: getRandId(5)}
 	opsGroup.Engineers = make([]*engineer, 0)
 	for _, eng := range newOp.Engineers {
-		_, err := addEngineerTo_Op(opsGroup.Id, eng.Id)
+		newEngineer, err := findEngineer_by_Id(eng.Id)
 		if err != nil {
-			return nil, errors.New(" Failed to add Engineer with id " + eng.Id + " to ops group, will not create ops group")
+			return nil, errors.New(" engineer doesnt exists ")
 		}
+		opsGroup.Engineers = append(opsGroup.Engineers, newEngineer)
 	}
 
 	operations = append(operations, &opsGroup)

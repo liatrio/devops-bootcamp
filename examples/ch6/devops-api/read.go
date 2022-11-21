@@ -6,26 +6,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// struct to contain engineer as a list inside a dev resource instead of map for GET response
-type dev_engineer struct {
-	Name      string     `json:"name"`
-	Id        string     `json:"id"`
-	Engineers []engineer `json:"engineers"`
-}
-
-// struct to contain engineer as a list inside a ops resource instead of map for GET response
-type ops_engineer struct {
-	Name      string     `json:"name"`
-	Id        string     `json:"id"`
-	Engineers []engineer `json:"engineers"`
-}
-
-type devops_list struct {
-	Id  string         `json:"id"`
-	Dev []dev_engineer `json:"dev"`
-	Ops []ops_engineer `json:"ops"`
-}
-
 /********** Conversion function to switch maps to slices for GET response ********/
 /*
 func mapToSlice(engineer_map map[string]engineer) []engineer {
@@ -132,6 +112,21 @@ func getSpecificOps(c *gin.Context) {
 
 	//ops_slice := opsToOpsEngineer(ops)
 	c.IndentedJSON(http.StatusOK, ops)
+
+}
+
+func getSpecificDevOps(c *gin.Context) {
+	id := c.Param("id")
+
+	devops, err := findDevOps_by_Id(id)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "DevOps resource does not exist"})
+		return
+	}
+
+	//ops_slice := opsToOpsEngineer(ops)
+	c.IndentedJSON(http.StatusOK, devops)
 
 }
 

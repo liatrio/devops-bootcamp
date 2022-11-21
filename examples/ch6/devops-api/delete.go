@@ -10,6 +10,10 @@ import (
 func removeEngineerElement(engineers []*engineer, engineer_id string) ([]*engineer, error) {
 	for i := range engineers {
 		if engineers[i].Id == engineer_id {
+			if len(engineers) == 1 {
+				var empty []*engineer
+				return empty, nil
+			}
 			engineers[i] = engineers[len(engineers)-1]
 			return engineers[:len(engineers)-1], nil
 		}
@@ -189,7 +193,13 @@ func deleteDev(dev_id string) (bool, error) {
 	}
 	for i := range developers {
 		if developers[i].Id == dev_id {
+			if len(developers) == 1 {
+				developers = []*dev{}
+			}
 			developers, err = removeDevElement(developers, dev_id)
+			if err != nil {
+				return false, errors.New(" error deleting dev element ")
+			}
 		}
 	}
 	for i := range developer_operations {
@@ -212,6 +222,9 @@ func deleteOp(op_id string) (bool, error) {
 	}
 	for i := range operations {
 		if operations[i].Id == op_id {
+			if len(operations) == 1 {
+				operations = []*ops{}
+			}
 			operations, err = removeOpElement(operations, op_id)
 			if err != nil {
 				return false, errors.New(" Error: " + err.Error())
