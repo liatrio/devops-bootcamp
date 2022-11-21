@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"io"
 	"net/http"
@@ -94,8 +93,8 @@ var verifyPutDev = []requestDevTest{
 }
 
 var verifyDeleteDev = []requestDevTest{
-	//requestDevTest{"should delete nothing and fail", dev{Name: "failed", Id: "40"}, http.StatusBadRequest},
-	//requestDevTest{"should delete nothing and fail since no id", dev{Name: "NoId"}, http.StatusBadRequest},
+	requestDevTest{"should delete nothing and fail", dev{Name: "failed", Id: "40"}, http.StatusBadRequest},
+	requestDevTest{"should delete nothing and fail since no id", dev{Name: "NoId"}, http.StatusBadRequest},
 	requestDevTest{"should delete test developer resource and pass", dev{Id: "4"}, http.StatusOK},
 	requestDevTest{"duplicate this should fail", dev{Id: "4"}, http.StatusBadRequest},
 }
@@ -272,6 +271,7 @@ func TestPostEngineer(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
+	engineers = nil
 }
 
 func TestPutEngineer(t *testing.T) {
@@ -291,6 +291,7 @@ func TestPutEngineer(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
+	engineers = nil
 }
 
 func TestDeleteRequestEngineer(t *testing.T) {
@@ -310,6 +311,7 @@ func TestDeleteRequestEngineer(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
+	engineers = nil
 }
 
 /********************************************/
@@ -331,6 +333,7 @@ func TestPostDev(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
+	developers = nil
 }
 
 func TestPutDev(t *testing.T) {
@@ -350,6 +353,7 @@ func TestPutDev(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
+	developers = nil
 }
 
 func TestDeleteRequestDev(t *testing.T) {
@@ -368,9 +372,8 @@ func TestDeleteRequestDev(t *testing.T) {
 		if test.expected != w.Code {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
-		fmt.Println(len(developers))
-		fmt.Println(developers[3])
 	}
+	developers = nil
 }
 
 /********************************************/
@@ -392,6 +395,7 @@ func TestPostOp(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
+	operations = nil
 }
 
 func TestPutOp(t *testing.T) {
@@ -411,6 +415,7 @@ func TestPutOp(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
+	operations = nil
 }
 
 func TestDeleteRequestOp(t *testing.T) {
@@ -430,6 +435,7 @@ func TestDeleteRequestOp(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
+	operations = nil
 }
 
 /********************************************/
@@ -449,10 +455,9 @@ func TestNewEngineerBadName(t *testing.T) {
 	if err == nil {
 		t.Errorf("Expected name %s was not returned", result.Name)
 	}
-	if result != (&engineer{}) {
+	if result != nil {
 		t.Errorf("Expected empty struct but one was not returned")
 	}
-
 }
 
 func TestNewDev(t *testing.T) {
@@ -465,6 +470,7 @@ func TestNewDev(t *testing.T) {
 		t.Errorf("Expected no errors but one was returned")
 	}
 }
+
 func TestNewDevBadName(t *testing.T) {
 	_, err := newDev(dev{Name: ""})
 	if err == nil {
