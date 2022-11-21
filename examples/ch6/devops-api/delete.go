@@ -16,6 +16,7 @@ func removeEngineerElement(engineers []*engineer, engineer_id string) ([]*engine
 	}
 	return nil, errors.New("engineer not found and not deleted")
 }
+
 func removeDevElement(devs []*dev, dev_id string) ([]*dev, error) {
 	for i := range devs {
 		if devs[i].Id == dev_id {
@@ -23,8 +24,9 @@ func removeDevElement(devs []*dev, dev_id string) ([]*dev, error) {
 			return devs[:len(devs)-1], nil
 		}
 	}
-	return nil, errors.New("developer not found and not deleted")
+	return devs, errors.New("developer not found and not deleted")
 }
+
 func removeOpElement(ops []*ops, op_id string) ([]*ops, error) {
 	for i := range ops {
 		if ops[i].Id == op_id {
@@ -190,6 +192,9 @@ func deleteDev(dev_id string) (bool, error) {
 	for i := range developers {
 		if developers[i].Id == dev_id {
 			developers, err = removeDevElement(developers, dev_id)
+			if err != nil {
+				return false, err
+			}
 		}
 	}
 	for i := range developer_operations {
