@@ -6,37 +6,14 @@ import (
 	"regexp"
 
 	"github.com/gin-gonic/gin"
+	"resource"
 )
 
-type engineer struct {
-	Name  string `json:"name"`
-	Id    string `json:"id"`
-	Email string `json:"email"`
-}
-
-type dev struct {
-	Name      string      `json:"name"`
-	Id        string      `json:"id"`
-	Engineers []*engineer `json:"engineers"`
-}
-
-type ops struct {
-	Name      string      `json:"name"`
-	Id        string      `json:"id"`
-	Engineers []*engineer `json:"engineers"`
-}
-
-type devops struct {
-	Id  string `json:"id"`
-	Dev []*dev `json:"dev"`
-	Ops []*ops `json:"ops"`
-}
-
 // Global maps to access our resources by id key
-var engineers = make([]*engineer, 0)
-var developers = make([]*dev, 0)
-var operations = make([]*ops, 0)
-var developer_operations = make([]*devops, 0)
+var engineers = make([]*resource.Engineer, 0)
+var developers = make([]*resource.Dev, 0)
+var operations = make([]*resource.Ops, 0)
+var developer_operations = make([]*resource.DevOps, 0)
 
 func verifyEmail(email string) bool {
 	result, _ := regexp.MatchString("^([a-zA-Z]|[0-9])+@[a-z]+\\.[a-z]+(\\.[a-z]+)*$", email)
@@ -68,6 +45,7 @@ func main() {
 	router.GET("/op/name/:name", getSpecificOpsByName)
 	router.GET("/devops", getDevOps)
 	router.GET("/devops/:id", getSpecificDevOpsById)
+
 	//POST routes
 	router.POST("/engineers", postEngineer)
 	router.POST("/dev", postDev)
@@ -77,8 +55,8 @@ func main() {
 	router.POST("/op/:id", postOpEngineer)
 	router.POST("/devops/dev/:id", postDevOpsDev)
 	router.POST("/devops/op/:id", postDevOpsOp)
-	//PUT routes
 
+	//PUT routes
 	router.PUT("/engineers/:id", putEngineer)
 	router.PUT("/dev/:id", putDev)
 	router.PUT("/op/:id", putOp)

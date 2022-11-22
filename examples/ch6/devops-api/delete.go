@@ -5,13 +5,14 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"resource"
 )
 
-func removeEngineerElement(engineers []*engineer, engineer_id string) ([]*engineer, error) {
+func removeEngineerElement(engineers []*resource.Engineer, engineer_id string) ([]*resource.Engineer, error) {
 	for i := range engineers {
 		if engineers[i].Id == engineer_id {
 			if len(engineers) == 1 {
-				var empty []*engineer
+				var empty []*resource.Engineer
 				return empty, nil
 			}
 			engineers[i] = engineers[len(engineers)-1]
@@ -21,7 +22,7 @@ func removeEngineerElement(engineers []*engineer, engineer_id string) ([]*engine
 	return nil, errors.New("engineer not found and not deleted")
 }
 
-func removeDevElement(devs []*dev, dev_id string) ([]*dev, error) {
+func removeDevElement(devs []*resource.Dev, dev_id string) ([]*resource.Dev, error) {
 	for i := range devs {
 		if devs[i].Id == dev_id {
 			devs[i] = devs[len(devs)-1]
@@ -31,7 +32,7 @@ func removeDevElement(devs []*dev, dev_id string) ([]*dev, error) {
 	return nil, errors.New("developer not found and not deleted")
 }
 
-func removeOpElement(ops []*ops, op_id string) ([]*ops, error) {
+func removeOpElement(ops []*resource.Ops, op_id string) ([]*resource.Ops, error) {
 	for i := range ops {
 		if ops[i].Id == op_id {
 			ops[i] = ops[len(ops)-1]
@@ -196,7 +197,7 @@ func deleteDev(dev_id string) (bool, error) {
 	for i := range developers {
 		if developers[i].Id == dev_id {
 			if len(developers) == 1 {
-				developers = []*dev{}
+				developers = []*resource.Dev{}
 			} else {
 				developers, err = removeDevElement(developers, dev_id)
 				if err != nil {
@@ -226,7 +227,7 @@ func deleteOp(op_id string) (bool, error) {
 	for i := range operations {
 		if operations[i].Id == op_id {
 			if len(operations) == 1 {
-				operations = []*ops{}
+				operations = []*resource.Ops{}
 			} else {
 				operations, err = removeOpElement(operations, op_id)
 				if err != nil {
