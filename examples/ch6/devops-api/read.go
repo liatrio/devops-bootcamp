@@ -80,7 +80,7 @@ func findEngineer_by_Name(engineer_name string) (*engineer, error) {
 			return newEngineer, nil
 		}
 	}
-	return nil, errors.New(" no engineer with that name ")
+	return nil, errors.New(" no engineer with the name ")
 }
 
 func findEngineer_by_Email(engineer_email string) (*engineer, error) {
