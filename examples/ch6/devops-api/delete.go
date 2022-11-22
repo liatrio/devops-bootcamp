@@ -28,7 +28,7 @@ func removeDevElement(devs []*dev, dev_id string) ([]*dev, error) {
 			return devs[:len(devs)-1], nil
 		}
 	}
-	return devs, errors.New("developer not found and not deleted")
+	return nil, errors.New("developer not found and not deleted")
 }
 
 func removeOpElement(ops []*ops, op_id string) ([]*ops, error) {
@@ -197,10 +197,11 @@ func deleteDev(dev_id string) (bool, error) {
 		if developers[i].Id == dev_id {
 			if len(developers) == 1 {
 				developers = []*dev{}
-			}
-			developers, err = removeDevElement(developers, dev_id)
-			if err != nil {
-				return false, err
+			} else {
+				developers, err = removeDevElement(developers, dev_id)
+				if err != nil {
+					return false, err
+				}
 			}
 		}
 	}
@@ -226,10 +227,11 @@ func deleteOp(op_id string) (bool, error) {
 		if operations[i].Id == op_id {
 			if len(operations) == 1 {
 				operations = []*ops{}
-			}
-			operations, err = removeOpElement(operations, op_id)
-			if err != nil {
-				return false, errors.New(" Error: " + err.Error())
+			} else {
+				operations, err = removeOpElement(operations, op_id)
+				if err != nil {
+					return false, errors.New(" Error: " + err.Error())
+				}
 			}
 		}
 	}
