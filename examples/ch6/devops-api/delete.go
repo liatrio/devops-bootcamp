@@ -181,6 +181,10 @@ func deleteDevOps(devops_id string) (bool, error) {
 	}
 	for i := range developer_operations {
 		if developer_operations[i].Id == devops_id {
+			if len(developer_operations) == 1 {
+				developer_operations = []*devops{}
+				return true, nil
+			}
 			developer_operations[i] = developer_operations[len(developer_operations)-1]
 			developer_operations = developer_operations[:len(developer_operations)-1]
 		}
