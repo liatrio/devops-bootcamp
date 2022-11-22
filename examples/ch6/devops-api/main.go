@@ -57,13 +57,17 @@ func main() {
 
 	//GET routes
 	router.GET("/engineers", getEngineer)
-	router.GET("/engineers/:id", getSpecificEngineer)
+	router.GET("/engineers/id/:id", getSpecificEngineerById)
+	router.GET("/engineers/name/:name", getSpecificEngineerByName)
+	router.GET("/engineers/email/:email", getSpecificEngineerByEmail)
 	router.GET("/dev", getDev)
-	router.GET("/dev/:id", getSpecificDev)
+	router.GET("/dev/id/:id", getSpecificDevById)
+	router.GET("/dev/name/:name", getSpecificDevByName)
 	router.GET("/op", getOp)
-	router.GET("/op/:id", getSpecificOps)
+	router.GET("/op/id/:id", getSpecificOpsById)
+	router.GET("/op/name/:name", getSpecificOpsByName)
 	router.GET("/devops", getDevOps)
-	router.GET("/devops/:id", getSpecificDevOps)
+	router.GET("/devops/:id", getSpecificDevOpsById)
 	//POST routes
 	router.POST("/engineers", postEngineer)
 	router.POST("/dev", postDev)

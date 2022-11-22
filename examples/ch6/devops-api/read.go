@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -73,26 +74,88 @@ func devopsListConversion(devops_map map[string]devops) []devops_list {
 */
 /******************************************************/
 
-func getSpecificEngineer(c *gin.Context) {
+func findEngineer_by_Name(engineer_name string) (*engineer, error) {
+	for _, newEngineer := range engineers {
+		if newEngineer.Name == engineer_name {
+			return newEngineer, nil
+		}
+	}
+	return nil, errors.New(" no engineer with the name ")
+}
+
+func findEngineer_by_Email(engineer_email string) (*engineer, error) {
+	for _, newEngineer := range engineers {
+		if newEngineer.Email == engineer_email {
+			return newEngineer, nil
+		}
+	}
+	return nil, errors.New(" no engineer with that email ")
+}
+
+func findDev_by_Name(dev_name string) (*dev, error) {
+	for _, newDev := range developers {
+		if newDev.Name == dev_name {
+			return newDev, nil
+		}
+	}
+	return nil, errors.New(" no dev group with that name ")
+}
+
+func findOps_by_Name(ops_name string) (*ops, error) {
+	for _, newOps := range operations {
+		if newOps.Name == ops_name {
+			return newOps, nil
+		}
+	}
+	return nil, errors.New(" no ops group with that name ")
+}
+
+func getSpecificEngineerById(c *gin.Context) {
 	id := c.Param("id")
 
 	engineer, err := findEngineer_by_Id(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Engineer resource does not exist"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
 
 	c.IndentedJSON(http.StatusOK, engineer)
 }
 
-func getSpecificDev(c *gin.Context) {
+func getSpecificEngineerByName(c *gin.Context) {
+	name := c.Param("name")
+
+	engineer, err := findEngineer_by_Name(name)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, engineer)
+}
+
+func getSpecificEngineerByEmail(c *gin.Context) {
+	email := c.Param("email")
+
+	engineer, err := findEngineer_by_Email(email)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, engineer)
+}
+
+func getSpecificDevById(c *gin.Context) {
 	id := c.Param("id")
 
 	dev, err := findDev_by_Id(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Developer resource does not exist"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
 
@@ -100,13 +163,26 @@ func getSpecificDev(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, dev)
 }
 
-func getSpecificOps(c *gin.Context) {
+func getSpecificDevByName(c *gin.Context) {
+	name := c.Param("name")
+
+	dev, err := findDev_by_Name(name)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, dev)
+}
+
+func getSpecificOpsById(c *gin.Context) {
 	id := c.Param("id")
 
 	ops, err := findOp_by_Id(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Operations resource does not exist"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
 
@@ -115,13 +191,26 @@ func getSpecificOps(c *gin.Context) {
 
 }
 
-func getSpecificDevOps(c *gin.Context) {
+func getSpecificOpsByName(c *gin.Context) {
+	name := c.Param("name")
+
+	ops, err := findOps_by_Name(name)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, ops)
+}
+
+func getSpecificDevOpsById(c *gin.Context) {
 	id := c.Param("id")
 
 	devops, err := findDevOps_by_Id(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "DevOps resource does not exist"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
 

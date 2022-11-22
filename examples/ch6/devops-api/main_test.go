@@ -559,3 +559,75 @@ func TestDeleteEngineerFrom_Ops(t *testing.T) {
 
 }
 */
+
+func TestFindEngineerByName(t *testing.T) {
+	newEngineer("bob", "bob@bob.com")
+	_, err := findEngineer_by_Name("bob")
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	engineers = nil
+}
+
+func TestFindBadEngineerByName(t *testing.T) {
+	newEngineer("bob", "bob@gmail")
+	_, err := findEngineer_by_Name("bobby")
+	if err == nil {
+		t.Errorf("Error: Expected Errors, recieved none.")
+	}
+	engineers = nil
+}
+
+func TestFindEngineerByEmail(t *testing.T) {
+	newEngineer("bob", "bob@gmail.com")
+	_, err := findEngineer_by_Email("bob@gmail.com")
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	engineers = nil
+}
+
+func TestFindBadEngineerByEmail(t *testing.T) {
+	newEngineer("bob", "bob@gmail")
+	_, err := findEngineer_by_Email("bob@bob.com")
+	if err == nil {
+		t.Errorf("Error: Expected Errors, recieved none.")
+	}
+	engineers = nil
+}
+
+func TestFindDevByName(t *testing.T) {
+	newDev(dev{Name: "dev_ferrets"})
+	_, err := findDev_by_Name("dev_ferrets")
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	developers = nil
+}
+
+func TestFindBadDevByName(t *testing.T) {
+	newDev(dev{Name: "dev_ferrets"})
+	_, err := findDev_by_Name("dev_bengals")
+	if err == nil {
+		t.Errorf("Error: Expected Errors, recieved none.")
+	}
+	developers = nil
+}
+
+func TestFindOpsByName(t *testing.T) {
+	newOp(ops{Name: "ops_ferrets"})
+	_, err := findOps_by_Name("ops_ferrets")
+	if err != nil {
+		t.Errorf("Error: %v", err)
+	}
+	operations = nil
+}
+
+func TestFindBadOpsByName(t *testing.T) {
+	newOp(ops{Name: "ops_ferrets"})
+	_, err := findOps_by_Name("ops_bengals")
+	if err == nil {
+		t.Errorf("Error: Expected Errors, recieved none.")
+	}
+	operations = nil
+}
