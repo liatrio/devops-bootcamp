@@ -48,18 +48,24 @@ func updateDev(id string, newDev resource.Dev) (bool, error) {
 	return true, nil
 }
 
-func updateOps(op_id string, name string) (bool, error) {
-	if name == "" {
+func updateOps(id string, newOp ops) (bool, error) {
+	if newOp.Name == "" {
 		return false, errors.New(" Name cannot be empty ")
 	}
 	//For global dev map
-	op, err := findOp_by_Id(op_id)
-	if err == nil {
-		op.Name = name
-	} else {
-		return false, errors.New(" Doesn't exist in the operations group")
+	op, err := findOp_by_Id(id)
+	if err != nil {
+		return false, errors.New(" Doesn't exist in the developers group")
 	}
-
+	op.Name = newOp.Name
+	op.Engineers = []*engineer{}
+	for _, eng := range newOp.Engineers {
+		newEngineer, err := findEngineer_by_Id(eng.Id)
+		if err != nil {
+			return false, errors.New(" updatedev:engineer, couldnt find engineer in global array")
+		}
+		op.Engineers = append(op.Engineers, newEngineer)
+	}
 	return true, nil
 }
 
@@ -153,7 +159,7 @@ func putOp(c *gin.Context) {
 		return
 	}
 
-	_, err = updateOps(id, jsonData.Name)
+	_, err = updateOps(id, jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
