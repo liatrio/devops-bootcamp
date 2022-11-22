@@ -48,7 +48,7 @@ func updateDev(id string, newDev resource.Dev) (bool, error) {
 	return true, nil
 }
 
-func updateOps(id string, newOp ops) (bool, error) {
+func updateOps(id string, newOp resource.Ops) (bool, error) {
 	if newOp.Name == "" {
 		return false, errors.New(" Name cannot be empty ")
 	}
@@ -58,7 +58,7 @@ func updateOps(id string, newOp ops) (bool, error) {
 		return false, errors.New(" Doesn't exist in the developers group")
 	}
 	op.Name = newOp.Name
-	op.Engineers = []*engineer{}
+	op.Engineers = []*resource.Engineer{}
 	for _, eng := range newOp.Engineers {
 		newEngineer, err := findEngineer_by_Id(eng.Id)
 		if err != nil {

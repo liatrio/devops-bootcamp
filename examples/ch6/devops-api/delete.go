@@ -183,7 +183,7 @@ func deleteDevOps(devops_id string) (bool, error) {
 	for i := range developer_operations {
 		if developer_operations[i].Id == devops_id {
 			if len(developer_operations) == 1 {
-				developer_operations = []*devops{}
+				developer_operations = []*resource.DevOps{}
 				return true, nil
 			}
 			developer_operations[i] = developer_operations[len(developer_operations)-1]
@@ -207,14 +207,14 @@ func deleteDev(dev_id string) (bool, error) {
 				if err != nil {
 					return false, err
 				}
-		  }
-     }
+			}
+		}
 	}
 	for i := range developer_operations {
 		for j := range developer_operations[i].Dev {
 			if developer_operations[i].Dev[j].Id == dev_id {
 				if len(developer_operations[i].Dev) == 1 {
-					developer_operations[i].Dev = []*dev{}
+					developer_operations[i].Dev = []*resource.Dev{}
 					return true, nil
 				}
 				developer_operations[i].Dev, err = removeDevElement(developer_operations[i].Dev, dev_id)
@@ -248,7 +248,7 @@ func deleteOp(op_id string) (bool, error) {
 		for j := range developer_operations[i].Ops {
 			if developer_operations[i].Ops[j].Id == op_id {
 				if len(developer_operations[i].Ops) == 1 {
-					developer_operations[i].Ops = []*ops{}
+					developer_operations[i].Ops = []*resource.Ops{}
 					return true, nil
 				}
 				developer_operations[i].Ops, err = removeOpElement(developer_operations[i].Ops, op_id)
