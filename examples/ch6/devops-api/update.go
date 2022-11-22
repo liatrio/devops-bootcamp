@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"resource"
 )
 
 // functions to update resources//
@@ -26,7 +27,7 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 	return true, nil
 }
 
-func updateDev(id string, newDev dev) (bool, error) {
+func updateDev(id string, newDev resource.Dev) (bool, error) {
 	if newDev.Name == "" {
 		return false, errors.New(" Name cannot be empty ")
 	}
@@ -36,7 +37,7 @@ func updateDev(id string, newDev dev) (bool, error) {
 		return false, errors.New(" Doesn't exist in the developers group")
 	}
 	dev.Name = newDev.Name
-	dev.Engineers = []*engineer{}
+	dev.Engineers = []*resource.Engineer{}
 	for _, eng := range newDev.Engineers {
 		newEngineer, err := findEngineer_by_Id(eng.Id)
 		if err != nil {
@@ -67,14 +68,15 @@ func updateOps(id string, newOp ops) (bool, error) {
 	}
 	return true, nil
 }
-func updateDevOps(id string, newDevOps devops) (bool, error) {
+
+func updateDevOps(id string, newDevOps resource.DevOps) (bool, error) {
 	//For global dev map
 	devops, err := findDevOps_by_Id(id)
 	if err != nil {
 		return false, errors.New(" Doesn't exist in the developer_operations group")
 	}
-	devops.Dev = []*dev{}
-	devops.Ops = []*ops{}
+	devops.Dev = []*resource.Dev{}
+	devops.Ops = []*resource.Ops{}
 	for _, dev := range newDevOps.Dev {
 		newDev, err := findDev_by_Id(dev.Id)
 		if err != nil {
@@ -104,7 +106,7 @@ func updateDevOps(devops_id string) (bool, error) {
 // server PUT handler
 func putEngineer(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData engineer
+	var jsonData resource.Engineer
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -127,7 +129,7 @@ func putEngineer(c *gin.Context) {
 
 func putDev(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData dev
+	var jsonData resource.Dev
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -150,7 +152,7 @@ func putDev(c *gin.Context) {
 
 func putOp(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData ops
+	var jsonData resource.Ops
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -173,7 +175,7 @@ func putOp(c *gin.Context) {
 
 func putDevOps(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData devops
+	var jsonData resource.DevOps
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
