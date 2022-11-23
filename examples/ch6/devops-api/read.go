@@ -1,32 +1,15 @@
 package main
 
 import (
+	"errors"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"resource"
 )
 
-// struct to contain engineer as a list inside a dev resource instead of map for GET response
-type dev_engineer struct {
-	Name      string     `json:"name"`
-	Id        string     `json:"id"`
-	Engineers []engineer `json:"engineers"`
-}
-
-// struct to contain engineer as a list inside a ops resource instead of map for GET response
-type ops_engineer struct {
-	Name      string     `json:"name"`
-	Id        string     `json:"id"`
-	Engineers []engineer `json:"engineers"`
-}
-
-type devops_list struct {
-	Id  string         `json:"id"`
-	Dev []dev_engineer `json:"dev"`
-	Ops []ops_engineer `json:"ops"`
-}
-
 /********** Conversion function to switch maps to slices for GET response ********/
+/*
 func mapToSlice(engineer_map map[string]engineer) []engineer {
 	engineer_slice := make([]engineer, len(engineer_map))
 
@@ -89,67 +72,170 @@ func devopsListConversion(devops_map map[string]devops) []devops_list {
 	}
 	return devops_slice
 }
-
+*/
 /******************************************************/
 
-func getSpecificEngineer(c *gin.Context) {
+func findEngineer_by_Name(engineer_name string) (*resource.Engineer, error) {
+	for _, newEngineer := range engineers {
+		if newEngineer.Name == engineer_name {
+			return newEngineer, nil
+		}
+	}
+	return nil, errors.New(" no engineer with the name ")
+}
+
+func findEngineer_by_Email(engineer_email string) (*resource.Engineer, error) {
+	for _, newEngineer := range engineers {
+		if newEngineer.Email == engineer_email {
+			return newEngineer, nil
+		}
+	}
+	return nil, errors.New(" no engineer with that email ")
+}
+
+func findDev_by_Name(dev_name string) (*resource.Dev, error) {
+	for _, newDev := range developers {
+		if newDev.Name == dev_name {
+			return newDev, nil
+		}
+	}
+	return nil, errors.New(" no dev group with that name ")
+}
+
+func findOps_by_Name(ops_name string) (*resource.Ops, error) {
+	for _, newOps := range operations {
+		if newOps.Name == ops_name {
+			return newOps, nil
+		}
+	}
+	return nil, errors.New(" no ops group with that name ")
+}
+
+func getSpecificEngineerById(c *gin.Context) {
 	id := c.Param("id")
 
-	engineer, exists := engineers[id]
+	engineer, err := findEngineer_by_Id(id)
 
-	if !exists {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Engineer resource does not exist"})
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
 
 	c.IndentedJSON(http.StatusOK, engineer)
 }
 
-func getSpecificDev(c *gin.Context) {
-	id := c.Param("id")
+func getSpecificEngineerByName(c *gin.Context) {
+	name := c.Param("name")
 
-	dev, exists := developers[id]
+	engineer, err := findEngineer_by_Name(name)
 
-	if !exists {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Developer resource does not exist"})
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
 
-	dev_slice := devToDevEngineer(dev)
-	c.IndentedJSON(http.StatusOK, dev_slice)
+	c.IndentedJSON(http.StatusOK, engineer)
 }
 
-func getSpecificOps(c *gin.Context) {
-	id := c.Param("id")
+func getSpecificEngineerByEmail(c *gin.Context) {
+	email := c.Param("email")
 
-	ops, exists := operations[id]
+	engineer, err := findEngineer_by_Email(email)
 
-	if !exists {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Operations resource does not exist"})
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
 
-	ops_slice := opsToOpsEngineer(ops)
-	c.IndentedJSON(http.StatusOK, ops_slice)
+	c.IndentedJSON(http.StatusOK, engineer)
+}
+
+func getSpecificDevById(c *gin.Context) {
+	id := c.Param("id")
+
+	dev, err := findDev_by_Id(id)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		return
+	}
+
+	//dev_slice := devToDevEngineer(dev)
+	c.IndentedJSON(http.StatusOK, dev)
+}
+
+func getSpecificDevByName(c *gin.Context) {
+	name := c.Param("name")
+
+	dev, err := findDev_by_Name(name)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, dev)
+}
+
+func getSpecificOpsById(c *gin.Context) {
+	id := c.Param("id")
+
+	ops, err := findOp_by_Id(id)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		return
+	}
+
+	//ops_slice := opsToOpsEngineer(ops)
+	c.IndentedJSON(http.StatusOK, ops)
+
+}
+
+func getSpecificOpsByName(c *gin.Context) {
+	name := c.Param("name")
+
+	ops, err := findOps_by_Name(name)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, ops)
+}
+
+func getSpecificDevOpsById(c *gin.Context) {
+	id := c.Param("id")
+
+	devops, err := findDevOps_by_Id(id)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		return
+	}
+
+	//ops_slice := opsToOpsEngineer(ops)
+	c.IndentedJSON(http.StatusOK, devops)
 
 }
 
 func getEngineer(c *gin.Context) {
-	engineer_slice := mapToSlice(engineers)
-	c.IndentedJSON(http.StatusOK, engineer_slice)
+	//engineer_slice := mapToSlice(engineers)
+	c.IndentedJSON(http.StatusOK, engineers)
 }
 
 func getDev(c *gin.Context) {
-	dev_slice := devListConversion(developers)
-	c.IndentedJSON(http.StatusOK, dev_slice)
+	//dev_slice := devListConversion(developers)
+	c.IndentedJSON(http.StatusOK, developers)
 }
 
 func getOp(c *gin.Context) {
-	ops_slice := opsListConversion(operations)
-	c.IndentedJSON(http.StatusOK, ops_slice)
+	//ops_slice := opsListConversion(operations)
+	c.IndentedJSON(http.StatusOK, operations)
 }
 
 func getDevOps(c *gin.Context) {
-	devops_slice := devopsListConversion(developer_operations)
-	c.IndentedJSON(http.StatusOK, devops_slice)
+	//devops_slice := devopsListConversion(developer_operations)
+	c.IndentedJSON(http.StatusOK, developer_operations)
 }

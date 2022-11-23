@@ -2,7 +2,12 @@ module devops-api
 
 go 1.19
 
-require github.com/gin-gonic/gin v1.8.1
+require (
+	github.com/gin-gonic/gin v1.8.1
+	resource v0.0.0-00010101000000-000000000000
+)
+
+replace resource => ../resources
 
 require (
 	github.com/gin-contrib/sse v0.1.0 // indirect

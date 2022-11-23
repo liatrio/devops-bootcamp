@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"resource"
 )
 
 // functions to update resources//
@@ -16,94 +17,79 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 		return false, errors.New(" Name cannot be empty ")
 	}
 	//For updating global engineers map
-	engineer_val, exists := engineers[engineer_id]
-	if exists {
-		engineer_val.Email = email
-		engineer_val.Name = name
-		engineers[engineer_id] = engineer_val
+	engineer, err := findEngineer_by_Id(engineer_id)
+	if err == nil {
+		engineer.Email = email
+		engineer.Name = name
 	} else {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-
-	for dev_key, dev_val := range developers {
-		for engineer_key, engineer_val := range dev_val.Engineers {
-			if engineer_key == engineer_id {
-				engineer_val.Email = email
-				engineer_val.Name = name
-				developers[dev_key].Engineers[engineer_key] = engineer_val
-				for devops_key, devops_val := range developer_operations {
-					_, exists := devops_val.Dev[dev_key]
-					if exists {
-						developer_operations[devops_key].Dev[dev_key].Engineers[engineer_key] = engineer_val
-					}
-				}
-			}
-		}
-	}
-	for ops_key, ops_val := range operations {
-		for engineer_key, engineer_val := range ops_val.Engineers {
-			if engineer_key == engineer_id {
-				engineer_val.Email = email
-				engineer_val.Name = name
-				operations[ops_key].Engineers[engineer_key] = engineer_val
-				for devops_key, devops_val := range developer_operations {
-					_, exists := devops_val.Ops[ops_key]
-					if exists {
-						developer_operations[devops_key].Ops[ops_key].Engineers[engineer_key] = engineer_val
-					}
-				}
-			}
-		}
-	}
 	return true, nil
 }
 
-func updateDev(dev_id string, name string) (bool, error) {
-	if name == "" {
+func updateDev(id string, newDev resource.Dev) (bool, error) {
+	if newDev.Name == "" {
 		return false, errors.New(" Name cannot be empty ")
 	}
 	//For global dev map
-	dev_map_val, exists := developers[dev_id]
-	if exists {
-		dev_map_val.Name = name
-		developers[dev_id] = dev_map_val
-	} else {
+	dev, err := findDev_by_Id(id)
+	if err != nil {
 		return false, errors.New(" Doesn't exist in the developers group")
 	}
-	//For updating the values for developers inside global developer_operations map
-	for devops_key, devops_val := range developer_operations {
-		for dev_key, dev_val := range devops_val.Dev {
-			if dev_key == dev_id {
-				dev_val.Name = name
-				developer_operations[devops_key].Dev[dev_key] = dev_val
-				//developers[dev_key] = dev_val
-			}
+	dev.Name = newDev.Name
+	dev.Engineers = []*resource.Engineer{}
+	for _, eng := range newDev.Engineers {
+		newEngineer, err := findEngineer_by_Id(eng.Id)
+		if err != nil {
+			return false, errors.New(" updatedev:engineer, couldnt find engineer in global array")
 		}
+		dev.Engineers = append(dev.Engineers, newEngineer)
 	}
 	return true, nil
 }
 
-func updateOps(ops_id string, name string) (bool, error) {
-	if name == "" {
+func updateOps(id string, newOp resource.Ops) (bool, error) {
+	if newOp.Name == "" {
 		return false, errors.New(" Name cannot be empty ")
 	}
 	//For global dev map
-	op_map_val, exists := operations[ops_id]
-	if exists {
-		op_map_val.Name = name
-		operations[ops_id] = op_map_val
-	} else {
-		return false, errors.New(" Doesn't exist in the operations group")
+	op, err := findOp_by_Id(id)
+	if err != nil {
+		return false, errors.New(" Doesn't exist in the developers group")
 	}
-	//For updating the values for developers inside global developer_operations map
-	for devops_key, devops_val := range developer_operations {
-		for ops_key, ops_val := range devops_val.Ops {
-			if ops_key == ops_id {
-				ops_val.Name = name
-				developer_operations[devops_key].Ops[ops_key] = ops_val
-				//operations[ops_key] = ops_val
-			}
+	op.Name = newOp.Name
+	op.Engineers = []*resource.Engineer{}
+	for _, eng := range newOp.Engineers {
+		newEngineer, err := findEngineer_by_Id(eng.Id)
+		if err != nil {
+			return false, errors.New(" updatedev:engineer, couldnt find engineer in global array")
 		}
+		op.Engineers = append(op.Engineers, newEngineer)
+	}
+	return true, nil
+}
+
+func updateDevOps(id string, newDevOps resource.DevOps) (bool, error) {
+	//For global dev map
+	devops, err := findDevOps_by_Id(id)
+	if err != nil {
+		return false, errors.New(" Doesn't exist in the developer_operations group")
+	}
+	devops.Dev = []*resource.Dev{}
+	devops.Ops = []*resource.Ops{}
+	for _, dev := range newDevOps.Dev {
+		newDev, err := findDev_by_Id(dev.Id)
+		if err != nil {
+			return false, errors.New(" updatedevops:dev, couldnt find dev in global array")
+		}
+		devops.Dev = append(devops.Dev, newDev)
+	}
+	for _, ops := range newDevOps.Ops {
+		newOp, err := findOp_by_Id(ops.Id)
+		if err != nil {
+			return false, errors.New(" updatedevops:ops, couldnt find op in global array")
+		}
+		devops.Ops = append(devops.Ops, newOp)
 	}
 	return true, nil
 }
@@ -120,7 +106,7 @@ func updateDevOps(devops_id string) (bool, error) {
 // server PUT handler
 func putEngineer(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData engineer
+	var jsonData resource.Engineer
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -132,39 +118,80 @@ func putEngineer(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.IndentedJSON(http.StatusOK, engineers[id])
+	engineer, err := findEngineer_by_Id(id)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, engineer)
 }
 
 func putDev(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData dev
+	var jsonData resource.Dev
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	_, err = updateDev(id, jsonData.Name)
+	_, err = updateDev(id, jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.IndentedJSON(http.StatusOK, developers[id])
+	dev, err := findDev_by_Id(id)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, dev)
 }
 
 func putOp(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData ops
+	var jsonData resource.Ops
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	_, err = updateOps(id, jsonData.Name)
+	_, err = updateOps(id, jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.IndentedJSON(http.StatusOK, operations[id])
+	op, err := findOp_by_Id(id)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, op)
+}
+
+func putDevOps(c *gin.Context) {
+	id := c.Param("id")
+	var jsonData resource.DevOps
+	err := c.ShouldBindJSON(&jsonData)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	_, err = updateDevOps(id, jsonData)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	devops, err := findDevOps_by_Id(id)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, devops)
 }

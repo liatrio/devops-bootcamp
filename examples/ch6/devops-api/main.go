@@ -6,37 +6,14 @@ import (
 	"regexp"
 
 	"github.com/gin-gonic/gin"
+	"resource"
 )
 
-type engineer struct {
-	Name  string `json:"name"`
-	Id    string `json:"id"`
-	Email string `json:"email"`
-}
-
-type dev struct {
-	Name      string              `json:"name"`
-	Id        string              `json:"id"`
-	Engineers map[string]engineer `json:"engineers"`
-}
-
-type ops struct {
-	Name      string              `json:"name"`
-	Id        string              `json:"id"`
-	Engineers map[string]engineer `json:"engineers"`
-}
-
-type devops struct {
-	Id  string         `json:"id"`
-	Dev map[string]dev `json:"dev"`
-	Ops map[string]ops `json:"ops"`
-}
-
 // Global maps to access our resources by id key
-var engineers = make(map[string]engineer)
-var developers = make(map[string]dev)
-var operations = make(map[string]ops)
-var developer_operations = make(map[string]devops)
+var engineers = make([]*resource.Engineer, 0)
+var developers = make([]*resource.Dev, 0)
+var operations = make([]*resource.Ops, 0)
+var developer_operations = make([]*resource.DevOps, 0)
 
 func verifyEmail(email string) bool {
 	result, _ := regexp.MatchString("^([a-zA-Z]|[0-9])+@[a-z]+\\.[a-z]+(\\.[a-z]+)*$", email)
@@ -57,12 +34,18 @@ func main() {
 
 	//GET routes
 	router.GET("/engineers", getEngineer)
-	router.GET("/engineers/:id", getSpecificEngineer)
+	router.GET("/engineers/id/:id", getSpecificEngineerById)
+	router.GET("/engineers/name/:name", getSpecificEngineerByName)
+	router.GET("/engineers/email/:email", getSpecificEngineerByEmail)
 	router.GET("/dev", getDev)
-	router.GET("/dev/:id", getSpecificDev)
+	router.GET("/dev/id/:id", getSpecificDevById)
+	router.GET("/dev/name/:name", getSpecificDevByName)
 	router.GET("/op", getOp)
-	router.GET("/op/:id", getSpecificOps)
+	router.GET("/op/id/:id", getSpecificOpsById)
+	router.GET("/op/name/:name", getSpecificOpsByName)
 	router.GET("/devops", getDevOps)
+	router.GET("/devops/:id", getSpecificDevOpsById)
+
 	//POST routes
 	router.POST("/engineers", postEngineer)
 	router.POST("/dev", postDev)
@@ -72,10 +55,13 @@ func main() {
 	router.POST("/op/:id", postOpEngineer)
 	router.POST("/devops/dev/:id", postDevOpsDev)
 	router.POST("/devops/op/:id", postDevOpsOp)
+
 	//PUT routes
 	router.PUT("/engineers/:id", putEngineer)
 	router.PUT("/dev/:id", putDev)
 	router.PUT("/op/:id", putOp)
+	router.PUT("/devops/:id", putDevOps)
+
 	//DELETE routes
 	router.DELETE("/engineers/:id", deleteRequestEngineer)
 	router.DELETE("/dev/:id", deleteRequestDev)
