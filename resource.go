@@ -1,4 +1,4 @@
-package devops_resource
+package resource
 
 type Engineer struct {
 	Name  string `json:"name"`
@@ -20,6 +20,6 @@ type Ops struct {
 
 type DevOps struct {
 	Id  string `json:"id"`
-	Devs []*Dev `json:"dev"`
+	Dev []*Dev `json:"dev"`
 	Ops []*Ops `json:"ops"`
 }
