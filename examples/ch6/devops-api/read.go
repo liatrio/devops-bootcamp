@@ -4,8 +4,8 @@ import (
 	"errors"
 	"net/http"
 
+	"github.com/baserrato/devops-resource"
 	"github.com/gin-gonic/gin"
-	"resource"
 )
 
 /********** Conversion function to switch maps to slices for GET response ********/
@@ -75,7 +75,7 @@ func devopsListConversion(devops_map map[string]devops) []devops_list {
 */
 /******************************************************/
 
-func findEngineer_by_Name(engineer_name string) (*resource.Engineer, error) {
+func findEngineer_by_Name(engineer_name string) (*devops_resource.Engineer, error) {
 	for _, newEngineer := range engineers {
 		if newEngineer.Name == engineer_name {
 			return newEngineer, nil
@@ -84,7 +84,7 @@ func findEngineer_by_Name(engineer_name string) (*resource.Engineer, error) {
 	return nil, errors.New(" no engineer with the name ")
 }
 
-func findEngineer_by_Email(engineer_email string) (*resource.Engineer, error) {
+func findEngineer_by_Email(engineer_email string) (*devops_resource.Engineer, error) {
 	for _, newEngineer := range engineers {
 		if newEngineer.Email == engineer_email {
 			return newEngineer, nil
@@ -93,7 +93,7 @@ func findEngineer_by_Email(engineer_email string) (*resource.Engineer, error) {
 	return nil, errors.New(" no engineer with that email ")
 }
 
-func findDev_by_Name(dev_name string) (*resource.Dev, error) {
+func findDev_by_Name(dev_name string) (*devops_resource.Dev, error) {
 	for _, newDev := range developers {
 		if newDev.Name == dev_name {
 			return newDev, nil
@@ -102,7 +102,7 @@ func findDev_by_Name(dev_name string) (*resource.Dev, error) {
 	return nil, errors.New(" no dev group with that name ")
 }
 
-func findOps_by_Name(ops_name string) (*resource.Ops, error) {
+func findOps_by_Name(ops_name string) (*devops_resource.Ops, error) {
 	for _, newOps := range operations {
 		if newOps.Name == ops_name {
 			return newOps, nil

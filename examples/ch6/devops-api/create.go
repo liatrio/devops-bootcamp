@@ -4,20 +4,20 @@ import (
 	"errors"
 	"net/http"
 
+	"github.com/baserrato/devops-resource"
 	"github.com/gin-gonic/gin"
-	"resource"
 )
 
-func newDevOps(newDevOps resource.DevOps) (*resource.DevOps, error) {
-	devOpsGroup := resource.DevOps{Id: getRandId(5)}
-	devOpsGroup.Ops = make([]*resource.Ops, 0)
-	devOpsGroup.Dev = make([]*resource.Dev, 0)
-	for _, newDev := range newDevOps.Dev {
+func newDevOps(newDevOps devops_resource.DevOps) (*devops_resource.DevOps, error) {
+	devOpsGroup := devops_resource.DevOps{Id: getRandId(5)}
+	devOpsGroup.Ops = make([]*devops_resource.Ops, 0)
+	devOpsGroup.Devs = make([]*devops_resource.Dev, 0)
+	for _, newDev := range newDevOps.Devs {
 		dev, err := findDev_by_Id(newDev.Id)
 		if err != nil {
 			return nil, errors.New(" Dev group doesnt exists ")
 		}
-		devOpsGroup.Dev = append(devOpsGroup.Dev, dev)
+		devOpsGroup.Devs = append(devOpsGroup.Devs, dev)
 	}
 	for _, newOp := range newDevOps.Ops {
 		op, err := findOp_by_Id(newOp.Id)
@@ -30,7 +30,7 @@ func newDevOps(newDevOps resource.DevOps) (*resource.DevOps, error) {
 	return &devOpsGroup, nil
 }
 
-func newDev(newDev resource.Dev) (*resource.Dev, error) {
+func newDev(newDev devops_resource.Dev) (*devops_resource.Dev, error) {
 	if newDev.Name == "" {
 		return nil, errors.New(" Name cannot be empty ")
 	}
@@ -39,8 +39,8 @@ func newDev(newDev resource.Dev) (*resource.Dev, error) {
 			return nil, errors.New(" Dev group already exists ")
 		}
 	}
-	devGroup := resource.Dev{Name: newDev.Name, Id: getRandId(5)}
-	devGroup.Engineers = make([]*resource.Engineer, 0)
+	devGroup := devops_resource.Dev{Name: newDev.Name, Id: getRandId(5)}
+	devGroup.Engineers = make([]*devops_resource.Engineer, 0)
 	for _, eng := range newDev.Engineers {
 		newEngineer, err := findEngineer_by_Id(eng.Id)
 		if err != nil {
@@ -53,7 +53,7 @@ func newDev(newDev resource.Dev) (*resource.Dev, error) {
 	return &devGroup, nil
 }
 
-func newOp(newOp resource.Ops) (*resource.Ops, error) {
+func newOp(newOp devops_resource.Ops) (*devops_resource.Ops, error) {
 	if newOp.Name == "" {
 		return nil, errors.New(" Name cannot be empty ")
 	}
@@ -62,8 +62,8 @@ func newOp(newOp resource.Ops) (*resource.Ops, error) {
 			return nil, errors.New(" Dev group already exists ")
 		}
 	}
-	opsGroup := resource.Ops{Name: newOp.Name, Id: getRandId(5)}
-	opsGroup.Engineers = make([]*resource.Engineer, 0)
+	opsGroup := devops_resource.Ops{Name: newOp.Name, Id: getRandId(5)}
+	opsGroup.Engineers = make([]*devops_resource.Engineer, 0)
 	for _, eng := range newOp.Engineers {
 		newEngineer, err := findEngineer_by_Id(eng.Id)
 		if err != nil {
@@ -76,7 +76,7 @@ func newOp(newOp resource.Ops) (*resource.Ops, error) {
 	return &opsGroup, nil
 }
 
-func newEngineer(name string, email string) (*resource.Engineer, error) {
+func newEngineer(name string, email string) (*devops_resource.Engineer, error) {
 	if name == "" {
 		return nil, errors.New(" Name cannot be empty ")
 	}
@@ -88,13 +88,13 @@ func newEngineer(name string, email string) (*resource.Engineer, error) {
 	if !verifyEmail(email) {
 		return nil, errors.New(" Email is invalid ")
 	}
-	p := resource.Engineer{Name: name, Id: getRandId(5)}
+	p := devops_resource.Engineer{Name: name, Id: getRandId(5)}
 	p.Email = email
 	engineers = append(engineers, &p)
 	return &p, nil
 }
 
-func findEngineer_by_Id(engineer_id string) (*resource.Engineer, error) {
+func findEngineer_by_Id(engineer_id string) (*devops_resource.Engineer, error) {
 	for _, newEngineer := range engineers {
 		if newEngineer.Id == engineer_id {
 			return newEngineer, nil
@@ -103,7 +103,7 @@ func findEngineer_by_Id(engineer_id string) (*resource.Engineer, error) {
 	return nil, errors.New(" No engineer with that ID ")
 }
 
-func findOp_by_Id(op_id string) (*resource.Ops, error) {
+func findOp_by_Id(op_id string) (*devops_resource.Ops, error) {
 	for _, newOp := range operations {
 		if newOp.Id == op_id {
 			return newOp, nil
@@ -112,7 +112,7 @@ func findOp_by_Id(op_id string) (*resource.Ops, error) {
 	return nil, errors.New(" No ops group with that ID ")
 }
 
-func findDev_by_Id(dev_id string) (*resource.Dev, error) {
+func findDev_by_Id(dev_id string) (*devops_resource.Dev, error) {
 	for _, newDev := range developers {
 		if newDev.Id == dev_id {
 			return newDev, nil
@@ -121,7 +121,7 @@ func findDev_by_Id(dev_id string) (*resource.Dev, error) {
 	return nil, errors.New(" No dev group with that ID ")
 }
 
-func findDevOps_by_Id(devops_id string) (*resource.DevOps, error) {
+func findDevOps_by_Id(devops_id string) (*devops_resource.DevOps, error) {
 	for _, newDevOps := range developer_operations {
 		if newDevOps.Id == devops_id {
 			return newDevOps, nil
@@ -130,7 +130,7 @@ func findDevOps_by_Id(devops_id string) (*resource.DevOps, error) {
 	return nil, errors.New(" No devops group with that ID ")
 }
 
-func findEngineerInOp_by_Id(op *resource.Ops, engineer_id string) (*resource.Engineer, error) {
+func findEngineerInOp_by_Id(op *devops_resource.Ops, engineer_id string) (*devops_resource.Engineer, error) {
 	for _, newEngineer := range op.Engineers {
 		if newEngineer.Id == engineer_id {
 			return newEngineer, nil
@@ -139,7 +139,7 @@ func findEngineerInOp_by_Id(op *resource.Ops, engineer_id string) (*resource.Eng
 	return nil, errors.New(" No engineer with that ID in this ops group")
 }
 
-func findEngineerInDev_by_Id(dev *resource.Dev, engineer_id string) (*resource.Engineer, error) {
+func findEngineerInDev_by_Id(dev *devops_resource.Dev, engineer_id string) (*devops_resource.Engineer, error) {
 	for _, newEngineer := range dev.Engineers {
 		if newEngineer.Id == engineer_id {
 			return newEngineer, nil
@@ -148,8 +148,8 @@ func findEngineerInDev_by_Id(dev *resource.Dev, engineer_id string) (*resource.E
 	return nil, errors.New(" No engineer with that ID in this dev group ")
 }
 
-func findDevInDevOps_by_Id(devops *resource.DevOps, dev_id string) (*resource.Dev, error) {
-	for _, newDev := range devops.Dev {
+func findDevInDevOps_by_Id(devops *devops_resource.DevOps, dev_id string) (*devops_resource.Dev, error) {
+	for _, newDev := range devops.Devs {
 		if newDev.Id == dev_id {
 			return newDev, nil
 		}
@@ -157,7 +157,7 @@ func findDevInDevOps_by_Id(devops *resource.DevOps, dev_id string) (*resource.De
 	return nil, errors.New(" No dev with that ID in this devops group")
 }
 
-func findOpInDevOps_by_Id(devops *resource.DevOps, op_id string) (*resource.Ops, error) {
+func findOpInDevOps_by_Id(devops *devops_resource.DevOps, op_id string) (*devops_resource.Ops, error) {
 	for _, newOp := range devops.Ops {
 		if newOp.Id == op_id {
 			return newOp, nil
@@ -232,7 +232,7 @@ func addDevTo_DevOps(devops_id string, dev_id string) (bool, error) {
 	}
 	for i := range developer_operations {
 		if developer_operations[i].Id == devops_id {
-			developer_operations[i].Dev = append(developer_operations[i].Dev, dev_val)
+			developer_operations[i].Devs = append(developer_operations[i].Devs, dev_val)
 		}
 	}
 
@@ -266,8 +266,8 @@ func addOpTo_DevOps(devops_id string, op_id string) (bool, error) {
 
 // server POST handlers
 func postEngineer(c *gin.Context) {
-	var jsonData resource.Engineer     //object that gets name and email from POST request
-	var curEngineer *resource.Engineer //object recieved from newEngineer
+	var jsonData devops_resource.Engineer     //object that gets name and email from POST request
+	var curEngineer *devops_resource.Engineer //object recieved from newEngineer
 
 	err := c.BindJSON(&jsonData)
 
@@ -291,8 +291,8 @@ func postEngineer(c *gin.Context) {
 }
 
 func postDev(c *gin.Context) {
-	var jsonData resource.Dev //object that gets dev data from POST request
-	var curDev *resource.Dev  //object recieved from newDev
+	var jsonData devops_resource.Dev //object that gets dev data from POST request
+	var curDev *devops_resource.Dev  //object recieved from newDev
 
 	err := c.BindJSON(&jsonData)
 
@@ -316,8 +316,8 @@ func postDev(c *gin.Context) {
 }
 
 func postOp(c *gin.Context) {
-	var jsonData resource.Ops //object that gets dev data from POST request
-	var curOp *resource.Ops   //object recieved from newOp
+	var jsonData devops_resource.Ops //object that gets dev data from POST request
+	var curOp *devops_resource.Ops   //object recieved from newOp
 
 	err := c.BindJSON(&jsonData)
 
@@ -341,7 +341,7 @@ func postOp(c *gin.Context) {
 }
 
 func postDevOps(c *gin.Context) {
-	var jsonData resource.DevOps
+	var jsonData devops_resource.DevOps
 	err := c.BindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -362,7 +362,7 @@ func postDevOps(c *gin.Context) {
 
 func postDevEngineer(c *gin.Context) {
 	id := c.Param("id") //dev id
-	var jsonData resource.Engineer
+	var jsonData devops_resource.Engineer
 	err := c.ShouldBindJSON(&jsonData)
 
 	if err != nil {
@@ -386,7 +386,7 @@ func postDevEngineer(c *gin.Context) {
 
 func postOpEngineer(c *gin.Context) {
 	id := c.Param("id") //op id
-	var jsonData resource.Engineer
+	var jsonData devops_resource.Engineer
 	err := c.ShouldBindJSON(&jsonData)
 
 	if err != nil {
@@ -410,7 +410,7 @@ func postOpEngineer(c *gin.Context) {
 
 func postDevOpsDev(c *gin.Context) {
 	id := c.Param("id") //devops id
-	var jsonData resource.Dev
+	var jsonData devops_resource.Dev
 
 	err := c.ShouldBindJSON(&jsonData)
 
@@ -435,7 +435,7 @@ func postDevOpsDev(c *gin.Context) {
 
 func postDevOpsOp(c *gin.Context) {
 	id := c.Param("id") //devops id
-	var jsonData resource.Ops
+	var jsonData devops_resource.Ops
 
 	err := c.ShouldBindJSON(&jsonData)
 

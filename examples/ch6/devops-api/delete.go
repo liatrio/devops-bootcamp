@@ -4,15 +4,15 @@ import (
 	"errors"
 	"net/http"
 
+	"github.com/baserrato/devops-resource"
 	"github.com/gin-gonic/gin"
-	"resource"
 )
 
-func removeEngineerElement(engineers []*resource.Engineer, engineer_id string) ([]*resource.Engineer, error) {
+func removeEngineerElement(engineers []*devops_resource.Engineer, engineer_id string) ([]*devops_resource.Engineer, error) {
 	for i := range engineers {
 		if engineers[i].Id == engineer_id {
 			if len(engineers) == 1 {
-				var empty []*resource.Engineer
+				var empty []*devops_resource.Engineer
 				return empty, nil
 			}
 			engineers[i] = engineers[len(engineers)-1]
@@ -22,7 +22,7 @@ func removeEngineerElement(engineers []*resource.Engineer, engineer_id string) (
 	return nil, errors.New("engineer not found and not deleted")
 }
 
-func removeDevElement(devs []*resource.Dev, dev_id string) ([]*resource.Dev, error) {
+func removeDevElement(devs []*devops_resource.Dev, dev_id string) ([]*devops_resource.Dev, error) {
 	for i := range devs {
 		if devs[i].Id == dev_id {
 			devs[i] = devs[len(devs)-1]
@@ -32,7 +32,7 @@ func removeDevElement(devs []*resource.Dev, dev_id string) ([]*resource.Dev, err
 	return nil, errors.New("developer not found and not deleted")
 }
 
-func removeOpElement(ops []*resource.Ops, op_id string) ([]*resource.Ops, error) {
+func removeOpElement(ops []*devops_resource.Ops, op_id string) ([]*devops_resource.Ops, error) {
 	for i := range ops {
 		if ops[i].Id == op_id {
 			ops[i] = ops[len(ops)-1]
@@ -103,9 +103,9 @@ func deleteEngineerFrom_Dev(dev_id string, engineer_id string) (bool, error) {
 		}
 	}
 	for i := range developer_operations {
-		for j := range developer_operations[i].Dev {
-			if developer_operations[i].Dev[j].Id == dev_id {
-				developer_operations[i].Dev[j].Engineers, err = removeEngineerElement(developer_operations[i].Dev[j].Engineers, engineer_id)
+		for j := range developer_operations[i].Devs {
+			if developer_operations[i].Devs[j].Id == dev_id {
+				developer_operations[i].Devs[j].Engineers, err = removeEngineerElement(developer_operations[i].Devs[j].Engineers, engineer_id)
 				if err != nil {
 					return false, errors.New(" Error: " + err.Error())
 				}
@@ -134,7 +134,7 @@ func deleteDevFrom_DevOps(devops_id string, dev_id string) (bool, error) {
 
 	for i := range developer_operations {
 		if developer_operations[i].Id == devops_id {
-			developer_operations[i].Dev, err = removeDevElement(developer_operations[i].Dev, dev_id)
+			developer_operations[i].Devs, err = removeDevElement(developer_operations[i].Devs, dev_id)
 			if err != nil {
 				return false, errors.New(" Error: " + err.Error())
 			}
@@ -183,7 +183,7 @@ func deleteDevOps(devops_id string) (bool, error) {
 	for i := range developer_operations {
 		if developer_operations[i].Id == devops_id {
 			if len(developer_operations) == 1 {
-				developer_operations = []*resource.DevOps{}
+				developer_operations = []*devops_resource.DevOps{}
 				return true, nil
 			}
 			developer_operations[i] = developer_operations[len(developer_operations)-1]
@@ -201,7 +201,7 @@ func deleteDev(dev_id string) (bool, error) {
 	for i := range developers {
 		if developers[i].Id == dev_id {
 			if len(developers) == 1 {
-				developers = []*resource.Dev{}
+				developers = []*devops_resource.Dev{}
 			} else {
 				developers, err = removeDevElement(developers, dev_id)
 				if err != nil {
@@ -211,13 +211,13 @@ func deleteDev(dev_id string) (bool, error) {
 		}
 	}
 	for i := range developer_operations {
-		for j := range developer_operations[i].Dev {
-			if developer_operations[i].Dev[j].Id == dev_id {
-				if len(developer_operations[i].Dev) == 1 {
-					developer_operations[i].Dev = []*resource.Dev{}
+		for j := range developer_operations[i].Devs {
+			if developer_operations[i].Devs[j].Id == dev_id {
+				if len(developer_operations[i].Devs) == 1 {
+					developer_operations[i].Devs = []*devops_resource.Dev{}
 					return true, nil
 				}
-				developer_operations[i].Dev, err = removeDevElement(developer_operations[i].Dev, dev_id)
+				developer_operations[i].Devs, err = removeDevElement(developer_operations[i].Devs, dev_id)
 				if err != nil {
 					return false, errors.New(" Error: " + err.Error())
 				}
@@ -235,7 +235,7 @@ func deleteOp(op_id string) (bool, error) {
 	for i := range operations {
 		if operations[i].Id == op_id {
 			if len(operations) == 1 {
-				operations = []*resource.Ops{}
+				operations = []*devops_resource.Ops{}
 			} else {
 				operations, err = removeOpElement(operations, op_id)
 				if err != nil {
@@ -248,7 +248,7 @@ func deleteOp(op_id string) (bool, error) {
 		for j := range developer_operations[i].Ops {
 			if developer_operations[i].Ops[j].Id == op_id {
 				if len(developer_operations[i].Ops) == 1 {
-					developer_operations[i].Ops = []*resource.Ops{}
+					developer_operations[i].Ops = []*devops_resource.Ops{}
 					return true, nil
 				}
 				developer_operations[i].Ops, err = removeOpElement(developer_operations[i].Ops, op_id)
