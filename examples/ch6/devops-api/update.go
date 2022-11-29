@@ -4,8 +4,8 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/baserrato/devops-resource"
 	"github.com/gin-gonic/gin"
+	"github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
 )
 
 // functions to update resources//

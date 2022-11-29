@@ -5,8 +5,8 @@ import (
 	"encoding/base32"
 	"regexp"
 
-	"github.com/baserrato/devops-resource"
 	"github.com/gin-gonic/gin"
+	"github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
 )
 
 // Global maps to access our resources by id key

@@ -3,8 +3,8 @@ module devops-api
 go 1.19
 
 require (
-	github.com/baserrato/devops-resource v0.0.0-20221128184103-90afbf67f8dc
 	github.com/gin-gonic/gin v1.8.1
+	github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources v0.0.0-20221129175703-a9bb7db3f32d
 )
 
 require (

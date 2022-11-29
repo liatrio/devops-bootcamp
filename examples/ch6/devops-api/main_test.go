@@ -3,8 +3,8 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/baserrato/devops-resource"
 	"github.com/gin-gonic/gin"
+	"github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
 	"io"
 	"net/http"
 	"net/http/httptest"

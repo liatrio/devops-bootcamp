@@ -4,8 +4,8 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/baserrato/devops-resource"
 	"github.com/gin-gonic/gin"
+	"github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
 )
 
 func newDevOps(newDevOps devops_resource.DevOps) (*devops_resource.DevOps, error) {
