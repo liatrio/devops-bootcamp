@@ -1,3 +1,3 @@
-module github.com/liatrio/devops-bootcamp/devops_resources
+module github.com/liatrio/devops-bootcamp
 
 go 1.19
