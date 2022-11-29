@@ -6,14 +6,14 @@ import (
 	"regexp"
 
 	"github.com/gin-gonic/gin"
-	"resource"
+	"github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
 )
 
 // Global maps to access our resources by id key
-var engineers = make([]*resource.Engineer, 0)
-var developers = make([]*resource.Dev, 0)
-var operations = make([]*resource.Ops, 0)
-var developer_operations = make([]*resource.DevOps, 0)
+var engineers = make([]*devops_resource.Engineer, 0)
+var developers = make([]*devops_resource.Dev, 0)
+var operations = make([]*devops_resource.Ops, 0)
+var developer_operations = make([]*devops_resource.DevOps, 0)
 
 func verifyEmail(email string) bool {
 	result, _ := regexp.MatchString("^([a-zA-Z]|[0-9])+@[a-z]+\\.[a-z]+(\\.[a-z]+)*$", email)

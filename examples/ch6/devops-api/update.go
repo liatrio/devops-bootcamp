@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"resource"
+	"github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
 )
 
 // functions to update resources//
@@ -27,7 +27,7 @@ func updateEngineer(engineer_id string, name string, email string) (bool, error)
 	return true, nil
 }
 
-func updateDev(id string, newDev resource.Dev) (bool, error) {
+func updateDev(id string, newDev devops_resource.Dev) (bool, error) {
 	if newDev.Name == "" {
 		return false, errors.New(" Name cannot be empty ")
 	}
@@ -37,7 +37,7 @@ func updateDev(id string, newDev resource.Dev) (bool, error) {
 		return false, errors.New(" Doesn't exist in the developers group")
 	}
 	dev.Name = newDev.Name
-	dev.Engineers = []*resource.Engineer{}
+	dev.Engineers = []*devops_resource.Engineer{}
 	for _, eng := range newDev.Engineers {
 		newEngineer, err := findEngineer_by_Id(eng.Id)
 		if err != nil {
@@ -48,7 +48,7 @@ func updateDev(id string, newDev resource.Dev) (bool, error) {
 	return true, nil
 }
 
-func updateOps(id string, newOp resource.Ops) (bool, error) {
+func updateOps(id string, newOp devops_resource.Ops) (bool, error) {
 	if newOp.Name == "" {
 		return false, errors.New(" Name cannot be empty ")
 	}
@@ -58,7 +58,7 @@ func updateOps(id string, newOp resource.Ops) (bool, error) {
 		return false, errors.New(" Doesn't exist in the developers group")
 	}
 	op.Name = newOp.Name
-	op.Engineers = []*resource.Engineer{}
+	op.Engineers = []*devops_resource.Engineer{}
 	for _, eng := range newOp.Engineers {
 		newEngineer, err := findEngineer_by_Id(eng.Id)
 		if err != nil {
@@ -69,20 +69,20 @@ func updateOps(id string, newOp resource.Ops) (bool, error) {
 	return true, nil
 }
 
-func updateDevOps(id string, newDevOps resource.DevOps) (bool, error) {
+func updateDevOps(id string, newDevOps devops_resource.DevOps) (bool, error) {
 	//For global dev map
 	devops, err := findDevOps_by_Id(id)
 	if err != nil {
 		return false, errors.New(" Doesn't exist in the developer_operations group")
 	}
-	devops.Dev = []*resource.Dev{}
-	devops.Ops = []*resource.Ops{}
-	for _, dev := range newDevOps.Dev {
+	devops.Devs = []*devops_resource.Dev{}
+	devops.Ops = []*devops_resource.Ops{}
+	for _, dev := range newDevOps.Devs {
 		newDev, err := findDev_by_Id(dev.Id)
 		if err != nil {
 			return false, errors.New(" updatedevops:dev, couldnt find dev in global array")
 		}
-		devops.Dev = append(devops.Dev, newDev)
+		devops.Devs = append(devops.Devs, newDev)
 	}
 	for _, ops := range newDevOps.Ops {
 		newOp, err := findOp_by_Id(ops.Id)
@@ -106,7 +106,7 @@ func updateDevOps(devops_id string) (bool, error) {
 // server PUT handler
 func putEngineer(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData resource.Engineer
+	var jsonData devops_resource.Engineer
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -129,7 +129,7 @@ func putEngineer(c *gin.Context) {
 
 func putDev(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData resource.Dev
+	var jsonData devops_resource.Dev
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -152,7 +152,7 @@ func putDev(c *gin.Context) {
 
 func putOp(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData resource.Ops
+	var jsonData devops_resource.Ops
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -175,7 +175,7 @@ func putOp(c *gin.Context) {
 
 func putDevOps(c *gin.Context) {
 	id := c.Param("id")
-	var jsonData resource.DevOps
+	var jsonData devops_resource.DevOps
 	err := c.ShouldBindJSON(&jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
