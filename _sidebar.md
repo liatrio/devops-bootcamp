@@ -107,7 +107,8 @@
 - [7.4 - RBAC](7-kubernetes-container-orchestration/7.4-rbac.md)
 - [7.5 - HPAs](7-kubernetes-container-orchestration/7.5-hpas.md)
 - [7.6 - Webhooks](7-kubernetes-container-orchestration/7.6-webhooks.md)
-- [7.7 - Hello K8s](7-kubernetes-container-orchestration/7.7-hello-k8s.md)
+- [7.7 - K8s The Hard Way](7-kubernetes-container-orchestration/7.7-k8sthw.md)
+- [7.8 - Hello K8s](7-kubernetes-container-orchestration/7.8-hello-k8s.md)
 * **Addendum**
 - [Addendum](8-addendum/addendum-overview.md)
   - [Ephemeral Jenkins](8-addendum/ephemeral-jenkins.md)
