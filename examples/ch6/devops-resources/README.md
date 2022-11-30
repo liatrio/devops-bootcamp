@@ -4,17 +4,22 @@
 
 ## How to import module for the resources built in go:
 
-#### Here is an example of how to include the module inside of the go.mod within the terraform provider:
-```go
-require github.com/liatrio/devops-bootcamp/examples/ch6/devops-resource master    
-```
-
-#### Now that you have the right path targeted for the import you can now use this module for any code corresponding to client-side communication from the terraform provider to the devops api.
-
 #### Example in how the import is call in your go code:
 ```go
 import "github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
 ```
+##### This is how you would pull the module in the default branch [master]
+
+#### If you are trying to pull the module from a branch that differs from the default branch then you can do this step:
+
+##### Here is an example of how to include the module inside of the go.mod within the terraform provider:
+```go
+require github.com/liatrio/devops-bootcamp/examples/ch6/devops-resource [branch]
+```
+
+##### When you run go mod tidy go will look for the module at the head of the branch you specificed in go.mod
+
+#### Now that you have the right path targeted for the import you can now use this module for any code corresponding to client-side communication from the terraform provider to the devops api.
 
 ## How to call package devops_resource:
 
