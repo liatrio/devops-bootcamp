@@ -47,3 +47,6 @@ docsify serve .
 ```
 
 [Contributors](contributors.md)
+
+![](img/class_light.svg ':size=100x100 :class=light-mode-icon')
+![](img/class_dark.svg ':size=100x100 :class=dark-mode-icon')
