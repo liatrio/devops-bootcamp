@@ -42,7 +42,8 @@ devops_resource.DevOps
 
 ## Notes: 
 ### The structs use references of another struct object to manage lists.
-    - This allows easier management of the lists when updating a resource.
+
+- This allows easier management of the lists when updating a resource.
 
 #### Struct Example:
 ```go
@@ -56,5 +57,6 @@ type DevOps struct {
 ##### DevOps Struct is a good example of this since it manages a list of type Dev and Ops.
 
 ### Why is the module name long and almost looks like a path.
-    - Go looks for the path in which the package and module is referenced.
-    - For this case the repository is github.com(host)/liatrio(owner)/devops-bootcamp(repo)/examples/ch6/devops-resources(path to package)
+
+- Go looks for the path in which the package and module is referenced.
+- For this case the repository is github.com(host)/liatrio(owner)/devops-bootcamp(repo)/examples/ch6/devops-resources(path to package)
