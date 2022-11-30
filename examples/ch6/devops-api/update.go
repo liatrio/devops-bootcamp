@@ -93,14 +93,6 @@ func updateDevOps(id string, newDevOps devops_resource.DevOps) (bool, error) {
 	}
 	return true, nil
 }
-
-/*
-func updateDevOps(devops_id string) (bool, error) {
-	//TODO
-	return true, nil
-}
-*/
-
 //*****************************//
 
 // server PUT handler
