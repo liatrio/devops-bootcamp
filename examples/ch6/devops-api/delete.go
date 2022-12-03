@@ -199,7 +199,7 @@ func deleteDev(dev_id string) (bool, error) {
 		return false, errors.New(" Developer group doesn't exist ")
 	}
 	for i := range developers {
-		if developers[i].Id == dev_id {
+		if i < len(developers) && developers[i].Id == dev_id {
 			if len(developers) == 1 {
 				developers = []*devops_resource.Dev{}
 			} else {
@@ -233,7 +233,7 @@ func deleteOp(op_id string) (bool, error) {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
 	for i := range operations {
-		if operations[i].Id == op_id {
+		if i < len(operations) && operations[i].Id == op_id {
 			if len(operations) == 1 {
 				operations = []*devops_resource.Ops{}
 			} else {
