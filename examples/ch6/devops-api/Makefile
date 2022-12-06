@@ -1,7 +1,9 @@
 # makefile for devops api project this is required for building and running
+.PHONY: clean
+
 export GIN_MODE=release
 
-run: main.go build
+run: clean main.go build
 	./devops-api
 
 build: main.go tidy fmt test
@@ -23,4 +25,4 @@ docker-run: docker
 	docker run -d -p 8080:8080 -t devops-api:v1
 
 clean:
-	rm devops-api
+	rm -rf devops-api

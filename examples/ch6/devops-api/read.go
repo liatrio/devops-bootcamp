@@ -14,7 +14,7 @@ func findEngineer_by_Name(engineer_name string) (*devops_resource.Engineer, erro
 			return newEngineer, nil
 		}
 	}
-	return nil, errors.New(" no engineer with the name ")
+	return nil, errors.New(" no engineer with that name ")
 }
 
 func findEngineer_by_Email(engineer_email string) (*devops_resource.Engineer, error) {
@@ -50,7 +50,7 @@ func getSpecificEngineerById(c *gin.Context) {
 	engineer, err := findEngineer_by_Id(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -63,7 +63,7 @@ func getSpecificEngineerByName(c *gin.Context) {
 	engineer, err := findEngineer_by_Name(name)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -76,7 +76,7 @@ func getSpecificEngineerByEmail(c *gin.Context) {
 	engineer, err := findEngineer_by_Email(email)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -89,7 +89,7 @@ func getSpecificDevById(c *gin.Context) {
 	dev, err := findDev_by_Id(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -103,7 +103,7 @@ func getSpecificDevByName(c *gin.Context) {
 	dev, err := findDev_by_Name(name)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -116,7 +116,7 @@ func getSpecificOpsById(c *gin.Context) {
 	ops, err := findOp_by_Id(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -131,7 +131,7 @@ func getSpecificOpsByName(c *gin.Context) {
 	ops, err := findOps_by_Name(name)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -144,7 +144,7 @@ func getSpecificDevOpsById(c *gin.Context) {
 	devops, err := findDevOps_by_Id(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
