@@ -336,11 +336,6 @@ func postOp(c *gin.Context) {
 
 func postDevOps(c *gin.Context) {
 	var jsonData devops_resource.DevOps
-	err := c.BindJSON(&jsonData)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-		return
-	}
 	curDevOps, err := newDevOps(jsonData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
