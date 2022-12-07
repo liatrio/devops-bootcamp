@@ -7,7 +7,8 @@ if [[ $1 == "post" ]];then
 	curl http://localhost:8080/devops \
     		--include \
     		--header "Content-Type: application/json" \
-    		--request "POST"
+    		--request "POST" \
+        --data '{"ops": [], "dev": []}'
   exit
 # Deletes a DevOps resource using DELETE request
 # Arguments: 1: delete, 2: DevOps Id as query
