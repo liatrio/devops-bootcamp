@@ -93,6 +93,7 @@ func updateDevOps(id string, newDevOps devops_resource.DevOps) (bool, error) {
 	}
 	return true, nil
 }
+
 //*****************************//
 
 // server PUT handler
