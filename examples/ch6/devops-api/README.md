@@ -6,24 +6,24 @@ API is composed of 4 resources:
 
 ```
 1. Engineer - an individual engineer
-- id (unique numeric or alphanumeric identifier)
-- name (string)
-- valid email address(string)
+    - id (unique numeric or alphanumeric identifier)
+    - name (string)
+    - valid email address(string)
 
-1. Dev - collection of developer engineers
-- id (unique numeric or alphanumeric identifier)
-- name (string)
-- engineers (list of engineer resources)
+2. Dev - collection of developer engineers
+    - id (unique numeric or alphanumeric identifier)
+    - name (string)
+    - engineers (list of engineer resources)
 
-1. Ops - collections of operations engineers
-- id (unique numeric or alphanumeric identifier)
-- name (string)
-- engineers (list of engineer resources)
+3. Ops - collections of operations engineers
+    - id (unique numeric or alphanumeric identifier)
+    - name (string)
+    - engineers (list of engineer resources)
 
-1. DevOps - combination of a collection of developer and operations engineers
-- id (unique numeric or alphanumeric identifier)
-- Devs (list of Dev resources)
-- Ops (list of Ops resources)
+4. DevOps - combination of a collection of developer and operations engineers
+    - id (unique numeric or alphanumeric identifier)
+    - Devs (list of Dev resources)
+    - Ops (list of Ops resources)
 ```
 
 How to start the API:
