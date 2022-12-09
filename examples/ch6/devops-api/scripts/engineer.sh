@@ -16,6 +16,12 @@ if [[ $1 == "post" ]];then
       		--header "Content-Type: application/json" \
       		--request "POST" \
       		--data '{"name": "zach", "email": "zach@bengal.com"}'
+  # creates a new Engineer resource named bob
+  curl http://localhost:8080/engineers \
+      		--include \
+      		--header "Content-Type: application/json" \
+      		--request "POST" \
+      		--data '{"name": "bob", "email": "bob@bob.com"}'
   exit
 # Updates an Engineer Resource using a PUT request 
 # Arguments: 1: put, 2: Engineer Id as query 
