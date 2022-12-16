@@ -58,7 +58,7 @@ scripts/engineer.sh post
 
 From scripts directory:
 ```
-./dev.sh post
+./engineer.sh post
 ```
 
 This should send a POST request to the API that it will recieve and return json pertaining to the new engieer made:
