@@ -38,6 +38,14 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 ## Contributing
 This bootcamp was adapted from an apprentice training program, and some mistakes may have slipped through the cracks. If you see any errors, outdated methods, or citation errors please submit a pull request.
 
+To develop with a live preview, install [docsify](https://docsify.js.org/#/quickstart).
+```
+npm i docsify-cli -g
+# While in the directory of a local fork of this repository on your machine...
+docsify serve .
+# Edit files and a live preview will be shown in your browser
+```
+
 [Contributors](contributors.md)
 
 ![](img/class_light.svg ':size=100x100 :class=light-mode-icon')
