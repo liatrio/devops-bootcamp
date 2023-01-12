@@ -1,3 +1,4 @@
 .DS_Store
 .idea/
 .vscode
+/examples/ch6/devops-api/devops-api
