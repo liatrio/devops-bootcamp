@@ -1,8 +1,5 @@
 <!-- docs/_sidebar.md -->
 
-
-foo 
-
 <div id="dark_mode"
   ><i class="fas fa-sun"></i
   ><input type="checkbox" id="dark_mode_switch" name="mode"
@@ -44,8 +41,8 @@ foo
   - [3.2.3 - Auto Scaling](3-cloud-computing/3.2.3-auto-scaling.md)
   - [3.2.4 - AWS with Packer](3-cloud-computing/3.2.4-aws-packer.md)
   - [3.2.5 - Lambda](3-cloud-computing/3.2.5-lambda.md)
-  - [3.2.6 - ECS](3-cloud-computing/3.2.6-ecs.md)
-  - [3.2.7 - EKS](3-cloud-computing/3.2.7-eks.md)
+  - [3.2.6 - ECS](3-cloud-computing/3.2.5-ecs.md)
+  - [3.2.7 - EKS](3-cloud-computing/3.2.6-eks.md)
 - [3.3 - Cloud Computing on Azure](3-cloud-computing/3.3-overview.md)
   - [3.3.1 - Storage Accounts](3-cloud-computing/3.3.1-storage-accounts.md)
   - [3.3.2 - Virtual Machines](3-cloud-computing/3.3.2-virtual-machines.md)
@@ -90,11 +87,14 @@ foo
   - [5.4.1 - Docker](5-release-management/5.4.1-docker.md)
   - [5.4.2 - Helm](5-release-management/5.4.2-helm.md)
 * **Chapter 6**
-- [6.0 - Automation & Orchestration](6-automation-and-orchestration/6.0-overview.md)
-- [6.1 - Configuration Managers](6-automation-and-orchestration/6.1-configuration-managers.md)
-- [6.2 - Chef](6-automation-and-orchestration/6.2-chef.md)
-- [6.3 - Terraform](6-automation-and-orchestration/6.3-terraform)
-- [6.4 - Ansible](6-automation-and-orchestration/6.4-ansible.md)
+- [6.0 - Infrastructure & Configuration](6-infrastructure-configuration-management/6.0-overview.md)
+- [6.1 - Terraform](6-infrastructure-configuration-management/6.1-terraform)
+  - [6.1.1 - Terraform Getting Started](6-infrastructure-configuration-management/6.1.1-terraform-getting-started.md)
+  - [6.1.2 - Terraform State & Backends](6-infrastructure-configuration-management/6.1.2-terraform-backends.md)
+  - [6.1.3 - Terraform Modules](6-infrastructure-configuration-management/6.1.3-terraform-modules.md)
+  - [6.1.4 - Terraform Providers](6-infrastructure-configuration-management/6.1.4-terraform-providers.md)
+- [6.2 - Ansible](6-infrastructure-configuration-management/6.2-ansible.md)
+- [6.3 - Chef](6-infrastructure-configuration-management/6.3-chef.md)
 * **Chapter 7**
 - [7.0 - Kubernetes Overview](7-kubernetes-container-orchestration/7.0-overview.md)
 - [7.1 - Kubectl Reference](7-kubernetes-container-orchestration/7.1-kubectl-ref.md)
@@ -108,7 +108,8 @@ foo
 - [7.4 - RBAC](7-kubernetes-container-orchestration/7.4-rbac.md)
 - [7.5 - HPAs](7-kubernetes-container-orchestration/7.5-hpas.md)
 - [7.6 - Webhooks](7-kubernetes-container-orchestration/7.6-webhooks.md)
-- [7.7 - Hello K8s](7-kubernetes-container-orchestration/7.7-hello-k8s.md)
+- [7.7 - K8s The Hard Way](7-kubernetes-container-orchestration/7.7-k8sthw.md)
+- [7.8 - Hello K8s](7-kubernetes-container-orchestration/7.8-hello-k8s.md)
 * **Addendum**
 - [Addendum](8-addendum/addendum-overview.md)
   - [Ephemeral Jenkins](8-addendum/ephemeral-jenkins.md)
