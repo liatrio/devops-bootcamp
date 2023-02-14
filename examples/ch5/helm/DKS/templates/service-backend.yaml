@@ -3,8 +3,8 @@ kind: Service
 metadata:
   name: backend
   labels:
-    app.kubernetes.io/instance: realworld 
-    app.kubernetes.io/name: realworld
+    app.kubernetes.io/instance: devops-knowledge-share 
+    app.kubernetes.io/name: devops-knowledge-share
 spec:
   type: ClusterIP
   ports:
@@ -13,5 +13,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/instance: realworld 
-    app.kubernetes.io/name: realworld
+    app.kubernetes.io/instance: devops-knowledge-share 
+    app.kubernetes.io/name: devops-knowledge-share

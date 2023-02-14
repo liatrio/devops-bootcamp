@@ -1,4 +1,4 @@
-# Default values for RealWorld.
+# Default values for DevOps Knowledge Share demo application Helm chart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -12,11 +12,11 @@ frontend: {}
 
 backend:
   image:
-    repository: DOCKERHUB_USERNAME/realworld_backend
+    repository: DOCKERHUB_USERNAME/dks_api
     # Overrides the image tag whose default is the chart appVersion.
     tag: ""
   service:
-    port: 3000
+    port: 8080
     
 mongodb:
 
