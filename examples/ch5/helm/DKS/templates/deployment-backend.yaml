@@ -3,14 +3,14 @@ kind: Deployment
 metadata:
   name: backend
   labels:
-    app.kubernetes.io/instance: realworld 
-    app.kubernetes.io/name: realworld
+    app.kubernetes.io/instance: devops-knowledge-share 
+    app.kubernetes.io/name: devops-knowledge-share
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/instance: realworld 
-      app.kubernetes.io/name: realworld
+      app.kubernetes.io/instance: devops-knowledge-share 
+      app.kubernetes.io/name: devops-knowledge-share
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,8 +18,8 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        app.kubernetes.io/instance: realworld 
-        app.kubernetes.io/name: realworld
+        app.kubernetes.io/instance: devops-knowledge-share 
+        app.kubernetes.io/name: devops-knowledge-share
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.global.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 3000
+              containerPort: 8080
               protocol: TCP
           livenessProbe:
             httpGet:
@@ -47,10 +47,3 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          env:
-            - name: MONGODB_URI
-              value: mongodb://USERNAME:ROOT_PASSWORD@SERVICE_NAME
-            - name: NODE_ENV
-              value: production
-            - name: SECRET
-              value: shhhhhh
