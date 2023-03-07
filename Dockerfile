@@ -1,21 +1,21 @@
-from node:alpine
+FROM node:alpine
 
-run npm install -g docsify-cli@latest
-run mkdir -p /usr/local/docsify
+RUN npm install -g docsify-cli@latest
+RUN mkdir -p /usr/local/docsify
 
 ## Container dnvironment variables
-env DEBUG 0
-env PORT 3000
-env DOCSIFY_VERSION latest
-env NODE_VERSION alpine
+ENV DEBUG 0
+ENV PORT 3000
+ENV DOCSIFY_VERSION latest
+ENV NODE_VERSION alpine
 
 ## Container runtime configuration
-expose 3000
-workdir /usr/local/docsify
+EXPOSE 3000
+WORKDIR /usr/local/docsify
 
 ## Container entry point
-entrypoint [ "docsify", "serve", "--port", "3000" ]
+ENTRYPOINT [ "docsify", "serve", "--port", "3000" ]
 
 ## Container entry point default arguments
-cmd [ "." ]
+CMD [ "." ]
 
