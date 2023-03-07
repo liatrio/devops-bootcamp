@@ -1,4 +1,13 @@
 .DS_Store
 .idea/
-.vscode
 /examples/ch6/devops-api/devops-api
+.env
+
+## Docsify
+docsify/
+
+## Node
+node_modules/
+
+## VSCode
+.vscode
