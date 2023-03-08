@@ -14,5 +14,6 @@
 - [PaulH](https://github.com/PaulDHenson)
 - [Brad Fischer](https://github.com/BFisch14)
 - [Ryan McGuire](https://github.com/ramcguire)
+- [Joshua Burns](https://github.com/jburns24)
 
 [back](/)
