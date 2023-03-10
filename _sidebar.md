@@ -31,6 +31,7 @@
   - [2.5.3 - Deliverables](2-virtual-machines-containers/2.5.3-deliverables.md)
 * **Chapter 3**
 - [3.0 - Cloud Computing](3-cloud-computing/3.0-overview.md)
+  - [3.0.1 - Cloud Service Ecosystems](3-cloud-computing/3.0.1-Cloud-Ecosystems.md)
 - [3.1 - Cloud Intro](3-cloud-computing/3.1-cloud.md)
   - [3.1.1 - AWS Intro](3-cloud-computing/3.1.1-aws.md)
   - [3.1.2 - Azure Intro](3-cloud-computing/3.1.2-azure.md)
