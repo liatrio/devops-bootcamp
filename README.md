@@ -38,13 +38,47 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 ## Contributing
 This bootcamp was adapted from an apprentice training program, and some mistakes may have slipped through the cracks. If you see any errors, outdated methods, or citation errors please submit a pull request.
 
-To develop with a live preview, install [docsify](https://docsify.js.org/#/quickstart).
+## Local Development
+
+### Using Package.json **Recommended**
+
+Install Docsify locally (in current directory)
+
+1. Run `npm install`
+1. Run `npm start`
+1. Open <http://localhost:3000>
+
+### Global Install
+
+Install Docsify Globally in your system
+
+1. Install [docsify](https://docsify.js.org/#/quickstart)
+2. Navigate to local library of onboarding
+3. Run `docsify serve .`
+4. Open <http://localhost:3000>
+
+### Build Docker Container
+
+Execute the following commands from the project's root directory to generate a container image.
+
+```shell
+# Build Docker Image
+docker build . -t devops-bootcamp
 ```
-npm i docsify-cli -g
-# While in the directory of a local fork of this repository on your machine...
-docsify serve .
-# Edit files and a live preview will be shown in your browser
+
+### Running Docker Container
+
+```shell
+# Running Docker Container Detached
+docker run -d -p 3000:3000 --name devops-bootcamp devops-bootcamp
 ```
+
+### Contributing
+
+- Images should be placed under the root `img` folder and referred to using HTML `<img>` tags
+- H3 header (`###`) should be the default header within a page
+- H2 header (`##`) will appear in the navigation as the page's table of contents
+
 
 [Contributors](contributors.md)
 
