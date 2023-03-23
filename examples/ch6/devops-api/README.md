@@ -46,8 +46,8 @@ To make things a bit simpler we provided some scripts that go through CRUD opera
 
 These scripts are located in the `scripts` directory of this current directory.
 
-All the scripts excute curl requests that the api recieves. 
-Feel free to investigate and tinker with the scripts to have a better understanding client-side requests for the terrafrom custom provider.
+All the scripts execute curl requests that the api receives. 
+Feel free to investigate and tinker with the scripts to have a better understanding client-side requests for the terraform custom provider.
 
 Example call to creating new engineer resources from the script:
 
@@ -61,7 +61,7 @@ From scripts directory:
 ./engineer.sh post
 ```
 
-This should send a POST request to the API that it will recieve and return json pertaining to the new engieer made:
+This should send a POST request to the API that it will receive and return json pertaining to the new engineer made:
 
 Example response:
 - This is how the response from the api will look like when you create a new engineer resource.
