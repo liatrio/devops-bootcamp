@@ -9,5 +9,6 @@
         ]
     },
     "line-length": false,
-    "first-line-h1": false
+    "first-line-h1": false,
+    "siblings_only": true
 }

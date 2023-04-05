@@ -1,6 +1,6 @@
 <center>
 
-  ![Liatrio Logomark](img/favicon.svg ':size=150x150 :class=logo')
+  ![Liatrio Logomark](img/favicon.svg ':size=150x150 :class=logo' alt="Liatrio image; light mode")
 
 # Liatrio's DevOps Bootcamp
 
@@ -81,7 +81,7 @@ Use Docker to build and serve the content, but remember to rebuild the Docker im
 1. Run `docker compose up -d`
 2. Open <http://localhost:3000>
 
-### Contributing
+### More Information on Contributing
 
 - Images should be placed under the root `img` folder and referred to using HTML `<img>` tags
 - H3 header (`###`) should be the default header within a page
@@ -89,5 +89,5 @@ Use Docker to build and serve the content, but remember to rebuild the Docker im
 
 [Contributors](contributors.md)
 
-![](img/class_light.svg ':size=100x100 :class=light-mode-icon')
-![](img/class_dark.svg ':size=100x100 :class=dark-mode-icon')
+![](img/class_light.svg ':size=100x100 :class=light-mode-icon' alt="image of class; light mode")
+![](img/class_dark.svg ':size=100x100 :class=dark-mode-icon' alt="image of class; dark mode")
