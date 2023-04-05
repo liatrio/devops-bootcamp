@@ -1,5 +1,3 @@
-<!-- docs/_sidebar.md -->
-
 <div id="dark_mode"
   ><i class="fas fa-sun"></i
   ><input type="checkbox" id="dark_mode_switch" name="mode"
