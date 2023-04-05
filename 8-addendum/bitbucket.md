@@ -24,7 +24,7 @@ step-by-step guide showing your experience through this section.
   - You will need to setup a user with enough permission to access and git clone the repo
   - You will need to download the jodatime.tar.gz from [here](//github.com/JodaOrg/joda-time/releases).
   - Uncompress jodatime and initialize it as a git repo with Bitbucket remotes.
-4. Create a new maven Jenkins job that will `git clone` from Bitbucket and `clean deploy` jodatime to Nexus. 
+4. Create a new Maven Jenkins job that will `git clone` from Bitbucket and `clean deploy` jodatime to Nexus. 
   - Use the Bitbucket Jenkins plugin
 5. Configure your up and down dependencies between petclinic and jodatime. 
 6. Run a jodatime build and make sure it clones from Bitbucket and successfully deploys the artifact to Nexus.

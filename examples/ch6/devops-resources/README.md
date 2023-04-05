@@ -17,7 +17,7 @@ import "github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
 require github.com/liatrio/devops-bootcamp/examples/ch6/devops-resource [branch]
 ```
 
-#### When you run go mod tidy go will look for the module at the head of the branch you specificed in go.mod
+#### When you run go mod tidy go will look for the module at the head of the branch you specified in go.mod
 
 ### Now that you have the right path targeted for the import you can now use this module for any code corresponding to client-side communication from the terraform provider to the devops api.
 
