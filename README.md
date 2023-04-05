@@ -1,6 +1,6 @@
 <center>
 
-  ![Liatrio Logomark](img/favicon.svg ':size=150x150 :class=logo' alt="Liatrio image; light mode")
+  ![Liatrio Logomark](img/favicon.svg ':size=150x150 :class=logo :alt= Liatrio image')
 
 # Liatrio's DevOps Bootcamp
 
