@@ -1,0 +1,14 @@
+{
+    "no-inline-html": {
+        "allowed_elements": [
+            "details",
+            "center",
+            "p",
+            "i",
+            "label"
+        ]
+    },
+    "line-length": false,
+    "first-line-h1": false,
+    "siblings_only": true
+}

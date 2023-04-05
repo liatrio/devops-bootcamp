@@ -1,0 +1,14 @@
+name: text-linter
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' || github.event.pull_request }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: DavidAnson/markdownlint-cli2-action@v9
+        with:
+          globs: |
+            *.md
+            !test/*.md

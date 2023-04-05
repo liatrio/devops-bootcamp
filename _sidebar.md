@@ -6,8 +6,10 @@
   ><label for="dark_mode_switch">Toggle</label
   ><i class="fas fa-moon"></i></div>
 
-- [Introduction](/)
-* **Chapter 1**
+- [Welcome](/)
+
+- **Chapter 1**
+
 - [1.0 - Introduction to DevOps](1-introduction/1.0-overview.md)
 - [1.1 - DevOps Defined](1-introduction/1.1-devops-defined.md)
 - [1.2 - Liatrio and DevOps](1-introduction/1.2-liatrio-and-devops.md)
@@ -19,7 +21,9 @@
   - [1.3.4 - Passwords and Keys](1-introduction/1.3.4-passwords-and-keys.md)
   - [1.3.5 - Networking Basics](1-introduction/1.3.5-networking.md)
 - [1.4 - External Resources](1-introduction/1.4-external-resources.md)
-* **Chapter 2**
+
+- **Chapter 2**
+
 - [2.0 - Virtual Machines and Containers](2-virtual-machines-containers/2.0-overview.md)
 - [2.1 - Golden Images](2-virtual-machines-containers/2.1-golden-images.md)
 - [2.2 - Local Development](2-virtual-machines-containers/2.2-local-development.md)
@@ -29,7 +33,9 @@
   - [2.5.1 - Docker Compose](2-virtual-machines-containers/2.5.1-docker-compose.md)
   - [2.5.2 - Kubernetes](2-virtual-machines-containers/2.5.2-kubernetes.md)
   - [2.5.3 - Deliverables](2-virtual-machines-containers/2.5.3-deliverables.md)
-* **Chapter 3**
+
+- **Chapter 3**
+
 - [3.0 - Cloud Computing](3-cloud-computing/3.0-overview.md)
   - [3.0.1 - Cloud Service Ecosystems](3-cloud-computing/3.0.1-Cloud-Ecosystems.md)
 - [3.1 - Cloud Intro](3-cloud-computing/3.1-cloud.md)
@@ -51,7 +57,9 @@
   - [3.3.4 - Azure with Packer](3-cloud-computing/3.3.4-az-packer.md)
   - [3.3.5 - ACI](3-cloud-computing/3.3.5-aci.md)
   - [3.3.6 - AKS](3-cloud-computing/3.3.6-aks.md)
-* **Chapter 4**
+
+- **Chapter 4**
+
 - [4.0 - Development Practices](4-software-development-practices/4.0-overview.md)
 - [4.1 - Agile](4-software-development-practices/4.1-overview.md)
   - [4.1.1 - Scrum](4-software-development-practices/4.1.1-scrum.md)
@@ -74,7 +82,9 @@
   - [4.5.5 - Test Automation](4-software-development-practices/4.5.5-test-automation.md)
   - [4.5.6 - SonarQube](4-software-development-practices/4.5.6-sonarqube.md)
 - [4.6 - Hello DevOps](4-software-development-practices/4.6-hello-devops.md)
-* **Chapter 5**
+
+- **Chapter 5**
+
 - [5.0 - Release Management](5-release-management/5.0-overview.md)
 - [5.1 - Versioning](5-release-management/5.1-versioning.md)
 - [5.2 - Declarative Pipelines](5-release-management/5.2-declarative-pipelines.md)
@@ -87,7 +97,9 @@
 - [5.4 - Containers](5-release-management/5.4-containers.md)
   - [5.4.1 - Docker](5-release-management/5.4.1-docker.md)
   - [5.4.2 - Helm](5-release-management/5.4.2-helm.md)
-* **Chapter 6**
+
+- **Chapter 6**
+
 - [6.0 - Infrastructure & Configuration](6-infrastructure-configuration-management/6.0-overview.md)
 - [6.1 - Terraform](6-infrastructure-configuration-management/6.1-terraform)
   - [6.1.1 - Terraform Getting Started](6-infrastructure-configuration-management/6.1.1-terraform-getting-started.md)
@@ -96,7 +108,9 @@
   - [6.1.4 - Terraform Providers](6-infrastructure-configuration-management/6.1.4-terraform-providers.md)
 - [6.2 - Ansible](6-infrastructure-configuration-management/6.2-ansible.md)
 - [6.3 - Chef](6-infrastructure-configuration-management/6.3-chef.md)
-* **Chapter 7**
+
+- **Chapter 7**
+
 - [7.0 - Kubernetes Overview](7-kubernetes-container-orchestration/7.0-overview.md)
 - [7.1 - Kubectl Reference](7-kubernetes-container-orchestration/7.1-kubectl-ref.md)
   - [7.1.1 - Getting Started](7-kubernetes-container-orchestration/7.1.1-getting-started.md)
@@ -111,7 +125,9 @@
 - [7.6 - Webhooks](7-kubernetes-container-orchestration/7.6-webhooks.md)
 - [7.7 - K8s The Hard Way](7-kubernetes-container-orchestration/7.7-k8sthw.md)
 - [7.8 - Hello K8s](7-kubernetes-container-orchestration/7.8-hello-k8s.md)
-* **Addendum**
+
+- **Addendum**
+
 - [Addendum](8-addendum/addendum-overview.md)
   - [Ephemeral Jenkins](8-addendum/ephemeral-jenkins.md)
   - [Tomcat](8-addendum/tomcat.md)
@@ -120,4 +136,3 @@
   - [Jira](8-addendum/jira.md)
   - [Artifactory](8-addendum/artifactory.md)
   - [Docker Registry](8-addendum/docker-registry.md)
-
