@@ -39,7 +39,7 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
  5. Be transparent in your progress.
  6. Have fun!
 
-> "It's better to overcommunicate than to undercommunicate."
+> "It's better to over communicate than to under communicate."
 
 ## Contributing
 

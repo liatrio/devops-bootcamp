@@ -529,4 +529,365 @@ ch6
 val
  - 1-introduction/1.1-devops-defined.md
 preemptively
+i.e.
+Pre-Production
+Inclusivity
+KubeCon
+2019
+Hightower
+toolset
+Roadmap
+bootcamp
 Skelton
+ - 1-introduction/1.2-liatrio-and-devops.md
+_do_
+SCM
+ - 1-introduction/1.2.1-dojo.md
+dojo
+dōjō
+learnings
+ - 1-introduction/1.3.1-unix.md
+MacOS
+filename
+filenames
+timestamps
+ - 1-introduction/1.3.2-vim.md
+modeless
+Deliverables
+ - 1-introduction/1.3.3-installations.md
+distros
+wget
+yum.repos.d
+distro
+ - 1-introduction/1.3.4-passwords-and-keys.md
+KeePass
+Lastpass
+1Password
+2022
+passwordless
+0700
+0600
+ed25519
+RSA
+10
+VMs
+id_rsa
+id_ed25519
+config
+hostname
+ - 1-introduction/1.3.5-networking.md
+Virtualization
+IPv4
+IPv6
+255
+DHCP
+Hostnames
+DNS
+hostnames
+loopback
+22
+80
+HTTPS
+443
+Subnets
+CIDR
+32
+10.1.145.4
+16
+255.255.0.0
+10.1.0.0
+192.168.5.40
+24
+255.255.255.0
+192.168.5.0
+10.0.162.5
+20
+255.255.240.0
+10.0.160.0
+IPs
+10.0.0.0
+10.255.255.255
+777
+216
+172.16.0.0
+12
+172.31.255.255
+048
+576
+192.168.0.0
+192.168.255.255
+65
+536
+subnet
+ - 1-introduction/1.4-external-resources.md
+Spotify
+2016
+Phippy
+ - 2-virtual-machines-containers/2.1-golden-images.md
+pre-configured
+M1
+VirtualBox
+arm64
+23
+02
+UTM
+VM
+64-bit
+x86
+Armon
+Dadgar
+SRE
+automatable
+Dev
+preinstalled
+http_directory
+boot_command
+OVF
+ - 2-virtual-machines-containers/2.2-local-development.md
+MacBook
+ch2
+vagrant_docker_example
+VagrantUp
+virtualization
+ - 2-virtual-machines-containers/2.3-managing-infrastructure.md
+versioned
+npm
+toolchain
+webhook
+OSS
+Ngrok
+ - 2-virtual-machines-containers/2.4-containers.md
+virtualize
+Versioning
+auditability
+idempotently
+15
+OpenShift
+runtime
+dependabot
+Gradle
+ - 2-virtual-machines-containers/2.5-container-management.md
+filesystem
+ - 2-virtual-machines-containers/2.5.1-docker-compose.md
+3.4.0
+V2
+UIs
+ - 2-virtual-machines-containers/2.5.2-kubernetes.md
+CNCF
+kube-apiserver
+kube-controller-manager
+kube-scheduler
+etcd
+namespace
+ - 2-virtual-machines-containers/2.5.3-deliverables.md
+k8s
+ - 2-virtual-machines-containers/packer.md
+JSON
+json
+ - 3-cloud-computing/3.0.1-Cloud-Ecosystems.md
+datacenter
+IaaS
+runtimes
+CaaS
+PaaS
+middleware
+365
+ - 3-cloud-computing/3.1.1-aws.md
+metadata
+ - 3-cloud-computing/3.1.2-azure.md
+e.g.
+ - 3-cloud-computing/3.2.1-s3-cloudfront.md
+performant
+analytics
+Realworld
+PROFILE_REGION
+html
+php
+subdomain
+ - 3-cloud-computing/3.2.3-auto-scaling.md
+webapp
+TCP
+UDP
+TLS
+200
+ - 3-cloud-computing/3.2.4-aws-packer.md
+tradeoffs
+ - 3-cloud-computing/3.2.5-lambda.md
+Kinesis
+https
+ - 3-cloud-computing/3.2.7-eks.md
+amongst
+kube-api-server
+repo
+ - 3-cloud-computing/3.3.1-storage-accounts.md
+accountname.regioncode.web.core.windows.net.
+ - 3-cloud-computing/3.3.6-aks.md
+interoperate
+namespaces
+ - 4-software-development-practices/4.1-overview.md
+Lifecycle
+ - 4-software-development-practices/4.1.1-scrum.md
+DeGrandis
+touchpoint
+ - 4-software-development-practices/4.1.3-workflow.md
+Subtasks
+Subtask
+ - 4-software-development-practices/4.1.4-stories.md
+ndependent
+egotiable
+aluable
+stimable
+estable
+_
+ - 4-software-development-practices/4.2-jira.md
+untracked
+13
+21
+buildability
+ - 4-software-development-practices/4.3-version-control.md
+codebase
+ - 4-software-development-practices/4.3.2-git.md
+subfolders
+rebase
+facto
+ - 4-software-development-practices/4.4-pairprogramming.md
+pre-packaged
+ - 4-software-development-practices/4.5.1-unit-testing.md
+tl
+ - 4-software-development-practices/4.5.2-functional-testing.md
+programmatically
+WebDriver
+geckodriver
+ - 4-software-development-practices/4.5.3-code-styling.md
+snake_case
+camelCase
+formatters
+ - 4-software-development-practices/4.5.6-sonarqube.md
+http
+ - 5-release-management/5.2-declarative-pipelines.md
+everytime
+ - 5-release-management/5.3.1-maven.md
+reusability
+lifecycle
+groupId
+artifactId
+ - 5-release-management/5.3.2-maven-integration.md
+Axel
+Fontaine
+joda-time-hibernate
+buildnumber-maven-plugin
+buildnumber
+ - 5-release-management/5.3.3-make.md
+Makefile
+Makefiles
+ - 5-release-management/5.3.4-npm.md
+versioning
+ - 5-release-management/5.4-containers.md
+cpu
+ - 5-release-management/5.4.1-docker.md
+defacto
+ - 6-infrastructure-configuration-management/6.1-terraform.md
+APIs
+SDK
+availability_zone
+instance_type
+key_name
+security_groups
+parameterize
+staging.tfvars
+ - 6-infrastructure-configuration-management/6.1.4-terraform-providers.md
+declaratively
+templated
+makefile
+ReadMe
+reate
+dev
+devops
+ead
+pdate
+elete
+Structs
+structs
+Terraforms
+struct
+provider.go
+main.go
+datasources
+datasource
+schemas
+ - 6-infrastructure-configuration-management/6.2-ansible.md
+ansible
+httpd
+Ansible.com
+ - 6-infrastructure-configuration-management/6.3-chef.md
+Repos
+ - 7-kubernetes-container-orchestration/7.1.1-getting-started.md
+jsonpath
+ - 7-kubernetes-container-orchestration/7.1.2-app-management.md
+autoscale
+stateful
+replicaset
+unschedulable
+subcommand
+nginx
+kubectl
+ - 7-kubernetes-container-orchestration/7.1.4-cluster-management.md
+emptyDir
+uncordon
+schedulable
+ - 7-kubernetes-container-orchestration/7.1.5-kubectl-settings-and-usage.md
+kubeconfig
+subcommands
+ - 7-kubernetes-container-orchestration/7.2-volumes.md
+NFS
+persistentVolumes
+StorageClass
+StorageClasses
+pre-create
+volumeBindingMode
+ - 7-kubernetes-container-orchestration/7.3-probes.md
+Misconfigured
+liveness
+initialDelaySeconds
+periodSeconds
+timeoutSeconds
+successThreshold
+failureThreshold
+matchLabels
+ - 7-kubernetes-container-orchestration/7.4-rbac.md
+kubelets
+ClusterRoles
+RoleBindings
+healthz
+jenkins
+fluentd
+ - 7-kubernetes-container-orchestration/7.5-hpas.md
+tty
+busybox
+apiVersion
+ - 7-kubernetes-container-orchestration/7.6-webhooks.md
+apiGroups
+ - 7-kubernetes-container-orchestration/7.7-k8sthw.md
+PodSpecs
+cfssl
+readme
+ - 8-addendum/bitbucket.md
+Uncompress
+Jenkins_IP
+ - 8-addendum/ephemeral-jenkins.md
+job-dsl
+JCasC
+windspeed
+ - 8-addendum/nexus.md
+executables
+ - README.md
+deliverables
+bootcamper
+overcommunicate
+undercommunicate
+Docsify
+docsify
+H3
+H2
+ - _sidebar.md
+checkbox
