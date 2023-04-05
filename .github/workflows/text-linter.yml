@@ -1,11 +1,5 @@
 name: text-linter
-on:
-  push:
-    branches:
-      - master
-  pull_request_target:
-    branches:
-      - master
+on: [push, pull_request]
 
 jobs:
   lint:
