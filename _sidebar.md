@@ -6,7 +6,7 @@
   ><label for="dark_mode_switch">Toggle</label
   ><i class="fas fa-moon"></i></div>
 
-- [Introduction](/)
+- [Welcome](/)
 * **Chapter 1**
 - [1.0 - Introduction to DevOps](1-introduction/1.0-overview.md)
 - [1.1 - DevOps Defined](1-introduction/1.1-devops-defined.md)

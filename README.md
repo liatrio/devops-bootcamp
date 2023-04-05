@@ -39,14 +39,15 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 This bootcamp was adapted from an apprentice training program, and some mistakes may have slipped through the cracks. If you see any errors, outdated methods, or citation errors please submit a pull request.
 
 ## Local Development
+Below are a number of ways to develop locally, choose whichever you are most comfortable with. 
 
 ### Using Package.json **Recommended**
 
 Install Docsify locally (in current directory)
 
 1. Run `npm install`
-1. Run `npm start`
-1. Open <http://localhost:3000>
+2. Run `npm start`
+3. Open <http://localhost:3000>
 
 ### Global Install
 
@@ -57,28 +58,26 @@ Install Docsify Globally in your system
 3. Run `docsify serve .`
 4. Open <http://localhost:3000>
 
-### Build Docker Container
+### Docker
 
-Execute the following commands from the project's root directory to generate a container image.
+Use Docker to build and serve the content, but remember to rebuild the Docker image to review changes
 
-```shell
-# Build Docker Image
-docker build . -t devops-bootcamp
-```
+#### Build and Run Docker Container
 
-### Running Docker Container
+1. Execute `docker build . -t devops-bootcamp` from the project's root directory to generate a container image
+2. Run `docker run -d -p 3000:3000 --name devops-bootcamp devops-bootcamp` to run a detached Docker container
+3. Open <http://localhost:3000>
 
-```shell
-# Running Docker Container Detached
-docker run -d -p 3000:3000 --name devops-bootcamp devops-bootcamp
-```
+#### Docker Compose
+
+1. Run `docker compose up -d`
+2. Open <http://localhost:3000>
 
 ### Contributing
 
 - Images should be placed under the root `img` folder and referred to using HTML `<img>` tags
 - H3 header (`###`) should be the default header within a page
 - H2 header (`##`) will appear in the navigation as the page's table of contents
-
 
 [Contributors](contributors.md)
 
