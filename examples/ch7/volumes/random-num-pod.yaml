@@ -4,7 +4,7 @@ metadata:
   name: myPod
 spec:
   containers:
-    - name: apline
+    - name: alpine
       image: alpine
       command: ["/bin/sh", "-c"]
       args: ["shuf -i 0-100 -n 1 >> /opt/number.out;"]
