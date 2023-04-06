@@ -127,9 +127,9 @@
     ],
     "ignorePaths": [
         ".cspell.json",
-        "examples",
-        "fontawesome",
-        "img",
+        "examples/**",
+        "fontawesome/**",
+        "img/**",
         "node_modules/**"
     ],
     "features": {
