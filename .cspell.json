@@ -1,0 +1,68 @@
+{
+    "version": "0.2",
+    "language": "en_US",
+    "words": [
+        "Liatrio",
+        "Logomark",
+        "Docsify",
+        "nargs",
+        "Bootcamp",
+        "bootcamper",
+        "struct",
+        "blaa",
+        "Dockerhub",
+        "Dockerfiles",
+        "jetstack",
+        "petclinic",
+        "kubeconfig",
+        "kubelet",
+        "Kanban",
+        "CNCF",
+        "apiserver",
+        "Katacode",
+        "AWSCLIV",
+        "boto",
+        "splitlines",
+        "Liatrians",
+        "liatr",
+        "reate",
+        "pdate",
+        "elete",
+        "Structs",
+        "structs",
+        "tfsdk",
+        "terraformrc"
+    ],
+    "dictionaries": [
+        "en_US",
+        "html",
+        "css",
+        "npm",
+        "useCompounds",
+        "companies",
+        "softwareTerms",
+        "misc",
+        "k8s",
+        "markdown",
+        "aws",
+        "docker"
+    ],
+    "flagWords": [
+        "hte"
+    ],
+    "files": [
+        "*.md",
+        "**/*.md"
+    ],
+    "ignorePaths": [
+        "node_modules/**",
+        ".cspell.json",
+        "examples",
+        "fontawesome"
+    ],
+    "features": {
+        "weighted-suggestions": true
+    },
+    "allowCompoundWords": true,
+    "useGitignore": true
+}
