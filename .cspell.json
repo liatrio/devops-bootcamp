@@ -134,10 +134,11 @@
         "**/*.md"
     ],
     "ignorePaths": [
-        "node_modules/**",
         ".cspell.json",
         "examples",
-        "fontawesome"
+        "fontawesome",
+        "img",
+        "node_modules/**"
     ],
     "features": {
         "weighted-suggestions": true
