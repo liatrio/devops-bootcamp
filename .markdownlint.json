@@ -8,7 +8,8 @@
             "label"
         ]
     },
-    "line-length": false,
     "first-line-h1": false,
-    "siblings_only": true
+    "single-h1": false,
+    "siblings_only": true,
+    "line-length": false
 }
