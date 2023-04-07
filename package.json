@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "docsify serve --port 3000",
-    "lint": "remark ."
+    "lint": "remark .",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "cspell": "^6.31.1",
     "remark": "^14.0.2",
-    "remark-cli": "^11.0.0"
+    "remark-cli": "^11.0.0",
+    "husky": "^8.0.0"
   }
 }
