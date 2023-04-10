@@ -18,7 +18,6 @@ This is a group exercise. If you are just one person, that's okay; we believe in
 5. Docker will not connect to a Registry over an insecure connection, so set up [self signed certificates](https://docs.docker.com/registry/insecure/#use-self-signed-certificates).
 6. Confirm that you can connect to your registry from a remote machine.
 
-
 ## Using Docker Registry
 
 1. Read the documentation about [Docker tags](https://docs.docker.com/engine/reference/commandline/tag/).
@@ -36,6 +35,7 @@ This is a group exercise. If you are just one person, that's okay; we believe in
 13. Have your group or partner experiment by pulling down your images from the registry. Take note of the different tags you can use to refer to the same images.
 
 # Deliverable
+
 - A Docker Registry setup accessible from remote machines.
 - Discuss why you might choose to use a private Docker Registry instead of Docker's public repository.
 - Discuss the limitations of Docker Registry compared to Dockerhub.

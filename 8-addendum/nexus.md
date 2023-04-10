@@ -17,7 +17,7 @@ Confirm that your artifact was deployed.
 # Retrieving Artifacts from Nexus
 
 1. Install the [Publish Over SSH](https://wiki.jenkins.io/display/JENKINS/Publish+Over+SSH+Plugin) Jenkins plugin.
-2. Setup an SSH key pair between your Tomcat server and Jenkins. 
+2. Setup an SSH key pair between your Tomcat server and Jenkins.
 3. Create a new Jenkins job that will connect to your Tomcat server, then download a .war file from Nexus.
 4. Nexus stores metadata for builds separate from the artifacts themselves. Use this metadata and add a script to your deploy job so that it downloads the newest petclinic artifact from Nexus.
 
