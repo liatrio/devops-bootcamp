@@ -15,6 +15,7 @@
         ]
     },
     "heading-style": false,
+    "no-trailing-punctuation": false,
     "first-line-h1": false,
     "single-h1": false,
     "siblings_only": true,
