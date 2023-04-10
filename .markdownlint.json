@@ -8,8 +8,12 @@
             "label",
             "div",
             "summary",
-            "br"
+            "br",
+            "commit"
         ]
+    },
+    "heading-style": {
+        "style": "setext"
     },
     "first-line-h1": false,
     "single-h1": false,
