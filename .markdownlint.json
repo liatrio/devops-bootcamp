@@ -10,7 +10,8 @@
             "summary",
             "br",
             "commit",
-            "ticket"
+            "ticket",
+            "public"
         ]
     },
     "heading-style": false,
