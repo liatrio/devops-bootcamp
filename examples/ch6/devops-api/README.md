@@ -26,7 +26,7 @@ API is composed of 4 resources:
     - Ops (list of Ops resources)
 ```
 
-## How to start the API
+## How to start the API:
 
 Run it on locally:
 - This will build, test, and run the API in the foreground.
@@ -40,7 +40,7 @@ Running it as a docker container:
 make docker-run
 ```
 
-## How to use crud operations
+## How to use crud operations:
 
 To make things a bit simpler we provided some scripts that go through CRUD operations for the resources.
 
