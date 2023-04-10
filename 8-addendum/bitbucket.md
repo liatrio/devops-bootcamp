@@ -52,10 +52,10 @@ Follow these instructions to set up a webhook for the above Jenkins-Bitbucket co
       - Use format <http://<Jenkins_IP>:8080/>
 
     - Set up URL that Jenkins has configured as the repo clone
-      * Just copy and paste from your Jenkins configuration
-      * For the repo clone dropdown:
-        * Use SSH if you have used the external IP and it matches the exact IP of BitBucket Repo.
-        * Use HTTP if you have used the external IP and it matches the exact IP of BitBucket Repo.
+      - Just copy and paste from your Jenkins configuration
+      - For the repo clone dropdown:
+        - Use SSH if you have used the external IP and it matches the exact IP of BitBucket Repo.
+        - Use HTTP if you have used the external IP and it matches the exact IP of BitBucket Repo.
 
 2. Setup Jenkins to Handle WebHooks
 1. Download the [Bitbucket Plugin](//wiki.jenkins-ci.org/display/JENKINS/BitBucket+Plugin) if you haven't already.

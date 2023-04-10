@@ -3,7 +3,7 @@
 In this section you will learn how to configure Tomcat. Tomcat is an open-source Java Servlet container developed by Apache, that provides a Java HTTP web server environment to run and test java code.
 You can find out more about Tomcat from the [official website](https://tomcat.apache.org/) and [Wikipedia page](https://en.wikipedia.org/wiki/Apache_Tomcat).
 
-![](img7/tomcat.svg ':size=300x200 :class=icon')
+![tomcat image](img7/tomcat.svg ':size=300x200 :class=icon :alt= tomcat image')
 
 ## Setup Tomcat
 

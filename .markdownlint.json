@@ -6,7 +6,9 @@
             "p",
             "i",
             "label",
-            "div"
+            "div",
+            "summary",
+            "br"
         ]
     },
     "first-line-h1": false,
@@ -18,5 +20,8 @@
     "header-increment": false,
     "no-blanks-blockquote": false,
     "ol-prefix": false,
-    "no-emphasis-as-header": false
+    "no-emphasis-as-header": false,
+    "blanks-around-fences": false,
+    "blanks-around-lists": false,
+    "code-block-style": false
 }

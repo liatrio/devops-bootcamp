@@ -1,7 +1,7 @@
 # Artifactory
 
-![](img7/artifactory_light.svg ':size=400px :class=light-mode-img-center')
-![](img7/artifactory_dark.svg ':size=400px :class=dark-mode-img-center')
+![artifactory image](img7/artifactory_light.svg ':size=400px :class=light-mode-img-center :alt= artifactory image; light mode')
+![artifactory image](img7/artifactory_dark.svg ':size=400px :class=dark-mode-img-center :alt= artifactory image; dark mode')
 
 ## What is Artifactory?
 
