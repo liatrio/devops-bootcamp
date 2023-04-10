@@ -9,7 +9,8 @@
             "div",
             "summary",
             "br",
-            "commit"
+            "commit",
+            "ticket"
         ]
     },
     "heading-style": false,
