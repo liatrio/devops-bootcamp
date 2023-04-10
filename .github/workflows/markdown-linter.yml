@@ -1,4 +1,4 @@
-name: text-linter
+name: markdown-linter
 on:
   push:
   pull_request:
@@ -16,4 +16,4 @@ jobs:
         with:
           globs: |
             *.md
-            !**/*.md
+            **/*.md

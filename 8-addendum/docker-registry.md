@@ -4,8 +4,8 @@ In this section we'll be learning about Docker Registry. As you've learned previ
 
 In some situations it might be useful to manage your own collection of Docker images. In this case you could set up an internal Docker Registry to store them in.
 
-![](img7/build_light.svg ':size=100x100 :class=light-mode-icon')
-![](img7/build_dark.svg ':size=100x100 :class=dark-mode-icon')
+![build image](img7/build_light.svg ':size=100x100 :class=light-mode-icon :alt= build image; light mode')
+![build image](img7/build_dark.svg ':size=100x100 :class=dark-mode-icon :alt= build image; dark mode')
 
 ## Setup a Docker Registry
 
@@ -17,7 +17,6 @@ This is a group exercise. If you are just one person, that's okay; we believe in
 4. On another machine, another person should try to access the registry remotely.
 5. Docker will not connect to a Registry over an insecure connection, so set up [self signed certificates](https://docs.docker.com/registry/insecure/#use-self-signed-certificates).
 6. Confirm that you can connect to your registry from a remote machine.
-
 
 ## Using Docker Registry
 
@@ -36,6 +35,7 @@ This is a group exercise. If you are just one person, that's okay; we believe in
 13. Have your group or partner experiment by pulling down your images from the registry. Take note of the different tags you can use to refer to the same images.
 
 # Deliverable
+
 - A Docker Registry setup accessible from remote machines.
 - Discuss why you might choose to use a private Docker Registry instead of Docker's public repository.
 - Discuss the limitations of Docker Registry compared to Dockerhub.
