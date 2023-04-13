@@ -4,7 +4,7 @@ This documentation is used to get a better understanding of the DevOps API to be
 
 API is composed of 4 resources:
 
-```
+```markdown
 1. Engineer - an individual engineer
     - id (unique numeric or alphanumeric identifier)
     - name (string)
@@ -30,13 +30,13 @@ API is composed of 4 resources:
 
 Run it on locally:
 - This will build, test, and run the API in the foreground.
-```
+```bash
 make run
 ```
 
 Running it as a docker container:
--  This will build, test the go code and then build the docker image then run it as a daemon process.
-```
+- This will build, test the go code and then build the docker image then run it as a daemon process.
+```bash
 make docker-run
 ```
 
@@ -46,18 +46,18 @@ To make things a bit simpler we provided some scripts that go through CRUD opera
 
 These scripts are located in the `scripts` directory of this current directory.
 
-All the scripts execute curl requests that the api receives. 
+All the scripts execute curl requests that the api receives.
 Feel free to investigate and tinker with the scripts to have a better understanding client-side requests for the terraform custom provider.
 
 Example call to creating new engineer resources from the script:
 
 From current directory:
-```
-scripts/engineer.sh post 
+```bash
+scripts/engineer.sh post
 ```
 
 From scripts directory:
-```
+```bash
 ./engineer.sh post
 ```
 
@@ -65,7 +65,7 @@ This should send a POST request to the API that it will receive and return json 
 
 Example response:
 - This is how the response from the api will look like when you create a new engineer resource.
-```
+```bash
 HTTP/1.1 201 Created
 Content-Type: application/json; charset=utf-8
 Date: Fri, 09 Dec 2022 17:16:21 GMT
@@ -77,4 +77,3 @@ Content-Length: 68
     "email": "bob@bob.com"
 }
 ```
-

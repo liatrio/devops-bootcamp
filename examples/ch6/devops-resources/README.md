@@ -5,14 +5,17 @@
 ## How to import module for the resources built in go:
 
 ### Example in how the import is call in your go code:
+
 ```go
 import "github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
 ```
+
 #### This is how you would pull the module in the default branch [master]
 
 ### If you are trying to pull the module from a branch that differs from the default branch then you can do this step:
 
 #### Here is an example of how to include the module inside of the go.mod within the terraform provider:
+
 ```go
 require github.com/liatrio/devops-bootcamp/examples/ch6/devops-resource [branch]
 ```
@@ -26,31 +29,37 @@ require github.com/liatrio/devops-bootcamp/examples/ch6/devops-resource [branch]
 #### To access struct type that is defined in the module you call it like this:
 
 ##### Engineer Struct:
+
 ```go
 devops_resource.Engineer
 ```
 
 ##### Dev Struct:
+
 ```go
 devops_resource.Dev
 ```
 
 ##### Ops Struct:
+
 ```go
 devops_resource.Ops
 ```
 
 ##### DevOps Struct:
+
 ```go
 devops_resource.DevOps
 ```
 
-## Notes: 
+## Notes:
+
 ### The structs use references of another struct object to manage lists.
 
 - This allows easier management of the lists when updating a resource.
 
 #### Struct Example:
+
 ```go
 type DevOps struct {
         Id  string `json:"id"`
