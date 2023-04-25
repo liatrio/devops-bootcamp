@@ -1,0 +1,16 @@
+{
+    "primaryCategory": "Virtualization",
+    "readingTimeInMin": 10,
+    "exercises": [
+        {
+            "name": "Configure VM on VirtualBox",
+            "targetedTimeInMin": 5,
+            "technologies": ["virtualbox"]
+        },
+        {
+            "name": "Create OVF with Packer",
+            "targetedTimeInMin": 5,
+            "technologies": ["virtualbox", "packer"]
+        }
+    ]
+}

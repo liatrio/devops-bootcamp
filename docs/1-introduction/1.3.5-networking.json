@@ -1,0 +1,10 @@
+{
+    "primaryCategory": "Fundamentals",
+    "readingTimeInMin": 14,
+    "exercises": [
+        {
+            "name": "Explore local network",
+            "targetedTimeInMin": 10
+        }
+    ]
+}

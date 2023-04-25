@@ -1,0 +1,10 @@
+{
+    "primaryCategory": "Fundamentals",
+    "readingTimeInMin": 10,
+    "exercises": [
+        {
+            "name": "Create file with vim",
+            "targetedTimeInMin": 5
+        }
+    ]
+}
