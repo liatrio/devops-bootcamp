@@ -9,7 +9,7 @@ Docsify and some Markdown viewers supports mixing HTML and Markdown elements in 
 ```html
 <center>
 
-  ![](../img/goals.png)
+  ![](../../img/goals.png)
 
 </center>
 ```

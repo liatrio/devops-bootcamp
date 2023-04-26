@@ -1,6 +1,6 @@
 <center>
 
-  ![Liatrio Logomark](img/favicon.svg ':size=150x150 :class=logo :alt= Liatrio image')
+  ![Liatrio Logomark](../img/favicon.svg ':size=150x150 :class=logo :alt= Liatrio image')
 
 # Liatrio's DevOps Bootcamp
 
@@ -89,5 +89,5 @@ Use Docker to build and serve the content, but remember to rebuild the Docker im
 
 [Contributors](contributors.md)
 
-![classroom image](img/class_light.svg ':size=100x100 :class=light-mode-icon :alt= classroom image; light mode')
-![classroom image](img/class_dark.svg ':size=100x100 :class=dark-mode-icon :alt= classroom image; dark mode')
+![classroom image](../img/class_light.svg ':size=100x100 :class=light-mode-icon :alt= classroom image; light mode')
+![classroom image](../img/class_dark.svg ':size=100x100 :class=dark-mode-icon :alt= classroom image; dark mode')
