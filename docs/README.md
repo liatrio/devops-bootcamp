@@ -1,3 +1,10 @@
+
+<center>
+
+<canvas id="chart-canvas"></canvas>
+
+<center>
+
 <center>
 
   ![Liatrio Logomark](../img/favicon.svg ':size=150x150 :class=logo :alt= Liatrio image')

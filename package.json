@@ -32,8 +32,10 @@
   },
   "devDependencies": {
     "cspell": "^6.31.1",
+    "gray-matter": "^4.0.3",
     "husky": "^8.0.3",
     "remark": "^14.0.2",
-    "remark-cli": "^11.0.0"
+    "remark-cli": "^11.0.0",
+    "simple-git": "^3.18.0"
   }
 }

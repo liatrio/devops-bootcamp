@@ -68,6 +68,13 @@
       ]
     }
   </script>
+  <!-- I already depend on gray-matter for the precommit hook we should just use it here. Will need something like webpack -->
+  <script src="https://unpkg.com/js-yaml@3.10.0/dist/js-yaml.js"></script>
+  <script src="./src/yamlFront.js"></script>
+  <!-- End of section to clean up -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./src/docksify-plugins/read-metadata.js"></script>
+  <script src="./src/docksify-plugins/generate-chart.js"></script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
@@ -100,6 +107,18 @@
           break;
       }
     });
+  </script>
+  <script>
+    function addImage() {
+      const imageUrl = 'https://wpdatatables.com/wp-content/themes/tabor-child/assets/img/logo.svg'; // Replace with your image URL
+      const imageContainer = document.getElementById('image-container');
+
+      const img = document.createElement('img');
+      img.src = imageUrl;
+      img.alt = 'Sample image';
+
+      imageContainer.appendChild(img);
+    }
   </script>
 
 </body>
