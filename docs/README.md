@@ -1,3 +1,11 @@
+---
+docs/1-introduction/1.1-devops-defined.md:
+  category: Fundamentals
+  estimatedMinutes: 30
+docs/1-introduction/1.2-liatrio-and-devops.md:
+  category: Fundamentals
+  estimatedMinutes: 5
+---
 
 <center>
 
