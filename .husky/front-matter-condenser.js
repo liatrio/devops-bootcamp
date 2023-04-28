@@ -84,7 +84,7 @@ async function main() {
             process.exit(1);
         } else {
             // Continue with the commit.
-            console.log(`\n${green}No changes to master record, proceeding with commit.${reset}`);
+            console.log(`${green}No changes to master record, proceeding with commit.${reset}`);
             process.exit(0);
         }
 
