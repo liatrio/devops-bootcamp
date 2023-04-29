@@ -5,8 +5,28 @@ docs/1-introduction/1.1-devops-defined.md:
 docs/1-introduction/1.2-liatrio-and-devops.md:
   category: Fundamentals
   estimatedMinutes: 5
+docs/1-introduction/1.3.2-vim.md:
+  category: Fundamentals
+  estimatedMinutes: 15
+  technologies:
+    - Vim
+docs/1-introduction/1.3.3-installations.md:
+  category: Fundamentals
+  estimatedMinutes: 10
+docs/1-introduction/1.3.4-passwords-and-keys.md:
+  category: Fundamentals
+  estimatedMinutes: 25
+  technologies:
+    - ssh
+docs/1-introduction/1.3.5-networking.md:
+  category: Fundamentals
+  estimatedMinutes: 25
+docs/1-introduction/1.4-external-resources.md:
+  category: Fundamentals
+  estimatedMinutes: 50
 ---
-
+<!-- DO NOT EDIT ABOVE THIS COMMENT. -->
+<!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
 <center>
 
 <canvas id="chart-canvas"></canvas>
