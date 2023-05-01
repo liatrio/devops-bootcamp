@@ -8,8 +8,8 @@ The bootcamp uses front-matter on each exercise section to generate stats on the
 ```yaml
 <relative-path>:
   category: <Fundamentals|Virtualization|Containerization|Container Orchestration|Cloud Computing|Agile Development|CI/CD|Infrastructure as Code|Version Control| Code Quality & Testing>
-  estimatedMinutes: <number of minutes you expect the section to take>
-  technolog:
+  estReadingMinutes: <number of minutes you expect the section to take>
+  technology:
     - technology 1
     - technology 2
     - technology 3

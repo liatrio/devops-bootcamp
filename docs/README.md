@@ -1,29 +1,103 @@
 ---
 docs/1-introduction/1.1-devops-defined.md:
   category: Fundamentals
-  estimatedMinutes: 30
+  estReadingMinutes: 30
 docs/1-introduction/1.2-liatrio-and-devops.md:
   category: Fundamentals
-  estimatedMinutes: 5
+  estReadingMinutes: 5
+docs/1-introduction/1.2.1-dojo.md:
+  category: Fundamentals
+  estReadingMinutes: 5
+docs/1-introduction/1.3.1-unix.md:
+  category: Fundamentals
+  estReadingMinutes: 30
 docs/1-introduction/1.3.2-vim.md:
   category: Fundamentals
-  estimatedMinutes: 15
+  estReadingMinutes: 15
   technologies:
     - Vim
 docs/1-introduction/1.3.3-installations.md:
   category: Fundamentals
-  estimatedMinutes: 10
+  estReadingMinutes: 10
 docs/1-introduction/1.3.4-passwords-and-keys.md:
   category: Fundamentals
-  estimatedMinutes: 25
+  estReadingMinutes: 25
   technologies:
     - ssh
 docs/1-introduction/1.3.5-networking.md:
   category: Fundamentals
-  estimatedMinutes: 25
+  estReadingMinutes: 25
 docs/1-introduction/1.4-external-resources.md:
   category: Fundamentals
-  estimatedMinutes: 50
+  estReadingMinutes: 50
+docs/2-virtual-machines-containers/2.1-golden-images.md:
+  category: Virtualization
+  estReadingMinutes: 15
+  exercises:
+    - name: hello VirtualBox
+      description: >-
+        Configure a VM with VirtualBox. Install some software and configure it
+        for SSH
+      estMinutes: 90
+      technologies:
+        - VirtualBox
+        - CentOS
+    - name: hello Packer
+      description: >-
+        Use Packer to create an OVF configured identically to the VM you
+        configured in exercise 1
+      estMinutes: 210
+      technologies:
+        - VirtualBox
+        - Packer
+        - CentOS
+docs/2-virtual-machines-containers/2.2-local-development.md:
+  category: Virtualization
+  estReadingMinutes: 15
+  exercises:
+    - name: hello Vagrant
+      description: Install Vagrant spin up CentOS 7 box
+      estMinutes: 60
+      technologies:
+        - Vagrant
+        - CentOS
+    - name: Vagrant base box
+      description: >-
+        Create a ‘Base Box’ that adheres to Vagrants ‘Base Box’ standards.
+        Upload this base box to VagrantUp
+      estMinutes: 180
+      technologies:
+        - Vagrant
+        - CentOS
+    - name: Packer to Vagrant
+      description: >-
+        Use Packer to create an image compatible with Vagrants Base Box
+        requirements. This requires modification of CentOS’s ‘kickstart’ file
+        (understand CentOS kickstart DSL), leverage a Packer provisioner to add
+        ssh key, install VirtualBox dependencies and tools, leverage Packer
+        post-processor to output an OVF and boot a vagrant box
+      estMinutes: 300
+      technologies:
+        - Vagrant
+        - Packer
+        - CentOS
+docs/2-virtual-machines-containers/2.3-managing-infrastructure.md:
+  category: Virtualization
+  estReadingMinutes: 10
+  exercises:
+    - name: Jenkins and Artifactory on VMs
+      description: >-
+        Create VMs from your golden image. On one VM install Jenkins and
+        configure workflow to build Spring’s PetClinic. On the other VM install
+        and configure Artifactory. Configure these VMs so they can communicate
+        and create another workflow that pushes the build artifact from the
+        Jenkins server to Artifactory
+      estMinutes: 390
+      technologies:
+        - Vagrant
+        - CentOS
+        - Jenkins
+        - Artifactory
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
