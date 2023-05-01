@@ -1,6 +1,7 @@
 {
     "no-inline-html": {
         "allowed_elements": [
+            "canvas",
             "details",
             "center",
             "p",

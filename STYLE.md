@@ -3,6 +3,7 @@
 ## Style Guide
 
 ### Front-Matter
+
 The bootcamp uses front-matter on each exercise section to generate stats on the bootcamp. Please adhere to this template for the section metadata.
 
 ```yaml
