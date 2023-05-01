@@ -98,6 +98,54 @@ docs/2-virtual-machines-containers/2.3-managing-infrastructure.md:
         - CentOS
         - Jenkins
         - Artifactory
+docs/2-virtual-machines-containers/2.4-containers.md:
+  category: Containerization
+  estReadingMinutes: 20
+  exercises:
+    - name: Hello Containers
+      description: Complete Docker's 'Hello World'
+      estMinutes: 30
+      technologies:
+        - Docker
+    - name: Jenkins to Artifactory containerized
+      description: >-
+        Containerize Jenkins and Artifactory and build a pipeline that pushes a
+        PetClinic build artifact from one container to the other.
+      estMinutes: 150
+      technologies:
+        - Docker
+        - Jenkins
+        - Artifactory
+docs/2-virtual-machines-containers/2.5.1-docker-compose.md:
+  category: Container Orchestration
+  estReadingMinutes: 5
+  exercises:
+    - name: Docker Compose Jenkins and Artifactory
+      description: >-
+        Create a compose file that spins up your Jenkins and Artifactory
+        containers, exposing ports, and using volumes for persistent storage
+      estMinutes: 120
+      technologies:
+        - Docker
+        - Docker Compose
+        - Jenkins
+        - Artifactory
+docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
+  category: Container Orchestration
+  estReadingMinutes: 15
+  exercises:
+    - name: Hello Minikube
+      description: Complete the 'Hello Minikube' tutorial
+      estMinutes: 60
+      technologies:
+        - Kubernetes
+    - name: Kind cluster Jenkins and Artifactory
+      description: Create a Kind cluster running your Jenkins and Artifactory containers
+      estMinutes: 600
+      technologies:
+        - Kubernetes
+        - Jenkins
+        - Artifactory
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
