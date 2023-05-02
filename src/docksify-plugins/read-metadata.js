@@ -1,3 +1,5 @@
+import matter from 'gray-matter';
+
 var chart_message ="foobar";
 var bootcampMetadata = {}
 
@@ -19,15 +21,16 @@ function getMessage() {
         // yamlFront is browser bundle I would like to replace with the npm package gray-matter.
         // Need to figure out how to incorporate webpack and update our deploy process.
         // Could stay for the time being as it will just be used to strip out the front matter.
-        const result = yamlFront.loadFront(markdown);
+        const { data, content } = matter(markdown);
+        //const result = yamlFront.loadFront(markdown);
 
-        // If we are loading the root page we need to store the master record
-        if (window.location.pathname === '/') {
-          const { __content, ...metaData } = result;
-          bootcampMetadata = metaData;
+        // Docsify does not have a typical url structure and the window.location.pathname always appears to be '/' in my testing
+        // the page is changed by adding a different hash
+        if (window.location.hash === '#/') {
+          bootcampMetadata = data;
         }
         // Strip out the front-matter
-        return result.__content;
+        return content;
       });
     };
 

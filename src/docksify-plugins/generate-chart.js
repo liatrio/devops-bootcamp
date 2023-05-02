@@ -1,3 +1,5 @@
+import Chart from 'chart.js/auto'
+
 var bootcampMetadata = {}
 
 function generateChart(canvasId) {
@@ -107,9 +109,11 @@ function generateWordCloud(canvasId) {
     var generateChartOnRoot = function (hook, vm) {
         // Invoked one time after rendering the initial page
         hook.ready(function () {
-            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+            // Docsify does not have a typical url structure and the window.location.pathname always appears to be '/' in my testing
+            // the page is changed by adding a different hash
+            if (window.location.hash === '#/') {
                 generateChart('chart-canvas');
-                generateWordCloud('chart-canvas');
+                //generateWordCloud('chart-canvas');
             }
         });
     };
