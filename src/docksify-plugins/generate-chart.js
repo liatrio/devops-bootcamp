@@ -1,14 +1,17 @@
-import Chart from 'chart.js/auto'
+import Chart from 'chart.js/auto';
+import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
+import { bootcampMetadata } from './read-metadata';
 
-var bootcampMetadata = {}
+// Register the wordCloud controller, element, and scale with Chart.js.
+// Starting in Chart.js 3 iirc they support 'tree shaking' which means
+// componenets have to be registered explicitly so bundlers like webpack
+// can effectively remove unused controllers when minifying
+Chart.register(WordCloudController, WordElement);
 
 function generateChart(canvasId) {
     var canvas = document.getElementById(canvasId);
     // var canvas = document.createElement('canvas');
     // container.appendChild(canvas);
-
-    canvas.width = 400;
-    canvas.height = 400;
 
     // Set the data for the chart
     var data = {
@@ -44,12 +47,12 @@ function generateChart(canvasId) {
 }
 
 function generateWordCloud(canvasId) {
-    var canvas = document.getElementById(canvasId);
-    const ctx = canvas.getContext('2d');
+    const ctx = document.getElementById(canvasId).getContext('2d');
+
     // This object will hold the number of occurances of a technology in the bootcamp
     let techCount = {};
 
-    // Objects are not inherintly itterable in javascript so we must converte the values to an array.
+    // Objects are not inherintly itterable in javascript so we must convert the values to an array.
     for (const doc of Object.values(bootcampMetadata)) {
 
         if ('technolgies' in doc) {
@@ -87,8 +90,8 @@ function generateWordCloud(canvasId) {
                 fontStyle: 'normal',
                 fontColor: '#000',
                 fontFamily: 'Helvetica, Arial, sans-serif',
-                minFontSize: 12,
-                maxFontSize: 50
+                minFontSize: 50,
+                maxFontSize: 200
             }
         }
     };
@@ -96,10 +99,8 @@ function generateWordCloud(canvasId) {
     const myChart = new Chart(ctx, {
         type: 'wordCloud',
         data: data,
-        options: options
+        options: {}
     });
-
-    console.log(techCount)
 }
 
 
@@ -111,10 +112,7 @@ function generateWordCloud(canvasId) {
         hook.ready(function () {
             // Docsify does not have a typical url structure and the window.location.pathname always appears to be '/' in my testing
             // the page is changed by adding a different hash
-            if (window.location.hash === '#/') {
-                generateChart('chart-canvas');
-                //generateWordCloud('chart-canvas');
-            }
+            generateWordCloud('chart-canvas');
         });
     };
 

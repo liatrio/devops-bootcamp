@@ -15,3 +15,7 @@ node_modules/
 ## VSCode
 .vscode
 .code-workspace
+
+
+## Webpack
+dist/

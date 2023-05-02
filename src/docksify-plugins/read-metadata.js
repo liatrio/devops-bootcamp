@@ -1,7 +1,6 @@
 import matter from 'gray-matter';
 
-var chart_message ="foobar";
-var bootcampMetadata = {}
+export let bootcampMetadata = {}
 
 function readMetadata(hook, vm) {
     console.log("mission accomplished go home");

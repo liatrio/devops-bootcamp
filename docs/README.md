@@ -149,11 +149,8 @@ docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
-<center>
 
 <canvas id="chart-canvas"></canvas>
-
-<center>
 
 <center>
 
