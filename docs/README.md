@@ -163,15 +163,144 @@ docs/3-cloud-computing/3.2.1-s3-cloudfront.md:
       description: Host a static website in s3 publicly
       estMinutes: 150
       technologies:
-        - S3
+        - AWS S3
         - AWS
     - name: Hello Cloudfront
       description: Create a CloudFront distribution for your s3 website
       estMinutes: 60
       technologies:
-        - S3
+        - AWS S3
         - AWS
         - CloudFront
+docs/3-cloud-computing/3.2.2-ec2.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Hello EC2
+      description: >-
+        Create EC2 VMs and configure one as a Jenkins server and the other as a
+        Jenkins agent registered to the server.
+      estMinutes: 240
+      technologies:
+        - AWS
+        - EC2
+        - Jenkins
+docs/3-cloud-computing/3.2.3-auto-scaling.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Create EC2 instance with User Data
+      description: Create an EC2 instance running Spring PetClinic.
+      estMinutes: 240
+      technologies:
+        - AWS
+        - EC2
+    - name: Setup a Network Load Balancer
+      description: >-
+        Create a Load Balancer in AWS and register 2 EC2 configured to host a
+        web application via User Data.
+      estMinutes: 60
+      technologies:
+        - AWS
+        - EC2
+        - AWS ELB
+    - name: Launch Templates
+      description: >-
+        Create a Launch Template that will create EC2 instances configured like
+        the vm you made in exercise 1
+      estMinutes: 60
+      technologies:
+        - AWS
+        - EC2
+        - AWS Launch Templates
+    - name: Auto Scaling Groups
+      description: >-
+        Create an AutoScaling group leveraging the Launch Template you made in
+        exercise 3
+      estMinutes: 60
+      technologies:
+        - AWS
+        - EC2
+        - AWS Launch Templates
+        - AWS Auto Scaling Groups
+        - AWS ELB
+docs/3-cloud-computing/3.2.4-aws-packer.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Creating a custom AMI
+      description: >-
+        Create an AMI with Packer that creates a provisioned machine like the
+        one you made in exercise 1 from 3.2.3. Create a Launch Template and Auto
+        Scaling group to leverage your new AMI via the AWS cli
+      estMinutes: 180
+      technologies:
+        - AWS
+        - EC2
+        - AWS Launch Templates
+        - AWS Auto Scaling Groups
+        - Packer
+docs/3-cloud-computing/3.2.5-lambda.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Creating a Lambda function with a trigger
+      description: >-
+        Create a Lambda function that sets up an s3 bucket and a DynamoDB,
+        downloads a csv file, and then uses a python script to parse the csv and
+        push all the data into DynamoDB.
+      estMinutes: 480
+      technologies:
+        - AWS
+        - AWS Lambda
+        - AWS S3
+        - AWS DynamoDB
+docs/3-cloud-computing/3.2.6-ecs.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Creating an EKS cluster
+      description: Deploy the SockShop Demo on EKS
+      estMinutes: 480
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Adding an autoscaler to your cluster
+      description: Adding an autoscaler to your cluster
+      estMinutes: 240
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Create a ClusterIP service
+      description: Create a ClusterIP service
+      estMinutes: 60
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Create a NodePort Service
+      description: Create a NodePort Service
+      estMinutes: 60
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Create a LoadBalancer Service
+      description: Create a LoadBalancer Service
+      estMinutes: 30
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Add an Ingress controller and your cluster
+      description: Add an Ingress controller and your cluster
+      estMinutes: 60
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
