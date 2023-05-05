@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const simpleGit = require('simple-git');
 const matter = require('gray-matter');
-const { Console } = require('console');
 
 const git = simpleGit();
 const green = '\x1b[32m';

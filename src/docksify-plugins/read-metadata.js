@@ -2,15 +2,6 @@ import matter from 'gray-matter';
 
 export let bootcampMetadata = {}
 
-function readMetadata(hook, vm) {
-    console.log("mission accomplished go home");
-    getMessage();
-}
-
-function getMessage() {
-    console.log(chart_message);
-}
-
 (function () {
     var  readMetadata = function (hook, _vm) {
       // Invoked on each page load before new markdown is transformed to HTML.

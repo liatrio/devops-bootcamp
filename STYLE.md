@@ -7,13 +7,20 @@
 The bootcamp uses front-matter on each exercise section to generate stats on the bootcamp. Please adhere to this template for the section metadata.
 
 ```yaml
+---
 <relative-path>:
   category: <Fundamentals|Virtualization|Containerization|Container Orchestration|Cloud Computing|Agile Development|CI/CD|Infrastructure as Code|Version Control| Code Quality & Testing>
-  estReadingMinutes: <number of minutes you expect the section to take>
-  technology:
-    - technology 1
-    - technology 2
-    - technology 3
+  estReadingMinutes: 10
+  exercises:
+    -
+      name: Hello EC2
+      description: Create EC2 VMs and configure one as a Jenkins server and the other as a Jenkins agent registered to the server.
+      estMinutes: 240
+      technologies:
+      - AWS
+      - EC2
+      - Jenkins
+---
 ```
 Please be consisten with the names of technologies and categores selected. These are used by the front-end in the generation of visualizations like word clouds and graphs.
 

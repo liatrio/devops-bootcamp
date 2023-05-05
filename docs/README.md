@@ -339,7 +339,7 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
  6. Automation and Orchestration
  7. Kubernetes
 
-<canvas id="category-pie-canvas"></canvas>
+<canvas id="category-doughnut-canvas"></canvas>
 
 ## Expectations
 
