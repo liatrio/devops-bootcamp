@@ -62,10 +62,15 @@ function generateCategoryDoughnutChart(canvasId) {
                 display: true,
                 text: 'Bootcamp Breakdown by Category',
                 font: {
+                    family: 'Open Sans, sans-serif',
                     size: 30
                 }
             },
             tooltip: {
+                font: {
+                    family: 'Open Sans, sans-serif',
+                    size: 30
+                },
                 callbacks: {
                     label: (toolTip) => {
                         let label = toolTip.dataset.label || '';
@@ -82,8 +87,6 @@ function generateCategoryDoughnutChart(canvasId) {
         data: data,
         options: options
     });
-    console.log(categoryData);
-    console.log(data);
 }
 
 // TODO: Fix this method. Right now the word cloud is too small and
