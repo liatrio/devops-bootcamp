@@ -146,11 +146,37 @@ docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
         - Kubernetes
         - Jenkins
         - Artifactory
+docs/3-cloud-computing/3.0-overview.md:
+  category: Cloud Computing
+  estReadingMinutes: 30
+docs/3-cloud-computing/3.1.1-aws.md:
+  category: Cloud Computing
+  estReadingMinutes: 60
+docs/3-cloud-computing/3.1.2-azure.md:
+  category: Cloud Computing
+  estReadingMinutes: 30
+docs/3-cloud-computing/3.2.1-s3-cloudfront.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Hello S3
+      description: Host a static website in s3 publicly
+      estMinutes: 150
+      technologies:
+        - S3
+        - AWS
+    - name: Hello Cloudfront
+      description: Create a CloudFront distribution for your s3 website
+      estMinutes: 60
+      technologies:
+        - S3
+        - AWS
+        - CloudFront
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
 
-<canvas id="chart-canvas"></canvas>
+<!-- <canvas id="wordcloud-canvas"></canvas> -->
 
 <center>
 
@@ -183,6 +209,8 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
  5. Release Management
  6. Automation and Orchestration
  7. Kubernetes
+
+<canvas id="category-pie-canvas"></canvas>
 
 ## Expectations
 

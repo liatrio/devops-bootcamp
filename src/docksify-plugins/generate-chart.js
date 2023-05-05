@@ -1,3 +1,8 @@
+/**
+ * The main module for generating charts and graphs related to the bootcamp metadata.
+ * @module bootcampCharts
+ */
+
 import Chart from 'chart.js/auto';
 import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
 import { bootcampMetadata } from './read-metadata';
@@ -8,44 +13,81 @@ import { bootcampMetadata } from './read-metadata';
 // can effectively remove unused controllers when minifying
 Chart.register(WordCloudController, WordElement);
 
-function generateChart(canvasId) {
+/**
+ * Generates a doughnut chart displaying the breakdown of time spent on each category of exercises in the bootcamp.
+ *
+ * @param {string} canvasId - The ID of the canvas element to use for the chart.
+ */
+function generateCategoryDoughnutChart(canvasId) {
     var canvas = document.getElementById(canvasId);
-    // var canvas = document.createElement('canvas');
-    // container.appendChild(canvas);
+    canvas.width = 400;
+    canvas.height = 400;
+    const ctx = canvas.getContext('2d');
 
-    // Set the data for the chart
-    var data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-            {
-                label: 'My Dataset',
-                data: [10, 20, 30, 40, 50, 60, 70],
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
+    let categoryData = {};
+
+    // Aggrigate all time spent in each category.
+    for (const doc of Object.values(bootcampMetadata)) {
+        if ('category' in doc && 'estReadingMinutes' in doc) {
+            // Create bucket for categories and add reading time
+            if ('category' in categoryData) {
+                categoryData[doc.category] += doc.estReadingMinutes;
+            } else {
+                categoryData[doc.category] = doc.estReadingMinutes;
             }
-        ]
-    };
 
-    // Set the options for the chart
-    var options = {
-        scales: {
-            y: {
-                ticks: {
-                    beginAtZero: true
+            if ('exercises' in doc) {
+                doc.exercises.forEach(exercise => {
+                    if ('estMinutes' in exercise) {
+                        categoryData[doc.category] += exercise.estMinutes;
+                    }
+                });
+            }
+        }
+    }
+
+    const totalTime = Object.values(categoryData).reduce((acc, t) => { return acc + t }, 0);
+
+    const data = {
+        labels: Object.keys(categoryData),
+        datasets: [{
+            label: '',
+            data: Object.values(categoryData).map((t) => { return t/totalTime })
+        }]
+    }
+
+    const options = {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Bootcamp Breakdown by Category',
+                font: {
+                    size: 30
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    label: (toolTip) => {
+                        let label = toolTip.dataset.label || '';
+                        let value = toolTip.formattedValue * 100 + '%';
+                        return `${label}: ${value}`
+                    }
                 }
             }
         }
-    };
+    }
 
-    // Create a new bar chart
-    var myChart = new Chart(canvas, {
-        type: 'bar',
+    const myChart = new Chart(ctx, {
+        type: 'doughnut',
         data: data,
         options: options
     });
+    console.log(categoryData);
+    console.log(data);
 }
 
+// TODO: Fix this method. Right now the word cloud is too small and
+// I have seen it 'blow up' the page (grows until the page crashes)
 function generateWordCloud(canvasId) {
     const ctx = document.getElementById(canvasId).getContext('2d');
 
@@ -90,8 +132,8 @@ function generateWordCloud(canvasId) {
                 fontStyle: 'normal',
                 fontColor: '#000',
                 fontFamily: 'Helvetica, Arial, sans-serif',
-                minFontSize: 50,
-                maxFontSize: 200
+                minFontSize: 12,
+                maxFontSize: 50
             }
         }
     };
@@ -99,7 +141,7 @@ function generateWordCloud(canvasId) {
     const myChart = new Chart(ctx, {
         type: 'wordCloud',
         data: data,
-        options: {}
+        options: options
     });
 }
 
@@ -110,9 +152,8 @@ function generateWordCloud(canvasId) {
     var generateChartOnRoot = function (hook, vm) {
         // Invoked one time after rendering the initial page
         hook.ready(function () {
-            // Docsify does not have a typical url structure and the window.location.pathname always appears to be '/' in my testing
-            // the page is changed by adding a different hash
-            generateWordCloud('chart-canvas');
+            //generateWordCloud('wordcloud-canvas');
+            generateCategoryDoughnutChart('category-pie-canvas');
         });
     };
 

@@ -12,19 +12,14 @@ function getMessage() {
 }
 
 (function () {
-    var  readMetadata = function (hook, vm) {
+    var  readMetadata = function (hook, _vm) {
       // Invoked on each page load before new markdown is transformed to HTML.
       // Supports asynchronous tasks (see beforeEach documentation for details).
       hook.beforeEach(function (markdown) {
-
-        // yamlFront is browser bundle I would like to replace with the npm package gray-matter.
-        // Need to figure out how to incorporate webpack and update our deploy process.
-        // Could stay for the time being as it will just be used to strip out the front matter.
         const { data, content } = matter(markdown);
-        //const result = yamlFront.loadFront(markdown);
 
-        // Docsify does not have a typical url structure and the window.location.pathname always appears to be '/' in my testing
-        // the page is changed by adding a different hash
+        // Docsify does not have a typical url structure and the window.location.pathname
+        // always appears to be '/' in my testing the page is changed by adding a different hash
         if (window.location.hash === '#/') {
           bootcampMetadata = data;
         }
