@@ -31,7 +31,7 @@ function generateCategoryDoughnutChart(canvasId) {
     for (const doc of Object.values(bootcampMetadata)) {
         if ('category' in doc && 'estReadingMinutes' in doc) {
             // Create bucket for categories and add reading time
-            if ('category' in categoryData) {
+            if (doc.category in categoryData) {
                 categoryData[doc.category] += doc.estReadingMinutes;
             } else {
                 categoryData[doc.category] = doc.estReadingMinutes;
@@ -75,7 +75,7 @@ function generateCategoryDoughnutChart(canvasId) {
                 callbacks: {
                     label: (toolTip) => {
                         let label = toolTip.dataset.label || '';
-                        let value = toolTip.formattedValue * 100 + '%';
+                        let value = parseInt(toolTip.formattedValue * 100) + '%';
                         return `${label}: ${value}`
                     }
                 }
