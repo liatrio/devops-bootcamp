@@ -20,6 +20,7 @@ Chart.register(WordCloudController, WordElement);
  */
 function generateCategoryDoughnutChart(canvasId) {
     var canvas = document.getElementById(canvasId);
+
     canvas.width = 400;
     canvas.height = 400;
     const ctx = canvas.getContext('2d');
@@ -156,7 +157,7 @@ function generateWordCloud(canvasId) {
         // Invoked one time after rendering the initial page
         hook.ready(function () {
             //generateWordCloud('wordcloud-canvas');
-            generateCategoryDoughnutChart('category-pie-canvas');
+            generateCategoryDoughnutChart('category-doughnut-canvas');
         });
     };
 

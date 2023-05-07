@@ -1,6 +1,6 @@
-import matter from 'gray-matter';
+import * as matter from 'gray-matter';
 
-export let bootcampMetadata = {}
+export let bootcampMetadata = {};
 
 (function () {
     var  readMetadata = function (hook, _vm) {
