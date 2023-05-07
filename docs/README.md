@@ -301,6 +301,93 @@ docs/3-cloud-computing/3.2.6-ecs.md:
         - AWS
         - AWS EKS
         - Kubernetes
+docs/3-cloud-computing/3.3.1-storage-accounts.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Static website on Azure Blob Storage
+      description: >-
+        Create a basic Angular application and deploy it to an Azure Blob
+        Storage with an Azure CDN.
+      estMinutes: 240
+      technologies:
+        - Azure
+        - Azure Blob Storage
+        - Azure CDN
+        - Angular
+docs/3-cloud-computing/3.3.2-virtual-machines.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Create Azure VM with NGINX via cloud-init
+      description: >-
+        Create an Azure VM and configure it as an NGINX web server via
+        cloud-init file.
+      estMinutes: 360
+      technologies:
+        - Azure
+        - Azure VM
+        - NGINX
+        - cloud-init
+docs/3-cloud-computing/3.3.3-vmss.md:
+  category: Cloud Computing
+  estReadingMinutes: 15
+  exercises:
+    - name: Create VMSS and serve content from Azure Storage Account
+      description: >-
+        Create a VMSS and serve content from an Azure Storage Account. Do this
+        via the cli, deploying a simple node web app and provision the VM's with
+        cloud-init.
+      estMinutes: 240
+      technologies:
+        - Azure
+        - Azure VMSS
+        - Azure Storage Account
+        - Node.js
+        - cloud-init
+docs/3-cloud-computing/3.3.4-az-packer.md:
+  category: Cloud Computing
+  estReadingMinutes: 5
+  exercises:
+    - name: Create Shared Image Gallery with custom Azure VM image
+      description: >-
+        Create a Shared Image Gallery and put a custom Azure VM image in it.
+        Then redo the exercise in 3.3.2 with the custom image.
+      estMinutes: 360
+      technologies:
+        - Azure
+        - Packer
+        - Shared Image Gallery
+        - Azure VM
+docs/3-cloud-computing/3.3.5-aci.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: 'Deploy Node app using Docker, ACR, and ACI'
+      description: >-
+        Create a docker image for your Node application. Push your image into
+        ACR. Then deploy your image via ACI.
+      estMinutes: 300
+      technologies:
+        - Azure
+        - Azure Container Instances (ACI)
+        - Azure Container Registry (ACR)
+        - Docker
+        - Node.js
+docs/3-cloud-computing/3.3.6-aks.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Deploy Node app to AKS using ACR image
+      description: >-
+        Create an AKS cluster and deploy the Node application via the image
+        uploaded to ACR made in the previous section.
+      estMinutes: 240
+      technologies:
+        - Azure
+        - Azure Kubernetes Service (AKS)
+        - Azure Container Registry (ACR)
+        - Node.js
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
