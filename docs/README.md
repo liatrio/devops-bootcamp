@@ -515,6 +515,155 @@ docs/4-software-development-practices/4.6-hello-devops.md:
         Using what you have leanred thus far create a production ready
         application
       estMinutes: 3000
+docs/5-release-management/5.1-versioning.md:
+  category: Version Control
+  estReadingMinutes: 5
+  exercises:
+    - name: Docker Image Versioning
+      description: >-
+        Build a few docker images and play with tagging them with semantic
+        versioning.
+      estMinutes: 30
+      technologies:
+        - Docker
+docs/5-release-management/5.2-declarative-pipelines.md:
+  category: CI/CD
+  estReadingMinutes: 10
+  exercises:
+    - name: Jenkins Declarative Pipeline
+      description: >-
+        Use a Jenkins file on the previously built Jenkins, Artifactory pipeline
+        such that Jenkins builds and tests every branch and deploys only from
+        the main branch to artifactory.
+      estMinutes: 180
+      technologies:
+        - Jenkins
+        - Docker
+        - Docker Compose
+        - Kubernetes
+        - Artifactory
+docs/5-release-management/5.3.1-maven.md:
+  category: CI/CD
+  estReadingMinutes: 20
+  exercises:
+    - name: Maven Web App Creation
+      description: >-
+        Create a skeleton web application using Maven, add a plugin to help with
+        local development, update the version number and create a release.
+      estMinutes: 60
+      technologies:
+        - Maven
+docs/5-release-management/5.3.2-maven-integration.md:
+  category: CI/CD
+  estReadingMinutes: 30
+  exercises:
+    - name: Maven Integration
+      description: >-
+        Get an introduction into how Maven interacts with Jenkins and
+        Artifactory. Fork several projects, create Jenkins jobs that build these
+        projects, deploy artifacts to Artifactory, set up jobs to build on
+        commit, make changes and observe the results.
+      estMinutes: 240
+      technologies:
+        - Maven
+        - Jenkins
+        - Artifactory
+docs/5-release-management/5.3.3-make.md:
+  category: CI/CD
+  estReadingMinutes: 20
+  exercises:
+    - name: Makefile Exploration
+      description: >-
+        Explore the Makefile of a complex project (e.g., Rode) to understand its
+        structure and functioning. No code writing is required for this
+        exercise, but you should spend time studying and understanding the
+        Makefile.
+      estMinutes: 60
+      technologies:
+        - Make
+docs/5-release-management/5.3.4-npm.md:
+  category: CI/CD
+  estReadingMinutes: 15
+  exercises:
+    - name: npm Practice
+      description: >-
+        Install and run the Dromedary app. Determine and run the appropriate
+        command to test the app.
+      estMinutes: 45
+      technologies:
+        - npm
+        - Node.js
+        - Java
+docs/5-release-management/5.3.5-go-releaser.md:
+  category: CI/CD
+  estReadingMinutes: 5
+  exercises:
+    - name: Go Releaser Exercise
+      description: >-
+        Fork and clone an open source Go project, install Go Releaser, use Go
+        Releaser to deploy Go binaries to a GitHub release, and create a
+        Jenkinsfile to automate the deployment process.
+      estMinutes: 240
+      technologies:
+        - Go
+        - Go Releaser
+        - GitHub
+        - Jenkins
+docs/5-release-management/5.4.1-docker.md:
+  category: Container Orchestration
+  estReadingMinutes: 10
+  exercises:
+    - name: Dockerhub Exercise
+      description: >-
+        Create a Dockerhub account, create repositories, clone DevOps Knowledge
+        Share repositories, build container images, push them to Dockerhub,
+        create a Docker Compose file, and create a Jenkinsfile pipeline to
+        automate the process.
+      estMinutes: 360
+      technologies:
+        - Docker
+        - Dockerhub
+        - GitHub
+        - Jenkins
+docs/5-release-management/5.4.2-helm.md:
+  category: Container Orchestration
+  estReadingMinutes: 15
+  exercises:
+    - name: Helm Exercise 1
+      description: >-
+        Install Helm and create, install, and update a basic chart with a
+        ConfigMap Kubernetes resource.
+      estMinutes: 180
+      technologies:
+        - Helm
+        - Kubernetes
+    - name: Helm Exercise 2
+      description: Modify an existing Helm chart to deploy the DevOps Knowledge Share API.
+      estMinutes: 120
+      technologies:
+        - Helm
+        - Kubernetes
+        - Docker
+        - GitHub
+    - name: Helm Exercise 3
+      description: >-
+        Add a Kubernetes deployment and service to our Helm chart to deploy the
+        DKS frontend application.
+      estMinutes: 180
+      technologies:
+        - Helm
+        - Kubernetes
+        - Docker
+    - name: Helm Exercise 4
+      description: >-
+        Create another Helm chart using the Helm Create command and configure it
+        to deploy a Jenkins instance.
+      estMinutes: 120
+      technologies:
+        - Helm
+        - Kubernetes
+        - Docker
+        - Jenkins
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
