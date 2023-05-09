@@ -1,3 +1,399 @@
+---
+docs/1-introduction/1.1-devops-defined.md:
+  category: Fundamentals
+  estReadingMinutes: 30
+docs/1-introduction/1.2-liatrio-and-devops.md:
+  category: Fundamentals
+  estReadingMinutes: 5
+docs/1-introduction/1.2.1-dojo.md:
+  category: Fundamentals
+  estReadingMinutes: 5
+docs/1-introduction/1.3.1-unix.md:
+  category: Fundamentals
+  estReadingMinutes: 30
+docs/1-introduction/1.3.2-vim.md:
+  category: Fundamentals
+  estReadingMinutes: 15
+  technologies:
+    - Vim
+docs/1-introduction/1.3.3-installations.md:
+  category: Fundamentals
+  estReadingMinutes: 10
+docs/1-introduction/1.3.4-passwords-and-keys.md:
+  category: Fundamentals
+  estReadingMinutes: 25
+  technologies:
+    - ssh
+docs/1-introduction/1.3.5-networking.md:
+  category: Fundamentals
+  estReadingMinutes: 25
+docs/1-introduction/1.4-external-resources.md:
+  category: Fundamentals
+  estReadingMinutes: 50
+docs/2-virtual-machines-containers/2.1-golden-images.md:
+  category: Virtualization
+  estReadingMinutes: 15
+  exercises:
+    - name: hello VirtualBox
+      description: >-
+        Configure a VM with VirtualBox. Install some software and configure it
+        for SSH
+      estMinutes: 90
+      technologies:
+        - VirtualBox
+        - CentOS
+    - name: hello Packer
+      description: >-
+        Use Packer to create an OVF configured identically to the VM you
+        configured in exercise 1
+      estMinutes: 210
+      technologies:
+        - VirtualBox
+        - Packer
+        - CentOS
+docs/2-virtual-machines-containers/2.2-local-development.md:
+  category: Virtualization
+  estReadingMinutes: 15
+  exercises:
+    - name: hello Vagrant
+      description: Install Vagrant spin up CentOS 7 box
+      estMinutes: 60
+      technologies:
+        - Vagrant
+        - CentOS
+    - name: Vagrant base box
+      description: >-
+        Create a ‘Base Box’ that adheres to Vagrants ‘Base Box’ standards.
+        Upload this base box to VagrantUp
+      estMinutes: 180
+      technologies:
+        - Vagrant
+        - CentOS
+    - name: Packer to Vagrant
+      description: >-
+        Use Packer to create an image compatible with Vagrants Base Box
+        requirements. This requires modification of CentOS’s ‘kickstart’ file
+        (understand CentOS kickstart DSL), leverage a Packer provisioner to add
+        ssh key, install VirtualBox dependencies and tools, leverage Packer
+        post-processor to output an OVF and boot a vagrant box
+      estMinutes: 300
+      technologies:
+        - Vagrant
+        - Packer
+        - CentOS
+docs/2-virtual-machines-containers/2.3-managing-infrastructure.md:
+  category: Virtualization
+  estReadingMinutes: 10
+  exercises:
+    - name: Jenkins and Artifactory on VMs
+      description: >-
+        Create VMs from your golden image. On one VM install Jenkins and
+        configure workflow to build Spring’s PetClinic. On the other VM install
+        and configure Artifactory. Configure these VMs so they can communicate
+        and create another workflow that pushes the build artifact from the
+        Jenkins server to Artifactory
+      estMinutes: 390
+      technologies:
+        - Vagrant
+        - CentOS
+        - Jenkins
+        - Artifactory
+docs/2-virtual-machines-containers/2.4-containers.md:
+  category: Containerization
+  estReadingMinutes: 20
+  exercises:
+    - name: Hello Containers
+      description: Complete Docker's 'Hello World'
+      estMinutes: 30
+      technologies:
+        - Docker
+    - name: Jenkins to Artifactory containerized
+      description: >-
+        Containerize Jenkins and Artifactory and build a pipeline that pushes a
+        PetClinic build artifact from one container to the other.
+      estMinutes: 150
+      technologies:
+        - Docker
+        - Jenkins
+        - Artifactory
+docs/2-virtual-machines-containers/2.5.1-docker-compose.md:
+  category: Container Orchestration
+  estReadingMinutes: 5
+  exercises:
+    - name: Docker Compose Jenkins and Artifactory
+      description: >-
+        Create a compose file that spins up your Jenkins and Artifactory
+        containers, exposing ports, and using volumes for persistent storage
+      estMinutes: 120
+      technologies:
+        - Docker
+        - Docker Compose
+        - Jenkins
+        - Artifactory
+docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
+  category: Container Orchestration
+  estReadingMinutes: 15
+  exercises:
+    - name: Hello Minikube
+      description: Complete the 'Hello Minikube' tutorial
+      estMinutes: 60
+      technologies:
+        - Kubernetes
+    - name: Kind cluster Jenkins and Artifactory
+      description: Create a Kind cluster running your Jenkins and Artifactory containers
+      estMinutes: 600
+      technologies:
+        - Kubernetes
+        - Jenkins
+        - Artifactory
+docs/3-cloud-computing/3.0-overview.md:
+  category: Cloud Computing
+  estReadingMinutes: 30
+docs/3-cloud-computing/3.1.1-aws.md:
+  category: Cloud Computing
+  estReadingMinutes: 60
+docs/3-cloud-computing/3.1.2-azure.md:
+  category: Cloud Computing
+  estReadingMinutes: 30
+docs/3-cloud-computing/3.2.1-s3-cloudfront.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Hello S3
+      description: Host a static website in s3 publicly
+      estMinutes: 150
+      technologies:
+        - AWS S3
+        - AWS
+    - name: Hello Cloudfront
+      description: Create a CloudFront distribution for your s3 website
+      estMinutes: 60
+      technologies:
+        - AWS S3
+        - AWS
+        - CloudFront
+docs/3-cloud-computing/3.2.2-ec2.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Hello EC2
+      description: >-
+        Create EC2 VMs and configure one as a Jenkins server and the other as a
+        Jenkins agent registered to the server.
+      estMinutes: 240
+      technologies:
+        - AWS
+        - EC2
+        - Jenkins
+docs/3-cloud-computing/3.2.3-auto-scaling.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Create EC2 instance with User Data
+      description: Create an EC2 instance running Spring PetClinic.
+      estMinutes: 240
+      technologies:
+        - AWS
+        - EC2
+    - name: Setup a Network Load Balancer
+      description: >-
+        Create a Load Balancer in AWS and register 2 EC2 configured to host a
+        web application via User Data.
+      estMinutes: 60
+      technologies:
+        - AWS
+        - EC2
+        - AWS ELB
+    - name: Launch Templates
+      description: >-
+        Create a Launch Template that will create EC2 instances configured like
+        the vm you made in exercise 1
+      estMinutes: 60
+      technologies:
+        - AWS
+        - EC2
+        - AWS Launch Templates
+    - name: Auto Scaling Groups
+      description: >-
+        Create an AutoScaling group leveraging the Launch Template you made in
+        exercise 3
+      estMinutes: 60
+      technologies:
+        - AWS
+        - EC2
+        - AWS Launch Templates
+        - AWS Auto Scaling Groups
+        - AWS ELB
+docs/3-cloud-computing/3.2.4-aws-packer.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Creating a custom AMI
+      description: >-
+        Create an AMI with Packer that creates a provisioned machine like the
+        one you made in exercise 1 from 3.2.3. Create a Launch Template and Auto
+        Scaling group to leverage your new AMI via the AWS cli
+      estMinutes: 180
+      technologies:
+        - AWS
+        - EC2
+        - AWS Launch Templates
+        - AWS Auto Scaling Groups
+        - Packer
+docs/3-cloud-computing/3.2.5-lambda.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Creating a Lambda function with a trigger
+      description: >-
+        Create a Lambda function that sets up an s3 bucket and a DynamoDB,
+        downloads a csv file, and then uses a python script to parse the csv and
+        push all the data into DynamoDB.
+      estMinutes: 480
+      technologies:
+        - AWS
+        - AWS Lambda
+        - AWS S3
+        - AWS DynamoDB
+docs/3-cloud-computing/3.2.6-ecs.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Creating an EKS cluster
+      description: Deploy the SockShop Demo on EKS
+      estMinutes: 480
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Adding an autoscaler to your cluster
+      description: Adding an autoscaler to your cluster
+      estMinutes: 240
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Create a ClusterIP service
+      description: Create a ClusterIP service
+      estMinutes: 60
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Create a NodePort Service
+      description: Create a NodePort Service
+      estMinutes: 60
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Create a LoadBalancer Service
+      description: Create a LoadBalancer Service
+      estMinutes: 30
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Add an Ingress controller and your cluster
+      description: Add an Ingress controller and your cluster
+      estMinutes: 60
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+docs/3-cloud-computing/3.3.1-storage-accounts.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Static website on Azure Blob Storage
+      description: >-
+        Create a basic Angular application and deploy it to an Azure Blob
+        Storage with an Azure CDN.
+      estMinutes: 240
+      technologies:
+        - Azure
+        - Azure Blob Storage
+        - Azure CDN
+        - Angular
+docs/3-cloud-computing/3.3.2-virtual-machines.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Create Azure VM with NGINX via cloud-init
+      description: >-
+        Create an Azure VM and configure it as an NGINX web server via
+        cloud-init file.
+      estMinutes: 360
+      technologies:
+        - Azure
+        - Azure VM
+        - NGINX
+        - cloud-init
+docs/3-cloud-computing/3.3.3-vmss.md:
+  category: Cloud Computing
+  estReadingMinutes: 15
+  exercises:
+    - name: Create VMSS and serve content from Azure Storage Account
+      description: >-
+        Create a VMSS and serve content from an Azure Storage Account. Do this
+        via the cli, deploying a simple node web app and provision the VM's with
+        cloud-init.
+      estMinutes: 240
+      technologies:
+        - Azure
+        - Azure VMSS
+        - Azure Storage Account
+        - Node.js
+        - cloud-init
+docs/3-cloud-computing/3.3.4-az-packer.md:
+  category: Cloud Computing
+  estReadingMinutes: 5
+  exercises:
+    - name: Create Shared Image Gallery with custom Azure VM image
+      description: >-
+        Create a Shared Image Gallery and put a custom Azure VM image in it.
+        Then redo the exercise in 3.3.2 with the custom image.
+      estMinutes: 360
+      technologies:
+        - Azure
+        - Packer
+        - Shared Image Gallery
+        - Azure VM
+docs/3-cloud-computing/3.3.5-aci.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: 'Deploy Node app using Docker, ACR, and ACI'
+      description: >-
+        Create a docker image for your Node application. Push your image into
+        ACR. Then deploy your image via ACI.
+      estMinutes: 300
+      technologies:
+        - Azure
+        - Azure Container Instances (ACI)
+        - Azure Container Registry (ACR)
+        - Docker
+        - Node.js
+docs/3-cloud-computing/3.3.6-aks.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Deploy Node app to AKS using ACR image
+      description: >-
+        Create an AKS cluster and deploy the Node application via the image
+        uploaded to ACR made in the previous section.
+      estMinutes: 240
+      technologies:
+        - Azure
+        - Azure Kubernetes Service (AKS)
+        - Azure Container Registry (ACR)
+        - Node.js
+---
+<!-- DO NOT EDIT ABOVE THIS COMMENT. -->
+<!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
+
+<!-- <canvas id="wordcloud-canvas"></canvas> -->
+
 <center>
 
   ![Liatrio Logomark](../img/favicon.svg ':size=150x150 :class=logo :alt= Liatrio image')
@@ -29,6 +425,8 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
  5. Release Management
  6. Automation and Orchestration
  7. Kubernetes
+
+<canvas id="category-doughnut-canvas"></canvas>
 
 ## Expectations
 
