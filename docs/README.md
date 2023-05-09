@@ -388,6 +388,133 @@ docs/3-cloud-computing/3.3.6-aks.md:
         - Azure Kubernetes Service (AKS)
         - Azure Container Registry (ACR)
         - Node.js
+docs/4-software-development-practices/4.1-overview.md:
+  category: Agile Development
+  estReadingMinutes: 90
+docs/4-software-development-practices/4.2-jira.md:
+  category: Agile Development
+  estReadingMinutes: 30
+docs/4-software-development-practices/4.3.1-branching-merging.md:
+  category: Version Control
+  estReadingMinutes: 15
+docs/4-software-development-practices/4.3.2-git.md:
+  category: Version Control
+  estReadingMinutes: 25
+  exercises:
+    - name: Git Basics
+      description: Learn the basics of Git.
+      estMinutes: 30
+      technologies:
+        - Git
+    - name: Branching and Merging
+      description: Practice branching and merging with Git.
+      estMinutes: 30
+      technologies:
+        - Git
+    - name: Merge Conflicts
+      description: Learn how to resolve merge conflicts in Git.
+      estMinutes: 30
+      technologies:
+        - Git
+    - name: Removing Secrets
+      description: Learn how to remove secrets from Git history.
+      estMinutes: 30
+      technologies:
+        - Git
+docs/4-software-development-practices/4.3.3-github.md:
+  category: Version Control
+  estReadingMinutes: 25
+  exercises:
+    - name: Fork and Merge
+      description: Practice forking and merging on GitHub
+      estMinutes: 30
+      technologies:
+        - Git
+        - GitHub
+docs/4-software-development-practices/4.4-pairprogramming.md:
+  category: Agile Development
+  estReadingMinutes: 20
+  exercises:
+    - name: Pair Programing
+      description: >-
+        Using 'Live Share' or some equivillant try pair programming a 'Hello
+        World' app in the language of your choice
+      estMinutes: 30
+      technologies:
+        - VSCode
+docs/4-software-development-practices/4.5.1-unit-testing.md:
+  category: Software Quality
+  estReadingMinutes: 20
+  exercises:
+    - name: Solve a problem in Go with TDD
+      description: Solve a given problem in Go using test-driven development (TDD).
+      estMinutes: 120
+      technologies:
+        - Go
+        - TDD
+docs/4-software-development-practices/4.5.2-functional-testing.md:
+  category: Software Quality
+  estReadingMinutes: 20
+  exercises:
+    - name: Create functional tests with Selenium in Python
+      description: Create functional tests for the bootcamp using Selenium in Python.
+      estMinutes: 120
+      technologies:
+        - Selenium
+        - Python
+docs/4-software-development-practices/4.5.3-code-styling.md:
+  category: Software Quality
+  estReadingMinutes: 30
+docs/4-software-development-practices/4.5.4-code-coverage.md:
+  category: Software Quality
+  estReadingMinutes: 20
+  exercises:
+    - name: Achieve 100% code coverage
+      description: >-
+        Install node dependencies for code coverage (mocha, chai, nyc) and get
+        100% code coverage for a given module and tests.
+      estMinutes: 60
+      technologies:
+        - Node.js
+        - Mocha
+        - Chai
+        - NYC
+docs/4-software-development-practices/4.5.5-test-automation.md:
+  category: Software Quality
+  estReadingMinutes: 5
+  exercises:
+    - name: Create a Jenkins Pipeline to test Go project
+      description: >-
+        Create a Jenkins server via an existing Dockerfile, add Go as a
+        dependency to the Image. On the Jenkins instance point to your fork of
+        the Bootcamp with Go Unit Tests. Create a pipeline that builds and tests
+        your fork.
+      estMinutes: 180
+      technologies:
+        - Jenkins
+        - Docker
+        - Go
+docs/4-software-development-practices/4.5.6-sonarqube.md:
+  category: Software Quality
+  estReadingMinutes: 10
+  exercises:
+    - name: Setup SonarQube and Jenkins Integration
+      description: >-
+        Create a SonarQube server and add a Jenkins job to run SonarQube in our
+        build pipeline.
+      estMinutes: 180
+      technologies:
+        - SonarQube
+        - Jenkins
+docs/4-software-development-practices/4.6-hello-devops.md:
+  category: Agile Development
+  estReadingMinutes: 5
+  exercises:
+    - name: Build an application
+      description: >-
+        Using what you have leanred thus far create a production ready
+        application
+      estMinutes: 3000
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
