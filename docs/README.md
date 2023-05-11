@@ -664,6 +664,158 @@ docs/5-release-management/5.4.2-helm.md:
         - Kubernetes
         - Docker
         - Jenkins
+docs/6-infrastructure-configuration-management/6.1.1-terraform-getting-started.md:
+  category: Infrastructure as Code
+  estReadingMinutes: 45
+  exercises:
+    - name: Getting Started with Terraform
+      description: >-
+        Run through Hashicorp's tutorials to get started with either AWS or
+        Azure. Share your experiences and learnings with your team.
+      estMinutes: 60
+      technologies:
+        - Terraform
+        - AWS
+        - Azure
+docs/6-infrastructure-configuration-management/6.1.2-terraform-backends.md:
+  category: Infrastructure as Code
+  estReadingMinutes: 20
+  exercises:
+    - name: Sharing Terraform Workspaces
+      description: >-
+        Learn how to share a Terraform workspace with your teammates and
+        understand the role of `terraform.lock.hcl`.
+      estMinutes: 60
+      technologies:
+        - Terraform
+        - Terraform Cloud
+        - GitHub
+    - name: Cloud Native Backends
+      description: >-
+        Transition from using Terraform Cloud to using cloud native storage
+        solutions for storing Terraform state.
+      estMinutes: 120
+      technologies:
+        - Terraform
+        - AWS S3
+        - Azure Resource Manager
+    - name: Terraform CI/CD Automation
+      description: >-
+        Create a CI/CD pipeline that enforces the main branch as the source of
+        truth for the state of the Terraform.
+      estMinutes: 420
+      technologies:
+        - Terraform
+        - GitHub Actions
+docs/6-infrastructure-configuration-management/6.1.3-terraform-modules.md:
+  category: Infrastructure as Code
+  estReadingMinutes: 15
+  exercises:
+    - name: Registry Modules
+      description: >-
+        Learn how to use registry modules to create an EC2 instance and VPC in
+        AWS, or add an EC2 instance to an existing VPC.
+      estMinutes: 90
+      technologies:
+        - Terraform
+        - AWS EC2
+        - AWS VPC
+    - name: Custom Modules/Local Modules
+      description: Create and use a local module for an S3 bucket in AWS.
+      estMinutes: 75
+      technologies:
+        - Terraform
+        - AWS S3
+docs/6-infrastructure-configuration-management/6.1.4-terraform-providers.md:
+  category: Infrastructure as Code
+  estReadingMinutes: 20
+  exercises:
+    - name: Provider Boilerplate
+      description: Set up the boilerplate for a Terraform provider and test it locally.
+      estMinutes: 120
+      technologies:
+        - Terraform
+        - Go
+    - name: Implementing the provider
+      description: Implement the Terraform provider to interact with a custom API.
+      estMinutes: 240
+      technologies:
+        - Terraform
+        - Go
+    - name: Implementing Engineer resource and datasource
+      description: Implement the CRUD operations for the Engineer resource and datasource.
+      estMinutes: 300
+      technologies:
+        - Terraform
+        - Go
+    - name: 'Implementing Dev, Ops, DevOps resource and datasource'
+      description: >-
+        Implement the CRUD operations for the Dev, Ops, and DevOps resources and
+        datasources.
+      estMinutes: 300
+      technologies:
+        - Terraform
+        - Go
+    - name: Challenge
+      description: Write comprehensive tests for the Engineer resource and datasource.
+      estMinutes: 120
+      technologies:
+        - Terraform
+        - Go
+docs/6-infrastructure-configuration-management/6.2-ansible.md:
+  category: Infrastructure as Code
+  estReadingMinutes: 15
+  exercises:
+    - name: Vagrant and Ansible
+      description: >-
+        Provision a virtual machine and install Jenkins using Ansible as a
+        provisioner in Vagrant.
+      estMinutes: 300
+      technologies:
+        - Ansible
+        - Vagrant
+        - Jenkins
+    - name: Ansible and AWS EC2
+      description: Provision an AWS EC2 instance and install Jenkins using Ansible.
+      estMinutes: 300
+      technologies:
+        - Ansible
+        - AWS EC2
+        - Jenkins
+    - name: Terraform and Ansible
+      description: >-
+        Provision an EC2 instance using Terraform and install Jenkins with
+        Ansible.
+      estMinutes: 360
+      technologies:
+        - Terraform
+        - Ansible
+        - AWS EC2
+        - Jenkins
+docs/6-infrastructure-configuration-management/6.3-chef.md:
+  category: Infrastructure as Code
+  estReadingMinutes: 15
+  exercises:
+    - name: Installing Chef Workstation and Creating a Wrapper Cookbook
+      description: >-
+        Install Chef Workstation and create a Wrapper Cookbook for Nginx,
+        including recipe development, local testing with Vagrant, and ensuring
+        code quality.
+      estMinutes: 240
+      technologies:
+        - Chef
+        - Chef Workstation
+        - Vagrant
+    - name: Setting Up Chef Server and Bootstrapping AWS Instances
+      description: >-
+        Install Chef Server on an AWS instance, upload the Nginx cookbook to the
+        server, and bootstrap a new AWS instance with the Nginx cookbook.
+      estMinutes: 480
+      technologies:
+        - Chef
+        - Chef Server
+        - AWS
+        - Nginx
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
