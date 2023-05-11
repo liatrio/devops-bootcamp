@@ -816,6 +816,182 @@ docs/6-infrastructure-configuration-management/6.3-chef.md:
         - Chef Server
         - AWS
         - Nginx
+docs/7-kubernetes-container-orchestration/7.1-kubectl-ref.md:
+  category: Container Orchestration
+  estReadingMinutes: 120
+docs/7-kubernetes-container-orchestration/7.2-volumes.md:
+  category: Container Orchestration
+  estReadingMinutes: 10
+  exercises:
+    - name: Creating Persistent Volumes and Persistent Volume Claims
+      description: >-
+        Create a simple Persistent Volume (PV) and Persistent Volume Claim (PVC)
+        in Kubernetes, understand the lifecycle of PVs and PVCs, and explore how
+        to utilize them in a pod.
+      estMinutes: 120
+      technologies:
+        - Kubernetes
+    - name: Dynamic Provisioning with Storage Classes
+      description: >-
+        Learn about dynamic provisioning of Persistent Volumes (PVs) using
+        Storage Classes, create a StorageClass object, provision a PVC
+        dynamically, and deploy Jenkins in the cluster with persistent data.
+      estMinutes: 360
+      technologies:
+        - Kubernetes
+        - Jenkins
+docs/7-kubernetes-container-orchestration/7.3-probes.md:
+  category: Container Orchestration
+  estReadingMinutes: 10
+  exercises:
+    - name: Setup
+      description: >-
+        Create a service of type NodePort and a deployment for nginx in the
+        default namespace using Docker Desktop.
+      estMinutes: 25
+      technologies:
+        - Docker
+        - Kubernetes
+    - name: Startup Probe Config
+      description: Add a startup probe to the nginx deployment and check the logs.
+      estMinutes: 45
+      technologies:
+        - Kubernetes
+    - name: Readiness Probe Config
+      description: Add a readiness probe to the nginx deployment and check the logs.
+      estMinutes: 45
+      technologies:
+        - Kubernetes
+    - name: Liveness Probe Config
+      description: >-
+        Add a liveness probe to the nginx deployment, configure a hostPath
+        volume and volumeMount, and check the logs.
+      estMinutes: 45
+      technologies:
+        - Kubernetes
+docs/7-kubernetes-container-orchestration/7.4-rbac.md:
+  category: Container Orchestration
+  estReadingMinutes: 15
+  exercises:
+    - name: Grant New Permissions to a ServiceAccount
+      description: >-
+        Create a namespace for Jenkins, install Jenkins using helm, discover new
+        roles, create credentials using a Kubernetes secret, and setup Jenkins.
+      estMinutes: 180
+      technologies:
+        - Docker
+        - Kubernetes
+        - Helm
+        - Jenkins
+    - name: Verifying RBAC Permissions
+      description: >-
+        Create a new namespace, service account, cluster role, and cluster role
+        binding, and verify the permissions.
+      estMinutes: 120
+      technologies:
+        - Docker
+        - Kubernetes
+docs/7-kubernetes-container-orchestration/7.5-hpas.md:
+  category: Container Orchestration
+  estReadingMinutes: 15
+  exercises:
+    - name: Create an HPA
+      description: >-
+        Install Metrics Server, apply the deployment and service for a
+        CPU-intensive PHP image, and create an HPA that will scale the PHP
+        deployment based on CPU usage.
+      estMinutes: 120
+      technologies:
+        - Docker
+        - Kubernetes
+        - Metrics Server
+    - name: Increase Server Load
+      description: Increase the PHP server load and watch how the CPU load scales.
+      estMinutes: 30
+      technologies:
+        - Docker
+        - Kubernetes
+    - name: Decrease Server Load
+      description: Decrease the server load and watch how the CPU load scales down.
+      estMinutes: 30
+      technologies:
+        - Docker
+        - Kubernetes
+    - name: HPAs with Multiple Metrics
+      description: >-
+        Configure the HPA to use multiple metrics, add memory as a resource in
+        the PHP-Apache deployment, update the HPA, and verify its functionality.
+      estMinutes: 180
+      technologies:
+        - Docker
+        - Kubernetes
+docs/7-kubernetes-container-orchestration/7.6-webhooks.md:
+  category: Kubernetes
+  estReadingMinutes: 15
+  exercises:
+    - name: Setup
+      description: >-
+        Set up the environment for admission webhooks by deploying a KIND
+        cluster with Admission Controller enabled, installing cert-manager, and
+        creating a validation namespace, root CA, and self-signed certificate.
+      estMinutes: 60
+      technologies:
+        - Kubernetes
+        - KIND
+        - cert-manager
+    - name: Validating Webhooks
+      description: >-
+        Configure a validating webhook for pod creation and test it using the
+        given criteria.
+      estMinutes: 90
+      technologies:
+        - Kubernetes
+        - Python
+    - name: Mutating Webhooks
+      description: >-
+        Configure a mutating webhook for pod creation and test it using the
+        given criteria.
+      estMinutes: 180
+      technologies:
+        - Kubernetes
+        - Python
+docs/7-kubernetes-container-orchestration/7.7-k8s-the-hard-way.md:
+  category: Container Orchestration
+  estReadingMinutes: 40
+  exercises:
+    - name: Kubernetes the Hard Way
+      description: >-
+        Follow along with Ivan Fioravanti's fork of Kubernetes the Hard Way,
+        manually creating Terraform and Ansible code to stand up a Kubernetes
+        cluster within Azure. This exercise will provide a deep understanding of
+        the low level, administrative perspective of setting up a Kubernetes
+        cluster.
+      estMinutes: 6000
+      technologies:
+        - Kubernetes
+        - Terraform
+        - Ansible
+        - Azure
+        - Networking
+        - cfssl
+        - cfssljson
+        - kubectl
+        - azure-cli
+docs/7-kubernetes-container-orchestration/7.8-hello-k8s.md:
+  category: Container Orchestration
+  estReadingMinutes: 15
+  exercises:
+    - name: Kubernetes Custom Project
+      description: >-
+        Create a custom Kubernetes project, utilizing webhooks, creating a
+        custom resource, and using Kubebuilder to create a controller which
+        reconciles changes to the custom resource.
+      estMinutes: 4800
+      technologies:
+        - Kubernetes
+        - Webhooks
+        - Custom Resources
+        - Kubebuilder
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
