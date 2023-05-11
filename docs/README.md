@@ -926,7 +926,7 @@ docs/7-kubernetes-container-orchestration/7.5-hpas.md:
         - Docker
         - Kubernetes
 docs/7-kubernetes-container-orchestration/7.6-webhooks.md:
-  category: Kubernetes
+  category: Container Orchestration
   estReadingMinutes: 15
   exercises:
     - name: Setup
