@@ -500,12 +500,12 @@ docs/4-software-development-practices/4.5.6-sonarqube.md:
   exercises:
     - name: Setup SonarQube and Jenkins Integration
       description: >-
-        Create a SonarQube server and add a Jenkins job to run SonarQube in our
+        Create a SonarQube server and add GitHub action to run SonarQube in our
         build pipeline.
       estMinutes: 180
       technologies:
         - SonarQube
-        - Jenkins
+        - GitHub Actions
 docs/4-software-development-practices/4.6-hello-devops.md:
   category: Agile Development
   estReadingMinutes: 5
