@@ -483,16 +483,11 @@ docs/4-software-development-practices/4.5.5-test-automation.md:
   category: Software Quality
   estReadingMinutes: 5
   exercises:
-    - name: Create a Jenkins Pipeline to test Go project
-      description: >-
-        Create a Jenkins server via an existing Dockerfile, add Go as a
-        dependency to the Image. On the Jenkins instance point to your fork of
-        the Bootcamp with Go Unit Tests. Create a pipeline that builds and tests
-        your fork.
+    - name: Create a GitHub Action to test a Go project
+      description: Create a GitHub Action that will run Unit Tests when a change is pushed
       estMinutes: 180
       technologies:
-        - Jenkins
-        - Docker
+        - GitHub Actions
         - Go
 docs/4-software-development-practices/4.5.6-sonarqube.md:
   category: Software Quality
