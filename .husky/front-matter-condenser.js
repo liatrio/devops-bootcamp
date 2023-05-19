@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const simpleGit = require('simple-git');
 const matter = require('gray-matter');
+const glob = require('glob');
 
 const git = simpleGit();
 const green = '\x1b[32m';
@@ -10,6 +11,7 @@ const yellow = '\x1b[33m';
 
 
 const MASTER_RECORD_PATH = path.join(__dirname, '../docs/README.md');
+const SIDEBAR_PATH = path.join(__dirname, '../docs/_sidebar.md');
 
 /**
  * TODO:
@@ -18,13 +20,36 @@ const MASTER_RECORD_PATH = path.join(__dirname, '../docs/README.md');
  */
 async function main() {
     try {
+
+        // See if we should update the master record
+        const args = process.argv.slice(2);
+        let update = false;
+        if (args[0] === 'update') {
+            update == true;
+        }
+
+        // Using _sidebar.md as the list of exercises that we cover in the bootcamp
+        // create a list of all markdown files that might contain front-matter
+        const sidebar = fs.readFileSync(SIDEBAR_PATH, 'utf8');
+
+        const markdownFiles = sidebar.match(/\([^\)]+\.md\)/g);
+
+        // Remove parentheses and filter out addendum items
+        const cleanedFiles = markdownFiles
+            .map(file => file.slice(1, -1))
+            .filter(file => !file.startsWith('8-addendum'))
+            .map(file => path.join(__dirname, '../docs/',  file ));
+
+        console.log(cleanedFiles);
+
+        // Get all .md files that are not in the appendix (appendix is not considered part of the bootcamp)
         // Get the list of staged files.
-        const stagedFiles = await git.diff(['--name-only', '--cached']);
+        // const stagedFiles = await git.diff(['--name-only', '--cached']);
 
         // Filter the staged files for .md files.
-        const mdFiles = stagedFiles
-            .split('\n')
-            .filter(file => file.endsWith('.md'));
+        // const mdFiles = stagedFiles
+        //     .split('\n')
+        //     .filter(file => file.endsWith('.md'));
 
         // Read the master record and extract just the front matter.
         let { data, content } = matter(fs.readFileSync(MASTER_RECORD_PATH, 'utf8'));
@@ -34,7 +59,7 @@ async function main() {
 
         let masterRecordChanged = false;
 
-        for (const mdFile of mdFiles) {
+        for (const mdFile of cleanedFiles) {
             // Read the content of the .md file.
             const fileContent = fs.readFileSync(mdFile, 'utf8');
 
@@ -76,7 +101,8 @@ async function main() {
             const updatedContent = matter.stringify(content, sortedData);
 
             // Update the master record with the new front-matter. Use the sorted
-            fs.writeFileSync(MASTER_RECORD_PATH, updatedContent);
+            console.log('would write');
+            // fs.writeFileSync(MASTER_RECORD_PATH, updatedContent);
 
             console.error(`${yellow}New front matter detected, master record updated${reset}`);
             console.error(`${yellow}Please review changes to ./docs/README.md${reset}`);
