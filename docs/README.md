@@ -85,19 +85,17 @@ docs/2-virtual-machines-containers/2.3-managing-infrastructure.md:
   category: Virtualization
   estReadingMinutes: 10
   exercises:
-    - name: Jenkins and Artifactory on VMs
+    - name: Artifactory on VMs
       description: >-
-        Create VMs from your golden image. On one VM install Jenkins and
-        configure workflow to build Spring’s PetClinic. On the other VM install
-        and configure Artifactory. Configure these VMs so they can communicate
-        and create another workflow that pushes the build artifact from the
-        Jenkins server to Artifactory
+        Create a VM from your golden image and install and configure Artifactory
+        and deploy an artifact to that VM from a GitHub Action
       estMinutes: 390
       technologies:
         - Vagrant
         - CentOS
-        - Jenkins
+        - GitHub Actions
         - Artifactory
+        - Ngrok
 docs/2-virtual-machines-containers/2.4-containers.md:
   category: Containerization
   estReadingMinutes: 20
