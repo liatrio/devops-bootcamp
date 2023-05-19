@@ -14,19 +14,31 @@ docs/1-introduction/1.3.1-unix.md:
 docs/1-introduction/1.3.2-vim.md:
   category: Fundamentals
   estReadingMinutes: 15
-  technologies:
-    - Vim
+  exercises:
+    - name: hello vim
+      description: create a file in Vim
+      estMinutes: 5
+      technologies:
+        - Vim
 docs/1-introduction/1.3.3-installations.md:
   category: Fundamentals
   estReadingMinutes: 10
 docs/1-introduction/1.3.4-passwords-and-keys.md:
   category: Fundamentals
-  estReadingMinutes: 25
-  technologies:
-    - ssh
+  estReadingMinutes: 10
+  exercises:
+    - name: hello ssh
+      description: create ssh keypair and ssh to a host
+      estMinutes: 15
+      technologies:
+        - ssh
 docs/1-introduction/1.3.5-networking.md:
   category: Fundamentals
-  estReadingMinutes: 25
+  estReadingMinutes: 10
+  exercises:
+    - name: hello network
+      description: explore the network of your local computer
+      estMinutes: 15
 docs/1-introduction/1.4-external-resources.md:
   category: Fundamentals
   estReadingMinutes: 50

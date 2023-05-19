@@ -15,7 +15,7 @@ async function main() {
         const args = process.argv.slice(2);
         let update = false;
         if (args[0] === 'update') {
-            update == true;
+            update = true;
         }
 
         // Using _sidebar.md as the list of exercises that we cover in the bootcamp
