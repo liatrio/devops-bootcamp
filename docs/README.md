@@ -503,7 +503,7 @@ docs/4-software-development-practices/4.5.6-sonarqube.md:
   category: Software Quality
   estReadingMinutes: 10
   exercises:
-    - name: Setup SonarQube and Jenkins Integration
+    - name: Setup SonarQube and GitHub Integration
       description: >-
         Create a SonarQube server and add GitHub action to run SonarQube in our
         build pipeline.

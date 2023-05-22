@@ -5,6 +5,7 @@ const matter = require('gray-matter');
 const green = '\x1b[32m';
 const reset = '\x1b[0m';
 const yellow = '\x1b[33m';
+const red = '\x1b[31m';
 const MASTER_RECORD_PATH = path.join(__dirname, '../docs/README.md');
 const SIDEBAR_PATH = path.join(__dirname, '../docs/_sidebar.md');
 
@@ -31,21 +32,24 @@ async function main() {
             .map(file => path.join(__dirname, '../docs/',  file ));
 
         // Read the master record and extract just the front matter.
-        let { data, content } = matter(fs.readFileSync(MASTER_RECORD_PATH, 'utf8'));
+        let { data: masterRecord, content } = matter(fs.readFileSync(MASTER_RECORD_PATH, 'utf8'));
 
-        // Create a deep clone of the master record for comparison later
-        const clonedMasterRecord = structuredClone(data);
+        // Object where we will rebuild the master record
+        let data = {};
 
         let masterRecordChanged = false;
 
         for (const mdFile of cleanedFiles) {
+            if (!fs.existsSync(mdFile)) {
+                console.error(`${red}${mdFile} does not exist or _sidebar.md needs to be udpated.${reset}`);
+                process.exit(1);
+            }
+
             // Read the content of the .md file.
             const fileContent = fs.readFileSync(mdFile, 'utf8');
 
             // Parse the YAML front matter.
-            const parsedExercise = matter(fileContent);
-
-            const exerciseData = parsedExercise.data
+            const { data: exerciseData } = matter(fileContent);
 
             // merge the front-matter from the staged file into the master record.
             // This will overwrite the inner object on the master record if it exists
@@ -60,7 +64,7 @@ async function main() {
         const sortedEntries = Object.entries(data).sort(
             (a, b) => a[0].localeCompare(b[0])
         );
-        const sortedMasterEntries = Object.entries(clonedMasterRecord).sort(
+        const sortedMasterEntries = Object.entries(masterRecord).sort(
             (a, b) => a[0].localeCompare(b[0])
         );
 
