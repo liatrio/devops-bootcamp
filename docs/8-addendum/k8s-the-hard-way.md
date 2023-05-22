@@ -1,5 +1,5 @@
 ---
-docs/7-kubernetes-container-orchestration/7.7-k8s-the-hard-way.md:
+docs/8-addendum/k8s-the-hard-way.md:
   category: Container Orchestration
   estReadingMinutes: 40
   exercises:
