@@ -768,30 +768,32 @@ docs/6-infrastructure-configuration-management/6.2-ansible.md:
   exercises:
     - name: Vagrant and Ansible
       description: >-
-        Provision a virtual machine and install Jenkins using Ansible as a
-        provisioner in Vagrant.
+        Provision a virtual machine and install a GitHub self-hosted runner
+        using Ansible as a provisioner in Vagrant.
       estMinutes: 300
       technologies:
         - Ansible
         - Vagrant
-        - Jenkins
+        - GitHub self-hosted runner
     - name: Ansible and AWS EC2
-      description: Provision an AWS EC2 instance and install Jenkins using Ansible.
+      description: >-
+        Provision an AWS EC2 instance and install a GitHub self-hosted runner
+        using Ansible.
       estMinutes: 300
       technologies:
         - Ansible
         - AWS EC2
-        - Jenkins
+        - GitHub self-hosted runner
     - name: Terraform and Ansible
       description: >-
-        Provision an EC2 instance using Terraform and install Jenkins with
-        Ansible.
+        Provision an EC2 instance using Terraform and install a GitHub
+        self-hosted runner with Ansible.
       estMinutes: 360
       technologies:
         - Terraform
         - Ansible
         - AWS EC2
-        - Jenkins
+        - GitHub self-hosted runner
 docs/6-infrastructure-configuration-management/6.3-chef.md:
   category: Infrastructure as Code
   estReadingMinutes: 15
