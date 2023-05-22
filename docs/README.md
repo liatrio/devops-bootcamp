@@ -107,14 +107,15 @@ docs/2-virtual-machines-containers/2.4-containers.md:
       estMinutes: 30
       technologies:
         - Docker
-    - name: Jenkins to Artifactory containerized
+    - name: Self-hosted GitHub Action to Artifactory containerized
       description: >-
-        Containerize Jenkins and Artifactory and build a pipeline that pushes a
-        PetClinic build artifact from one container to the other.
+        Containerize a self-hosted GitHub Action and Artifactory and build a
+        pipeline that pushes a PetClinic build artifact from one container to
+        the other.
       estMinutes: 150
       technologies:
         - Docker
-        - Jenkins
+        - GitHub Actions
         - Artifactory
 docs/2-virtual-machines-containers/2.5.1-docker-compose.md:
   category: Container Orchestration
