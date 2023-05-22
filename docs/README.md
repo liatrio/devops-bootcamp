@@ -95,7 +95,6 @@ docs/2-virtual-machines-containers/2.3-managing-infrastructure.md:
         - CentOS
         - GitHub Actions
         - Artifactory
-        - Ngrok
 docs/2-virtual-machines-containers/2.4-containers.md:
   category: Containerization
   estReadingMinutes: 20
