@@ -799,30 +799,6 @@ docs/6-infrastructure-configuration-management/6.2-ansible.md:
         - Ansible
         - AWS EC2
         - GitHub self-hosted runner
-docs/6-infrastructure-configuration-management/6.3-chef.md:
-  category: Infrastructure as Code
-  estReadingMinutes: 15
-  exercises:
-    - name: Installing Chef Workstation and Creating a Wrapper Cookbook
-      description: >-
-        Install Chef Workstation and create a Wrapper Cookbook for Nginx,
-        including recipe development, local testing with Vagrant, and ensuring
-        code quality.
-      estMinutes: 240
-      technologies:
-        - Chef
-        - Chef Workstation
-        - Vagrant
-    - name: Setting Up Chef Server and Bootstrapping AWS Instances
-      description: >-
-        Install Chef Server on an AWS instance, upload the Nginx cookbook to the
-        server, and bootstrap a new AWS instance with the Nginx cookbook.
-      estMinutes: 480
-      technologies:
-        - Chef
-        - Chef Server
-        - AWS
-        - Nginx
 docs/7-kubernetes-container-orchestration/7.1-kubectl-ref.md:
   category: Container Orchestration
   estReadingMinutes: 120
