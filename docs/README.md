@@ -962,28 +962,6 @@ docs/7-kubernetes-container-orchestration/7.6-webhooks.md:
       technologies:
         - Kubernetes
         - Python
-docs/7-kubernetes-container-orchestration/7.7-k8s-the-hard-way.md:
-  category: Container Orchestration
-  estReadingMinutes: 40
-  exercises:
-    - name: Kubernetes the Hard Way
-      description: >-
-        Follow along with Ivan Fioravanti's fork of Kubernetes the Hard Way,
-        manually creating Terraform and Ansible code to stand up a Kubernetes
-        cluster within Azure. This exercise will provide a deep understanding of
-        the low level, administrative perspective of setting up a Kubernetes
-        cluster.
-      estMinutes: 6000
-      technologies:
-        - Kubernetes
-        - Terraform
-        - Ansible
-        - Azure
-        - Networking
-        - cfssl
-        - cfssljson
-        - kubectl
-        - azure-cli
 docs/7-kubernetes-container-orchestration/7.8-hello-k8s.md:
   category: Container Orchestration
   estReadingMinutes: 15
