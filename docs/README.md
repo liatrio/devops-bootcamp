@@ -121,15 +121,15 @@ docs/2-virtual-machines-containers/2.5.1-docker-compose.md:
   category: Container Orchestration
   estReadingMinutes: 5
   exercises:
-    - name: Docker Compose Jenkins and Artifactory
+    - name: Docker Compose GitHub Actions and Artifactory
       description: >-
-        Create a compose file that spins up your Jenkins and Artifactory
+        Create a compose file that spins up your GitHub Actions and Artifactory
         containers, exposing ports, and using volumes for persistent storage
       estMinutes: 120
       technologies:
         - Docker
         - Docker Compose
-        - Jenkins
+        - GitHub Actions
         - Artifactory
 docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
   category: Container Orchestration
