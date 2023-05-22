@@ -503,7 +503,7 @@ docs/4-software-development-practices/4.5.6-sonarqube.md:
   category: Software Quality
   estReadingMinutes: 10
   exercises:
-    - name: Setup SonarQube and Jenkins Integration
+    - name: Setup SonarQube and GitHub Integration
       description: >-
         Create a SonarQube server and add GitHub action to run SonarQube in our
         build pipeline.
@@ -564,14 +564,15 @@ docs/5-release-management/5.3.2-maven-integration.md:
   exercises:
     - name: Maven Integration
       description: >-
-        Get an introduction into how Maven interacts with Jenkins and
-        Artifactory. Fork several projects, create Jenkins jobs that build these
-        projects, deploy artifacts to Artifactory, set up jobs to build on
-        commit, make changes and observe the results.
+        Get an introduction into how Maven interacts with Artifactory and how to
+        use Maven in GitHub Actions. Fork several projects, use GitHub Actions
+        to create GitHub workflow jobs that build these projects, deploy
+        artifacts to Artifactory, set up jobs to build on commit, make changes
+        and observe the results.
       estMinutes: 240
       technologies:
         - Maven
-        - Jenkins
+        - GitHub Actions
         - Artifactory
 docs/5-release-management/5.3.3-make.md:
   category: CI/CD
