@@ -107,7 +107,6 @@
   - [6.1.3 - Terraform Modules](6-infrastructure-configuration-management/6.1.3-terraform-modules.md)
   - [6.1.4 - Terraform Providers](6-infrastructure-configuration-management/6.1.4-terraform-providers.md)
 - [6.2 - Ansible](6-infrastructure-configuration-management/6.2-ansible.md)
-- [6.3 - Chef](6-infrastructure-configuration-management/6.3-chef.md)
 
 - **Chapter 7**
 
@@ -123,7 +122,7 @@
 - [7.4 - RBAC](7-kubernetes-container-orchestration/7.4-rbac.md)
 - [7.5 - HPAs](7-kubernetes-container-orchestration/7.5-hpas.md)
 - [7.6 - Webhooks](7-kubernetes-container-orchestration/7.6-webhooks.md)
-- [7.8 - Hello K8s](7-kubernetes-container-orchestration/7.8-hello-k8s.md)
+- [7.7 - Hello K8s](7-kubernetes-container-orchestration/7.7-hello-k8s.md)
 
 - **Addendum**
 
@@ -136,3 +135,4 @@
   - [Artifactory](8-addendum/artifactory.md)
   - [Docker Registry](8-addendum/docker-registry.md)
   - [K8 The Hard Way](8-addendum/k8s-the-hard-way.md)
+  - [Chef](8-addendum/chef.md)
