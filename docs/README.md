@@ -139,12 +139,14 @@ docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
       estMinutes: 60
       technologies:
         - Kubernetes
-    - name: Kind cluster Jenkins and Artifactory
-      description: Create a Kind cluster running your Jenkins and Artifactory containers
+    - name: Kind cluster GitHub Actions and Artifactory
+      description: >-
+        Create a Kind cluster running your GitHub Actions and Artifactory
+        containers
       estMinutes: 600
       technologies:
         - Kubernetes
-        - Jenkins
+        - GitHub Actions
         - Artifactory
 docs/3-cloud-computing/3.0-overview.md:
   category: Cloud Computing
