@@ -605,9 +605,8 @@ docs/5-release-management/5.3.5-go-releaser.md:
   exercises:
     - name: Go Releaser Exercise
       description: >-
-        Fork and clone an open source Go project, install Go Releaser, use Go
-        Releaser to deploy Go binaries to a GitHub release, and create a
-        Jenkinsfile to automate the deployment process.
+        Fork and clone an open source Go project, update a Self-Hosted GitHub
+        Actions Runner to deploy a release with Go Releaser.
       estMinutes: 240
       technologies:
         - Go
