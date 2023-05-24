@@ -622,14 +622,13 @@ docs/5-release-management/5.4.1-docker.md:
       description: >-
         Create a Dockerhub account, create repositories, clone DevOps Knowledge
         Share repositories, build container images, push them to Dockerhub,
-        create a Docker Compose file, and create a Jenkinsfile pipeline to
-        automate the process.
+        create a Docker Compose file, and create a GitHub Actions Workflow.
       estMinutes: 360
       technologies:
         - Docker
         - Dockerhub
         - GitHub
-        - Jenkins
+        - GitHub Actions
 docs/5-release-management/5.4.2-helm.md:
   category: Container Orchestration
   estReadingMinutes: 15
