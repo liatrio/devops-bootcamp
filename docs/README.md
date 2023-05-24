@@ -612,7 +612,7 @@ docs/5-release-management/5.3.5-go-releaser.md:
         - Go
         - Go Releaser
         - GitHub
-        - Jenkins
+        - GitHub Actions
 docs/5-release-management/5.4.1-docker.md:
   category: Container Orchestration
   estReadingMinutes: 10
