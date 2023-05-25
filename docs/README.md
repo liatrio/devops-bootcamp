@@ -186,12 +186,12 @@ docs/3-cloud-computing/3.2.1-s3-cloudfront.md:
         - CloudFront
 docs/3-cloud-computing/3.2.2-ec2.md:
   category: Cloud Computing
-  estReadingMinutes: 10
+  estReadingMinutes: 30
   exercises:
     - name: Hello EC2
       description: >-
-        Create EC2 VMs and configure one as a Jenkins server and the other as a
-        Jenkins agent registered to the server.
+        Create EC2 VMs and configure one as a Jenkins controller server and the
+        other as a Jenkins agent registered to the server.
       estMinutes: 240
       technologies:
         - AWS
