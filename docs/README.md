@@ -154,7 +154,7 @@ docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
       technologies:
         - Kubernetes
         - GitHub Actions
-        - Nexus
+        - Nexus OSS
 docs/3-cloud-computing/3.0-overview.md:
   category: Cloud Computing
   estReadingMinutes: 30
@@ -572,7 +572,7 @@ docs/5-release-management/5.3.2-maven-integration.md:
       technologies:
         - Maven
         - GitHub Actions
-        - Nexus
+        - Nexus OSS
 docs/5-release-management/5.3.3-make.md:
   category: CI/CD
   estReadingMinutes: 20
