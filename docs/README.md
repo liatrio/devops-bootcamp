@@ -663,13 +663,13 @@ docs/5-release-management/5.4.2-helm.md:
     - name: Helm Exercise 4
       description: >-
         Create another Helm chart using the Helm Create command and configure it
-        to deploy a Jenkins instance.
+        to deploy a GitHub self-hosted runner.
       estMinutes: 120
       technologies:
         - Helm
         - Kubernetes
         - Docker
-        - Jenkins
+        - GitHub self-hosted runner
 docs/6-infrastructure-configuration-management/6.1.1-terraform-getting-started.md:
   category: Infrastructure as Code
   estReadingMinutes: 45
