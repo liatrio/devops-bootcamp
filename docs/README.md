@@ -97,16 +97,16 @@ docs/2-virtual-machines-containers/2.3-managing-infrastructure.md:
   category: Virtualization
   estReadingMinutes: 10
   exercises:
-    - name: Artifactory on VMs
+    - name: Jenkins and Nexus on VMs
       description: >-
-        Create a VM from your golden image and install and configure Artifactory
+        Create a VM from your golden image and install and configure Nexus OSS
         and deploy an artifact to that VM from a GitHub Action
       estMinutes: 390
       technologies:
         - Vagrant
         - CentOS
         - GitHub Actions
-        - Artifactory
+        - Nexus OSS
 docs/2-virtual-machines-containers/2.4-containers.md:
   category: Containerization
   estReadingMinutes: 20
@@ -116,30 +116,29 @@ docs/2-virtual-machines-containers/2.4-containers.md:
       estMinutes: 30
       technologies:
         - Docker
-    - name: Self-hosted GitHub Action to Artifactory containerized
+    - name: Self-hosted GitHub Action to Nexus containerized
       description: >-
-        Containerize a self-hosted GitHub Action and Artifactory and build a
-        pipeline that pushes a PetClinic build artifact from one container to
-        the other.
+        Containerize a self-hosted GitHub Action and Nexus and build a pipeline
+        that pushes a PetClinic build artifact from one container to the other.
       estMinutes: 150
       technologies:
         - Docker
         - GitHub Actions
-        - Artifactory
+        - Nexus OSS
 docs/2-virtual-machines-containers/2.5.1-docker-compose.md:
   category: Container Orchestration
   estReadingMinutes: 5
   exercises:
-    - name: Docker Compose GitHub Actions and Artifactory
+    - name: Docker Compose GitHub Actions and Nexus
       description: >-
-        Create a compose file that spins up your GitHub Actions and Artifactory
+        Create a compose file that spins up your GitHub Actions and Nexus
         containers, exposing ports, and using volumes for persistent storage
       estMinutes: 120
       technologies:
         - Docker
         - Docker Compose
         - GitHub Actions
-        - Artifactory
+        - Nexus OSS
 docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
   category: Container Orchestration
   estReadingMinutes: 15
@@ -149,13 +148,13 @@ docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
       estMinutes: 60
       technologies:
         - Kubernetes
-    - name: Kind cluster Jenkins and Artifactory
-      description: Create a Kind cluster running your Jenkins and Artifactory containers
+    - name: Kind cluster GitHub Actions and Nexus
+      description: Create a Kind cluster running your GitHub Actions and Nexus containers
       estMinutes: 600
       technologies:
         - Kubernetes
-        - Jenkins
-        - Artifactory
+        - GitHub Actions
+        - Nexus OSS
 docs/3-cloud-computing/3.0-overview.md:
   category: Cloud Computing
   estReadingMinutes: 30
@@ -184,12 +183,12 @@ docs/3-cloud-computing/3.2.1-s3-cloudfront.md:
         - CloudFront
 docs/3-cloud-computing/3.2.2-ec2.md:
   category: Cloud Computing
-  estReadingMinutes: 10
+  estReadingMinutes: 30
   exercises:
     - name: Hello EC2
       description: >-
-        Create EC2 VMs and configure one as a Jenkins server and the other as a
-        Jenkins agent registered to the server.
+        Create EC2 VMs and configure one as a Jenkins controller server and the
+        other as a Jenkins agent registered to the server.
       estMinutes: 240
       technologies:
         - AWS
@@ -564,16 +563,16 @@ docs/5-release-management/5.3.2-maven-integration.md:
   exercises:
     - name: Maven Integration
       description: >-
-        Get an introduction into how Maven interacts with Artifactory and how to
-        use Maven in GitHub Actions. Fork several projects, use GitHub Actions
-        to create GitHub workflow jobs that build these projects, deploy
-        artifacts to Artifactory, set up jobs to build on commit, make changes
-        and observe the results.
+        Get an introduction into how Maven interacts with Nexus and how to use
+        Maven in GitHub Actions. Fork several projects, use GitHub Actions to
+        create GitHub workflow jobs that build these projects, deploy artifacts
+        to Nexus, set up jobs to build on commit, make changes and observe the
+        results.
       estMinutes: 240
       technologies:
         - Maven
         - GitHub Actions
-        - Artifactory
+        - Nexus OSS
 docs/5-release-management/5.3.3-make.md:
   category: CI/CD
   estReadingMinutes: 20
@@ -606,15 +605,14 @@ docs/5-release-management/5.3.5-go-releaser.md:
   exercises:
     - name: Go Releaser Exercise
       description: >-
-        Fork and clone an open source Go project, install Go Releaser, use Go
-        Releaser to deploy Go binaries to a GitHub release, and create a
-        Jenkinsfile to automate the deployment process.
+        Fork and clone an open source Go project, update a Self-Hosted GitHub
+        Actions Runner to deploy a release with Go Releaser.
       estMinutes: 240
       technologies:
         - Go
         - Go Releaser
         - GitHub
-        - Jenkins
+        - GitHub Actions
 docs/5-release-management/5.4.1-docker.md:
   category: Container Orchestration
   estReadingMinutes: 10
@@ -623,14 +621,13 @@ docs/5-release-management/5.4.1-docker.md:
       description: >-
         Create a Dockerhub account, create repositories, clone DevOps Knowledge
         Share repositories, build container images, push them to Dockerhub,
-        create a Docker Compose file, and create a Jenkinsfile pipeline to
-        automate the process.
+        create a Docker Compose file, and create a GitHub Actions Workflow.
       estMinutes: 360
       technologies:
         - Docker
         - Dockerhub
         - GitHub
-        - Jenkins
+        - GitHub Actions
 docs/5-release-management/5.4.2-helm.md:
   category: Container Orchestration
   estReadingMinutes: 15
