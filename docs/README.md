@@ -666,7 +666,7 @@ docs/5-release-management/5.4.2-helm.md:
         - Helm
         - Kubernetes
         - Docker
-        - GitHub self-hosted runner
+        - GitHub
 docs/6-infrastructure-configuration-management/6.1.1-terraform-getting-started.md:
   category: Infrastructure as Code
   estReadingMinutes: 45
