@@ -660,7 +660,7 @@ docs/5-release-management/5.4.2-helm.md:
     - name: Helm Exercise 4
       description: >-
         Create another Helm chart using the Helm Create command and configure it
-        to deploy a GitHub Self-Hosted Runner instance.
+        to deploy a GitHub self-hosted runner.
       estMinutes: 120
       technologies:
         - Helm
