@@ -951,6 +951,54 @@ docs/7-kubernetes-container-orchestration/7.8-hello-k8s.md:
         - Webhooks
         - Custom Resources
         - Kubebuilder
+docs/9-Github/9.2-Actions.md:
+  category: Fundamentals
+  estReadingMinutes: 20
+  exercises:
+    - name: Augment basic workflow
+      description: >-
+        Take a basic workflow and update it to include a few common things
+        you'll see inside Github Actions
+      estMinutes: 60
+      technologies:
+        - Github Actions
+    - name: Going Deeper
+      description: >-
+        Take the newly improved workflow and use different methods to achieve
+        the same thing.  Introduces new important concepts/actions
+      estMinutes: 120
+      technologies:
+        - Github Actions
+    - name: Consolidate what we have and make it reusable
+      description: >-
+        Now we go one step further and take one of our jobs and make it into a
+        composite action then take our whole workflow and bundle it into a
+        reusable version
+      estMinutes: 240
+      technologies:
+        - Github Actions
+docs/9-Github/9.3-Projects.md:
+  category: Fundamentals
+  estReadingMinutes: 5
+  exercises:
+    - name: Create your own Project
+      description: >-
+        Play around with Github Projects and get used to using its many features
+        and interfaces to organize your work.
+      estMinutes: 80
+      technologies:
+        - Github Projects
+docs/9-Github/9.4-APIs.md:
+  category: Fundamentals
+  estReadingMinutes: 30
+  exercises:
+    - name: Interact with Github using its two available APIs
+      description: >-
+        Create and retrieve resources in Github using the REST and GraphQL
+        APIs.  Get some experience using them and compare the two approaches.
+      estMinutes: 180
+      technologies:
+        - APIs
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
