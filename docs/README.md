@@ -999,6 +999,7 @@ docs/9-Github/9.4-APIs.md:
       estMinutes: 180
       technologies:
         - APIs
+        - Javascript
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
