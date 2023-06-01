@@ -952,7 +952,7 @@ docs/7-kubernetes-container-orchestration/7.8-hello-k8s.md:
         - Custom Resources
         - Kubebuilder
 docs/9-Github/9.2-Actions.md:
-  category: Fundamentals
+  category: CI/CD
   estReadingMinutes: 20
   exercises:
     - name: Augment basic workflow
@@ -978,7 +978,7 @@ docs/9-Github/9.2-Actions.md:
       technologies:
         - Github Actions
 docs/9-Github/9.3-Projects.md:
-  category: Fundamentals
+  category: Agile Development
   estReadingMinutes: 5
   exercises:
     - name: Create your own Project

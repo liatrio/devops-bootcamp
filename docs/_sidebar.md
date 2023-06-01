@@ -124,6 +124,14 @@
 - [7.6 - Webhooks](7-kubernetes-container-orchestration/7.6-webhooks.md)
 - [7.7 - Hello K8s](7-kubernetes-container-orchestration/7.7-hello-k8s.md)
 
+- **Chapter 8**
+
+- [9.0 - Github](9-Github/9.0-overview.md)
+- [9.1 - Features](9-Github/9.1-features.md)
+- [9.2 - Actions](9-Github/9.2-Actions.md)
+- [9.3 - Projects](9-Github/9.3-Projects.md)
+- [9.4 - APIs](9-Github/9.4-APIs.md)
+
 - **Addendum**
 
 - [Addendum](8-addendum/addendum-overview.md)
@@ -136,11 +144,3 @@
   - [Docker Registry](8-addendum/docker-registry.md)
   - [K8 The Hard Way](8-addendum/k8s-the-hard-way.md)
   - [Chef](8-addendum/chef.md)
-
-- **Github**
-
-- [9.0 - Github](9-Github/9.0-overview.md)
-- [9.1 - Features](9-Github/9.1-features.md)
-- [9.2 - Actions](9-Github/9.2-Actions.md)
-- [9.3 - Projects](9-Github/9.3-Projects.md)
-- [9.4 - APIs](9-Github/9.4-APIs.md)
