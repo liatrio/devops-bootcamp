@@ -134,13 +134,13 @@
 
 - **Addendum**
 
-- [Addendum](8-addendum/addendum-overview.md)
-  - [Ephemeral Jenkins](8-addendum/ephemeral-jenkins.md)
-  - [Tomcat](8-addendum/tomcat.md)
-  - [Nexus](8-addendum/nexus.md)
-  - [Bitbucket](8-addendum/bitbucket.md)
-  - [Jira](8-addendum/jira.md)
-  - [Artifactory](8-addendum/artifactory.md)
-  - [Docker Registry](8-addendum/docker-registry.md)
-  - [K8 The Hard Way](8-addendum/k8s-the-hard-way.md)
-  - [Chef](8-addendum/chef.md)
+- [Addendum](addendum/addendum-overview.md)
+  - [Ephemeral Jenkins](addendum/ephemeral-jenkins.md)
+  - [Tomcat](addendum/tomcat.md)
+  - [Nexus](addendum/nexus.md)
+  - [Bitbucket](addendum/bitbucket.md)
+  - [Jira](addendum/jira.md)
+  - [Artifactory](addendum/artifactory.md)
+  - [Docker Registry](addendum/docker-registry.md)
+  - [K8 The Hard Way](addendum/k8s-the-hard-way.md)
+  - [Chef](addendum/chef.md)
