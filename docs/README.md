@@ -846,10 +846,10 @@ docs/6-infrastructure-configuration-management/6.2-ansible.md:
         - Ansible
         - AWS EC2
         - GitHub self-hosted runner
-docs/7-kubernetes-container-orchestration/7.1-kubectl-ref.md:
+docs/8-kubernetes-container-orchestration/8.1-kubectl-ref.md:
   category: Container Orchestration
   estReadingMinutes: 120
-docs/7-kubernetes-container-orchestration/7.2-volumes.md:
+docs/8-kubernetes-container-orchestration/8.2-volumes.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -870,7 +870,7 @@ docs/7-kubernetes-container-orchestration/7.2-volumes.md:
       technologies:
         - Kubernetes
         - Jenkins
-docs/7-kubernetes-container-orchestration/7.3-probes.md:
+docs/8-kubernetes-container-orchestration/8.3-probes.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -899,7 +899,7 @@ docs/7-kubernetes-container-orchestration/7.3-probes.md:
       estMinutes: 45
       technologies:
         - Kubernetes
-docs/7-kubernetes-container-orchestration/7.4-rbac.md:
+docs/8-kubernetes-container-orchestration/8.4-rbac.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -921,7 +921,7 @@ docs/7-kubernetes-container-orchestration/7.4-rbac.md:
       technologies:
         - Docker
         - Kubernetes
-docs/7-kubernetes-container-orchestration/7.5-hpas.md:
+docs/8-kubernetes-container-orchestration/8.5-hpas.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -955,7 +955,7 @@ docs/7-kubernetes-container-orchestration/7.5-hpas.md:
       technologies:
         - Docker
         - Kubernetes
-docs/7-kubernetes-container-orchestration/7.6-webhooks.md:
+docs/8-kubernetes-container-orchestration/8.6-webhooks.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -985,7 +985,7 @@ docs/7-kubernetes-container-orchestration/7.6-webhooks.md:
       technologies:
         - Kubernetes
         - Python
-docs/7-kubernetes-container-orchestration/7.8-hello-k8s.md:
+docs/8-kubernetes-container-orchestration/8.8-hello-k8s.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:

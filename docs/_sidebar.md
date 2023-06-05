@@ -116,21 +116,21 @@
   - [6.1.4 - Terraform Providers](6-infrastructure-configuration-management/6.1.4-terraform-providers.md)
 - [6.2 - Ansible](6-infrastructure-configuration-management/6.2-ansible.md)
 
-- **Chapter 7**
+- **Chapter 8**
 
-- [7.0 - Kubernetes Overview](7-kubernetes-container-orchestration/7.0-overview.md)
-- [7.1 - Kubectl Reference](7-kubernetes-container-orchestration/7.1-kubectl-ref.md)
-  - [7.1.1 - Getting Started](7-kubernetes-container-orchestration/7.1.1-getting-started.md)
-  - [7.1.2 - App Management](7-kubernetes-container-orchestration/7.1.2-app-management.md)
-  - [7.1.3 - Working with Apps](7-kubernetes-container-orchestration/7.1.3-working-with-apps.md)
-  - [7.1.4 - Cluster Management](7-kubernetes-container-orchestration/7.1.4-cluster-management.md)
-  - [7.1.5 - Kubectl Settings and Usage](7-kubernetes-container-orchestration/7.1.5-kubectl-settings-and-usage.md)
-- [7.2 - Volumes](7-kubernetes-container-orchestration/7.2-volumes.md)
-- [7.3 - Probes](7-kubernetes-container-orchestration/7.3-probes.md)
-- [7.4 - RBAC](7-kubernetes-container-orchestration/7.4-rbac.md)
-- [7.5 - HPAs](7-kubernetes-container-orchestration/7.5-hpas.md)
-- [7.6 - Webhooks](7-kubernetes-container-orchestration/7.6-webhooks.md)
-- [7.7 - Hello K8s](7-kubernetes-container-orchestration/7.7-hello-k8s.md)
+- [8.0 - Kubernetes Overview](8-kubernetes-container-orchestration/8.0-overview.md)
+- [8.1 - Kubectl Reference](8-kubernetes-container-orchestration/8.1-kubectl-ref.md)
+  - [8.1.1 - Getting Started](8-kubernetes-container-orchestration/8.1.1-getting-started.md)
+  - [8.1.2 - App Management](8-kubernetes-container-orchestration/8.1.2-app-management.md)
+  - [8.1.3 - Working with Apps](8-kubernetes-container-orchestration/8.1.3-working-with-apps.md)
+  - [8.1.4 - Cluster Management](8-kubernetes-container-orchestration/8.1.4-cluster-management.md)
+  - [8.1.5 - Kubectl Settings and Usage](8-kubernetes-container-orchestration/8.1.5-kubectl-settings-and-usage.md)
+- [8.2 - Volumes](8-kubernetes-container-orchestration/8.2-volumes.md)
+- [8.3 - Probes](8-kubernetes-container-orchestration/8.3-probes.md)
+- [8.4 - RBAC](8-kubernetes-container-orchestration/8.4-rbac.md)
+- [8.5 - HPAs](8-kubernetes-container-orchestration/8.5-hpas.md)
+- [8.6 - Webhooks](8-kubernetes-container-orchestration/8.6-webhooks.md)
+- [8.7 - Hello K8s](8-kubernetes-container-orchestration/8.7-hello-k8s.md)
 
 - **Addendum**
 
