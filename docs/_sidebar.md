@@ -24,6 +24,14 @@
 
 - **Chapter 2**
 
+- [2.0 - Github](2-Github/2.0-overview.md)
+- [2.1 - Features](2-Github/2.1-features.md)
+- [2.2 - Actions](2-Github/2.2-Actions.md)
+- [2.3 - Projects](2-Github/2.3-Projects.md)
+- [2.4 - APIs](2-Github/2.4-APIs.md)
+
+- **Chapter 2**
+
 - [2.0 - Virtual Machines and Containers](2-virtual-machines-containers/2.0-overview.md)
 - [2.1 - Golden Images](2-virtual-machines-containers/2.1-golden-images.md)
 - [2.2 - Local Development](2-virtual-machines-containers/2.2-local-development.md)
@@ -123,14 +131,6 @@
 - [7.5 - HPAs](7-kubernetes-container-orchestration/7.5-hpas.md)
 - [7.6 - Webhooks](7-kubernetes-container-orchestration/7.6-webhooks.md)
 - [7.7 - Hello K8s](7-kubernetes-container-orchestration/7.7-hello-k8s.md)
-
-- **Chapter 8**
-
-- [9.0 - Github](9-Github/9.0-overview.md)
-- [9.1 - Features](9-Github/9.1-features.md)
-- [9.2 - Actions](9-Github/9.2-Actions.md)
-- [9.3 - Projects](9-Github/9.3-Projects.md)
-- [9.4 - APIs](9-Github/9.4-APIs.md)
 
 - **Addendum**
 
