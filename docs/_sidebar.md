@@ -30,17 +30,17 @@
 - [2.3 - Projects](2-Github/2.3-Projects.md)
 - [2.4 - APIs](2-Github/2.4-APIs.md)
 
-- **Chapter 2**
+- **Chapter 3**
 
-- [2.0 - Virtual Machines and Containers](2-virtual-machines-containers/2.0-overview.md)
-- [2.1 - Golden Images](2-virtual-machines-containers/2.1-golden-images.md)
-- [2.2 - Local Development](2-virtual-machines-containers/2.2-local-development.md)
-- [2.3 - Managing Infrastructure](2-virtual-machines-containers/2.3-managing-infrastructure.md)
-- [2.4 - Containers](2-virtual-machines-containers/2.4-containers.md)
-- [2.5 - Container Management](2-virtual-machines-containers/2.5-container-management.md)
-  - [2.5.1 - Docker Compose](2-virtual-machines-containers/2.5.1-docker-compose.md)
-  - [2.5.2 - Kubernetes](2-virtual-machines-containers/2.5.2-kubernetes.md)
-  - [2.5.3 - Deliverables](2-virtual-machines-containers/2.5.3-deliverables.md)
+- [3.0 - Virtual Machines and Containers](3-virtual-machines-containers/3.0-overview.md)
+- [3.1 - Golden Images](3-virtual-machines-containers/3.1-golden-images.md)
+- [3.2 - Local Development](3-virtual-machines-containers/3.2-local-development.md)
+- [3.3 - Managing Infrastructure](3-virtual-machines-containers/3.3-managing-infrastructure.md)
+- [3.4 - Containers](3-virtual-machines-containers/3.4-containers.md)
+- [3.5 - Container Management](3-virtual-machines-containers/3.5-container-management.md)
+  - [3.5.1 - Docker Compose](3-virtual-machines-containers/3.5.1-docker-compose.md)
+  - [3.5.2 - Kubernetes](3-virtual-machines-containers/3.5.2-kubernetes.md)
+  - [3.5.3 - Deliverables](3-virtual-machines-containers/3.5.3-deliverables.md)
 
 - **Chapter 3**
 

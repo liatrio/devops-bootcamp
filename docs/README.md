@@ -91,119 +91,6 @@ docs/2-Github/2.4-APIs.md:
       technologies:
         - APIs
         - Javascript
-docs/2-virtual-machines-containers/2.1-golden-images.md:
-  category: Virtualization
-  estReadingMinutes: 15
-  exercises:
-    - name: hello VirtualBox
-      description: >-
-        Configure a VM with VirtualBox. Install some software and configure it
-        for SSH
-      estMinutes: 90
-      technologies:
-        - VirtualBox
-        - CentOS
-    - name: hello Packer
-      description: >-
-        Use Packer to create an OVF configured identically to the VM you
-        configured in exercise 1
-      estMinutes: 210
-      technologies:
-        - VirtualBox
-        - Packer
-        - CentOS
-docs/2-virtual-machines-containers/2.2-local-development.md:
-  category: Virtualization
-  estReadingMinutes: 15
-  exercises:
-    - name: hello Vagrant
-      description: Install Vagrant spin up CentOS 7 box
-      estMinutes: 60
-      technologies:
-        - Vagrant
-        - CentOS
-    - name: Vagrant base box
-      description: >-
-        Create a ‘Base Box’ that adheres to Vagrants ‘Base Box’ standards.
-        Upload this base box to VagrantUp
-      estMinutes: 180
-      technologies:
-        - Vagrant
-        - CentOS
-    - name: Packer to Vagrant
-      description: >-
-        Use Packer to create an image compatible with Vagrants Base Box
-        requirements. This requires modification of CentOS’s ‘kickstart’ file
-        (understand CentOS kickstart DSL), leverage a Packer provisioner to add
-        ssh key, install VirtualBox dependencies and tools, leverage Packer
-        post-processor to output an OVF and boot a vagrant box
-      estMinutes: 300
-      technologies:
-        - Vagrant
-        - Packer
-        - CentOS
-docs/2-virtual-machines-containers/2.3-managing-infrastructure.md:
-  category: Virtualization
-  estReadingMinutes: 10
-  exercises:
-    - name: Jenkins and Nexus on VMs
-      description: >-
-        Create a VM from your golden image and install and configure Nexus OSS
-        and deploy an artifact to that VM from a GitHub Action
-      estMinutes: 390
-      technologies:
-        - Vagrant
-        - CentOS
-        - GitHub Actions
-        - Nexus OSS
-docs/2-virtual-machines-containers/2.4-containers.md:
-  category: Containerization
-  estReadingMinutes: 20
-  exercises:
-    - name: Hello Containers
-      description: Complete Docker's 'Hello World'
-      estMinutes: 30
-      technologies:
-        - Docker
-    - name: Self-hosted GitHub Action to Nexus containerized
-      description: >-
-        Containerize a self-hosted GitHub Action and Nexus and build a pipeline
-        that pushes a PetClinic build artifact from one container to the other.
-      estMinutes: 150
-      technologies:
-        - Docker
-        - GitHub Actions
-        - Nexus OSS
-docs/2-virtual-machines-containers/2.5.1-docker-compose.md:
-  category: Container Orchestration
-  estReadingMinutes: 5
-  exercises:
-    - name: Docker Compose GitHub Actions and Nexus
-      description: >-
-        Create a compose file that spins up your GitHub Actions and Nexus
-        containers, exposing ports, and using volumes for persistent storage
-      estMinutes: 120
-      technologies:
-        - Docker
-        - Docker Compose
-        - GitHub Actions
-        - Nexus OSS
-docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
-  category: Container Orchestration
-  estReadingMinutes: 15
-  exercises:
-    - name: Hello Minikube
-      description: Complete the 'Hello Minikube' tutorial
-      estMinutes: 60
-      technologies:
-        - Kubernetes
-    - name: Kind cluster GitHub Actions and Nexus
-      description: Create a Kind cluster running your GitHub Actions and Nexus containers
-      estMinutes: 600
-      technologies:
-        - Kubernetes
-        - GitHub Actions
-        - Nexus OSS
 docs/3-cloud-computing/3.0-overview.md:
   category: Cloud Computing
   estReadingMinutes: 30
@@ -446,6 +333,119 @@ docs/3-cloud-computing/3.3.6-aks.md:
         - Azure Kubernetes Service (AKS)
         - Azure Container Registry (ACR)
         - Node.js
+docs/3-virtual-machines-containers/3.1-golden-images.md:
+  category: Virtualization
+  estReadingMinutes: 15
+  exercises:
+    - name: hello VirtualBox
+      description: >-
+        Configure a VM with VirtualBox. Install some software and configure it
+        for SSH
+      estMinutes: 90
+      technologies:
+        - VirtualBox
+        - CentOS
+    - name: hello Packer
+      description: >-
+        Use Packer to create an OVF configured identically to the VM you
+        configured in exercise 1
+      estMinutes: 210
+      technologies:
+        - VirtualBox
+        - Packer
+        - CentOS
+docs/3-virtual-machines-containers/3.2-local-development.md:
+  category: Virtualization
+  estReadingMinutes: 15
+  exercises:
+    - name: hello Vagrant
+      description: Install Vagrant spin up CentOS 7 box
+      estMinutes: 60
+      technologies:
+        - Vagrant
+        - CentOS
+    - name: Vagrant base box
+      description: >-
+        Create a ‘Base Box’ that adheres to Vagrants ‘Base Box’ standards.
+        Upload this base box to VagrantUp
+      estMinutes: 180
+      technologies:
+        - Vagrant
+        - CentOS
+    - name: Packer to Vagrant
+      description: >-
+        Use Packer to create an image compatible with Vagrants Base Box
+        requirements. This requires modification of CentOS’s ‘kickstart’ file
+        (understand CentOS kickstart DSL), leverage a Packer provisioner to add
+        ssh key, install VirtualBox dependencies and tools, leverage Packer
+        post-processor to output an OVF and boot a vagrant box
+      estMinutes: 300
+      technologies:
+        - Vagrant
+        - Packer
+        - CentOS
+docs/3-virtual-machines-containers/3.3-managing-infrastructure.md:
+  category: Virtualization
+  estReadingMinutes: 10
+  exercises:
+    - name: Jenkins and Nexus on VMs
+      description: >-
+        Create a VM from your golden image and install and configure Nexus OSS
+        and deploy an artifact to that VM from a GitHub Action
+      estMinutes: 390
+      technologies:
+        - Vagrant
+        - CentOS
+        - GitHub Actions
+        - Nexus OSS
+docs/3-virtual-machines-containers/3.4-containers.md:
+  category: Containerization
+  estReadingMinutes: 20
+  exercises:
+    - name: Hello Containers
+      description: Complete Docker's 'Hello World'
+      estMinutes: 30
+      technologies:
+        - Docker
+    - name: Self-hosted GitHub Action to Nexus containerized
+      description: >-
+        Containerize a self-hosted GitHub Action and Nexus and build a pipeline
+        that pushes a PetClinic build artifact from one container to the other.
+      estMinutes: 150
+      technologies:
+        - Docker
+        - GitHub Actions
+        - Nexus OSS
+docs/3-virtual-machines-containers/3.5.1-docker-compose.md:
+  category: Container Orchestration
+  estReadingMinutes: 5
+  exercises:
+    - name: Docker Compose GitHub Actions and Nexus
+      description: >-
+        Create a compose file that spins up your GitHub Actions and Nexus
+        containers, exposing ports, and using volumes for persistent storage
+      estMinutes: 120
+      technologies:
+        - Docker
+        - Docker Compose
+        - GitHub Actions
+        - Nexus OSS
+docs/3-virtual-machines-containers/3.5.2-kubernetes.md:
+  category: Container Orchestration
+  estReadingMinutes: 15
+  exercises:
+    - name: Hello Minikube
+      description: Complete the 'Hello Minikube' tutorial
+      estMinutes: 60
+      technologies:
+        - Kubernetes
+    - name: Kind cluster GitHub Actions and Nexus
+      description: Create a Kind cluster running your GitHub Actions and Nexus containers
+      estMinutes: 600
+      technologies:
+        - Kubernetes
+        - GitHub Actions
+        - Nexus OSS
 docs/4-software-development-practices/4.1-overview.md:
   category: Agile Development
   estReadingMinutes: 90

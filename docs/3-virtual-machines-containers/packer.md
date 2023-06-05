@@ -6,7 +6,7 @@ multiple platforms with all of the software configured at the time the image is
 built. Packer defines configuration in a JSON file which can be added to
 version control and increases scalability. It is worth noting Packer is lightweight and is capable of running on every major operating system today and it is very popular to use additional tools such as Chef and Ansible to further install software on the machine image.
 
-![packager image](img2/packer.svg ':size=350x350 :class=icon :alt= packer image')
+![packager image](img3/packer.svg ':size=350x350 :class=icon :alt= packer image')
 
 ## Use cases
 
@@ -79,6 +79,6 @@ Next Discuss:
 - Understand what the engineers are accomplishing with Packer
 - Create a presentation about Packer, containerization, and how they are used at the enterprise
 - Work with the engineers to have them perform a technical demo during your presentation
-- Present your experience with Chapter 2 to the team
+- Present your experience with Chapter 3 to the team
 
 </div></div>
