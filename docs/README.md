@@ -568,7 +568,7 @@ docs/4-software-development-practices/4.6-hello-devops.md:
         Using what you have leanred thus far create a production ready
         application
       estMinutes: 3000
-docs/5-release-management/5.1-versioning.md:
+docs/6-release-management/6.1-versioning.md:
   category: Version Control
   estReadingMinutes: 5
   exercises:
@@ -579,7 +579,7 @@ docs/5-release-management/5.1-versioning.md:
       estMinutes: 30
       technologies:
         - Docker
-docs/5-release-management/5.2-declarative-pipelines.md:
+docs/6-release-management/6.2-declarative-pipelines.md:
   category: CI/CD
   estReadingMinutes: 10
   exercises:
@@ -595,7 +595,7 @@ docs/5-release-management/5.2-declarative-pipelines.md:
         - Docker Compose
         - Kubernetes
         - Artifactory
-docs/5-release-management/5.3.1-maven.md:
+docs/6-release-management/6.3.1-maven.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -606,7 +606,7 @@ docs/5-release-management/5.3.1-maven.md:
       estMinutes: 60
       technologies:
         - Maven
-docs/5-release-management/5.3.2-maven-integration.md:
+docs/6-release-management/6.3.2-maven-integration.md:
   category: CI/CD
   estReadingMinutes: 30
   exercises:
@@ -622,7 +622,7 @@ docs/5-release-management/5.3.2-maven-integration.md:
         - Maven
         - GitHub Actions
         - Nexus OSS
-docs/5-release-management/5.3.3-make.md:
+docs/6-release-management/6.3.3-make.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -635,7 +635,7 @@ docs/5-release-management/5.3.3-make.md:
       estMinutes: 60
       technologies:
         - Make
-docs/5-release-management/5.3.4-npm.md:
+docs/6-release-management/6.3.4-npm.md:
   category: CI/CD
   estReadingMinutes: 15
   exercises:
@@ -648,7 +648,7 @@ docs/5-release-management/5.3.4-npm.md:
         - npm
         - Node.js
         - Java
-docs/5-release-management/5.3.5-go-releaser.md:
+docs/6-release-management/6.3.5-go-releaser.md:
   category: CI/CD
   estReadingMinutes: 5
   exercises:
@@ -662,7 +662,7 @@ docs/5-release-management/5.3.5-go-releaser.md:
         - Go Releaser
         - GitHub
         - GitHub Actions
-docs/5-release-management/5.4.1-docker.md:
+docs/6-release-management/6.4.1-docker.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -677,7 +677,7 @@ docs/5-release-management/5.4.1-docker.md:
         - Dockerhub
         - GitHub
         - GitHub Actions
-docs/5-release-management/5.4.2-helm.md:
+docs/6-release-management/6.4.2-helm.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
