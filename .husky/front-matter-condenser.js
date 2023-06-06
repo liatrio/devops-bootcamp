@@ -28,7 +28,7 @@ async function main() {
         // Remove parentheses and filter out addendum items
         const cleanedFiles = markdownFiles
             .map(file => file.slice(1, -1))
-            .filter(file => !file.startsWith('8-addendum'))
+            .filter(file => !file.startsWith('addendum'))
             .map(file => path.join(__dirname, '../docs/',  file ));
 
         // Read the master record and extract just the front matter.

@@ -42,7 +42,56 @@ docs/1-introduction/1.3.5-networking.md:
 docs/1-introduction/1.4-external-resources.md:
   category: Fundamentals
   estReadingMinutes: 50
-docs/2-virtual-machines-containers/2.1-golden-images.md:
+docs/2-Github/2.2-Actions.md:
+  category: CI/CD
+  estReadingMinutes: 20
+  exercises:
+    - name: Augment basic workflow
+      description: >-
+        Take a basic workflow and update it to include a few common things
+        you'll see inside Github Actions
+      estMinutes: 60
+      technologies:
+        - Github Actions
+    - name: Going Deeper
+      description: >-
+        Take the newly improved workflow and use different methods to achieve
+        the same thing.  Introduces new important concepts/actions
+      estMinutes: 120
+      technologies:
+        - Github Actions
+    - name: Consolidate what we have and make it reusable
+      description: >-
+        Now we go one step further and take one of our jobs and make it into a
+        composite action then take our whole workflow and bundle it into a
+        reusable version
+      estMinutes: 240
+      technologies:
+        - Github Actions
+docs/2-Github/2.3-Projects.md:
+  category: Agile Development
+  estReadingMinutes: 5
+  exercises:
+    - name: Create your own Project
+      description: >-
+        Play around with Github Projects and get used to using its many features
+        and interfaces to organize your work.
+      estMinutes: 80
+      technologies:
+        - Github Projects
+docs/2-Github/2.4-APIs.md:
+  category: Fundamentals
+  estReadingMinutes: 30
+  exercises:
+    - name: Interact with Github using its two available APIs
+      description: >-
+        Create and retrieve resources in Github using the REST and GraphQL
+        APIs.  Get some experience using them and compare the two approaches.
+      estMinutes: 180
+      technologies:
+        - APIs
+        - Javascript
+docs/3-virtual-machines-containers/3.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
   exercises:
@@ -63,7 +112,7 @@ docs/2-virtual-machines-containers/2.1-golden-images.md:
         - VirtualBox
         - Packer
         - CentOS
-docs/2-virtual-machines-containers/2.2-local-development.md:
+docs/3-virtual-machines-containers/3.2-local-development.md:
   category: Virtualization
   estReadingMinutes: 15
   exercises:
@@ -93,7 +142,7 @@ docs/2-virtual-machines-containers/2.2-local-development.md:
         - Vagrant
         - Packer
         - CentOS
-docs/2-virtual-machines-containers/2.3-managing-infrastructure.md:
+docs/3-virtual-machines-containers/3.3-managing-infrastructure.md:
   category: Virtualization
   estReadingMinutes: 10
   exercises:
@@ -107,7 +156,7 @@ docs/2-virtual-machines-containers/2.3-managing-infrastructure.md:
         - CentOS
         - GitHub Actions
         - Nexus OSS
-docs/2-virtual-machines-containers/2.4-containers.md:
+docs/3-virtual-machines-containers/3.4-containers.md:
   category: Containerization
   estReadingMinutes: 20
   exercises:
@@ -125,7 +174,7 @@ docs/2-virtual-machines-containers/2.4-containers.md:
         - Docker
         - GitHub Actions
         - Nexus OSS
-docs/2-virtual-machines-containers/2.5.1-docker-compose.md:
+docs/3-virtual-machines-containers/3.5.1-docker-compose.md:
   category: Container Orchestration
   estReadingMinutes: 5
   exercises:
@@ -139,7 +188,7 @@ docs/2-virtual-machines-containers/2.5.1-docker-compose.md:
         - Docker Compose
         - GitHub Actions
         - Nexus OSS
-docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
+docs/3-virtual-machines-containers/3.5.2-kubernetes.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -155,16 +204,16 @@ docs/2-virtual-machines-containers/2.5.2-kubernetes.md:
         - Kubernetes
         - GitHub Actions
         - Nexus OSS
-docs/3-cloud-computing/3.0-overview.md:
+docs/4-cloud-computing/4.0-overview.md:
   category: Cloud Computing
   estReadingMinutes: 30
-docs/3-cloud-computing/3.1.1-aws.md:
+docs/4-cloud-computing/4.1.1-aws.md:
   category: Cloud Computing
   estReadingMinutes: 60
-docs/3-cloud-computing/3.1.2-azure.md:
+docs/4-cloud-computing/4.1.2-azure.md:
   category: Cloud Computing
   estReadingMinutes: 30
-docs/3-cloud-computing/3.2.1-s3-cloudfront.md:
+docs/4-cloud-computing/4.2.1-s3-cloudfront.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -181,7 +230,7 @@ docs/3-cloud-computing/3.2.1-s3-cloudfront.md:
         - AWS S3
         - AWS
         - CloudFront
-docs/3-cloud-computing/3.2.2-ec2.md:
+docs/4-cloud-computing/4.2.2-ec2.md:
   category: Cloud Computing
   estReadingMinutes: 30
   exercises:
@@ -194,7 +243,7 @@ docs/3-cloud-computing/3.2.2-ec2.md:
         - AWS
         - EC2
         - Jenkins
-docs/3-cloud-computing/3.2.3-auto-scaling.md:
+docs/4-cloud-computing/4.2.3-auto-scaling.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -233,14 +282,14 @@ docs/3-cloud-computing/3.2.3-auto-scaling.md:
         - AWS Launch Templates
         - AWS Auto Scaling Groups
         - AWS ELB
-docs/3-cloud-computing/3.2.4-aws-packer.md:
+docs/4-cloud-computing/4.2.4-aws-packer.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
     - name: Creating a custom AMI
       description: >-
         Create an AMI with Packer that creates a provisioned machine like the
-        one you made in exercise 1 from 3.2.3. Create a Launch Template and Auto
+        one you made in exercise 1 from 4.2.3. Create a Launch Template and Auto
         Scaling group to leverage your new AMI via the AWS cli
       estMinutes: 180
       technologies:
@@ -249,7 +298,7 @@ docs/3-cloud-computing/3.2.4-aws-packer.md:
         - AWS Launch Templates
         - AWS Auto Scaling Groups
         - Packer
-docs/3-cloud-computing/3.2.5-lambda.md:
+docs/4-cloud-computing/4.2.5-lambda.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -264,7 +313,7 @@ docs/3-cloud-computing/3.2.5-lambda.md:
         - AWS Lambda
         - AWS S3
         - AWS DynamoDB
-docs/3-cloud-computing/3.2.6-ecs.md:
+docs/4-cloud-computing/4.2.6-ecs.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -310,7 +359,7 @@ docs/3-cloud-computing/3.2.6-ecs.md:
         - AWS
         - AWS EKS
         - Kubernetes
-docs/3-cloud-computing/3.3.1-storage-accounts.md:
+docs/4-cloud-computing/4.3.1-storage-accounts.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -324,7 +373,7 @@ docs/3-cloud-computing/3.3.1-storage-accounts.md:
         - Azure Blob Storage
         - Azure CDN
         - Angular
-docs/3-cloud-computing/3.3.2-virtual-machines.md:
+docs/4-cloud-computing/4.3.2-virtual-machines.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -338,7 +387,7 @@ docs/3-cloud-computing/3.3.2-virtual-machines.md:
         - Azure VM
         - NGINX
         - cloud-init
-docs/3-cloud-computing/3.3.3-vmss.md:
+docs/4-cloud-computing/4.3.3-vmss.md:
   category: Cloud Computing
   estReadingMinutes: 15
   exercises:
@@ -354,21 +403,21 @@ docs/3-cloud-computing/3.3.3-vmss.md:
         - Azure Storage Account
         - Node.js
         - cloud-init
-docs/3-cloud-computing/3.3.4-az-packer.md:
+docs/4-cloud-computing/4.3.4-az-packer.md:
   category: Cloud Computing
   estReadingMinutes: 5
   exercises:
     - name: Create Shared Image Gallery with custom Azure VM image
       description: >-
         Create a Shared Image Gallery and put a custom Azure VM image in it.
-        Then redo the exercise in 3.3.2 with the custom image.
+        Then redo the exercise in 4.3.2 with the custom image.
       estMinutes: 360
       technologies:
         - Azure
         - Packer
         - Shared Image Gallery
         - Azure VM
-docs/3-cloud-computing/3.3.5-aci.md:
+docs/4-cloud-computing/4.3.5-aci.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -383,7 +432,7 @@ docs/3-cloud-computing/3.3.5-aci.md:
         - Azure Container Registry (ACR)
         - Docker
         - Node.js
-docs/3-cloud-computing/3.3.6-aks.md:
+docs/4-cloud-computing/4.3.6-aks.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -397,16 +446,16 @@ docs/3-cloud-computing/3.3.6-aks.md:
         - Azure Kubernetes Service (AKS)
         - Azure Container Registry (ACR)
         - Node.js
-docs/4-software-development-practices/4.1-overview.md:
+docs/5-software-development-practices/5.1-overview.md:
   category: Agile Development
   estReadingMinutes: 90
-docs/4-software-development-practices/4.2-jira.md:
+docs/5-software-development-practices/5.2-jira.md:
   category: Agile Development
   estReadingMinutes: 30
-docs/4-software-development-practices/4.3.1-branching-merging.md:
+docs/5-software-development-practices/5.3.1-branching-merging.md:
   category: Version Control
   estReadingMinutes: 15
-docs/4-software-development-practices/4.3.2-git.md:
+docs/5-software-development-practices/5.3.2-git.md:
   category: Version Control
   estReadingMinutes: 25
   exercises:
@@ -430,7 +479,7 @@ docs/4-software-development-practices/4.3.2-git.md:
       estMinutes: 30
       technologies:
         - Git
-docs/4-software-development-practices/4.3.3-github.md:
+docs/5-software-development-practices/5.3.3-github.md:
   category: Version Control
   estReadingMinutes: 25
   exercises:
@@ -440,7 +489,7 @@ docs/4-software-development-practices/4.3.3-github.md:
       technologies:
         - Git
         - GitHub
-docs/4-software-development-practices/4.4-pairprogramming.md:
+docs/5-software-development-practices/5.4-pairprogramming.md:
   category: Agile Development
   estReadingMinutes: 20
   exercises:
@@ -451,7 +500,7 @@ docs/4-software-development-practices/4.4-pairprogramming.md:
       estMinutes: 30
       technologies:
         - VSCode
-docs/4-software-development-practices/4.5.1-unit-testing.md:
+docs/5-software-development-practices/5.5.1-unit-testing.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -461,7 +510,7 @@ docs/4-software-development-practices/4.5.1-unit-testing.md:
       technologies:
         - Go
         - TDD
-docs/4-software-development-practices/4.5.2-functional-testing.md:
+docs/5-software-development-practices/5.5.2-functional-testing.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -471,10 +520,10 @@ docs/4-software-development-practices/4.5.2-functional-testing.md:
       technologies:
         - Selenium
         - Python
-docs/4-software-development-practices/4.5.3-code-styling.md:
+docs/5-software-development-practices/5.5.3-code-styling.md:
   category: Software Quality
   estReadingMinutes: 30
-docs/4-software-development-practices/4.5.4-code-coverage.md:
+docs/5-software-development-practices/5.5.4-code-coverage.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -488,7 +537,7 @@ docs/4-software-development-practices/4.5.4-code-coverage.md:
         - Mocha
         - Chai
         - NYC
-docs/4-software-development-practices/4.5.5-test-automation.md:
+docs/5-software-development-practices/5.5.5-test-automation.md:
   category: Software Quality
   estReadingMinutes: 5
   exercises:
@@ -498,7 +547,7 @@ docs/4-software-development-practices/4.5.5-test-automation.md:
       technologies:
         - GitHub Actions
         - Go
-docs/4-software-development-practices/4.5.6-sonarqube.md:
+docs/5-software-development-practices/5.5.6-sonarqube.md:
   category: Software Quality
   estReadingMinutes: 10
   exercises:
@@ -510,7 +559,7 @@ docs/4-software-development-practices/4.5.6-sonarqube.md:
       technologies:
         - SonarQube
         - GitHub Actions
-docs/4-software-development-practices/4.6-hello-devops.md:
+docs/5-software-development-practices/5.6-hello-devops.md:
   category: Agile Development
   estReadingMinutes: 5
   exercises:
@@ -519,7 +568,7 @@ docs/4-software-development-practices/4.6-hello-devops.md:
         Using what you have leanred thus far create a production ready
         application
       estMinutes: 3000
-docs/5-release-management/5.1-versioning.md:
+docs/6-release-management/6.1-versioning.md:
   category: Version Control
   estReadingMinutes: 5
   exercises:
@@ -530,7 +579,7 @@ docs/5-release-management/5.1-versioning.md:
       estMinutes: 30
       technologies:
         - Docker
-docs/5-release-management/5.2-declarative-pipelines.md:
+docs/6-release-management/6.2-declarative-pipelines.md:
   category: CI/CD
   estReadingMinutes: 10
   exercises:
@@ -546,7 +595,7 @@ docs/5-release-management/5.2-declarative-pipelines.md:
         - Docker Compose
         - Kubernetes
         - Artifactory
-docs/5-release-management/5.3.1-maven.md:
+docs/6-release-management/6.3.1-maven.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -557,7 +606,7 @@ docs/5-release-management/5.3.1-maven.md:
       estMinutes: 60
       technologies:
         - Maven
-docs/5-release-management/5.3.2-maven-integration.md:
+docs/6-release-management/6.3.2-maven-integration.md:
   category: CI/CD
   estReadingMinutes: 30
   exercises:
@@ -573,7 +622,7 @@ docs/5-release-management/5.3.2-maven-integration.md:
         - Maven
         - GitHub Actions
         - Nexus OSS
-docs/5-release-management/5.3.3-make.md:
+docs/6-release-management/6.3.3-make.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -586,7 +635,7 @@ docs/5-release-management/5.3.3-make.md:
       estMinutes: 60
       technologies:
         - Make
-docs/5-release-management/5.3.4-npm.md:
+docs/6-release-management/6.3.4-npm.md:
   category: CI/CD
   estReadingMinutes: 15
   exercises:
@@ -599,7 +648,7 @@ docs/5-release-management/5.3.4-npm.md:
         - npm
         - Node.js
         - Java
-docs/5-release-management/5.3.5-go-releaser.md:
+docs/6-release-management/6.3.5-go-releaser.md:
   category: CI/CD
   estReadingMinutes: 5
   exercises:
@@ -613,7 +662,7 @@ docs/5-release-management/5.3.5-go-releaser.md:
         - Go Releaser
         - GitHub
         - GitHub Actions
-docs/5-release-management/5.4.1-docker.md:
+docs/6-release-management/6.4.1-docker.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -628,7 +677,7 @@ docs/5-release-management/5.4.1-docker.md:
         - Dockerhub
         - GitHub
         - GitHub Actions
-docs/5-release-management/5.4.2-helm.md:
+docs/6-release-management/6.4.2-helm.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -667,7 +716,7 @@ docs/5-release-management/5.4.2-helm.md:
         - Kubernetes
         - Docker
         - GitHub
-docs/6-infrastructure-configuration-management/6.1.1-terraform-getting-started.md:
+docs/7-infrastructure-configuration-management/7.1.1-terraform-getting-started.md:
   category: Infrastructure as Code
   estReadingMinutes: 45
   exercises:
@@ -680,7 +729,7 @@ docs/6-infrastructure-configuration-management/6.1.1-terraform-getting-started.m
         - Terraform
         - AWS
         - Azure
-docs/6-infrastructure-configuration-management/6.1.2-terraform-backends.md:
+docs/7-infrastructure-configuration-management/7.1.2-terraform-backends.md:
   category: Infrastructure as Code
   estReadingMinutes: 20
   exercises:
@@ -710,7 +759,7 @@ docs/6-infrastructure-configuration-management/6.1.2-terraform-backends.md:
       technologies:
         - Terraform
         - GitHub Actions
-docs/6-infrastructure-configuration-management/6.1.3-terraform-modules.md:
+docs/7-infrastructure-configuration-management/7.1.3-terraform-modules.md:
   category: Infrastructure as Code
   estReadingMinutes: 15
   exercises:
@@ -729,7 +778,7 @@ docs/6-infrastructure-configuration-management/6.1.3-terraform-modules.md:
       technologies:
         - Terraform
         - AWS S3
-docs/6-infrastructure-configuration-management/6.1.4-terraform-providers.md:
+docs/7-infrastructure-configuration-management/7.1.4-terraform-providers.md:
   category: Infrastructure as Code
   estReadingMinutes: 20
   exercises:
@@ -765,7 +814,7 @@ docs/6-infrastructure-configuration-management/6.1.4-terraform-providers.md:
       technologies:
         - Terraform
         - Go
-docs/6-infrastructure-configuration-management/6.2-ansible.md:
+docs/7-infrastructure-configuration-management/7.2-ansible.md:
   category: Infrastructure as Code
   estReadingMinutes: 15
   exercises:
@@ -797,10 +846,10 @@ docs/6-infrastructure-configuration-management/6.2-ansible.md:
         - Ansible
         - AWS EC2
         - GitHub self-hosted runner
-docs/7-kubernetes-container-orchestration/7.1-kubectl-ref.md:
+docs/8-kubernetes-container-orchestration/8.1-kubectl-ref.md:
   category: Container Orchestration
   estReadingMinutes: 120
-docs/7-kubernetes-container-orchestration/7.2-volumes.md:
+docs/8-kubernetes-container-orchestration/8.2-volumes.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -821,7 +870,7 @@ docs/7-kubernetes-container-orchestration/7.2-volumes.md:
       technologies:
         - Kubernetes
         - Jenkins
-docs/7-kubernetes-container-orchestration/7.3-probes.md:
+docs/8-kubernetes-container-orchestration/8.3-probes.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -850,7 +899,7 @@ docs/7-kubernetes-container-orchestration/7.3-probes.md:
       estMinutes: 45
       technologies:
         - Kubernetes
-docs/7-kubernetes-container-orchestration/7.4-rbac.md:
+docs/8-kubernetes-container-orchestration/8.4-rbac.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -872,7 +921,7 @@ docs/7-kubernetes-container-orchestration/7.4-rbac.md:
       technologies:
         - Docker
         - Kubernetes
-docs/7-kubernetes-container-orchestration/7.5-hpas.md:
+docs/8-kubernetes-container-orchestration/8.5-hpas.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -906,7 +955,7 @@ docs/7-kubernetes-container-orchestration/7.5-hpas.md:
       technologies:
         - Docker
         - Kubernetes
-docs/7-kubernetes-container-orchestration/7.6-webhooks.md:
+docs/8-kubernetes-container-orchestration/8.6-webhooks.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -936,7 +985,7 @@ docs/7-kubernetes-container-orchestration/7.6-webhooks.md:
       technologies:
         - Kubernetes
         - Python
-docs/7-kubernetes-container-orchestration/7.8-hello-k8s.md:
+docs/8-kubernetes-container-orchestration/8.8-hello-k8s.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -951,55 +1000,6 @@ docs/7-kubernetes-container-orchestration/7.8-hello-k8s.md:
         - Webhooks
         - Custom Resources
         - Kubebuilder
-docs/9-Github/9.2-Actions.md:
-  category: CI/CD
-  estReadingMinutes: 20
-  exercises:
-    - name: Augment basic workflow
-      description: >-
-        Take a basic workflow and update it to include a few common things
-        you'll see inside Github Actions
-      estMinutes: 60
-      technologies:
-        - Github Actions
-    - name: Going Deeper
-      description: >-
-        Take the newly improved workflow and use different methods to achieve
-        the same thing.  Introduces new important concepts/actions
-      estMinutes: 120
-      technologies:
-        - Github Actions
-    - name: Consolidate what we have and make it reusable
-      description: >-
-        Now we go one step further and take one of our jobs and make it into a
-        composite action then take our whole workflow and bundle it into a
-        reusable version
-      estMinutes: 240
-      technologies:
-        - Github Actions
-docs/9-Github/9.3-Projects.md:
-  category: Agile Development
-  estReadingMinutes: 5
-  exercises:
-    - name: Create your own Project
-      description: >-
-        Play around with Github Projects and get used to using its many features
-        and interfaces to organize your work.
-      estMinutes: 80
-      technologies:
-        - Github Projects
-docs/9-Github/9.4-APIs.md:
-  category: Fundamentals
-  estReadingMinutes: 30
-  exercises:
-    - name: Interact with Github using its two available APIs
-      description: >-
-        Create and retrieve resources in Github using the REST and GraphQL
-        APIs.  Get some experience using them and compare the two approaches.
-      estMinutes: 180
-      technologies:
-        - APIs
-        - Javascript
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
