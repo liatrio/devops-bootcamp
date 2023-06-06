@@ -91,248 +91,6 @@ docs/2-Github/2.4-APIs.md:
       technologies:
         - APIs
         - Javascript
-docs/3-cloud-computing/3.0-overview.md:
-  category: Cloud Computing
-  estReadingMinutes: 30
-docs/3-cloud-computing/3.1.1-aws.md:
-  category: Cloud Computing
-  estReadingMinutes: 60
-docs/3-cloud-computing/3.1.2-azure.md:
-  category: Cloud Computing
-  estReadingMinutes: 30
-docs/3-cloud-computing/3.2.1-s3-cloudfront.md:
-  category: Cloud Computing
-  estReadingMinutes: 20
-  exercises:
-    - name: Hello S3
-      description: Host a static website in s3 publicly
-      estMinutes: 150
-      technologies:
-        - AWS S3
-        - AWS
-    - name: Hello Cloudfront
-      description: Create a CloudFront distribution for your s3 website
-      estMinutes: 60
-      technologies:
-        - AWS S3
-        - AWS
-        - CloudFront
-docs/3-cloud-computing/3.2.2-ec2.md:
-  category: Cloud Computing
-  estReadingMinutes: 30
-  exercises:
-    - name: Hello EC2
-      description: >-
-        Create EC2 VMs and configure one as a Jenkins controller server and the
-        other as a Jenkins agent registered to the server.
-      estMinutes: 240
-      technologies:
-        - AWS
-        - EC2
-        - Jenkins
-docs/3-cloud-computing/3.2.3-auto-scaling.md:
-  category: Cloud Computing
-  estReadingMinutes: 20
-  exercises:
-    - name: Create EC2 instance with User Data
-      description: Create an EC2 instance running Spring PetClinic.
-      estMinutes: 240
-      technologies:
-        - AWS
-        - EC2
-    - name: Setup a Network Load Balancer
-      description: >-
-        Create a Load Balancer in AWS and register 2 EC2 configured to host a
-        web application via User Data.
-      estMinutes: 60
-      technologies:
-        - AWS
-        - EC2
-        - AWS ELB
-    - name: Launch Templates
-      description: >-
-        Create a Launch Template that will create EC2 instances configured like
-        the vm you made in exercise 1
-      estMinutes: 60
-      technologies:
-        - AWS
-        - EC2
-        - AWS Launch Templates
-    - name: Auto Scaling Groups
-      description: >-
-        Create an AutoScaling group leveraging the Launch Template you made in
-        exercise 3
-      estMinutes: 60
-      technologies:
-        - AWS
-        - EC2
-        - AWS Launch Templates
-        - AWS Auto Scaling Groups
-        - AWS ELB
-docs/3-cloud-computing/3.2.4-aws-packer.md:
-  category: Cloud Computing
-  estReadingMinutes: 20
-  exercises:
-    - name: Creating a custom AMI
-      description: >-
-        Create an AMI with Packer that creates a provisioned machine like the
-        one you made in exercise 1 from 3.2.3. Create a Launch Template and Auto
-        Scaling group to leverage your new AMI via the AWS cli
-      estMinutes: 180
-      technologies:
-        - AWS
-        - EC2
-        - AWS Launch Templates
-        - AWS Auto Scaling Groups
-        - Packer
-docs/3-cloud-computing/3.2.5-lambda.md:
-  category: Cloud Computing
-  estReadingMinutes: 20
-  exercises:
-    - name: Creating a Lambda function with a trigger
-      description: >-
-        Create a Lambda function that sets up an s3 bucket and a DynamoDB,
-        downloads a csv file, and then uses a python script to parse the csv and
-        push all the data into DynamoDB.
-      estMinutes: 480
-      technologies:
-        - AWS
-        - AWS Lambda
-        - AWS S3
-        - AWS DynamoDB
-docs/3-cloud-computing/3.2.6-ecs.md:
-  category: Cloud Computing
-  estReadingMinutes: 20
-  exercises:
-    - name: Creating an EKS cluster
-      description: Deploy the SockShop Demo on EKS
-      estMinutes: 480
-      technologies:
-        - AWS
-        - AWS EKS
-        - Kubernetes
-    - name: Adding an autoscaler to your cluster
-      description: Adding an autoscaler to your cluster
-      estMinutes: 240
-      technologies:
-        - AWS
-        - AWS EKS
-        - Kubernetes
-    - name: Create a ClusterIP service
-      description: Create a ClusterIP service
-      estMinutes: 60
-      technologies:
-        - AWS
-        - AWS EKS
-        - Kubernetes
-    - name: Create a NodePort Service
-      description: Create a NodePort Service
-      estMinutes: 60
-      technologies:
-        - AWS
-        - AWS EKS
-        - Kubernetes
-    - name: Create a LoadBalancer Service
-      description: Create a LoadBalancer Service
-      estMinutes: 30
-      technologies:
-        - AWS
-        - AWS EKS
-        - Kubernetes
-    - name: Add an Ingress controller and your cluster
-      description: Add an Ingress controller and your cluster
-      estMinutes: 60
-      technologies:
-        - AWS
-        - AWS EKS
-        - Kubernetes
-docs/3-cloud-computing/3.3.1-storage-accounts.md:
-  category: Cloud Computing
-  estReadingMinutes: 10
-  exercises:
-    - name: Static website on Azure Blob Storage
-      description: >-
-        Create a basic Angular application and deploy it to an Azure Blob
-        Storage with an Azure CDN.
-      estMinutes: 240
-      technologies:
-        - Azure
-        - Azure Blob Storage
-        - Azure CDN
-        - Angular
-docs/3-cloud-computing/3.3.2-virtual-machines.md:
-  category: Cloud Computing
-  estReadingMinutes: 10
-  exercises:
-    - name: Create Azure VM with NGINX via cloud-init
-      description: >-
-        Create an Azure VM and configure it as an NGINX web server via
-        cloud-init file.
-      estMinutes: 360
-      technologies:
-        - Azure
-        - Azure VM
-        - NGINX
-        - cloud-init
-docs/3-cloud-computing/3.3.3-vmss.md:
-  category: Cloud Computing
-  estReadingMinutes: 15
-  exercises:
-    - name: Create VMSS and serve content from Azure Storage Account
-      description: >-
-        Create a VMSS and serve content from an Azure Storage Account. Do this
-        via the cli, deploying a simple node web app and provision the VM's with
-        cloud-init.
-      estMinutes: 240
-      technologies:
-        - Azure
-        - Azure VMSS
-        - Azure Storage Account
-        - Node.js
-        - cloud-init
-docs/3-cloud-computing/3.3.4-az-packer.md:
-  category: Cloud Computing
-  estReadingMinutes: 5
-  exercises:
-    - name: Create Shared Image Gallery with custom Azure VM image
-      description: >-
-        Create a Shared Image Gallery and put a custom Azure VM image in it.
-        Then redo the exercise in 3.3.2 with the custom image.
-      estMinutes: 360
-      technologies:
-        - Azure
-        - Packer
-        - Shared Image Gallery
-        - Azure VM
-docs/3-cloud-computing/3.3.5-aci.md:
-  category: Cloud Computing
-  estReadingMinutes: 10
-  exercises:
-    - name: 'Deploy Node app using Docker, ACR, and ACI'
-      description: >-
-        Create a docker image for your Node application. Push your image into
-        ACR. Then deploy your image via ACI.
-      estMinutes: 300
-      technologies:
-        - Azure
-        - Azure Container Instances (ACI)
-        - Azure Container Registry (ACR)
-        - Docker
-        - Node.js
-docs/3-cloud-computing/3.3.6-aks.md:
-  category: Cloud Computing
-  estReadingMinutes: 10
-  exercises:
-    - name: Deploy Node app to AKS using ACR image
-      description: >-
-        Create an AKS cluster and deploy the Node application via the image
-        uploaded to ACR made in the previous section.
-      estMinutes: 240
-      technologies:
-        - Azure
-        - Azure Kubernetes Service (AKS)
-        - Azure Container Registry (ACR)
-        - Node.js
 docs/3-virtual-machines-containers/3.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
@@ -446,6 +204,248 @@ docs/3-virtual-machines-containers/3.5.2-kubernetes.md:
         - Kubernetes
         - GitHub Actions
         - Nexus OSS
+docs/4-cloud-computing/4.0-overview.md:
+  category: Cloud Computing
+  estReadingMinutes: 30
+docs/4-cloud-computing/4.1.1-aws.md:
+  category: Cloud Computing
+  estReadingMinutes: 60
+docs/4-cloud-computing/4.1.2-azure.md:
+  category: Cloud Computing
+  estReadingMinutes: 30
+docs/4-cloud-computing/4.2.1-s3-cloudfront.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Hello S3
+      description: Host a static website in s3 publicly
+      estMinutes: 150
+      technologies:
+        - AWS S3
+        - AWS
+    - name: Hello Cloudfront
+      description: Create a CloudFront distribution for your s3 website
+      estMinutes: 60
+      technologies:
+        - AWS S3
+        - AWS
+        - CloudFront
+docs/4-cloud-computing/4.2.2-ec2.md:
+  category: Cloud Computing
+  estReadingMinutes: 30
+  exercises:
+    - name: Hello EC2
+      description: >-
+        Create EC2 VMs and configure one as a Jenkins controller server and the
+        other as a Jenkins agent registered to the server.
+      estMinutes: 240
+      technologies:
+        - AWS
+        - EC2
+        - Jenkins
+docs/4-cloud-computing/4.2.3-auto-scaling.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Create EC2 instance with User Data
+      description: Create an EC2 instance running Spring PetClinic.
+      estMinutes: 240
+      technologies:
+        - AWS
+        - EC2
+    - name: Setup a Network Load Balancer
+      description: >-
+        Create a Load Balancer in AWS and register 2 EC2 configured to host a
+        web application via User Data.
+      estMinutes: 60
+      technologies:
+        - AWS
+        - EC2
+        - AWS ELB
+    - name: Launch Templates
+      description: >-
+        Create a Launch Template that will create EC2 instances configured like
+        the vm you made in exercise 1
+      estMinutes: 60
+      technologies:
+        - AWS
+        - EC2
+        - AWS Launch Templates
+    - name: Auto Scaling Groups
+      description: >-
+        Create an AutoScaling group leveraging the Launch Template you made in
+        exercise 3
+      estMinutes: 60
+      technologies:
+        - AWS
+        - EC2
+        - AWS Launch Templates
+        - AWS Auto Scaling Groups
+        - AWS ELB
+docs/4-cloud-computing/4.2.4-aws-packer.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Creating a custom AMI
+      description: >-
+        Create an AMI with Packer that creates a provisioned machine like the
+        one you made in exercise 1 from 4.2.3. Create a Launch Template and Auto
+        Scaling group to leverage your new AMI via the AWS cli
+      estMinutes: 180
+      technologies:
+        - AWS
+        - EC2
+        - AWS Launch Templates
+        - AWS Auto Scaling Groups
+        - Packer
+docs/4-cloud-computing/4.2.5-lambda.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Creating a Lambda function with a trigger
+      description: >-
+        Create a Lambda function that sets up an s3 bucket and a DynamoDB,
+        downloads a csv file, and then uses a python script to parse the csv and
+        push all the data into DynamoDB.
+      estMinutes: 480
+      technologies:
+        - AWS
+        - AWS Lambda
+        - AWS S3
+        - AWS DynamoDB
+docs/4-cloud-computing/4.2.6-ecs.md:
+  category: Cloud Computing
+  estReadingMinutes: 20
+  exercises:
+    - name: Creating an EKS cluster
+      description: Deploy the SockShop Demo on EKS
+      estMinutes: 480
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Adding an autoscaler to your cluster
+      description: Adding an autoscaler to your cluster
+      estMinutes: 240
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Create a ClusterIP service
+      description: Create a ClusterIP service
+      estMinutes: 60
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Create a NodePort Service
+      description: Create a NodePort Service
+      estMinutes: 60
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Create a LoadBalancer Service
+      description: Create a LoadBalancer Service
+      estMinutes: 30
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+    - name: Add an Ingress controller and your cluster
+      description: Add an Ingress controller and your cluster
+      estMinutes: 60
+      technologies:
+        - AWS
+        - AWS EKS
+        - Kubernetes
+docs/4-cloud-computing/4.3.1-storage-accounts.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Static website on Azure Blob Storage
+      description: >-
+        Create a basic Angular application and deploy it to an Azure Blob
+        Storage with an Azure CDN.
+      estMinutes: 240
+      technologies:
+        - Azure
+        - Azure Blob Storage
+        - Azure CDN
+        - Angular
+docs/4-cloud-computing/4.3.2-virtual-machines.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Create Azure VM with NGINX via cloud-init
+      description: >-
+        Create an Azure VM and configure it as an NGINX web server via
+        cloud-init file.
+      estMinutes: 360
+      technologies:
+        - Azure
+        - Azure VM
+        - NGINX
+        - cloud-init
+docs/4-cloud-computing/4.3.3-vmss.md:
+  category: Cloud Computing
+  estReadingMinutes: 15
+  exercises:
+    - name: Create VMSS and serve content from Azure Storage Account
+      description: >-
+        Create a VMSS and serve content from an Azure Storage Account. Do this
+        via the cli, deploying a simple node web app and provision the VM's with
+        cloud-init.
+      estMinutes: 240
+      technologies:
+        - Azure
+        - Azure VMSS
+        - Azure Storage Account
+        - Node.js
+        - cloud-init
+docs/4-cloud-computing/4.3.4-az-packer.md:
+  category: Cloud Computing
+  estReadingMinutes: 5
+  exercises:
+    - name: Create Shared Image Gallery with custom Azure VM image
+      description: >-
+        Create a Shared Image Gallery and put a custom Azure VM image in it.
+        Then redo the exercise in 4.3.2 with the custom image.
+      estMinutes: 360
+      technologies:
+        - Azure
+        - Packer
+        - Shared Image Gallery
+        - Azure VM
+docs/4-cloud-computing/4.3.5-aci.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: 'Deploy Node app using Docker, ACR, and ACI'
+      description: >-
+        Create a docker image for your Node application. Push your image into
+        ACR. Then deploy your image via ACI.
+      estMinutes: 300
+      technologies:
+        - Azure
+        - Azure Container Instances (ACI)
+        - Azure Container Registry (ACR)
+        - Docker
+        - Node.js
+docs/4-cloud-computing/4.3.6-aks.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Deploy Node app to AKS using ACR image
+      description: >-
+        Create an AKS cluster and deploy the Node application via the image
+        uploaded to ACR made in the previous section.
+      estMinutes: 240
+      technologies:
+        - Azure
+        - Azure Kubernetes Service (AKS)
+        - Azure Container Registry (ACR)
+        - Node.js
 docs/5-software-development-practices/5.1-overview.md:
   category: Agile Development
   estReadingMinutes: 90
