@@ -716,7 +716,7 @@ docs/5-release-management/5.4.2-helm.md:
         - Kubernetes
         - Docker
         - GitHub
-docs/6-infrastructure-configuration-management/6.1.1-terraform-getting-started.md:
+docs/7-infrastructure-configuration-management/7.1.1-terraform-getting-started.md:
   category: Infrastructure as Code
   estReadingMinutes: 45
   exercises:
@@ -729,7 +729,7 @@ docs/6-infrastructure-configuration-management/6.1.1-terraform-getting-started.m
         - Terraform
         - AWS
         - Azure
-docs/6-infrastructure-configuration-management/6.1.2-terraform-backends.md:
+docs/7-infrastructure-configuration-management/7.1.2-terraform-backends.md:
   category: Infrastructure as Code
   estReadingMinutes: 20
   exercises:
@@ -759,7 +759,7 @@ docs/6-infrastructure-configuration-management/6.1.2-terraform-backends.md:
       technologies:
         - Terraform
         - GitHub Actions
-docs/6-infrastructure-configuration-management/6.1.3-terraform-modules.md:
+docs/7-infrastructure-configuration-management/7.1.3-terraform-modules.md:
   category: Infrastructure as Code
   estReadingMinutes: 15
   exercises:
@@ -778,7 +778,7 @@ docs/6-infrastructure-configuration-management/6.1.3-terraform-modules.md:
       technologies:
         - Terraform
         - AWS S3
-docs/6-infrastructure-configuration-management/6.1.4-terraform-providers.md:
+docs/7-infrastructure-configuration-management/7.1.4-terraform-providers.md:
   category: Infrastructure as Code
   estReadingMinutes: 20
   exercises:
@@ -814,7 +814,7 @@ docs/6-infrastructure-configuration-management/6.1.4-terraform-providers.md:
       technologies:
         - Terraform
         - Go
-docs/6-infrastructure-configuration-management/6.2-ansible.md:
+docs/7-infrastructure-configuration-management/7.2-ansible.md:
   category: Infrastructure as Code
   estReadingMinutes: 15
   exercises:
