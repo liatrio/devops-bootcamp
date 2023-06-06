@@ -446,16 +446,16 @@ docs/3-virtual-machines-containers/3.5.2-kubernetes.md:
         - Kubernetes
         - GitHub Actions
         - Nexus OSS
-docs/4-software-development-practices/4.1-overview.md:
+docs/5-software-development-practices/5.1-overview.md:
   category: Agile Development
   estReadingMinutes: 90
-docs/4-software-development-practices/4.2-jira.md:
+docs/5-software-development-practices/5.2-jira.md:
   category: Agile Development
   estReadingMinutes: 30
-docs/4-software-development-practices/4.3.1-branching-merging.md:
+docs/5-software-development-practices/5.3.1-branching-merging.md:
   category: Version Control
   estReadingMinutes: 15
-docs/4-software-development-practices/4.3.2-git.md:
+docs/5-software-development-practices/5.3.2-git.md:
   category: Version Control
   estReadingMinutes: 25
   exercises:
@@ -479,7 +479,7 @@ docs/4-software-development-practices/4.3.2-git.md:
       estMinutes: 30
       technologies:
         - Git
-docs/4-software-development-practices/4.3.3-github.md:
+docs/5-software-development-practices/5.3.3-github.md:
   category: Version Control
   estReadingMinutes: 25
   exercises:
@@ -489,7 +489,7 @@ docs/4-software-development-practices/4.3.3-github.md:
       technologies:
         - Git
         - GitHub
-docs/4-software-development-practices/4.4-pairprogramming.md:
+docs/5-software-development-practices/5.4-pairprogramming.md:
   category: Agile Development
   estReadingMinutes: 20
   exercises:
@@ -500,7 +500,7 @@ docs/4-software-development-practices/4.4-pairprogramming.md:
       estMinutes: 30
       technologies:
         - VSCode
-docs/4-software-development-practices/4.5.1-unit-testing.md:
+docs/5-software-development-practices/5.5.1-unit-testing.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -510,7 +510,7 @@ docs/4-software-development-practices/4.5.1-unit-testing.md:
       technologies:
         - Go
         - TDD
-docs/4-software-development-practices/4.5.2-functional-testing.md:
+docs/5-software-development-practices/5.5.2-functional-testing.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -520,10 +520,10 @@ docs/4-software-development-practices/4.5.2-functional-testing.md:
       technologies:
         - Selenium
         - Python
-docs/4-software-development-practices/4.5.3-code-styling.md:
+docs/5-software-development-practices/5.5.3-code-styling.md:
   category: Software Quality
   estReadingMinutes: 30
-docs/4-software-development-practices/4.5.4-code-coverage.md:
+docs/5-software-development-practices/5.5.4-code-coverage.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -537,7 +537,7 @@ docs/4-software-development-practices/4.5.4-code-coverage.md:
         - Mocha
         - Chai
         - NYC
-docs/4-software-development-practices/4.5.5-test-automation.md:
+docs/5-software-development-practices/5.5.5-test-automation.md:
   category: Software Quality
   estReadingMinutes: 5
   exercises:
@@ -547,7 +547,7 @@ docs/4-software-development-practices/4.5.5-test-automation.md:
       technologies:
         - GitHub Actions
         - Go
-docs/4-software-development-practices/4.5.6-sonarqube.md:
+docs/5-software-development-practices/5.5.6-sonarqube.md:
   category: Software Quality
   estReadingMinutes: 10
   exercises:
@@ -559,7 +559,7 @@ docs/4-software-development-practices/4.5.6-sonarqube.md:
       technologies:
         - SonarQube
         - GitHub Actions
-docs/4-software-development-practices/4.6-hello-devops.md:
+docs/5-software-development-practices/5.6-hello-devops.md:
   category: Agile Development
   estReadingMinutes: 5
   exercises:
