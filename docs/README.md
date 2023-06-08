@@ -579,23 +579,7 @@ docs/6-release-management/6.1-versioning.md:
       estMinutes: 30
       technologies:
         - Docker
-docs/6-release-management/6.2-declarative-pipelines.md:
-  category: CI/CD
-  estReadingMinutes: 10
-  exercises:
-    - name: Jenkins Declarative Pipeline
-      description: >-
-        Use a Jenkins file on the previously built Jenkins, Artifactory pipeline
-        such that Jenkins builds and tests every branch and deploys only from
-        the main branch to artifactory.
-      estMinutes: 180
-      technologies:
-        - Jenkins
-        - Docker
-        - Docker Compose
-        - Kubernetes
-        - Artifactory
-docs/6-release-management/6.3.1-maven.md:
+docs/6-release-management/6.2.1-maven.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -606,7 +590,7 @@ docs/6-release-management/6.3.1-maven.md:
       estMinutes: 60
       technologies:
         - Maven
-docs/6-release-management/6.3.2-maven-integration.md:
+docs/6-release-management/6.2.2-maven-integration.md:
   category: CI/CD
   estReadingMinutes: 30
   exercises:
@@ -622,7 +606,7 @@ docs/6-release-management/6.3.2-maven-integration.md:
         - Maven
         - GitHub Actions
         - Nexus OSS
-docs/6-release-management/6.3.3-make.md:
+docs/6-release-management/6.2.3-make.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -635,7 +619,7 @@ docs/6-release-management/6.3.3-make.md:
       estMinutes: 60
       technologies:
         - Make
-docs/6-release-management/6.3.4-npm.md:
+docs/6-release-management/6.2.4-npm.md:
   category: CI/CD
   estReadingMinutes: 15
   exercises:
@@ -648,7 +632,7 @@ docs/6-release-management/6.3.4-npm.md:
         - npm
         - Node.js
         - Java
-docs/6-release-management/6.3.5-go-releaser.md:
+docs/6-release-management/6.2.5-go-releaser.md:
   category: CI/CD
   estReadingMinutes: 5
   exercises:
@@ -662,7 +646,7 @@ docs/6-release-management/6.3.5-go-releaser.md:
         - Go Releaser
         - GitHub
         - GitHub Actions
-docs/6-release-management/6.4.1-docker.md:
+docs/6-release-management/6.3.1-docker.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -677,7 +661,7 @@ docs/6-release-management/6.4.1-docker.md:
         - Dockerhub
         - GitHub
         - GitHub Actions
-docs/6-release-management/6.4.2-helm.md:
+docs/6-release-management/6.3.2-helm.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
