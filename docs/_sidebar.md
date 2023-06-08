@@ -29,7 +29,8 @@
 - [2.2 - Actions](2-Github/2.2-Actions.md)
 - [2.3 - Projects](2-Github/2.3-Projects.md)
 - [2.4 - APIs](2-Github/2.4-APIs.md)
-
+- [2.5 - Security](2-Github/2.5-Security.md)
+  
 - **Chapter 3**
 
 - [3.0 - Virtual Machines and Containers](3-virtual-machines-containers/3.0-overview.md)

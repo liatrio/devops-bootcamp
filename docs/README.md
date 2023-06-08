@@ -91,6 +91,29 @@ docs/2-Github/2.4-APIs.md:
       technologies:
         - APIs
         - Javascript
+docs/2-Github/2.5-Security.md:
+  category: Fundamentals
+  estReadingMinutes: 30
+  exercises:
+    - name: Code-scanning
+      description: >-
+        Setup code-scanning in your own repository and view its results in the
+        Security tab
+      estMinutes: 30
+      technologies:
+        - Github Security
+    - name: Dependabot
+      description: 'Setup dependabot alerts, version and security updates'
+      estMinutes: 20
+      technologies:
+        - Github Security
+    - name: Code-scanning
+      description: >-
+        Setup secret-scanning in your own repository and see how it prevents you
+        from committing secrets
+      estMinutes: 20
+      technologies:
+        - Github Security
 docs/3-virtual-machines-containers/3.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
