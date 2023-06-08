@@ -95,16 +95,15 @@
 
 - [6.0 - Release Management](6-release-management/6.0-overview.md)
 - [6.1 - Versioning](6-release-management/6.1-versioning.md)
-- [6.2 - Declarative Pipelines](6-release-management/6.2-declarative-pipelines.md)
-- [6.3 - Build Tools](6-release-management/6.3-build-tools.md)
-  - [6.3.1 - Maven](6-release-management/6.3.1-maven.md)
-  - [6.3.2 - Maven Integration](6-release-management/6.3.2-maven-integration.md)
-  - [6.3.3 - Make](6-release-management/6.3.3-make.md)
-  - [6.3.4 - Npm](6-release-management/6.3.4-npm.md)
-  - [6.3.5 - Go Releaser](6-release-management/6.3.5-go-releaser.md)
-- [6.4 - Containers](6-release-management/6.4-containers.md)
-  - [6.4.1 - Docker](6-release-management/6.4.1-docker.md)
-  - [6.4.2 - Helm](6-release-management/6.4.2-helm.md)
+- [6.2 - Build Tools](6-release-management/6.2-build-tools.md)
+  - [6.2.1 - Maven](6-release-management/6.2.1-maven.md)
+  - [6.2.2 - Maven Integration](6-release-management/6.2.2-maven-integration.md)
+  - [6.2.3 - Make](6-release-management/6.2.3-make.md)
+  - [6.2.4 - Npm](6-release-management/6.2.4-npm.md)
+  - [6.2.5 - Go Releaser](6-release-management/6.2.5-go-releaser.md)
+- [6.3 - Containers](6-release-management/6.3-containers.md)
+  - [6.3.1 - Docker](6-release-management/6.3.1-docker.md)
+  - [6.3.2 - Helm](6-release-management/6.3.2-helm.md)
 
 - **Chapter 7**
 
@@ -136,6 +135,7 @@
 
 - [Addendum](addendum/addendum-overview.md)
   - [Ephemeral Jenkins](addendum/ephemeral-jenkins.md)
+  - [Jenkins Declarative Pipelines](addendum/jenkins-declarative-pipelines.md)
   - [Tomcat](addendum/tomcat.md)
   - [Nexus](addendum/nexus.md)
   - [Bitbucket](addendum/bitbucket.md)
