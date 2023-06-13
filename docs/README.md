@@ -118,14 +118,14 @@ docs/3-virtual-machines-containers/3.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
   exercises:
-    - name: hello VirtualBox
+    - name: Hello VMWare Fusion
       description: >-
-        Configure a VM with VirtualBox. Install some software and configure it
-        for SSH
+        Configure a VM with VMWare Fusion. Install some software and configure
+        it for SSH
       estMinutes: 90
       technologies:
-        - VirtualBox
-        - CentOS
+        - VMWare Fusion
+        - Debian
     - name: hello Packer
       description: >-
         Use Packer to create an OVF configured identically to the VM you
@@ -139,37 +139,22 @@ docs/3-virtual-machines-containers/3.2-local-development.md:
   category: Virtualization
   estReadingMinutes: 15
   exercises:
-    - name: hello Vagrant
-      description: Install Vagrant spin up CentOS 7 box
-      estMinutes: 60
-      technologies:
-        - Vagrant
-        - CentOS
-    - name: Vagrant base box
-      description: >-
-        Create a ‘Base Box’ that adheres to Vagrants ‘Base Box’ standards.
-        Upload this base box to VagrantUp
-      estMinutes: 180
-      technologies:
-        - Vagrant
-        - CentOS
     - name: Packer to Vagrant
       description: >-
         Use Packer to create an image compatible with Vagrants Base Box
-        requirements. This requires modification of CentOS’s ‘kickstart’ file
-        (understand CentOS kickstart DSL), leverage a Packer provisioner to add
-        ssh key, install VirtualBox dependencies and tools, leverage Packer
-        post-processor to output an OVF and boot a vagrant box
-      estMinutes: 300
+        requirements. Leverage a Packer provisioner to add ssh key, install
+        VirtualBox dependencies and tools, leverage Packer post-processor to
+        output an vmx and a vagrant box
+      estMinutes: 420
       technologies:
         - Vagrant
         - Packer
-        - CentOS
+        - Debian
 docs/3-virtual-machines-containers/3.3-managing-infrastructure.md:
   category: Virtualization
   estReadingMinutes: 10
   exercises:
-    - name: Jenkins and Nexus on VMs
+    - name: GitHub self-hosted runner and Nexus on VMs
       description: >-
         Create a VM from your golden image and install and configure Nexus OSS
         and deploy an artifact to that VM from a GitHub Action
