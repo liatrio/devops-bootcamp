@@ -132,7 +132,7 @@ docs/3-virtual-machines-containers/3.1-golden-images.md:
         configured in exercise 1
       estMinutes: 210
       technologies:
-        - VirtualBox
+        - VMWare Fusion
         - Packer
         - CentOS
 docs/3-virtual-machines-containers/3.2-local-development.md:
