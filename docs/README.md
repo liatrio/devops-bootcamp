@@ -143,8 +143,8 @@ docs/3-virtual-machines-containers/3.2-local-development.md:
       description: >-
         Use Packer to create an image compatible with Vagrants Base Box
         requirements. Leverage a Packer provisioner to add ssh key, install
-        VirtualBox dependencies and tools, leverage Packer post-processor to
-        output an vmx and a vagrant box
+        dependencies and tools, leverage Packer post-processor to output an vmx
+        and a vagrant box
       estMinutes: 420
       technologies:
         - Vagrant
