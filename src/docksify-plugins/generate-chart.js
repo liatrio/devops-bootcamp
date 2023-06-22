@@ -5,7 +5,7 @@
 
 import Chart from 'chart.js/auto';
 import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
-import { bootcampMetadata } from './read-metadata';
+import { fetchMetadata } from './read-metadata';
 
 // Register the wordCloud controller, element, and scale with Chart.js.
 // Starting in Chart.js 3 iirc they support 'tree shaking' which means
@@ -18,7 +18,10 @@ Chart.register(WordCloudController, WordElement);
  *
  * @param {string} canvasId - The ID of the canvas element to use for the chart.
  */
-function generateCategoryDoughnutChart(canvasId) {
+function generateCategoryDoughnutChart(canvasId, bootcampMetadata) {
+    if (bootcampMetadata === null) {
+        return;
+    }
     var canvas = document.getElementById(canvasId);
 
     canvas.width = 400;
@@ -155,9 +158,25 @@ function generateWordCloud(canvasId) {
 (function () {
     var generateChartOnRoot = function (hook, vm) {
         // Invoked one time after rendering the initial page
-        hook.ready(function () {
-            //generateWordCloud('wordcloud-canvas');
-            generateCategoryDoughnutChart('category-doughnut-canvas');
+        // hook.ready(function () {
+        //     const bootcampMetadata = fetchMetadata();
+        //     generateCategoryDoughnutChart('category-doughnut-canvas', bootcampMetadata);
+        // });
+
+        // Invoked on each page load before new markdown is transformed to HTML.
+        // Supports asynchronous tasks (see beforeEach documentation for details).
+        hook.doneEach(function (markdown) {
+            const bootcampMetadata = fetchMetadata();
+            switch (window.location.hash) {
+                case '#/':
+                    generateCategoryDoughnutChart('category-doughnut-canvas', bootcampMetadata);
+                    break;
+                case '#/_stats':
+                    console.log("Mission accomplished");
+                default:
+                    break;
+            }
+            return markdown;
         });
     };
 
