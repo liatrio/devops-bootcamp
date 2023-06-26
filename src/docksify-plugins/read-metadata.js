@@ -1,36 +1,31 @@
 import * as matter from 'gray-matter';
 
-// export let bootcampMetadata = {};
+export async function fetchMetadata() {
+  let bootcampMetadata = null;
+  try {
+    const response = await fetch(window.location.origin + "/docs/README.md");
+    const text = await response.text();
+    bootcampMetadata = matter(text).data;
 
-export function fetchMetadata() {
-  const bootcampMetadata = JSON.parse(localStorage.getItem('bootcampMetadata'));
-
-  if (bootcampMetadata === null) {
-    // Need to refresh
-    return;
+  } catch (error) {
+    console.log(error);
+  } finally {
+    return bootcampMetadata;
   }
-  return bootcampMetadata;
 }
 
 (function () {
-  var readMetadata = function (hook, _vm) {
+  var stripFrontMatter = function (hook, _vm) {
     // Invoked on each page load before new markdown is transformed to HTML.
     // Supports asynchronous tasks (see beforeEach documentation for details).
     hook.beforeEach(function (markdown) {
       const { data, content } = matter(markdown);
 
-      // Docsify does not have a typical url structure and the window.location.pathname
-      // always appears to be '/' in my testing the page is changed by adding a different hash
-      if (window.location.hash === '#/') {
-        localStorage.setItem('bootcampMetadata', JSON.stringify(data));
-        // bootcampMetadata = data;
-      }
-      // Strip out the front-matter
       return content;
     });
   };
 
   // Add plugin to docsify's plugin array
   $docsify = $docsify || {};
-  $docsify.plugins = [].concat(readMetadata, $docsify.plugins || []);
+  $docsify.plugins = [].concat(stripFrontMatter, $docsify.plugins || []);
 })();
