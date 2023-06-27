@@ -1,13 +1,13 @@
 # DevOps resource struct module
 
-#### This module is used and consumed by the devops rest api and custom terraform provider for bootcamp section 6.1.4. Its purpose is to organize the structure of the resources defined in this bootcamp section in order to lessen the strain in having to set up structures for client-side communication for the terraform custom provider to talk to the devops api.
+#### This module is used and consumed by the devops rest api and custom terraform provider for bootcamp section 7.1.4. Its purpose is to organize the structure of the resources defined in this bootcamp section in order to lessen the strain in having to set up structures for client-side communication for the terraform custom provider to talk to the devops api.
 
 ## How to import module for the resources built in go:
 
 ### Example in how the import is call in your go code:
 
 ```go
-import "github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
+import "github.com/liatrio/devops-bootcamp/examples/ch7/devops-resources"
 ```
 
 #### This is how you would pull the module in the default branch [master]
@@ -17,7 +17,7 @@ import "github.com/liatrio/devops-bootcamp/examples/ch6/devops-resources"
 #### Here is an example of how to include the module inside of the go.mod within the terraform provider:
 
 ```go
-require github.com/liatrio/devops-bootcamp/examples/ch6/devops-resource [branch]
+require github.com/liatrio/devops-bootcamp/examples/ch7/devops-resource [branch]
 ```
 
 #### When you run go mod tidy go will look for the module at the head of the branch you specified in go.mod
@@ -73,4 +73,4 @@ type DevOps struct {
 ### Why is the module name long and almost looks like a path.
 
 - Go looks for the path in which the package and module is referenced.
-- For this case the repository is github.com(host)/liatrio(owner)/devops-bootcamp(repo)/examples/ch6/devops-resources(path to package)
+- For this case the repository is github.com(host)/liatrio(owner)/devops-bootcamp(repo)/examples/ch7/devops-resources(path to package)
