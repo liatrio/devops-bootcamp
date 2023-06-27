@@ -4,7 +4,7 @@
  */
 
 import Chart from 'chart.js/auto';
-import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
+import { WordCloudController, WordElement, WordCloudChart } from 'chartjs-chart-wordcloud';
 import { fetchMetadata } from './read-metadata';
 
 // Register the wordCloud controller, element, and scale with Chart.js.
@@ -168,34 +168,26 @@ function populateChapterHours(bootcampMetadata) {
 
 // TODO: Fix this method. Right now the word cloud is too small and
 // I have seen it 'blow up' the page (grows until the page crashes)
-function generateWordCloud(canvasId) {
-    const ctx = document.getElementById(canvasId).getContext('2d');
-
-    // This object will hold the number of occurances of a technology in the bootcamp
+function generateWordCloud(canvasId, bootcampMetadata) {
     let techCount = {};
-
-    // Objects are not inherintly itterable in javascript so we must convert the values to an array.
     for (const doc of Object.values(bootcampMetadata)) {
-
-        if ('technolgies' in doc) {
-            // we have some top level technologies not associated to an exercise
-
+        // Currently we only support exercise level technologies
+        // So if we dont have exercises move on
+        if (!('exercises' in doc)) {
+            continue;
         }
-        // loop over exercises
-        if ('exercises' in doc) {
-            for (const exercise of Object.values(doc.exercises)) {
-                if ('technologies' in exercise) {
-                    for (const tech of exercise.technologies) {
-                        if (tech in techCount) {
-                            techCount[tech] += 1;
-                        } else {
-                            techCount[tech] = 1;
-                        }
-                    }
-                }
+        for (const exercise of doc.exercises) {
+            if (!('technologies'in exercise)) {
+                continue;
+            }
+
+            for (const technology of exercise.technologies) {
+                techCount[technology] = technology in techCount ? techCount[technology] + 1 : 1;
             }
         }
     }
+
+    console.log(techCount);
 
     const data = {
         labels: Object.keys(techCount),
@@ -206,22 +198,54 @@ function generateWordCloud(canvasId) {
         ]
     }
 
-    const options = {
-        title: {
-            display: false,
-            text: "Chart.js Word Cloud"
-        },
-        plugins: {
-            legend: {
-                display: false
-            }
-        }
-    };
+    // const words = [
+    //     { key: 'word', value: 10 },
+    //     { key: 'words', value: 8 },
+    //     { key: 'sprite', value: 7 },
+    //     { key: 'placed', value: 5 },
+    //     { key: 'layout', value: 4 },
+    //     { key: 'algorithm', value: 4 },
+    // ];
 
-    const myChart = new Chart(ctx, {
-        type: 'wordCloud',
+    // const data = {
+    //     labels: words.map((d) => d.key),
+    //     datasets: [
+    //         {
+    //             label: '',
+    //             data: words.map((d) => 10 + d.value * 10),
+    //         },
+    //     ],
+    // };
+
+    var canvas = document.getElementById(canvasId);
+
+    canvas.width = 400;
+    canvas.height = 400;
+    const ctx = canvas.getContext('2d');
+    new WordCloudChart(ctx, {
         data: data,
-        options: options
+        options: {
+            title: {
+                display: false,
+                text: 'Chart.js Word Cloud',
+            },
+            plugins: {
+                // wordCloud: {
+                //     font: {
+                //         family: 'Comic Sans MS', // Use your desired font family
+                //         sizes: [20, 60], // Use your desired font sizes range, e.g. from 20 to 60
+                //         minSize: 20, // Set minimum font size here
+                //         style: 'normal',
+                //         weight: 'normal',
+                //         decoration: 'none',
+                //         transform: 'none',
+                //       },
+                // },
+                legend: {
+                    display: false
+                }
+            }
+        },
     });
 }
 
@@ -253,6 +277,7 @@ let bootcampMetadata = null;
             switch (window.location.hash) {
                 case '#/':
                     generateCategoryDoughnutChart('category-doughnut-canvas', bootcampMetadata);
+                    generateWordCloud('test-word-cloud', bootcampMetadata);
                     break;
                 case '#/_stats':
                     populateChapterHours(bootcampMetadata);
