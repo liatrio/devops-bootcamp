@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test1-busybox-img-old
-  namespace: busybox
+  name: test1-myapp-img-old
+  namespace: myapp
   labels:
-    app: busybox
+    app: myapp
 spec:
   restartPolicy: OnFailure
   containers:
     - name: test1
-      image: busybox:1.24.0
+      image: myapp:1.24.0
       imagePullPolicy: Always
       command:
       - sleep
