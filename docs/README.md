@@ -433,7 +433,7 @@ docs/4-cloud-computing/4.3.5-aci.md:
       description: >-
         Create a docker image for your Node application. Push your image into
         ACR. Then deploy your image via ACI.
-      estMinutes: 300
+      estMinutes: 360
       technologies:
         - Azure
         - Azure Container Instances (ACI)
