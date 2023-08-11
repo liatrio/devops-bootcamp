@@ -404,7 +404,7 @@ docs/4-cloud-computing/4.3.3-vmss.md:
         Create a VMSS and serve content from an Azure Storage Account. Do this
         via the cli, deploying a simple node web app and provision the VM's with
         cloud-init.
-      estMinutes: 240
+      estMinutes: 330
       technologies:
         - Azure
         - Azure VMSS
