@@ -30,7 +30,7 @@
 - [2.3 - Projects](2-Github/2.3-Projects.md)
 - [2.4 - APIs](2-Github/2.4-APIs.md)
 - [2.5 - Security](2-Github/2.5-Security.md)
-  
+
 - **Chapter 3**
 
 - [3.0 - Virtual Machines and Containers](3-virtual-machines-containers/3.0-overview.md)
@@ -66,6 +66,7 @@
   - [4.3.4 - Azure with Packer](4-cloud-computing/4.3.4-az-packer.md)
   - [4.3.5 - ACI](4-cloud-computing/4.3.5-aci.md)
   - [4.3.6 - AKS](4-cloud-computing/4.3.6-aks.md)
+  - [4.3.7 - App Service](4-cloud-computing/4.3.7-app-service.md)
 
 - **Chapter 5**
 
