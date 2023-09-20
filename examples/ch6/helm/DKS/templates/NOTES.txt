@@ -1,8 +1,8 @@
 DevOps Bootcamp: Anything in this notes file will be displayed when installing this Helm chart
 
 1. Once you have all three pods running successfully you will need to run the following commands:
-kubectl port-forward svc/frontend 4100:4100
-kubectl port-forward svc/backend 3000:3000
+kubectl port-forward svc/frontend 3000:3000
+kubectl port-forward svc/backend 8080:8080
 
 You can access your website by navigating to:
-http://localhost:4100
+http://localhost:3000
