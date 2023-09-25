@@ -454,19 +454,17 @@ docs/4-cloud-computing/4.3.6-aks.md:
         - Azure Kubernetes Service (AKS)
         - Azure Container Registry (ACR)
         - Node.js
-
 docs/4-cloud-computing/4.3.7-app-service.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
-    -
-      name: Deploy Simple Web Application to App Service
+    - name: Deploy Simple Web Application to App Service
       description: Create A Web App and Scale and Monitor
       estMinutes: 240
       technologies:
-      - Azure
-      - Azure App Service
-      - Azure CLI
+        - Azure
+        - Azure App Service
+        - Azure CLI
 docs/5-software-development-practices/5.1-overview.md:
   category: Agile Development
   estReadingMinutes: 90
@@ -1005,6 +1003,17 @@ docs/8-kubernetes-container-orchestration/8.8-hello-k8s.md:
         - Webhooks
         - Custom Resources
         - Kubebuilder
+quizdown:
+  rawQuizdown: |
+    # This is the quiz for Chapter 1.0?
+
+    - [x] True
+    - [ ] False
+
+    # This is awesome!
+
+    - [x] True
+    - [ ] False
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->

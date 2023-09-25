@@ -19,8 +19,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata" rel="stylesheet">
 
-	<!-- <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
-  <script>quizdown.init();</script> -->
   <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownKatex.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownHighlight.js"></script>
@@ -109,25 +107,34 @@
     });
   </script>
 
-<script type="module">
-  // Not sure how to import all from quizzes.js
-  // import * from './src/quizzes.js' (doesn't work)
-  import {config2, rawQuizdown2} from './src/quizzes.js'
-  window.$docsify.plugins = [
-    function (hook, vm) {
-      hook.doneEach(function () {
-        let node = document.getElementById('quizdown');
-        console.log(node);
-        if (node) {
-          // Not sure how to specify the exact quiz that I need (dynamically)
-          // Using a json file works but writing/reading the quiz is very difficult
-          quizdown.createApp(rawQuizdown2, node, config2);
-        }
-      });
-    }
-  ].concat(window.$docsify.plugins || []);
-</script>
+  <script>
+    window.$docsify.plugins = [
+      function (hook, vm) {
+        hook.doneEach(function () {
+          let node = document.getElementById('quizdown');
+          if (node && node.firstElementChild) {
+            import(`./src/quizzes/${node.firstElementChild.id}`).then(module => {
+              const { config, rawQuizdown } = module;
+              quizdown.createApp(rawQuizdown, node, config);
+            });
+          }
+        });
+      }
+    ].concat(window.$docsify.plugins || []);
+  </script>
 
+  <!-- If using as a plugin -->
+  <!-- <script type="module">
+    import * as matter from "gray-matter";
+    window.$docsify.plugins = [
+      function (hook, vm) {
+        hook.beforeEach(function (markdown) {
+          const { data, content } = matter(markdown);
+          console.log(data.quizdown);
+        });
+      }
+    ].concat(window.$docsify.plugins || []);
+  </script> -->
 
   <!-- Import the bundled assets last so all other assets are loaded first -->
   <script src="dist/main.js"></script>
