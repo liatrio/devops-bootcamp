@@ -55,6 +55,7 @@
         '/.*/_sidebar.md': '/_sidebar.md'
       },
       plugins: [
+        // Dork mode
         function(hook) {
           hook.doneEach(function(html, next) {
             const darkMode = localStorage.getItem("dark_mode") == "true"
@@ -68,7 +69,24 @@
               localStorage.setItem("dark_mode", darkModeSwitch.checked ? "true" : "false")
             })
             next(html);
-          })
+          });
+        },
+
+        // Quizdown
+        function(hook) {
+          hook.doneEach(function () {
+            let node = document.getElementById('quizdown');
+            const config = {
+              'locale': 'en', 
+              'shuffleAnswers': true,
+            };
+            if (node && node.firstElementChild) {
+              import(`./src/quizzes/${node.firstElementChild.id}`).then(module => {
+                const { rawQuizdown } = module;
+                quizdown.createApp(rawQuizdown, node, config);
+              });
+            }
+          });
         }
       ]
     }
@@ -107,34 +125,6 @@
     });
   </script>
 
-  <script>
-    window.$docsify.plugins = [
-      function (hook, vm) {
-        hook.doneEach(function () {
-          let node = document.getElementById('quizdown');
-          if (node && node.firstElementChild) {
-            import(`./src/quizzes/${node.firstElementChild.id}`).then(module => {
-              const { config, rawQuizdown } = module;
-              quizdown.createApp(rawQuizdown, node, config);
-            });
-          }
-        });
-      }
-    ].concat(window.$docsify.plugins || []);
-  </script>
-
-  <!-- If using as a plugin -->
-  <!-- <script type="module">
-    import * as matter from "gray-matter";
-    window.$docsify.plugins = [
-      function (hook, vm) {
-        hook.beforeEach(function (markdown) {
-          const { data, content } = matter(markdown);
-          console.log(data.quizdown);
-        });
-      }
-    ].concat(window.$docsify.plugins || []);
-  </script> -->
 
   <!-- Import the bundled assets last so all other assets are loaded first -->
   <script src="dist/main.js"></script>
