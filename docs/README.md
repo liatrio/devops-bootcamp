@@ -1003,17 +1003,6 @@ docs/8-kubernetes-container-orchestration/8.8-hello-k8s.md:
         - Webhooks
         - Custom Resources
         - Kubebuilder
-quizdown:
-  rawQuizdown: |
-    # This is the quiz for Chapter 1.0?
-
-    - [x] True
-    - [ ] False
-
-    # This is awesome!
-
-    - [x] True
-    - [ ] False
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
