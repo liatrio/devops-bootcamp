@@ -55,7 +55,7 @@
         '/.*/_sidebar.md': '/_sidebar.md'
       },
       plugins: [
-        // Dork mode
+        // Dark mode
         function(hook) {
           hook.doneEach(function(html, next) {
             const darkMode = localStorage.getItem("dark_mode") == "true"
@@ -78,7 +78,7 @@
             let node = document.getElementById('quizdown');
             const config = {
               'locale': 'en', 
-              'shuffleAnswers': true,
+              'shuffleAnswers': false,
             };
             if (node && node.firstElementChild) {
               import(`./src/quizzes/${node.firstElementChild.id}`).then(module => {

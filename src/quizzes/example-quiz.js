@@ -1,6 +1,5 @@
 const rawQuizdown = `
 # Is this a quiz?
-Take your time...no rush...
 
 1. [x] True
 1. [ ] False
@@ -15,8 +14,9 @@ That's **super easy**!
 4. Four
 5. Five
 
+# Python Lists
 
-# Testing syntax highlighting
+Testing syntax highlighting
 
 \`\`\`python
 # Python
