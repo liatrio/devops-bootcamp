@@ -136,6 +136,10 @@
 - **Addendum**
 
 - [Addendum](addendum/addendum-overview.md)
+  - [GitHub Certs Quizzes](addendum/github-certs-quizzes/github-certs-quizzes.md)
+    - [GitHub Actions Cert](addendum/github-certs-quizzes/github-action-cert.md)
+    - [GitHub Admin Cert](addendum/github-certs-quizzes/github-admin-cert.md)
+    - [GitHub Advanced Security Cert](addendum/github-certs-quizzes/github-advanced-security-cert.md)
   - [Ephemeral Jenkins](addendum/ephemeral-jenkins.md)
   - [Jenkins Declarative Pipelines](addendum/jenkins-declarative-pipelines.md)
   - [Tomcat](addendum/tomcat.md)
