@@ -84,6 +84,8 @@
               import(`./src/quizzes/${node.firstElementChild.id}`).then(module => {
                 const { rawQuizdown } = module;
                 quizdown.createApp(rawQuizdown, node, config);
+              }).catch(error => {
+                console.error("Error importing quiz, make sure the file name matches the quizdown inner div's id: ", error);
               });
             }
           });
