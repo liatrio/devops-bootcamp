@@ -91,6 +91,7 @@
   - [5.5.4 - Code Coverage](5-software-development-practices/5.5.4-code-coverage.md)
   - [5.5.5 - Test Automation](5-software-development-practices/5.5.5-test-automation.md)
   - [5.5.6 - SonarQube](5-software-development-practices/5.5.6-sonarqube.md)
+  - [5.5.7 - Code Review](5-software-development-practices/5.5.7-code-review.md)
 - [5.6 - Hello DevOps](5-software-development-practices/5.6-hello-devops.md)
 
 - **Chapter 6**

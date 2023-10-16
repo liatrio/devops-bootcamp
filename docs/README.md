@@ -578,6 +578,9 @@ docs/5-software-development-practices/5.5.6-sonarqube.md:
       technologies:
         - SonarQube
         - GitHub Actions
+docs/5-software-development-practices/5.5.7-code-review.md:
+  category: Software Quality
+  estReadingMinutes: 10
 docs/5-software-development-practices/5.6-hello-devops.md:
   category: Agile Development
   estReadingMinutes: 5
