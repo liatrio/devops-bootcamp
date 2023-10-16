@@ -833,6 +833,13 @@ docs/7-infrastructure-configuration-management/7.2-ansible.md:
         - Ansible
         - Vagrant
         - GitHub self-hosted runner
+    - name: Idempotency
+      description: Provision a virtual machine and install a Github self-hosted runner using Ansible as a provisioner in Vagrant while maintaining idempotency.
+      estMinutes: 300
+      technologies:
+        - Ansible
+        - Vagrant
+        - Github self-hosted runner
     - name: Ansible and AWS EC2
       description: >-
         Provision an AWS EC2 instance and install a GitHub self-hosted runner
