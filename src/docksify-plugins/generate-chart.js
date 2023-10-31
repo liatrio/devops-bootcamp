@@ -4,7 +4,7 @@
  */
 
 import Chart from 'chart.js/auto';
-import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
+import { WordCloudController, WordElement, WordCloudChart } from 'chartjs-chart-wordcloud';
 import { fetchMetadata } from './read-metadata';
 
 // Register the wordCloud controller, element, and scale with Chart.js.
@@ -166,35 +166,38 @@ function populateChapterHours(bootcampMetadata) {
     }
 }
 
-// TODO: Fix this method. Right now the word cloud is too small and
-// I have seen it 'blow up' the page (grows until the page crashes)
-function generateWordCloud(canvasId) {
-    const ctx = document.getElementById(canvasId).getContext('2d');
-
-    // This object will hold the number of occurances of a technology in the bootcamp
+function generateWordCloud(canvasId, bootcampMetadata) {
     let techCount = {};
 
-    // Objects are not inherintly itterable in javascript so we must convert the values to an array.
+    // max and min display sizes for each entry of the wordcloud
+    const minSize = 15;
+    const maxSize = 90;
+
     for (const doc of Object.values(bootcampMetadata)) {
-
-        if ('technolgies' in doc) {
-            // we have some top level technologies not associated to an exercise
-
+        // Currently we only support exercise level technologies
+        // So if we dont have exercises move on
+        if (!('exercises' in doc)) {
+            continue;
         }
-        // loop over exercises
-        if ('exercises' in doc) {
-            for (const exercise of Object.values(doc.exercises)) {
-                if ('technologies' in exercise) {
-                    for (const tech of exercise.technologies) {
-                        if (tech in techCount) {
-                            techCount[tech] += 1;
-                        } else {
-                            techCount[tech] = 1;
-                        }
-                    }
-                }
+        for (const exercise of doc.exercises) {
+            if (!('technologies'in exercise)) {
+                continue;
+            }
+
+            for (const technology of exercise.technologies) {
+                techCount[technology] = technology in techCount ? techCount[technology] + 1 : 1;
             }
         }
+    }
+
+    // normalize all our points to fit the given range
+    const values = Object.values(techCount);
+    const oMin = Math.min(...values); // original min
+    const oMax = Math.max(...values); // original max
+    for (const [key, value] of Object.entries(techCount)) {
+        const x = value;
+        // apply formula to normalize each value
+        techCount[key] = (maxSize - minSize) * ((x - oMin)/(oMax - oMin)) + minSize;
     }
 
     const data = {
@@ -206,22 +209,29 @@ function generateWordCloud(canvasId) {
         ]
     }
 
-    const options = {
-        title: {
-            display: false,
-            text: "Chart.js Word Cloud"
-        },
-        plugins: {
-            legend: {
-                display: false
-            }
-        }
-    };
+    var canvas = document.getElementById(canvasId);
 
-    const myChart = new Chart(ctx, {
-        type: 'wordCloud',
+    canvas.width = 400;
+    canvas.height = 500;
+    const ctx = canvas.getContext('2d');
+    new WordCloudChart(ctx, {
         data: data,
-        options: options
+        options: {
+            title: {
+                display: false,
+            },
+            color: "#24ae1dff",
+            plugins: {
+                // disabling tooltip-- it displayed the arbitrary number associated with
+                // each entry's size
+                tooltip: {
+                    enabled: false
+                },
+                legend: {
+                    display: false
+                }
+            }
+        },
     });
 }
 
@@ -253,6 +263,7 @@ let bootcampMetadata = null;
             switch (window.location.hash) {
                 case '#/':
                     generateCategoryDoughnutChart('category-doughnut-canvas', bootcampMetadata);
+                    generateWordCloud('technology-word-cloud', bootcampMetadata);
                     break;
                 case '#/_stats':
                     populateChapterHours(bootcampMetadata);

@@ -1043,6 +1043,8 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 
 ## Learning Goals
 
+<canvas id="technology-word-cloud"></canvas>
+
  1. Introduction to DevOps
  2. Virtual Machines and Containers
  3. Cloud Computing
