@@ -166,10 +166,13 @@ function populateChapterHours(bootcampMetadata) {
     }
 }
 
-// TODO: Fix this method. Right now the word cloud is too small and
-// I have seen it 'blow up' the page (grows until the page crashes)
 function generateWordCloud(canvasId, bootcampMetadata) {
     let techCount = {};
+
+    // max and min display sizes for each entry of the wordcloud
+    const minSize = 15;
+    const maxSize = 90;
+
     for (const doc of Object.values(bootcampMetadata)) {
         // Currently we only support exercise level technologies
         // So if we dont have exercises move on
@@ -187,7 +190,15 @@ function generateWordCloud(canvasId, bootcampMetadata) {
         }
     }
 
-    console.log(techCount);
+    // normalize all our points to fit the given range
+    const values = Object.values(techCount);
+    const oMin = Math.min(...values); // original min
+    const oMax = Math.max(...values); // original max
+    for (const [key, value] of Object.entries(techCount)) {
+        const x = value;
+        // apply formula to normalize each value
+        techCount[key] = (maxSize - minSize) * ((x - oMin)/(oMax - oMin)) + minSize;
+    }
 
     const data = {
         labels: Object.keys(techCount),
@@ -198,49 +209,24 @@ function generateWordCloud(canvasId, bootcampMetadata) {
         ]
     }
 
-    // const words = [
-    //     { key: 'word', value: 10 },
-    //     { key: 'words', value: 8 },
-    //     { key: 'sprite', value: 7 },
-    //     { key: 'placed', value: 5 },
-    //     { key: 'layout', value: 4 },
-    //     { key: 'algorithm', value: 4 },
-    // ];
-
-    // const data = {
-    //     labels: words.map((d) => d.key),
-    //     datasets: [
-    //         {
-    //             label: '',
-    //             data: words.map((d) => 10 + d.value * 10),
-    //         },
-    //     ],
-    // };
-
     var canvas = document.getElementById(canvasId);
 
     canvas.width = 400;
-    canvas.height = 400;
+    canvas.height = 500;
     const ctx = canvas.getContext('2d');
     new WordCloudChart(ctx, {
         data: data,
         options: {
             title: {
                 display: false,
-                text: 'Chart.js Word Cloud',
             },
+            color: "#24ae1dff",
             plugins: {
-                // wordCloud: {
-                //     font: {
-                //         family: 'Comic Sans MS', // Use your desired font family
-                //         sizes: [20, 60], // Use your desired font sizes range, e.g. from 20 to 60
-                //         minSize: 20, // Set minimum font size here
-                //         style: 'normal',
-                //         weight: 'normal',
-                //         decoration: 'none',
-                //         transform: 'none',
-                //       },
-                // },
+                // disabling tooltip-- it displayed the arbitrary number associated with
+                // each entry's size
+                tooltip: {
+                    enabled: false
+                },
                 legend: {
                     display: false
                 }
