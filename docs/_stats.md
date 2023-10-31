@@ -21,4 +21,4 @@
 | 7. IaC                   | <p id=7-infrastructure-configuration-management></p> |<p id=7-infrastructure-configuration-management-weeks></p> |
 | 8. Kubernetes            | <p id=8-kubernetes-container-orchestration></p> |<p id=8-kubernetes-container-orchestration-weeks></p> |
 
-<canvas id="test-word-cloud"></canvas>
+<canvas id="technology-word-cloud"></canvas>

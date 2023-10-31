@@ -263,7 +263,7 @@ let bootcampMetadata = null;
             switch (window.location.hash) {
                 case '#/':
                     generateCategoryDoughnutChart('category-doughnut-canvas', bootcampMetadata);
-                    generateWordCloud('test-word-cloud', bootcampMetadata);
+                    generateWordCloud('technology-word-cloud', bootcampMetadata);
                     break;
                 case '#/_stats':
                     populateChapterHours(bootcampMetadata);
