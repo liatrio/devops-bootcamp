@@ -33,8 +33,8 @@
   "dependencies": {
     "chart.js": "^4.3.0",
     "chartjs-chart-wordcloud": "^4.2.0",
-    "docsify": "^4.13.0",
-    "docsify-cli": "^4.4.4",
+    "docsify": "^4.11.4",
+    "docsify-cli": "^4.4.2",
     "docsify-sidebar-collapse": "^1.3.5",
     "gray-matter": "^4.0.3",
     "node-stdlib-browser": "^1.2.0"

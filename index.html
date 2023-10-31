@@ -19,14 +19,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata" rel="stylesheet">
 
-  <link href="/fontawesome/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownKatex.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/extensions/quizdownHighlight.js"></script>
+  <script>quizdown.register(quizdownHighlight).register(quizdownKatex).init()</script> 
 
+  <link rel="stylesheet" href="/fontawesome/css/all.min.css" >
   <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body>
   <div id="app">Loading...</div>
   <script src="//unpkg.com/docsify-edit-on-github@1.0.1/index.js"></script>
+  
   <script>
     window.$docsify = {
       name: 'Liatrio\'s DevOps Bootcamp',
@@ -50,6 +55,7 @@
         '/.*/_sidebar.md': '/_sidebar.md'
       },
       plugins: [
+        // Dark mode
         function(hook) {
           hook.doneEach(function(html, next) {
             const darkMode = localStorage.getItem("dark_mode") == "true"
@@ -63,7 +69,26 @@
               localStorage.setItem("dark_mode", darkModeSwitch.checked ? "true" : "false")
             })
             next(html);
-          })
+          });
+        },
+
+        // Quizdown
+        function(hook) {
+          hook.doneEach(function () {
+            let node = document.getElementById('quizdown');
+            const config = {
+              'locale': 'en', 
+              'shuffleAnswers': false,
+            };
+            if (node && node.firstElementChild) {
+              import(`./src/quizzes/${node.firstElementChild.id}`).then(module => {
+                const { rawQuizdown } = module;
+                quizdown.createApp(rawQuizdown, node, config);
+              }).catch(error => {
+                console.error("Error importing quiz, make sure the file name matches the quizdown inner div's id: ", error);
+              });
+            }
+          });
         }
       ]
     }
@@ -101,6 +126,8 @@
       }
     });
   </script>
+
+
   <!-- Import the bundled assets last so all other assets are loaded first -->
   <script src="dist/main.js"></script>
 </body>

@@ -404,7 +404,7 @@ docs/4-cloud-computing/4.3.3-vmss.md:
         Create a VMSS and serve content from an Azure Storage Account. Do this
         via the cli, deploying a simple node web app and provision the VM's with
         cloud-init.
-      estMinutes: 240
+      estMinutes: 330
       technologies:
         - Azure
         - Azure VMSS
@@ -433,7 +433,7 @@ docs/4-cloud-computing/4.3.5-aci.md:
       description: >-
         Create a docker image for your Node application. Push your image into
         ACR. Then deploy your image via ACI.
-      estMinutes: 300
+      estMinutes: 360
       technologies:
         - Azure
         - Azure Container Instances (ACI)
@@ -454,6 +454,17 @@ docs/4-cloud-computing/4.3.6-aks.md:
         - Azure Kubernetes Service (AKS)
         - Azure Container Registry (ACR)
         - Node.js
+docs/4-cloud-computing/4.3.7-app-service.md:
+  category: Cloud Computing
+  estReadingMinutes: 10
+  exercises:
+    - name: Deploy Simple Web Application to App Service
+      description: Create A Web App and Scale and Monitor
+      estMinutes: 240
+      technologies:
+        - Azure
+        - Azure App Service
+        - Azure CLI
 docs/5-software-development-practices/5.1-overview.md:
   category: Agile Development
   estReadingMinutes: 90
@@ -567,6 +578,9 @@ docs/5-software-development-practices/5.5.6-sonarqube.md:
       technologies:
         - SonarQube
         - GitHub Actions
+docs/5-software-development-practices/5.5.7-code-review.md:
+  category: Software Quality
+  estReadingMinutes: 10
 docs/5-software-development-practices/5.6-hello-devops.md:
   category: Agile Development
   estReadingMinutes: 5
@@ -819,6 +833,13 @@ docs/7-infrastructure-configuration-management/7.2-ansible.md:
         - Ansible
         - Vagrant
         - GitHub self-hosted runner
+    - name: Idempotency
+      description: Provision a virtual machine and install a Github self-hosted runner using Ansible as a provisioner in Vagrant while maintaining idempotency.
+      estMinutes: 300
+      technologies:
+        - Ansible
+        - Vagrant
+        - Github self-hosted runner
     - name: Ansible and AWS EC2
       description: >-
         Provision an AWS EC2 instance and install a GitHub self-hosted runner

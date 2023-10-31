@@ -16,5 +16,6 @@
 - [Ryan McGuire](https://github.com/ramcguire)
 - [Joshua Burns](https://github.com/jburns24)
 - [Travis Kroll](https://github.com/tjvkroll)
+- [Mikayla Billings-Alston](https://github.com/mcbillings)
 
 [back](/)

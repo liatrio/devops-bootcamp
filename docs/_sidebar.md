@@ -30,7 +30,7 @@
 - [2.3 - Projects](2-Github/2.3-Projects.md)
 - [2.4 - APIs](2-Github/2.4-APIs.md)
 - [2.5 - Security](2-Github/2.5-Security.md)
-  
+
 - **Chapter 3**
 
 - [3.0 - Virtual Machines and Containers](3-virtual-machines-containers/3.0-overview.md)
@@ -66,6 +66,7 @@
   - [4.3.4 - Azure with Packer](4-cloud-computing/4.3.4-az-packer.md)
   - [4.3.5 - ACI](4-cloud-computing/4.3.5-aci.md)
   - [4.3.6 - AKS](4-cloud-computing/4.3.6-aks.md)
+  - [4.3.7 - App Service](4-cloud-computing/4.3.7-app-service.md)
 
 - **Chapter 5**
 
@@ -90,6 +91,7 @@
   - [5.5.4 - Code Coverage](5-software-development-practices/5.5.4-code-coverage.md)
   - [5.5.5 - Test Automation](5-software-development-practices/5.5.5-test-automation.md)
   - [5.5.6 - SonarQube](5-software-development-practices/5.5.6-sonarqube.md)
+  - [5.5.7 - Code Review](5-software-development-practices/5.5.7-code-review.md)
 - [5.6 - Hello DevOps](5-software-development-practices/5.6-hello-devops.md)
 
 - **Chapter 6**
@@ -135,6 +137,10 @@
 - **Addendum**
 
 - [Addendum](addendum/addendum-overview.md)
+  - [GitHub Certs Quizzes](addendum/github-certs-quizzes/github-certs-quizzes.md)
+    - [GitHub Actions Cert](addendum/github-certs-quizzes/github-action-cert.md)
+    - [GitHub Admin Cert](addendum/github-certs-quizzes/github-admin-cert.md)
+    - [GitHub Advanced Security Cert](addendum/github-certs-quizzes/github-advanced-security-cert.md)
   - [Ephemeral Jenkins](addendum/ephemeral-jenkins.md)
   - [Jenkins Declarative Pipelines](addendum/jenkins-declarative-pipelines.md)
   - [Tomcat](addendum/tomcat.md)
