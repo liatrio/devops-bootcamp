@@ -794,29 +794,9 @@ docs/7-infrastructure-configuration-management/7.1.4-terraform-providers.md:
       technologies:
         - Terraform
         - Go
-    - name: Implementing the provider
-      description: Implement the Terraform provider to interact with a custom API.
+    - name: Implementing the provider client
+      description: Implement the Terraform provider client to interact with a custom API.
       estMinutes: 240
-      technologies:
-        - Terraform
-        - Go
-    - name: Implementing Engineer resource and datasource
-      description: Implement the CRUD operations for the Engineer resource and datasource.
-      estMinutes: 300
-      technologies:
-        - Terraform
-        - Go
-    - name: 'Implementing Dev, Ops, DevOps resource and datasource'
-      description: >-
-        Implement the CRUD operations for the Dev, Ops, and DevOps resources and
-        datasources.
-      estMinutes: 300
-      technologies:
-        - Terraform
-        - Go
-    - name: Challenge
-      description: Write comprehensive tests for the Engineer resource and datasource.
-      estMinutes: 120
       technologies:
         - Terraform
         - Go
@@ -834,7 +814,9 @@ docs/7-infrastructure-configuration-management/7.2-ansible.md:
         - Vagrant
         - GitHub self-hosted runner
     - name: Idempotency
-      description: Provision a virtual machine and install a Github self-hosted runner using Ansible as a provisioner in Vagrant while maintaining idempotency.
+      description: >-
+        Provision a virtual machine and install a Github self-hosted runner
+        using Ansible as a provisioner in Vagrant while maintaining idempotency.
       estMinutes: 300
       technologies:
         - Ansible
