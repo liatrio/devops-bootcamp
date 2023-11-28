@@ -800,6 +800,26 @@ docs/7-infrastructure-configuration-management/7.1.4-terraform-providers.md:
       technologies:
         - Terraform
         - Go
+    - name: Implementing Engineer resource and datasource
+      description: Implement the CRUD operations for the Engineer resource and datasource.
+      estMinutes: 300
+      technologies:
+        - Terraform
+        - Go
+    - name: Testing
+      description: Write comprehensive tests for the Engineer resource and datasource.
+      estMinutes: 120
+      technologies:
+        - Terraform
+        - Go
+    - name: 'Implementing Dev, Ops, or DevOps resource and datasource'
+      description: >-
+        Implement the CRUD operations for the Dev, Ops, and DevOps resources and
+        datasources.
+      estMinutes: 300
+      technologies:
+        - Terraform
+        - Go
 docs/7-infrastructure-configuration-management/7.2-ansible.md:
   category: Infrastructure as Code
   estReadingMinutes: 15
