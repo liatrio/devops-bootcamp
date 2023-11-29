@@ -6,6 +6,6 @@ This quiz is designed to help prepare you for your upcoming GitHub Action Certif
 
 ## Quiz
 
-<div id="quizdown">
-    <div id="quiz-github-action-cert.js" ></div>
+<div class="quizdown">
+    <div id="addendum/github-certs-quizzes/github-action-cert.js" ></div>
 </div>
