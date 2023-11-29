@@ -812,9 +812,9 @@ docs/7-infrastructure-configuration-management/7.1.4-terraform-providers.md:
       technologies:
         - Terraform
         - Go
-    - name: 'Implementing Dev, Ops, or DevOps resource and datasource'
+    - name: Implementing Dev or Ops resource and datasource
       description: >-
-        Implement the CRUD operations for the Dev, Ops, and DevOps resources and
+        Implement the CRUD operations for the Dev or Ops resources and
         datasources.
       estMinutes: 300
       technologies:
