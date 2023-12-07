@@ -4,7 +4,7 @@ shuffleAnswers: true
 ---
 # What does the \`\`\`Read\`\`\` function of a data source do?
 
-- [x] Refreshes the Terraform state based on the schema data.
+- [x] Refreshes the Terraform state based on the actual state of the resource in the API.
 - [ ] Reads the configuration of your client and judges if it is correct.
 - [ ] Queries your configured API for all resources.
 
