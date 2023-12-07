@@ -1,6 +1,5 @@
 const rawQuizdown = `
 ---
-primaryColor: '#24ae1dff'
 shuffleAnswers: true
 ---
 # What would the following request do?
