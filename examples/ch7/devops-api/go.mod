@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/gin-gonic/gin v1.8.1
-	github.com/liatrio/devops-bootcamp/examples/ch7/devops-resources v0.0.0-20221129190731-63b117bcfecd
+	github.com/liatrio/devops-bootcamp/examples/ch7/devops-resources v0.0.0-20230921193819-569bb9d9dbdd
 )
 
 require (
