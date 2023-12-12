@@ -1073,7 +1073,7 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 
 **Deliverables**
 
-If you are an apprentice (or if you just want to add to your learning), here's a little insight on the deliverables the bootcamp will provide. At the end of each section, you will typically encounter a bulleted list of deliverables. They will usually be structured to get you thinking/reflecting/researching to prepare you for talking points for your weekly DevOps Bootcamp Review meeting. If you are not an apprentice, the deliverables are still very valuable things to be considering. 
+If you are an apprentice (or if you just want to add to your learning), here's a little insight on the deliverables the bootcamp will provide. At the end of each section, you will typically encounter a bulleted list of deliverables. They will usually be structured to get you thinking/reflecting/researching to prepare you for talking points for your weekly DevOps Bootcamp Review meeting. If you are not an apprentice, the deliverables are still very valuable things to be considering.
 
 **Quizzes**
 
