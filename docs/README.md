@@ -1037,7 +1037,7 @@ Welcome! You must be here because you're interested in DevOps. Don't worry, we'l
 
 ## Target Audience
 
-This DevOps Bootcamp is used as an introduction to DevOps for Liatrio's apprentices. Therefore, there are deliverables at the end of each section that help guide the apprentices' training. However, anyone can go through the DevOps Bootcamp. Feel free to ignore the deliverables, etc. This bootcamp also assumes the bootcamper is using a Mac for the deliverables.
+This DevOps Bootcamp is used as an introduction to DevOps for Liatrio's apprentices. Therefore, there are deliverables at the end of each section and quizzes sprinkled throughout that help guide the apprentices' training. However, anyone can go through the DevOps Bootcamp. Feel free to ignore the deliverables, quizzes, etc. This bootcamp also assumes the bootcamper is using a Mac for the deliverables.
 
 ## Disclaimer
 
@@ -1045,28 +1045,45 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 
 ## Learning Goals
 
-<canvas id="technology-word-cloud"></canvas>
+1. Introduction to DevOps
+2. GitHub
+3. Virtual Machines and Containers
+4. Cloud Computing
+5. Development Practices
+6. Release Management
+7. Infrastructure and Configuration
+8. Kubernetes
 
- 1. Introduction to DevOps
- 2. Virtual Machines and Containers
- 3. Cloud Computing
- 4. Development Practices
- 5. Release Management
- 6. Automation and Orchestration
- 7. Kubernetes
+<canvas id="technology-word-cloud"></canvas>
 
 <canvas id="category-doughnut-canvas"></canvas>
 
 ## Expectations
 
- 1. Share what you learn. Knowledge is best retained when you can teach it back yourself.
- 2. If you're participating in the bootcamp with others, lift them up instead of speeding past them.
- 3. Your learning should be in a demonstrable state at any given time.
- 4. Slow and steady wins the race. If you don't fully understand something, speak up for help and spend more time on it.
- 5. Be transparent in your progress.
- 6. Have fun!
+1. Share what you learn. Knowledge is best retained when you can teach it back yourself.
+2. If you're participating in the bootcamp with others, lift them up instead of speeding past them.
+3. Your learning should be in a demonstrable state at any given time.
+4. Slow and steady wins the race. If you don't fully understand something, speak up for help and spend more time on it.
+5. Be transparent in your progress.
+6. Have fun!
 
 > "It's better to over communicate than to under communicate."
+
+## Deliverable and Quiz Format
+
+**Deliverables**
+
+If you are an apprentice (or if you just want to add to your learning), here's a little insight on the deliverables the bootcamp will provide. At the end of each section, you will typically encounter a bulleted list of deliverables. They will usually be structured to get you thinking/reflecting/researching to prepare you for talking points for your weekly DevOps Bootcamp Review meeting. If you are not an apprentice, the deliverables are still very valuable things to be considering. 
+
+**Quizzes**
+
+As mentioned before, you'll also find small quizzes sprinkled throughout the bootcamp. Don't worry, they aren't graded and scores aren't tracked, so there's zero pressure when it comes to them. That being said, they are very valuable for learning, so it would be wise to take the time to not only get the correct answers on them, but to really understand *why* those are the correct answers.
+
+Here's a sample quiz to show you how they'll behave:
+
+<div class="quizdown">
+    <div id="landing-page-quiz.js" ></div>
+</div>
 
 ## Contributing
 
