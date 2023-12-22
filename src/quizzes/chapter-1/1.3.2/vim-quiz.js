@@ -1,8 +1,35 @@
 const rawQuizdown = `
 ---
-shuffleQuestions: true
 shuffleAnswers: true
 ---
+
+# This Vim mode is made up of shortcuts to jump the cursor around and enter additional modes
+
+1. [x] Normal Mode
+1. [ ] Insert Mode
+1. [ ] Visual Mode
+1. [ ] Command Mode
+
+# This Vim mode is the mode that you will typically be in and acts as Vim's text editor
+
+1. [ ] Normal Mode
+1. [x] Insert Mode
+1. [ ] Visual Mode
+1. [ ] Command Mode
+
+# This Vim mode handles text manipulation via copy/paste methods
+
+1. [ ] Normal Mode
+1. [ ] Insert Mode
+1. [x] Visual Mode
+1. [ ] Command Mode
+
+# This Vim mode is how you directly save and exit (write and quit) the file
+
+1. [ ] Normal Mode
+1. [ ] Insert Mode
+1. [ ] Visual Mode
+1. [x] Command Mode
 
 # A file has the following contents:<br>
 \`text tex|t text\`<br>
@@ -55,6 +82,24 @@ What are the contents of the file after the following commands are entered?<br>
 	> This will jump your cursor to the end of the line (and enter insert mode) no matter where it's at
 - [ ] yy
 	> This will copy the current line no matter where your cursor is at
+
+# Which of the following commands in Vim moves the cursor to the beginning of the file?
+
+1. [x] gg
+1. [ ] G
+	> This command moves the cursor to the first character of the last line of the file
+1. [ ] ^
+	> This command moves the cursor to the first non-blank character of the current line
+1. [ ] $
+	> This command moves the cursor to the end of the current line
+
+# How do you search for the word 'bootcamp' in a file?
+
+1. [x] /bootcamp
+1. [ ] :bootcamp
+1. [ ] ?bootcamp
+1. [ ] *bootcamp
+
 `;
 
 export { rawQuizdown }
