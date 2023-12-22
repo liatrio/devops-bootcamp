@@ -29,12 +29,12 @@ cd ~
 1. [ ] False
   > **~** is the shorthand name for the current users home directory, and you can navigate to it from anywhere.
 
-# If the following commands are run on a nonexistent file, what will the final output be?
+# Assume that `echo-test.txt` is a new file. What will the final output be?
 \`\`\`bash
-echo 'Hello' > nonexistent-file-name
-echo 'World' > nonexistent-file-name
-echo 'Hello' >> nonexistent-file-name
-cat nonexistent-file-name
+echo 'Hello' > echo-test.txt
+echo 'World' > echo-test.txt
+echo 'Hello' >> echo-test.txt
+cat echo-test.txt
 \`\`\`
 
 1. [x] World<br>Hello
