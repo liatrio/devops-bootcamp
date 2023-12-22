@@ -3,7 +3,7 @@ const rawQuizdown = `
 shuffleAnswers: true
 ---
 
-# If performed on a nonexistent file, all of the following commands will fail except:
+# If performed on a nonexistent file, all of the following commands will return a non-zero exit code except:
 
 1. [x] touch
 1. [ ] cat
