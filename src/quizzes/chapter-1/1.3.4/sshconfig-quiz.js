@@ -21,32 +21,33 @@ shuffleAnswers: true
 - [ ] They allow multiple users to share the same authentication credentials, which enhances security
 	> This is actually harmful for security. If one user's information leaks, it compromises others aswell
 
-# You read above that the \`.ssh\` directory should have permissions set to 0700 and the \`.ssh/config\` file should have permissions set to 0600. Why should the one's and ten's place be set to 0?<br>
-You may choose to explore more about permissions <a href="https://mason.gmu.edu/~montecin/UNIXpermiss.htm">here</a>
+# Why are the permission levels \`0700\` for the \`.ssh/\` directory and \`0600\` for the \`.ssh/authorized_keys\` file recommended as secure settings for SSH authentication? Select the most accurate explanation.
+You may choose to explore more about permissions [here](https://mason.gmu.edu/~montecin/UNIXpermiss.htm)
 
-1. [x] The hundred's place resembles owner permissions, and groups and others shouldn't have access to these, so they are set to 0
-1. [ ] The hundred's place resembles group permissions, and owners and others shouldn't have access to these, so they are set to 0
-1. [ ] The hundred's place resembles other's (not owner or group) permissions, and owners and groups shouldn't have access to these, so they are set to 0
+1. [x] To allow only the file owner to read and write .ssh/authorized_keys and to access the .ssh/ directory, preventing unauthorized users from viewing or modifying private SSH keys
+1. [ ] To ensure that .ssh/ and .ssh/authorized_keys are readable, writable, and executable by everyone, guaranteeing maximum compatibility across different users and systems
+1. [ ] To enable group and other users to access SSH keys for administrative and troubleshooting purposes, while restricting write permission to the owner only
+1. [ ] To restrict all access to .ssh/ and .ssh/authorized_keys for security purposes, making these files and directories completely inaccessible
 
-# What does the 0700 permission denote for the \`.ssh\` directory?<br>
-You may choose to explore more about permissions <a href="https://mason.gmu.edu/~montecin/UNIXpermiss.htm">here</a>
+# What does the \`0700\` permission denote for the \`.ssh\` directory?<br>
+You may choose to explore more about permissions [here](https://mason.gmu.edu/~montecin/UNIXpermiss.htm)
 
-1. [x] Read, Write, and Execute permissions
-1. [ ] Read and Write permissions
-1. [ ] Read and Execute permissions
-1. [ ] Write and Execute permissions
-1. [ ] Read permissions
-1. [ ] Write permissions
-1. [ ] Execute permissions
+1. [x] Owner has Read, Write, and Execute permissions
+1. [ ] Group has Read, Write, and Execute permissions
+1. [ ] Owner has Read and Execute permissions
+1. [ ] Group has Read and Execute permissions
+1. [ ] Group has Read and Write permissions
+1. [ ] Owner has Read and Write permissions
 
-# What does the 0600 permission denote for the \`.ssh/config\` file?
-1. [ ] Read, Write, and Execute permissions
-1. [x] Read and Write permissions
-1. [ ] Read and Execute permissions
-1. [ ] Write and Execute permissions
-1. [ ] Read permissions
-1. [ ] Write permissions
-1. [ ] Execute permissions
+# What does the \`0600\` permission denote for the \`.ssh/config\` file?
+You may choose to explore more about permissions [here](https://mason.gmu.edu/~montecin/UNIXpermiss.htm)
+
+1. [x] Owner has Read and Write permissions
+1. [ ] Owner has Read, Write, and Execute permissions
+1. [ ] Group has Read, Write, and Execute permissions
+1. [ ] Owner has Read and Execute permissions
+1. [ ] Group has Read and Execute permissions
+1. [ ] Group has Read and Write permissions
 `;
 
 export { rawQuizdown }
