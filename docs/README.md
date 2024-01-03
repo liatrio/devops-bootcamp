@@ -1037,7 +1037,7 @@ Welcome! You must be here because you're interested in DevOps. Don't worry, we'l
 
 ## Target Audience
 
-This DevOps Bootcamp is used as an introduction to DevOps for Liatrio's apprentices. Therefore, there are deliverables at the end of each section and quizzes sprinkled throughout that help guide the apprentices' training. However, anyone can go through the DevOps Bootcamp. Feel free to ignore the deliverables, quizzes, etc. This bootcamp also assumes the bootcamper is using a Mac for the deliverables.
+This DevOps Bootcamp is used as an introduction to DevOps for Liatrio's apprentices. Therefore, there are deliverables at the end of each section and knowledge checks sprinkled throughout that help guide the apprentices' training. However, anyone can go through the DevOps Bootcamp. Feel free to ignore the deliverables, knowledge checks, etc. This bootcamp also assumes the bootcamper is using a Mac for the deliverables.
 
 ## Disclaimer
 
@@ -1069,17 +1069,17 @@ This bootcamp alone will by no means make anyone an expert on DevOps; that's whe
 
 > "It's better to over communicate than to under communicate."
 
-## Deliverable and Quiz Format
+## Deliverable and Knowledge Check Format
 
 **Deliverables**
 
 If you are an apprentice (or if you just want to add to your learning), here's a little insight on the deliverables the bootcamp will provide. At the end of each section, you will typically encounter a bulleted list of deliverables. They will usually be structured to get you thinking/reflecting/researching key points that the section covered.
 
-**Quizzes**
+**Knowledge Checks**
 
-As mentioned before, you'll also find small quizzes sprinkled throughout the bootcamp. Don't worry, they aren't graded and scores aren't tracked, so there's zero pressure when it comes to them. That being said, they are very valuable for learning, so it would be wise to take the time to not only get the correct answers on them, but to really understand *why* those are the correct answers.
+As mentioned before, you'll also find small knowledge checks sprinkled throughout the bootcamp. Don't worry, they aren't graded and scores aren't tracked, so there's zero pressure when it comes to them. That being said, they are very valuable for learning, so it would be wise to take the time to not only get the correct answers on them, but to really understand *why* those are the correct answers.
 
-Here's a sample quiz to show you how they'll behave:
+Here's a sample knowledge check to show you how they'll behave:
 
 <div class="quizdown">
     <div id="landing-page-quiz.js" ></div>
