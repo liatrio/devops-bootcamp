@@ -1,6 +1,6 @@
 const rawQuizdown = `
 
-# Assume you want to scrape a GitHub org for an entire list of its users and rich details about each of its repositories. Keeping rate limiting and efficiency in mind, which GitHub API would be preferable?
+# Assume you want to scrape a GitHub org for an entire list of its users and rich details about each of their repositories. Keeping rate limiting and efficiency in mind, which GitHub API would be preferable?
 
 1. [x] REST
 	> Good. You could achieve this in just one or two API calls
