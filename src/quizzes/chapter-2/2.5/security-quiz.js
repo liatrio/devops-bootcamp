@@ -4,7 +4,7 @@ const rawQuizdown= `
 shuffleQuestions: true
 ---
 
-# In case you're worried about security risks stemming from dependency versioning, which of the security tools mentioned above would you use if you wanted to ensure your dependencies get safely updated?
+# Which tool is most effective for automatically upgrading libraries to reduce security vulnerabilities?
 
 1. [x] Dependabot
 1. [ ] Code scanning
