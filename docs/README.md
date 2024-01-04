@@ -42,7 +42,7 @@ docs/1-introduction/1.3.5-networking.md:
 docs/1-introduction/1.4-external-resources.md:
   category: Fundamentals
   estReadingMinutes: 50
-docs/2-GitHub/2.2-Actions.md:
+docs/2-Github/2.2-Actions.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -68,7 +68,7 @@ docs/2-GitHub/2.2-Actions.md:
       estMinutes: 240
       technologies:
         - GitHub Actions
-docs/2-GitHub/2.3-Projects.md:
+docs/2-Github/2.3-Projects.md:
   category: Agile Development
   estReadingMinutes: 5
   exercises:
@@ -79,7 +79,7 @@ docs/2-GitHub/2.3-Projects.md:
       estMinutes: 80
       technologies:
         - GitHub Projects
-docs/2-GitHub/2.4-APIs.md:
+docs/2-Github/2.4-APIs.md:
   category: Fundamentals
   estReadingMinutes: 30
   exercises:
@@ -91,7 +91,7 @@ docs/2-GitHub/2.4-APIs.md:
       technologies:
         - APIs
         - Javascript
-docs/2-GitHub/2.5-Security.md:
+docs/2-Github/2.5-Security.md:
   category: Fundamentals
   estReadingMinutes: 30
   exercises:

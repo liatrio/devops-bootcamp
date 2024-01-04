@@ -13,7 +13,7 @@
 | Chapter                 | Total Hours          | Number of Weeks |
 |-------------------------|----------------------:|------------------:|
 | 1. Introduction          | <p id=1-introduction></p> | <p id=1-introduction-weeks></p> |
-| 2. GitHub                | <p id=2-GitHub></p> | <p id=2-GitHub-weeks></p> |
+| 2. GitHub                | <p id=2-Github></p> | <p id=2-Github-weeks></p> |
 | 3. Virtualization        | <p id=3-virtual-machines-containers></p> | <p id=3-virtual-machines-containers-weeks></p> |
 | 4. Cloud Computing       | <p id=4-cloud-computing></p> | <p id=4-cloud-computing-weeks></p> |
 | 5. Development Practices | <p id=5-software-development-practices></p> |<p id=5-software-development-practices-weeks></p> |
