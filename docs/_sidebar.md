@@ -24,12 +24,12 @@
 
 - **Chapter 2**
 
-- [2.0 - Github](2-Github/2.0-overview.md)
-- [2.1 - Features](2-Github/2.1-features.md)
-- [2.2 - Actions](2-Github/2.2-Actions.md)
-- [2.3 - Projects](2-Github/2.3-Projects.md)
-- [2.4 - APIs](2-Github/2.4-APIs.md)
-- [2.5 - Security](2-Github/2.5-Security.md)
+- [2.0 - GitHub](2-GitHub/2.0-overview.md)
+- [2.1 - Features](2-GitHub/2.1-features.md)
+- [2.2 - Actions](2-GitHub/2.2-Actions.md)
+- [2.3 - Projects](2-GitHub/2.3-Projects.md)
+- [2.4 - APIs](2-GitHub/2.4-APIs.md)
+- [2.5 - Security](2-GitHub/2.5-Security.md)
 
 - **Chapter 3**
 

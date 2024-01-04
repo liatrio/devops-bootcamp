@@ -42,24 +42,24 @@ docs/1-introduction/1.3.5-networking.md:
 docs/1-introduction/1.4-external-resources.md:
   category: Fundamentals
   estReadingMinutes: 50
-docs/2-Github/2.2-Actions.md:
+docs/2-GitHub/2.2-Actions.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
     - name: Augment basic workflow
       description: >-
         Take a basic workflow and update it to include a few common things
-        you'll see inside Github Actions
+        you'll see inside GitHub Actions
       estMinutes: 60
       technologies:
-        - Github Actions
+        - GitHub Actions
     - name: Going Deeper
       description: >-
         Take the newly improved workflow and use different methods to achieve
         the same thing.  Introduces new important concepts/actions
       estMinutes: 120
       technologies:
-        - Github Actions
+        - GitHub Actions
     - name: Consolidate what we have and make it reusable
       description: >-
         Now we go one step further and take one of our jobs and make it into a
@@ -67,31 +67,31 @@ docs/2-Github/2.2-Actions.md:
         reusable version
       estMinutes: 240
       technologies:
-        - Github Actions
-docs/2-Github/2.3-Projects.md:
+        - GitHub Actions
+docs/2-GitHub/2.3-Projects.md:
   category: Agile Development
   estReadingMinutes: 5
   exercises:
     - name: Create your own Project
       description: >-
-        Play around with Github Projects and get used to using its many features
+        Play around with GitHub Projects and get used to using its many features
         and interfaces to organize your work.
       estMinutes: 80
       technologies:
-        - Github Projects
-docs/2-Github/2.4-APIs.md:
+        - GitHub Projects
+docs/2-GitHub/2.4-APIs.md:
   category: Fundamentals
   estReadingMinutes: 30
   exercises:
-    - name: Interact with Github using its two available APIs
+    - name: Interact with GitHub using its two available APIs
       description: >-
-        Create and retrieve resources in Github using the REST and GraphQL
+        Create and retrieve resources in GitHub using the REST and GraphQL
         APIs.  Get some experience using them and compare the two approaches.
       estMinutes: 180
       technologies:
         - APIs
         - Javascript
-docs/2-Github/2.5-Security.md:
+docs/2-GitHub/2.5-Security.md:
   category: Fundamentals
   estReadingMinutes: 30
   exercises:
@@ -101,19 +101,19 @@ docs/2-Github/2.5-Security.md:
         Security tab
       estMinutes: 30
       technologies:
-        - Github Security
+        - GitHub Security
     - name: Dependabot
       description: 'Setup dependabot alerts, version and security updates'
       estMinutes: 20
       technologies:
-        - Github Security
+        - GitHub Security
     - name: Code-scanning
       description: >-
         Setup secret-scanning in your own repository and see how it prevents you
         from committing secrets
       estMinutes: 20
       technologies:
-        - Github Security
+        - GitHub Security
 docs/3-virtual-machines-containers/3.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
@@ -835,13 +835,13 @@ docs/7-infrastructure-configuration-management/7.2-ansible.md:
         - GitHub self-hosted runner
     - name: Idempotency
       description: >-
-        Provision a virtual machine and install a Github self-hosted runner
+        Provision a virtual machine and install a GitHub self-hosted runner
         using Ansible as a provisioner in Vagrant while maintaining idempotency.
       estMinutes: 300
       technologies:
         - Ansible
         - Vagrant
-        - Github self-hosted runner
+        - GitHub self-hosted runner
     - name: Ansible and AWS EC2
       description: >-
         Provision an AWS EC2 instance and install a GitHub self-hosted runner
