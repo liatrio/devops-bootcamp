@@ -22,7 +22,7 @@ shuffleQuestions: true
 1. [ ] Dependabot
 1. [ ] Code scanning
 1. [x] Secret Scanning
-	> You'll thank yourself later if you turn this on :)
+	> Most of us, at one point or another, have accidentally pushed a token to a GitHub repo. It's a simple mistake, but can easily get you into a serious mess. You'll thank yourself later if you turn this on
 `;
 
 export { rawQuizdown }
