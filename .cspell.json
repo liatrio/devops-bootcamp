@@ -123,7 +123,9 @@
         "useCompounds"
     ],
     "flagWords": [
-        "hte"
+        "hte",
+        "github:GitHub",
+        "github's:GitHub's"
     ],
     "files": [
         "*.md",
@@ -135,6 +137,9 @@
         "fontawesome/**",
         "img/**",
         "node_modules/**"
+    ],
+    "ignoreRegExpList": [
+        "\\S+[gG]ithub\\S*"
     ],
     "features": {
         "weighted-suggestions": true
