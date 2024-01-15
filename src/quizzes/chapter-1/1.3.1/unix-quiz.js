@@ -12,16 +12,16 @@ shuffleQuestions: true
 1. [ ] cp
 1. [ ] rm
 
-# Assume you are a new user and the directory \`~/docs\` does not exist. Which of the following mkdir commands will successfully create the nested directories \`~/docs/work\`? Check all that apply:
+# Assume you are a new user and the directory \`/home/user/docs\` does not exist. Which of the following mkdir commands will successfully create the nested directories \`/home/user/docs/work\`? Check all that apply:
 
-- [x] mkdir -p ~/docs/work
-  > The -p or -pv flag allows mkdir to create parent directories as needed. This command will create all necessary intermediate directories, including docs.
-- [x] mkdir -pv ~/docs/work
-  > The -p or -pv flag allows mkdir to create parent directories as needed. This command will create all necessary intermediate directories, including docs.
-- [x] mkdir ~/docs && mkdir ~/docs/work
+- [x] mkdir -p /home/user/docs/work
+  > The -p or --parents flag allows mkdir to create parent directories as needed. This command will create all necessary intermediate directories, including docs.
+- [x] mkdir --parents /home/user/docs/work
+  > The -p or --parents flag allows mkdir to create parent directories as needed. This command will create all necessary intermediate directories, including docs.
+- [x] mkdir /home/user/docs && mkdir /home/user/docs/work
   > This command sequence first attempts to create the docs directory and then creates the work directory inside it. Since docs does not exist, it will be created successfully, followed by the successful creation of work.
-- [ ] mkdir ~/docs/work
-  > This command will fail because the intermediate directory (~/docs) does not exist. 
+- [ ] mkdir /home/user/docs/work
+  > This command will fail because the intermediate directory (/home/user/docs) does not exist. 
 
 # If you run the following command on a nonexistent directory, what will happen?
 \`\`\`bash

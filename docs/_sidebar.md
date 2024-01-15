@@ -24,7 +24,7 @@
 
 - **Chapter 2**
 
-- [2.0 - Github](2-Github/2.0-overview.md)
+- [2.0 - GitHub](2-Github/2.0-overview.md)
 - [2.1 - Features](2-Github/2.1-features.md)
 - [2.2 - Actions](2-Github/2.2-Actions.md)
 - [2.3 - Projects](2-Github/2.3-Projects.md)
