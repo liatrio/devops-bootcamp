@@ -3,7 +3,7 @@ const rawQuizdown = `
 shuffleAnswers: true
 ---
 
-# Assume you made a Dockerfile that, when built into an image and ran, will install a handful of packages and log a success string. If you are on MacOS and your friend is on Windows, can you send them the image and expect the container to build and operate exactly the same?
+# Assume you made a Dockerfile that, when built into an image and ran, will install a handful of packages and log a success string. If you are on MacOS and your friend is on Windows, can you send them the Dockerfile and expect the container to build and operate exactly the same?
 
 1. [x] Yes
 	> Excellent, this is one of the main points of Docker and containers as a whole! You can share images between different environments and they *will* behave the same. They greatly help relieve the "It works on my machine" allegations
