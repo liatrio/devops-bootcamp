@@ -30,7 +30,7 @@ shuffleAnswers: true
 1. [x] You are placed into a large JSON object file full of metadata about the organization's EC2 instances
 	> Good. This output can be piped to a file for handling in automated workflows, and can be modified to filter the list to your specifications
 1. [ ] A list of all of the names of the organization's EC2 instances prints. You can further inspect any of them
-	> To filter by names, IDs or other labels, you'd have to narrow your **describe-instances** command via different command options
+	> To limit the fields returned to just names, IDs or other labels, you'd have to leverage the `--query` flag on **describe-instances**. This expects a [JMESpath](https://jmespath.org/) to the fields you want returned
 1. [ ] The command fails as it is improper
 	> The command is in fact proper
 1. [ ] The terminal further prompts you for the name of a specific EC2 instance to describe
