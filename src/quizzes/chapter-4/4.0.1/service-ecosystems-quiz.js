@@ -1,6 +1,6 @@
 const rawQuizdown = `
 
-# You are working on your senior project and are designing a basic web app. Currently you are at the early stages of development and aren't hosting your project anywhere (ie you are using localhost to run)<br>What service ecosystem are you currently experiencing?
+# You are working on a new personal project and are designing a basic web app. Currently you are at the early stages of development and aren't hosting your project anywhere (ie you are using localhost to run)<br>What service ecosystem are you currently experiencing?
 
 1. [x] Self-Managed
 	> Good. This is as simple as it gets. You supply everything that your app needs and aren't outsourcing for any of it
