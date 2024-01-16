@@ -7,11 +7,15 @@ shuffleAnswers: true
 # Fill in the blanks: ____ is more suitable for simple, local development, while ____ is more suitable for complex, production environments
 
 1. [x] Docker Compose, Kubernetes
+	> Good. Both tools accomplish the same goal, but on separate complexity scopes
 1. [ ] Kubernetes, Docker Compose
+	> Because Docker Compose lacks features needed for complicated environments (which most production environments are), Kubernetes is the superior tool in production cases
 1. [ ] Kubernetes, Docker
+	> Keep in mind that while Kubernetes and Docker Compose handle container orchestration, all Docker does is create containers
 1. [ ] Docker, Kubernetes
+	> Keep in mind that while Kubernetes and Docker Compose handle container orchestration, all Docker does is create containers
 
-# Order the following Kubernetes resources into the correct scopes (highest scope to lowest scope)
+# Order the following Kubernetes resources into the correct scopes (highest scope to lowest scope)<br>If you are confused, reread the [Design](https://devops-bootcamp.liatr.io/#/3-virtual-machines-containers/3.5.2-kubernetes?id=design) section above.
 
 1. Cluster
 2. Node
@@ -27,7 +31,9 @@ shuffleAnswers: true
 # Fill in the blanks: While Services and Deployments both are used to group pods, ____ are used for the starting/stopping/scaling of pods and ____ are used for the linking/networking of pods
 
 1. [x] Deployments, Services
+	> Good. These terms are easy to mix up because they deal with similar things, so this is a good item to commit to memory
 1. [ ] Services, Deployments
+	> Not quite. These terms are easy to mix up because they deal with similar things, so don't sweat it. Reread the [Services](https://devops-bootcamp.liatr.io/#/3-virtual-machines-containers/3.5.2-kubernetes?id=services) and [Deployments](https://devops-bootcamp.liatr.io/#/3-virtual-machines-containers/3.5.2-kubernetes?id=deployments) definitions above to help commit these to memory
 
 `;
 
