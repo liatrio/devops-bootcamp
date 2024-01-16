@@ -1,6 +1,7 @@
 const rawQuizdown = `
 ---
 shuffleQuestions: true
+shuffleAnswers: true
 ---
 
 # True or False: In your Docker Compose file, you can only reference images that you have locally
@@ -25,8 +26,8 @@ shuffleQuestions: true
 	> This is how manual configuration works. Docker Compose offers configuration yaml files to easily orchestrate configuration
 - [x] Automatic creation of default networks for services
 	> Good. If you are trying to link separate Docker containers manually, there is necessary work to be done for networking. Compose does this for you
-- [x] Scalability of services
-	> Good. You can easily define or change the number of replicas of containers, which will scale up or down the container count and split work among them
+- [ ] Scalability of services
+	> Not quite. Out of the box, Docker Compose doesn't allow you to scale containers (quickly spin up or down number of replicas of a container to split the workload). This is partly why Compose isn't well-suited for complex production environments. In the next section, you'll learn about Kubernetes, a tool that *can* do things such as scaling 
 - [x] Ease of persistent data storage options
 	> Good. You can manually attach volumes to containers and maintain them, but Compose greatly simplifies the process
 
