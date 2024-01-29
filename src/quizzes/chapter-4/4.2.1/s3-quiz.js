@@ -55,7 +55,7 @@ shuffleQuestions: true
 1. [x] False
 	> Good. You can either manually change it, or you can configure a lifecycle policy that will automatically move your storage to the most appropriate storage class
 
-# How does S3 ensure the safety and durability of your data? Select all that apply.<br>For more information, please read the [Protecting Your Data](https://www.amazonaws.cn/en/s3/features/) section of the S3 features documentation.
+# How does S3 ensure the safety and durability of your data? Select all that apply.<br>For more information about various features, please read the [What is Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) documentation.
 
 - [x] It makes copies of your data and stores them in several different facilities
 	> Good. S3 stores your data in multiple facilities, and multiple machines within each facility
@@ -68,7 +68,7 @@ shuffleQuestions: true
 - [ ] S3 automatically deletes old verisons of storage, reducing data clutter and risk of corruption
 	> Incorrect. S3 actually saves all versions of your storage in case you need to roll back.
 
-# How does S3 ensure the security of your data? Select all that apply.<br>For more information, please read the [Protecting Your Data](https://www.amazonaws.cn/en/s3/features/) section of the S3 features documentation.
+# How does S3 ensure the security of your data? Select all that apply.<br>For more information, please read the [Access Management and Security](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html#S3Features) section of the S3 features documentation.
 
 - [x] Identity and Access Management (IAM)
 	> Good. IAM roles dictate who can create/interact with objects in a service account
