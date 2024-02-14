@@ -134,6 +134,11 @@
 - [8.6 - Webhooks](8-kubernetes-container-orchestration/8.6-webhooks.md)
 - [8.7 - Hello K8s](8-kubernetes-container-orchestration/8.7-hello-k8s.md)
 
+- **Chapter 9**
+
+- [9.0 - Platform Engineering Overview](9-platform-engineering/9.0-overview.md)
+- [9.1 - Backstage](9-platform-engineering/9.1-backstage.md)
+
 - **Addendum**
 
 - [Addendum](addendum/addendum-overview.md)
