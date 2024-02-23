@@ -134,7 +134,7 @@ docs/3-virtual-machines-containers/3.1-golden-images.md:
       technologies:
         - VMWare Fusion
         - Packer
-        - CentOS
+        - Debian
 docs/3-virtual-machines-containers/3.2-local-development.md:
   category: Virtualization
   estReadingMinutes: 15
@@ -161,7 +161,7 @@ docs/3-virtual-machines-containers/3.3-managing-infrastructure.md:
       estMinutes: 390
       technologies:
         - Vagrant
-        - CentOS
+        - Debian
         - GitHub Actions
         - Nexus OSS
 docs/3-virtual-machines-containers/3.4-containers.md:
