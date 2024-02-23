@@ -1015,6 +1015,9 @@ docs/8-kubernetes-container-orchestration/8.8-hello-k8s.md:
         - Webhooks
         - Custom Resources
         - Kubebuilder
+docs/9-platform-engineering/9.0-overview.md:
+  category: Platform Engineering
+  estReadingMinutes: 15
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
