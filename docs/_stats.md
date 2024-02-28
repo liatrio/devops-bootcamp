@@ -20,5 +20,4 @@
 | 6. Release Management    | <p id=6-release-management></p> |<p id=6-release-management-weeks></p> |
 | 7. IaC                   | <p id=7-infrastructure-configuration-management></p> |<p id=7-infrastructure-configuration-management-weeks></p> |
 | 8. Kubernetes            | <p id=8-kubernetes-container-orchestration></p> |<p id=8-kubernetes-container-orchestration-weeks></p> |
-
-<canvas id="technology-word-cloud"></canvas>
+| 9. Platform Engineering            | <p id=9-platform-engineering></p> |<p id=9-platform-engineering-weeks></p> |
