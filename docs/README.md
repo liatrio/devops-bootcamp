@@ -1018,6 +1018,44 @@ docs/8-kubernetes-container-orchestration/8.8-hello-k8s.md:
 docs/9-platform-engineering/9.0-overview.md:
   category: Platform Engineering
   estReadingMinutes: 15
+docs/9-platform-engineering/9.1-backstage.md:
+  category: Platform Engineering
+  estReadingMinutes: 20
+  exercises:
+    - name: Create a GitHub Organization
+      description: >
+        This exercise involves creating a GitHub Organization to simulate an
+        integrated SCM environment, similar to what you would find in a
+        real-world development ecosystem. Each student will create their own
+        GitHub Organization following the provided instructions.
+      estMinutes: 30
+      technologies:
+        - GitHub
+    - name: Stand up local instance of Backstage
+      description: >
+        Students will set up a local instance of Backstage by following the
+        official Getting Started guide. This exercise covers starting the local
+        instance, familiarizing with the UI, and customizing the appearance of
+        the Backstage instance including logo and application name changes.
+        Extra credit is given for applying a custom theme. The customized
+        instance should then be pushed to a repo in the newly created GitHub
+        Organization.
+      estMinutes: 60
+      technologies:
+        - Backstage
+        - Docker
+    - name: Configure Authentication via GitHub
+      description: >
+        This exercise focuses on configuring authentication for the Backstage
+        instance using GitHub. Students will create an OAuth app within their
+        GitHub Organization and integrate it with Backstage for authentication
+        purposes. This includes not storing secrets in plain text and ensuring
+        secure authentication practices. Verification of login functionality
+        through GitHub is the final step to confirm successful integration.
+      estMinutes: 120
+      technologies:
+        - Backstage
+        - GitHub
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
