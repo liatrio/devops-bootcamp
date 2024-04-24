@@ -43,7 +43,7 @@
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
     "babel-loader": "^9.1.2",
-    "cspell": "^6.31.1",
+    "cspell": "^8.0.0",
     "husky": "^8.0.3",
     "remark": "^14.0.2",
     "remark-cli": "^11.0.0",
