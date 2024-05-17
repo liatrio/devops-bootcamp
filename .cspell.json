@@ -95,6 +95,7 @@
         "structs",
         "terraformrc",
         "testvm",
+        "tfplugindocs",
         "tfsdk",
         "tfvars",
         "theia",
