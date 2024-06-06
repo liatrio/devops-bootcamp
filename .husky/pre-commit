@@ -9,4 +9,3 @@ echo
 echo "\033[33mStarting front matter precommit hook...\033[0m"
 ## Pre-commit hook that condenses section front-matter into master record.
 exec node .husky/front-matter-condenser.js update
-exit 1
