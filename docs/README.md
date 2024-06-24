@@ -1060,37 +1060,50 @@ docs/9-platform-engineering/9.1.1-software-catalog.md:
   category: Backstage Software Catalog
   estReadingMinutes: 20
   exercises:
-    - name: Create a GitHub Organization
+    - name: Entity Registration
       description: >
-        This exercise involves creating a GitHub Organization to simulate an
-        integrated SCM environment, similar to what you would find in a
-        real-world development ecosystem. Each student will create their own
-        GitHub Organization following the provided instructions.
-      estMinutes: 30
-      technologies:
-        - GitHub
-    - name: Stand up local instance of Backstage
-      description: >
-        Students will set up a local instance of Backstage by following the
-        official Getting Started guide. This exercise covers starting the local
-        instance, familiarizing with the UI, and customizing the appearance of
-        the Backstage instance including logo and application name changes.
-        Extra credit is given for applying a custom theme. The customized
-        instance should then be pushed to a repo in the newly created GitHub
-        Organization.
-      estMinutes: 60
+        This exercise instructs students to register an entity to their local
+        Backstage instance.  The entity should correspond to a repo belonging to
+        a GitHub organization that the student owns.  This exercise will require
+        students to configure their Backstage instance to have the permissions
+        needed to access their GitHub organization and will help pave the way
+        for the following exercise.
+      estMinutes: 20
       technologies:
         - Backstage
-        - Docker
-    - name: Configure Authentication via GitHub
+        - GitHub
+    - name: Catalog Ingestion
       description: >
-        This exercise focuses on configuring authentication for the Backstage
-        instance using GitHub. Students will create an OAuth app within their
-        GitHub Organization and integrate it with Backstage for authentication
-        purposes. This includes not storing secrets in plain text and ensuring
-        secure authentication practices. Verification of login functionality
-        through GitHub is the final step to confirm successful integration.
+        Students will configure their Backstage instance to automatically
+        perform read operations on a given GitHub organization and ingest
+        `catalog-info.yaml` files existing in that organization in order to
+        automatically register entities.  They will need to configure GitHub as
+        a catalog and ensure that their Backstage instance combs their
+        organization for the correct file(s) at an appropriate interval.
+      estMinutes: 80
+      technologies:
+        - Backstage
+        - GitHub
+    - name: Dependency Graphs
+      description: >
+        Students will fork two interdependent repos to their organization and
+        ensure that their Backstage instance recognizes the two repos while also
+        displaying the repos' interdependence via the "Relations" section of
+        their overviews in the UI.  This requires a thorough understanding of
+        the available fields in `catalog-info.yaml` files along with a Backstage
+        app's configuration file.  
       estMinutes: 120
+      technologies:
+        - Backstage
+        - GitHub
+    - name: OpenAPI Definitions
+      description: >
+        Here, students are required to provide an OpenAPI specification which
+        their Backstage instance can ingest and associate with a definition for
+        an API having source code in a repo owned by the student's
+        organization.  Students may use a repo that already has an Open API spec
+        file or they may generate the necessary spec data from an API.  
+      estMinutes: 30
       technologies:
         - Backstage
         - GitHub
