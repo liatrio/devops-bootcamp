@@ -1101,7 +1101,7 @@ docs/9-platform-engineering/9.1.1-software-catalog.md:
         Here, students are required to provide an OpenAPI specification which
         their Backstage instance can ingest and associate with a definition for
         an API having source code in a repo owned by the student's
-        organization.  Students may use a repo that already has an Open API spec
+        organization.  Students may use a repo that already has an OpenAPI spec
         file or they may generate the necessary spec data from an API.  
       estMinutes: 30
       technologies:
