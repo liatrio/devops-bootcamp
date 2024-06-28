@@ -138,6 +138,7 @@
 
 - [9.0 - Platform Engineering Overview](9-platform-engineering/9.0-overview.md)
 - [9.1 - Backstage](9-platform-engineering/9.1-backstage.md)
+  - [9.1.3 - Software Templates](9-platform-engineering/9.1.3-software-templates.md)
 
 - **Addendum**
 

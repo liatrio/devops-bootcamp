@@ -1056,6 +1056,36 @@ docs/9-platform-engineering/9.1-backstage.md:
       technologies:
         - Backstage
         - GitHub
+docs/9-platform-engineering/9.1.3-software-templates.md:
+  category: Software Templates
+  estReadingMinutes: 20
+  exercises:
+    - name: Create a simple template
+      description: >
+        This exercise involves writing a custom Software Template and
+        configuring Backstage to register it as an entity that can be used from
+        the UI, and then using the template to publish a new repo in a GitHub
+        organization.  This can be achieved by following two separate guides in
+        Spotify's official Backstage docs: one for writing the Software
+        Template, and the other for providing Backstage with the necessary
+        permissions to publish new GitHub repos using the Template.  Some extra
+        time is allotted for misc. debugging, since it seems that Backstage is
+        in a transitory period and there's no telling whether their guides will
+        remain accurate.
+      estMinutes: 45
+      technologies:
+        - Backstage
+        - GitHub
+    - name: Write a Custom Action
+      description: >
+        Students are to become acquainted with the Scaffold plugin and extend
+        this plugin by writing a custom action which can be used in the custom
+        template they wrote in the previous exercise.  Some special instructions
+        are provided because the only available official guides are outdated.  
+      estMinutes: 60
+      technologies:
+        - Backstage
+        - GitHub
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
