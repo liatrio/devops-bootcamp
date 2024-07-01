@@ -1107,6 +1107,24 @@ docs/9-platform-engineering/9.1.1-software-catalog.md:
       technologies:
         - Backstage
         - GitHub
+docs/9-platform-engineering/9.1.2-techdocs.md:
+  category: TechDocs
+  estReadingMinutes: 10
+  exercises:
+    - name: Enable documentation for an already existing entity
+      description: >
+        This exercise instructs students to add the bare minimum amount of files
+        needed for their Backstage instance to generate an MkDocs site and
+        associate it with an entity in their Software Catalog.  Extra credit is
+        offered for studying Backstage's ability to search within TechDocs
+        stored in the Catalog -- the basic setup we point students towards in
+        this exercise can lead to a search-related bug which is valuable for
+        understanding the different ways Backstage can be configured to manage
+        TechDocs.
+      estMinutes: 40
+      technologies:
+        - GitHub
+        - Backstage
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
@@ -1222,7 +1240,7 @@ Use Docker to build and serve the content, but remember to rebuild the Docker im
 - Images should be placed under the root `img` folder and referred to using HTML `<img>` tags
 - H3 header (`###`) should be the default header within a page
 - H2 header (`##`) will appear in the navigation as the page's table of contents
-- To add a new section, add a new file to `docs` such as `x.x-new-section.md`, and then reference it in `docs/_sidebar.md`.  
+- To add a new section, add a new file to `docs` such as `x.x-new-section.md`, and then reference it in `docs/_sidebar.md`.
 
 [Contributors](contributors.md)
 
