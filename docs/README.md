@@ -1111,7 +1111,7 @@ docs/9-platform-engineering/9.1.2-techdocs.md:
   category: TechDocs
   estReadingMinutes: 10
   exercises:
-    - name: Enable documentation for an already existing entity
+    - name: Enable Documentation for an Existing Entity
       description: >
         This exercise instructs students to add the bare minimum amount of files
         needed for their Backstage instance to generate an MkDocs site and
