@@ -140,6 +140,7 @@
 - [9.1 - Backstage](9-platform-engineering/9.1-backstage.md)
   - [9.1.1 - Software Catalog](9-platform-engineering/9.1.1-software-catalog.md)
   - [9.1.2 - TechDocs](9-platform-engineering/9.1.2-techdocs.md)
+  - [9.1.3 - Software Templates](9-platform-engineering/9.1.3-software-templates.md)
 
 - **Addendum**
 

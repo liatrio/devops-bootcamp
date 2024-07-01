@@ -108,7 +108,8 @@
         "VMSS",
         "VNET",
         "westus",
-        "zxrnr"
+        "zxrnr",
+        "scaffolder"
     ],
     "dictionaries": [
         "aws",
