@@ -1056,6 +1056,75 @@ docs/9-platform-engineering/9.1-backstage.md:
       technologies:
         - Backstage
         - GitHub
+docs/9-platform-engineering/9.1.1-software-catalog.md:
+  category: Backstage Software Catalog
+  estReadingMinutes: 20
+  exercises:
+    - name: Entity Registration
+      description: >
+        This exercise instructs students to register an entity to their local
+        Backstage instance.  The entity should correspond to a repo belonging to
+        a GitHub organization that the student owns.  This exercise will require
+        students to configure their Backstage instance to have the permissions
+        needed to access their GitHub organization and will help pave the way
+        for the following exercise.
+      estMinutes: 20
+      technologies:
+        - Backstage
+        - GitHub
+    - name: Catalog Ingestion
+      description: >
+        Students will configure their Backstage instance to automatically
+        perform read operations on a given GitHub organization and ingest
+        `catalog-info.yaml` files existing in that organization in order to
+        automatically register entities.  They will need to configure GitHub as
+        a catalog and ensure that their Backstage instance combs their
+        organization for the correct file(s) at an appropriate interval.
+      estMinutes: 80
+      technologies:
+        - Backstage
+        - GitHub
+    - name: Dependency Graphs
+      description: >
+        Students will fork two interdependent repos to their organization and
+        ensure that their Backstage instance recognizes the two repos while also
+        displaying the repos' interdependence via the "Relations" section of
+        their overviews in the UI.  This requires a thorough understanding of
+        the available fields in `catalog-info.yaml` files along with a Backstage
+        app's configuration file.  
+      estMinutes: 120
+      technologies:
+        - Backstage
+        - GitHub
+    - name: OpenAPI Definitions
+      description: >
+        Here, students are required to provide an OpenAPI specification which
+        their Backstage instance can ingest and associate with a definition for
+        an API having source code in a repo owned by the student's
+        organization.  Students may use a repo that already has an OpenAPI spec
+        file or they may generate the necessary spec data from an API.  
+      estMinutes: 30
+      technologies:
+        - Backstage
+        - GitHub
+docs/9-platform-engineering/9.1.2-techdocs.md:
+  category: TechDocs
+  estReadingMinutes: 10
+  exercises:
+    - name: Enable documentation for an already existing entity
+      description: >
+        This exercise instructs students to add the bare minimum amount of files
+        needed for their Backstage instance to generate an MkDocs site and
+        associate it with an entity in their Software Catalog.  Extra credit is
+        offered for studying Backstage's ability to search within TechDocs
+        stored in the Catalog -- the basic setup we point students towards in
+        this exercise can lead to a search-related bug which is valuable for
+        understanding the different ways Backstage can be configured to manage
+        TechDocs.
+      estMinutes: 40
+      technologies:
+        - GitHub
+        - Backstage
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
@@ -1171,7 +1240,7 @@ Use Docker to build and serve the content, but remember to rebuild the Docker im
 - Images should be placed under the root `img` folder and referred to using HTML `<img>` tags
 - H3 header (`###`) should be the default header within a page
 - H2 header (`##`) will appear in the navigation as the page's table of contents
-- To add a new section, add a new file to `docs` such as `x.x-new-section.md`, and then reference it in `docs/_sidebar.md`.  
+- To add a new section, add a new file to `docs` such as `x.x-new-section.md`, and then reference it in `docs/_sidebar.md`.
 
 [Contributors](contributors.md)
 
