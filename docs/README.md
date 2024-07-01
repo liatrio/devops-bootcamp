@@ -1129,7 +1129,7 @@ docs/9-platform-engineering/9.1.3-software-templates.md:
   category: Software Templates
   estReadingMinutes: 20
   exercises:
-    - name: Create a simple template
+    - name: Create a Simple Template
       description: >
         This exercise involves writing a custom Software Template and
         configuring Backstage to register it as an entity that can be used from
