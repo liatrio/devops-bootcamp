@@ -12,4 +12,4 @@ exec node .husky/front-matter-condenser.js update
 
 ## Pre-commit hook that runs markdown-lintci2
 echo "\033[33mStarting linter precommit hook...\033[0m"
-npm run lint
+exec npm run lint
