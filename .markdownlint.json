@@ -29,5 +29,8 @@
     "no-emphasis-as-header": false,
     "blanks-around-fences": false,
     "blanks-around-lists": false,
-    "code-block-style": false
+    "code-block-style": false,
+    "no-emphasis-as-heading": false,
+    "no-duplicate-heading": false,
+    "heading-increment": false
 }

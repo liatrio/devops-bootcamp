@@ -9,3 +9,7 @@ echo
 echo "\033[33mStarting front matter precommit hook...\033[0m"
 ## Pre-commit hook that condenses section front-matter into master record.
 exec node .husky/front-matter-condenser.js update
+
+## Pre-commit hook that runs markdown-lintci2
+echo "\033[33mStarting linter precommit hook...\033[0m"
+exec npm run lint
