@@ -17,5 +17,6 @@
 - [Joshua Burns](https://github.com/jburns24)
 - [Travis Kroll](https://github.com/tjvkroll)
 - [Mikayla Billings-Alston](https://github.com/mcbillings)
+- [Sloane Tribble](https://github.com/SloaneTribble)
 
 [back](/)
