@@ -548,14 +548,12 @@ docs/5-software-development-practices/5.5.4-code-coverage.md:
   exercises:
     - name: Achieve 100% code coverage
       description: >-
-        Install node dependencies for code coverage (mocha, chai, nyc) and get
-        100% code coverage for a given module and tests.
+        Install node dependencies for code coverage (jest) and get 100% code
+        coverage for a given module and tests.
       estMinutes: 60
       technologies:
         - Node.js
-        - Mocha
-        - Chai
-        - NYC
+        - Jest
 docs/5-software-development-practices/5.5.5-test-automation.md:
   category: Software Quality
   estReadingMinutes: 5
