@@ -1,6 +1,5 @@
-
 module.exports = {
-	test: function()
+	simpleTest: function()
 	{
 		return 1;
 	},
