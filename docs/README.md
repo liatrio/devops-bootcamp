@@ -1153,6 +1153,30 @@ docs/9-platform-engineering/9.1.3-software-templates.md:
       technologies:
         - Backstage
         - GitHub
+docs/9-platform-engineering/9.1.4-plugins.md:
+  category: Backstage Plugins
+  estReadingMinutes: 10
+  exercises:
+    - name: Explore the Plugin Directory
+      description: >
+        Students receive an introduction to Backstage's plugin directory by
+        adding a plugin from the directory to their Backstage instance.  They
+        are encouraged to look through the plugin's source code and gain a basic
+        understanding of how it works.
+      estMinutes: 30
+      technologies:
+        - Backstage
+        - GitHub
+    - name: Write a Custom Plugin
+      description: >
+        Students will create their own Backstage plugin that exists outside of
+        Backstage's repo so it can be easily imported into any Backstage
+        instance.
+      estMinutes: 3000
+      technologies:
+        - Backstage
+        - TypeScript
+        - GitHub
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
