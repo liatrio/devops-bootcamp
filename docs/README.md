@@ -1111,7 +1111,7 @@ docs/9-platform-engineering/9.1.2-techdocs.md:
   category: TechDocs
   estReadingMinutes: 10
   exercises:
-    - name: Enable documentation for an already existing entity
+    - name: Enable Documentation for an Existing Entity
       description: >
         This exercise instructs students to add the bare minimum amount of files
         needed for their Backstage instance to generate an MkDocs site and
@@ -1125,7 +1125,37 @@ docs/9-platform-engineering/9.1.2-techdocs.md:
       technologies:
         - GitHub
         - Backstage
-docs/9-platform-engineering/9.1.3-plugins.md:
+docs/9-platform-engineering/9.1.3-software-templates.md:
+  category: Software Templates
+  estReadingMinutes: 20
+  exercises:
+    - name: Create a Simple Template
+      description: >
+        This exercise involves writing a custom Software Template and
+        configuring Backstage to register it as an entity that can be used from
+        the UI, and then using the template to publish a new repo in a GitHub
+        organization.  This can be achieved by following two separate guides in
+        Spotify's official Backstage docs: one for writing the Software
+        Template, and the other for providing Backstage with the necessary
+        permissions to publish new GitHub repos using the Template.  Some extra
+        time is allotted for misc. debugging, since it seems that Backstage is
+        in a transitory period and there's no telling whether their guides will
+        remain accurate.
+      estMinutes: 45
+      technologies:
+        - Backstage
+        - GitHub
+    - name: Write a Custom Action
+      description: >
+        Students are to become acquainted with the Scaffold plugin and extend
+        this plugin by writing a custom action which can be used in the custom
+        template they wrote in the previous exercise.  Some special instructions
+        are provided because the only available official guides are outdated.  
+      estMinutes: 60
+      technologies:
+        - Backstage
+        - GitHub
+docs/9-platform-engineering/9.1.4-plugins.md:
   category: Backstage Plugins
   estReadingMinutes: 10
   exercises:
@@ -1141,15 +1171,13 @@ docs/9-platform-engineering/9.1.3-plugins.md:
         - GitHub
     - name: Write a Custom Plugin
       description: >
-        Students will configure their Backstage instance to automatically
-        perform read operations on a given GitHub organization and ingest
-        `catalog-info.yaml` files existing in that organization in order to
-        automatically register entities.  They will need to configure GitHub as
-        a catalog and ensure that their Backstage instance combs their
-        organization for the correct file(s) at an appropriate interval.
-      estMinutes: 300
+        Students will create their own Backstage plugin that exists outside of
+        Backstage's repo so it can be easily imported into any Backstage
+        instance.
+      estMinutes: 3000
       technologies:
         - Backstage
+        - TypeScript
         - GitHub
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
