@@ -1286,6 +1286,7 @@ Use Docker to build and serve the content, but remember to rebuild the Docker im
 
 1. Run `docker compose up -d`
 2. Open <http://localhost:3000>
+3. To stop the container, run `docker compose down`
 
 ### More Information on Contributing
 
