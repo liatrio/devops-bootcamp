@@ -658,8 +658,8 @@ docs/6-release-management/6.2.5-go-releaser.md:
   exercises:
     - name: Go Releaser Exercise
       description: >-
-        Fork and clone an open source Go project, update a Self-Hosted GitHub
-        Actions Runner to deploy a release with Go Releaser.
+        Fork and clone an open source Go project, set up a workflow that will
+        deploy a release with Go Releaser.
       estMinutes: 240
       technologies:
         - Go
