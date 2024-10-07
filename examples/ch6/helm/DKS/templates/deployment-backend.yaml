@@ -1,49 +1,39 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: dks-api
   labels:
-    app.kubernetes.io/instance: devops-knowledge-share 
-    app.kubernetes.io/name: devops-knowledge-share
+    app: dks-api
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/instance: devops-knowledge-share 
-      app.kubernetes.io/name: devops-knowledge-share
+      app: dks-api
+  replicas: {{ .Values.replicaCount }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        kubectl.kubernetes.io/default-container:  dks-api
       labels:
-        app.kubernetes.io/instance: devops-knowledge-share 
-        app.kubernetes.io/name: devops-knowledge-share
+        app: dks-api
     spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.global.image.pullPolicy }}
-          ports:
-            - name: http
-              containerPort: 8080
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /api/tags/
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /api/tags/
-              port: http
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+      - name: dks-api
+        image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.global.image.pullPolicy }} 
+        livenessProbe:
+          tcpSocket:
+            port: {{ .Values.backend.service.port }} 
+          initialDelaySeconds: 5
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
+          periodSeconds: 10
+        envFrom:
+          - configMapRef:
+             name: dks-config
+        ports:
+        - containerPort: {{ .Values.backend.service.port }}
+      name: dks-api
+      restartPolicy: Always
+
