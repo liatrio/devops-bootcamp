@@ -133,7 +133,7 @@
 - [8.5 - HPAs](8-kubernetes-container-orchestration/8.5-hpas.md)
 - [8.6 - Webhooks](8-kubernetes-container-orchestration/8.6-webhooks.md)
 - [8.7 - Declarative Configuration](8-kubernetes-container-orchestration/8.7-declarative-configuration.md)
-  - [8.7.1 - Kustomize](8-kubernetes-container-orchestration/8.7.1-kustomize.md) 
+  - [8.7.1 - Kustomize](8-kubernetes-container-orchestration/8.7.1-kustomize.md)
 - [8.8 - Hello K8s](8-kubernetes-container-orchestration/8.8-hello-k8s.md)
 
 - **Chapter 9**
