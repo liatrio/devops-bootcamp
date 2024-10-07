@@ -18,5 +18,3 @@ backend:
   service:
     port: 8080
     
-mongodb:
-
