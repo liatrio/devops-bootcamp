@@ -1000,7 +1000,7 @@ docs/8-kubernetes-container-orchestration/8.6-webhooks.md:
         - Python
 docs/8-kubernetes-container-orchestration/8.7.1-kustomize.md:
   category: Container Orchestration
-  estReadingMinutes: 15
+  estReadingMinutes: 20
   exercises:
     - name: General Use-Case
       description: >-
@@ -1033,6 +1033,23 @@ docs/8-kubernetes-container-orchestration/8.7.1-kustomize.md:
         Kustomize patch to include the secret as an environment variable in a
         container.
       estMinutes: 30
+      technologies:
+        - Kubernetes
+        - Kustomize
+    - name: Script Embedding
+      description: >-
+        Modify the Nginx server frontend by mounting an HTML script to the
+        container. Use the Kustomize configMapGenerator to create the ConfigMap
+        that holds the script.
+      estMinutes: 40
+      technologies:
+        - Kubernetes
+        - Kustomize
+    - name: Bases and Overlays
+      description: >-
+        See what a more productionalized Kustomize structure looks like with the
+        base/overlays pattern.
+      estMinutes: 20
       technologies:
         - Kubernetes
         - Kustomize
