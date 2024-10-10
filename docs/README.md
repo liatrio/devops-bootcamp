@@ -1053,6 +1053,26 @@ docs/8-kubernetes-container-orchestration/8.7.1-kustomize.md:
       technologies:
         - Kubernetes
         - Kustomize
+docs/8-kubernetes-container-orchestration/8.7.2-helm.md:
+  category: Container Orchestration
+  estReadingMinutes: 5
+  exercises:
+    - name: Source a Helm Chart
+      description: >-
+        Declaratively define a Gitea Helm Chart to be sourced and templated
+        locally. Deploy it to a cluster, port-forward to its server and log in.
+      estMinutes: 45
+      technologies:
+        - Kubernetes
+        - Helm
+        - Kustomize
+    - name: Modify the Helm Chart
+      description: Use the values file and kustomization.yaml to modify the Helm Chart.
+      estMinutes: 30
+      technologies:
+        - Kubernetes
+        - Helm
+        - Kustomize
 docs/8-kubernetes-container-orchestration/8.8-hello-k8s.md:
   category: Container Orchestration
   estReadingMinutes: 15
