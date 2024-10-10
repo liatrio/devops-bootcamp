@@ -998,6 +998,61 @@ docs/8-kubernetes-container-orchestration/8.6-webhooks.md:
       technologies:
         - Kubernetes
         - Python
+docs/8-kubernetes-container-orchestration/8.7.1-kustomize.md:
+  category: Container Orchestration
+  estReadingMinutes: 20
+  exercises:
+    - name: General Use-Case
+      description: >-
+        Organize a few manifest files and use Kustomize to build them all at
+        once. Learn how to inspect build outputs and apply manifests with
+        Kustomize.
+      estMinutes: 15
+      technologies:
+        - Kubernetes
+        - Kustomize
+    - name: Simple Modifications
+      description: >-
+        Learn to use Kustomize's "namespace", "commonLabels", and "images"
+        operators.
+      estMinutes: 30
+      technologies:
+        - Kubernetes
+        - Kustomize
+    - name: Patches
+      description: >-
+        Learn to write Kustomize pathes, and the difference between
+        StrategicMergePatch and Json6902 patches.
+      estMinutes: 30
+      technologies:
+        - Kubernetes
+        - Kustomize
+    - name: Secret Management
+      description: >-
+        Learn to use the "secretGenerator" Kustomize operator and create another
+        Kustomize patch to include the secret as an environment variable in a
+        container.
+      estMinutes: 30
+      technologies:
+        - Kubernetes
+        - Kustomize
+    - name: Script Embedding
+      description: >-
+        Modify the Nginx server frontend by mounting an HTML script to the
+        container. Use the Kustomize configMapGenerator to create the ConfigMap
+        that holds the script.
+      estMinutes: 40
+      technologies:
+        - Kubernetes
+        - Kustomize
+    - name: Bases and Overlays
+      description: >-
+        See what a more productionalized Kustomize structure looks like with the
+        base/overlays pattern.
+      estMinutes: 20
+      technologies:
+        - Kubernetes
+        - Kustomize
 docs/8-kubernetes-container-orchestration/8.8-hello-k8s.md:
   category: Container Orchestration
   estReadingMinutes: 15
