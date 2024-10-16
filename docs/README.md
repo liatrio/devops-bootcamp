@@ -998,6 +998,40 @@ docs/8-kubernetes-container-orchestration/8.6-webhooks.md:
       technologies:
         - Kubernetes
         - Python
+docs/8-kubernetes-container-orchestration/8.6.1-validating-admission-policy.md:
+  category: Container Orchestration
+  estReadingMinutes: 35
+  exercises:
+    - name: Basic ValidatingAdmissionPolicy
+      description: >-
+        Create a ValidatingAdmissionPolicy to replicate the behavior of a
+        Validating Webhook, rejecting pods in a specific namespace based on
+        image.
+      estMinutes: 60
+      technologies:
+        - Kubernetes
+        - ValidatingAdmissionPolicy
+        - CEL
+    - name: Dynamic ValidatingAdmissionPolicy with Params
+      description: >-
+        Create a more complex ValidatingAdmissionPolicy using paramKind and
+        paramRef to implement dynamic, namespace-specific validation for
+        deployment replica counts.
+      estMinutes: 90
+      technologies:
+        - Kubernetes
+        - ValidatingAdmissionPolicy
+        - CEL
+        - Custom Resources
+    - name: Warning ValidatingAdmissionPolicy
+      description: >-
+        Implement a ValidatingAdmissionPolicy that warns developers about an
+        upcoming required label on Deployments.
+      estMinutes: 40
+      technologies:
+        - Kubernetes
+        - ValidatingAdmissionPolicy
+        - CEL
 docs/8-kubernetes-container-orchestration/8.7.1-kustomize.md:
   category: Container Orchestration
   estReadingMinutes: 20
