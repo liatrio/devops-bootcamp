@@ -1113,13 +1113,12 @@ docs/8-kubernetes-container-orchestration/8.8-hello-k8s.md:
   exercises:
     - name: Kubernetes Custom Project
       description: >-
-        Create a custom Kubernetes project, utilizing webhooks, creating a
-        custom resource, and using Kubebuilder to create a controller which
+        Create a custom Kubernetes project, utilizing kubebuilder,Kubebuilder to
+        create a kubernetes custom resource definition and controller which
         reconciles changes to the custom resource.
       estMinutes: 4800
       technologies:
         - Kubernetes
-        - Webhooks
         - Custom Resources
         - Kubebuilder
 docs/9-platform-engineering/9.0-overview.md:
