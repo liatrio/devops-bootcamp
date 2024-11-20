@@ -1,0 +1,19 @@
+# This is going to need some RBAC permissions...
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-controller
+  namespace: #YOUR-NAMESPACE
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: #YOUR-APP
+  template:
+    metadata:
+      labels:
+        app: #YOUR-APP
+    spec:
+      containers:
+      - name: #YOUR-CONTAINER
+        image: #YOUR-IMAGE
