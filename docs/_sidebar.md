@@ -136,7 +136,7 @@
 - [8.7 - Declarative Configuration](8-kubernetes-container-orchestration/8.7-declarative-configuration.md)
   - [8.7.1 - Kustomize](8-kubernetes-container-orchestration/8.7.1-kustomize.md)
   - [8.7.2 - Helm](8-kubernetes-container-orchestration/8.7.2-helm.md)
-- [8.8 - Hello K8s](8-kubernetes-container-orchestration/8.8-hello-k8s.md)
+- [8.8 - Controllers](8-kubernetes-container-orchestration/8.8-controllers.md)
 
 - **Chapter 9**
 
@@ -162,5 +162,6 @@
   - [Jira](addendum/jira.md)
   - [Artifactory](addendum/artifactory.md)
   - [Docker Registry](addendum/docker-registry.md)
-  - [K8 The Hard Way](addendum/k8s-the-hard-way.md)
+  - [K8s The Hard Way](addendum/k8s-the-hard-way.md)
   - [Chef](addendum/chef.md)
+  - [Hello K8s](addendum/Hello-K8s.md)

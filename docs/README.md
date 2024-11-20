@@ -1107,20 +1107,36 @@ docs/8-kubernetes-container-orchestration/8.7.2-helm.md:
         - Kubernetes
         - Helm
         - Kustomize
-docs/8-kubernetes-container-orchestration/8.8-hello-k8s.md:
+docs/8-kubernetes-container-orchestration/8.8-controllers.md:
   category: Container Orchestration
-  estReadingMinutes: 15
+  estReadingMinutes: 45
   exercises:
-    - name: Kubernetes Custom Project
+    - name: Setup
       description: >-
-        Create a custom Kubernetes project, utilizing kubebuilder,Kubebuilder to
-        create a kubernetes custom resource definition and controller which
-        reconciles changes to the custom resource.
-      estMinutes: 4800
+        Set up the environment for a custom controller by deploying a k3d
+        cluster.
+      estMinutes: 30
       technologies:
         - Kubernetes
-        - Custom Resources
-        - Kubebuilder
+        - k3d
+    - name: Pod Labelling Controller
+      description: >-
+        Use given skeleton to create a controller that will give a pod a label
+        if it has a certain annotation
+      estMinutes: 240
+      technologies:
+        - Kubernetes
+        - k3d
+        - client-go
+    - name: Open-ended Custom Controller
+      description: >-
+        Use what you've learned to create a custom controller with a function of
+        our own choosing
+      estMinutes: 240
+      technologies:
+        - Kubernetes
+        - k3d
+        - client-go
 docs/9-platform-engineering/9.0-overview.md:
   category: Platform Engineering
   estReadingMinutes: 15
