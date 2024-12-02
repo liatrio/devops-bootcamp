@@ -1179,7 +1179,7 @@ docs/9-platform-engineering/9.1-backstage.md:
         - Backstage
         - GitHub
 docs/9-platform-engineering/9.1.1-software-catalog.md:
-  category: Backstage Software Catalog
+  category: Platform Engineering
   estReadingMinutes: 20
   exercises:
     - name: Entity Registration
@@ -1213,7 +1213,7 @@ docs/9-platform-engineering/9.1.1-software-catalog.md:
         displaying the repos' interdependence via the "Relations" section of
         their overviews in the UI.  This requires a thorough understanding of
         the available fields in `catalog-info.yaml` files along with a Backstage
-        app's configuration file.  
+        app's configuration file.
       estMinutes: 120
       technologies:
         - Backstage
@@ -1224,13 +1224,13 @@ docs/9-platform-engineering/9.1.1-software-catalog.md:
         their Backstage instance can ingest and associate with a definition for
         an API having source code in a repo owned by the student's
         organization.  Students may use a repo that already has an OpenAPI spec
-        file or they may generate the necessary spec data from an API.  
+        file or they may generate the necessary spec data from an API.
       estMinutes: 30
       technologies:
         - Backstage
         - GitHub
 docs/9-platform-engineering/9.1.2-techdocs.md:
-  category: TechDocs
+  category: Platform Engineering
   estReadingMinutes: 10
   exercises:
     - name: Enable Documentation for an Existing Entity
@@ -1248,7 +1248,7 @@ docs/9-platform-engineering/9.1.2-techdocs.md:
         - GitHub
         - Backstage
 docs/9-platform-engineering/9.1.3-software-templates.md:
-  category: Software Templates
+  category: Platform Engineering
   estReadingMinutes: 20
   exercises:
     - name: Create a Simple Template
@@ -1272,13 +1272,13 @@ docs/9-platform-engineering/9.1.3-software-templates.md:
         Students are to become acquainted with the Scaffold plugin and extend
         this plugin by writing a custom action which can be used in the custom
         template they wrote in the previous exercise.  Some special instructions
-        are provided because the only available official guides are outdated.  
+        are provided because the only available official guides are outdated.
       estMinutes: 60
       technologies:
         - Backstage
         - GitHub
 docs/9-platform-engineering/9.1.4-plugins.md:
-  category: Backstage Plugins
+  category: Platform Engineering
   estReadingMinutes: 10
   exercises:
     - name: Explore the Plugin Directory
