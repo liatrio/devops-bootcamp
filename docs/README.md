@@ -1301,6 +1301,23 @@ docs/9-platform-engineering/9.1.4-plugins.md:
         - Backstage
         - TypeScript
         - GitHub
+docs/9-platform-engineering/9.2-platforms.md:
+  category: Platform Engineering
+  estReadingMinutes: 15
+  exercises:
+    - name: Create a TVP (Thinnest Viable Platform)
+      description: >
+        Students will use Terraform, Terragrunt and a library/deploy repo
+        structure to create a core EKS platform with ArgoCD and External Secrets
+        Operators
+      estMinutes: 3000
+      technologies:
+        - AWS
+        - Terraform
+        - Terragrunt
+        - Kubernetes
+        - ArgoCD
+        - ExternalSecrets
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->

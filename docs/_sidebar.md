@@ -146,6 +146,7 @@
   - [9.1.2 - TechDocs](9-platform-engineering/9.1.2-techdocs.md)
   - [9.1.3 - Software Templates](9-platform-engineering/9.1.3-software-templates.md)
   - [9.1.4 - Plugins](9-platform-engineering/9.1.4-plugins.md)
+- [9.2 - Platforms](9-platform-engineering/9.2-platforms.md)
 
 - **Addendum**
 
