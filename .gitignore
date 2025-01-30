@@ -3,6 +3,7 @@
 /examples/ch6/devops-api/devops-api
 
 examples/ch2/vagrant_docker_example/.vagrant/
+examples/ch7/devops-api/devops-api
 
 .env
 
