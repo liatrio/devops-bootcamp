@@ -786,6 +786,14 @@ docs/7-infrastructure-configuration-management/7.1.4-terraform-providers.md:
   category: Infrastructure as Code
   estReadingMinutes: 20
   exercises:
+    - name: Hashicups Provider
+      description: >-
+        Follow the Hashicorp tutorial to understand the parts required for a
+        provider.
+      estMinutes: 180
+      technologies:
+        - Terraform
+        - Go
     - name: Provider Boilerplate
       description: Set up the boilerplate for a Terraform provider and test it locally.
       estMinutes: 120
