@@ -550,7 +550,7 @@ docs/5-software-development-practices/5.5.4-code-coverage.md:
       description: >-
         Install node dependencies for code coverage (jest) and get 100% code
         coverage for a given module and tests.
-      estMinutes: 60
+      estMinutes: 90
       technologies:
         - Node.js
         - Jest
