@@ -554,7 +554,33 @@ docs/5-software-development-practices/5.5.4-code-coverage.md:
       technologies:
         - Node.js
         - Jest
-docs/5-software-development-practices/5.5.5-test-automation.md:
+docs/5-software-development-practices/5.5.5-test-doubles.md:
+  category: Software Quality
+  estReadingMinutes: 10
+  exercises:
+    - name: Practice Test Doubles
+      description: >
+        Leverage mocking to test the user and repo checking functions. The code
+        now exposes only two user and two repo check functions. Your tests
+        should mock all API calls, cover both positive and negative scenarios,
+        and use Jest's best practices for mocking and restoring. No real API
+        calls should be made; focus on verifying the logic of the exported
+        functions only.
+      estMinutes: 60
+      technologies:
+        - Node.js
+        - Jest
+    - name: Spying on Functions
+      description: >
+        Use Jest spies to verify that when a repo name is invalid or not found,
+        console.error is called and console.log is not. Write a test for the
+        error case of getRepoInfo() using mocks and spies to check the correct
+        error handling behavior.
+      estMinutes: 30
+      technologies:
+        - Node.js
+        - Jest
+docs/5-software-development-practices/5.5.6-test-automation.md:
   category: Software Quality
   estReadingMinutes: 5
   exercises:
@@ -564,7 +590,7 @@ docs/5-software-development-practices/5.5.5-test-automation.md:
       technologies:
         - GitHub Actions
         - Go
-docs/5-software-development-practices/5.5.6-sonarqube.md:
+docs/5-software-development-practices/5.5.7-sonarqube.md:
   category: Software Quality
   estReadingMinutes: 10
   exercises:
@@ -576,7 +602,7 @@ docs/5-software-development-practices/5.5.6-sonarqube.md:
       technologies:
         - SonarQube
         - GitHub Actions
-docs/5-software-development-practices/5.5.7-code-review.md:
+docs/5-software-development-practices/5.5.8-code-review.md:
   category: Software Quality
   estReadingMinutes: 10
 docs/5-software-development-practices/5.6-hello-devops.md:
