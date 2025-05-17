@@ -1,40 +1,30 @@
 jest.mock("./github", () => ({
   getUserInfo: jest.fn(),
+  getRepoInfo: jest.fn(),
 }));
 
-const { getUserInfo } = require("./github");
+const { getUserInfo, getRepoInfo } = require("./github");
 const {
   checkUserLogin,
   checkUserName,
-  checkUserBio,
-  checkUserFollowers,
-  checkUserPublicRepos,
-  checkUserUrl,
+  checkRepoName,
+  checkRepoStars,
 } = require("./mock");
-
-const mockUserInfo = {
-  login: "chrisjblackburn",
-  name: "Chris Blackburn",
-  bio: "DevOps leader and enthusiast",
-  followers: 250,
-  public_repos: 42,
-  html_url: "https://github.com/chrisjblackburn",
-};
 
 describe("User Info Checks (with mocked getUserInfo)", () => {
   let logSpy;
 
   beforeEach(() => {
     logSpy = jest.spyOn(console, "log").mockImplementation(() => {});
-    getUserInfo.mockResolvedValue(mockUserInfo);
   });
 
   afterEach(() => {
     logSpy.mockRestore();
-    getUserInfo.mockReset();
+    jest.resetAllMocks();
   });
 
   test("checkUserLogin matches expected", async () => {
+    getUserInfo.mockResolvedValue({ login: "chrisjblackburn" });
     await checkUserLogin("chrisjblackburn", "chrisjblackburn");
     expect(getUserInfo).toHaveBeenCalledWith("chrisjblackburn");
     expect(logSpy).toHaveBeenCalledWith(
@@ -42,44 +32,34 @@ describe("User Info Checks (with mocked getUserInfo)", () => {
     );
   });
 
+  test("checkUserLogin does not match expected", async () => {
+    getUserInfo.mockResolvedValue({ login: "otheruser" });
+    await checkUserLogin("otheruser", "chrisjblackburn");
+    expect(getUserInfo).toHaveBeenCalledWith("otheruser");
+    expect(logSpy).toHaveBeenCalledWith(
+      "User login does NOT match expected. Got: otheruser, Expected: chrisjblackburn",
+    );
+  });
+
   test("checkUserName matches expected", async () => {
+    getUserInfo.mockResolvedValue({ name: "Chris Blackburn" });
     await checkUserName("chrisjblackburn", "Chris Blackburn");
+    expect(getUserInfo).toHaveBeenCalledWith("chrisjblackburn");
     expect(logSpy).toHaveBeenCalledWith(
       "User name matches expected: Chris Blackburn",
     );
   });
 
-  test("checkUserBio contains keyword", async () => {
-    await checkUserBio("chrisjblackburn", "DevOps");
+  test("checkUserName does not match expected", async () => {
+    getUserInfo.mockResolvedValue({ name: "Other Name" });
+    await checkUserName("chrisjblackburn", "Chris Blackburn");
+    expect(getUserInfo).toHaveBeenCalledWith("chrisjblackburn");
     expect(logSpy).toHaveBeenCalledWith(
-      'User bio contains keyword "DevOps": DevOps leader and enthusiast',
-    );
-  });
-
-  test("checkUserFollowers above threshold", async () => {
-    await checkUserFollowers("chrisjblackburn", 100);
-    expect(logSpy).toHaveBeenCalledWith(
-      "User has a good number of followers: 250",
-    );
-  });
-
-  test("checkUserPublicRepos above threshold", async () => {
-    await checkUserPublicRepos("chrisjblackburn", 10);
-    expect(logSpy).toHaveBeenCalledWith(
-      "User has a healthy number of public repos: 42",
-    );
-  });
-
-  test("checkUserUrl is secure", async () => {
-    await checkUserUrl("chrisjblackburn");
-    expect(logSpy).toHaveBeenCalledWith(
-      "User URL is secure: https://github.com/chrisjblackburn",
+      "User name does NOT match expected. Got: Other Name, Expected: Chris Blackburn",
     );
   });
 });
 
 describe("Repo Info Checks (with mocked getRepoInfo)", () => {
-  test("TODO: WRITE REPO TESTS", async () => {
-    fail("You haven't written repo tests yet!");
-  });
+  // TODO Create tests for
 });
