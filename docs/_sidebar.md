@@ -140,13 +140,16 @@
 
 - **Chapter 9**
 
-- [9.0 - Platform Engineering Overview](9-platform-engineering/9.0-overview.md)
-- [9.1 - Backstage](9-platform-engineering/9.1-backstage.md)
-  - [9.1.1 - Software Catalog](9-platform-engineering/9.1.1-software-catalog.md)
-  - [9.1.2 - TechDocs](9-platform-engineering/9.1.2-techdocs.md)
-  - [9.1.3 - Software Templates](9-platform-engineering/9.1.3-software-templates.md)
-  - [9.1.4 - Plugins](9-platform-engineering/9.1.4-plugins.md)
-- [9.2 - Platforms](9-platform-engineering/9.2-platforms.md)
+<!-- Chapter 9 removed: Platform Engineering moved to Chapter 10 -->
+
+- **Chapter 10**
+- [10.0 - Platform Engineering Overview](10-platform-engineering/10.0-overview.md)
+- [10.1 - Backstage](10-platform-engineering/10.1-backstage.md)
+  - [10.1.1 - Software Catalog](10-platform-engineering/10.1.1-software-catalog.md)
+  - [10.1.2 - TechDocs](10-platform-engineering/10.1.2-techdocs.md)
+  - [10.1.3 - Software Templates](10-platform-engineering/10.1.3-software-templates.md)
+  - [10.1.4 - Plugins](10-platform-engineering/10.1.4-plugins.md)
+- [10.2 - Platforms](10-platform-engineering/10.2-platforms.md)
 
 - **Addendum**
 
