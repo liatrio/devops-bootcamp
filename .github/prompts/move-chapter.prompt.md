@@ -13,7 +13,7 @@ Your task is to move a chapter from one number to another.
 You would conduct the following steps based on a prompt like "Move chapter 9 to chapter 10":
 
 1) Move #folder:../../docs/9-<chapter-name> to #file:../../docs/10-<chapter-name>
-2) Rename all .md files in the new location (eg: #file:../../docs/10-<chapter-name>/9-overview.md to #file:../../docs/10-<chapter-name>/10-overview.md)
+2) Rename all 9-*.md files in the new location (eg: #file:../../docs/10-<chapter-name>/9-overview.md to #file:../../docs/10-<chapter-name>/10-overview.md)
 3) Update the relative path in the frontmatter of all 9-*.md files to point to their new relative path in chapter 10.
 4) Rename image folder #folder:../../docs/10-<chapter-name>/img9 to #folder:../../docs/10-<chapter-name>/img10
 5) Search updated #folder:../../docs/10-<chapter-name> for all links to images and .md files in the old location (eg: #file:../../docs/9-<chapter-name>/img9/9-overview.png) and update them to point to the new location (in this case 10).
