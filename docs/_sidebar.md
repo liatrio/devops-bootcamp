@@ -120,27 +120,24 @@
 
 - **Chapter 8**
 
-- [8.0 - Kubernetes Overview](8-kubernetes-container-orchestration/8.0-overview.md)
-- [8.1 - Kubectl Reference](8-kubernetes-container-orchestration/8.1-kubectl-ref.md)
-  - [8.1.1 - Getting Started](8-kubernetes-container-orchestration/8.1.1-getting-started.md)
-  - [8.1.2 - App Management](8-kubernetes-container-orchestration/8.1.2-app-management.md)
-  - [8.1.3 - Working with Apps](8-kubernetes-container-orchestration/8.1.3-working-with-apps.md)
-  - [8.1.4 - Cluster Management](8-kubernetes-container-orchestration/8.1.4-cluster-management.md)
-  - [8.1.5 - Kubectl Settings and Usage](8-kubernetes-container-orchestration/8.1.5-kubectl-settings-and-usage.md)
-- [8.2 - Volumes](8-kubernetes-container-orchestration/8.2-volumes.md)
-- [8.3 - Probes](8-kubernetes-container-orchestration/8.3-probes.md)
-- [8.4 - RBAC](8-kubernetes-container-orchestration/8.4-rbac.md)
-- [8.5 - HPAs](8-kubernetes-container-orchestration/8.5-hpas.md)
-- [8.6 - Webhooks](8-kubernetes-container-orchestration/8.6-webhooks.md)
-  - [8.6.1  - Native Admission Control](8-kubernetes-container-orchestration/8.6.1-validating-admission-policy.md)
-- [8.7 - Declarative Configuration](8-kubernetes-container-orchestration/8.7-declarative-configuration.md)
-  - [8.7.1 - Kustomize](8-kubernetes-container-orchestration/8.7.1-kustomize.md)
-  - [8.7.2 - Helm](8-kubernetes-container-orchestration/8.7.2-helm.md)
-- [8.8 - Controllers](8-kubernetes-container-orchestration/8.8-controllers.md)
-
 - **Chapter 9**
-
-<!-- Chapter 9 removed: Platform Engineering moved to Chapter 10 -->
+- [9.0 - Kubernetes Overview](9-kubernetes-container-orchestration/9.0-overview.md)
+- [9.1 - Kubectl Reference](9-kubernetes-container-orchestration/9.1-kubectl-ref.md)
+  - [9.1.1 - Getting Started](9-kubernetes-container-orchestration/9.1.1-getting-started.md)
+  - [9.1.2 - App Management](9-kubernetes-container-orchestration/9.1.2-app-management.md)
+  - [9.1.3 - Working with Apps](9-kubernetes-container-orchestration/9.1.3-working-with-apps.md)
+  - [9.1.4 - Cluster Management](9-kubernetes-container-orchestration/9.1.4-cluster-management.md)
+  - [9.1.5 - Kubectl Settings and Usage](9-kubernetes-container-orchestration/9.1.5-kubectl-settings-and-usage.md)
+- [9.2 - Volumes](9-kubernetes-container-orchestration/9.2-volumes.md)
+- [9.3 - Probes](9-kubernetes-container-orchestration/9.3-probes.md)
+- [9.4 - RBAC](9-kubernetes-container-orchestration/9.4-rbac.md)
+- [9.5 - HPAs](9-kubernetes-container-orchestration/9.5-hpas.md)
+- [9.6 - Webhooks](9-kubernetes-container-orchestration/9.6-webhooks.md)
+  - [9.6.1  - Native Admission Control](9-kubernetes-container-orchestration/9.6.1-validating-admission-policy.md)
+- [9.7 - Declarative Configuration](9-kubernetes-container-orchestration/9.7-declarative-configuration.md)
+  - [9.7.1 - Kustomize](9-kubernetes-container-orchestration/9.7.1-kustomize.md)
+  - [9.7.2 - Helm](9-kubernetes-container-orchestration/9.7.2-helm.md)
+- [9.8 - Controllers](9-kubernetes-container-orchestration/9.8-controllers.md)
 
 - **Chapter 10**
 - [10.0 - Platform Engineering Overview](10-platform-engineering/10.0-overview.md)

@@ -1040,10 +1040,10 @@ docs/7-infrastructure-configuration-management/7.2-ansible.md:
         - Ansible
         - AWS EC2
         - GitHub self-hosted runner
-docs/8-kubernetes-container-orchestration/8.1-kubectl-ref.md:
+docs/9-kubernetes-container-orchestration/9.1-kubectl-ref.md:
   category: Container Orchestration
   estReadingMinutes: 120
-docs/8-kubernetes-container-orchestration/8.2-volumes.md:
+docs/9-kubernetes-container-orchestration/9.2-volumes.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -1064,7 +1064,7 @@ docs/8-kubernetes-container-orchestration/8.2-volumes.md:
       technologies:
         - Kubernetes
         - Jenkins
-docs/8-kubernetes-container-orchestration/8.3-probes.md:
+docs/9-kubernetes-container-orchestration/9.3-probes.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -1093,7 +1093,7 @@ docs/8-kubernetes-container-orchestration/8.3-probes.md:
       estMinutes: 45
       technologies:
         - Kubernetes
-docs/8-kubernetes-container-orchestration/8.4-rbac.md:
+docs/9-kubernetes-container-orchestration/9.4-rbac.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -1115,7 +1115,7 @@ docs/8-kubernetes-container-orchestration/8.4-rbac.md:
       technologies:
         - Docker
         - Kubernetes
-docs/8-kubernetes-container-orchestration/8.5-hpas.md:
+docs/9-kubernetes-container-orchestration/9.5-hpas.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -1149,7 +1149,7 @@ docs/8-kubernetes-container-orchestration/8.5-hpas.md:
       technologies:
         - Docker
         - Kubernetes
-docs/8-kubernetes-container-orchestration/8.6-webhooks.md:
+docs/9-kubernetes-container-orchestration/9.6-webhooks.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -1179,7 +1179,7 @@ docs/8-kubernetes-container-orchestration/8.6-webhooks.md:
       technologies:
         - Kubernetes
         - Python
-docs/8-kubernetes-container-orchestration/8.6.1-validating-admission-policy.md:
+docs/9-kubernetes-container-orchestration/9.6.1-validating-admission-policy.md:
   category: Container Orchestration
   estReadingMinutes: 35
   exercises:
@@ -1213,7 +1213,7 @@ docs/8-kubernetes-container-orchestration/8.6.1-validating-admission-policy.md:
         - Kubernetes
         - ValidatingAdmissionPolicy
         - CEL
-docs/8-kubernetes-container-orchestration/8.7.1-kustomize.md:
+docs/9-kubernetes-container-orchestration/9.7.1-kustomize.md:
   category: Container Orchestration
   estReadingMinutes: 20
   exercises:
@@ -1268,7 +1268,7 @@ docs/8-kubernetes-container-orchestration/8.7.1-kustomize.md:
       technologies:
         - Kubernetes
         - Kustomize
-docs/8-kubernetes-container-orchestration/8.7.2-helm.md:
+docs/9-kubernetes-container-orchestration/9.7.2-helm.md:
   category: Container Orchestration
   estReadingMinutes: 5
   exercises:
@@ -1288,7 +1288,7 @@ docs/8-kubernetes-container-orchestration/8.7.2-helm.md:
         - Kubernetes
         - Helm
         - Kustomize
-docs/8-kubernetes-container-orchestration/8.8-controllers.md:
+docs/9-kubernetes-container-orchestration/9.8-controllers.md:
   category: Container Orchestration
   estReadingMinutes: 45
   exercises:
