@@ -393,16 +393,16 @@ docs/3-virtual-machines-containers/3.5.2-kubernetes.md:
         - Kubernetes
         - GitHub Actions
         - Nexus OSS
-docs/4-cloud-computing/4.0-overview.md:
+docs/5-cloud-computing/5.0-overview.md:
   category: Cloud Computing
   estReadingMinutes: 30
-docs/4-cloud-computing/4.1.1-aws.md:
+docs/5-cloud-computing/5.1.1-aws.md:
   category: Cloud Computing
   estReadingMinutes: 60
-docs/4-cloud-computing/4.1.2-azure.md:
+docs/5-cloud-computing/5.1.2-azure.md:
   category: Cloud Computing
   estReadingMinutes: 30
-docs/4-cloud-computing/4.2.1-s3-cloudfront.md:
+docs/5-cloud-computing/5.2.1-s3-cloudfront.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -419,7 +419,7 @@ docs/4-cloud-computing/4.2.1-s3-cloudfront.md:
         - AWS S3
         - AWS
         - CloudFront
-docs/4-cloud-computing/4.2.2-ec2.md:
+docs/5-cloud-computing/5.2.2-ec2.md:
   category: Cloud Computing
   estReadingMinutes: 30
   exercises:
@@ -432,7 +432,7 @@ docs/4-cloud-computing/4.2.2-ec2.md:
         - AWS
         - EC2
         - Jenkins
-docs/4-cloud-computing/4.2.3-auto-scaling.md:
+docs/5-cloud-computing/5.2.3-auto-scaling.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -471,14 +471,14 @@ docs/4-cloud-computing/4.2.3-auto-scaling.md:
         - AWS Launch Templates
         - AWS Auto Scaling Groups
         - AWS ELB
-docs/4-cloud-computing/4.2.4-aws-packer.md:
+docs/5-cloud-computing/5.2.4-aws-packer.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
     - name: Creating a custom AMI
       description: >-
         Create an AMI with Packer that creates a provisioned machine like the
-        one you made in exercise 1 from 4.2.3. Create a Launch Template and Auto
+        one you made in exercise 1 from 5.2.3. Create a Launch Template and Auto
         Scaling group to leverage your new AMI via the AWS cli
       estMinutes: 180
       technologies:
@@ -487,7 +487,7 @@ docs/4-cloud-computing/4.2.4-aws-packer.md:
         - AWS Launch Templates
         - AWS Auto Scaling Groups
         - Packer
-docs/4-cloud-computing/4.2.5-lambda.md:
+docs/5-cloud-computing/5.2.5-lambda.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -502,7 +502,7 @@ docs/4-cloud-computing/4.2.5-lambda.md:
         - AWS Lambda
         - AWS S3
         - AWS DynamoDB
-docs/4-cloud-computing/4.2.6-ecs.md:
+docs/5-cloud-computing/5.2.6-ecs.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -548,7 +548,7 @@ docs/4-cloud-computing/4.2.6-ecs.md:
         - AWS
         - AWS EKS
         - Kubernetes
-docs/4-cloud-computing/4.3.1-storage-accounts.md:
+docs/5-cloud-computing/5.3.1-storage-accounts.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -562,7 +562,7 @@ docs/4-cloud-computing/4.3.1-storage-accounts.md:
         - Azure Blob Storage
         - Azure CDN
         - Angular
-docs/4-cloud-computing/4.3.2-virtual-machines.md:
+docs/5-cloud-computing/5.3.2-virtual-machines.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -576,7 +576,7 @@ docs/4-cloud-computing/4.3.2-virtual-machines.md:
         - Azure VM
         - NGINX
         - cloud-init
-docs/4-cloud-computing/4.3.3-vmss.md:
+docs/5-cloud-computing/5.3.3-vmss.md:
   category: Cloud Computing
   estReadingMinutes: 15
   exercises:
@@ -592,21 +592,21 @@ docs/4-cloud-computing/4.3.3-vmss.md:
         - Azure Storage Account
         - Node.js
         - cloud-init
-docs/4-cloud-computing/4.3.4-az-packer.md:
+docs/5-cloud-computing/5.3.4-az-packer.md:
   category: Cloud Computing
   estReadingMinutes: 5
   exercises:
     - name: Create Shared Image Gallery with custom Azure VM image
       description: >-
         Create a Shared Image Gallery and put a custom Azure VM image in it.
-        Then redo the exercise in 4.3.2 with the custom image.
+        Then redo the exercise in 5.3.2 with the custom image.
       estMinutes: 360
       technologies:
         - Azure
         - Packer
         - Shared Image Gallery
         - Azure VM
-docs/4-cloud-computing/4.3.5-aci.md:
+docs/5-cloud-computing/5.3.5-aci.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -621,7 +621,7 @@ docs/4-cloud-computing/4.3.5-aci.md:
         - Azure Container Registry (ACR)
         - Docker
         - Node.js
-docs/4-cloud-computing/4.3.6-aks.md:
+docs/5-cloud-computing/5.3.6-aks.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -635,7 +635,7 @@ docs/4-cloud-computing/4.3.6-aks.md:
         - Azure Kubernetes Service (AKS)
         - Azure Container Registry (ACR)
         - Node.js
-docs/4-cloud-computing/4.3.7-app-service.md:
+docs/5-cloud-computing/5.3.7-app-service.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
