@@ -17,6 +17,38 @@ You would conduct the following steps based on a prompt like "Move chapter 9 to 
 3) Update the relative path in the frontmatter of all 9-*.md files to point to their new relative path in chapter 10.
 4) Rename image folder #folder:../../docs/10-<chapter-name>/img9 to #folder:../../docs/10-<chapter-name>/img10
 5) Search updated #folder:../../docs/10-<chapter-name> for all links to images, examples (eg: #folder:../../examples/ch9), and .md files in the old location (eg: #file:../../docs/9-<chapter-name>/img9/9-overview.png) and update them to point to the new location (in this case 10).
+6) Update the Front Matter of all the *.md files in the new chapter 10 to reflect the new chapter number. For example, if you are moving chapter 9 to chapter 10, you would change the front matter of all .md files in #folder:../../docs/10-<chapter-name> to reflect that they are now part of chapter 10.
+What the front matter might look like:
+```yaml
+---
+docs/9-kubernetes-container-orchestration/9.3-probes.md:
+  category: Container Orchestration
+  estReadingMinutes: 10
+  exercises:
+  - name: Setup
+    description: Create a service of type NodePort and a deployment for nginx in the default namespace using Docker Desktop.
+    estMinutes: 25
+    technologies:
+    - Docker
+    - Kubernetes
+---
+```
+
+What it should look like after the change:
+```yaml
+---
+docs/10-kubernetes-container-orchestration/10.3-probes.md:
+  category: Container Orchestration
+  estReadingMinutes: 10
+  exercises:
+  - name: Setup
+    description: Create a service of type NodePort and a deployment for nginx in the default namespace using Docker Desktop.
+    estMinutes: 25
+    technologies:
+    - Docker
+    - Kubernetes
+---
+```
 6) If #folder:../../examples/ch9 exists, move it to #folder:../../examples/ch10 and update all links in the new location. Skip Golang files for now.
 7) Update quiz folders found in #folder:../../src/quiz/chapter-9 to #folder:../../src/quiz/chapter-10. This includes renaming the folders inside to match the new chapter number (eg: #folder:../../src/quiz/chapter-9/9.3.1 to #folder:../../src/quiz/chapter-10/10.3.1).
 8) Update any reference to these quizes in the chapter 10 .md files to point to the new location. For example you are looking for a block like the following in the *.md files:
