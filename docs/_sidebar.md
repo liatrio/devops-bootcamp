@@ -33,17 +33,16 @@
 
 - **Chapter 3**
 
-- [3.0 - Virtual Machines and Containers](3-virtual-machines-containers/3.0-overview.md)
-- [3.1 - Golden Images](3-virtual-machines-containers/3.1-golden-images.md)
-- [3.2 - Local Development](3-virtual-machines-containers/3.2-local-development.md)
-- [3.3 - Managing Infrastructure](3-virtual-machines-containers/3.3-managing-infrastructure.md)
-- [3.4 - Containers](3-virtual-machines-containers/3.4-containers.md)
-- [3.5 - Container Management](3-virtual-machines-containers/3.5-container-management.md)
-  - [3.5.1 - Docker Compose](3-virtual-machines-containers/3.5.1-docker-compose.md)
-  - [3.5.2 - Kubernetes](3-virtual-machines-containers/3.5.2-kubernetes.md)
-  - [3.5.3 - Deliverables](3-virtual-machines-containers/3.5.3-deliverables.md)
-
 - **Chapter 4**
+- [Virtual Machines & Containers](/4-virtual-machines-containers/4.0-overview.md)
+  - [Golden Images](/4-virtual-machines-containers/4.1-golden-images.md)
+  - [Local Development](/4-virtual-machines-containers/4.2-local-development.md)
+  - [Managing Infrastructure](/4-virtual-machines-containers/4.3-managing-infrastructure.md)
+  - [Containers](/4-virtual-machines-containers/4.4-containers.md)
+  - [Container Management](/4-virtual-machines-containers/4.5-container-management.md)
+    - [Docker Compose](/4-virtual-machines-containers/4.5.1-docker-compose.md)
+    - [Kubernetes](/4-virtual-machines-containers/4.5.2-kubernetes.md)
+    - [Deliverables](/4-virtual-machines-containers/4.5.3-deliverables.md)
 
 - **Chapter 5**
 - [5.0 - Cloud Computing](5-cloud-computing/5.0-overview.md)

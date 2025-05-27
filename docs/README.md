@@ -295,7 +295,7 @@ docs/2-Github/2.5-Security.md:
       estMinutes: 20
       technologies:
         - GitHub Security
-docs/3-virtual-machines-containers/3.1-golden-images.md:
+docs/4-virtual-machines-containers/4.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
   exercises:
@@ -316,7 +316,7 @@ docs/3-virtual-machines-containers/3.1-golden-images.md:
         - VMWare Fusion
         - Packer
         - Debian
-docs/3-virtual-machines-containers/3.2-local-development.md:
+docs/4-virtual-machines-containers/4.2-local-development.md:
   category: Virtualization
   estReadingMinutes: 15
   exercises:
@@ -331,7 +331,7 @@ docs/3-virtual-machines-containers/3.2-local-development.md:
         - Vagrant
         - Packer
         - Debian
-docs/3-virtual-machines-containers/3.3-managing-infrastructure.md:
+docs/4-virtual-machines-containers/4.3-managing-infrastructure.md:
   category: Virtualization
   estReadingMinutes: 10
   exercises:
@@ -345,7 +345,7 @@ docs/3-virtual-machines-containers/3.3-managing-infrastructure.md:
         - Debian
         - GitHub Actions
         - Nexus OSS
-docs/3-virtual-machines-containers/3.4-containers.md:
+docs/4-virtual-machines-containers/4.4-containers.md:
   category: Containerization
   estReadingMinutes: 20
   exercises:
@@ -363,7 +363,7 @@ docs/3-virtual-machines-containers/3.4-containers.md:
         - Docker
         - GitHub Actions
         - Nexus OSS
-docs/3-virtual-machines-containers/3.5.1-docker-compose.md:
+docs/4-virtual-machines-containers/4.5.1-docker-compose.md:
   category: Container Orchestration
   estReadingMinutes: 5
   exercises:
@@ -377,7 +377,7 @@ docs/3-virtual-machines-containers/3.5.1-docker-compose.md:
         - Docker Compose
         - GitHub Actions
         - Nexus OSS
-docs/3-virtual-machines-containers/3.5.2-kubernetes.md:
+docs/4-virtual-machines-containers/4.5.2-kubernetes.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
