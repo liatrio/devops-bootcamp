@@ -94,19 +94,19 @@
   - [5.5.7 - Code Review](5-software-development-practices/5.5.7-code-review.md)
 - [5.6 - Hello DevOps](5-software-development-practices/5.6-hello-devops.md)
 
-- **Chapter 6**
+- **Chapter 7**
 
-- [6.0 - Release Management](6-release-management/6.0-overview.md)
-- [6.1 - Versioning](6-release-management/6.1-versioning.md)
-- [6.2 - Build Tools](6-release-management/6.2-build-tools.md)
-  - [6.2.1 - Maven](6-release-management/6.2.1-maven.md)
-  - [6.2.2 - Maven Integration](6-release-management/6.2.2-maven-integration.md)
-  - [6.2.3 - Make](6-release-management/6.2.3-make.md)
-  - [6.2.4 - Npm](6-release-management/6.2.4-npm.md)
-  - [6.2.5 - Go Releaser](6-release-management/6.2.5-go-releaser.md)
-- [6.3 - Containers](6-release-management/6.3-containers.md)
-  - [6.3.1 - Docker](6-release-management/6.3.1-docker.md)
-  - [6.3.2 - Helm](6-release-management/6.3.2-helm.md)
+- [7.0 - Release Management](7-release-management/7.0-overview.md)
+- [7.1 - Versioning](7-release-management/7.1-versioning.md)
+- [7.2 - Build Tools](7-release-management/7.2-build-tools.md)
+  - [7.2.1 - Maven](7-release-management/7.2.1-maven.md)
+  - [7.2.2 - Maven Integration](7-release-management/7.2.2-maven-integration.md)
+  - [7.2.3 - Make](7-release-management/7.2.3-make.md)
+  - [7.2.4 - Npm](7-release-management/7.2.4-npm.md)
+  - [7.2.5 - Go Releaser](7-release-management/7.2.5-go-releaser.md)
+- [7.3 - Containers](7-release-management/7.3-containers.md)
+  - [7.3.1 - Docker](7-release-management/7.3.1-docker.md)
+  - [7.3.2 - Helm](7-release-management/7.3.2-helm.md)
 
 - **Chapter 8**
 

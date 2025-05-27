@@ -769,7 +769,7 @@ docs/5-software-development-practices/5.6-hello-devops.md:
         Using what you have leanred thus far create a production ready
         application
       estMinutes: 3000
-docs/6-release-management/6.1-versioning.md:
+docs/7-release-management/7.1-versioning.md:
   category: Version Control
   estReadingMinutes: 5
   exercises:
@@ -780,7 +780,7 @@ docs/6-release-management/6.1-versioning.md:
       estMinutes: 30
       technologies:
         - Docker
-docs/6-release-management/6.2.1-maven.md:
+docs/7-release-management/7.2.1-maven.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -791,7 +791,7 @@ docs/6-release-management/6.2.1-maven.md:
       estMinutes: 60
       technologies:
         - Maven
-docs/6-release-management/6.2.2-maven-integration.md:
+docs/7-release-management/7.2.2-maven-integration.md:
   category: CI/CD
   estReadingMinutes: 30
   exercises:
@@ -807,7 +807,7 @@ docs/6-release-management/6.2.2-maven-integration.md:
         - Maven
         - GitHub Actions
         - Nexus OSS
-docs/6-release-management/6.2.3-make.md:
+docs/7-release-management/7.2.3-make.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -820,7 +820,7 @@ docs/6-release-management/6.2.3-make.md:
       estMinutes: 60
       technologies:
         - Make
-docs/6-release-management/6.2.4-npm.md:
+docs/7-release-management/7.2.4-npm.md:
   category: CI/CD
   estReadingMinutes: 15
   exercises:
@@ -833,7 +833,7 @@ docs/6-release-management/6.2.4-npm.md:
         - npm
         - Node.js
         - Java
-docs/6-release-management/6.2.5-go-releaser.md:
+docs/7-release-management/7.2.5-go-releaser.md:
   category: CI/CD
   estReadingMinutes: 5
   exercises:
@@ -847,7 +847,7 @@ docs/6-release-management/6.2.5-go-releaser.md:
         - Go Releaser
         - GitHub
         - GitHub Actions
-docs/6-release-management/6.3.1-docker.md:
+docs/7-release-management/7.3.1-docker.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -862,7 +862,7 @@ docs/6-release-management/6.3.1-docker.md:
         - Dockerhub
         - GitHub
         - GitHub Actions
-docs/6-release-management/6.3.2-helm.md:
+docs/7-release-management/7.3.2-helm.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
