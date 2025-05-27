@@ -108,17 +108,15 @@
   - [6.3.1 - Docker](6-release-management/6.3.1-docker.md)
   - [6.3.2 - Helm](6-release-management/6.3.2-helm.md)
 
-- **Chapter 7**
-
-- [7.0 - Infrastructure & Configuration](7-infrastructure-configuration-management/7.0-overview.md)
-- [7.1 - Terraform](7-infrastructure-configuration-management/7.1-terraform)
-  - [7.1.1 - Terraform Getting Started](7-infrastructure-configuration-management/7.1.1-terraform-getting-started.md)
-  - [7.1.2 - Terraform State & Backends](7-infrastructure-configuration-management/7.1.2-terraform-backends.md)
-  - [7.1.3 - Terraform Modules](7-infrastructure-configuration-management/7.1.3-terraform-modules.md)
-  - [7.1.4 - Terraform Providers](7-infrastructure-configuration-management/7.1.4-terraform-providers.md)
-- [7.2 - Ansible](7-infrastructure-configuration-management/7.2-ansible.md)
-
 - **Chapter 8**
+
+- [8.0 - Infrastructure & Configuration](8-infrastructure-configuration-management/8.0-overview.md)
+- [8.1 - Terraform](8-infrastructure-configuration-management/8.1-terraform)
+  - [8.1.1 - Terraform Getting Started](8-infrastructure-configuration-management/8.1.1-terraform-getting-started.md)
+  - [8.1.2 - Terraform State & Backends](8-infrastructure-configuration-management/8.1.2-terraform-backends.md)
+  - [8.1.3 - Terraform Modules](8-infrastructure-configuration-management/8.1.3-terraform-modules.md)
+  - [8.1.4 - Terraform Providers](8-infrastructure-configuration-management/8.1.4-terraform-providers.md)
+- [8.2 - Ansible](8-infrastructure-configuration-management/8.2-ansible.md)
 
 - **Chapter 9**
 - [9.0 - Kubernetes Overview](9-kubernetes-container-orchestration/9.0-overview.md)

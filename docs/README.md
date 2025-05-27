@@ -901,7 +901,7 @@ docs/6-release-management/6.3.2-helm.md:
         - Kubernetes
         - Docker
         - GitHub
-docs/7-infrastructure-configuration-management/7.1.1-terraform-getting-started.md:
+docs/8-infrastructure-configuration-management/8.1.1-terraform-getting-started.md:
   category: Infrastructure as Code
   estReadingMinutes: 45
   exercises:
@@ -914,7 +914,7 @@ docs/7-infrastructure-configuration-management/7.1.1-terraform-getting-started.m
         - Terraform
         - AWS
         - Azure
-docs/7-infrastructure-configuration-management/7.1.2-terraform-backends.md:
+docs/8-infrastructure-configuration-management/8.1.2-terraform-backends.md:
   category: Infrastructure as Code
   estReadingMinutes: 20
   exercises:
@@ -944,7 +944,7 @@ docs/7-infrastructure-configuration-management/7.1.2-terraform-backends.md:
       technologies:
         - Terraform
         - GitHub Actions
-docs/7-infrastructure-configuration-management/7.1.3-terraform-modules.md:
+docs/8-infrastructure-configuration-management/8.1.3-terraform-modules.md:
   category: Infrastructure as Code
   estReadingMinutes: 15
   exercises:
@@ -963,7 +963,7 @@ docs/7-infrastructure-configuration-management/7.1.3-terraform-modules.md:
       technologies:
         - Terraform
         - AWS S3
-docs/7-infrastructure-configuration-management/7.1.4-terraform-providers.md:
+'docs/8-infrastructure-configuration-management/8.1.4-terraform-providers.mSince this is a custom API the Ferrets have written, we will also need to make our own custom Terraform provider if we want to use Terraform to manage our resources. Knowing the structure of this API is crucial when attempting to write the provider for this API. Before diving into creating the provider for this API, take some time looking over the [API ReadMe](https://github.com/liatrio/devops-bootcamp/tree/master/examples/ch8/devops-api), as well as the accompanying scripts. Try to run the API locally and add some resources until you think you have a good understanding of how it works.':
   category: Infrastructure as Code
   estReadingMinutes: 20
   exercises:
@@ -999,7 +999,7 @@ docs/7-infrastructure-configuration-management/7.1.4-terraform-providers.md:
       technologies:
         - Terraform
         - Go
-docs/7-infrastructure-configuration-management/7.2-ansible.md:
+docs/8-infrastructure-configuration-management/8.2-ansible.md:
   category: Infrastructure as Code
   estReadingMinutes: 15
   exercises:
