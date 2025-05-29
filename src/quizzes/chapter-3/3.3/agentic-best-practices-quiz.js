@@ -72,4 +72,4 @@ const rawQuizdown = `
 
 `;
 
-export default rawQuizdown;
+export { rawQuizdown }

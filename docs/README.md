@@ -333,16 +333,7 @@ docs/3-AI-Engineering/3.3-best-practices.md:
   estReadingMinutes: 5
 docs/3-AI-Engineering/3.3.1-agentic-best-practices.md:
   category: AI Engineering
-  estReadingMinutes: 20
-  exercises:
-    - name: AI Workflow Implementation
-      description: >-
-        Apply senior engineering techniques for leveraging AI in your
-        development process
-      estMinutes: 45
-      technologies:
-        - AI Tools
-        - LLMs
+  estReadingMinutes: 30
 docs/4-virtual-machines-containers/4.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
