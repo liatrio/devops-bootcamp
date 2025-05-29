@@ -334,6 +334,30 @@ docs/3-AI-Engineering/3.3-best-practices.md:
 docs/3-AI-Engineering/3.3.1-agentic-best-practices.md:
   category: AI Engineering
   estReadingMinutes: 30
+docs/3-AI-Engineering/3.3.2-agentic-ide.md:
+  category: AI Engineering
+  estReadingMinutes: 20
+  exercises:
+    - name: VSCode MCP Server
+      description: >-
+        Build an MCP server from scratch using VSCode in Agent mode and register
+        it with an MCP client
+      estMinutes: 60
+      technologies:
+        - VSCode
+        - MCP
+        - Python
+        - LLM
+    - name: Windsurf MCP Server
+      description: >-
+        Build an MCP server using Windsurf IDE, applying best practices learned
+        from the VSCode exercise
+      estMinutes: 45
+      technologies:
+        - Windsurf
+        - MCP
+        - Python
+        - LLM
 docs/4-virtual-machines-containers/4.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
