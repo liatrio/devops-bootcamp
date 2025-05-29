@@ -321,6 +321,28 @@ docs/3-AI-Engineering/3.1.3-ai-tools.md:
 docs/3-AI-Engineering/3.2-mcp.md:
   category: AI Engineering
   estReadingMinutes: 12
+  exercises:
+    - name: Create an MCP Client
+      description: Build a simple MCP client that connects to a local MCP server
+      estMinutes: 45
+      technologies:
+        - MCP
+        - Python
+docs/3-AI-Engineering/3.3-best-practices.md:
+  category: AI Engineering
+  estReadingMinutes: 5
+docs/3-AI-Engineering/3.3.1-agentic-best-practices.md:
+  category: AI Engineering
+  estReadingMinutes: 20
+  exercises:
+    - name: AI Workflow Implementation
+      description: >-
+        Apply senior engineering techniques for leveraging AI in your
+        development process
+      estMinutes: 45
+      technologies:
+        - AI Tools
+        - LLMs
 docs/4-virtual-machines-containers/4.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
