@@ -35,7 +35,7 @@ At this point you should already have experience using Jira. Jira is available a
 
 ## Connect Jira to your BitBucket server
 
-1. Follow the steps [here](https://confluence.atlassian.com/bitbucketserver/linking-bitbucket-server-with-jira-776640408.html) to integrate Jira with the BitBucket server you setup earlier.
+1. [Follow the steps here](https://confluence.atlassian.com/bitbucketserver/linking-bitbucket-server-with-jira-776640408.html) to integrate Jira with the BitBucket server you setup earlier.
 2. Using a repo in the BitBucket server create a branch, commit and pull request which automatically link back to an issue in your Jira server.
 
 ## Connect Jira to your Jenkins server

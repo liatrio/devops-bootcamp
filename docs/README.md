@@ -783,7 +783,33 @@ docs/6-software-development-practices/6.5.4-code-coverage.md:
       technologies:
         - Node.js
         - Jest
-docs/6-software-development-practices/6.5.5-test-automation.md:
+docs/6-software-development-practices/6.5.5-test-doubles.md:
+  category: Software Quality
+  estReadingMinutes: 10
+  exercises:
+    - name: Practice Test Doubles
+      description: >
+        Leverage mocking to test the user and repo checking functions. The code
+        now exposes only two user and two repo check functions. Your tests
+        should mock all API calls, cover both positive and negative scenarios,
+        and use Jest's best practices for mocking and restoring. No real API
+        calls should be made; focus on verifying the logic of the exported
+        functions only.
+      estMinutes: 60
+      technologies:
+        - Node.js
+        - Jest
+    - name: Spying on Functions
+      description: >
+        Use Jest spies to verify that when a repo name is invalid or not found,
+        console.error is called and console.log is not. Write a test for the
+        error case of getRepoInfo() using mocks and spies to check the correct
+        error handling behavior.
+      estMinutes: 30
+      technologies:
+        - Node.js
+        - Jest
+docs/6-software-development-practices/6.5.6-test-automation.md:
   category: Software Quality
   estReadingMinutes: 5
   exercises:
@@ -793,7 +819,7 @@ docs/6-software-development-practices/6.5.5-test-automation.md:
       technologies:
         - GitHub Actions
         - Go
-docs/6-software-development-practices/6.5.6-sonarqube.md:
+docs/6-software-development-practices/6.5.7-sonarqube.md:
   category: Software Quality
   estReadingMinutes: 10
   exercises:
@@ -805,7 +831,7 @@ docs/6-software-development-practices/6.5.6-sonarqube.md:
       technologies:
         - SonarQube
         - GitHub Actions
-docs/6-software-development-practices/6.5.7-code-review.md:
+docs/6-software-development-practices/6.5.8-code-review.md:
   category: Software Quality
   estReadingMinutes: 10
 docs/6-software-development-practices/6.6-hello-devops.md:
@@ -1015,6 +1041,14 @@ docs/8-infrastructure-configuration-management/8.1.3-terraform-modules.md:
   category: Infrastructure as Code
   estReadingMinutes: 20
   exercises:
+    - name: Hashicups Provider
+      description: >-
+        Follow the Hashicorp tutorial to understand the parts required for a
+        provider.
+      estMinutes: 180
+      technologies:
+        - Terraform
+        - Go
     - name: Provider Boilerplate
       description: Set up the boilerplate for a Terraform provider and test it locally.
       estMinutes: 120

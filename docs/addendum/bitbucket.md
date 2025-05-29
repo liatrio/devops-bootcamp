@@ -24,7 +24,7 @@ step-by-step guide showing your experience through this section.
 3. Setup a new jodatime repo in BitBucket using the instructions provided within Bitbucket to initialize a new repo.
 
 - You will need to setup a user with enough permission to access and git clone the repo
-- You will need to download the jodatime.tar.gz from [here](//github.com/JodaOrg/joda-time/releases).
+- You will need to download the [jodatime.tar.gz from here](//github.com/JodaOrg/joda-time/releases).
 - Uncompress jodatime and initialize it as a git repo with Bitbucket remotes.
 
 4. Create a new Maven Jenkins job that will `git clone` from Bitbucket and `clean deploy` jodatime to Nexus.

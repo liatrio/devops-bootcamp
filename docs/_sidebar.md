@@ -99,9 +99,10 @@
   - [6.5.2 - Functional Testing](6-software-development-practices/6.5.2-functional-testing.md)
   - [6.5.3 - Code Styling](6-software-development-practices/6.5.3-code-styling.md)
   - [6.5.4 - Code Coverage](6-software-development-practices/6.5.4-code-coverage.md)
-  - [6.5.5 - Test Automation](6-software-development-practices/6.5.5-test-automation.md)
-  - [6.5.6 - SonarQube](6-software-development-practices/6.5.6-sonarqube.md)
-  - [6.5.7 - Code Review](6-software-development-practices/6.5.7-code-review.md)
+  - [6.5.5 - Test Doubles](6-software-development-practices/6.5.5-test-doubles.md)
+  - [6.5.6 - Test Automation](6-software-development-practices/6.5.6-test-automation.md)
+  - [6.5.7 - SonarQube](6-software-development-practices/6.5.7-sonarqube.md)
+  - [6.5.8 - Code Review](6-software-development-practices/6.5.8-code-review.md)
 - [6.6 - Hello DevOps](6-software-development-practices/6.6-hello-devops.md)
 
 - **Chapter 7**
