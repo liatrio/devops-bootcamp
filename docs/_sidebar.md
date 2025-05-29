@@ -33,6 +33,14 @@
 
 - **Chapter 3**
 
+- [3.0 - AI Engineering Overview](3-AI-Engineering/3.0-overview.md)
+- [3.1 - AI Concepts](3-AI-Engineering/3.1-ai-concepts.md)
+  - [3.1.1 - Large Language Models (LLMs)](3-AI-Engineering/3.1.1-llms.md)
+  - [3.1.2 - AI Agents](3-AI-Engineering/3.1.2-ai-agents.md)
+  - [3.1.3 - Using AI Tools](3-AI-Engineering/3.1.3-ai-tools.md)
+- [3.2 - MCP: Model Context Protocol](3-AI-Engineering/3.2-mcp.md)
+- [3.3 - Agentic IDEs](3-AI-Engineering/3.3-agentic-ide.md)
+
 - **Chapter 4**
 - [Virtual Machines & Containers](/4-virtual-machines-containers/4.0-overview.md)
   - [Golden Images](/4-virtual-machines-containers/4.1-golden-images.md)

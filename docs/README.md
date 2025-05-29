@@ -295,6 +295,32 @@ docs/2-Github/2.5-Security.md:
       estMinutes: 20
       technologies:
         - GitHub Security
+docs/3-AI-Engineering/3.0-overview.md:
+  category: AI Engineering
+  estReadingMinutes: 5
+docs/3-AI-Engineering/3.1-ai-concepts.md:
+  category: AI Engineering
+  estReadingMinutes: 15
+docs/3-AI-Engineering/3.1.1-llms.md:
+  category: AI Engineering
+  estReadingMinutes: 12
+docs/3-AI-Engineering/3.1.2-ai-agents.md:
+  category: AI Engineering
+  estReadingMinutes: 10
+docs/3-AI-Engineering/3.1.3-ai-tools.md:
+  category: AI Engineering
+  estReadingMinutes: 18
+  exercises:
+    - name: Exploring Model Capabilities
+      description: >-
+        Get familiar comparing different AI models based on their capabilities
+        and characteristics
+      estMinutes: 30
+      technologies:
+        - AI Tools
+docs/3-AI-Engineering/3.2-mcp.md:
+  category: AI Engineering
+  estReadingMinutes: 12
 docs/4-virtual-machines-containers/4.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
