@@ -2,7 +2,6 @@ Creating a new bootcamp exercise:
 - Prompt the user for the exercise name if one is not provided.
 - Generate a new exercise at the end of the current file. That matches the follwoing template
 
-
 ```markdown
 ## <Exercise Name>
 
