@@ -39,7 +39,7 @@
   - [3.1.2 - AI Agents](3-AI-Engineering/3.1.2-ai-agents.md)
   - [3.1.3 - Using AI Tools](3-AI-Engineering/3.1.3-ai-tools.md)
 - [3.2 - MCP: Model Context Protocol](3-AI-Engineering/3.2-mcp.md)
-- [3.3 - AI Engineering Best Practices](3-AI-Engineering/3.3-best-practices.md)
+- [3.3 - AI Engineering](3-AI-Engineering/3.3-best-practices.md)
   - [3.3.1 - Advanced AI Techniques](3-AI-Engineering/3.3.1-agentic-best-practices.md)
   - [3.3.2 - Agentic IDEs](3-AI-Engineering/3.3.2-agentic-ide.md)
 
