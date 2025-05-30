@@ -42,6 +42,187 @@ docs/1-introduction/1.3.5-networking.md:
 docs/1-introduction/1.4-external-resources.md:
   category: Fundamentals
   estReadingMinutes: 50
+docs/10-platform-engineering/10.0-overview.md:
+  category: Platform Engineering
+  estReadingMinutes: 15
+docs/10-platform-engineering/10.1-backstage.md:
+  category: Platform Engineering
+  estReadingMinutes: 20
+  exercises:
+    - name: Create a GitHub Organization
+      description: >
+        This exercise involves creating a GitHub Organization to simulate an
+        integrated SCM environment, similar to what you would find in a
+        real-world development ecosystem. Each student will create their own
+        GitHub Organization following the provided instructions.
+      estMinutes: 30
+      technologies:
+        - GitHub
+    - name: Stand up local instance of Backstage
+      description: >
+        Students will set up a local instance of Backstage by following the
+        official Getting Started guide. This exercise covers starting the local
+        instance, familiarizing with the UI, and customizing the appearance of
+        the Backstage instance including logo and application name changes.
+        Extra credit is given for applying a custom theme. The customized
+        instance should then be pushed to a repo in the newly created GitHub
+        Organization.
+      estMinutes: 60
+      technologies:
+        - Backstage
+        - Docker
+    - name: Configure Authentication via GitHub
+      description: >
+        This exercise focuses on configuring authentication for the Backstage
+        instance using GitHub. Students will create an OAuth app within their
+        GitHub Organization and integrate it with Backstage for authentication
+        purposes. This includes not storing secrets in plain text and ensuring
+        secure authentication practices. Verification of login functionality
+        through GitHub is the final step to confirm successful integration.
+      estMinutes: 120
+      technologies:
+        - Backstage
+        - GitHub
+docs/10-platform-engineering/10.1.1-software-catalog.md:
+  category: Platform Engineering
+  estReadingMinutes: 20
+  exercises:
+    - name: Entity Registration
+      description: >
+        This exercise instructs students to register an entity to their local
+        Backstage instance.  The entity should correspond to a repo belonging to
+        a GitHub organization that the student owns.  This exercise will require
+        students to configure their Backstage instance to have the permissions
+        needed to access their GitHub organization and will help pave the way
+        for the following exercise.
+      estMinutes: 20
+      technologies:
+        - Backstage
+        - GitHub
+    - name: Catalog Ingestion
+      description: >
+        Students will configure their Backstage instance to automatically
+        perform read operations on a given GitHub organization and ingest
+        `catalog-info.yaml` files existing in that organization in order to
+        automatically register entities.  They will need to configure GitHub as
+        a catalog and ensure that their Backstage instance combs their
+        organization for the correct file(s) at an appropriate interval.
+      estMinutes: 80
+      technologies:
+        - Backstage
+        - GitHub
+    - name: Dependency Graphs
+      description: >
+        Students will fork two interdependent repos to their organization and
+        ensure that their Backstage instance recognizes the two repos while also
+        displaying the repos' interdependence via the "Relations" section of
+        their overviews in the UI.  This requires a thorough understanding of
+        the available fields in `catalog-info.yaml` files along with a Backstage
+        app's configuration file.
+      estMinutes: 120
+      technologies:
+        - Backstage
+        - GitHub
+    - name: OpenAPI Definitions
+      description: >
+        Here, students are required to provide an OpenAPI specification which
+        their Backstage instance can ingest and associate with a definition for
+        an API having source code in a repo owned by the student's
+        organization.  Students may use a repo that already has an OpenAPI spec
+        file or they may generate the necessary spec data from an API.
+      estMinutes: 30
+      technologies:
+        - Backstage
+        - GitHub
+docs/10-platform-engineering/10.1.2-techdocs.md:
+  category: Platform Engineering
+  estReadingMinutes: 10
+  exercises:
+    - name: Enable Documentation for an Existing Entity
+      description: >
+        This exercise instructs students to add the bare minimum amount of files
+        needed for their Backstage instance to generate an MkDocs site and
+        associate it with an entity in their Software Catalog.  Extra credit is
+        offered for studying Backstage's ability to search within TechDocs
+        stored in the Catalog -- the basic setup we point students towards in
+        this exercise can lead to a search-related bug which is valuable for
+        understanding the different ways Backstage can be configured to manage
+        TechDocs.
+      estMinutes: 40
+      technologies:
+        - GitHub
+        - Backstage
+docs/10-platform-engineering/10.1.3-software-templates.md:
+  category: Platform Engineering
+  estReadingMinutes: 20
+  exercises:
+    - name: Create a Simple Template
+      description: >
+        This exercise involves writing a custom Software Template and
+        configuring Backstage to register it as an entity that can be used from
+        the UI, and then using the template to publish a new repo in a GitHub
+        organization.  This can be achieved by following two separate guides in
+        Spotify's official Backstage docs: one for writing the Software
+        Template, and the other for providing Backstage with the necessary
+        permissions to publish new GitHub repos using the Template.  Some extra
+        time is allotted for misc. debugging, since it seems that Backstage is
+        in a transitory period and there's no telling whether their guides will
+        remain accurate.
+      estMinutes: 45
+      technologies:
+        - Backstage
+        - GitHub
+    - name: Write a Custom Action
+      description: >
+        Students are to become acquainted with the Scaffold plugin and extend
+        this plugin by writing a custom action which can be used in the custom
+        template they wrote in the previous exercise.  Some special instructions
+        are provided because the only available official guides are outdated.
+      estMinutes: 60
+      technologies:
+        - Backstage
+        - GitHub
+docs/10-platform-engineering/10.1.4-plugins.md:
+  category: Platform Engineering
+  estReadingMinutes: 10
+  exercises:
+    - name: Explore the Plugin Directory
+      description: >
+        Students receive an introduction to Backstage's plugin directory by
+        adding a plugin from the directory to their Backstage instance.  They
+        are encouraged to look through the plugin's source code and gain a basic
+        understanding of how it works.
+      estMinutes: 30
+      technologies:
+        - Backstage
+        - GitHub
+    - name: Write a Custom Plugin
+      description: >
+        Students will create their own Backstage plugin that exists outside of
+        Backstage's repo so it can be easily imported into any Backstage
+        instance.
+      estMinutes: 3000
+      technologies:
+        - Backstage
+        - TypeScript
+        - GitHub
+docs/10-platform-engineering/10.2-platforms.md:
+  category: Platform Engineering
+  estReadingMinutes: 15
+  exercises:
+    - name: Create a TVP (Thinnest Viable Platform)
+      description: >
+        Students will use Terraform, Terragrunt and a library/deploy repo
+        structure to create a core EKS platform with ArgoCD and External Secrets
+        Operators
+      estMinutes: 3000
+      technologies:
+        - AWS
+        - Terraform
+        - Terragrunt
+        - Kubernetes
+        - ArgoCD
+        - ExternalSecrets
 docs/2-Github/2.2-Actions.md:
   category: CI/CD
   estReadingMinutes: 20
@@ -114,7 +295,70 @@ docs/2-Github/2.5-Security.md:
       estMinutes: 20
       technologies:
         - GitHub Security
-docs/3-virtual-machines-containers/3.1-golden-images.md:
+docs/3-AI-Engineering/3.0-overview.md:
+  category: AI Engineering
+  estReadingMinutes: 5
+docs/3-AI-Engineering/3.1-ai-concepts.md:
+  category: AI Engineering
+  estReadingMinutes: 15
+docs/3-AI-Engineering/3.1.1-llms.md:
+  category: AI Engineering
+  estReadingMinutes: 12
+docs/3-AI-Engineering/3.1.2-ai-agents.md:
+  category: AI Engineering
+  estReadingMinutes: 10
+docs/3-AI-Engineering/3.1.3-ai-tools.md:
+  category: AI Engineering
+  estReadingMinutes: 18
+  exercises:
+    - name: Exploring Model Capabilities
+      description: >-
+        Get familiar comparing different AI models based on their capabilities
+        and characteristics
+      estMinutes: 30
+      technologies:
+        - AI Tools
+docs/3-AI-Engineering/3.2-mcp.md:
+  category: AI Engineering
+  estReadingMinutes: 12
+  exercises:
+    - name: Create an MCP Client
+      description: Build a simple MCP client that connects to a local MCP server
+      estMinutes: 45
+      technologies:
+        - MCP
+        - Python
+docs/3-AI-Engineering/3.3-best-practices.md:
+  category: AI Engineering
+  estReadingMinutes: 5
+docs/3-AI-Engineering/3.3.1-agentic-best-practices.md:
+  category: AI Engineering
+  estReadingMinutes: 30
+docs/3-AI-Engineering/3.3.2-agentic-ide.md:
+  category: AI Engineering
+  estReadingMinutes: 20
+  exercises:
+    - name: VSCode MCP Server
+      description: >-
+        Build an MCP server from scratch using VSCode in Agent mode and register
+        it with an MCP client
+      estMinutes: 240
+      technologies:
+        - VSCode
+        - MCP
+        - Python
+        - LLM
+    - name: Windsurf MCP Server
+      description: >-
+        Build an MCP server using Windsurf IDE, applying best practices learned
+        from the VSCode exercise
+      estMinutes: 180
+      technologies:
+        - Windsurf
+        - MCP
+        - Python
+        - LLM
+docs/4-virtual-machines-containers/4.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
   exercises:
@@ -135,7 +379,7 @@ docs/3-virtual-machines-containers/3.1-golden-images.md:
         - VMWare Fusion
         - Packer
         - Debian
-docs/3-virtual-machines-containers/3.2-local-development.md:
+docs/4-virtual-machines-containers/4.2-local-development.md:
   category: Virtualization
   estReadingMinutes: 15
   exercises:
@@ -150,7 +394,7 @@ docs/3-virtual-machines-containers/3.2-local-development.md:
         - Vagrant
         - Packer
         - Debian
-docs/3-virtual-machines-containers/3.3-managing-infrastructure.md:
+docs/4-virtual-machines-containers/4.3-managing-infrastructure.md:
   category: Virtualization
   estReadingMinutes: 10
   exercises:
@@ -164,7 +408,7 @@ docs/3-virtual-machines-containers/3.3-managing-infrastructure.md:
         - Debian
         - GitHub Actions
         - Nexus OSS
-docs/3-virtual-machines-containers/3.4-containers.md:
+docs/4-virtual-machines-containers/4.4-containers.md:
   category: Containerization
   estReadingMinutes: 20
   exercises:
@@ -182,7 +426,7 @@ docs/3-virtual-machines-containers/3.4-containers.md:
         - Docker
         - GitHub Actions
         - Nexus OSS
-docs/3-virtual-machines-containers/3.5.1-docker-compose.md:
+docs/4-virtual-machines-containers/4.5.1-docker-compose.md:
   category: Container Orchestration
   estReadingMinutes: 5
   exercises:
@@ -196,7 +440,7 @@ docs/3-virtual-machines-containers/3.5.1-docker-compose.md:
         - Docker Compose
         - GitHub Actions
         - Nexus OSS
-docs/3-virtual-machines-containers/3.5.2-kubernetes.md:
+docs/4-virtual-machines-containers/4.5.2-kubernetes.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -212,16 +456,16 @@ docs/3-virtual-machines-containers/3.5.2-kubernetes.md:
         - Kubernetes
         - GitHub Actions
         - Nexus OSS
-docs/4-cloud-computing/4.0-overview.md:
+docs/5-cloud-computing/5.0-overview.md:
   category: Cloud Computing
   estReadingMinutes: 30
-docs/4-cloud-computing/4.1.1-aws.md:
+docs/5-cloud-computing/5.1.1-aws.md:
   category: Cloud Computing
   estReadingMinutes: 60
-docs/4-cloud-computing/4.1.2-azure.md:
+docs/5-cloud-computing/5.1.2-azure.md:
   category: Cloud Computing
   estReadingMinutes: 30
-docs/4-cloud-computing/4.2.1-s3-cloudfront.md:
+docs/5-cloud-computing/5.2.1-s3-cloudfront.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -238,7 +482,7 @@ docs/4-cloud-computing/4.2.1-s3-cloudfront.md:
         - AWS S3
         - AWS
         - CloudFront
-docs/4-cloud-computing/4.2.2-ec2.md:
+docs/5-cloud-computing/5.2.2-ec2.md:
   category: Cloud Computing
   estReadingMinutes: 30
   exercises:
@@ -251,7 +495,7 @@ docs/4-cloud-computing/4.2.2-ec2.md:
         - AWS
         - EC2
         - Jenkins
-docs/4-cloud-computing/4.2.3-auto-scaling.md:
+docs/5-cloud-computing/5.2.3-auto-scaling.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -290,14 +534,14 @@ docs/4-cloud-computing/4.2.3-auto-scaling.md:
         - AWS Launch Templates
         - AWS Auto Scaling Groups
         - AWS ELB
-docs/4-cloud-computing/4.2.4-aws-packer.md:
+docs/5-cloud-computing/5.2.4-aws-packer.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
     - name: Creating a custom AMI
       description: >-
         Create an AMI with Packer that creates a provisioned machine like the
-        one you made in exercise 1 from 4.2.3. Create a Launch Template and Auto
+        one you made in exercise 1 from 5.2.3. Create a Launch Template and Auto
         Scaling group to leverage your new AMI via the AWS cli
       estMinutes: 180
       technologies:
@@ -306,7 +550,7 @@ docs/4-cloud-computing/4.2.4-aws-packer.md:
         - AWS Launch Templates
         - AWS Auto Scaling Groups
         - Packer
-docs/4-cloud-computing/4.2.5-lambda.md:
+docs/5-cloud-computing/5.2.5-lambda.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -321,7 +565,7 @@ docs/4-cloud-computing/4.2.5-lambda.md:
         - AWS Lambda
         - AWS S3
         - AWS DynamoDB
-docs/4-cloud-computing/4.2.6-ecs.md:
+docs/5-cloud-computing/5.2.6-ecs.md:
   category: Cloud Computing
   estReadingMinutes: 20
   exercises:
@@ -367,7 +611,7 @@ docs/4-cloud-computing/4.2.6-ecs.md:
         - AWS
         - AWS EKS
         - Kubernetes
-docs/4-cloud-computing/4.3.1-storage-accounts.md:
+docs/5-cloud-computing/5.3.1-storage-accounts.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -381,7 +625,7 @@ docs/4-cloud-computing/4.3.1-storage-accounts.md:
         - Azure Blob Storage
         - Azure CDN
         - Angular
-docs/4-cloud-computing/4.3.2-virtual-machines.md:
+docs/5-cloud-computing/5.3.2-virtual-machines.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -395,7 +639,7 @@ docs/4-cloud-computing/4.3.2-virtual-machines.md:
         - Azure VM
         - NGINX
         - cloud-init
-docs/4-cloud-computing/4.3.3-vmss.md:
+docs/5-cloud-computing/5.3.3-vmss.md:
   category: Cloud Computing
   estReadingMinutes: 15
   exercises:
@@ -411,21 +655,21 @@ docs/4-cloud-computing/4.3.3-vmss.md:
         - Azure Storage Account
         - Node.js
         - cloud-init
-docs/4-cloud-computing/4.3.4-az-packer.md:
+docs/5-cloud-computing/5.3.4-az-packer.md:
   category: Cloud Computing
   estReadingMinutes: 5
   exercises:
     - name: Create Shared Image Gallery with custom Azure VM image
       description: >-
         Create a Shared Image Gallery and put a custom Azure VM image in it.
-        Then redo the exercise in 4.3.2 with the custom image.
+        Then redo the exercise in 5.3.2 with the custom image.
       estMinutes: 360
       technologies:
         - Azure
         - Packer
         - Shared Image Gallery
         - Azure VM
-docs/4-cloud-computing/4.3.5-aci.md:
+docs/5-cloud-computing/5.3.5-aci.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -440,7 +684,7 @@ docs/4-cloud-computing/4.3.5-aci.md:
         - Azure Container Registry (ACR)
         - Docker
         - Node.js
-docs/4-cloud-computing/4.3.6-aks.md:
+docs/5-cloud-computing/5.3.6-aks.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -454,7 +698,7 @@ docs/4-cloud-computing/4.3.6-aks.md:
         - Azure Kubernetes Service (AKS)
         - Azure Container Registry (ACR)
         - Node.js
-docs/4-cloud-computing/4.3.7-app-service.md:
+docs/5-cloud-computing/5.3.7-app-service.md:
   category: Cloud Computing
   estReadingMinutes: 10
   exercises:
@@ -465,16 +709,16 @@ docs/4-cloud-computing/4.3.7-app-service.md:
         - Azure
         - Azure App Service
         - Azure CLI
-docs/5-software-development-practices/5.1-overview.md:
+docs/6-software-development-practices/6.1-overview.md:
   category: Agile Development
   estReadingMinutes: 90
-docs/5-software-development-practices/5.2-jira.md:
+docs/6-software-development-practices/6.2-jira.md:
   category: Agile Development
   estReadingMinutes: 30
-docs/5-software-development-practices/5.3.1-branching-merging.md:
+docs/6-software-development-practices/6.3.1-branching-merging.md:
   category: Version Control
   estReadingMinutes: 15
-docs/5-software-development-practices/5.3.2-git.md:
+docs/6-software-development-practices/6.3.2-git.md:
   category: Version Control
   estReadingMinutes: 25
   exercises:
@@ -498,7 +742,7 @@ docs/5-software-development-practices/5.3.2-git.md:
       estMinutes: 30
       technologies:
         - Git
-docs/5-software-development-practices/5.3.3-github.md:
+docs/6-software-development-practices/6.3.3-github.md:
   category: Version Control
   estReadingMinutes: 25
   exercises:
@@ -508,7 +752,7 @@ docs/5-software-development-practices/5.3.3-github.md:
       technologies:
         - Git
         - GitHub
-docs/5-software-development-practices/5.4-pairprogramming.md:
+docs/6-software-development-practices/6.4-pairprogramming.md:
   category: Agile Development
   estReadingMinutes: 20
   exercises:
@@ -519,7 +763,7 @@ docs/5-software-development-practices/5.4-pairprogramming.md:
       estMinutes: 30
       technologies:
         - VSCode
-docs/5-software-development-practices/5.5.1-unit-testing.md:
+docs/6-software-development-practices/6.5.1-unit-testing.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -529,7 +773,7 @@ docs/5-software-development-practices/5.5.1-unit-testing.md:
       technologies:
         - Go
         - TDD
-docs/5-software-development-practices/5.5.2-functional-testing.md:
+docs/6-software-development-practices/6.5.2-functional-testing.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -539,10 +783,10 @@ docs/5-software-development-practices/5.5.2-functional-testing.md:
       technologies:
         - Selenium
         - Python
-docs/5-software-development-practices/5.5.3-code-styling.md:
+docs/6-software-development-practices/6.5.3-code-styling.md:
   category: Software Quality
   estReadingMinutes: 30
-docs/5-software-development-practices/5.5.4-code-coverage.md:
+docs/6-software-development-practices/6.5.4-code-coverage.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -554,7 +798,7 @@ docs/5-software-development-practices/5.5.4-code-coverage.md:
       technologies:
         - Node.js
         - Jest
-docs/5-software-development-practices/5.5.5-test-doubles.md:
+docs/6-software-development-practices/6.5.5-test-doubles.md:
   category: Software Quality
   estReadingMinutes: 10
   exercises:
@@ -580,7 +824,7 @@ docs/5-software-development-practices/5.5.5-test-doubles.md:
       technologies:
         - Node.js
         - Jest
-docs/5-software-development-practices/5.5.6-test-automation.md:
+docs/6-software-development-practices/6.5.6-test-automation.md:
   category: Software Quality
   estReadingMinutes: 5
   exercises:
@@ -590,7 +834,7 @@ docs/5-software-development-practices/5.5.6-test-automation.md:
       technologies:
         - GitHub Actions
         - Go
-docs/5-software-development-practices/5.5.7-sonarqube.md:
+docs/6-software-development-practices/6.5.7-sonarqube.md:
   category: Software Quality
   estReadingMinutes: 10
   exercises:
@@ -602,10 +846,10 @@ docs/5-software-development-practices/5.5.7-sonarqube.md:
       technologies:
         - SonarQube
         - GitHub Actions
-docs/5-software-development-practices/5.5.8-code-review.md:
+docs/6-software-development-practices/6.5.8-code-review.md:
   category: Software Quality
   estReadingMinutes: 10
-docs/5-software-development-practices/5.6-hello-devops.md:
+docs/6-software-development-practices/6.6-hello-devops.md:
   category: Agile Development
   estReadingMinutes: 5
   exercises:
@@ -614,7 +858,7 @@ docs/5-software-development-practices/5.6-hello-devops.md:
         Using what you have leanred thus far create a production ready
         application
       estMinutes: 3000
-docs/6-release-management/6.1-versioning.md:
+docs/7-release-management/7.1-versioning.md:
   category: Version Control
   estReadingMinutes: 5
   exercises:
@@ -625,7 +869,7 @@ docs/6-release-management/6.1-versioning.md:
       estMinutes: 30
       technologies:
         - Docker
-docs/6-release-management/6.2.1-maven.md:
+docs/7-release-management/7.2.1-maven.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -636,7 +880,7 @@ docs/6-release-management/6.2.1-maven.md:
       estMinutes: 60
       technologies:
         - Maven
-docs/6-release-management/6.2.2-maven-integration.md:
+docs/7-release-management/7.2.2-maven-integration.md:
   category: CI/CD
   estReadingMinutes: 30
   exercises:
@@ -652,7 +896,7 @@ docs/6-release-management/6.2.2-maven-integration.md:
         - Maven
         - GitHub Actions
         - Nexus OSS
-docs/6-release-management/6.2.3-make.md:
+docs/7-release-management/7.2.3-make.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -665,7 +909,7 @@ docs/6-release-management/6.2.3-make.md:
       estMinutes: 60
       technologies:
         - Make
-docs/6-release-management/6.2.4-npm.md:
+docs/7-release-management/7.2.4-npm.md:
   category: CI/CD
   estReadingMinutes: 15
   exercises:
@@ -678,7 +922,7 @@ docs/6-release-management/6.2.4-npm.md:
         - npm
         - Node.js
         - Java
-docs/6-release-management/6.2.5-go-releaser.md:
+docs/7-release-management/7.2.5-go-releaser.md:
   category: CI/CD
   estReadingMinutes: 5
   exercises:
@@ -692,7 +936,7 @@ docs/6-release-management/6.2.5-go-releaser.md:
         - Go Releaser
         - GitHub
         - GitHub Actions
-docs/6-release-management/6.3.1-docker.md:
+docs/7-release-management/7.3.1-docker.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -707,7 +951,7 @@ docs/6-release-management/6.3.1-docker.md:
         - Dockerhub
         - GitHub
         - GitHub Actions
-docs/6-release-management/6.3.2-helm.md:
+docs/7-release-management/7.3.2-helm.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -746,7 +990,7 @@ docs/6-release-management/6.3.2-helm.md:
         - Kubernetes
         - Docker
         - GitHub
-docs/7-infrastructure-configuration-management/7.1.1-terraform-getting-started.md:
+docs/8-infrastructure-configuration-management/8.1.1-terraform-getting-started.md:
   category: Infrastructure as Code
   estReadingMinutes: 45
   exercises:
@@ -759,7 +1003,7 @@ docs/7-infrastructure-configuration-management/7.1.1-terraform-getting-started.m
         - Terraform
         - AWS
         - Azure
-docs/7-infrastructure-configuration-management/7.1.2-terraform-backends.md:
+docs/8-infrastructure-configuration-management/8.1.2-terraform-backends.md:
   category: Infrastructure as Code
   estReadingMinutes: 20
   exercises:
@@ -789,7 +1033,7 @@ docs/7-infrastructure-configuration-management/7.1.2-terraform-backends.md:
       technologies:
         - Terraform
         - GitHub Actions
-docs/7-infrastructure-configuration-management/7.1.3-terraform-modules.md:
+docs/8-infrastructure-configuration-management/8.1.3-terraform-modules.md:
   category: Infrastructure as Code
   estReadingMinutes: 15
   exercises:
@@ -808,7 +1052,7 @@ docs/7-infrastructure-configuration-management/7.1.3-terraform-modules.md:
       technologies:
         - Terraform
         - AWS S3
-docs/7-infrastructure-configuration-management/7.1.4-terraform-providers.md:
+'docs/8-infrastructure-configuration-management/8.1.4-terraform-providers.mSince this is a custom API the Ferrets have written, we will also need to make our own custom Terraform provider if we want to use Terraform to manage our resources. Knowing the structure of this API is crucial when attempting to write the provider for this API. Before diving into creating the provider for this API, take some time looking over the [API ReadMe](https://github.com/liatrio/devops-bootcamp/tree/master/examples/ch8/devops-api), as well as the accompanying scripts. Try to run the API locally and add some resources until you think you have a good understanding of how it works.':
   category: Infrastructure as Code
   estReadingMinutes: 20
   exercises:
@@ -852,7 +1096,7 @@ docs/7-infrastructure-configuration-management/7.1.4-terraform-providers.md:
       technologies:
         - Terraform
         - Go
-docs/7-infrastructure-configuration-management/7.2-ansible.md:
+docs/8-infrastructure-configuration-management/8.2-ansible.md:
   category: Infrastructure as Code
   estReadingMinutes: 15
   exercises:
@@ -893,10 +1137,10 @@ docs/7-infrastructure-configuration-management/7.2-ansible.md:
         - Ansible
         - AWS EC2
         - GitHub self-hosted runner
-docs/8-kubernetes-container-orchestration/8.1-kubectl-ref.md:
+docs/9-kubernetes-container-orchestration/9.1-kubectl-ref.md:
   category: Container Orchestration
   estReadingMinutes: 120
-docs/8-kubernetes-container-orchestration/8.2-volumes.md:
+docs/9-kubernetes-container-orchestration/9.2-volumes.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -917,7 +1161,7 @@ docs/8-kubernetes-container-orchestration/8.2-volumes.md:
       technologies:
         - Kubernetes
         - Jenkins
-docs/8-kubernetes-container-orchestration/8.3-probes.md:
+docs/9-kubernetes-container-orchestration/9.3-probes.md:
   category: Container Orchestration
   estReadingMinutes: 10
   exercises:
@@ -946,7 +1190,7 @@ docs/8-kubernetes-container-orchestration/8.3-probes.md:
       estMinutes: 45
       technologies:
         - Kubernetes
-docs/8-kubernetes-container-orchestration/8.4-rbac.md:
+docs/9-kubernetes-container-orchestration/9.4-rbac.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -968,7 +1212,7 @@ docs/8-kubernetes-container-orchestration/8.4-rbac.md:
       technologies:
         - Docker
         - Kubernetes
-docs/8-kubernetes-container-orchestration/8.5-hpas.md:
+docs/9-kubernetes-container-orchestration/9.5-hpas.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -1002,7 +1246,7 @@ docs/8-kubernetes-container-orchestration/8.5-hpas.md:
       technologies:
         - Docker
         - Kubernetes
-docs/8-kubernetes-container-orchestration/8.6-webhooks.md:
+docs/9-kubernetes-container-orchestration/9.6-webhooks.md:
   category: Container Orchestration
   estReadingMinutes: 15
   exercises:
@@ -1032,7 +1276,7 @@ docs/8-kubernetes-container-orchestration/8.6-webhooks.md:
       technologies:
         - Kubernetes
         - Python
-docs/8-kubernetes-container-orchestration/8.6.1-validating-admission-policy.md:
+docs/9-kubernetes-container-orchestration/9.6.1-validating-admission-policy.md:
   category: Container Orchestration
   estReadingMinutes: 35
   exercises:
@@ -1066,7 +1310,7 @@ docs/8-kubernetes-container-orchestration/8.6.1-validating-admission-policy.md:
         - Kubernetes
         - ValidatingAdmissionPolicy
         - CEL
-docs/8-kubernetes-container-orchestration/8.7.1-kustomize.md:
+docs/9-kubernetes-container-orchestration/9.7.1-kustomize.md:
   category: Container Orchestration
   estReadingMinutes: 20
   exercises:
@@ -1121,7 +1365,7 @@ docs/8-kubernetes-container-orchestration/8.7.1-kustomize.md:
       technologies:
         - Kubernetes
         - Kustomize
-docs/8-kubernetes-container-orchestration/8.7.2-helm.md:
+docs/9-kubernetes-container-orchestration/9.7.2-helm.md:
   category: Container Orchestration
   estReadingMinutes: 5
   exercises:
@@ -1141,7 +1385,7 @@ docs/8-kubernetes-container-orchestration/8.7.2-helm.md:
         - Kubernetes
         - Helm
         - Kustomize
-docs/8-kubernetes-container-orchestration/8.8-controllers.md:
+docs/9-kubernetes-container-orchestration/9.8-controllers.md:
   category: Container Orchestration
   estReadingMinutes: 45
   exercises:
@@ -1171,187 +1415,6 @@ docs/8-kubernetes-container-orchestration/8.8-controllers.md:
         - Kubernetes
         - k3d
         - client-go
-docs/9-platform-engineering/9.0-overview.md:
-  category: Platform Engineering
-  estReadingMinutes: 15
-docs/9-platform-engineering/9.1-backstage.md:
-  category: Platform Engineering
-  estReadingMinutes: 20
-  exercises:
-    - name: Create a GitHub Organization
-      description: >
-        This exercise involves creating a GitHub Organization to simulate an
-        integrated SCM environment, similar to what you would find in a
-        real-world development ecosystem. Each student will create their own
-        GitHub Organization following the provided instructions.
-      estMinutes: 30
-      technologies:
-        - GitHub
-    - name: Stand up local instance of Backstage
-      description: >
-        Students will set up a local instance of Backstage by following the
-        official Getting Started guide. This exercise covers starting the local
-        instance, familiarizing with the UI, and customizing the appearance of
-        the Backstage instance including logo and application name changes.
-        Extra credit is given for applying a custom theme. The customized
-        instance should then be pushed to a repo in the newly created GitHub
-        Organization.
-      estMinutes: 60
-      technologies:
-        - Backstage
-        - Docker
-    - name: Configure Authentication via GitHub
-      description: >
-        This exercise focuses on configuring authentication for the Backstage
-        instance using GitHub. Students will create an OAuth app within their
-        GitHub Organization and integrate it with Backstage for authentication
-        purposes. This includes not storing secrets in plain text and ensuring
-        secure authentication practices. Verification of login functionality
-        through GitHub is the final step to confirm successful integration.
-      estMinutes: 120
-      technologies:
-        - Backstage
-        - GitHub
-docs/9-platform-engineering/9.1.1-software-catalog.md:
-  category: Platform Engineering
-  estReadingMinutes: 20
-  exercises:
-    - name: Entity Registration
-      description: >
-        This exercise instructs students to register an entity to their local
-        Backstage instance.  The entity should correspond to a repo belonging to
-        a GitHub organization that the student owns.  This exercise will require
-        students to configure their Backstage instance to have the permissions
-        needed to access their GitHub organization and will help pave the way
-        for the following exercise.
-      estMinutes: 20
-      technologies:
-        - Backstage
-        - GitHub
-    - name: Catalog Ingestion
-      description: >
-        Students will configure their Backstage instance to automatically
-        perform read operations on a given GitHub organization and ingest
-        `catalog-info.yaml` files existing in that organization in order to
-        automatically register entities.  They will need to configure GitHub as
-        a catalog and ensure that their Backstage instance combs their
-        organization for the correct file(s) at an appropriate interval.
-      estMinutes: 80
-      technologies:
-        - Backstage
-        - GitHub
-    - name: Dependency Graphs
-      description: >
-        Students will fork two interdependent repos to their organization and
-        ensure that their Backstage instance recognizes the two repos while also
-        displaying the repos' interdependence via the "Relations" section of
-        their overviews in the UI.  This requires a thorough understanding of
-        the available fields in `catalog-info.yaml` files along with a Backstage
-        app's configuration file.
-      estMinutes: 120
-      technologies:
-        - Backstage
-        - GitHub
-    - name: OpenAPI Definitions
-      description: >
-        Here, students are required to provide an OpenAPI specification which
-        their Backstage instance can ingest and associate with a definition for
-        an API having source code in a repo owned by the student's
-        organization.  Students may use a repo that already has an OpenAPI spec
-        file or they may generate the necessary spec data from an API.
-      estMinutes: 30
-      technologies:
-        - Backstage
-        - GitHub
-docs/9-platform-engineering/9.1.2-techdocs.md:
-  category: Platform Engineering
-  estReadingMinutes: 10
-  exercises:
-    - name: Enable Documentation for an Existing Entity
-      description: >
-        This exercise instructs students to add the bare minimum amount of files
-        needed for their Backstage instance to generate an MkDocs site and
-        associate it with an entity in their Software Catalog.  Extra credit is
-        offered for studying Backstage's ability to search within TechDocs
-        stored in the Catalog -- the basic setup we point students towards in
-        this exercise can lead to a search-related bug which is valuable for
-        understanding the different ways Backstage can be configured to manage
-        TechDocs.
-      estMinutes: 40
-      technologies:
-        - GitHub
-        - Backstage
-docs/9-platform-engineering/9.1.3-software-templates.md:
-  category: Platform Engineering
-  estReadingMinutes: 20
-  exercises:
-    - name: Create a Simple Template
-      description: >
-        This exercise involves writing a custom Software Template and
-        configuring Backstage to register it as an entity that can be used from
-        the UI, and then using the template to publish a new repo in a GitHub
-        organization.  This can be achieved by following two separate guides in
-        Spotify's official Backstage docs: one for writing the Software
-        Template, and the other for providing Backstage with the necessary
-        permissions to publish new GitHub repos using the Template.  Some extra
-        time is allotted for misc. debugging, since it seems that Backstage is
-        in a transitory period and there's no telling whether their guides will
-        remain accurate.
-      estMinutes: 45
-      technologies:
-        - Backstage
-        - GitHub
-    - name: Write a Custom Action
-      description: >
-        Students are to become acquainted with the Scaffold plugin and extend
-        this plugin by writing a custom action which can be used in the custom
-        template they wrote in the previous exercise.  Some special instructions
-        are provided because the only available official guides are outdated.
-      estMinutes: 60
-      technologies:
-        - Backstage
-        - GitHub
-docs/9-platform-engineering/9.1.4-plugins.md:
-  category: Platform Engineering
-  estReadingMinutes: 10
-  exercises:
-    - name: Explore the Plugin Directory
-      description: >
-        Students receive an introduction to Backstage's plugin directory by
-        adding a plugin from the directory to their Backstage instance.  They
-        are encouraged to look through the plugin's source code and gain a basic
-        understanding of how it works.
-      estMinutes: 30
-      technologies:
-        - Backstage
-        - GitHub
-    - name: Write a Custom Plugin
-      description: >
-        Students will create their own Backstage plugin that exists outside of
-        Backstage's repo so it can be easily imported into any Backstage
-        instance.
-      estMinutes: 3000
-      technologies:
-        - Backstage
-        - TypeScript
-        - GitHub
-docs/9-platform-engineering/9.2-platforms.md:
-  category: Platform Engineering
-  estReadingMinutes: 15
-  exercises:
-    - name: Create a TVP (Thinnest Viable Platform)
-      description: >
-        Students will use Terraform, Terragrunt and a library/deploy repo
-        structure to create a core EKS platform with ArgoCD and External Secrets
-        Operators
-      estMinutes: 3000
-      technologies:
-        - AWS
-        - Terraform
-        - Terragrunt
-        - Kubernetes
-        - ArgoCD
-        - ExternalSecrets
 ---
 <!-- DO NOT EDIT ABOVE THIS COMMENT. -->
 <!-- MANAGED BY ./husky.sh/front-matter-condenser.js -->
