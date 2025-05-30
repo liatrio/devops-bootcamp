@@ -342,7 +342,7 @@ docs/3-AI-Engineering/3.3.2-agentic-ide.md:
       description: >-
         Build an MCP server from scratch using VSCode in Agent mode and register
         it with an MCP client
-      estMinutes: 60
+      estMinutes: 240
       technologies:
         - VSCode
         - MCP
@@ -352,7 +352,7 @@ docs/3-AI-Engineering/3.3.2-agentic-ide.md:
       description: >-
         Build an MCP server using Windsurf IDE, applying best practices learned
         from the VSCode exercise
-      estMinutes: 45
+      estMinutes: 180
       technologies:
         - Windsurf
         - MCP
