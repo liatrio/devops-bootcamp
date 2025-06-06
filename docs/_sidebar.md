@@ -38,6 +38,7 @@
   - [3.1.1 - Large Language Models (LLMs)](3-AI-Engineering/3.1.1-llms.md)
   - [3.1.2 - AI Agents](3-AI-Engineering/3.1.2-ai-agents.md)
   - [3.1.3 - Using AI Tools](3-AI-Engineering/3.1.3-ai-tools.md)
+  - [3.1.4 - AI Best Practices](3-AI-Engineering/3.1.4-ai-best-practices.md)
 - [3.2 - MCP: Model Context Protocol](3-AI-Engineering/3.2-mcp.md)
 - [3.3 - AI Engineering](3-AI-Engineering/3.3-best-practices.md)
   - [3.3.1 - Advanced AI Techniques](3-AI-Engineering/3.3.1-agentic-best-practices.md)
