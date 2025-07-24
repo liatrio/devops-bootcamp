@@ -459,6 +459,45 @@ docs/4-virtual-machines-containers/4.5.2-kubernetes.md:
         - Kubernetes
         - GitHub Actions
         - Nexus OSS
+docs/4-virtual-machines-containers/4.5.3-tilt.md:
+  category: Container Orchestration
+  estReadingMinutes: 20
+  exercises:
+    - name: Getting Started with Local Development
+      description: >-
+        Create a monorepo with two microservices for a todo app and experience
+        local development with interactive debugging
+      estMinutes: 120
+      technologies:
+        - JavaScript/TypeScript
+        - Python
+        - Visual Studio Code
+    - name: Containerize Your Applications
+      description: >-
+        Containerize both services and experience the development loop with
+        containers
+      estMinutes: 90
+      technologies:
+        - Docker
+        - Visual Studio Code
+    - name: Deploy to Kubernetes
+      description: >-
+        Create Kubernetes manifests and deploy to a local k3d cluster,
+        experiencing the k8s development loop
+      estMinutes: 150
+      technologies:
+        - Kubernetes
+        - k3d
+        - kubectl
+    - name: Tilt Development Workflow
+      description: >-
+        Use Tilt to streamline the microservice development experience in
+        Kubernetes
+      estMinutes: 180
+      technologies:
+        - Tilt
+        - Kubernetes
+        - k3d
 docs/5-cloud-computing/5.0-overview.md:
   category: Cloud Computing
   estReadingMinutes: 30

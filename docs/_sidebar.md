@@ -53,7 +53,8 @@
   - [Container Management](/4-virtual-machines-containers/4.5-container-management.md)
     - [Docker Compose](/4-virtual-machines-containers/4.5.1-docker-compose.md)
     - [Kubernetes](/4-virtual-machines-containers/4.5.2-kubernetes.md)
-    - [Deliverables](/4-virtual-machines-containers/4.5.3-deliverables.md)
+    - [Tilt](/4-virtual-machines-containers/4.5.3-tilt.md)
+    - [Deliverables](/4-virtual-machines-containers/4.5.4-deliverables.md)
 
 - **Chapter 5**
 - [5.0 - Cloud Computing](5-cloud-computing/5.0-overview.md)
