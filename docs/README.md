@@ -825,6 +825,12 @@ docs/6-software-development-practices/6.5.2-functional-testing.md:
       technologies:
         - Selenium
         - Python
+    - name: Create functional tests with Playwright in Python
+      description: Create functional tests for the bootcamp using Playwright in Python.
+      estMinutes: 60
+      technologies:
+        - Playwright
+        - Python
 docs/6-software-development-practices/6.5.3-code-styling.md:
   category: Software Quality
   estReadingMinutes: 30
