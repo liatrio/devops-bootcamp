@@ -45,16 +45,16 @@
   - [3.3.2 - Agentic IDEs](3-AI-Engineering/3.3.2-agentic-ide.md)
 
 - **Chapter 4**
-- [Virtual Machines & Containers](/4-virtual-machines-containers/4.0-overview.md)
-  - [Golden Images](/4-virtual-machines-containers/4.1-golden-images.md)
-  - [Local Development](/4-virtual-machines-containers/4.2-local-development.md)
-  - [Managing Infrastructure](/4-virtual-machines-containers/4.3-managing-infrastructure.md)
-  - [Containers](/4-virtual-machines-containers/4.4-containers.md)
-  - [Container Management](/4-virtual-machines-containers/4.5-container-management.md)
-    - [Docker Compose](/4-virtual-machines-containers/4.5.1-docker-compose.md)
-    - [Kubernetes](/4-virtual-machines-containers/4.5.2-kubernetes.md)
-    - [Tilt](/4-virtual-machines-containers/4.5.3-tilt.md)
-    - [Deliverables](/4-virtual-machines-containers/4.5.4-deliverables.md)
+- [4.0 - Virtual Machines & Containers](/4-virtual-machines-containers/4.0-overview.md)
+- [4.1 - Golden Images](/4-virtual-machines-containers/4.1-golden-images.md)
+- [4.2 - Local Development](/4-virtual-machines-containers/4.2-local-development.md)
+- [4.3 - Managing Infrastructure](/4-virtual-machines-containers/4.3-managing-infrastructure.md)
+- [4.4 - Containers](/4-virtual-machines-containers/4.4-containers.md)
+- [4.5 - Container Management](/4-virtual-machines-containers/4.5-container-management.md)
+  - [4.5.1 - Docker Compose](/4-virtual-machines-containers/4.5.1-docker-compose.md)
+  - [4.5.2 - Kubernetes](/4-virtual-machines-containers/4.5.2-kubernetes.md)
+  - [4.5.3 - Tilt](/4-virtual-machines-containers/4.5.3-tilt.md)
+  - [4.5.4 - Deliverables](/4-virtual-machines-containers/4.5.4-deliverables.md)
 
 - **Chapter 5**
 - [5.0 - Cloud Computing](5-cloud-computing/5.0-overview.md)
