@@ -361,6 +361,9 @@ docs/3-AI-Engineering/3.3.2-agentic-ide.md:
         - MCP
         - Python
         - LLM
+docs/4-virtual-machines-containers/4.0-overview.md:
+  category: Virtualization
+  estReadingMinutes: 5
 docs/4-virtual-machines-containers/4.1-golden-images.md:
   category: Virtualization
   estReadingMinutes: 15
