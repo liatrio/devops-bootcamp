@@ -128,8 +128,8 @@
   - [8.1.1 - Terraform Getting Started](8-infrastructure-configuration-management/8.1.1-terraform-getting-started.md)
   - [8.1.2 - Terraform State & Backends](8-infrastructure-configuration-management/8.1.2-terraform-backends.md)
   - [8.1.3 - Terraform Modules](8-infrastructure-configuration-management/8.1.3-terraform-modules.md)
-  - [8.1.4 - Terraform Providers](8-infrastructure-configuration-management/8.1.4-terraform-providers.md)
 - [8.2 - Ansible](8-infrastructure-configuration-management/8.2-ansible.md)
+- [8.3 - Terraform Providers](8-infrastructure-configuration-management/8.3-terraform-providers.md)
 
 - **Chapter 9**
 - [9.0 - Kubernetes Overview](9-kubernetes-container-orchestration/9.0-overview.md)
