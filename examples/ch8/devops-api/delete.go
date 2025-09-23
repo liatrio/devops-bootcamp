@@ -57,13 +57,13 @@ func deleteEngineerFrom_Op(op_id string, engineer_id string) (bool, error) {
 	if err != nil {
 		return false, errors.New(" Engineer doesn't exists inside specified Operations group ")
 	}
-	
+
 	// Remove engineer from operation using store method
 	err = opsStore.RemoveEngineerFromOp(op_id, engineer_id)
 	if err != nil {
 		return false, errors.New(" Error: " + err.Error())
 	}
-	
+
 	// Also remove from devops operations
 	devOpsStore.RemoveEngineerFromAll(engineer_id)
 
@@ -85,13 +85,13 @@ func deleteEngineerFrom_Dev(dev_id string, engineer_id string) (bool, error) {
 	if err != nil {
 		return false, errors.New(" Engineer doesn't exists inside specified Developer group ")
 	}
-	
+
 	// Remove engineer from dev using store method
 	err = devStore.RemoveEngineerFromDev(dev_id, engineer_id)
 	if err != nil {
 		return false, errors.New(" Error: " + err.Error())
 	}
-	
+
 	// Also remove from devops devs
 	devOpsStore.RemoveEngineerFromAll(engineer_id)
 
@@ -156,12 +156,12 @@ func deleteDevOps(devops_id string) (bool, error) {
 	if err != nil {
 		return false, errors.New(" Developer Operations group doesn't exist ")
 	}
-	
+
 	// Remove devops from main store
 	if !devOpsStore.DeleteByID(devops_id) {
 		return false, errors.New(" Error: devops not found in store ")
 	}
-	
+
 	return true, nil
 }
 
@@ -170,17 +170,17 @@ func deleteDev(dev_id string) (bool, error) {
 	if err != nil {
 		return false, errors.New(" Developer group doesn't exist ")
 	}
-	
+
 	// Remove dev from all devops
 	for _, devops := range devOpsStore.List() {
 		devOpsStore.RemoveDevFromDevOps(devops.Id, dev_id)
 	}
-	
+
 	// Remove dev from main store
 	if !devStore.DeleteByID(dev_id) {
 		return false, errors.New(" Error: dev not found in store ")
 	}
-	
+
 	return true, nil
 }
 
@@ -189,17 +189,17 @@ func deleteOp(op_id string) (bool, error) {
 	if err != nil {
 		return false, errors.New(" Operations group doesn't exist ")
 	}
-	
+
 	// Remove ops from all devops
 	for _, devops := range devOpsStore.List() {
 		devOpsStore.RemoveOpsFromDevOps(devops.Id, op_id)
 	}
-	
+
 	// Remove ops from main store
 	if !opsStore.DeleteByID(op_id) {
 		return false, errors.New(" Error: ops not found in store ")
 	}
-	
+
 	return true, nil
 }
 
@@ -208,20 +208,20 @@ func deleteEngineer(engineer_id string) (bool, error) {
 	if err != nil {
 		return false, errors.New(" Engineer doesn't exist ")
 	}
-	
+
 	// Remove engineer from all devs
 	for _, dev := range devStore.List() {
 		devStore.RemoveEngineerFromDev(dev.Id, engineer_id)
 	}
-	
+
 	// Remove engineer from all ops
 	for _, op := range opsStore.List() {
 		opsStore.RemoveEngineerFromOp(op.Id, engineer_id)
 	}
-	
+
 	// Remove engineer from all devops
 	devOpsStore.RemoveEngineerFromAll(engineer_id)
-	
+
 	// Remove engineer from main store
 	if !engineerStore.DeleteByID(engineer_id) {
 		return false, errors.New(" Error: engineer not found in store ")

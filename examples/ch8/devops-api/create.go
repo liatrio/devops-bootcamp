@@ -87,7 +87,7 @@ func newEngineer(name string, email string) (*devops_resource.Engineer, error) {
 	}
 	p := devops_resource.Engineer{Name: name, Id: getRandId(5)}
 	p.Email = email
-	
+
 	// Add to store instead of global slice
 	engineerStore.Add(&p)
 	return &p, nil
@@ -172,7 +172,7 @@ func addEngineerTo_Op(ops_id string, engineer_id string) (bool, error) {
 	if err == nil {
 		return false, errors.New(" Engineer already exists inside specified Operations group ")
 	}
-	
+
 	// Use thread-safe method to add engineer to operation
 	if !opsStore.AddEngineerToOp(ops_id, engineer_val) {
 		return false, errors.New(" Failed to add engineer to operations group ")
@@ -220,7 +220,7 @@ func addDevTo_DevOps(devops_id string, dev_id string) (bool, error) {
 	if err == nil {
 		return false, errors.New(" Developer already exists inside specified Developer Operations group ")
 	}
-	
+
 	// Use thread-safe method to add dev to devops
 	if !devOpsStore.AddDevToDevOps(devops_id, dev_val) {
 		return false, errors.New(" Failed to add dev to devops group ")
@@ -244,7 +244,7 @@ func addOpTo_DevOps(devops_id string, op_id string) (bool, error) {
 	if err == nil {
 		return false, errors.New(" Developer already exists inside specified Developer Operations group ")
 	}
-	
+
 	// Use thread-safe method to add ops to devops
 	if !devOpsStore.AddOpsToDevOps(devops_id, op_val) {
 		return false, errors.New(" Failed to add ops to devops group ")

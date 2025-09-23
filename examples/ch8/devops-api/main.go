@@ -18,17 +18,17 @@ type EngineerStore struct {
 }
 
 type DevStore struct {
-	mu        sync.RWMutex
+	mu         sync.RWMutex
 	developers []*devops_resource.Dev
 }
 
 type OpsStore struct {
-	mu        sync.RWMutex
+	mu         sync.RWMutex
 	operations []*devops_resource.Ops
 }
 
 type DevOpsStore struct {
-	mu                 sync.RWMutex
+	mu                   sync.RWMutex
 	developer_operations []*devops_resource.DevOps
 }
 
@@ -114,7 +114,7 @@ func (s *EngineerStore) FindByEmail(email string) (*devops_resource.Engineer, bo
 func (s *EngineerStore) DeleteByID(id string) bool {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for i := range s.engineers {
 		if s.engineers[i].Id == id {
 			last := len(s.engineers) - 1
@@ -167,7 +167,7 @@ func (s *DevStore) FindByName(name string) (*devops_resource.Dev, bool) {
 func (s *DevStore) DeleteByID(id string) bool {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for i := range s.developers {
 		if s.developers[i].Id == id {
 			last := len(s.developers) - 1
@@ -220,7 +220,7 @@ func (s *OpsStore) FindByName(name string) (*devops_resource.Ops, bool) {
 func (s *OpsStore) DeleteByID(id string) bool {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for i := range s.operations {
 		if s.operations[i].Id == id {
 			last := len(s.operations) - 1
@@ -262,7 +262,7 @@ func (s *DevOpsStore) FindByID(id string) (*devops_resource.DevOps, bool) {
 func (s *DevOpsStore) DeleteByID(id string) bool {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for i := range s.developer_operations {
 		if s.developer_operations[i].Id == id {
 			last := len(s.developer_operations) - 1
@@ -279,7 +279,7 @@ func (s *DevOpsStore) DeleteByID(id string) bool {
 func (s *OpsStore) AddEngineerToOp(opID string, engineer *devops_resource.Engineer) bool {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for _, op := range s.operations {
 		if op.Id == opID {
 			op.Engineers = append(op.Engineers, engineer)
@@ -289,11 +289,11 @@ func (s *OpsStore) AddEngineerToOp(opID string, engineer *devops_resource.Engine
 	return false
 }
 
-// Helper method to add engineer to dev  
+// Helper method to add engineer to dev
 func (s *DevStore) AddEngineerToDev(devID string, engineer *devops_resource.Engineer) bool {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for _, dev := range s.developers {
 		if dev.Id == devID {
 			dev.Engineers = append(dev.Engineers, engineer)
@@ -307,7 +307,7 @@ func (s *DevStore) AddEngineerToDev(devID string, engineer *devops_resource.Engi
 func (s *DevOpsStore) AddDevToDevOps(devOpsID string, dev *devops_resource.Dev) bool {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for _, devops := range s.developer_operations {
 		if devops.Id == devOpsID {
 			devops.Devs = append(devops.Devs, dev)
@@ -321,7 +321,7 @@ func (s *DevOpsStore) AddDevToDevOps(devOpsID string, dev *devops_resource.Dev) 
 func (s *DevOpsStore) AddOpsToDevOps(devOpsID string, ops *devops_resource.Ops) bool {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for _, devops := range s.developer_operations {
 		if devops.Id == devOpsID {
 			devops.Ops = append(devops.Ops, ops)
@@ -335,7 +335,7 @@ func (s *DevOpsStore) AddOpsToDevOps(devOpsID string, ops *devops_resource.Ops) 
 func (s *OpsStore) RemoveEngineerFromOp(opID string, engineerID string) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for _, op := range s.operations {
 		if op.Id == opID {
 			for i := range op.Engineers {
@@ -356,7 +356,7 @@ func (s *OpsStore) RemoveEngineerFromOp(opID string, engineerID string) error {
 func (s *DevStore) RemoveEngineerFromDev(devID string, engineerID string) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for _, dev := range s.developers {
 		if dev.Id == devID {
 			for i := range dev.Engineers {
@@ -377,7 +377,7 @@ func (s *DevStore) RemoveEngineerFromDev(devID string, engineerID string) error 
 func (s *DevOpsStore) RemoveEngineerFromAll(engineerID string) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for _, devops := range s.developer_operations {
 		for _, op := range devops.Ops {
 			for i := range op.Engineers {
@@ -408,7 +408,7 @@ func (s *DevOpsStore) RemoveEngineerFromAll(engineerID string) {
 func (s *DevOpsStore) RemoveDevFromDevOps(devOpsID string, devID string) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for _, devops := range s.developer_operations {
 		if devops.Id == devOpsID {
 			for i := range devops.Devs {
@@ -429,7 +429,7 @@ func (s *DevOpsStore) RemoveDevFromDevOps(devOpsID string, devID string) error {
 func (s *DevOpsStore) RemoveOpsFromDevOps(devOpsID string, opsID string) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	
+
 	for _, devops := range s.developer_operations {
 		if devops.Id == devOpsID {
 			for i := range devops.Ops {
