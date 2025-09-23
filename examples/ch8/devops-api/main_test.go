@@ -272,13 +272,13 @@ func TestPostEngineer(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
-	engineers = nil
+	engineerStore.Clear()
 }
 
 func TestPutEngineer(t *testing.T) {
 	var w *httptest.ResponseRecorder
 	var c *gin.Context
-	engineers = append(engineers, &devops_resource.Engineer{Name: "Bob", Id: "1", Email: "bob@gmail.com"})
+	engineerStore.Add(&devops_resource.Engineer{Name: "Bob", Id: "1", Email: "bob@gmail.com"})
 
 	for _, test := range verifyPutEngineer {
 		w = httptest.NewRecorder()
@@ -292,13 +292,13 @@ func TestPutEngineer(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
-	engineers = nil
+	engineerStore.Clear()
 }
 
 func TestDeleteRequestEngineer(t *testing.T) {
 	var w *httptest.ResponseRecorder
 	var c *gin.Context
-	engineers = append(engineers, &devops_resource.Engineer{Name: "Bob", Id: "5", Email: "bob@gmail.com"})
+	engineerStore.Add(&devops_resource.Engineer{Name: "Bob", Id: "5", Email: "bob@gmail.com"})
 
 	for _, test := range verifyDeleteEngineer {
 		w = httptest.NewRecorder()
@@ -312,7 +312,7 @@ func TestDeleteRequestEngineer(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
-	engineers = nil
+	engineerStore.Clear()
 }
 
 /********************************************/
@@ -334,13 +334,13 @@ func TestPostDev(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
-	developers = nil
+	devStore.Clear()
 }
 
 func TestPutDev(t *testing.T) {
 	var w *httptest.ResponseRecorder
 	var c *gin.Context
-	developers = append(developers, &devops_resource.Dev{Name: "ferrets", Id: "2"})
+	devStore.Add(&devops_resource.Dev{Name: "ferrets", Id: "2"})
 
 	for _, test := range verifyPutDev {
 		w = httptest.NewRecorder()
@@ -354,13 +354,13 @@ func TestPutDev(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
-	developers = nil
+	devStore.Clear()
 }
 
 func TestDeleteRequestDev(t *testing.T) {
 	var w *httptest.ResponseRecorder
 	var c *gin.Context
-	developers = append(developers, &devops_resource.Dev{Name: "ferrets", Id: "4"})
+	devStore.Add(&devops_resource.Dev{Name: "ferrets", Id: "4"})
 
 	for _, test := range verifyDeleteDev {
 		w = httptest.NewRecorder()
@@ -374,7 +374,7 @@ func TestDeleteRequestDev(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
-	developers = nil
+	devStore.Clear()
 }
 
 /********************************************/
@@ -396,13 +396,13 @@ func TestPostOp(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
-	operations = nil
+	opsStore.Clear()
 }
 
 func TestPutOp(t *testing.T) {
 	var w *httptest.ResponseRecorder
 	var c *gin.Context
-	operations = append(operations, &devops_resource.Ops{Name: "ferrets", Id: "2"})
+	opsStore.Add(&devops_resource.Ops{Name: "ferrets", Id: "2"})
 
 	for _, test := range verifyPutOp {
 		w = httptest.NewRecorder()
@@ -416,13 +416,13 @@ func TestPutOp(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
-	operations = nil
+	opsStore.Clear()
 }
 
 func TestDeleteRequestOp(t *testing.T) {
 	var w *httptest.ResponseRecorder
 	var c *gin.Context
-	operations = append(operations, &devops_resource.Ops{Name: "ferrets", Id: "2"})
+	opsStore.Add(&devops_resource.Ops{Name: "ferrets", Id: "2"})
 
 	for _, test := range verifyDeleteOp {
 		w = httptest.NewRecorder()
@@ -436,7 +436,7 @@ func TestDeleteRequestOp(t *testing.T) {
 			t.Errorf("\nTest: %s\nExpected: Status Code %d, Received: Status Code %d", test.description, test.expected, w.Code)
 		}
 	}
-	operations = nil
+	opsStore.Clear()
 }
 
 /********************************************/
@@ -567,7 +567,7 @@ func TestFindEngineerByName(t *testing.T) {
 	if err != nil {
 		t.Errorf("Error: %v", err)
 	}
-	engineers = nil
+	engineerStore.Clear()
 }
 
 func TestFindBadEngineerByName(t *testing.T) {
@@ -576,7 +576,7 @@ func TestFindBadEngineerByName(t *testing.T) {
 	if err == nil {
 		t.Errorf("Error: Expected Errors, recieved none.")
 	}
-	engineers = nil
+	engineerStore.Clear()
 }
 
 func TestFindEngineerByEmail(t *testing.T) {
@@ -585,7 +585,7 @@ func TestFindEngineerByEmail(t *testing.T) {
 	if err != nil {
 		t.Errorf("Error: %v", err)
 	}
-	engineers = nil
+	engineerStore.Clear()
 }
 
 func TestFindBadEngineerByEmail(t *testing.T) {
@@ -594,7 +594,7 @@ func TestFindBadEngineerByEmail(t *testing.T) {
 	if err == nil {
 		t.Errorf("Error: Expected Errors, recieved none.")
 	}
-	engineers = nil
+	engineerStore.Clear()
 }
 
 func TestFindDevByName(t *testing.T) {
@@ -603,7 +603,7 @@ func TestFindDevByName(t *testing.T) {
 	if err != nil {
 		t.Errorf("Error: %v", err)
 	}
-	developers = nil
+	devStore.Clear()
 }
 
 func TestFindBadDevByName(t *testing.T) {
@@ -612,7 +612,7 @@ func TestFindBadDevByName(t *testing.T) {
 	if err == nil {
 		t.Errorf("Error: Expected Errors, recieved none.")
 	}
-	developers = nil
+	devStore.Clear()
 }
 
 func TestFindOpsByName(t *testing.T) {
@@ -621,7 +621,7 @@ func TestFindOpsByName(t *testing.T) {
 	if err != nil {
 		t.Errorf("Error: %v", err)
 	}
-	operations = nil
+	opsStore.Clear()
 }
 
 func TestFindBadOpsByName(t *testing.T) {
@@ -630,5 +630,5 @@ func TestFindBadOpsByName(t *testing.T) {
 	if err == nil {
 		t.Errorf("Error: Expected Errors, recieved none.")
 	}
-	operations = nil
+	opsStore.Clear()
 }
