@@ -26,7 +26,7 @@ func newDevOps(newDevOps devops_resource.DevOps) (*devops_resource.DevOps, error
 		}
 		devOpsGroup.Ops = append(devOpsGroup.Ops, op)
 	}
-	developer_operations = append(developer_operations, &devOpsGroup)
+	devOpsStore.Add(&devOpsGroup)
 	return &devOpsGroup, nil
 }
 
@@ -34,10 +34,9 @@ func newDev(newDev devops_resource.Dev) (*devops_resource.Dev, error) {
 	if newDev.Name == "" {
 		return nil, errors.New(" Name cannot be empty ")
 	}
-	for _, value := range developers {
-		if newDev.Name == value.Name {
-			return nil, errors.New(" Dev group already exists ")
-		}
+	// Check for duplicate using store
+	if _, found := devStore.FindByName(newDev.Name); found {
+		return nil, errors.New(" Dev group already exists ")
 	}
 	devGroup := devops_resource.Dev{Name: newDev.Name, Id: getRandId(5)}
 	devGroup.Engineers = make([]*devops_resource.Engineer, 0)
@@ -49,7 +48,7 @@ func newDev(newDev devops_resource.Dev) (*devops_resource.Dev, error) {
 		devGroup.Engineers = append(devGroup.Engineers, newEngineer)
 	}
 
-	developers = append(developers, &devGroup)
+	devStore.Add(&devGroup)
 	return &devGroup, nil
 }
 
@@ -57,10 +56,9 @@ func newOp(newOp devops_resource.Ops) (*devops_resource.Ops, error) {
 	if newOp.Name == "" {
 		return nil, errors.New(" Name cannot be empty ")
 	}
-	for _, value := range operations {
-		if newOp.Name == value.Name {
-			return nil, errors.New(" Dev group already exists ")
-		}
+	// Check for duplicate using store
+	if _, found := opsStore.FindByName(newOp.Name); found {
+		return nil, errors.New(" Dev group already exists ")
 	}
 	opsGroup := devops_resource.Ops{Name: newOp.Name, Id: getRandId(5)}
 	opsGroup.Engineers = make([]*devops_resource.Engineer, 0)
@@ -72,7 +70,7 @@ func newOp(newOp devops_resource.Ops) (*devops_resource.Ops, error) {
 		opsGroup.Engineers = append(opsGroup.Engineers, newEngineer)
 	}
 
-	operations = append(operations, &opsGroup)
+	opsStore.Add(&opsGroup)
 	return &opsGroup, nil
 }
 
@@ -80,52 +78,45 @@ func newEngineer(name string, email string) (*devops_resource.Engineer, error) {
 	if name == "" {
 		return nil, errors.New(" Name cannot be empty ")
 	}
-	for _, value := range engineers {
-		if name == value.Name {
-			return nil, errors.New(" Engineer already exists ")
-		}
+	// Check for duplicate using store
+	if _, found := engineerStore.FindByName(name); found {
+		return nil, errors.New(" Engineer already exists ")
 	}
 	if !verifyEmail(email) {
 		return nil, errors.New(" Email is invalid ")
 	}
 	p := devops_resource.Engineer{Name: name, Id: getRandId(5)}
 	p.Email = email
-	engineers = append(engineers, &p)
+
+	// Add to store instead of global slice
+	engineerStore.Add(&p)
 	return &p, nil
 }
 
 func findEngineer_by_Id(engineer_id string) (*devops_resource.Engineer, error) {
-	for _, newEngineer := range engineers {
-		if newEngineer.Id == engineer_id {
-			return newEngineer, nil
-		}
+	if engineer, found := engineerStore.FindByID(engineer_id); found {
+		return engineer, nil
 	}
 	return nil, errors.New(" No engineer with that ID ")
 }
 
 func findOp_by_Id(op_id string) (*devops_resource.Ops, error) {
-	for _, newOp := range operations {
-		if newOp.Id == op_id {
-			return newOp, nil
-		}
+	if ops, found := opsStore.FindByID(op_id); found {
+		return ops, nil
 	}
 	return nil, errors.New(" No ops group with that ID ")
 }
 
 func findDev_by_Id(dev_id string) (*devops_resource.Dev, error) {
-	for _, newDev := range developers {
-		if newDev.Id == dev_id {
-			return newDev, nil
-		}
+	if dev, found := devStore.FindByID(dev_id); found {
+		return dev, nil
 	}
 	return nil, errors.New(" No dev group with that ID ")
 }
 
 func findDevOps_by_Id(devops_id string) (*devops_resource.DevOps, error) {
-	for _, newDevOps := range developer_operations {
-		if newDevOps.Id == devops_id {
-			return newDevOps, nil
-		}
+	if devops, found := devOpsStore.FindByID(devops_id); found {
+		return devops, nil
 	}
 	return nil, errors.New(" No devops group with that ID ")
 }
@@ -181,10 +172,10 @@ func addEngineerTo_Op(ops_id string, engineer_id string) (bool, error) {
 	if err == nil {
 		return false, errors.New(" Engineer already exists inside specified Operations group ")
 	}
-	for i := range operations {
-		if operations[i].Id == ops_id {
-			operations[i].Engineers = append(operations[i].Engineers, engineer_val)
-		}
+
+	// Use thread-safe method to add engineer to operation
+	if !opsStore.AddEngineerToOp(ops_id, engineer_val) {
+		return false, errors.New(" Failed to add engineer to operations group ")
 	}
 
 	return true, nil
@@ -206,10 +197,9 @@ func addEngineerTo_Dev(dev_id string, engineer_id string) (bool, error) {
 		return false, errors.New(" Engineer already exists inside specified Developer group ")
 	}
 
-	for i := range developers {
-		if developers[i].Id == dev_id {
-			developers[i].Engineers = append(developers[i].Engineers, engineer_val)
-		}
+	// Use thread-safe method to add engineer to dev
+	if !devStore.AddEngineerToDev(dev_id, engineer_val) {
+		return false, errors.New(" Failed to add engineer to developer group ")
 	}
 
 	return true, nil
@@ -230,10 +220,10 @@ func addDevTo_DevOps(devops_id string, dev_id string) (bool, error) {
 	if err == nil {
 		return false, errors.New(" Developer already exists inside specified Developer Operations group ")
 	}
-	for i := range developer_operations {
-		if developer_operations[i].Id == devops_id {
-			developer_operations[i].Devs = append(developer_operations[i].Devs, dev_val)
-		}
+
+	// Use thread-safe method to add dev to devops
+	if !devOpsStore.AddDevToDevOps(devops_id, dev_val) {
+		return false, errors.New(" Failed to add dev to devops group ")
 	}
 
 	return true, nil
@@ -254,10 +244,10 @@ func addOpTo_DevOps(devops_id string, op_id string) (bool, error) {
 	if err == nil {
 		return false, errors.New(" Developer already exists inside specified Developer Operations group ")
 	}
-	for i := range developer_operations {
-		if developer_operations[i].Id == devops_id {
-			developer_operations[i].Ops = append(developer_operations[i].Ops, op_val)
-		}
+
+	// Use thread-safe method to add ops to devops
+	if !devOpsStore.AddOpsToDevOps(devops_id, op_val) {
+		return false, errors.New(" Failed to add ops to devops group ")
 	}
 
 	return true, nil

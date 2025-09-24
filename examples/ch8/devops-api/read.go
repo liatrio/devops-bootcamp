@@ -9,37 +9,29 @@ import (
 )
 
 func findEngineer_by_Name(engineer_name string) (*devops_resource.Engineer, error) {
-	for _, newEngineer := range engineers {
-		if newEngineer.Name == engineer_name {
-			return newEngineer, nil
-		}
+	if engineer, found := engineerStore.FindByName(engineer_name); found {
+		return engineer, nil
 	}
 	return nil, errors.New(" no engineer with that name ")
 }
 
 func findEngineer_by_Email(engineer_email string) (*devops_resource.Engineer, error) {
-	for _, newEngineer := range engineers {
-		if newEngineer.Email == engineer_email {
-			return newEngineer, nil
-		}
+	if engineer, found := engineerStore.FindByEmail(engineer_email); found {
+		return engineer, nil
 	}
 	return nil, errors.New(" no engineer with that email ")
 }
 
 func findDev_by_Name(dev_name string) (*devops_resource.Dev, error) {
-	for _, newDev := range developers {
-		if newDev.Name == dev_name {
-			return newDev, nil
-		}
+	if dev, found := devStore.FindByName(dev_name); found {
+		return dev, nil
 	}
 	return nil, errors.New(" no dev group with that name ")
 }
 
 func findOps_by_Name(ops_name string) (*devops_resource.Ops, error) {
-	for _, newOps := range operations {
-		if newOps.Name == ops_name {
-			return newOps, nil
-		}
+	if ops, found := opsStore.FindByName(ops_name); found {
+		return ops, nil
 	}
 	return nil, errors.New(" no ops group with that name ")
 }
@@ -155,20 +147,20 @@ func getSpecificDevOpsById(c *gin.Context) {
 
 func getEngineer(c *gin.Context) {
 	//engineer_slice := mapToSlice(engineers)
-	c.IndentedJSON(http.StatusOK, engineers)
+	c.IndentedJSON(http.StatusOK, engineerStore.List())
 }
 
 func getDev(c *gin.Context) {
 	//dev_slice := devListConversion(developers)
-	c.IndentedJSON(http.StatusOK, developers)
+	c.IndentedJSON(http.StatusOK, devStore.List())
 }
 
 func getOp(c *gin.Context) {
 	//ops_slice := opsListConversion(operations)
-	c.IndentedJSON(http.StatusOK, operations)
+	c.IndentedJSON(http.StatusOK, opsStore.List())
 }
 
 func getDevOps(c *gin.Context) {
 	//devops_slice := devopsListConversion(developer_operations)
-	c.IndentedJSON(http.StatusOK, developer_operations)
+	c.IndentedJSON(http.StatusOK, devOpsStore.List())
 }
