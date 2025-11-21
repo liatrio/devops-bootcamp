@@ -4,7 +4,7 @@ This example demonstrates a simple Flask application where all concerns (present
 
 ## Structure
 
-```
+```text
 example1/
 ├── app.py              # Single file containing routes, logic, and data
 ├── requirements.txt    # Python dependencies

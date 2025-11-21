@@ -4,7 +4,7 @@ This example demonstrates a Flask application organized using layered architectu
 
 ## Structure
 
-```
+```text
 example2/
 ├── run.py                      # Application entry point
 ├── requirements.txt            # Python dependencies
