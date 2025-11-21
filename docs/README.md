@@ -223,6 +223,31 @@ docs/10-platform-engineering/10.2-platforms.md:
         - Kubernetes
         - ArgoCD
         - ExternalSecrets
+docs/11-application-development/11.0-overview.md:
+  category: Software Quality
+  estReadingMinutes: 10
+docs/11-application-development/11.1-layers.md:
+  category: Software Quality
+  estReadingMinutes: 30
+  exercises:
+    - name: Compare tightly coupled vs layered architecture
+      description: >-
+        Run both example applications, examine their structure, and understand
+        the architectural differences.
+      estMinutes: 60
+      technologies:
+        - Python
+        - Flask
+    - name: Refactor storage backend from in-memory to SQLite
+      description: >-
+        Switch the data storage in both examples from in-memory to SQLite,
+        comparing the effort required in tightly coupled vs layered
+        implementations.
+      estMinutes: 90
+      technologies:
+        - Python
+        - Flask
+        - SQLite
 docs/2-Github/2.2-Actions.md:
   category: CI/CD
   estReadingMinutes: 20
