@@ -26,4 +26,5 @@ def create_user():
     return jsonify(user), 201
 
 if __name__ == "__main__":
+    # NOTE: debug=True is for development only. Disable in production.
     app.run(port=5000, debug=True)
