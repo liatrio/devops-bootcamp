@@ -20,3 +20,8 @@ node_modules/
 
 ## Webpack
 dist/
+examples/ch11/example1/venv/
+examples/ch11/example2/venv/
+examples/ch11/example2/data.sqlite
+**/__pycache__/
+*.pyc
