@@ -1,0 +1,13 @@
+{
+  "name": "counterapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "StatefulSet demo counter app with persistent per-pod state",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
