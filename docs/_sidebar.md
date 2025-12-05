@@ -140,6 +140,7 @@
   - [9.1.4 - Cluster Management](9-kubernetes-container-orchestration/9.1.4-cluster-management.md)
   - [9.1.5 - Kubectl Settings and Usage](9-kubernetes-container-orchestration/9.1.5-kubectl-settings-and-usage.md)
 - [9.2 - Volumes](9-kubernetes-container-orchestration/9.2-volumes.md)
+  - [9.2.1 - Stateful Sets](9-kubernetes-container-orchestration/9.2.1-stateful-sets.md)
 - [9.3 - Probes](9-kubernetes-container-orchestration/9.3-probes.md)
 - [9.4 - RBAC](9-kubernetes-container-orchestration/9.4-rbac.md)
 - [9.5 - HPAs](9-kubernetes-container-orchestration/9.5-hpas.md)
