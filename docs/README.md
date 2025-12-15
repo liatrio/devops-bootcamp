@@ -801,7 +801,7 @@ docs/6-software-development-practices/6.4-pairprogramming.md:
   category: Agile Development
   estReadingMinutes: 20
   exercises:
-    - name: Pair Programing
+    - name: Pair Programming
       description: >-
         Using 'Live Share' or some equivillant try pair programming a 'Hello
         World' app in the language of your choice
@@ -1103,6 +1103,47 @@ docs/8-infrastructure-configuration-management/8.1.3-terraform-modules.md:
       technologies:
         - Terraform
         - AWS S3
+docs/8-infrastructure-configuration-management/8.2-ansible.md:
+  category: Infrastructure as Code
+  estReadingMinutes: 15
+  exercises:
+    - name: Vagrant and Ansible
+      description: >-
+        Provision a virtual machine and install a GitHub self-hosted runner
+        using Ansible as a provisioner in Vagrant.
+      estMinutes: 300
+      technologies:
+        - Ansible
+        - Vagrant
+        - GitHub self-hosted runner
+    - name: Idempotency
+      description: >-
+        Provision a virtual machine and install a GitHub self-hosted runner
+        using Ansible as a provisioner in Vagrant while maintaining idempotency.
+      estMinutes: 300
+      technologies:
+        - Ansible
+        - Vagrant
+        - GitHub self-hosted runner
+    - name: Ansible and AWS EC2
+      description: >-
+        Provision an AWS EC2 instance and install a GitHub self-hosted runner
+        using Ansible.
+      estMinutes: 300
+      technologies:
+        - Ansible
+        - AWS EC2
+        - GitHub self-hosted runner
+    - name: Terraform and Ansible
+      description: >-
+        Provision an EC2 instance using Terraform and install a GitHub
+        self-hosted runner with Ansible.
+      estMinutes: 360
+      technologies:
+        - Terraform
+        - Ansible
+        - AWS EC2
+        - GitHub self-hosted runner
 docs/8-infrastructure-configuration-management/8.3-terraform-providers.md:
   category: Infrastructure as Code
   estReadingMinutes: 20
@@ -1147,47 +1188,6 @@ docs/8-infrastructure-configuration-management/8.3-terraform-providers.md:
       technologies:
         - Terraform
         - Go
-docs/8-infrastructure-configuration-management/8.2-ansible.md:
-  category: Infrastructure as Code
-  estReadingMinutes: 15
-  exercises:
-    - name: Vagrant and Ansible
-      description: >-
-        Provision a virtual machine and install a GitHub self-hosted runner
-        using Ansible as a provisioner in Vagrant.
-      estMinutes: 300
-      technologies:
-        - Ansible
-        - Vagrant
-        - GitHub self-hosted runner
-    - name: Idempotency
-      description: >-
-        Provision a virtual machine and install a GitHub self-hosted runner
-        using Ansible as a provisioner in Vagrant while maintaining idempotency.
-      estMinutes: 300
-      technologies:
-        - Ansible
-        - Vagrant
-        - GitHub self-hosted runner
-    - name: Ansible and AWS EC2
-      description: >-
-        Provision an AWS EC2 instance and install a GitHub self-hosted runner
-        using Ansible.
-      estMinutes: 300
-      technologies:
-        - Ansible
-        - AWS EC2
-        - GitHub self-hosted runner
-    - name: Terraform and Ansible
-      description: >-
-        Provision an EC2 instance using Terraform and install a GitHub
-        self-hosted runner with Ansible.
-      estMinutes: 360
-      technologies:
-        - Terraform
-        - Ansible
-        - AWS EC2
-        - GitHub self-hosted runner
 docs/9-kubernetes-container-orchestration/9.1-kubectl-ref.md:
   category: Container Orchestration
   estReadingMinutes: 120
@@ -1212,6 +1212,18 @@ docs/9-kubernetes-container-orchestration/9.2-volumes.md:
       technologies:
         - Kubernetes
         - Jenkins
+docs/9-kubernetes-container-orchestration/9.2.1-stateful-sets.md:
+  category: Container Orchestration
+  estReadingMinutes: 10
+  exercises:
+    - name: Stateful Sets
+      description: >-
+        Create a simple StatefulSet in Kubernetes, understand the lifecycle of
+        StatefulSets.
+      estMinutes: 120
+      technologies:
+        - Kubernetes
+        - StatefulSets
 docs/9-kubernetes-container-orchestration/9.3-probes.md:
   category: Container Orchestration
   estReadingMinutes: 10
