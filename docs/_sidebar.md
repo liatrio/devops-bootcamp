@@ -105,6 +105,7 @@
   - [6.5.6 - Test Automation](6-software-development-practices/6.5.6-test-automation.md)
   - [6.5.7 - SonarQube](6-software-development-practices/6.5.7-sonarqube.md)
   - [6.5.8 - Code Review](6-software-development-practices/6.5.8-code-review.md)
+  - [6.5.9 - Git Hooks and pre-commit](6-software-development-practices/6.5.9-pre-commit.md)
 - [6.6 - Hello DevOps](6-software-development-practices/6.6-hello-devops.md)
 
 - **Chapter 7**

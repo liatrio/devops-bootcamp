@@ -900,6 +900,33 @@ docs/6-software-development-practices/6.5.7-sonarqube.md:
 docs/6-software-development-practices/6.5.8-code-review.md:
   category: Software Quality
   estReadingMinutes: 10
+docs/6-software-development-practices/6.5.9-pre-commit.md:
+  category: Software Quality
+  estReadingMinutes: 12
+  exercises:
+    - name: Create a basic Git pre-commit hook
+      description: Implement a simple shell pre-commit hook that runs a fast check.
+      estMinutes: 20
+      technologies:
+        - Git
+        - Bash
+    - name: Configure pre-commit to run local tasks
+      description: >-
+        Add a .pre-commit-config.yaml that delegates to Taskfile targets for
+        formatting and linting.
+      estMinutes: 60
+      technologies:
+        - pre-commit
+        - Taskfile.dev
+    - name: Align local hooks with CI
+      description: >-
+        Reuse the same Taskfile targets from pre-commit in a GitHub Actions
+        workflow.
+      estMinutes: 30
+      technologies:
+        - GitHub Actions
+        - Taskfile.dev
+        - pre-commit
 docs/6-software-development-practices/6.6-hello-devops.md:
   category: Agile Development
   estReadingMinutes: 5
