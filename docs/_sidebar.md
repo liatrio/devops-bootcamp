@@ -161,6 +161,10 @@
   - [10.1.4 - Plugins](10-platform-engineering/10.1.4-plugins.md)
 - [10.2 - Platforms](10-platform-engineering/10.2-platforms.md)
 
+- **Chapter 11**
+- [11.0 - Application Development Overview](11-application-development/11.0-overview.md)
+- [11.1 - Layers](11-application-development/11.1-layers.md)
+
 - **Addendum**
 
 - [Addendum](addendum/addendum-overview.md)
