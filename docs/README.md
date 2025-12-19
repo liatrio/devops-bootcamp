@@ -224,10 +224,10 @@ docs/10-platform-engineering/10.2-platforms.md:
         - ArgoCD
         - ExternalSecrets
 docs/11-application-development/11.0-overview.md:
-  category: Software Quality
+  category: Software Development
   estReadingMinutes: 10
 docs/11-application-development/11.1-layers.md:
-  category: Software Quality
+  category: Software Development
   estReadingMinutes: 30
   exercises:
     - name: Compare tightly coupled vs layered architecture

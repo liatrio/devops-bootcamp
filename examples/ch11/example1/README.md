@@ -7,7 +7,9 @@ This example demonstrates a simple Flask application where all concerns (present
 ```text
 example1/
 ├── app.py              # Single file containing routes, logic, and data
-├── requirements.txt    # Python dependencies
+├── pyproject.toml      # Project metadata and dependencies (uv)
+├── uv.lock             # Locked dependency versions
+├── requirements.txt    # Python dependencies (legacy)
 ├── tests/
 │   └── test_app.py    # Basic tests
 └── README.md          # This file
@@ -23,19 +25,18 @@ example1/
 
 ### Setup
 
-```bash
-# Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management.
 
-# Install dependencies
-pip install -r requirements.txt
+```bash
+# Install dependencies (uv will automatically create a virtual environment)
+uv sync
 ```
 
 ### Run the Server
 
 ```bash
-python app.py
+# Run the Flask application
+uv run python app.py
 ```
 
 The server will start on `http://127.0.0.1:5000`
@@ -55,7 +56,7 @@ curl -X POST http://127.0.0.1:5000/users \
 ### Run Tests
 
 ```bash
-PYTHONPATH=. pytest -q
+uv run pytest -q
 ```
 
 ## Exercise: Add SQLite Storage

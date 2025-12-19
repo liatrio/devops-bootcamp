@@ -7,7 +7,7 @@ This example demonstrates a Flask application organized using layered architectu
 ```text
 example2/
 ├── run.py                      # Application entry point
-├── requirements.txt            # Python dependencies
+├── pyproject.toml              # Python dependencies (uv project)
 ├── app/
 │   ├── __init__.py            # Application factory
 │   ├── presentation/
@@ -37,18 +37,14 @@ example2/
 ### Setup
 
 ```bash
-# Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies (uv will automatically create and manage the virtual environment)
+uv sync
 ```
 
 ### Run the Server
 
 ```bash
-python run.py
+uv run python run.py
 ```
 
 The server will start on `http://127.0.0.1:5001`
@@ -68,7 +64,7 @@ curl -X POST http://127.0.0.1:5001/users \
 ### Run Tests
 
 ```bash
-PYTHONPATH=. pytest -q
+uv run pytest -q
 ```
 
 ## Understanding the Layers
@@ -93,68 +89,8 @@ Contains business rules:
 Manages data storage:
 - Repository interface (`__init__.py`)
 - In-memory implementation (`in_memory_repo.py`)
-- SQLite implementation (`sqlite_repo.py`)
-
-## Exercise: Switch to SQLite Storage
-
-This example makes it trivial to change the storage backend. Here's how:
-
-### Step 1: Edit the Repository Interface
-
-Open `app/data/__init__.py` and change the import:
-
-```python
-# Comment out the in-memory import
-# from .in_memory_repo import get_all, add
-
-# Uncomment the SQLite import
-from .sqlite_repo import get_all, add
-```
-
-### Step 2: Run the Application
-
-```bash
-python run.py
-```
-
-That's it! The application now uses SQLite for storage. A `data.sqlite` file will be created in the example2 directory.
-
-### What Happened?
-
-- The presentation layer (routes) didn't change
-- The business logic layer (services) didn't change
-- Only the data layer changed (one import statement)
-
-This demonstrates the power of layered architecture and dependency inversion.
-
-## Key Observations
-
-- **Clear Organization**: Easy to find where things are
-- **Single Responsibility**: Each file has one job
-- **Easy to Test**: You can test business logic without Flask or a database
-- **Easy to Change**: Swapping implementations is trivial
-- **Team Friendly**: Different developers can work on different layers
-
-## Comparing with Example 1
-
-Go back and try the same exercise in Example 1:
-
-1. Example 1 requires editing route handlers directly
-2. Example 1 mixes HTTP code with database code
-3. Example 1 is harder to test in isolation
-4. Example 2 required changing only one import statement
 
 This is the benefit of layered architecture in practice.
-
-## Extension Ideas
-
-Try these exercises to deepen your understanding:
-
-1. Add a `get_user_by_id(user_id)` function to all three layers
-2. Add a `delete_user(user_id)` function
-3. Create a third repository implementation that uses a JSON file
-4. Add more business logic (e.g., name must be at least 2 characters)
-5. Write unit tests for the service layer that mock the repository
 
 ## Best Practices Demonstrated
 

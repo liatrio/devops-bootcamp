@@ -25,3 +25,14 @@ examples/ch11/example2/venv/
 examples/ch11/example2/data.sqlite
 **/__pycache__/
 *.pyc
+
+# Python
+**/__pycache__/
+*.pyc
+**/venv/
+**/.venv/
+
+# uv
+.uv/
+__pypackages__/
+.python-version
