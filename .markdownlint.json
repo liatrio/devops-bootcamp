@@ -12,7 +12,11 @@
             "br",
             "commit",
             "ticket",
-            "public"
+            "public",
+            "script",
+            "style",
+            "input",
+            "span"
         ]
     },
     "heading-style": false,
