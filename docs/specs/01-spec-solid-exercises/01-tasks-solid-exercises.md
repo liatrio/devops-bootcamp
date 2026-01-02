@@ -70,7 +70,7 @@
 - [x] 1.10 Verify type checking passes with `uv run mypy .`
 - [x] 1.11 Verify linting passes with `uv run ruff check .`
 
-### [ ] 2.0 Create Exercise 2: Open/Closed Principle (OCP) Project
+### [x] 2.0 Create Exercise 2: Open/Closed Principle (OCP) Project
 
 #### 2.0 Proof Artifact(s)
 
@@ -82,17 +82,17 @@
 
 #### 2.0 Tasks
 
-- [ ] 2.1 Create directory structure `examples/ch11/solid-exercises/exercise-2-ocp/` with tests subdirectory
-- [ ] 2.2 Create `pyproject.toml` with project metadata, Python >=3.11 requirement, and dependencies (pytest, mypy, ruff)
-- [ ] 2.3 Create `.gitignore` for Python projects (include .venv, __pycache__, *.pyc)
-- [ ] 2.4 Create `discount_calculator.py` with DiscountCalculator class using if/elif chains for customer types (regular, premium, vip) with hard-coded discount percentages (0.05, 0.10, 0.15)
-- [ ] 2.5 Create `main.py` that imports DiscountCalculator and demonstrates calculating discounts for different customer types with sample amounts
-- [ ] 2.6 Create `tests/test_discount_calculator.py` with behavior-based tests that validate discount calculations for all customer types without depending on implementation method (conditionals vs polymorphism)
-- [ ] 2.7 Create `README.md` with exercise overview, setup instructions, learning objectives about OCP, and guidance on using abstract base classes and polymorphism
-- [ ] 2.8 Run `uv sync` to initialize the project and install dependencies
-- [ ] 2.9 Verify all tests pass with `uv run pytest`
-- [ ] 2.10 Verify type checking passes with `uv run mypy .`
-- [ ] 2.11 Verify linting passes with `uv run ruff check .`
+- [x] 2.1 Create directory structure `examples/ch11/solid-exercises/exercise-2-ocp/` with tests subdirectory
+- [x] 2.2 Create `pyproject.toml` with project metadata, Python >=3.11 requirement, and dependencies (pytest, mypy, ruff)
+- [x] 2.3 Create `.gitignore` for Python projects (include .venv, __pycache__, *.pyc)
+- [x] 2.4 Create `discount_calculator.py` with DiscountCalculator class using if/elif chains for customer types (regular, premium, vip) with hard-coded discount percentages (0.05, 0.10, 0.15)
+- [x] 2.5 Create `main.py` that imports DiscountCalculator and demonstrates calculating discounts for different customer types with sample amounts
+- [x] 2.6 Create `tests/test_discount_calculator.py` with behavior-based tests that validate discount calculations for all customer types without depending on implementation method (conditionals vs polymorphism)
+- [x] 2.7 Create `README.md` with exercise overview, setup instructions, learning objectives about OCP, and guidance on using abstract base classes and polymorphism
+- [x] 2.8 Run `uv sync` to initialize the project and install dependencies
+- [x] 2.9 Verify all tests pass with `uv run pytest`
+- [x] 2.10 Verify type checking passes with `uv run mypy .`
+- [x] 2.11 Verify linting passes with `uv run ruff check .`
 
 ### [ ] 3.0 Create Exercise 3: Dependency Inversion Principle (DIP) Project
 
