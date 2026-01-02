@@ -94,7 +94,7 @@
 - [x] 2.10 Verify type checking passes with `uv run mypy .`
 - [x] 2.11 Verify linting passes with `uv run ruff check .`
 
-### [ ] 3.0 Create Exercise 3: Dependency Inversion Principle (DIP) Project
+### [x] 3.0 Create Exercise 3: Dependency Inversion Principle (DIP) Project
 
 #### 3.0 Proof Artifact(s)
 
@@ -106,18 +106,18 @@
 
 #### 3.0 Tasks
 
-- [ ] 3.1 Create directory structure `examples/ch11/solid-exercises/exercise-3-dip/` with tests subdirectory
-- [ ] 3.2 Create `pyproject.toml` with project metadata, Python >=3.11 requirement, and dependencies (pytest, mypy, ruff)
-- [ ] 3.3 Create `.gitignore` for Python projects (include .venv, __pycache__, *.pyc)
-- [ ] 3.4 Create `mock_clients.py` with SMTPClient and TwilioClient mock classes that print to console instead of sending real messages (include methods: SMTPClient.send(email, message), TwilioClient.send(phone, message))
-- [ ] 3.5 Create `notification_service.py` with NotificationService class that directly instantiates SMTPClient and TwilioClient in __init__ and has notify(user, message) method that calls both clients
-- [ ] 3.6 Create `main.py` that imports NotificationService, creates a sample user object (with email and phone attributes), and demonstrates sending notifications through both channels
-- [ ] 3.7 Create `tests/test_notification_service.py` with behavior-based tests that validate notification behavior (tests both channels are called) without depending on whether dependencies are injected or instantiated internally
-- [ ] 3.8 Create `README.md` with exercise overview, setup instructions, learning objectives about DIP, and guidance on creating abstractions and using dependency injection
-- [ ] 3.9 Run `uv sync` to initialize the project and install dependencies
-- [ ] 3.10 Verify all tests pass with `uv run pytest`
-- [ ] 3.11 Verify type checking passes with `uv run mypy .`
-- [ ] 3.12 Verify linting passes with `uv run ruff check .`
+- [x] 3.1 Create directory structure `examples/ch11/solid-exercises/exercise-3-dip/` with tests subdirectory
+- [x] 3.2 Create `pyproject.toml` with project metadata, Python >=3.11 requirement, and dependencies (pytest, mypy, ruff)
+- [x] 3.3 Create `.gitignore` for Python projects (include .venv, __pycache__, *.pyc)
+- [x] 3.4 Create `mock_clients.py` with SMTPClient and TwilioClient mock classes that print to console instead of sending real messages (include methods: SMTPClient.send(email, message), TwilioClient.send(phone, message))
+- [x] 3.5 Create `notification_service.py` with NotificationService class that directly instantiates SMTPClient and TwilioClient in __init__ and has notify(user, message) method that calls both clients
+- [x] 3.6 Create `main.py` that imports NotificationService, creates a sample user object (with email and phone attributes), and demonstrates sending notifications through both channels
+- [x] 3.7 Create `tests/test_notification_service.py` with behavior-based tests that validate notification behavior (tests both channels are called) without depending on whether dependencies are injected or instantiated internally
+- [x] 3.8 Create `README.md` with exercise overview, setup instructions, learning objectives about DIP, and guidance on creating abstractions and using dependency injection
+- [x] 3.9 Run `uv sync` to initialize the project and install dependencies
+- [x] 3.10 Verify all tests pass with `uv run pytest`
+- [x] 3.11 Verify type checking passes with `uv run mypy .`
+- [x] 3.12 Verify linting passes with `uv run ruff check .`
 
 ### [ ] 4.0 Update Exercise Documentation to Reference New Projects
 
