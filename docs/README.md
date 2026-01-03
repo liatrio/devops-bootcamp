@@ -250,13 +250,13 @@ docs/11-application-development/11.1-layers.md:
         - SQLite
 docs/11-application-development/11.2.1-solid-principles.md:
   category: Software Development
-  estReadingMinutes: 45
+  estReadingMinutes: 120
   exercises:
     - name: Refactor a class to follow SRP
       description: >-
         Take a provided monolithic class and refactor it into multiple classes,
         each with a single responsibility.
-      estMinutes: 45
+      estMinutes: 60
       technologies:
         - Python
     - name: Apply Open/Closed Principle to payment processing
