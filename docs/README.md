@@ -248,6 +248,31 @@ docs/11-application-development/11.1-layers.md:
         - Python
         - Flask
         - SQLite
+docs/11-application-development/11.2.1-solid-principles.md:
+  category: Software Development
+  estReadingMinutes: 120
+  exercises:
+    - name: Refactor a class to follow SRP
+      description: >-
+        Take a provided monolithic class and refactor it into multiple classes,
+        each with a single responsibility.
+      estMinutes: 60
+      technologies:
+        - Python
+    - name: Apply Open/Closed Principle to payment processing
+      description: >-
+        Extend a payment system to support new payment methods without modifying
+        existing code.
+      estMinutes: 60
+      technologies:
+        - Python
+    - name: Implement Dependency Injection
+      description: >-
+        Refactor tightly coupled code to use dependency injection, making it
+        testable and flexible.
+      estMinutes: 45
+      technologies:
+        - Python
 docs/2-Github/2.2-Actions.md:
   category: CI/CD
   estReadingMinutes: 20
