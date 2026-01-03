@@ -38,13 +38,13 @@ uv sync
 uv run main.py
 
 # Run the tests to verify behavior
-uv run pytest
+uv run --extra dev pytest
 
 # Run type checking
-uv run mypy .
+uv run --extra dev mypy .
 
 # Run linting
-uv run ruff check .
+uv run --extra dev ruff check .
 ```
 
 ## Your Task
@@ -102,9 +102,9 @@ After refactoring:
 - `NotificationService` should **not** import or instantiate concrete clients
 - Dependencies should be **injected** through the constructor
 - You should be able to create a `NotificationService` with mock implementations
-- All existing tests should still pass (`uv run pytest`)
-- Type checking passes (`uv run mypy .`)
-- Linting passes (`uv run ruff check .`)
+- All existing tests should still pass (`uv run --extra dev pytest`)
+- Type checking passes (`uv run --extra dev mypy .`)
+- Linting passes (`uv run --extra dev ruff check .`)
 
 ## Learning Objectives
 

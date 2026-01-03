@@ -34,13 +34,13 @@ uv sync
 uv run main.py
 
 # Run the tests to verify behavior
-uv run pytest
+uv run --extra dev pytest
 
 # Run type checking
-uv run mypy .
+uv run --extra dev mypy .
 
 # Run linting
-uv run ruff check .
+uv run --extra dev ruff check .
 ```
 
 ## Your Task
@@ -68,10 +68,10 @@ Refactor `report_generator.py` to follow SRP by creating separate classes:
 
 After refactoring:
 - Each class should have exactly **one reason to change**
-- All existing tests should still pass (`uv run pytest`)
+- All existing tests should still pass (`uv run --extra dev pytest`)
 - The `main.py` demo should still work
-- Type checking passes (`uv run mypy .`)
-- Linting passes (`uv run ruff check .`)
+- Type checking passes (`uv run --extra dev mypy .`)
+- Linting passes (`uv run --extra dev ruff check .`)
 
 ## Learning Objectives
 
