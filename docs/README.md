@@ -742,8 +742,8 @@ docs/5-cloud-computing/5.2.6-ecs.md:
         - AWS
         - AWS EKS
         - Kubernetes
-    - name: Add an Ingress controller and your cluster
-      description: Add an Ingress controller and your cluster
+    - name: Configure the Gateway API for your cluster
+      description: Configure the Gateway API for your cluster
       estMinutes: 60
       technologies:
         - AWS
