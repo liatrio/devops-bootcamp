@@ -1,9 +1,8 @@
 .DS_Store
 .idea/
-/examples/ch6/devops-api/devops-api
+/examples/terraform-provider/devops-api/devops-api
 
-examples/ch2/vagrant_docker_example/.vagrant/
-examples/ch7/devops-api/devops-api
+examples/vagrant-docker/.vagrant/
 
 .env
 
@@ -20,9 +19,9 @@ node_modules/
 
 ## Webpack
 dist/
-examples/ch11/example1/venv/
-examples/ch11/example2/venv/
-examples/ch11/example2/data.sqlite
+examples/layered-architecture/example1/venv/
+examples/layered-architecture/example2/venv/
+examples/layered-architecture/example2/data.sqlite
 **/__pycache__/
 *.pyc
 
@@ -42,3 +41,12 @@ __pypackages__/
 
 # Specs (internal planning artifacts)
 docs/specs/
+
+# Go build outputs (go build in module dirs)
+examples/keda/checkout-service/checkout-service
+examples/keda/order-processor/order-processor
+examples/data-patterns/active-record/active-record
+examples/data-patterns/concurrency/optimistic/optimistic
+examples/data-patterns/concurrency/pessimistic/pessimistic
+examples/data-patterns/repository/repository
+examples/data-patterns/repository-exercise-starter/repository-exercise-starter
