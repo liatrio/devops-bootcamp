@@ -41,3 +41,12 @@ __pypackages__/
 
 # Specs (internal planning artifacts)
 docs/specs/
+
+# Go build outputs (go build in module dirs)
+examples/keda/checkout-service/checkout-service
+examples/keda/order-processor/order-processor
+examples/data-patterns/active-record/active-record
+examples/data-patterns/concurrency/optimistic/optimistic
+examples/data-patterns/concurrency/pessimistic/pessimistic
+examples/data-patterns/repository/repository
+examples/data-patterns/repository-exercise-starter/repository-exercise-starter
