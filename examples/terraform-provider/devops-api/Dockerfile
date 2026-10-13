@@ -2,10 +2,12 @@ from ubuntu:latest
 
 run apt-get -y update && apt-get -y install golang git
 
+copy devops-resources /devops-resources
+
 run mkdir devops-api
 workdir devops-api
 
-copy . .
+copy devops-api .
 
 run go build
 
