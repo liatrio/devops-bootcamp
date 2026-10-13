@@ -21,18 +21,20 @@
   - [1.3.4 - Passwords and Keys](1-introduction/1.3.4-passwords-and-keys.md)
   - [1.3.5 - Networking Basics](1-introduction/1.3.5-networking.md)
 - [1.4 - External Resources](1-introduction/1.4-external-resources.md)
-- [1.5 - Version Control](1-introduction/1.5-version-control.md)
-  - [1.5.1 - Branching & Merging](1-introduction/1.5.1-branching-merging.md)
-  - [1.5.2 - Git](1-introduction/1.5.2-git.md)
 
 - **Chapter 2**
 
-- [2.0 - GitHub](2-Github/2.0-overview.md)
-- [2.1 - Features](2-Github/2.1-features.md)
-- [2.2 - Actions](2-Github/2.2-Actions.md)
-- [2.3 - Projects](2-Github/2.3-Projects.md)
-- [2.4 - APIs](2-Github/2.4-APIs.md)
-- [2.5 - Security](2-Github/2.5-Security.md)
+- [2.0 - Version Control](2-version-control/2.0-overview.md)
+- [2.1 - Local Version Control (Git)](2-version-control/2.1-local-version-control.md)
+  - [2.1.1 - Git Basics](2-version-control/2.1.1-git-basics.md)
+  - [2.1.2 - Branching](2-version-control/2.1.2-branching.md)
+  - [2.1.3 - Resolving Conflicts & Undoing Changes](2-version-control/2.1.3-conflicts-and-reversals.md)
+- [2.2 - Remote Version Control (GitHub)](2-version-control/2.2-remote-version-control.md)
+  - [2.2.1 - Features](2-version-control/2.2.1-features.md)
+  - [2.2.2 - Actions](2-version-control/2.2.2-actions.md)
+  - [2.2.3 - Projects](2-version-control/2.2.3-projects.md)
+  - [2.2.4 - APIs](2-version-control/2.2.4-apis.md)
+  - [2.2.5 - Security](2-version-control/2.2.5-security.md)
 
 - **Chapter 3**
 

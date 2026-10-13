@@ -42,33 +42,6 @@ docs/1-introduction/1.3.5-networking.md:
 docs/1-introduction/1.4-external-resources.md:
   category: Fundamentals
   estReadingMinutes: 50
-docs/1-introduction/1.5.1-branching-merging.md:
-  category: Version Control
-  estReadingMinutes: 15
-docs/1-introduction/1.5.2-git.md:
-  category: Version Control
-  estReadingMinutes: 25
-  exercises:
-    - name: Git Basics
-      description: Learn the basics of Git.
-      estMinutes: 30
-      technologies:
-        - Git
-    - name: Branching and Merging
-      description: Practice branching and merging with Git.
-      estMinutes: 30
-      technologies:
-        - Git
-    - name: Merge Conflicts
-      description: Learn how to resolve merge conflicts in Git.
-      estMinutes: 30
-      technologies:
-        - Git
-    - name: Removing Secrets
-      description: Learn how to remove secrets from Git history.
-      estMinutes: 30
-      technologies:
-        - Git
 docs/10-platform-engineering/10.0-overview.md:
   category: Platform Engineering
   estReadingMinutes: 15
@@ -343,7 +316,42 @@ docs/11-application-development/11.2.2-data-layer-patterns.md:
         - SQLite
         - Design Patterns
         - AI Collaboration
-docs/2-Github/2.2-Actions.md:
+docs/2-version-control/2.0-overview.md:
+  category: Version Control
+  estReadingMinutes: 5
+docs/2-version-control/2.1.1-git-basics.md:
+  category: Version Control
+  estReadingMinutes: 10
+  exercises:
+    - name: Git Basics
+      description: Learn the basics of Git.
+      estMinutes: 30
+      technologies:
+        - Git
+docs/2-version-control/2.1.2-branching.md:
+  category: Version Control
+  estReadingMinutes: 20
+  exercises:
+    - name: Branching and Merging
+      description: Practice branching and merging with Git.
+      estMinutes: 30
+      technologies:
+        - Git
+docs/2-version-control/2.1.3-conflicts-and-reversals.md:
+  category: Version Control
+  estReadingMinutes: 10
+  exercises:
+    - name: Merge Conflicts
+      description: Learn how to resolve merge conflicts in Git.
+      estMinutes: 30
+      technologies:
+        - Git
+    - name: Removing Secrets
+      description: Learn how to remove secrets from Git history.
+      estMinutes: 30
+      technologies:
+        - Git
+docs/2-version-control/2.2.2-actions.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -369,7 +377,7 @@ docs/2-Github/2.2-Actions.md:
       estMinutes: 240
       technologies:
         - GitHub Actions
-docs/2-Github/2.3-Projects.md:
+docs/2-version-control/2.2.3-projects.md:
   category: Agile Development
   estReadingMinutes: 5
   exercises:
@@ -380,7 +388,7 @@ docs/2-Github/2.3-Projects.md:
       estMinutes: 80
       technologies:
         - GitHub Projects
-docs/2-Github/2.4-APIs.md:
+docs/2-version-control/2.2.4-apis.md:
   category: Fundamentals
   estReadingMinutes: 30
   exercises:
@@ -392,7 +400,7 @@ docs/2-Github/2.4-APIs.md:
       technologies:
         - APIs
         - Javascript
-docs/2-Github/2.5-Security.md:
+docs/2-version-control/2.2.5-security.md:
   category: Fundamentals
   estReadingMinutes: 30
   exercises:
