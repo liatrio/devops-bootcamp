@@ -43,7 +43,7 @@ Docker:
 - `docker run -d -p 3000:3000 --name engineering-bootcamp engineering-bootcamp`
 - `docker compose up -d` / `docker compose down` (v2 syntax — see decision table below).
 
-There is no unit-test suite for the docs themselves. Go examples under `examples/ch8/` do have `go test`; run it when touching those modules.
+There is no unit-test suite for the docs themselves. Go modules under `examples/` (e.g. `examples/terraform-provider/devops-api/`, `examples/data-patterns/`) do have `go test`; run it when touching those modules.
 
 ## Front-matter System
 
