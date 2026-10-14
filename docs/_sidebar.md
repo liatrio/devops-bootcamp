@@ -24,12 +24,17 @@
 
 - **Chapter 2**
 
-- [2.0 - GitHub](2-Github/2.0-overview.md)
-- [2.1 - Features](2-Github/2.1-features.md)
-- [2.2 - Actions](2-Github/2.2-Actions.md)
-- [2.3 - Projects](2-Github/2.3-Projects.md)
-- [2.4 - APIs](2-Github/2.4-APIs.md)
-- [2.5 - Security](2-Github/2.5-Security.md)
+- [2.0 - Version Control](2-version-control/2.0-overview.md)
+- [2.1 - Local Version Control (Git)](2-version-control/2.1-local-version-control.md)
+  - [2.1.1 - Git Basics](2-version-control/2.1.1-git-basics.md)
+  - [2.1.2 - Branching](2-version-control/2.1.2-branching.md)
+  - [2.1.3 - Resolving Conflicts & Undoing Changes](2-version-control/2.1.3-conflicts-and-reversals.md)
+- [2.2 - Remote Version Control (GitHub)](2-version-control/2.2-remote-version-control.md)
+  - [2.2.1 - Features](2-version-control/2.2.1-features.md)
+  - [2.2.2 - Actions](2-version-control/2.2.2-actions.md)
+  - [2.2.3 - Projects](2-version-control/2.2.3-projects.md)
+  - [2.2.4 - APIs](2-version-control/2.2.4-apis.md)
+  - [2.2.5 - Security](2-version-control/2.2.5-security.md)
 
 - **Chapter 3**
 
@@ -91,22 +96,18 @@
   - [6.1.5 - Sizing](6-software-development-practices/6.1.5-sizing.md)
   - [6.1.6 - Deliverable](6-software-development-practices/6.1.6-deliverable.md)
 - [6.2 - Jira](6-software-development-practices/6.2-jira.md)
-- [6.3 - Version Control](6-software-development-practices/6.3-version-control.md)
-  - [6.3.1 - Branching & Merging](6-software-development-practices/6.3.1-branching-merging.md)
-  - [6.3.2 - Git](6-software-development-practices/6.3.2-git.md)
-  - [6.3.3 - GitHub](6-software-development-practices/6.3.3-github.md)
-- [6.4 - Pair Programming](6-software-development-practices/6.4-pairprogramming.md)
-- [6.5 - Code Quality](6-software-development-practices/6.5-code-quality.md)
-  - [6.5.1 - Unit Testing](6-software-development-practices/6.5.1-unit-testing.md)
-  - [6.5.2 - Functional Testing](6-software-development-practices/6.5.2-functional-testing.md)
-  - [6.5.3 - Code Styling](6-software-development-practices/6.5.3-code-styling.md)
-  - [6.5.4 - Code Coverage](6-software-development-practices/6.5.4-code-coverage.md)
-  - [6.5.5 - Test Doubles](6-software-development-practices/6.5.5-test-doubles.md)
-  - [6.5.6 - Test Automation](6-software-development-practices/6.5.6-test-automation.md)
-  - [6.5.7 - SonarQube](6-software-development-practices/6.5.7-sonarqube.md)
-  - [6.5.8 - Code Review](6-software-development-practices/6.5.8-code-review.md)
-  - [6.5.9 - Git Hooks and pre-commit](6-software-development-practices/6.5.9-pre-commit.md)
-- [6.6 - Hello DevOps](6-software-development-practices/6.6-hello-devops.md)
+- [6.3 - Pair Programming](6-software-development-practices/6.3-pairprogramming.md)
+- [6.4 - Code Quality](6-software-development-practices/6.4-code-quality.md)
+  - [6.4.1 - Unit Testing](6-software-development-practices/6.4.1-unit-testing.md)
+  - [6.4.2 - Functional Testing](6-software-development-practices/6.4.2-functional-testing.md)
+  - [6.4.3 - Code Styling](6-software-development-practices/6.4.3-code-styling.md)
+  - [6.4.4 - Code Coverage](6-software-development-practices/6.4.4-code-coverage.md)
+  - [6.4.5 - Test Doubles](6-software-development-practices/6.4.5-test-doubles.md)
+  - [6.4.6 - Test Automation](6-software-development-practices/6.4.6-test-automation.md)
+  - [6.4.7 - SonarQube](6-software-development-practices/6.4.7-sonarqube.md)
+  - [6.4.8 - Code Review](6-software-development-practices/6.4.8-code-review.md)
+  - [6.4.9 - Git Hooks and pre-commit](6-software-development-practices/6.4.9-pre-commit.md)
+- [6.5 - Hello DevOps](6-software-development-practices/6.5-hello-devops.md)
 
 - **Chapter 7**
 

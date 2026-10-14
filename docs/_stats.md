@@ -13,7 +13,7 @@
 | Chapter                                | Total Hours                                             | Number of Weeks                                            |
 |-------------------------               |----------------------:                                  |------------------:                                         |
 | 1. Introduction                        | <p id=1-introduction></p>                               | <p id=1-introduction-weeks></p>                            |
-| 2. GitHub                              | <p id=2-Github></p>                                     | <p id=2-Github-weeks></p>                                  |
+| 2. Version Control                     | <p id=2-version-control></p>                            | <p id=2-version-control-weeks></p>                         |
 | 3. AI Engineering                      | <p id=3-AI-Engineering></p>                             | <p id=3-AI-Engineering-weeks></p>                          |
 | 4. Virtualization                      | <p id=4-virtual-machines-containers></p>                | <p id=4-virtual-machines-containers-weeks></p>             |
 | 5. Cloud Computing                     | <p id=5-cloud-computing></p>                            | <p id=5-cloud-computing-weeks></p>                         |

@@ -316,7 +316,42 @@ docs/11-application-development/11.2.2-data-layer-patterns.md:
         - SQLite
         - Design Patterns
         - AI Collaboration
-docs/2-Github/2.2-Actions.md:
+docs/2-version-control/2.0-overview.md:
+  category: Version Control
+  estReadingMinutes: 5
+docs/2-version-control/2.1.1-git-basics.md:
+  category: Version Control
+  estReadingMinutes: 10
+  exercises:
+    - name: Git Basics
+      description: Learn the basics of Git.
+      estMinutes: 30
+      technologies:
+        - Git
+docs/2-version-control/2.1.2-branching.md:
+  category: Version Control
+  estReadingMinutes: 20
+  exercises:
+    - name: Branching and Merging
+      description: Practice branching and merging with Git.
+      estMinutes: 30
+      technologies:
+        - Git
+docs/2-version-control/2.1.3-conflicts-and-reversals.md:
+  category: Version Control
+  estReadingMinutes: 10
+  exercises:
+    - name: Merge Conflicts
+      description: Learn how to resolve merge conflicts in Git.
+      estMinutes: 30
+      technologies:
+        - Git
+    - name: Removing Secrets
+      description: Learn how to remove secrets from Git history.
+      estMinutes: 30
+      technologies:
+        - Git
+docs/2-version-control/2.2.2-actions.md:
   category: CI/CD
   estReadingMinutes: 20
   exercises:
@@ -342,7 +377,7 @@ docs/2-Github/2.2-Actions.md:
       estMinutes: 240
       technologies:
         - GitHub Actions
-docs/2-Github/2.3-Projects.md:
+docs/2-version-control/2.2.3-projects.md:
   category: Agile Development
   estReadingMinutes: 5
   exercises:
@@ -353,7 +388,7 @@ docs/2-Github/2.3-Projects.md:
       estMinutes: 80
       technologies:
         - GitHub Projects
-docs/2-Github/2.4-APIs.md:
+docs/2-version-control/2.2.4-apis.md:
   category: Fundamentals
   estReadingMinutes: 30
   exercises:
@@ -365,7 +400,7 @@ docs/2-Github/2.4-APIs.md:
       technologies:
         - APIs
         - Javascript
-docs/2-Github/2.5-Security.md:
+docs/2-version-control/2.2.5-security.md:
   category: Fundamentals
   estReadingMinutes: 30
   exercises:
@@ -853,44 +888,7 @@ docs/6-software-development-practices/6.1-overview.md:
 docs/6-software-development-practices/6.2-jira.md:
   category: Agile Development
   estReadingMinutes: 30
-docs/6-software-development-practices/6.3.1-branching-merging.md:
-  category: Version Control
-  estReadingMinutes: 15
-docs/6-software-development-practices/6.3.2-git.md:
-  category: Version Control
-  estReadingMinutes: 25
-  exercises:
-    - name: Git Basics
-      description: Learn the basics of Git.
-      estMinutes: 30
-      technologies:
-        - Git
-    - name: Branching and Merging
-      description: Practice branching and merging with Git.
-      estMinutes: 30
-      technologies:
-        - Git
-    - name: Merge Conflicts
-      description: Learn how to resolve merge conflicts in Git.
-      estMinutes: 30
-      technologies:
-        - Git
-    - name: Removing Secrets
-      description: Learn how to remove secrets from Git history.
-      estMinutes: 30
-      technologies:
-        - Git
-docs/6-software-development-practices/6.3.3-github.md:
-  category: Version Control
-  estReadingMinutes: 25
-  exercises:
-    - name: Fork and Merge
-      description: Practice forking and merging on GitHub
-      estMinutes: 30
-      technologies:
-        - Git
-        - GitHub
-docs/6-software-development-practices/6.4-pairprogramming.md:
+docs/6-software-development-practices/6.3-pairprogramming.md:
   category: Agile Development
   estReadingMinutes: 20
   exercises:
@@ -901,7 +899,7 @@ docs/6-software-development-practices/6.4-pairprogramming.md:
       estMinutes: 30
       technologies:
         - VSCode
-docs/6-software-development-practices/6.5.1-unit-testing.md:
+docs/6-software-development-practices/6.4.1-unit-testing.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -911,7 +909,7 @@ docs/6-software-development-practices/6.5.1-unit-testing.md:
       technologies:
         - Go
         - TDD
-docs/6-software-development-practices/6.5.2-functional-testing.md:
+docs/6-software-development-practices/6.4.2-functional-testing.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -927,10 +925,10 @@ docs/6-software-development-practices/6.5.2-functional-testing.md:
       technologies:
         - Playwright
         - Python
-docs/6-software-development-practices/6.5.3-code-styling.md:
+docs/6-software-development-practices/6.4.3-code-styling.md:
   category: Software Quality
   estReadingMinutes: 30
-docs/6-software-development-practices/6.5.4-code-coverage.md:
+docs/6-software-development-practices/6.4.4-code-coverage.md:
   category: Software Quality
   estReadingMinutes: 20
   exercises:
@@ -942,7 +940,7 @@ docs/6-software-development-practices/6.5.4-code-coverage.md:
       technologies:
         - Node.js
         - Jest
-docs/6-software-development-practices/6.5.5-test-doubles.md:
+docs/6-software-development-practices/6.4.5-test-doubles.md:
   category: Software Quality
   estReadingMinutes: 10
   exercises:
@@ -968,7 +966,7 @@ docs/6-software-development-practices/6.5.5-test-doubles.md:
       technologies:
         - Node.js
         - Jest
-docs/6-software-development-practices/6.5.6-test-automation.md:
+docs/6-software-development-practices/6.4.6-test-automation.md:
   category: Software Quality
   estReadingMinutes: 5
   exercises:
@@ -978,7 +976,7 @@ docs/6-software-development-practices/6.5.6-test-automation.md:
       technologies:
         - GitHub Actions
         - Go
-docs/6-software-development-practices/6.5.7-sonarqube.md:
+docs/6-software-development-practices/6.4.7-sonarqube.md:
   category: Software Quality
   estReadingMinutes: 10
   exercises:
@@ -990,10 +988,10 @@ docs/6-software-development-practices/6.5.7-sonarqube.md:
       technologies:
         - SonarQube
         - GitHub Actions
-docs/6-software-development-practices/6.5.8-code-review.md:
+docs/6-software-development-practices/6.4.8-code-review.md:
   category: Software Quality
   estReadingMinutes: 10
-docs/6-software-development-practices/6.5.9-pre-commit.md:
+docs/6-software-development-practices/6.4.9-pre-commit.md:
   category: Software Quality
   estReadingMinutes: 12
   exercises:
@@ -1020,7 +1018,7 @@ docs/6-software-development-practices/6.5.9-pre-commit.md:
         - GitHub Actions
         - Taskfile.dev
         - pre-commit
-docs/6-software-development-practices/6.6-hello-devops.md:
+docs/6-software-development-practices/6.5-hello-devops.md:
   category: Agile Development
   estReadingMinutes: 5
   exercises:
