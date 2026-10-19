@@ -20,6 +20,7 @@ Canonical agent instructions for Liatrio's Engineering Bootcamp — a Docsify-ba
 - `docs/README.md` — Auto-generated master record. Regenerate with `npm run refresh-front-matter`; do not hand-edit the front-matter block.
 - `docs/_sidebar.md` — Navigation. Any new section must be linked here or the pre-commit hook errors.
 - `src/` — Docsify plugins, quiz sources, webpack entry points.
+- `.agents/skills/` — Canonical repo skills (`new-section`, `new-exercise`, `move-chapter`, `lesson-style-check`, `dead-link-check`, `conventional-commits`). `.claude/skills` and `.github/skills` are symlinks to it; add new skills here only.
 - `examples/` — Runnable code referenced from exercises (Go modules, docker-compose files, etc.).
 - `img/` — Shared image assets. New images go here, not next to the markdown file.
 - `.husky/front-matter-condenser.js` — Pre-commit hook that reconciles section front-matter into `docs/README.md`.
